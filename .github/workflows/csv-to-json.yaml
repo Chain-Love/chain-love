@@ -1,0 +1,56 @@
+name: "CSV to JSON"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  SOURCE_BRANCH: main
+  TARGET_BRANCH: json
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_BRANCH }}
+          fetch-depth: 0
+      
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Switch to target branch or create/merge from source
+        run: |
+          git fetch origin
+          if git ls-remote --exit-code --heads origin ${{ env.TARGET_BRANCH }}; then
+            echo "Target branch exists, checking out and merging from source"
+            git checkout ${{ env.TARGET_BRANCH }}
+            git merge origin/${{ env.SOURCE_BRANCH }} --no-edit
+          else
+            echo "Target branch does not exist, creating from source branch"
+            git checkout -b ${{ env.TARGET_BRANCH }} origin/${{ env.SOURCE_BRANCH }}
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run CSV to JSON
+        run: python3 csv_to_json.py
+
+      - name: Commit and push
+        run: |
+          git add json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update processed file"
+            git push origin ${{ env.TARGET_BRANCH }}
+          fi
