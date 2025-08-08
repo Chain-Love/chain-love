@@ -4,6 +4,43 @@ import os
 
 PROVIDER_REF_PREFIX="!provider:"
 
+def try_parse_json(value):
+    if not isinstance(value, str):
+        return value
+    value = value.strip()
+    if (not value.startswith("[") and not value.endswith("]")) and (not value.startswith("{") and not value.endswith("}")):
+        return value
+    try:
+        return json.loads(value)
+    except json.JSONDecodeError:
+        print(f"Failed to parse JSON-like string: {value}")
+    return value
+
+def is_nullish(value: str) -> bool:
+    return isinstance(value, str) and value.strip().lower() == "null"
+
+def is_boolish(value: str) -> bool:
+    return isinstance(value, str) and (value.strip().lower() == "true" or value.strip().lower() == "false")
+
+def is_trueish(value: str) -> bool:
+    return isinstance(value, str) and value.strip().lower() == "true"
+
+def normalize(data_by_category: dict) -> dict:
+    result = {}
+    for category, items in data_by_category.items():
+        result[category] = []
+        for item in items:
+            new_item = {}
+            for key, value in item.items():
+                new_item[key] = value
+                if is_nullish(value):
+                    new_item[key] = None
+                if is_boolish(value):
+                    new_item[key] = is_trueish(value)
+                new_item[key] = try_parse_json(new_item[key])
+            result[category].append(new_item)
+    return result
+
 def load_csv_to_dict_list(file_path: str) -> list[dict]|None:
     if not os.path.exists(file_path):
         return None
@@ -101,7 +138,9 @@ def main():
                 network_data_file_path=os.path.join(network_dir_full_path, f"{category}.csv"),
                 provider_data_file_path=f"providers/{category}.csv",
             )
-        
+
+        result = normalize(result)
+
         os.makedirs('json', exist_ok=True)
         with(open(f"json/{network_name}.json", 'w+')) as f:
             json.dump(result, f, indent=4, ensure_ascii=False)
