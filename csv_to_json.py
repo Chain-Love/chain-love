@@ -17,7 +17,7 @@ def try_parse_json(value):
     return value
 
 def is_nullish(value: str) -> bool:
-    return isinstance(value, str) and value.strip().lower() == "null"
+    return isinstance(value, str) and (value.strip().lower() == "null" or value.strip() == "")
 
 def is_boolish(value: str) -> bool:
     return isinstance(value, str) and (value.strip().lower() == "true" or value.strip().lower() == "false")
