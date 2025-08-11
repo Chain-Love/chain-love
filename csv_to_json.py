@@ -107,7 +107,6 @@ def process_category(data_by_category: dict, network_data_file_path: str, provid
         # No overrides - use network data as-is
         print(f"Failed to load provider data from {provider_data_file_path}, using network data as-is")
         processed_data = network_data
-        return data_by_category
     
     # Return a new dict containing all previous entries in `data_by_category`,
     # plus (or replacing) one entry with key = `property_name` and value = `processed_data`.
