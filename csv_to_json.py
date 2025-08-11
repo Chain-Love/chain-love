@@ -129,7 +129,7 @@ def main():
         # - Network-specific data is located at: os.path.join(network_dir_full_path, "<category>.csv")
         # - Provider-specific data is located at: "providers/<category>.csv"
         # - Category names match both the filename (without extension) and the dictionary key in the result
-        categories = ['rpc', 'indexing', 'oracle', 'bridge', 'explorer', 'faucet', 'analytic', 'wallet', 'devTool']
+        categories = ['rpc', 'indexing', 'oracle', 'bridge', 'explorer', 'faucet', 'analytic', 'wallet', 'devtool']
         for category in categories:
             result = process_category(
                 data_by_category=result,
