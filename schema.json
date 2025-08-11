@@ -74,6 +74,11 @@
         "plan",
         "nodeType",
         "chain",
+        "accessPrice",
+        "queryPrice",
+        "uptimeSla",
+        "bandwidthSla",
+        "blocksBehindSla",
         "starred",
         "trial",
         "availableApis",
@@ -81,6 +86,9 @@
         "securityImprovements",
         "monitoringAndAnalytics",
         "regions",
+        "verifiedUptime",
+        "averageLatency",
+        "verifiedBlocksBehindAvg",
         "actionButtons"
       ]
     },
@@ -137,9 +145,17 @@
         "slug",
         "provider",
         "chain",
+        "address",
+        "image",
         "technology",
         "plan",
         "trial",
+        "accessPrice",
+        "queryPrice",
+        "uptimeSla",
+        "bandwidthSla",
+        "blocksBehindSla",
+        "supportSla",
         "starred",
         "availableApis",
         "limitations",
@@ -147,6 +163,9 @@
         "monitoringAndAnalytics",
         "regions",
         "additionalFeatures",
+        "verifiedUptime",
+        "verifiedLatency",
+        "verifiedBlocksBehindAvg",
         "actionButtons"
       ]
     },
@@ -195,6 +214,7 @@
         "searchCapabilities",
         "smartContractsVerifications",
         "fullHistory",
+        "pricing",
         "actionButtons"
       ]
     },
@@ -244,12 +264,16 @@
         "provider",
         "chain",
         "technology",
+        "accessPrice",
+        "queryPrice",
         "starred",
         "availableApis",
         "monitoringAndAnalytics",
         "additionalFeatures",
         "dataTypes",
+        "decentralizationModel",
         "economicalSecurity",
+        "economicalSecurityNote",
         "sdk",
         "auditsPerformed",
         "actionButtons"
@@ -316,8 +340,13 @@
         "monitoringAndAnalytics",
         "additionalFeatures",
         "assetTypes",
+        "txSpeedSla",
+        "throughputSla",
+        "price",
         "economicalSecurity",
+        "economicalSecurityNote",
         "auditsPerformed",
+        "decentralizationModel",
         "sdk",
         "actionButtons"
       ]
@@ -343,7 +372,9 @@
         "slug",
         "toolName",
         "toolType",
+        "price",
         "tag",
+        "description",
         "starred",
         "actionButtons"
       ]
@@ -378,6 +409,10 @@
         "chain",
         "requiresLogin",
         "hasCaptcha",
+        "requiresMainnetBalance",
+        "price",
+        "dripLimitAmount",
+        "dripLimitPeriod",
         "additionalNotes",
         "starred",
         "actionButtons"
@@ -411,6 +446,7 @@
         "dataSources",
         "hasDashboard",
         "supportsAPI",
+        "price",
         "starred",
         "actionButtons"
       ]
@@ -468,10 +504,11 @@
         "tendermint",
         "tokensSupport",
         "staking",
-        "starred",
+        "price",
         "support",
         "audit",
         "languages",
+        "starred",
         "actionButtons"
       ]
     }
