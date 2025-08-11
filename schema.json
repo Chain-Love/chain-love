@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.com/schemas/infrastructure.json",
-  "title": "infrastructure",
+  "title": "Toolbox Network Data",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -17,6 +17,7 @@
   },
   "$defs": {
     "actionButton": {
+      "title": "ActionButtonType",
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -353,6 +354,7 @@
     },
 
     "devtool": {
+      "title": "DevTool",
       "type": "object",
       "additionalProperties": false,
       "properties": {
