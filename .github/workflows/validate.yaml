@@ -1,0 +1,26 @@
+name: "Validate JSON"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Install dependencies
+        run: pip install --upgrade pip && pip install -r requirements.txt
+
+      - name: Run CSV to JSON
+        run: python3 csv_to_json.py
+
+      - name: Run validation script
+        run: python validate.py

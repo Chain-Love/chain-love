@@ -1,0 +1,479 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/infrastructure.json",
+  "title": "infrastructure",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "rpc": { "type": "array", "items": { "$ref": "#/$defs/rpc" } },
+    "indexing": { "type": "array", "items": { "$ref": "#/$defs/indexing" } },
+    "explorer": { "type": "array", "items": { "$ref": "#/$defs/explorer" } },
+    "oracle": { "type": "array", "items": { "$ref": "#/$defs/oracle" } },
+    "bridge": { "type": "array", "items": { "$ref": "#/$defs/bridge" } },
+    "devtool": { "type": "array", "items": { "$ref": "#/$defs/devtool" } },
+    "faucet": { "type": "array", "items": { "$ref": "#/$defs/faucet" } },
+    "analytic": { "type": "array", "items": { "$ref": "#/$defs/analytic" } },
+    "wallet": { "type": "array", "items": { "$ref": "#/$defs/wallet" } }
+  },
+  "$defs": {
+    "actionButton": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "type": { "enum": ["internal", "external"] }
+      },
+      "required": ["label", "url", "type"]
+    },
+
+    "rpc": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "plan": { "type": "string" },
+        "nodeType": { "type": "string" },
+        "chain": { "type": "string" },
+        "accessPrice": { "type": ["string", "null"] },
+        "queryPrice": { "type": ["string", "null"] },
+        "uptimeSla": { "type": ["string", "null"] },
+        "bandwidthSla": { "type": ["string", "null"] },
+        "blocksBehindSla": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "trial": { "type": "boolean" },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "limitations": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "securityImprovements": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "monitoringAndAnalytics": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "regions": { "type": ["array", "null"], "items": { "type": "string" } },
+        "verifiedUptime": { "type": ["string", "null"] },
+        "averageLatency": { "type": ["string", "null"] },
+        "verifiedBlocksBehindAvg": { "type": ["string", "null"] },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "$ref": "#/$defs/actionButton" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "plan",
+        "nodeType",
+        "chain",
+        "starred",
+        "trial",
+        "availableApis",
+        "limitations",
+        "securityImprovements",
+        "monitoringAndAnalytics",
+        "regions",
+        "actionButtons"
+      ]
+    },
+
+    "indexing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "chain": { "type": "string" },
+        "address": { "type": ["string", "null"] },
+        "image": { "type": ["string", "null"] },
+        "technology": { "type": "string" },
+        "plan": { "type": "string" },
+        "trial": { "type": "boolean" },
+        "accessPrice": { "type": ["string", "null"] },
+        "queryPrice": { "type": ["string", "null"] },
+        "uptimeSla": { "type": ["string", "null"] },
+        "bandwidthSla": { "type": ["string", "null"] },
+        "blocksBehindSla": { "type": ["string", "null"] },
+        "supportSla": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "limitations": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "securityImprovements": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "monitoringAndAnalytics": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "regions": { "type": ["array", "null"], "items": { "type": "string" } },
+        "additionalFeatures": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "verifiedUptime": { "type": ["string", "null"] },
+        "verifiedLatency": { "type": ["string", "null"] },
+        "verifiedBlocksBehindAvg": { "type": ["string", "null"] },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "$ref": "#/$defs/actionButton" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "technology",
+        "plan",
+        "trial",
+        "starred",
+        "availableApis",
+        "limitations",
+        "securityImprovements",
+        "monitoringAndAnalytics",
+        "regions",
+        "additionalFeatures",
+        "actionButtons"
+      ]
+    },
+
+    "explorer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "chain": { "type": "string" },
+        "technology": { "type": "string" },
+        "monitoringAndAnalytics": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "additionalFeatures": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "starred": { "type": "boolean" },
+        "api": { "type": ["array", "null"], "items": { "type": "string" } },
+        "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
+        "searchCapabilities": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "smartContractsVerifications": { "type": "boolean" },
+        "fullHistory": { "type": "boolean" },
+        "pricing": { "type": ["string", "null"] },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "$ref": "#/$defs/actionButton" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "technology",
+        "monitoringAndAnalytics",
+        "additionalFeatures",
+        "starred",
+        "api",
+        "sdk",
+        "searchCapabilities",
+        "smartContractsVerifications",
+        "fullHistory",
+        "actionButtons"
+      ]
+    },
+
+    "oracle": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "chain": { "type": "string" },
+        "technology": { "type": "string" },
+        "accessPrice": { "type": ["string", "null"] },
+        "queryPrice": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "monitoringAndAnalytics": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "additionalFeatures": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "dataTypes": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "decentralizationModel": { "type": ["string", "null"] },
+        "economicalSecurity": { "type": "boolean" },
+        "economicalSecurityNote": { "type": ["string", "null"] },
+        "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
+        "auditsPerformed": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "$ref": "#/$defs/actionButton" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "technology",
+        "starred",
+        "availableApis",
+        "monitoringAndAnalytics",
+        "additionalFeatures",
+        "dataTypes",
+        "economicalSecurity",
+        "sdk",
+        "auditsPerformed",
+        "actionButtons"
+      ]
+    },
+
+    "bridge": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "chain": { "type": "string" },
+        "technology": { "type": "string" },
+        "openSource": { "type": "boolean" },
+        "support": { "type": ["array", "null"], "items": { "type": "string" } },
+        "supportedChains": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "starred": { "type": "boolean" },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "monitoringAndAnalytics": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "additionalFeatures": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "assetTypes": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "txSpeedSla": { "type": ["string", "null"] },
+        "throughputSla": { "type": ["string", "null"] },
+        "price": { "type": ["string", "null"] },
+        "economicalSecurity": { "type": "boolean" },
+        "economicalSecurityNote": { "type": ["string", "null"] },
+        "auditsPerformed": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "decentralizationModel": { "type": ["string", "null"] },
+        "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "$ref": "#/$defs/actionButton" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "technology",
+        "openSource",
+        "support",
+        "supportedChains",
+        "starred",
+        "availableApis",
+        "monitoringAndAnalytics",
+        "additionalFeatures",
+        "assetTypes",
+        "economicalSecurity",
+        "auditsPerformed",
+        "sdk",
+        "actionButtons"
+      ]
+    },
+
+    "devtool": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "toolName": { "type": "string" },
+        "toolType": { "type": "string" },
+        "price": { "type": ["string", "null"] },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "$ref": "#/$defs/actionButton" }
+        }
+      },
+      "required": [
+        "slug",
+        "toolName",
+        "toolType",
+        "tag",
+        "starred",
+        "actionButtons"
+      ]
+    },
+
+    "faucet": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "chain": { "type": "string" },
+        "requiresLogin": { "type": "boolean" },
+        "hasCaptcha": { "type": "boolean" },
+        "requiresMainnetBalance": { "type": ["string", "null"] },
+        "price": { "type": ["string", "null"] },
+        "dripLimitAmount": { "type": ["string", "null"] },
+        "dripLimitPeriod": { "type": ["string", "null"] },
+        "additionalNotes": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "starred": { "type": "boolean" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "$ref": "#/$defs/actionButton" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "requiresLogin",
+        "hasCaptcha",
+        "additionalNotes",
+        "starred",
+        "actionButtons"
+      ]
+    },
+
+    "analytic": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "perChain": { "type": "string" },
+        "dataSources": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "hasDashboard": { "type": "boolean" },
+        "supportsAPI": { "type": "boolean" },
+        "price": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "$ref": "#/$defs/actionButton" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "perChain",
+        "dataSources",
+        "hasDashboard",
+        "supportsAPI",
+        "starred",
+        "actionButtons"
+      ]
+    },
+
+    "wallet": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "openSource": { "type": "boolean" },
+        "supportedPlatforms": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "custodial": { "type": "boolean" },
+        "mfa": { "type": "boolean" },
+        "msig": { "type": "boolean" },
+        "hardware": { "type": "boolean" },
+        "keyExport": { "type": "boolean" },
+        "native": { "type": "boolean" },
+        "evm": { "type": "boolean" },
+        "tendermint": { "type": "boolean" },
+        "tokensSupport": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "staking": { "type": "boolean" },
+        "price": { "type": ["string", "null"] },
+        "support": { "type": ["array", "null"], "items": { "type": "string" } },
+        "audit": { "type": ["array", "null"], "items": { "type": "string" } },
+        "languages": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "starred": { "type": "boolean" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "$ref": "#/$defs/actionButton" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "openSource",
+        "supportedPlatforms",
+        "custodial",
+        "mfa",
+        "msig",
+        "hardware",
+        "keyExport",
+        "native",
+        "evm",
+        "tendermint",
+        "tokensSupport",
+        "staking",
+        "starred",
+        "support",
+        "audit",
+        "languages",
+        "actionButtons"
+      ]
+    }
+  }
+}
