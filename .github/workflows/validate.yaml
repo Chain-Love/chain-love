@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  convert:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
