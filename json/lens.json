@@ -1,0 +1,3590 @@
+{
+    "rpc": [
+        {
+            "slug": "public-mainnet",
+            "provider": "Public RPC",
+            "plan": "Public",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Basic monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/overview",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "public-testnet",
+            "provider": "Public RPC",
+            "plan": "Public",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Basic monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/overview",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "alchemy-mainnet-free",
+            "provider": "Alchemy",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "300M CU per month, 330 CUPS"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.alchemy.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/alchemy",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "alchemy-mainnet-growth",
+            "provider": "Alchemy",
+            "plan": "Growth",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "49",
+            "queryPrice": null,
+            "uptimeSla": "99.9",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "400M CU per month, 600 CUPS"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.alchemy.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/alchemy",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "alchemy-mainnet-scale",
+            "provider": "Alchemy",
+            "plan": "Scale",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "199",
+            "queryPrice": null,
+            "uptimeSla": "99.99",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "1.5B CU per month, 600 CUPS"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.alchemy.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/alchemy",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "alchemy-mainnet-enterprise",
+            "provider": "Alchemy",
+            "plan": "Enterprise",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": "99.99",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.alchemy.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/alchemy",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "alchemy-testnet-free",
+            "provider": "Alchemy",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "300M CU per month, 330 CUPS"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.alchemy.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/alchemy",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "alchemy-testnet-growth",
+            "provider": "Alchemy",
+            "plan": "Growth",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "49",
+            "queryPrice": null,
+            "uptimeSla": "99.9",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "400M CU per month, 600 CUPS"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.alchemy.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/alchemy",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "alchemy-testnet-scale",
+            "provider": "Alchemy",
+            "plan": "Scale",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "199",
+            "queryPrice": null,
+            "uptimeSla": "99.99",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "1.5B CU per month, 600 CUPS"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.alchemy.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/alchemy",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "alchemy-testnet-enterprise",
+            "provider": "Alchemy",
+            "plan": "Enterprise",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": "99.99",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.alchemy.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/alchemy",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "quicknode-mainnet-discover",
+            "provider": "QuickNode",
+            "plan": "Discover",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "100K API Credits per day, 3M API Credits per month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.quicknode.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/quicknode",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "quicknode-mainnet-build",
+            "provider": "QuickNode",
+            "plan": "Build",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "49",
+            "queryPrice": null,
+            "uptimeSla": "99.9",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "2M API Credits per day, 60M API Credits per month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.quicknode.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/quicknode",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "quicknode-mainnet-scale",
+            "provider": "QuickNode",
+            "plan": "Scale",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "299",
+            "queryPrice": null,
+            "uptimeSla": "99.99",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "10M API Credits per day, 300M API Credits per month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.quicknode.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/quicknode",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "quicknode-mainnet-dedicated",
+            "provider": "QuickNode",
+            "plan": "Dedicated",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": "99.99",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.quicknode.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/quicknode",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "quicknode-testnet-discover",
+            "provider": "QuickNode",
+            "plan": "Discover",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "100K API Credits per day, 3M API Credits per month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.quicknode.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/quicknode",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "quicknode-testnet-build",
+            "provider": "QuickNode",
+            "plan": "Build",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "49",
+            "queryPrice": null,
+            "uptimeSla": "99.9",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "2M API Credits per day, 60M API Credits per month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.quicknode.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/quicknode",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "quicknode-testnet-scale",
+            "provider": "QuickNode",
+            "plan": "Scale",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "299",
+            "queryPrice": null,
+            "uptimeSla": "99.99",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "10M API Credits per day, 300M API Credits per month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.quicknode.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/quicknode",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "quicknode-testnet-dedicated",
+            "provider": "QuickNode",
+            "plan": "Dedicated",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": "99.99",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.quicknode.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/quicknode",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "drpc-mainnet-free",
+            "provider": "dRPC",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://drpc.org/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/drpc",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "drpc-mainnet-premium",
+            "provider": "dRPC",
+            "plan": "Premium",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://drpc.org/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/drpc",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "drpc-testnet-free",
+            "provider": "dRPC",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://drpc.org/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/drpc",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "drpc-testnet-premium",
+            "provider": "dRPC",
+            "plan": "Premium",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://drpc.org/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/drpc",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "tenderly-mainnet-free",
+            "provider": "Tenderly",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://tenderly.co/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/tenderly",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "tenderly-mainnet-premium",
+            "provider": "Tenderly",
+            "plan": "Premium",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": "99.9",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://tenderly.co/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/tenderly",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "tenderly-testnet-free",
+            "provider": "Tenderly",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://tenderly.co/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/tenderly",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "tenderly-testnet-premium",
+            "provider": "Tenderly",
+            "plan": "Premium",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": "99.9",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://tenderly.co/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/tenderly",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "thirdweb-mainnet-free",
+            "provider": "thirdweb",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://thirdweb.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/thirdweb",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "thirdweb-mainnet-premium",
+            "provider": "thirdweb",
+            "plan": "Premium",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://thirdweb.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/thirdweb",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "thirdweb-testnet-free",
+            "provider": "thirdweb",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://thirdweb.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/thirdweb",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "thirdweb-testnet-premium",
+            "provider": "thirdweb",
+            "plan": "Premium",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://thirdweb.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/thirdweb",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "chainstack-mainnet-free",
+            "provider": "Chainstack",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "3M RU per month, 100 RU per second"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://chainstack.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/chainstack",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "chainstack-mainnet-premium",
+            "provider": "Chainstack",
+            "plan": "Premium",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "20M RU per month, 600 RU per second"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://chainstack.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/chainstack",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "chainstack-testnet-free",
+            "provider": "Chainstack",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "3M RU per month, 100 RU per second"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://chainstack.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/chainstack",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "chainstack-testnet-premium",
+            "provider": "Chainstack",
+            "plan": "Premium",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "20M RU per month, 600 RU per second"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "averageLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://chainstack.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/rpc/chainstack",
+                    "type": "external"
+                }
+            ]
+        }
+    ],
+    "indexing": [
+        {
+            "slug": "thegraph-mainnet",
+            "provider": "The Graph",
+            "chain": "mainnet",
+            "address": null,
+            "image": null,
+            "technology": "Subgraph Indexing",
+            "plan": "Subscription-based",
+            "trial": false,
+            "accessPrice": "0",
+            "queryPrice": "GRT Fee",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": true,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Subgraph logs",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom Subgraphs",
+                "GraphQL Queries"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/the-graph",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "thegraph-testnet",
+            "provider": "The Graph",
+            "chain": "testnet",
+            "address": null,
+            "image": null,
+            "technology": "Subgraph Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Subgraph logs",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom Subgraphs",
+                "GraphQL Queries"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/the-graph",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "covalent-mainnet",
+            "provider": "Covalent",
+            "chain": "mainnet",
+            "address": null,
+            "image": null,
+            "technology": "Blockchain Data Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": true,
+            "availableApis": [
+                "REST"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Unified API",
+                "No-code Analytics"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.covalenthq.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/covalent",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "covalent-mainnet-enterprise",
+            "provider": "Covalent",
+            "chain": "mainnet",
+            "address": null,
+            "image": null,
+            "technology": "Blockchain Data Indexing",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": null,
+            "queryPrice": "Subscription-based",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "REST"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Unified API",
+                "No-code Analytics",
+                "Custom Endpoints"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.covalenthq.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/covalent",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "covalent-testnet",
+            "provider": "Covalent",
+            "chain": "testnet",
+            "address": null,
+            "image": null,
+            "technology": "Blockchain Data Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "REST"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Unified API",
+                "No-code Analytics"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://www.covalenthq.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/covalent",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "thirdweb-mainnet",
+            "provider": "thirdweb Insight",
+            "chain": "mainnet",
+            "address": null,
+            "image": null,
+            "technology": "Custom Data Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": true,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom API Schemas",
+                "No ABI Required"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://thirdweb.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/thirdweb",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "thirdweb-mainnet-premium",
+            "provider": "thirdweb Insight",
+            "chain": "mainnet",
+            "address": null,
+            "image": null,
+            "technology": "Custom Data Indexing",
+            "plan": "Premium",
+            "trial": true,
+            "accessPrice": null,
+            "queryPrice": "Subscription-based",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom API Schemas",
+                "No ABI Required",
+                "Custom Endpoints"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://thirdweb.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/thirdweb",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "thirdweb-testnet",
+            "provider": "thirdweb Insight",
+            "chain": "testnet",
+            "address": null,
+            "image": null,
+            "technology": "Custom Data Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom API Schemas",
+                "No ABI Required"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://thirdweb.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/thirdweb",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "rindexer-testnet",
+            "provider": "Rindexer",
+            "chain": "testnet",
+            "address": null,
+            "image": null,
+            "technology": "Rust-based EVM Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "No-code YAML Config",
+                "High Performance"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/rindexer",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "dune-mainnet",
+            "provider": "Dune",
+            "chain": "mainnet",
+            "address": null,
+            "image": null,
+            "technology": "Data Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": true,
+            "availableApis": [
+                "SQL"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "SQL Queries",
+                "Custom Dashboards"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://dune.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/dune",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "dune-mainnet-pro",
+            "provider": "Dune",
+            "chain": "mainnet",
+            "address": null,
+            "image": null,
+            "technology": "Data Indexing",
+            "plan": "Pro",
+            "trial": true,
+            "accessPrice": null,
+            "queryPrice": "Subscription-based",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "SQL"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "SQL Queries",
+                "Custom Dashboards",
+                "Advanced Analytics"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://dune.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/dune",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "dune-mainnet-enterprise",
+            "provider": "Dune",
+            "chain": "mainnet",
+            "address": null,
+            "image": null,
+            "technology": "Data Indexing",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": null,
+            "queryPrice": "Subscription-based",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "SQL"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "SQL Queries",
+                "Custom Dashboards",
+                "Managed Analytics"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                {
+                    "label": "Buy",
+                    "url": "https://dune.com/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/data-indexers/dune",
+                    "type": "external"
+                }
+            ]
+        }
+    ],
+    "oracle": [
+        {
+            "slug": "chainlink-mainnet",
+            "provider": "Chainlink",
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle Network",
+            "accessPrice": "0",
+            "queryPrice": "LINK Fee",
+            "starred": true,
+            "availableApis": [
+                "Price Feed"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds"
+            ],
+            "additionalFeatures": [
+                "Decentralized Data Aggregation",
+                "Multi-chain Support"
+            ],
+            "dataTypes": [
+                "Cryptocurrency Prices",
+                "NFT Floor Prices",
+                "Rates and Volatility"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Chainlink-based security",
+            "sdk": [
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Multiple audits by Chainlink, 2023"
+            ],
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/oracles/chainlink",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "chainlink-testnet",
+            "provider": "Chainlink",
+            "chain": "testnet",
+            "technology": "Decentralized Oracle Network",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feed"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds"
+            ],
+            "additionalFeatures": [
+                "Decentralized Data Aggregation",
+                "Multi-chain Support"
+            ],
+            "dataTypes": [
+                "Cryptocurrency Prices",
+                "NFT Floor Prices",
+                "Rates and Volatility"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Chainlink-based security",
+            "sdk": [
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Multiple audits by Chainlink, 2023"
+            ],
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/oracles/chainlink",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "redstone-mainnet",
+            "provider": "Redstone",
+            "chain": "mainnet",
+            "technology": "Modular Oracle",
+            "accessPrice": "0",
+            "queryPrice": "GHO Fee",
+            "starred": true,
+            "availableApis": [
+                "Price Feed",
+                "Custom Feeds"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds",
+                "Custom Data Monitoring"
+            ],
+            "additionalFeatures": [
+                "Push and Pull Models",
+                "Customizable Data Sources"
+            ],
+            "dataTypes": [
+                "Cryptocurrency Prices",
+                "Custom Feeds"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "On-chain data source security",
+            "sdk": [
+                "Solidity",
+                "JavaScript"
+            ],
+            "auditsPerformed": [
+                "Audit by PeckShield, 2023"
+            ],
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/oracles/redstone",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "redstone-testnet",
+            "provider": "Redstone",
+            "chain": "testnet",
+            "technology": "Modular Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "Custom Feeds"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds",
+                "Custom Data Monitoring"
+            ],
+            "additionalFeatures": [
+                "Push and Pull Models",
+                "Customizable Data Sources"
+            ],
+            "dataTypes": [
+                "Cryptocurrency Prices",
+                "Custom Feeds"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "On-chain data source security",
+            "sdk": [
+                "Solidity",
+                "JavaScript"
+            ],
+            "auditsPerformed": [
+                "Audit by PeckShield, 2023"
+            ],
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/oracles/redstone",
+                    "type": "external"
+                }
+            ]
+        }
+    ],
+    "bridge": [
+        {
+            "slug": "zksync-mainnet",
+            "provider": "ZKsync",
+            "chain": "mainnet",
+            "technology": "ZK Rollup",
+            "openSource": false,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "starred": true,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": [
+                "Blockscout",
+                "Custom Dashboards"
+            ],
+            "additionalFeatures": [
+                "ZK Rollup Security",
+                "Ethereum Security"
+            ],
+            "assetTypes": [
+                "GHO",
+                "ETH",
+                "USDC",
+                "USDT"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Inherits Ethereum security",
+            "auditsPerformed": [
+                "Multiple audits by OpenZeppelin, 2023"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Solidity"
+            ],
+            "actionButtons": [
+                {
+                    "label": "Bridge",
+                    "url": "https://bridge.zksync.io/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/bridging/zksync",
+                    "type": "external"
+                }
+            ],
+            "supportedChains": null
+        },
+        {
+            "slug": "zksync-testnet",
+            "provider": "ZKsync",
+            "chain": "testnet",
+            "technology": "ZK Rollup",
+            "openSource": false,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": [
+                "Blockscout",
+                "Custom Dashboards"
+            ],
+            "additionalFeatures": [
+                "ZK Rollup Security",
+                "Ethereum Sepolia Security"
+            ],
+            "assetTypes": [
+                "GRASS",
+                "ETH",
+                "USDC",
+                "USDT"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Inherits Ethereum Sepolia security",
+            "auditsPerformed": [
+                "Multiple audits by OpenZeppelin, 2023"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Solidity"
+            ],
+            "actionButtons": [
+                {
+                    "label": "Bridge",
+                    "url": "https://bridge.testnet.lens.dev/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/bridging/zksync",
+                    "type": "external"
+                }
+            ],
+            "supportedChains": null
+        },
+        {
+            "slug": "across-mainnet",
+            "provider": "Across",
+            "chain": "mainnet",
+            "technology": "Intent-based Cross-chain Messaging",
+            "openSource": false,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "starred": true,
+            "availableApis": [
+                "Cross-chain Messaging",
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Dashboards"
+            ],
+            "additionalFeatures": [
+                "Intent-based Bridging",
+                "Fast Finality"
+            ],
+            "assetTypes": [
+                "GHO",
+                "ETH",
+                "USDC",
+                "USDT"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Optimistic intent-based security",
+            "auditsPerformed": [
+                "Audit by Trail of Bits, 2022"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "JavaScript"
+            ],
+            "actionButtons": [
+                {
+                    "label": "Bridge",
+                    "url": "https://across.to/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/bridging/across",
+                    "type": "external"
+                }
+            ],
+            "supportedChains": null
+        },
+        {
+            "slug": "across-testnet",
+            "provider": "Across",
+            "chain": "testnet",
+            "technology": "Intent-based Cross-chain Messaging",
+            "openSource": false,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross-chain Messaging",
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Dashboards"
+            ],
+            "additionalFeatures": [
+                "Intent-based Bridging",
+                "Fast Finality"
+            ],
+            "assetTypes": [
+                "GRASS",
+                "ETH",
+                "USDC",
+                "USDT"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Optimistic intent-based security",
+            "auditsPerformed": [
+                "Audit by Trail of Bits, 2022"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "JavaScript"
+            ],
+            "actionButtons": [
+                {
+                    "label": "Bridge",
+                    "url": "https://across.to/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/bridging/across",
+                    "type": "external"
+                }
+            ],
+            "supportedChains": null
+        },
+        {
+            "slug": "lensbridge-mainnet",
+            "provider": "Lens Bridge",
+            "chain": "mainnet",
+            "technology": "Cross-chain Messaging",
+            "openSource": false,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "starred": true,
+            "availableApis": [
+                "Cross-chain Messaging",
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Dashboards"
+            ],
+            "additionalFeatures": [
+                "Lens Protocol Integration",
+                "Fast Bridging"
+            ],
+            "assetTypes": [
+                "GHO",
+                "ETH",
+                "USDC",
+                "USDT",
+                "ERC-20",
+                "ERC-721"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Inherits Lens Network security",
+            "auditsPerformed": [
+                "Audit by Trail of Bits, 2024"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Solidity"
+            ],
+            "actionButtons": [
+                {
+                    "label": "Bridge",
+                    "url": "https://bridge.lens.xyz/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/bridging/lens",
+                    "type": "external"
+                }
+            ],
+            "supportedChains": null
+        },
+        {
+            "slug": "lensbridge-testnet",
+            "provider": "Lens Bridge",
+            "chain": "testnet",
+            "technology": "Cross-chain Messaging",
+            "openSource": false,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross-chain Messaging",
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Dashboards"
+            ],
+            "additionalFeatures": [
+                "Lens Protocol Integration",
+                "Fast Bridging"
+            ],
+            "assetTypes": [
+                "GRASS",
+                "ETH",
+                "USDC",
+                "USDT",
+                "ERC-20",
+                "ERC-721"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Inherits Lens Network security",
+            "auditsPerformed": [
+                "Audit by Trail of Bits, 2024"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Solidity"
+            ],
+            "actionButtons": [
+                {
+                    "label": "Bridge",
+                    "url": "https://bridge.testnet.lens.dev/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/tools/bridging/lens",
+                    "type": "external"
+                }
+            ],
+            "supportedChains": null
+        }
+    ],
+    "explorer": [
+        {
+            "slug": "lens-explorer-mainnet",
+            "provider": "Lens Network",
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "NFT Tracking",
+                "Network Metrics"
+            ],
+            "starred": true,
+            "api": [
+                "REST"
+            ],
+            "sdk": [
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "actionButtons": [
+                {
+                    "label": "Explore",
+                    "url": "https://explorer.lens.xyz/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/overview",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "lens-explorer-testnet",
+            "provider": "Lens Network",
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "NFT Tracking",
+                "Network Metrics"
+            ],
+            "starred": false,
+            "api": [
+                "REST"
+            ],
+            "sdk": [
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "actionButtons": [
+                {
+                    "label": "Explore",
+                    "url": "https://explorer.testnet.lens.xyz/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/overview",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "lenscan-mainnet",
+            "provider": "Lenscan",
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "NFT Tracking",
+                "Network Metrics"
+            ],
+            "starred": true,
+            "api": [
+                "REST"
+            ],
+            "sdk": [
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "actionButtons": [
+                {
+                    "label": "Explore",
+                    "url": "https://lenscan.io/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/overview",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "lenscan-testnet",
+            "provider": "Lenscan",
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "NFT Tracking",
+                "Network Metrics"
+            ],
+            "starred": false,
+            "api": [
+                "REST"
+            ],
+            "sdk": [
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "actionButtons": [
+                {
+                    "label": "Explore",
+                    "url": "https://testnet.lenscan.io/",
+                    "type": "external"
+                },
+                {
+                    "label": "Docs",
+                    "url": "https://lens.xyz/docs/chain/overview",
+                    "type": "external"
+                }
+            ]
+        }
+    ],
+    "faucet": [
+        {
+            "slug": "lenscan-testnet-faucet",
+            "provider": "Lenscan",
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": true,
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Get tokens",
+                    "url": "https://testnet.lenscan.io/",
+                    "type": "external"
+                }
+            ],
+            "requiresMainnetBalance": null,
+            "dripLimitAmount": null,
+            "dripLimitPeriod": null,
+            "additionalNotes": null
+        },
+        {
+            "slug": "alchemy-testnet-faucet",
+            "provider": "Alchemy",
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": true,
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Get tokens",
+                    "url": "https://www.alchemy.com/faucets/lens-sepolia",
+                    "type": "external"
+                }
+            ],
+            "requiresMainnetBalance": null,
+            "dripLimitAmount": null,
+            "dripLimitPeriod": null,
+            "additionalNotes": null
+        },
+        {
+            "slug": "thirdweb-testnet-faucet",
+            "provider": "thirdweb",
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": true,
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Get tokens",
+                    "url": "https://thirdweb.com/faucets",
+                    "type": "external"
+                }
+            ],
+            "requiresMainnetBalance": null,
+            "dripLimitAmount": null,
+            "dripLimitPeriod": null,
+            "additionalNotes": null
+        }
+    ],
+    "wallet": [
+        {
+            "slug": "metamask",
+            "provider": "ConsenSys",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Chrome",
+                "Firefox",
+                "Edge",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "GHO",
+                "GRASS",
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "October 2024 by ConsenSys Diligence"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "RU",
+                "ZH",
+                "JA"
+            ],
+            "starred": true,
+            "actionButtons": [
+                {
+                    "label": "Website",
+                    "url": "https://metamask.io/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "ledger",
+            "provider": "Ledger SAS",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "GHO",
+                "GRASS",
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "Regular audits by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "JA"
+            ],
+            "starred": true,
+            "actionButtons": [
+                {
+                    "label": "Website",
+                    "url": "https://www.ledger.com/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "trustwallet",
+            "provider": "Trust Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Chrome"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "GHO",
+                "GRASS",
+                "ERC-20"
+            ],
+            "staking": false,
+            "price": "0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "ZH",
+                "JA"
+            ],
+            "starred": true,
+            "actionButtons": [
+                {
+                    "label": "Website",
+                    "url": "https://trustwallet.com/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "rabby",
+            "provider": "Rabby",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Chrome",
+                "Brave",
+                "Edge",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "GHO",
+                "GRASS",
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "0",
+            "support": [
+                "email",
+                "discord",
+                "telegram"
+            ],
+            "audit": [
+                "Regular audits by third parties"
+            ],
+            "languages": [
+                "EN",
+                "ZH",
+                "JA"
+            ],
+            "starred": true,
+            "actionButtons": [
+                {
+                    "label": "Website",
+                    "url": "https://rabby.io/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "phantom",
+            "provider": "Phantom",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Chrome",
+                "Firefox",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "GHO",
+                "GRASS",
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": false,
+            "price": "0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [],
+            "languages": [
+                "EN",
+                "ES",
+                "FR"
+            ],
+            "starred": true,
+            "actionButtons": [
+                {
+                    "label": "Website",
+                    "url": "https://phantom.app/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "zerion",
+            "provider": "Zerion",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Chrome"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "GHO",
+                "GRASS",
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": false,
+            "price": "0",
+            "support": [
+                "email",
+                "discord"
+            ],
+            "audit": [],
+            "languages": [
+                "EN",
+                "ES",
+                "FR"
+            ],
+            "starred": true,
+            "actionButtons": [
+                {
+                    "label": "Website",
+                    "url": "https://zerion.io/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "dcent",
+            "provider": "D’CENT",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Hardware"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "GHO",
+                "GRASS",
+                "ERC-20"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email",
+                "telegram"
+            ],
+            "audit": [],
+            "languages": [
+                "EN",
+                "ZH",
+                "JA"
+            ],
+            "starred": true,
+            "actionButtons": [
+                {
+                    "label": "Website",
+                    "url": "https://dcentwallet.com/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "bifrost",
+            "provider": "Bifrost",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "GHO",
+                "GRASS",
+                "ERC-20"
+            ],
+            "staking": false,
+            "price": "0",
+            "support": [
+                "email",
+                "discord"
+            ],
+            "audit": [],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Website",
+                    "url": "https://bifrostwallet.com/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "solidifi",
+            "provider": "SolidiFi",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "GHO",
+                "GRASS",
+                "ERC-20"
+            ],
+            "staking": false,
+            "price": "0",
+            "support": [
+                "email",
+                "discord"
+            ],
+            "audit": [],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Website",
+                    "url": "https://solidifi.app/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "oxenflow",
+            "provider": "Oxenflow",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "GHO",
+                "GRASS",
+                "ERC-20"
+            ],
+            "staking": false,
+            "price": "0",
+            "support": [
+                "email",
+                "discord"
+            ],
+            "audit": [],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Website",
+                    "url": "https://oxenflow.com/",
+                    "type": "external"
+                }
+            ]
+        }
+    ],
+    "devTool": [
+        {
+            "slug": "zksync-elastic",
+            "tag": [],
+            "description": "Trustless asset transfers and fast cross-chain interactions between ZKsync chains",
+            "toolName": "ZKsync Elastic Chain",
+            "toolType": "SDK",
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://docs.zksync.io/build/sdk/js/elastic-chain",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "halliday",
+            "tag": [],
+            "description": "Fiat-to-crypto onramp via credit cards, Apple Pay and Google Pay for GHO/GRASS",
+            "toolName": "Halliday",
+            "toolType": "SDK",
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://docs.halliday.xyz/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "thirdweb-pay",
+            "tag": [],
+            "description": "Fiat and cross-chain crypto payments with gas fee abstraction",
+            "toolName": "thirdweb Pay",
+            "toolType": "SDK",
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://portal.thirdweb.com/pay",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "bigquery",
+            "tag": [],
+            "description": "Google Cloud BigQuery for analyzing on-chain data with SQL queries",
+            "toolName": "BigQuery",
+            "toolType": "Data Analytics",
+            "price": "Subscription-based",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://cloud.google.com/bigquery/docs",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "safe-aa",
+            "tag": [],
+            "description": "Smart accounts with multi-signature logic for improved UX",
+            "toolName": "Safe",
+            "toolType": "SDK",
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://docs.safe.global/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "thirdweb-aa",
+            "tag": [],
+            "description": "Comprehensive solution for smart accounts with paymaster and sponsored transactions",
+            "toolName": "thirdweb Account Abstraction",
+            "toolType": "SDK",
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://portal.thirdweb.com/account-abstraction",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "zksync-aa",
+            "tag": [],
+            "description": "Native smart accounts with paymasters for sponsored transactions",
+            "toolName": "ZKsync Account Abstraction",
+            "toolType": "SDK",
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://docs.zksync.io/build/sdk/js/account-abstraction",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "tenderly",
+            "tag": [],
+            "description": "Platform for developing, debugging, simulating and monitoring smart contracts",
+            "toolName": "Tenderly",
+            "toolType": "SDK",
+            "price": "Subscription-based",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://docs.tenderly.co/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "thirdweb",
+            "tag": [],
+            "description": "SDK and CLI for creating, deploying and managing smart contracts with minimal configuration",
+            "toolName": "Thirdweb",
+            "toolType": "SDK",
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://portal.thirdweb.com/",
+                    "type": "external"
+                }
+            ]
+        },
+        {
+            "slug": "chainlink-ccip",
+            "tag": [],
+            "description": "Blockchain interoperability protocol for transferring tokens and messages across chains",
+            "toolName": "Chainlink CCIP",
+            "toolType": "SDK",
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                {
+                    "label": "Docs",
+                    "url": "https://docs.chain.link/ccip",
+                    "type": "external"
+                }
+            ]
+        }
+    ]
+}
