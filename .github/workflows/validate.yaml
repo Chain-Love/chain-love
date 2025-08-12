@@ -4,23 +4,49 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-json-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  validate:
+  generate-and-validate:
+    name: Generate JSON and validate (isolated)
     runs-on: ubuntu-latest
+    timeout-minutes: 2
+    container:
+      image: python:3.11-slim
+      options: --network=none --memory=2g --cpus=1
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          fetch-depth: 1
+          persist-credentials: false
       
-      - name: Install dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
-
-      - name: Run CSV to JSON
+      - name: Checkout json-tools branch with scripts
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: json-tools
+          path: tools
+      
+      - name: Copy scripts and schema to workspace
+        run: |
+          cp tools/csv_to_json.py .
+          cp tools/validate.py .
+          cp tools/schema.json .
+          ls -l
+      
+      - name: Install dependencies from wheels folder
+        run: |
+          pip install --no-index --find-links=tools/wheels -r tools/requirements.txt
+      
+      - name: Run CSV to JSON scripts
         run: python3 csv_to_json.py
-
+      
       - name: Run validation script
-        run: python validate.py
+        run: python3 validate.py
