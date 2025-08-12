@@ -2,7 +2,6 @@ import os
 import json
 from jsonschema import Draft7Validator
 from jsonpointer import resolve_pointer
-from collections import deque
 
 def path_to_json_pointer(path_deque):
     """Convert error.absolute_path (deque) to a JSON Pointer string"""
