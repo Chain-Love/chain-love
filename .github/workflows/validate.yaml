@@ -44,7 +44,7 @@ jobs:
             --network=none \
             -v ${{ github.workspace }}:/workspace \
             -w /workspace \
-            python:3.11-slim \
+            python:3.10-slim \
             /bin/bash -c "
               pip install --no-index --find-links=json-tools/tools/wheels -r json-tools/tools/requirements.txt && \
               python3 csv_to_json.py && \
