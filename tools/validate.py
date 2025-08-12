@@ -12,6 +12,7 @@ def path_to_json_pointer(path_deque):
     return "#" + "".join("/" + str(p) for p in parts)
 
 def main():
+    had_errors = False
     schema = None
     with open("schema.json", "r") as f:
         schema = json.load(f)
@@ -23,6 +24,7 @@ def main():
             data = json.load(f)
         errors = sorted(validator.iter_errors(data), key=lambda e: list(e.absolute_path))
         for err in errors:
+            had_errors = True
             pointer = path_to_json_pointer(err.absolute_path)
             try:
                 value = resolve_pointer(data, "/" + "/".join(map(str, err.absolute_path)))
@@ -34,5 +36,9 @@ def main():
             print("Offending value:", json.dumps(value, ensure_ascii=False))
             print("Schema path   :", "/".join(map(str, err.absolute_schema_path)))
             print("---")
+
+    if had_errors:
+        exit(1)
+
 if __name__ == "__main__":
     main()
