@@ -22,6 +22,7 @@ jobs:
         with:
           ref: ${{ env.SOURCE_BRANCH }}
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Checkout json-tools branch into tools folder
         uses: actions/checkout@v4
@@ -29,6 +30,7 @@ jobs:
           repository: ${{ github.repository }}
           ref: json-tools
           path: json-tools
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Copy csv_to_json.py script from tools folder
         run: cp json-tools/tools/csv_to_json.py .
