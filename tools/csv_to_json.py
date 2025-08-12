@@ -85,7 +85,8 @@ def override(item: dict, providers: list[dict]):
         if key in skipped_keys:
             continue
         
-        if key in always_copy_keys or item[key].strip() == "":
+        v = item.get(key)
+        if key in always_copy_keys or (v is None or v.strip() == ""):
             if key not in provider:
                 continue
             item[key] = provider[key]
