@@ -31,9 +31,6 @@ jobs:
           ref: json-tools
           path: json-tools
       
-      - name: List files in tools folder (debug)
-        run: ls -la tools
-      
       - name: Copy scripts and schema to workspace
         run: |
           cp json-tools/tools/csv_to_json.py .
