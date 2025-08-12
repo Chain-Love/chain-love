@@ -20,6 +20,16 @@ jobs:
           ref: ${{ env.SOURCE_BRANCH }}
           fetch-depth: 0
       
+      - name: Checkout json-tools branch into tools folder
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: json-tools
+          path: json-tools
+      
+      - name: Copy csv_to_json.py script from tools folder
+        run: cp json-tools/tools/csv_to_json.py .
+
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
