@@ -16,9 +16,6 @@ jobs:
     name: Generate JSON and validate (isolated)
     runs-on: ubuntu-latest
     timeout-minutes: 2
-    container:
-      image: python:3.11-slim
-      options: --network=none --memory=2g --cpus=1
 
     steps:
       - name: Checkout code
@@ -41,12 +38,15 @@ jobs:
           cp tools/schema.json .
           ls -l
       
-      - name: Install dependencies from wheels folder
+      - name: Run scripts inside network-disabled container
         run: |
-          pip install --no-index --find-links=tools/wheels -r tools/requirements.txt
-      
-      - name: Run CSV to JSON scripts
-        run: python3 csv_to_json.py
-      
-      - name: Run validation script
-        run: python3 validate.py
+          docker run --rm \
+            --network=none \
+            -v ${{ github.workspace }}:/workspace \
+            -w /workspace \
+            python:3.11-slim \
+            /bin/bash -c "
+              pip install --no-index --find-links=tools/wheels -r tools/requirements.txt && \
+              python3 csv_to_json.py && \
+              python3 validate.py
+            "
