@@ -29,16 +29,16 @@ jobs:
         with:
           repository: ${{ github.repository }}
           ref: json-tools
-          path: tools
+          path: json-tools
       
       - name: List files in tools folder (debug)
         run: ls -la tools
       
       - name: Copy scripts and schema to workspace
         run: |
-          cp tools/csv_to_json.py .
-          cp tools/validate.py .
-          cp tools/schema.json .
+          cp json-tools/tools/csv_to_json.py .
+          cp json-tools/tools/validate.py .
+          cp json-tools/tools/schema.json .
           ls -l
       
       - name: Run scripts inside network-disabled container
@@ -49,7 +49,7 @@ jobs:
             -w /workspace \
             python:3.11-slim \
             /bin/bash -c "
-              pip install --no-index --find-links=tools/wheels -r tools/requirements.txt && \
+              pip install --no-index --find-links=json-tools/tools/wheels -r json-tools/tools/requirements.txt && \
               python3 csv_to_json.py && \
               python3 validate.py
             "
