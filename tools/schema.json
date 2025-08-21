@@ -37,6 +37,7 @@
         "plan": { "type": "string" },
         "nodeType": { "type": "string" },
         "chain": { "type": "string" },
+        "address": { "type": ["string", "null"] },
         "accessPrice": { "type": ["string", "null"] },
         "queryPrice": { "type": ["string", "null"] },
         "uptimeSla": { "type": ["string", "null"] },
@@ -62,7 +63,7 @@
         },
         "regions": { "type": ["array", "null"], "items": { "type": "string" } },
         "verifiedUptime": { "type": ["string", "null"] },
-        "averageLatency": { "type": ["string", "null"] },
+        "verifiedLatency": { "type": ["string", "null"] },
         "verifiedBlocksBehindAvg": { "type": ["string", "null"] },
         "actionButtons": {
           "type": ["array", "null"],
@@ -75,6 +76,7 @@
         "plan",
         "nodeType",
         "chain",
+        "address",
         "accessPrice",
         "queryPrice",
         "uptimeSla",
@@ -88,7 +90,7 @@
         "monitoringAndAnalytics",
         "regions",
         "verifiedUptime",
-        "averageLatency",
+        "verifiedLatency",
         "verifiedBlocksBehindAvg",
         "actionButtons"
       ]
@@ -102,7 +104,6 @@
         "provider": { "type": "string" },
         "chain": { "type": "string" },
         "address": { "type": ["string", "null"] },
-        "image": { "type": ["string", "null"] },
         "technology": { "type": "string" },
         "plan": { "type": "string" },
         "trial": { "type": "boolean" },
@@ -147,7 +148,6 @@
         "provider",
         "chain",
         "address",
-        "image",
         "technology",
         "plan",
         "trial",
@@ -188,7 +188,10 @@
           "items": { "type": "string" }
         },
         "starred": { "type": "boolean" },
-        "api": { "type": ["array", "null"], "items": { "type": "string" } },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
         "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
         "searchCapabilities": {
           "type": ["array", "null"],
@@ -210,7 +213,7 @@
         "monitoringAndAnalytics",
         "additionalFeatures",
         "starred",
-        "api",
+        "availableApis",
         "sdk",
         "searchCapabilities",
         "smartContractsVerifications",
@@ -427,13 +430,16 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "perChain": { "type": "string" },
+        "chain": { "type": "string" },
         "dataSources": {
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
         "hasDashboard": { "type": "boolean" },
-        "supportsAPI": { "type": "boolean" },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
         "price": { "type": ["string", "null"] },
         "starred": { "type": "boolean" },
         "actionButtons": {
@@ -444,10 +450,10 @@
       "required": [
         "slug",
         "provider",
-        "perChain",
+        "chain",
         "dataSources",
         "hasDashboard",
-        "supportsAPI",
+        "availableApis",
         "price",
         "starred",
         "actionButtons"
