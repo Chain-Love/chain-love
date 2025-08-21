@@ -1,4 +1,4 @@
 slug,provider,chain,requiresLogin,hasCaptcha,requiresMainnetBalance,price,dripLimitAmount,dripLimitPeriod,additionalNotes,starred,actionButtons
-quicknode-sepolia-faucet,QuickNode,sepolia,TRUE,FALSE,null,FREE,0.05 ETH,12h,"[""Get 2x with tweet"", ""4x with paid QuickNode plan""]",TRUE,"[{""label"": ""Get ETH"", ""url"": ""https://faucet.quicknode.com/arbitrum/sepolia"", ""type"": ""external""}]"
-alchemy-sepolia-faucet,Alchemy,sepolia,FALSE,TRUE,0.01 ETH,FREE,0.05 ETH,72h,[],TRUE,"[{""label"": ""Get ETH"", ""url"": ""https://www.alchemy.com/faucets/arbitrum-sepolia"", ""type"": ""external""}]"
-chainlink-sepolia-faucet,Chainlink,sepolia,TRUE,FALSE,1 LINK,FREE,0.5 ETH,null,"[""One request for native tokens at time"", ""Also provides LINK""]",FALSE,"[{""label"": ""Get ETH"", ""url"": ""https://faucets.chain.link/arbitrum-sepolia"", ""type"": ""external""}]"
+quicknode-sepolia-faucet,!provider:quicknode-faucet,sepolia,,,,,,,,TRUE,"[{""label"": ""Get ETH"", ""url"": ""https://faucet.quicknode.com/arbitrum/sepolia"", ""type"": ""external""}]"
+alchemy-sepolia-faucet,!provider:alchemy-faucet,sepolia,,,,,,,,TRUE,"[{""label"": ""Get ETH"", ""url"": ""https://www.alchemy.com/faucets/arbitrum-sepolia"", ""type"": ""external""}]"
+chainlink-sepolia-faucet,!provider:chainlink-faucet,sepolia,,,,,,,,FALSE,"[{""label"": ""Get ETH"", ""url"": ""https://faucets.chain.link/arbitrum-sepolia"", ""type"": ""external""}]"
