@@ -1,4 +1,5 @@
 import os
+import re
 import json
 from jsonschema import Draft7Validator
 from jsonpointer import resolve_pointer
@@ -29,6 +30,63 @@ def rule_slug_unique(data):
             seen.add(slug)
     return errors
 
+def rule_action_buttons_is_list_of_links(data):
+    errors = []
+    for idx, item in enumerate(data):
+        action_buttons = item.get("actionButtons")
+        if action_buttons is not None and type(action_buttons) != list:
+            errors.append(f"Item {idx}: action_buttons must be a list")
+            continue
+        for item_idx, button in enumerate(action_buttons):
+            if not is_markdown_link(button):
+                errors.append(f"Item {idx}: action_button[{item_idx}] must be a markdown link")
+    return errors
+
+def rule_no_unclosed_markdown(data):
+    errors = []
+    for idx, item in enumerate(data):
+        for key, value in item.items():
+            if has_unclosed_markdown(value):
+                errors.append(f"Item {idx}: Markdown unclosed in field '{key}'")
+    return errors
+
+def has_unclosed_markdown(s: str) -> bool:
+    if type(s) != str:
+        return False
+
+    if len(s) == 0:
+        return False
+    
+    # Pairs that must be closed: **, *, _, `, [ ]( )
+    # Check bold/italic/code
+    if s.count("**") % 2 != 0:
+        return True
+    if s.count("*") % 2 != 0 and s.count("**") == 0:  # single * for italic
+        return True
+    if s.count("_") % 2 != 0:
+        return True
+    if s.count("`") % 2 != 0:
+        return True
+    
+    # Check link brackets [text](url)
+    # Must have same count of [ and ] and ( and )
+    if s.count("[") != s.count("]"):
+        return True
+    if s.count("(") != s.count(")"):
+        return True
+    
+    return False
+
+def is_markdown_link(s: str) -> bool:
+    if type(s) != str:
+        return False
+    
+    if len(s) == 0:
+        return False
+    
+    pattern = r"(?:\[(?P<text>.*?)\])\((?P<link>.*?)\)"
+    return re.match(pattern, s) is not None
+
 def path_to_json_pointer(path_deque):
     """Convert error.absolute_path (deque) to a JSON Pointer string"""
     parts = list(path_deque)
@@ -46,6 +104,8 @@ def main():
 
     rules = Validator()
     rules.add_rule(rule_slug_unique)
+    rules.add_rule(rule_no_unclosed_markdown)
+    rules.add_rule(rule_action_buttons_is_list_of_links)
 
     validator = Draft7Validator(schema)
     for network_spec in os.listdir("json"):
