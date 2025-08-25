@@ -16,18 +16,6 @@
     "wallet": { "type": "array", "items": { "$ref": "#/$defs/wallet" } }
   },
   "$defs": {
-    "actionButton": {
-      "title": "ActionButtonType",
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "label": { "type": "string" },
-        "url": { "type": "string", "format": "uri" },
-        "type": { "enum": ["internal", "external"] }
-      },
-      "required": ["label", "url", "type"]
-    },
-
     "rpc": {
       "type": "object",
       "additionalProperties": false,
@@ -67,7 +55,7 @@
         "verifiedBlocksBehindAvg": { "type": ["string", "null"] },
         "actionButtons": {
           "type": ["array", "null"],
-          "items": { "$ref": "#/$defs/actionButton" }
+          "items": { "type": "string" }
         }
       },
       "required": [
@@ -140,7 +128,7 @@
         "verifiedBlocksBehindAvg": { "type": ["string", "null"] },
         "actionButtons": {
           "type": ["array", "null"],
-          "items": { "$ref": "#/$defs/actionButton" }
+          "items": { "type": "string" }
         }
       },
       "required": [
@@ -202,7 +190,7 @@
         "pricing": { "type": ["string", "null"] },
         "actionButtons": {
           "type": ["array", "null"],
-          "items": { "$ref": "#/$defs/actionButton" }
+          "items": { "type": "string" }
         }
       },
       "required": [
@@ -260,7 +248,7 @@
         },
         "actionButtons": {
           "type": ["array", "null"],
-          "items": { "$ref": "#/$defs/actionButton" }
+          "items": { "type": "string" }
         }
       },
       "required": [
@@ -328,7 +316,7 @@
         "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
         "actionButtons": {
           "type": ["array", "null"],
-          "items": { "$ref": "#/$defs/actionButton" }
+          "items": { "type": "string" }
         }
       },
       "required": [
@@ -370,7 +358,7 @@
         "starred": { "type": "boolean" },
         "actionButtons": {
           "type": ["array", "null"],
-          "items": { "$ref": "#/$defs/actionButton" }
+          "items": { "type": "string" }
         }
       },
       "required": [
@@ -405,7 +393,7 @@
         "starred": { "type": "boolean" },
         "actionButtons": {
           "type": ["array", "null"],
-          "items": { "$ref": "#/$defs/actionButton" }
+          "items": { "type": "string" }
         }
       },
       "required": [
@@ -444,7 +432,7 @@
         "starred": { "type": "boolean" },
         "actionButtons": {
           "type": ["array", "null"],
-          "items": { "$ref": "#/$defs/actionButton" }
+          "items": { "type": "string" }
         }
       },
       "required": [
@@ -494,7 +482,7 @@
         "starred": { "type": "boolean" },
         "actionButtons": {
           "type": ["array", "null"],
-          "items": { "$ref": "#/$defs/actionButton" }
+          "items": { "type": "string" }
         }
       },
       "required": [
