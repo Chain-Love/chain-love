@@ -11,7 +11,7 @@
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "eth",
@@ -423,7 +423,7 @@
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "eth",
@@ -653,7 +653,7 @@
         {
             "slug": "thirdweb-linea-pay-as-you-go",
             "provider": "ThirdWeb",
-            "plan": "Pay-as-you-go",
+            "plan": "Pay-As-You-Go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$5/$99",
@@ -822,6 +822,386 @@
                 "[Send request](https://rpc.sepolia.linea.build)"
             ],
             "address": null
+        },
+        {
+            "slug": "infura-linea-free-archive-mainnet",
+            "provider": "Infura",
+            "plan": "Free",
+            "nodeType": "Full Archive",
+            "chain": "mainnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "3M credits/day with throughput 500 credits/sec"
+            ],
+            "securityImprovements": [
+                "Enterprise-grade security"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Credit-based monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Docs](https://docs.metamask.io/services/reference/linea/)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "infura-linea-pay-as-you-go-archive-mainnet",
+            "provider": "Infura",
+            "plan": "Pay-As-You-Go",
+            "nodeType": "Full Archive",
+            "chain": "mainnet",
+            "accessPrice": "$50/$225",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "15M credits/day with throughput 4k credits/sec",
+                "75M credits/day with throughput 40k credits/sec "
+            ],
+            "securityImprovements": [
+                "Enterprise-grade security"
+            ],
+            "monitoringAndAnalytics": [
+                "Detailed usage analytics",
+                "Flex billing"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.infura.io/pricing)",
+                "[Docs](https://docs.metamask.io/services/reference/linea/)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "infura-linea-enterprise-archive-mainnet",
+            "provider": "Infura",
+            "plan": "Enterprise",
+            "nodeType": "Full Archive",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "uptimeSla": "Custom",
+            "bandwidthSla": "Custom",
+            "blocksBehindSla": "Custom",
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": [
+                "Advanced security, support SLA"
+            ],
+            "monitoringAndAnalytics": [
+                "Advanced analytics",
+                "Custom dashboards",
+                "Crypto payments"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.infura.io/pricing)",
+                "[Docs](https://docs.metamask.io/services/reference/linea/)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "infura-linea-free-archive-sepolia",
+            "provider": "Infura",
+            "plan": "Free",
+            "nodeType": "Full Archive",
+            "chain": "sepolia",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "3M credits/day with throughput 500 credits/sec"
+            ],
+            "securityImprovements": [
+                "Enterprise-grade security"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Credit-based monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.infura.io/pricing)",
+                "[Docs](https://docs.metamask.io/services/reference/linea/)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "infura-linea-pay-as-you-go-archive-sepolia",
+            "provider": "Infura",
+            "plan": "Pay-As-You-Go",
+            "nodeType": "Full Archive",
+            "chain": "sepolia",
+            "accessPrice": "$50/$225",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "15M credits/day with throughput 4k credits/sec",
+                "75M credits/day with throughput 40k credits/sec "
+            ],
+            "securityImprovements": [
+                "Enterprise-grade security"
+            ],
+            "monitoringAndAnalytics": [
+                "Detailed usage analytics",
+                "Flex billing"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.infura.io/pricing)",
+                "[Docs](https://docs.metamask.io/services/reference/linea/)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "infura-linea-enterprise-archive-sepolia",
+            "provider": "Infura",
+            "plan": "Enterprise",
+            "nodeType": "Full Archive",
+            "chain": "sepolia",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "uptimeSla": "Custom",
+            "bandwidthSla": "Custom",
+            "blocksBehindSla": "Custom",
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": [
+                "Advanced security, support SLA"
+            ],
+            "monitoringAndAnalytics": [
+                "Advanced analytics",
+                "Custom dashboards",
+                "Crypto payments"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.infura.io/pricing)",
+                "[Docs](https://docs.metamask.io/services/reference/linea/)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "chainstack-linea-free",
+            "provider": "Chainstack",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "$0",
+            "queryPrice": "included 3M req, extra $20 per 1M req",
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "1500 req/min"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Basic monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/)",
+                "[Docs](https://docs.chainstack.com/docs/)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "chainstack-linea-pay-as-you-go-archive",
+            "provider": "Chainstack",
+            "plan": "Pay-As-You-Go",
+            "nodeType": "Full Archive",
+            "chain": "mainnet",
+            "accessPrice": "$49 / 199 / 349",
+            "queryPrice": "included 20 / 80 / 140M req, extra $15 / 12.5 / 10 per 1M req",
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "15k / 24k / 36k req/min"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/)",
+                "[Docs](https://docs.chainstack.com/docs/)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "chainstack-linea-enterprise-archive",
+            "provider": "Chainstack",
+            "plan": "Enterprise",
+            "nodeType": "Full Archive",
+            "chain": "mainnet",
+            "accessPrice": "€990",
+            "queryPrice": "included 400M req, extra $5 per 1M req",
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "unlimited"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Advanced analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/)",
+                "[Docs](https://docs.chainstack.com/docs/)"
+            ],
+            "address": null
         }
     ],
     "indexing": [
@@ -958,45 +1338,6 @@
                 "[Buy](https://app.goldsky.com/)",
                 "[Docs](https://docs.goldsky.com/chains/flare#indexing-flare-with-goldsky)"
             ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
-        },
-        {
-            "slug": "thegraph-linea-mainnet",
-            "provider": "The Graph",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Subgraphs, Substreams",
-            "plan": "Free",
-            "trial": true,
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "starred": true,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "Limits per subgraph query and deployments"
-            ],
-            "securityImprovements": [
-                "Decentralized infra"
-            ],
-            "monitoringAndAnalytics": [
-                "Subgraph logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Hosted indexing, real-time updates"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [],
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2985,6 +3326,118 @@
             "actionButtons": [
                 "[Explore](https://explorer.sepolia.linea.build/)",
                 "[Docs](https://explorer.sepolia.linea.build/api-docs)"
+            ]
+        },
+        {
+            "slug": "arkham-mainnet",
+            "provider": "Arkham",
+            "chain": "mainnet",
+            "technology": "Custom (Analytics/Intel)",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Tokens"
+            ],
+            "additionalFeatures": [
+                "Entity Labeling",
+                "Relationship Graphs",
+                "De-anonymization",
+                "Portfolio Tracking"
+            ],
+            "starred": true,
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": [
+                "Python",
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Entity",
+                "Transaction Hash",
+                "Token"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "partially paid",
+            "actionButtons": [
+                "[Explore](https://intel.arkm.com/)",
+                "[Docs](https://codex.arkm.com/)"
+            ]
+        },
+        {
+            "slug": "0xppl-linea",
+            "provider": "0xPPL",
+            "chain": "mainnet",
+            "technology": "Custom (Explorer+Indexer)",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "Leaderboards",
+                "Community Stats"
+            ],
+            "starred": false,
+            "availableApis": null,
+            "sdk": [
+                "JavaScript",
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": false,
+            "pricing": "Free",
+            "actionButtons": [
+                "[Explore](https://0xppl.com/Linea/overview)"
+            ]
+        },
+        {
+            "slug": "forhumans-linea",
+            "provider": "ForHumans",
+            "chain": "mainnet",
+            "technology": "Blockscout (UI Customized)",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Contracts",
+                "Gas"
+            ],
+            "additionalFeatures": [
+                "Human-readable Names",
+                "Simplified UI",
+                "Network Metrics"
+            ],
+            "starred": false,
+            "availableApis": null,
+            "sdk": [
+                "TypeScript",
+                "Node.js"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token",
+                "ENS-like Search"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "actionButtons": [
+                "[Explore](https://linea.forhumans.app/)"
             ]
         }
     ],
