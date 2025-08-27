@@ -21,8 +21,8 @@ Each **network folder** contains CSVs grouped by service type.
 ## How to Contribute
 
 1. **Fork & branch**: Fork the repo and create a descriptive branch (e.g. `add-ankr-provider`).
-2. **Choose what to edit**: Pick the right CSV (e.g. `rpc.csv` in the correct network) and add/update your entry.
-3. **Follow the rules**: Check the [Style Guide](https://github.com/Chain-Love/chain-love/wiki/Style-Guide) and [Column Definitions](https://github.com/Chain-Love/chain-love/wiki) for formatting and examples.
+2. **Choose what to edit**: Pick the right CSV (e.g. `rpc.csv` in the correct network).
+3. **Follow the rules**: Check the [Style Guide](https://github.com/Chain-Love/chain-love/wiki/Style-Guide) and [Column Definitions](https://github.com/Chain-Love/chain-love/wiki) for formatting and examples, then edit your entry.
 4. **Validate & commit**: Make sure the CSV is correct, then commit and push.
 5. **Open a PR**: Describe your changes, link related issues. Maintainers will review and merge.
 
