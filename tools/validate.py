@@ -34,7 +34,9 @@ def rule_action_buttons_is_list_of_links(data):
     errors = []
     for idx, item in enumerate(data):
         action_buttons = item.get("actionButtons")
-        if action_buttons is not None and type(action_buttons) != list:
+        if action_buttons is None:
+            continue
+        if type(action_buttons) != list:
             errors.append(f"Item {idx}: action_buttons must be a list")
             continue
         for item_idx, button in enumerate(action_buttons):
