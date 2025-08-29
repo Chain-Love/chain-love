@@ -120,19 +120,105 @@
                 "[Docs](https://docs.ankr.com/)"
             ],
             "address": null
+        },
+        {
+            "slug": "chain-love-shannon-free",
+            "provider": "Chain.Love",
+            "plan": "Free",
+            "nodeType": "Full Archive",
+            "chain": "testnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "100k requests per month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting"
+            ],
+            "monitoringAndAnalytics": [
+                "per-method analytics",
+                "requests amount monitoring API"
+            ],
+            "regions": [
+                "US"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://somnia.chain.love/rpc)",
+                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/somnia/)"
+            ],
+            "address": null
         }
     ],
     "indexing": [
         {
-            "slug": "protofire-testnet",
-            "provider": "Protofire",
+            "slug": "chain-love-testnet",
+            "provider": "Chain.Love (aka Glif Nodes)",
+            "chain": "testnet",
+            "address": "0x0fd8fd1dc8162148cb9413062fe6c6b144335dbf",
+            "technology": "The Graph",
+            "plan": "FREE",
+            "trial": false,
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting"
+            ],
+            "monitoringAndAnalytics": [
+                "Subgraph logs",
+                "Usage logs"
+            ],
+            "regions": [
+                "Japan"
+            ],
+            "additionalFeatures": [],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Deploy](https://somnia.chain.love/graph)",
+                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/)"
+            ]
+        },
+        {
+            "slug": "ormi-testnet",
+            "provider": "Ormi",
             "chain": "testnet",
             "address": null,
-            "technology": "Subgraph Indexing",
+            "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "0",
+            "queryPrice": "0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -144,28 +230,18 @@
             "limitations": [
                 "Rate limits apply"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Subgraph logs",
-                "Usage analytics"
-            ],
+            "securityImprovements": [],
+            "monitoringAndAnalytics": [],
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": [
-                "Mirror",
-                "Email support",
-                "Custom indexing"
-            ],
+            "additionalFeatures": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://somnia.chain.love/graph)",
-                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/)"
+                "[Buy](https://subgraph.somnia.network/)",
+                "[Get help](mailto:hello@ormi.xyz)"
             ]
         }
     ],
