@@ -1,31 +1,154 @@
 {
     "rpc": [
         {
-            "slug": "chain-love-mainnet-growth",
-            "provider": "Chain.Love (aka Glif Nodes)",
-            "plan": "Growth",
+            "slug": "ankr-mainnet-enterprise",
+            "provider": "Ankr",
+            "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "1$ per 1M CU",
+            "accessPrice": "$1000 included into query fees",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush",
+                "Advanced Ankr API"
+            ],
+            "limitations": [
+                "1500 requests per second"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Error tracing"
+            ],
+            "monitoringAndAnalytics": [
+                "per-ip analytics",
+                "per-country analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.ankr.com/rpc/home/)",
+                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "ankr-mainnet-free",
+            "provider": "Ankr",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 per 1M requests",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "1 key only"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
+            ],
+            "monitoringAndAnalytics": null,
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.ankr.com/rpc/home/)",
+                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "ankr-mainnet-pay-as-you-go",
+            "provider": "Ankr",
+            "plan": "Pay-as-you-go",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "$10 included into query fees",
+            "queryPrice": "$20 per 1M requests",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush",
+                "Advanced Ankr API"
+            ],
+            "limitations": [
+                "1500 requests per second"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Error tracing"
+            ],
+            "monitoringAndAnalytics": [
+                "per-method analytics",
+                "latency",
+                "CU analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.ankr.com/rpc/home/)",
+                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "chain-love-calibnet-free",
+            "provider": "Chain.Love",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "calibnet",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": true,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "All read methods + MPoolPush"
             ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting"
+            "limitations": [
+                "100 requests per minute"
             ],
-            "monitoringAndAnalytics": [
-                "per-method analytics"
-            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
             "regions": [
                 "Asia"
             ],
@@ -33,24 +156,24 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](/rpc)",
+                "[Send requests](https://calibration.filecoin.chain.love/rpc/v0)",
                 "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/filecoin)"
             ],
             "address": null
         },
         {
-            "slug": "chain-love-calibnet-growth",
-            "provider": "Chain.Love (aka Glif Nodes)",
-            "plan": "Growth",
+            "slug": "chain-love-calibnet-pay-as-you-go",
+            "provider": "Chain.Love",
+            "plan": "Pay-As-You-Go",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "0",
+            "accessPrice": "$0",
             "queryPrice": "0.5$ per 1M CU",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": false,
-            "trial": true,
+            "starred": true,
+            "trial": false,
             "availableApis": [
                 "All read methods + MPoolPush"
             ],
@@ -77,93 +200,17 @@
             "address": null
         },
         {
-            "slug": "chain-love-fevm-archive-mainnet",
-            "provider": "Chain.Love (aka Glif Nodes)",
-            "plan": "Growth",
+            "slug": "chain-love-dedicated-fevm-archive-mainnet",
+            "provider": "Chain.Love",
+            "plan": "Dedicated",
             "nodeType": "FEVM Archive",
             "chain": "mainnet",
-            "accessPrice": "300",
-            "queryPrice": "1.5$ per 1M CU",
+            "accessPrice": "$3500",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting"
-            ],
-            "monitoringAndAnalytics": [
-                "per-method analytics"
-            ],
-            "regions": [
-                "Asia"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](/rpc)",
-                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/filecoin)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chain-love-full-archive-mainnet",
-            "provider": "Chain.Love (aka Glif Nodes)",
-            "plan": "Growth",
-            "nodeType": "Full Archive",
-            "chain": "mainnet",
-            "accessPrice": "500",
-            "queryPrice": "3$ per 1M CU",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting"
-            ],
-            "monitoringAndAnalytics": [
-                "per-method analytics"
-            ],
-            "regions": [
-                "Asia"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](/rpc)",
-                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/filecoin)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chain-love-dedicated-recent-state-calibnet",
-            "provider": "Chain.Love (aka Glif Nodes)",
-            "plan": "Dedicated",
-            "nodeType": "Recent-State",
-            "chain": "calibnet",
-            "accessPrice": "600",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
+            "starred": true,
             "trial": false,
             "availableApis": [
                 "All methods"
@@ -194,96 +241,16 @@
         },
         {
             "slug": "chain-love-dedicated-full-archive-calibnet",
-            "provider": "Chain.Love (aka Glif Nodes)",
+            "provider": "Chain.Love",
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "calibnet",
-            "accessPrice": "800",
-            "queryPrice": "0",
+            "accessPrice": "$800",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All methods"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting"
-            ],
-            "monitoringAndAnalytics": [
-                "per-method analytics"
-            ],
-            "regions": [
-                "Asia",
-                "Europe",
-                "US"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](/rpc)",
-                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/filecoin)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chain-love-dedicated-recent-state-mainnet",
-            "provider": "Chain.Love (aka Glif Nodes)",
-            "plan": "Dedicated",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "1000",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All methods"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting"
-            ],
-            "monitoringAndAnalytics": [
-                "per-method analytics"
-            ],
-            "regions": [
-                "Asia",
-                "Europe",
-                "US"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](/rpc)",
-                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/filecoin)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chain-love-dedicated-fevm-archive-mainnet",
-            "provider": "Chain.Love (aka Glif Nodes)",
-            "plan": "Dedicated",
-            "nodeType": "FEVM Archive",
-            "chain": "mainnet",
-            "accessPrice": "3500",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
+            "starred": true,
             "trial": false,
             "availableApis": [
                 "All methods"
@@ -314,16 +281,16 @@
         },
         {
             "slug": "chain-love-dedicated-full-archive-mainnet",
-            "provider": "Chain.Love (aka Glif Nodes)",
+            "provider": "Chain.Love",
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "5000",
-            "queryPrice": "0",
+            "accessPrice": "$5000",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": false,
+            "starred": true,
             "trial": false,
             "availableApis": [
                 "All methods"
@@ -353,60 +320,97 @@
             "address": null
         },
         {
-            "slug": "drpc-mainnet-growth",
-            "provider": "dRPC",
-            "plan": "Growth",
+            "slug": "chain-love-dedicated-recent-state-calibnet",
+            "provider": "Chain.Love",
+            "plan": "Dedicated",
             "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "6$ per 1M requests",
+            "chain": "calibnet",
+            "accessPrice": "$600",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": false,
+            "starred": true,
             "trial": false,
             "availableApis": [
-                "All read methods + MPoolPush"
+                "All methods"
             ],
-            "limitations": [
-                "100 requests per second, 10.5M requests per month"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
                 "Domain name protection",
-                "Custom rate limiting",
-                "Method Limiting",
-                "Error tracing",
-                "Contract addresses protection"
+                "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics",
-                "latency",
-                "CU analytics"
+                "per-method analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Asia",
+                "Europe",
+                "US"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://drpc.org/chainlist/filecoin#filecoin)",
-                "[Docs](https://drpc.org/docs)"
+                "[Buy](/rpc)",
+                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/filecoin)"
             ],
             "address": null
         },
         {
-            "slug": "drpc-calibnet-enterprise",
-            "provider": "dRPC",
-            "plan": "Enterprise",
+            "slug": "chain-love-dedicated-recent-state-mainnet",
+            "provider": "Chain.Love",
+            "plan": "Dedicated",
             "nodeType": "Recent-State",
-            "chain": "calibnet",
-            "accessPrice": "0",
-            "queryPrice": null,
+            "chain": "mainnet",
+            "accessPrice": "$1000",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": false,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "All methods"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting"
+            ],
+            "monitoringAndAnalytics": [
+                "per-method analytics"
+            ],
+            "regions": [
+                "Asia",
+                "Europe",
+                "US"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](/rpc)",
+                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/filecoin)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "chain-love-fevm-archive-mainnet-pay-as-you-go",
+            "provider": "Chain.Love",
+            "plan": "Pay-As-You-Go",
+            "nodeType": "FEVM Archive",
+            "chain": "mainnet",
+            "accessPrice": "$300",
+            "queryPrice": "$1.5 per 1M CU",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
             "trial": false,
             "availableApis": [
                 "All read methods + MPoolPush"
@@ -416,34 +420,31 @@
                 "DDoS Protection",
                 "IP Protection",
                 "Domain name protection",
-                "Custom rate limiting",
-                "Method Limiting",
-                "Error tracing",
-                "Contract addresses protection"
+                "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics",
-                "latency",
-                "CU analytics"
+                "per-method analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Asia"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://drpc.org/chainlist/filecoin#filecoin-calibration)",
-                "[Docs](https://drpc.org/docs)"
+                "[Buy](/rpc)",
+                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/filecoin)"
             ],
             "address": null
         },
         {
-            "slug": "chain-love-mainnet-free",
-            "provider": "Chain.Love (aka Glif Nodes)",
-            "plan": "Free",
-            "nodeType": "Recent-State",
+            "slug": "chain-love-full-archive-mainnet-pay-as-you-go",
+            "provider": "Chain.Love",
+            "plan": "Pay-As-You-Go",
+            "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$500",
+            "queryPrice": "$3 per 1M CU",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -452,13 +453,63 @@
             "availableApis": [
                 "All read methods + MPoolPush"
             ],
-            "limitations": [
-                "100 requests per minute"
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting"
             ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
+            "monitoringAndAnalytics": [
+                "per-method analytics"
+            ],
             "regions": [
                 "Asia"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](/rpc)",
+                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/filecoin)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "chain-love-mainnet-free",
+            "provider": "Chain.Love",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "100k requests per month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting"
+            ],
+            "monitoringAndAnalytics": [
+                "per-method analytics",
+                "requests amount monitoring API"
+            ],
+            "regions": [
+                "US"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -470,17 +521,17 @@
             "address": null
         },
         {
-            "slug": "drpc-mainnet-enterprise",
-            "provider": "dRPC",
-            "plan": "Enterprise",
+            "slug": "chain-love-mainnet-pay-as-you-go",
+            "provider": "Chain.Love",
+            "plan": "Pay-As-You-Go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": null,
+            "accessPrice": "$0",
+            "queryPrice": "1$ per 1M CU",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": false,
+            "starred": true,
             "trial": false,
             "availableApis": [
                 "All read methods + MPoolPush"
@@ -490,242 +541,20 @@
                 "DDoS Protection",
                 "IP Protection",
                 "Domain name protection",
-                "Custom rate limiting",
-                "Method Limiting",
-                "Error tracing",
-                "Contract addresses protection"
+                "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics",
-                "latency",
-                "CU analytics"
+                "per-method analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Asia"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://drpc.org/chainlist/filecoin#filecoin)",
-                "[Docs](https://drpc.org/docs)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "drpc-calibnet-growth",
-            "provider": "dRPC",
-            "plan": "Growth",
-            "nodeType": "Recent-State",
-            "chain": "calibnet",
-            "accessPrice": "0",
-            "queryPrice": "$6 per 1M requests",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": [
-                "100 requests per second, 10.5M requests per month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Method Limiting",
-                "Error tracing",
-                "Contract addresses protection"
-            ],
-            "monitoringAndAnalytics": [
-                "per-method analytics",
-                "latency",
-                "CU analytics"
-            ],
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://drpc.org/chainlist/filecoin#filecoin-calibration)",
-                "[Docs](https://drpc.org/docs)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "ankr-mainnet-growth",
-            "provider": "Ankr",
-            "plan": "Growth",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "$10 included into query fees",
-            "queryPrice": "$20 per 1M requests",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush",
-                "Advanced Ankr API"
-            ],
-            "limitations": [
-                "1500 requests per second"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Error tracing"
-            ],
-            "monitoringAndAnalytics": [
-                "per-method analytics",
-                "latency",
-                "CU analytics"
-            ],
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.ankr.com/rpc/home/)",
-                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "ankr-mainnet-enterprise",
-            "provider": "Ankr",
-            "plan": "Enterprise",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "$500 included into query fees",
-            "queryPrice": "16.67$ per 1M requests",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush",
-                "Advanced Ankr API"
-            ],
-            "limitations": [
-                "1500 requests per second"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Error tracing"
-            ],
-            "monitoringAndAnalytics": [
-                "per-ip analytics",
-                "per-country analytics"
-            ],
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.ankr.com/rpc/home/)",
-                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "lava-network-mainnet-free",
-            "provider": "Lava Network",
-            "plan": "Free",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "Domain name protection"
-            ],
-            "monitoringAndAnalytics": null,
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Send requests](https://filecoin.lava.build/)",
-                "[Docs](https://docs.lavanet.xyz/about)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "lava-network-calibnet-free",
-            "provider": "Lava Network",
-            "plan": "Free",
-            "nodeType": "Recent-State",
-            "chain": "calibnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "Domain name protection"
-            ],
-            "monitoringAndAnalytics": null,
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Register](https://accounts.lavanet.xyz/register)",
-                "[Docs](https://docs.lavanet.xyz/about)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chainup-cloud-mainnet-free",
-            "provider": "Chainup Cloud",
-            "plan": "Free",
-            "nodeType": "Recent-State",
-            "chain": "calibnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "Domain name protection"
-            ],
-            "monitoringAndAnalytics": null,
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Send requests](https://filecoin.chainup.net/rpc/v1)",
-                "[Docs](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)"
+                "[Buy](/rpc)",
+                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/filecoin)"
             ],
             "address": null
         },
@@ -761,8 +590,246 @@
             "address": null
         },
         {
-            "slug": "nownodes-mainnet-free",
-            "provider": "NowNodes",
+            "slug": "chainup-cloud-mainnet-free",
+            "provider": "Chainup Cloud",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "calibnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "Domain name protection"
+            ],
+            "monitoringAndAnalytics": null,
+            "regions": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Send requests](https://filecoin.chainup.net/rpc/v1)",
+                "[Docs](https://docs.chainupcloud.com/blockchain-api/filecoin/public-apis)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "drpc-calibnet-enterprise",
+            "provider": "dRPC",
+            "plan": "Enterprise",
+            "nodeType": "Recent-State",
+            "chain": "calibnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
+            ],
+            "monitoringAndAnalytics": [
+                "per-method analytics",
+                "latency",
+                "CU analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://drpc.org/chainlist/filecoin#filecoin-calibration)",
+                "[Docs](https://drpc.org/docs)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "drpc-calibnet-pay-as-you-go",
+            "provider": "dRPC",
+            "plan": "Pay As You Go",
+            "nodeType": "Recent-State",
+            "chain": "calibnet",
+            "accessPrice": "$0",
+            "queryPrice": "$6 per 1M requests",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "100 requests per second, 10.5M requests per month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
+            ],
+            "monitoringAndAnalytics": [
+                "per-method analytics",
+                "latency",
+                "CU analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://drpc.org/chainlist/filecoin#filecoin-calibration)",
+                "[Docs](https://drpc.org/docs)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "drpc-mainnet-enterprise",
+            "provider": "dRPC",
+            "plan": "Enterprise",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
+            ],
+            "monitoringAndAnalytics": [
+                "per-method analytics",
+                "latency",
+                "CU analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://drpc.org/chainlist/filecoin#filecoin)",
+                "[Docs](https://drpc.org/docs)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "drpc-mainnet-pay-as-you-go",
+            "provider": "dRPC",
+            "plan": "Pay As You Go",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "$0",
+            "queryPrice": "$6 per 1M requests",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "100 requests per second, 10.5M requests per month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
+            ],
+            "monitoringAndAnalytics": [
+                "per-method analytics",
+                "latency",
+                "CU analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://drpc.org/chainlist/filecoin#filecoin)",
+                "[Docs](https://drpc.org/docs)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "lava-network-calibnet-free",
+            "provider": "Lava Network",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "calibnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "Domain name protection"
+            ],
+            "monitoringAndAnalytics": null,
+            "regions": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Register](https://accounts.lavanet.xyz/register)",
+                "[Docs](https://docs.lavanet.xyz/about)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "lava-network-mainnet-free",
+            "provider": "Lava Network",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
@@ -776,9 +843,7 @@
             "availableApis": [
                 "All read methods + MPoolPush"
             ],
-            "limitations": [
-                "100k requests, no more than 1 month, no more than 1 key"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "Domain name protection"
             ],
@@ -788,41 +853,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Register](https://nownodes.io/pricing)",
-                "[Docs](https://nownodes.gitbook.io/documentation/fil-filecoin)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "nownodes-mainnet-growth",
-            "provider": "NowNodes",
-            "plan": "Growth",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "€20-200 included into requests, yearly 10% discount",
-            "queryPrice": "€10-50 per 1M requests",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": [
-                "1-30M requests per month bundled, 3-25 keys limit"
-            ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": [
-                "per-key analytics"
-            ],
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://nownodes.io/pricing)",
-                "[Docs](https://nownodes.gitbook.io/documentation/fil-filecoin)"
+                "[Send requests](https://filecoin.lava.build/)",
+                "[Docs](https://docs.lavanet.xyz/about)"
             ],
             "address": null
         },
@@ -860,46 +892,13 @@
             "address": null
         },
         {
-            "slug": "chain-love-calibnet-free",
-            "provider": "Chain.Love (aka Glif Nodes)",
-            "plan": "Free",
-            "nodeType": "Recent-State",
-            "chain": "calibnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": true,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": [
-                "100 requests per minute"
-            ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": [
-                "Asia"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Send requests](https://calibration.filecoin.chain.love/rpc/v0)",
-                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/filecoin)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "ankr-mainnet-free",
-            "provider": "Ankr",
+            "slug": "nownodes-mainnet-free",
+            "provider": "Nownodes",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "$0 per 1M requests",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -909,16 +908,10 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "1 key only"
+                "100k requests, no more than 1 month, no more than 1 key"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Method Limiting",
-                "Error tracing",
-                "Contract addresses protection"
+                "Domain name protection"
             ],
             "monitoringAndAnalytics": null,
             "regions": null,
@@ -926,8 +919,41 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.ankr.com/rpc/home/)",
-                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
+                "[Register](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.gitbook.io/documentation/fil-filecoin)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "nownodes-mainnet-pay-as-you-go",
+            "provider": "Nownodes",
+            "plan": "Pay-as-you-go",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "€20 / €200/ € 500 included into requests, yearly 10% discount",
+            "queryPrice": "€50 / €10 / €5 million per 1M requests",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "1-30M requests per month bundled, 3-25 keys limit"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.gitbook.io/documentation/fil-filecoin)"
             ],
             "address": null
         }
@@ -1314,7 +1340,9 @@
             "sdk": [
                 "TypeScript SDK"
             ],
-            "actionButtons": null,
+            "actionButtons": [
+                "[Bridge](https://app.squidrouter.com/?chains=314)"
+            ],
             "support": [
                 "Discord"
             ],
