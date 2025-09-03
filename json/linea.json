@@ -21,8 +21,7 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens",
-                "substrate"
+                "tokens"
             ],
             "limitations": [
                 "1500 req/min"
@@ -34,9 +33,7 @@
                 "Basic monitoring",
                 "Usage analytics"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -52,7 +49,7 @@
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "$0.00",
-            "queryPrice": "$0.40 per1M CUs",
+            "queryPrice": "$0.40/1M CUs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -66,11 +63,10 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens",
-                "substrate"
+                "tokens"
             ],
             "limitations": [
-                "18000 req/s"
+                "18000 req/min"
             ],
             "securityImprovements": [
                 "TX simulation"
@@ -80,9 +76,7 @@
                 "Custom alerts",
                 "Reporting"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -98,8 +92,8 @@
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "Custom",
-            "queryPrice": "custom",
-            "uptimeSla": "custom",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -112,8 +106,7 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens",
-                "substrate"
+                "tokens"
             ],
             "limitations": [
                 "custom limits"
@@ -126,9 +119,7 @@
                 "Custom dashboards",
                 "Engineering support"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -148,13 +139,12 @@
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
-                "net",
-                "substrate"
+                "net"
             ],
             "limitations": [
                 "12M requests per month",
@@ -172,9 +162,7 @@
                 "Calls per chain",
                 "Calls per method"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -195,13 +183,12 @@
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
-                "net",
-                "substrate"
+                "net"
             ],
             "limitations": [
                 "12M requests per month",
@@ -219,9 +206,7 @@
                 "Calls per chain",
                 "Calls per method"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -234,7 +219,7 @@
         {
             "slug": "blast-linea-pay-as-you-go-archive",
             "provider": "Blast",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "$50/$250 included into query fees",
@@ -249,8 +234,7 @@
                 "web3",
                 "net",
                 "debug",
-                "trace",
-                "substrate"
+                "trace"
             ],
             "limitations": [
                 "20M-80M requests per month",
@@ -268,9 +252,7 @@
                 "Calls per chain",
                 "Calls per method"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -288,7 +270,7 @@
             "chain": "mainnet",
             "accessPrice": "Custom",
             "queryPrice": "custom",
-            "uptimeSla": "custom",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -298,12 +280,9 @@
                 "web3",
                 "net",
                 "debug",
-                "trace",
-                "substrate"
+                "trace"
             ],
-            "limitations": [
-                "Custom"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "Methods filtering",
                 "IP filtering",
@@ -315,9 +294,7 @@
                 "Calls per chain",
                 "Calls per method"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -330,28 +307,26 @@
         {
             "slug": "ankr-linea-pay-as-you-go",
             "provider": "Ankr",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$10 included into query fees",
             "queryPrice": "$20 per 1M requests",
-            "uptimeSla": "no",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "Advanced ANKR API",
+                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "limitations": [
-                "up to 90k req/min"
+                "up to 90000 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Custom monitoring",
@@ -376,25 +351,22 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$1000 included into query fees",
-            "queryPrice": "Custom",
-            "uptimeSla": "custom SLA",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "Advanced ANKR API",
+                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "limitations": [
-                "up to 900k req/min"
+                "up to 900000 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Custom monitoring",
@@ -414,35 +386,30 @@
         },
         {
             "slug": "quicknode-linea-free",
-            "provider": "QuickNode",
+            "provider": "Quicknode",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "0",
-            "queryPrice": "0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
+            "availableApis": null,
             "limitations": [
-                "~1000 req/min"
+                "900 req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection"
+                "IP Protection",
+                "Privacy preserving"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics"
+                "Basic dashboard"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -454,11 +421,11 @@
         },
         {
             "slug": "quicknode-linea-pay-as-you-go",
-            "provider": "QuickNode",
-            "plan": "Pay-As-You-Go",
+            "provider": "Quicknode",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$49/$249/$500//$999 included into query fees",
+            "accessPrice": "$49/$249/$500/$999 included into query fees",
             "queryPrice": "$10-24.8 per 1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -467,23 +434,25 @@
             "trial": false,
             "availableApis": [
                 "eth",
+                "net",
                 "web3",
-                "net"
+                "debug",
+                "trace"
             ],
             "limitations": [
-                "3k / 7.5k / 15k /30k req/min"
+                "3000/7500/15000/30000 req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection"
+                "IP Protection",
+                "Privacy preserving"
             ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
-                "Custom monitoring"
+                "Custom dashboards",
+                "Alerts & endpoints monitoring"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -495,37 +464,30 @@
         },
         {
             "slug": "quicknode-linea-enterprise",
-            "provider": "QuickNode",
+            "provider": "Quicknode",
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
-            "uptimeSla": "commited SLA",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "Custom limits"
-            ],
+            "availableApis": null,
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
-                "Dedicated infrastructure"
+                "Privacy preserving"
             ],
             "monitoringAndAnalytics": [
                 "Advanced analytics",
-                "Custom monitoring"
+                "Console API (Prometheus/Grafana)",
+                "Custom alerting & engineering support"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -537,7 +499,7 @@
         },
         {
             "slug": "nownodes-linea-free",
-            "provider": "NOWNodes",
+            "provider": "Nownodes",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
@@ -546,26 +508,17 @@
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
+            "availableApis": null,
             "limitations": [
-                "100k requests, no more than 1 month, no more than 1 key"
+                "100k requests",
+                "no more than 1 month",
+                "no more than 1 key"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -577,8 +530,8 @@
         },
         {
             "slug": "nownodes-linea-pay-as-you-go",
-            "provider": "NOWNodes",
-            "plan": "Pay-As-You-Go",
+            "provider": "Nownodes",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "€20 / €200/ € 500 included into requests, yearly 10% discount",
@@ -587,25 +540,15 @@
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
+            "trial": false,
+            "availableApis": null,
             "limitations": [
-                "1M / 30M / 100M req/month, 3 / 25 / 100 api key"
+                "1M / 30M / 100M requests per month",
+                "3 / 25 / 100 api key"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -639,9 +582,7 @@
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -653,7 +594,7 @@
         {
             "slug": "thirdweb-linea-pay-as-you-go",
             "provider": "ThirdWeb",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$5/$99",
@@ -673,9 +614,7 @@
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -691,7 +630,7 @@
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$499 + Node price (unknown)",
+            "accessPrice": "$499 + Node price ()",
             "queryPrice": "$8 per 1M requests (volume discounts applies)",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -708,9 +647,7 @@
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -741,9 +678,7 @@
             "limitations": null,
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -777,9 +712,7 @@
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -1076,7 +1009,7 @@
         },
         {
             "slug": "chainstack-linea-free",
-            "provider": "Chainstack",
+            "provider": "ChainStack",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
@@ -1116,8 +1049,8 @@
         },
         {
             "slug": "chainstack-linea-pay-as-you-go-archive",
-            "provider": "Chainstack",
-            "plan": "Pay-As-You-Go",
+            "provider": "ChainStack",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "$49 / 199 / 349",
@@ -1161,7 +1094,7 @@
         },
         {
             "slug": "chainstack-linea-enterprise-archive",
-            "provider": "Chainstack",
+            "provider": "ChainStack",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "mainnet",
@@ -1179,9 +1112,7 @@
                 "debug",
                 "trace"
             ],
-            "limitations": [
-                "unlimited"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
