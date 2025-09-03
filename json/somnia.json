@@ -1,6 +1,46 @@
 {
     "rpc": [
         {
+            "slug": "somnia-mainnet-free",
+            "provider": "Somnia",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.ankr.com/)",
+                "[Docs](https://docs.ankr.com/)"
+            ],
+            "address": null
+        },
+        {
             "slug": "somnia-shannon-free",
             "provider": "Somnia",
             "plan": "Free",
@@ -27,6 +67,87 @@
             ],
             "monitoringAndAnalytics": [
                 "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.ankr.com/)",
+                "[Docs](https://docs.ankr.com/)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "ankr-mainnet-free",
+            "provider": "Ankr",
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.ankr.com/)",
+                "[Docs](https://docs.ankr.com/)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "ankr-mainnet-premium",
+            "provider": "Ankr",
+            "plan": "Premium",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
             ],
             "regions": [
                 "Global"
@@ -243,9 +364,90 @@
                 "[Buy](https://subgraph.somnia.network/)",
                 "[Get help](mailto:hello@ormi.xyz)"
             ]
+        },
+        {
+            "slug": "chain-love-mainnet",
+            "provider": "Chain.Love",
+            "chain": "mainnet",
+            "address": "0x0fd8fd1dc8162148cb9413062fe6c6b144335dbf",
+            "technology": "The Graph",
+            "plan": "FREE",
+            "trial": false,
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": true,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting"
+            ],
+            "monitoringAndAnalytics": [
+                "Subgraph logs",
+                "Usage logs"
+            ],
+            "regions": [
+                "Japan"
+            ],
+            "additionalFeatures": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Deploy](https://somnia.chain.love/graph)",
+                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/)"
+            ]
         }
     ],
     "explorer": [
+        {
+            "slug": "somnia-mainnet",
+            "provider": "Somnia",
+            "chain": "mainnet",
+            "technology": "Blockscout",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "Network Metrics"
+            ],
+            "starred": true,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "sdk": [
+                "TypeScript",
+                "Node.js"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "actionButtons": [
+                "[Explore](https://mainnet.somnia.w3us.site/)",
+                "[Docs](https://docs.somnia.network/developer/infrastructure-providers/explorers)"
+            ]
+        },
         {
             "slug": "somnia-testnet",
             "provider": "Somnia",
@@ -335,6 +537,30 @@
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
             "additionalNotes": null
+        }
+    ],
+    "analytic": [
+        {
+            "slug": "dune-mainnet",
+            "provider": "Dune Analytics",
+            "chain": "mainnet",
+            "dataSources": [
+                "Transactions",
+                "Active Users",
+                "Token Price",
+                "Tokens",
+                "Gas Usage",
+                "Contracts",
+                "FTSO Data"
+            ],
+            "hasDashboard": true,
+            "availableApis": null,
+            "price": "0",
+            "starred": true,
+            "actionButtons": [
+                "[Dashboard](https://dune.com/)",
+                "[Docs](https://docs.dune.com/)"
+            ]
         }
     ],
     "wallet": [
