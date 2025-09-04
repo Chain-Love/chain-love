@@ -5537,40 +5537,53 @@
         },
         {
             "slug": "wanchain-one",
-            "provider": "Wanchain Bridge",
+            "provider": "Wanchain",
             "chain": "one",
             "technology": "Asset Bridge",
             "openSource": true,
             "support": [
+                "Telegram",
+                "Email",
                 "Discord"
             ],
             "starred": false,
             "availableApis": [
                 "Asset Transfer"
             ],
-            "monitoringAndAnalytics": null,
+            "monitoringAndAnalytics": [
+                "Bridge Monitoring"
+            ],
             "additionalFeatures": [
-                "Cross-chain asset bridging"
+                "Cross-chain asset bridging",
+                "WAN token discounts"
             ],
             "assetTypes": [
-                "ETH",
-                "ERC‑20"
+                "ERC-20: USDT"
             ],
             "txSpeedSla": null,
             "throughputSla": null,
-            "price": "Gas Fee",
+            "price": "10.2%, min. 0.2 USD, has discounts up to 80% based on WAN token holdings",
             "economicalSecurity": true,
             "economicalSecurityNote": "Secured via Wanchain validators and smart contracts",
-            "auditsPerformed": null,
+            "auditsPerformed": [
+                "Regular audits"
+            ],
             "decentralizationModel": "Decentralized",
             "sdk": [
-                "Web UI"
+                "Node.JS SDK"
             ],
             "actionButtons": [
                 "[Bridge](https://bridge.wanchain.org/AssetBridge)",
                 "[Docs](https://wanchain.org/docs)"
             ],
-            "supportedChains": null
+            "supportedChains": [
+                "Ethereum",
+                "BNB Chain",
+                "Polygon",
+                "Avalanche",
+                "Astar",
+                "Shiden"
+            ]
         },
         {
             "slug": "asterizm-one",
@@ -6078,48 +6091,48 @@
             "supportedChains": null
         },
         {
-            "slug": "routernitro-one",
-            "provider": "Router Nitro",
+            "slug": "routerprotocol-one",
+            "provider": "Router Protocol",
             "chain": "one",
-            "technology": "Cross‑chain Messaging + Swap",
+            "technology": "Chain Abstraction",
             "openSource": true,
             "support": [
                 "Discord"
             ],
             "starred": false,
             "availableApis": [
-                "Asset Transfer",
-                "Messaging",
-                "Swap"
+                "Cross‑chain Liquidity Aggregation"
             ],
             "monitoringAndAnalytics": null,
             "additionalFeatures": [
-                "Low latency",
-                "CCTP support"
+                "Multi‑chain routing"
             ],
             "assetTypes": [
                 "ETH",
-                "USDC",
                 "ERC‑20"
             ],
             "txSpeedSla": null,
             "throughputSla": null,
-            "price": "Gas Fee + platform fee",
+            "price": "Gas Fee + protocol fee",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Security based on Router's protocol layer",
-            "auditsPerformed": [
-                "Certik"
-            ],
+            "economicalSecurityNote": "Security via settlement chains",
+            "auditsPerformed": null,
             "decentralizationModel": "Decentralized",
             "sdk": [
-                "Web UI",
-                "SDK"
+                "SDK",
+                "Web UI?"
             ],
             "actionButtons": [
                 "[Bridge](https://routernitro.com/swap)",
                 "[Docs](https://docs.routerprotocol.com)"
             ],
-            "supportedChains": null
+            "supportedChains": [
+                "Arbitrum",
+                "Ethereum",
+                "Polygon",
+                "OP Mainnet",
+                "BNB Chain"
+            ]
         },
         {
             "slug": "messina-one",
