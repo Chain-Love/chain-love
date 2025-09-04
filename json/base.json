@@ -1413,6 +1413,687 @@
             "address": null
         }
     ],
+    "oracle": [
+        {
+            "slug": "api3-mainnet",
+            "provider": "API3",
+            "chain": "mainnet",
+            "technology": "Push & Pull Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.api3.org/)"
+            ]
+        },
+        {
+            "slug": "api3-sepolia",
+            "provider": "API3",
+            "chain": "sepolia",
+            "technology": "Push & Pull Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.api3.org/)"
+            ]
+        },
+        {
+            "slug": "chainlink-mainnet",
+            "provider": "Chainlink",
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ],
+            "actionButtons": [
+                "[ETH/USD](https://data.chain.link/feeds/base/base/eth-usd)",
+                "[Docs](https://docs.chain.link/)"
+            ]
+        },
+        {
+            "slug": "chainlink-sepolia",
+            "provider": "Chainlink",
+            "chain": "sepolia",
+            "technology": "Decentralized Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.chain.link/)"
+            ]
+        },
+        {
+            "slug": "chronicle-mainnet",
+            "provider": "Chronicle Protocol",
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds"
+            ],
+            "monitoringAndAnalytics": [
+                "Reporter performance tools"
+            ],
+            "additionalFeatures": [
+                "Scalable reporter model",
+                "Forked from Maker oracle"
+            ],
+            "dataTypes": [
+                "Asset Prices"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Maker‑inspired model",
+            "sdk": [
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "ChainSecurity (Scribe audit, Aug 2023)",
+                "Cantina Reviews (Oracle infrastructure audit, Oct–Nov 2023)",
+                "ABDK (code review of core components, 2023)",
+                "Spearbit (security review of Scribe architecture, 2023)",
+                "Bug bounty program via Cantina (ongoing from Jun 2024)"
+            ],
+            "actionButtons": [
+                "[ETH/USD](https://chroniclelabs.org/dashboard/oracle/ETH/USD#blockchain=BASE)"
+            ]
+        },
+        {
+            "slug": "chronicle-sepolia",
+            "provider": "Chronicle Protocol",
+            "chain": "sepolia",
+            "technology": "Decentralized Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds"
+            ],
+            "monitoringAndAnalytics": [
+                "Reporter performance tools"
+            ],
+            "additionalFeatures": [
+                "Scalable reporter model",
+                "Forked from Maker oracle"
+            ],
+            "dataTypes": [
+                "Asset Prices"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Maker‑inspired model",
+            "sdk": [
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "ChainSecurity (Scribe audit, Aug 2023)",
+                "Cantina Reviews (Oracle infrastructure audit, Oct–Nov 2023)",
+                "ABDK (code review of core components, 2023)",
+                "Spearbit (security review of Scribe architecture, 2023)",
+                "Bug bounty program via Cantina (ongoing from Jun 2024)"
+            ],
+            "actionButtons": [
+                "[ETH/USD](https://chroniclelabs.org/dashboard/oracle/ETH/USD#testnet=true&blockchain=BASESEP)"
+            ]
+        },
+        {
+            "slug": "dia-mainnet",
+            "provider": "DIA",
+            "chain": "mainnet",
+            "technology": "DIA",
+            "accessPrice": "0 for non-production, \"Contact us\" for production",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds"
+            ],
+            "additionalFeatures": null,
+            "dataTypes": [
+                "BTC",
+                "DIA",
+                "USDC"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
+            "sdk": null,
+            "auditsPerformed": [
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
+            ],
+            "actionButtons": [
+                "[Docs](https://www.diadata.org/docs/home)"
+            ]
+        },
+        {
+            "slug": "dia-sepolia",
+            "provider": "DIA",
+            "chain": "sepolia",
+            "technology": "DIA",
+            "accessPrice": "0 for non-production, \"Contact us\" for production",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds"
+            ],
+            "additionalFeatures": null,
+            "dataTypes": [
+                "BTC",
+                "DIA",
+                "USDC"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
+            "sdk": null,
+            "auditsPerformed": [
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
+            ],
+            "actionButtons": [
+                "[Docs](https://www.diadata.org/docs/home)"
+            ]
+        },
+        {
+            "slug": "ora-mainnet",
+            "provider": "ORA",
+            "chain": "mainnet",
+            "technology": "AI‑powered Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "AI Data",
+                "Price Feed"
+            ],
+            "monitoringAndAnalytics": [
+                "Performance dashboard"
+            ],
+            "additionalFeatures": [
+                "AI-based feeds"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "AI metrics"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Enterprise‑grade ORAI protocol audited by CertiK, OpenZeppelin",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Certik (2024)"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.ora.io/doc/onchain-ai-oracle-oao/onchain-ai-oracle)"
+            ]
+        },
+        {
+            "slug": "pyth-mainnet",
+            "provider": "Pyth Network",
+            "chain": "mainnet",
+            "technology": "Pull Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.base.org/base-chain/tools/oracles#pyth)"
+            ]
+        },
+        {
+            "slug": "pyth-sepolia",
+            "provider": "Pyth Network",
+            "chain": "sepolia",
+            "technology": "Pull Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.base.org/base-chain/tools/oracles#pyth)"
+            ]
+        },
+        {
+            "slug": "redstone-mainnet",
+            "provider": "RedStone",
+            "chain": "mainnet",
+            "technology": "Modular Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Delivery Monitoring"
+            ],
+            "additionalFeatures": [
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "Custom External Data"
+            ],
+            "decentralizationModel": "Hybrid",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.redstone.finance/)"
+            ]
+        },
+        {
+            "slug": "supra-mainnet",
+            "provider": "Supra",
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/)"
+            ]
+        },
+        {
+            "slug": "supra-sepolia",
+            "provider": "Supra",
+            "chain": "sepolia",
+            "technology": "Decentralized Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/)"
+            ]
+        },
+        {
+            "slug": "gelato-mainnet",
+            "provider": "Gelato",
+            "chain": "mainnet",
+            "technology": "Randomness Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "VRF",
+                "Web3 Functions"
+            ],
+            "monitoringAndAnalytics": [
+                "Monitoring Dashboard",
+                "Logs & Status API"
+            ],
+            "additionalFeatures": [
+                "First 10k VRF requests/month subsidized",
+                "Drand-based randomness"
+            ],
+            "dataTypes": [
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Cryptographic verifiability via drand/BLS; no staking/slashing",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "None Public"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.gelato.network/)"
+            ]
+        },
+        {
+            "slug": "gelato-sepolia",
+            "provider": "Gelato",
+            "chain": "sepolia",
+            "technology": "Randomness Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "VRF",
+                "Web3 Functions"
+            ],
+            "monitoringAndAnalytics": [
+                "Monitoring Dashboard",
+                "Logs & Status API"
+            ],
+            "additionalFeatures": [
+                "First 10k VRF requests/month subsidized",
+                "Drand-based randomness"
+            ],
+            "dataTypes": [
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Cryptographic verifiability via drand/BLS; no staking/slashing",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "None Public"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.gelato.network/)"
+            ]
+        },
+        {
+            "slug": "orochi-mainnet",
+            "provider": "Orochi Network",
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "VRF"
+            ],
+            "monitoringAndAnalytics": [
+                "Monitoring dashboard",
+                "Oracle feeds explorer"
+            ],
+            "additionalFeatures": [
+                "ECVRF-based randomness",
+                "Batching & flexible submission",
+                "Validity proofs for all oracle data"
+            ],
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Cryptographic validity proofs (Orocle) + ECVRF proofs (Orand); no staking/slashing model",
+            "sdk": [
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "None Public"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.orochi.network/)"
+            ]
+        },
+        {
+            "slug": "orochi-sepolia",
+            "provider": "Orochi Network",
+            "chain": "sepolia",
+            "technology": "Decentralized Oracle",
+            "accessPrice": "0",
+            "queryPrice": "0",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "VRF"
+            ],
+            "monitoringAndAnalytics": [
+                "Monitoring dashboard",
+                "Oracle feeds explorer"
+            ],
+            "additionalFeatures": [
+                "ECVRF-based randomness",
+                "Batching & flexible submission",
+                "Validity proofs for all oracle data"
+            ],
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Cryptographic validity proofs (Orocle) + ECVRF proofs (Orand); no staking/slashing model",
+            "sdk": [
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "None Public"
+            ],
+            "actionButtons": [
+                "[Docs](https://docs.orochi.network/)"
+            ]
+        }
+    ],
     "bridge": [
         {
             "slug": "hyperlane-mainnet",
