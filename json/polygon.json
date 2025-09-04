@@ -2,7 +2,7 @@
     "rpc": [
         {
             "slug": "1rpc-polygon-free",
-            "provider": "1RPC",
+            "provider": "1rpc",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
@@ -19,7 +19,7 @@
                 "net"
             ],
             "limitations": [
-                "20k requests daily cap"
+                "20,000 protected TXs per day"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays"
@@ -38,12 +38,12 @@
             "address": null
         },
         {
-            "slug": "1rpc-polygon-personal",
-            "provider": "1RPC",
-            "plan": "Pay-As-You-Go",
+            "slug": "1rpc-polygon-pay-as-you-go",
+            "provider": "1rpc",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$9.9 / $29.90",
+            "accessPrice": "$9.9-$29.90",
             "queryPrice": "0",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
@@ -56,7 +56,7 @@
                 "net"
             ],
             "limitations": [
-                "40k/100k requests daily cap"
+                "40,000 - 100,000 protected transactions per day"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays",
@@ -81,8 +81,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 per 1M request",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -91,24 +91,24 @@
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
                 "1500 req/min"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "TLS",
-                "SOC 2 compliant"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
                 "Basic monitoring",
                 "Usage analytics"
             ],
-            "regions": [
-                "Global (via US East proxy infrastructure)"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -121,12 +121,12 @@
         {
             "slug": "alchemy-polygon-pay-as-you-go",
             "provider": "Alchemy",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
+            "accessPrice": "$0.00",
             "queryPrice": "$0.40/1M CUs",
-            "uptimeSla": "99.90%",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -134,25 +134,25 @@
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
-                "18000 req/s"
+                "18000 req/min"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "TLS",
-                "SOC 2 compliant"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Custom alerts",
                 "Reporting"
             ],
-            "regions": [
-                "Global (via US East proxy infrastructure)"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -169,8 +169,8 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.9% (custom SLA)",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -178,26 +178,25 @@
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
                 "custom limits"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "TLS",
-                "SOC 2 compliant",
-                "Dedicated infrastructure"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
                 "Advanced analytics",
                 "Custom dashboards",
                 "Engineering support"
             ],
-            "regions": [
-                "Global (via US East proxy infrastructure)"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -213,8 +212,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "amoy",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 per 1M request",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -223,24 +222,24 @@
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
                 "1500 req/min"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "TLS",
-                "SOC 2 compliant"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
                 "Basic monitoring",
                 "Usage analytics"
             ],
-            "regions": [
-                "Global (via US East proxy infrastructure)"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -253,12 +252,12 @@
         {
             "slug": "alchemy-amoy-pay-as-you-go",
             "provider": "Alchemy",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "amoy",
-            "accessPrice": "0",
+            "accessPrice": "$0.00",
             "queryPrice": "$0.40/1M CUs",
-            "uptimeSla": "99.90%",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -266,25 +265,25 @@
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
-                "18000 req/s"
+                "18000 req/min"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "TLS",
-                "SOC 2 compliant"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Custom alerts",
                 "Reporting"
             ],
-            "regions": [
-                "Global (via US East proxy infrastructure)"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -301,8 +300,8 @@
             "nodeType": "Recent-State",
             "chain": "amoy",
             "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.9% (custom SLA)",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -310,26 +309,25 @@
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
                 "custom limits"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "TLS",
-                "SOC 2 compliant",
-                "Dedicated infrastructure"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
                 "Advanced analytics",
                 "Custom dashboards",
                 "Engineering support"
             ],
-            "regions": [
-                "Global (via US East proxy infrastructure)"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -341,12 +339,12 @@
         },
         {
             "slug": "allthatnode-polygon-free-archive",
-            "provider": "All That Node",
+            "provider": "AllThatNode",
             "plan": "Free",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 per 1M request",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -379,12 +377,12 @@
         },
         {
             "slug": "allthatnode-polygon-pay-as-you-go-archive",
-            "provider": "All That Node",
-            "plan": "Pay-As-You-Go",
+            "provider": "AllThatNode",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$29",
-            "queryPrice": "$0.58/ 1M CUs",
+            "accessPrice": "$29/$139",
+            "queryPrice": "$0.58/$0.56 per 1M CUs",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -403,8 +401,9 @@
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
-                "Basic monitoring",
-                "Usage analytics"
+                "Usage analytics",
+                "Custom alerts",
+                "Reporting"
             ],
             "regions": [
                 "Global"
@@ -419,14 +418,14 @@
             "address": null
         },
         {
-            "slug": "allthatnode-polygon-enterprice-archive",
-            "provider": "All That Node",
+            "slug": "allthatnode-polygon-enterprise-archive",
+            "provider": "AllThatNode",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "uptimeSla": "Custom",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -438,13 +437,12 @@
                 "debug",
                 "trace"
             ],
-            "limitations": [
-                "Custom"
-            ],
+            "limitations": null,
             "securityImprovements": null,
             "monitoringAndAnalytics": [
-                "Basic monitoring",
-                "Usage analytics"
+                "Advanced analytics",
+                "Custom dashboards",
+                "Engineering support"
             ],
             "regions": [
                 "Global"
@@ -464,32 +462,29 @@
             "plan": "Free",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 per 1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "Advanced ANKR API",
+                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "limitations": [
                 "~1800 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Community support"
             ],
             "regions": [
-                "10 regions"
+                "Global"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -503,7 +498,7 @@
         {
             "slug": "ankr-polygon-pay-as-you-go-archive",
             "provider": "Ankr",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "$10 included into 100M credits",
@@ -514,9 +509,10 @@
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "net",
-                "web3",
+                "Advanced ANKR API",
+                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
                 "debug",
                 "trace"
             ],
@@ -546,40 +542,35 @@
             "address": null
         },
         {
-            "slug": "ankr-polygon-enterprice-archive",
+            "slug": "ankr-polygon-enterprise-archive",
             "provider": "Ankr",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "Custom",
-            "queryPrice": "$1000 included into query fees",
-            "uptimeSla": "Custom SLA",
+            "accessPrice": "$1000 included into query fees",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
+                "Advanced ANKR API",
+                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "limitations": [
                 "up to 900000 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Custom monitoring",
                 "Engineering team support"
             ],
             "regions": [
-                "Custom"
+                "Global"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -596,32 +587,29 @@
             "plan": "Free",
             "nodeType": "Full Archive",
             "chain": "amoy",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 per 1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "Advanced ANKR API",
+                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "limitations": [
                 "~1800 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Community support"
             ],
             "regions": [
-                "10 regions"
+                "Global"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -635,7 +623,7 @@
         {
             "slug": "ankr-amoy-pay-as-you-go-archive",
             "provider": "Ankr",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "amoy",
             "accessPrice": "$10 included into 100M credits",
@@ -646,9 +634,10 @@
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "net",
-                "web3",
+                "Advanced ANKR API",
+                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
                 "debug",
                 "trace"
             ],
@@ -678,40 +667,35 @@
             "address": null
         },
         {
-            "slug": "ankr-amoy-enterprice-archive",
+            "slug": "ankr-amoy-enterprise-archive",
             "provider": "Ankr",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "amoy",
-            "accessPrice": "Custom",
-            "queryPrice": "$1000 included into query fees",
-            "uptimeSla": "Custom SLA",
+            "accessPrice": "$1000 included into query fees",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
+                "Advanced ANKR API",
+                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "limitations": [
                 "up to 900000 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Custom monitoring",
                 "Engineering team support"
             ],
             "regions": [
-                "Custom"
+                "Global"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -728,18 +712,14 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$0",
+            "accessPrice": "0",
             "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
+            "availableApis": null,
             "limitations": [
                 "900 req/min"
             ],
@@ -751,9 +731,7 @@
             "monitoringAndAnalytics": [
                 "Basic dashboard"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -766,12 +744,12 @@
         {
             "slug": "quicknode-polygon-pay-as-you-go-archive",
             "provider": "Quicknode",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$10-24.8 per 1M requests",
-            "queryPrice": "$49/$249/$500/$999 included into query fees",
-            "uptimeSla": "99.90%",
+            "accessPrice": "$49/$249/$500/$999 included into query fees",
+            "queryPrice": "$10-24.8 per 1M requests",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -796,9 +774,7 @@
                 "Custom dashboards",
                 "Alerts & endpoints monitoring"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -809,7 +785,7 @@
             "address": null
         },
         {
-            "slug": "quicknode-polygon-enterprice-archive",
+            "slug": "quicknode-polygon-enterprise-archive",
             "provider": "Quicknode",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
@@ -828,9 +804,7 @@
                 "debug",
                 "trace"
             ],
-            "limitations": [
-                "Custom"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
@@ -859,18 +833,14 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "amoy",
-            "accessPrice": "$0",
+            "accessPrice": "0",
             "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
+            "availableApis": null,
             "limitations": [
                 "900 req/min"
             ],
@@ -882,9 +852,7 @@
             "monitoringAndAnalytics": [
                 "Basic dashboard"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -895,14 +863,14 @@
             "address": null
         },
         {
-            "slug": "quicknode-amoy-growth-archive",
+            "slug": "quicknode-amoy-pay-as-you-go-archive",
             "provider": "Quicknode",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "amoy",
-            "accessPrice": "$10-24.8 per 1M requests",
-            "queryPrice": "$49/$249/$500/$999 included into query fees",
-            "uptimeSla": "99.90%",
+            "accessPrice": "$49/$249/$500/$999 included into query fees",
+            "queryPrice": "$10-24.8 per 1M requests",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -927,9 +895,7 @@
                 "Custom dashboards",
                 "Alerts & endpoints monitoring"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -940,7 +906,7 @@
             "address": null
         },
         {
-            "slug": "quicknode-amoy-enterprice-archive",
+            "slug": "quicknode-amoy-enterprise-archive",
             "provider": "Quicknode",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
@@ -959,9 +925,7 @@
                 "debug",
                 "trace"
             ],
-            "limitations": [
-                "Custom"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
@@ -1031,7 +995,7 @@
         {
             "slug": "blast-polygon-pay-as-you-go-archive",
             "provider": "Blast",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "$50/$250 included into query fees",
@@ -1075,14 +1039,14 @@
             "address": null
         },
         {
-            "slug": "blast-polygon-enterprice-archive",
+            "slug": "blast-polygon-enterprise-archive",
             "provider": "Blast",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "Custom",
             "queryPrice": "custom",
-            "uptimeSla": "custom",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -1094,9 +1058,7 @@
                 "debug",
                 "trace"
             ],
-            "limitations": [
-                "Custom"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "Methods filtering",
                 "IP filtering",
@@ -1163,9 +1125,9 @@
             "address": null
         },
         {
-            "slug": "blast-amoy-growth-archive",
+            "slug": "blast-amoy-pay-as-you-go-archive",
             "provider": "Blast",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "amoy",
             "accessPrice": "$50/$250 included into query fees",
@@ -1209,14 +1171,14 @@
             "address": null
         },
         {
-            "slug": "blast-amoy-enterprice-archive",
+            "slug": "blast-amoy-enterprise-archive",
             "provider": "Blast",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "amoy",
             "accessPrice": "Custom",
             "queryPrice": "custom",
-            "uptimeSla": "custom",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -1228,9 +1190,7 @@
                 "debug",
                 "trace"
             ],
-            "limitations": [
-                "Custom"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "Methods filtering",
                 "IP filtering",
@@ -1296,13 +1256,13 @@
             "address": null
         },
         {
-            "slug": "blockpi-polygon-growth-archive",
+            "slug": "blockpi-polygon-pay-as-you-go-archive",
             "provider": "BlockPi",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "$0.01 /  $49 / $299",
-            "queryPrice": "$1.69 per 1M CU",
+            "queryPrice": "$0.20 per 1M CU",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1358,9 +1318,7 @@
                 "debug",
                 "trace"
             ],
-            "limitations": [
-                "Custom"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
@@ -1385,7 +1343,7 @@
         },
         {
             "slug": "chainbase-polygon-free",
-            "provider": "Chainbase",
+            "provider": "ChainBase",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
@@ -1426,8 +1384,8 @@
         },
         {
             "slug": "chainbase-polygon-pay-as-you-go",
-            "provider": "Chainbase",
-            "plan": "Pay-As-You-Go",
+            "provider": "ChainBase",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$99",
@@ -1469,13 +1427,13 @@
         },
         {
             "slug": "chainbase-polygon-enterprise",
-            "provider": "Chainbase",
+            "provider": "ChainBase",
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
-            "uptimeSla": "Custom",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -1485,9 +1443,7 @@
                 "web3",
                 "net"
             ],
-            "limitations": [
-                "Custom"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
@@ -1648,7 +1604,7 @@
         },
         {
             "slug": "chainstack-polygon-free",
-            "provider": "Chainstack",
+            "provider": "ChainStack",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
@@ -1688,8 +1644,8 @@
         },
         {
             "slug": "chainstack-polygon-pay-as-you-go-archive",
-            "provider": "Chainstack",
-            "plan": "Pay-As-You-Go",
+            "provider": "ChainStack",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "$49 / 199 / 349",
@@ -1733,7 +1689,7 @@
         },
         {
             "slug": "chainstack-polygon-enterprise-archive",
-            "provider": "Chainstack",
+            "provider": "ChainStack",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "mainnet",
@@ -1751,9 +1707,7 @@
                 "debug",
                 "trace"
             ],
-            "limitations": [
-                "unlimited"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
@@ -1777,7 +1731,7 @@
         },
         {
             "slug": "chainstack-amoy-free",
-            "provider": "Chainstack",
+            "provider": "ChainStack",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "amoy",
@@ -1817,8 +1771,8 @@
         },
         {
             "slug": "chainstack-amoy-pay-as-you-go-archive",
-            "provider": "Chainstack",
-            "plan": "Pay-As-You-Go",
+            "provider": "ChainStack",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "amoy",
             "accessPrice": "$49 / 199 / 349",
@@ -1862,7 +1816,7 @@
         },
         {
             "slug": "chainstack-amoy-enterprise-archive",
-            "provider": "Chainstack",
+            "provider": "ChainStack",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "amoy",
@@ -1880,9 +1834,7 @@
                 "debug",
                 "trace"
             ],
-            "limitations": [
-                "unlimited"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
