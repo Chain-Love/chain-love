@@ -3667,6 +3667,128 @@
             "supportedChains": null
         }
     ],
+    "faucet": [
+        {
+            "slug": "coinbase-developer-platform-faucet",
+            "provider": "Coinbase",
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0.00",
+            "dripLimitAmount": "0.0001 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Requires heavy identity scanning"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://login.coinbase.com/)"
+            ]
+        },
+        {
+            "slug": "thirdweb-faucet",
+            "provider": "Thirdweb",
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$99",
+            "dripLimitAmount": "0.01 ETH",
+            "dripLimitPeriod": null,
+            "additionalNotes": [
+                "Available only on a paid plans"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://thirdweb.com/base-sepolia-testnet)"
+            ]
+        },
+        {
+            "slug": "alchemy-faucet",
+            "provider": "Alchemy",
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": "0.001 ETH",
+            "price": "$0.00",
+            "dripLimitAmount": "0.1 ETH/1 ETH72h",
+            "dripLimitPeriod": "72h",
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://www.alchemy.com/faucets/base-sepolia)"
+            ]
+        },
+        {
+            "slug": "chainstack-faucet",
+            "provider": "Chainstack",
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": "0.08 ETH",
+            "price": "$0.00",
+            "dripLimitAmount": "0.5 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "The address must have transaction history"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.chainstack.com/base-testnet-faucet)"
+            ]
+        },
+        {
+            "slug": "quicknode-faucet",
+            "provider": "QuickNode",
+            "chain": "sepolia",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": "0.001 ETH",
+            "price": "$0.00",
+            "dripLimitAmount": "0.001 ETH",
+            "dripLimitPeriod": "12h",
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.quicknode.com/drip)"
+            ]
+        },
+        {
+            "slug": "learnweb3-faucet",
+            "provider": "LearnWeb3",
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0.00",
+            "dripLimitAmount": "0.01 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://learnweb3.io/faucets/base_sepolia/)"
+            ]
+        },
+        {
+            "slug": "ethereum-ecosystem-faucet",
+            "provider": "Ethereum Ecosystem",
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0.00",
+            "dripLimitAmount": "0.5 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Only ENS names are allowed to redeem"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://www.ethereum-ecosystem.com/faucets/base-sepolia)"
+            ]
+        }
+    ],
     "wallet": [
         {
             "slug": "1inch-wallet",
