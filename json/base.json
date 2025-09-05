@@ -1455,9 +1455,9 @@
             ]
         },
         {
-            "slug": "api3-sepolia",
+            "slug": "api3-testnet",
             "provider": "API3",
-            "chain": "sepolia",
+            "chain": "testnet",
             "technology": "Push & Pull Oracle",
             "accessPrice": "0",
             "queryPrice": "0",
@@ -1539,9 +1539,9 @@
             ]
         },
         {
-            "slug": "chainlink-sepolia",
+            "slug": "chainlink-testnet",
             "provider": "Chainlink",
-            "chain": "sepolia",
+            "chain": "testnet",
             "technology": "Decentralized Oracle",
             "accessPrice": "0",
             "queryPrice": "0",
@@ -1620,9 +1620,9 @@
             ]
         },
         {
-            "slug": "chronicle-sepolia",
+            "slug": "chronicle-testnet",
             "provider": "Chronicle Protocol",
-            "chain": "sepolia",
+            "chain": "testnet",
             "technology": "Decentralized Oracle",
             "accessPrice": "0",
             "queryPrice": "0",
@@ -1691,9 +1691,9 @@
             ]
         },
         {
-            "slug": "dia-sepolia",
+            "slug": "dia-testnet",
             "provider": "DIA",
-            "chain": "sepolia",
+            "chain": "testnet",
             "technology": "DIA",
             "accessPrice": "0 for non-production, \"Contact us\" for production",
             "queryPrice": "0",
@@ -1797,9 +1797,9 @@
             ]
         },
         {
-            "slug": "pyth-sepolia",
+            "slug": "pyth-testnet",
             "provider": "Pyth Network",
-            "chain": "sepolia",
+            "chain": "testnet",
             "technology": "Pull Oracle",
             "accessPrice": "0",
             "queryPrice": "0",
@@ -1908,9 +1908,9 @@
             ]
         },
         {
-            "slug": "supra-sepolia",
+            "slug": "supra-testnet",
             "provider": "Supra",
-            "chain": "sepolia",
+            "chain": "testnet",
             "technology": "Decentralized Oracle",
             "accessPrice": "0",
             "queryPrice": "0",
@@ -1981,9 +1981,9 @@
             ]
         },
         {
-            "slug": "gelato-sepolia",
+            "slug": "gelato-testnet",
             "provider": "Gelato",
-            "chain": "sepolia",
+            "chain": "testnet",
             "technology": "Randomness Oracle",
             "accessPrice": "0",
             "queryPrice": "0",
@@ -2056,9 +2056,9 @@
             ]
         },
         {
-            "slug": "orochi-sepolia",
+            "slug": "orochi-testnet",
             "provider": "Orochi Network",
-            "chain": "sepolia",
+            "chain": "testnet",
             "technology": "Decentralized Oracle",
             "accessPrice": "0",
             "queryPrice": "0",
@@ -3791,127 +3791,57 @@
     ],
     "wallet": [
         {
-            "slug": "1inch-wallet",
-            "provider": "1inch Wallet",
-            "openSource": true,
+            "slug": "1inch",
+            "provider": "1inch",
+            "openSource": false,
             "supportedPlatforms": [
-                "Web",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "Cross-chain EVM tokens"
-            ],
-            "staking": false,
-            "price": "0",
-            "support": [
-                "email",
-                "github",
-                "discord"
-            ],
-            "audit": null,
-            "languages": [
-                "Multilingual"
-            ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://1inch.io/wallet/)"
-            ]
-        },
-        {
-            "slug": "coinbasewallet",
-            "provider": "Coinbase Wallet",
-            "openSource": true,
-            "supportedPlatforms": [
-                "Web",
-                "Extension",
                 "iOS",
                 "Android"
             ],
             "custodial": false,
             "mfa": false,
             "msig": false,
-            "hardware": false,
+            "hardware": true,
             "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
-            ],
-            "staking": false,
-            "price": "0",
-            "support": [
-                "email",
-                "helpdesk"
-            ],
-            "audit": null,
-            "languages": [
-                "EN"
-            ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://wallet.coinbase.com/)"
-            ]
-        },
-        {
-            "slug": "gemwallet",
-            "provider": "Gem Wallet",
-            "openSource": true,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
+            "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
                 "ERC-20",
-                "BRC-20",
-                "BEP-20",
-                "SPL",
-                "JETTON"
+                "ERC-721"
             ],
-            "staking": true,
-            "price": "0",
-            "support": [
-                "email",
-                "github",
-                "discord",
-                "helpdesk"
-            ],
-            "audit": null,
+            "staking": false,
+            "price": "$0",
+            "support": [],
+            "audit": [],
             "languages": [
-                "Multilingual"
+                "EN",
+                "RU",
+                "JA",
+                "KO",
+                "VI",
+                "PT",
+                "AR",
+                "ZH",
+                "FR",
+                "ES",
+                "KO",
+                "ID",
+                "UK",
+                "HI"
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://gemwallet.com/)"
+                "[Website](https://1inch.io/wallet)"
             ]
         },
         {
-            "slug": "hana-wallet",
-            "provider": "Hana Wallet",
+            "slug": "coolwallet",
+            "provider": "Coolwallet",
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
-                "Android",
-                "Chrome"
+                "Android"
             ],
             "custodial": false,
             "mfa": true,
@@ -3922,21 +3852,91 @@
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "Multiple blockchains"
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
             ],
             "staking": true,
-            "price": "0",
+            "price": "Paid",
             "support": [
                 "email",
-                "helpdesk"
+                "telegram"
             ],
             "audit": null,
             "languages": [
-                "Multilingual"
+                "EN",
+                "ZH"
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://hanawallet.io/)"
+                "[Website](https://www.coolwallet.io/)"
+            ]
+        },
+        {
+            "slug": "desig",
+            "provider": "Desig Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Chrome"
+            ],
+            "custodial": true,
+            "mfa": false,
+            "msig": true,
+            "hardware": false,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [],
+            "audit": [],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://desig.io/wallet)"
+            ]
+        },
+        {
+            "slug": "fxwallet",
+            "provider": "FxWallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "[email](mailto:support@fxwallet.com)"
+            ],
+            "audit": [],
+            "languages": [
+                "EN",
+                "ZH"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.fxwallet.com/)"
             ]
         },
         {
@@ -3964,7 +3964,7 @@
                 "ERC-1155"
             ],
             "staking": false,
-            "price": "0",
+            "price": "$0",
             "support": [
                 "email",
                 "helpdesk"
@@ -3986,76 +3986,47 @@
             ]
         },
         {
-            "slug": "mimir",
-            "provider": "Mimir",
-            "openSource": true,
+            "slug": "ledger",
+            "provider": "Ledger SAS",
+            "openSource": false,
             "supportedPlatforms": [
-                "Web",
-                "SDK"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": false,
-            "keyExport": true,
-            "native": false,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "Polkadot ecosystem",
-                "EVM ecosystem (MAAS)"
-            ],
-            "staking": true,
-            "price": "0",
-            "support": [
-                "email",
-                "github"
-            ],
-            "audit": [
-                "Ackee",
-                "Mixbytes"
-            ],
-            "languages": [
-                "Multilingual"
-            ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://mimir.global/)"
-            ]
-        },
-        {
-            "slug": "okto",
-            "provider": "Okto",
-            "openSource": true,
-            "supportedPlatforms": [
+                "Desktop",
                 "iOS",
                 "Android"
             ],
             "custodial": false,
             "mfa": true,
             "msig": false,
-            "hardware": false,
+            "hardware": true,
             "keyExport": true,
             "native": true,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "Multi-chain tokens"
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
             ],
-            "staking": false,
-            "price": "0",
+            "staking": true,
+            "price": "Paid",
             "support": [
                 "email",
-                "telegram",
-                "discord"
+                "helpdesk"
             ],
-            "audit": null,
+            "audit": [
+                "Regular audits by third parties"
+            ],
             "languages": [
-                "Multilingual"
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "JA"
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://okto.tech/wallet)"
+                "[Website](https://www.ledger.com/)"
             ]
         },
         {
@@ -4082,7 +4053,7 @@
                 "ERC-1155"
             ],
             "staking": false,
-            "price": "0",
+            "price": "$0",
             "support": [
                 "email",
                 "helpdesk"
@@ -4098,13 +4069,12 @@
             ]
         },
         {
-            "slug": "rabby",
-            "provider": "Rabby",
+            "slug": "phantom",
+            "provider": "Phantom",
             "openSource": true,
             "supportedPlatforms": [
                 "Chrome",
-                "Brave",
-                "Edge",
+                "Firefox",
                 "iOS",
                 "Android"
             ],
@@ -4113,7 +4083,7 @@
             "msig": false,
             "hardware": true,
             "keyExport": true,
-            "native": true,
+            "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
@@ -4122,23 +4092,141 @@
                 "ERC-1155"
             ],
             "staking": false,
-            "price": "0",
+            "price": "$0",
             "support": [
                 "email",
-                "discord",
-                "telegram"
+                "helpdesk"
             ],
-            "audit": [
-                "Regular audits by third parties"
-            ],
+            "audit": null,
             "languages": [
                 "EN",
-                "ZH",
-                "JA"
+                "ES",
+                "FR"
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://rabby.io/)"
+                "[Website](https://phantom.app/)"
+            ]
+        },
+        {
+            "slug": "tangem",
+            "provider": "Tangem Wallet",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Hardware",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "DE"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://tangem.com/)"
+            ]
+        },
+        {
+            "slug": "virgo",
+            "provider": "Virgo",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Android",
+                "Chrome",
+                "Firefox"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[Discord](https://discord.gg/mSqDRzvBug)",
+                "[Telegram](https://t.me/virgoCommunity)"
+            ],
+            "audit": [],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://virgo.net/)"
+            ]
+        },
+        {
+            "slug": "wigwam",
+            "provider": "Wigwam",
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Chrome",
+                "Desktop"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "[email](mailto:info@wigwam.app)",
+                "[help guides](https://wigwam.app/help)"
+            ],
+            "audit": [
+                "January 2024 by Halborn"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "IT",
+                "JA",
+                "KO",
+                "RU",
+                "UK",
+                "ZH"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://wigwam.app/)"
             ]
         }
     ],
