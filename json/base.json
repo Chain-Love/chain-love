@@ -4477,6 +4477,294 @@
             "supportedChains": null
         }
     ],
+    "explorer": [
+        {
+            "slug": "arkham",
+            "provider": "Arkham Intelligence",
+            "chain": "mainnet",
+            "technology": "Custom (Analytics/Intel)",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Tokens"
+            ],
+            "additionalFeatures": [
+                "Entity Labeling",
+                "Relationship Graphs",
+                "De-anonymization",
+                "Portfolio Tracking"
+            ],
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": [
+                "Python",
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Entity",
+                "Transaction Hash",
+                "Token"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "partially paid",
+            "starred": true,
+            "actionButtons": [
+                "[Explore](https://intel.arkm.com/)",
+                "[Docs](https://codex.arkm.com/)"
+            ]
+        },
+        {
+            "slug": "blockscout-sepolia",
+            "provider": "Blockscout",
+            "chain": "sepolia",
+            "technology": "Open-source",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts",
+                "Logs",
+                "Events"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "Network Metrics"
+            ],
+            "availableApis": [
+                "REST API",
+                "GraphQL",
+                "RPC API",
+                "Eth RPC API"
+            ],
+            "sdk": [
+                "TypeScript",
+                "Node.js"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "FREE",
+            "starred": false,
+            "actionButtons": [
+                "[Explore](https://base-sepolia.blockscout.com/)"
+            ]
+        },
+        {
+            "slug": "etherscan-sepolia",
+            "provider": "Etherscan",
+            "chain": "sepolia",
+            "technology": "Proprietary",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Tokens",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "Network Metrics"
+            ],
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false,
+            "actionButtons": [
+                "[Explore](https://sepolia.basescan.org/)"
+            ]
+        },
+        {
+            "slug": "dexguru",
+            "provider": "DexGuru",
+            "chain": "mainnet",
+            "technology": "Web",
+            "monitoringAndAnalytics": [
+                "Transactions",
+                "Blocks",
+                "Account balances"
+            ],
+            "additionalFeatures": [
+                "Verify contracts",
+                "Debug transactions",
+                "Interactive trace"
+            ],
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "FREE/$199/mo",
+            "starred": true,
+            "actionButtons": [
+                "[Explore](https://base.dex.guru/)",
+                "[Docs](https://dexguru.readme.io/docs/getting-started)"
+            ]
+        },
+        {
+            "slug": "L2scan-explorer-mainnet",
+            "provider": "L2scan",
+            "chain": "mainnet",
+            "technology": "Web",
+            "monitoringAndAnalytics": [
+                "Transaction history",
+                "Account balances",
+                "Network activity tracking"
+            ],
+            "additionalFeatures": [
+                "User-friendly interface"
+            ],
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "FREE",
+            "starred": true,
+            "actionButtons": [
+                "[Explore](https://base.l2scan.co/)"
+            ]
+        },
+        {
+            "slug": "oklink-mainnet",
+            "provider": "OKLink",
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "Smart Contract Verification",
+                "Address Labels"
+            ],
+            "availableApis": [
+                "REST API",
+                "GraphQL",
+                "RPC API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "FREE",
+            "starred": false,
+            "actionButtons": [
+                "[Explore](https://www.oklink.com/base)"
+            ]
+        },
+        {
+            "slug": "routescan-mainnet",
+            "provider": "Routescan",
+            "chain": "mainnet",
+            "technology": "Superchain Explorer",
+            "monitoringAndAnalytics": [
+                "Transactions",
+                "Addresses",
+                "Tokens",
+                "Prices"
+            ],
+            "additionalFeatures": [
+                "Cross-chain",
+                "Superchain coverage"
+            ],
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": [
+                "TypeScript, Node.js"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Token",
+                "Price",
+                "Block"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "FREE",
+            "starred": true,
+            "actionButtons": [
+                "[Explore](https://routescan.io/)",
+                "[Docs](https://routescan.io/documentation/api/etherscan-like/accounts)"
+            ]
+        },
+        {
+            "slug": "tenderly-explorer",
+            "provider": "Tenderly",
+            "chain": "mainnet",
+            "technology": "Developer Explorer",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Smart contract debugging",
+                "Gas optimization",
+                "Transaction trace"
+            ],
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "FREE/$45/mo/$450/mo",
+            "starred": true,
+            "actionButtons": [
+                "[Explore](https://tenderly.co/)",
+                "[Docs](https://docs.tenderly.co/products)"
+            ]
+        }
+    ],
     "faucet": [
         {
             "slug": "coinbase-developer-platform-faucet",
