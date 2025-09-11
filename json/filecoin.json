@@ -18,18 +18,13 @@
                 "Advanced Ankr API"
             ],
             "limitations": [
-                "1500 requests per second"
+                "up to 900000 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Error tracing"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
-                "per-ip analytics",
-                "per-country analytics"
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
             ],
             "regions": [
                 "Global"
@@ -38,7 +33,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.ankr.com/rpc/home/)",
+                "[Contact](https://meetings-eu1.hubspot.com/arsalan-evini?uuid=a58d6642-6a81-4b72-a3c8-f748831d3956)",
                 "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
             ],
             "address": null
@@ -60,18 +55,13 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "1 key only"
+                "~1800 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Method Limiting",
-                "Error tracing",
-                "Contract addresses protection"
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Community support"
             ],
-            "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
             ],
@@ -79,7 +69,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.ankr.com/rpc/home/)",
+                "[Website](https://www.ankr.com/rpc/home/)",
                 "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
             ],
             "address": null
@@ -102,19 +92,13 @@
                 "Advanced Ankr API"
             ],
             "limitations": [
-                "1500 requests per second"
+                "up to 90000 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Error tracing"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
-                "per-method analytics",
-                "latency",
-                "CU analytics"
+                "Usage analytics",
+                "Custom monitoring",
+                "Support portal"
             ],
             "regions": [
                 "Global"
@@ -123,7 +107,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.ankr.com/rpc/home/)",
+                "[Buy](https://www.ankr.com/rpc/pricing/)",
                 "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
             ],
             "address": null
@@ -134,8 +118,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
+            "accessPrice": "0",
+            "queryPrice": "0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -145,12 +129,20 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "100 requests per minute"
+                "100k requests per month"
             ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting"
+            ],
+            "monitoringAndAnalytics": [
+                "per-method analytics",
+                "requests amount monitoring API"
+            ],
             "regions": [
-                "Asia"
+                "US"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -167,8 +159,8 @@
             "plan": "Pay-As-You-Go",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "$0",
-            "queryPrice": "0.5$ per 1M CU",
+            "accessPrice": "$0.00",
+            "queryPrice": "0.5$/1M CUs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -185,10 +177,11 @@
                 "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics"
+                "per-method analytics",
+                "requests amount monitoring API"
             ],
             "regions": [
-                "Asia"
+                "US"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -205,8 +198,8 @@
             "plan": "Dedicated",
             "nodeType": "FEVM Archive",
             "chain": "mainnet",
-            "accessPrice": "$3500",
-            "queryPrice": "$0",
+            "accessPrice": "$3,500.00",
+            "queryPrice": "0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -223,11 +216,10 @@
                 "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics"
+                "per-method analytics",
+                "requests amount monitoring API"
             ],
             "regions": [
-                "Asia",
-                "Europe",
                 "US"
             ],
             "verifiedUptime": null,
@@ -245,8 +237,8 @@
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "calibnet",
-            "accessPrice": "$800",
-            "queryPrice": "$0",
+            "accessPrice": "$800.00",
+            "queryPrice": "0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -263,11 +255,10 @@
                 "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics"
+                "per-method analytics",
+                "requests amount monitoring API"
             ],
             "regions": [
-                "Asia",
-                "Europe",
                 "US"
             ],
             "verifiedUptime": null,
@@ -285,8 +276,8 @@
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$5000",
-            "queryPrice": "$0",
+            "accessPrice": "$5,000.00",
+            "queryPrice": "0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -303,11 +294,10 @@
                 "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics"
+                "per-method analytics",
+                "requests amount monitoring API"
             ],
             "regions": [
-                "Asia",
-                "Europe",
                 "US"
             ],
             "verifiedUptime": null,
@@ -325,8 +315,8 @@
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "$600",
-            "queryPrice": "$0",
+            "accessPrice": "$600.00",
+            "queryPrice": "0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -343,11 +333,10 @@
                 "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics"
+                "per-method analytics",
+                "requests amount monitoring API"
             ],
             "regions": [
-                "Asia",
-                "Europe",
                 "US"
             ],
             "verifiedUptime": null,
@@ -365,8 +354,8 @@
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$1000",
-            "queryPrice": "$0",
+            "accessPrice": "$1,000.00",
+            "queryPrice": "0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -383,11 +372,10 @@
                 "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics"
+                "per-method analytics",
+                "requests amount monitoring API"
             ],
             "regions": [
-                "Asia",
-                "Europe",
                 "US"
             ],
             "verifiedUptime": null,
@@ -405,8 +393,8 @@
             "plan": "Pay-As-You-Go",
             "nodeType": "FEVM Archive",
             "chain": "mainnet",
-            "accessPrice": "$300",
-            "queryPrice": "$1.5 per 1M CU",
+            "accessPrice": "$300.00",
+            "queryPrice": "1.5$/1M CUs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -423,10 +411,11 @@
                 "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics"
+                "per-method analytics",
+                "requests amount monitoring API"
             ],
             "regions": [
-                "Asia"
+                "US"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -443,8 +432,8 @@
             "plan": "Pay-As-You-Go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$500",
-            "queryPrice": "$3 per 1M CU",
+            "accessPrice": "$500.00",
+            "queryPrice": "3$/1M CUs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -461,10 +450,11 @@
                 "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics"
+                "per-method analytics",
+                "requests amount monitoring API"
             ],
             "regions": [
-                "Asia"
+                "US"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -481,8 +471,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
+            "accessPrice": "0",
+            "queryPrice": "0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -526,8 +516,8 @@
             "plan": "Pay-As-You-Go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "1$ per 1M CU",
+            "accessPrice": "$0.00",
+            "queryPrice": "1$/1M CUs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -544,10 +534,11 @@
                 "Custom rate limiting"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics"
+                "per-method analytics",
+                "requests amount monitoring API"
             ],
             "regions": [
-                "Asia"
+                "US"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -564,8 +555,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -595,8 +586,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -636,7 +627,9 @@
             "availableApis": [
                 "All read methods + MPoolPush"
             ],
-            "limitations": null,
+            "limitations": [
+                "100 requests per second, 10.5M requests per month"
+            ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
@@ -658,7 +651,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://drpc.org/chainlist/filecoin#filecoin-calibration)",
+                "[Contact](https://drpc.org/pricing)",
+                "[Website](https://drpc.org/chainlist/filecoin-mainnet-rpc)",
                 "[Docs](https://drpc.org/docs)"
             ],
             "address": null
@@ -666,7 +660,7 @@
         {
             "slug": "drpc-calibnet-pay-as-you-go",
             "provider": "dRPC",
-            "plan": "Pay As You Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "calibnet",
             "accessPrice": "$0",
@@ -703,7 +697,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://drpc.org/chainlist/filecoin#filecoin-calibration)",
+                "[Buy](https://drpc.org/pricing)",
+                "[Website](https://drpc.org/chainlist/filecoin-mainnet-rpc)",
                 "[Docs](https://drpc.org/docs)"
             ],
             "address": null
@@ -724,7 +719,9 @@
             "availableApis": [
                 "All read methods + MPoolPush"
             ],
-            "limitations": null,
+            "limitations": [
+                "100 requests per second, 10.5M requests per month"
+            ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
@@ -746,7 +743,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://drpc.org/chainlist/filecoin#filecoin)",
+                "[Contact](https://drpc.org/pricing)",
+                "[Website](https://drpc.org/chainlist/filecoin#filecoin)",
                 "[Docs](https://drpc.org/docs)"
             ],
             "address": null
@@ -754,7 +752,7 @@
         {
             "slug": "drpc-mainnet-pay-as-you-go",
             "provider": "dRPC",
-            "plan": "Pay As You Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
@@ -791,7 +789,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://drpc.org/chainlist/filecoin#filecoin)",
+                "[Buy](https://drpc.org/pricing)",
+                "[Website](https://drpc.org/chainlist/filecoin-mainnet-rpc)",
                 "[Docs](https://drpc.org/docs)"
             ],
             "address": null
@@ -802,8 +801,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -833,8 +832,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -865,7 +864,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "€500 included into requests, yearly 10% discount",
-            "queryPrice": "€5 per 1M requests",
+            "queryPrice": "€5/1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -875,7 +874,7 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "100M requests per month bundled, 100 keys limit"
+                "100M req/mo bundled, 100 keys limit"
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
@@ -886,7 +885,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://nownodes.io/pricing)",
+                "[Contact](https://nownodes.io/pricing)",
                 "[Docs](https://nownodes.gitbook.io/documentation/fil-filecoin)"
             ],
             "address": null
@@ -897,22 +896,20 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
+            "accessPrice": "0",
+            "queryPrice": "Free (100,000 included only)",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
+            "availableApis": null,
             "limitations": [
-                "100k requests, no more than 1 month, no more than 1 key"
+                "100k requests",
+                "no more than 1 month",
+                "no more than 1 key"
             ],
-            "securityImprovements": [
-                "Domain name protection"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": null,
             "verifiedUptime": null,
@@ -937,16 +934,13 @@
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
+            "availableApis": null,
             "limitations": [
-                "1-30M requests per month bundled, 3-25 keys limit"
+                "1M / 30M / 100M requests per month",
+                "3 / 25 / 100 api key"
             ],
             "securityImprovements": null,
-            "monitoringAndAnalytics": [
-                "per-key analytics"
-            ],
+            "monitoringAndAnalytics": null,
             "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
