@@ -6,12 +6,12 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
+            "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "horizon",
@@ -28,7 +28,12 @@
                 "Usage analytics"
             ],
             "regions": [
-                "Global"
+                "South Africa",
+                "Asia",
+                "Canada Central",
+                "Europe",
+                "South America",
+                "US"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -40,18 +45,18 @@
             "address": null
         },
         {
-            "slug": "blockdaemon-mainnet-growth",
+            "slug": "blockdaemon-mainnet-pay-as-you-go",
             "provider": "Blockdaemon",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": null,
             "queryPrice": null,
-            "uptimeSla": null,
+            "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "horizon",
                 "soroban-rpc"
@@ -68,7 +73,12 @@
                 "Custom monitoring"
             ],
             "regions": [
-                "Global"
+                "South Africa",
+                "Asia",
+                "Canada Central",
+                "Europe",
+                "South America",
+                "US"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -127,9 +137,9 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
+            "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -149,7 +159,12 @@
                 "Usage analytics"
             ],
             "regions": [
-                "Global"
+                "South Africa",
+                "Asia",
+                "Canada Central",
+                "Europe",
+                "South America",
+                "US"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -161,18 +176,18 @@
             "address": null
         },
         {
-            "slug": "blockdaemon-testnet-growth",
+            "slug": "blockdaemon-testnet-pay-as-you-go",
             "provider": "Blockdaemon",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": null,
             "queryPrice": null,
-            "uptimeSla": null,
+            "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "horizon",
                 "soroban-rpc"
@@ -189,7 +204,12 @@
                 "Custom monitoring"
             ],
             "regions": [
-                "Global"
+                "South Africa",
+                "Asia",
+                "Canada Central",
+                "Europe",
+                "South America",
+                "US"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -244,33 +264,32 @@
         },
         {
             "slug": "quicknode-mainnet-free",
-            "provider": "QuickNode",
+            "provider": "Quicknode",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "0",
-            "queryPrice": "0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "horizon"
             ],
             "limitations": [
-                "~1000 req/min"
+                "900 req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection"
+                "IP Protection",
+                "Privacy preserving"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics"
+                "Basic dashboard"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -281,9 +300,9 @@
             "address": null
         },
         {
-            "slug": "quicknode-mainnet-growth",
-            "provider": "QuickNode",
-            "plan": "Pay-As-You-Go",
+            "slug": "quicknode-mainnet-pay-as-you-go",
+            "provider": "Quicknode",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$49/$249/$500/$999 included into query fees",
@@ -297,19 +316,19 @@
                 "horizon"
             ],
             "limitations": [
-                "3k / 7.5k / 15k /30k req/min"
+                "3000/7500/15000/30000 req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection"
+                "IP Protection",
+                "Privacy preserving"
             ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
-                "Custom monitoring"
+                "Custom dashboards",
+                "Alerts & endpoints monitoring"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -321,7 +340,7 @@
         },
         {
             "slug": "quicknode-mainnet-enterprise",
-            "provider": "QuickNode",
+            "provider": "Quicknode",
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
@@ -335,22 +354,18 @@
             "availableApis": [
                 "horizon"
             ],
-            "limitations": [
-                "Custom limits"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
-                "Dedicated infrastructure"
+                "Privacy preserving"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Advanced analytics"
+                "Advanced analytics",
+                "Console API (Prometheus/Grafana)",
+                "Custom alerting & engineering support"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -362,12 +377,12 @@
         },
         {
             "slug": "quicknode-testnet-free",
-            "provider": "QuickNode",
+            "provider": "Quicknode",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "0",
-            "queryPrice": "0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -377,18 +392,17 @@
                 "horizon"
             ],
             "limitations": [
-                "3M requests per month"
+                "900 req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection"
+                "IP Protection",
+                "Privacy preserving"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics"
+                "Basic dashboard"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -399,12 +413,12 @@
             "address": null
         },
         {
-            "slug": "quicknode-testnet-growth",
-            "provider": "QuickNode",
-            "plan": "Pay-As-You-Go",
+            "slug": "quicknode-testnet-pay-as-you-go",
+            "provider": "Quicknode",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "49",
+            "accessPrice": "$49/$249/$500/$999 included into query fees",
             "queryPrice": "$10-24.8 per 1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -415,19 +429,19 @@
                 "horizon"
             ],
             "limitations": [
-                "60M requests per month"
+                "3000/7500/15000/30000 req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection"
+                "IP Protection",
+                "Privacy preserving"
             ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
-                "Custom monitoring"
+                "Custom dashboards",
+                "Alerts & endpoints monitoring"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -439,11 +453,11 @@
         },
         {
             "slug": "quicknode-testnet-enterprise",
-            "provider": "QuickNode",
+            "provider": "Quicknode",
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": null,
+            "accessPrice": "Custom",
             "queryPrice": "Custom",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -453,22 +467,18 @@
             "availableApis": [
                 "horizon"
             ],
-            "limitations": [
-                "Custom limits"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
-                "Dedicated infrastructure"
+                "Privacy preserving"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Advanced analytics"
+                "Advanced analytics",
+                "Console API (Prometheus/Grafana)",
+                "Custom alerting & engineering support"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -484,12 +494,12 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 per 1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "horizon",
@@ -498,12 +508,10 @@
             "limitations": [
                 "~1800 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
-                "Usage analytics"
+                "Usage analytics",
+                "Community support"
             ],
             "regions": [
                 "Global"
@@ -518,9 +526,9 @@
             "address": null
         },
         {
-            "slug": "ankr-mainnet-growth",
+            "slug": "ankr-mainnet-pay-as-you-go",
             "provider": "Ankr",
-            "plan": "Pay-As-You-Go",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$10 included into query fees",
@@ -535,15 +543,13 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "up to 90k req/min"
+                "up to 90000 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Usage analytics",
-                "Custom monitoring"
+                "Custom monitoring",
+                "Support portal"
             ],
             "regions": [
                 "Global"
@@ -564,8 +570,8 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$1000 included into query fees",
-            "queryPrice": "Custom",
-            "uptimeSla": "custom SLA",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -575,17 +581,13 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "up to 900k req/min"
+                "up to 900000 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Custom monitoring",
-                "Advanced analytics"
+                "Engineering team support"
             ],
             "regions": [
                 "Global"
@@ -605,8 +607,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 per 1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -619,12 +621,10 @@
             "limitations": [
                 "~1800 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
-                "Usage analytics"
+                "Usage analytics",
+                "Community support"
             ],
             "regions": [
                 "Global"
@@ -639,9 +639,9 @@
             "address": null
         },
         {
-            "slug": "ankr-testnet-growth",
+            "slug": "ankr-testnet-pay-as-you-go",
             "provider": "Ankr",
-            "plan": "Growth",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$10 included into query fees",
@@ -656,15 +656,13 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "up to 90k req/min"
+                "up to 90000 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Usage analytics",
-                "Custom monitoring"
+                "Custom monitoring",
+                "Support portal"
             ],
             "regions": [
                 "Global"
@@ -685,8 +683,8 @@
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$1000 included into query fees",
-            "queryPrice": "Custom",
-            "uptimeSla": "custom SLA",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -696,17 +694,13 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "up to 900k req/min"
+                "up to 900000 req/min"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
-            ],
+            "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Custom monitoring",
-                "Advanced analytics"
+                "Engineering team support"
             ],
             "regions": [
                 "Global"
@@ -722,51 +716,12 @@
         },
         {
             "slug": "nownodes-mainnet-free",
-            "provider": "NOWNodes",
+            "provider": "Nownodes",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": true,
-            "trial": false,
-            "availableApis": [
-                "horizon",
-                "soroban-rpc"
-            ],
-            "limitations": [
-                "5000 requests per day"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://nownodes.io/)",
-                "[Docs](https://nownodes.io/nodes/stellar-xlm)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "nownodes-mainnet-growth",
-            "provider": "NOWNodes",
-            "plan": "Pay-As-You-Go",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "€20 / €200/ € 500 included into requests, yearly 10% discount",
-            "queryPrice": null,
+            "queryPrice": "Free (100,000 included only)",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -777,19 +732,46 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "10M requests per month"
+                "100k requests",
+                "no more than 1 month",
+                "no more than 1 key"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
+            "regions": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://nownodes.io/)",
+                "[Docs](https://nownodes.io/nodes/stellar-xlm)"
             ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring"
+            "address": null
+        },
+        {
+            "slug": "nownodes-mainnet-pay-as-you-go",
+            "provider": "Nownodes",
+            "plan": "Pay-as-you-go",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "€20 / €200/ € 500 included into requests, yearly 10% discount",
+            "queryPrice": "€50 / €10 / €5 million per 1M requests",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "horizon",
+                "soroban-rpc"
             ],
-            "regions": [
-                "Global"
+            "limitations": [
+                "1M / 30M / 100M requests per month",
+                "3 / 25 / 100 api key"
             ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -801,7 +783,7 @@
         },
         {
             "slug": "nownodes-testnet-free",
-            "provider": "NOWNodes",
+            "provider": "Nownodes",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
@@ -817,18 +799,13 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "100k requests, no more than 1 month, no more than 1 key"
+                "100k requests",
+                "no more than 1 month",
+                "no more than 1 key"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -839,9 +816,9 @@
             "address": null
         },
         {
-            "slug": "nownodes-testnet-growth",
-            "provider": "NOWNodes",
-            "plan": "Pay-As-You-Go",
+            "slug": "nownodes-testnet-pay-as-you-go",
+            "provider": "Nownodes",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "€20 / €200/ € 500 included into requests, yearly 10% discount",
@@ -856,19 +833,12 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "1M / 30M / 100M requests per month, 3 / 25 / 100 api key"
+                "1M / 30M / 100M requests per month",
+                "3 / 25 / 100 api key"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
