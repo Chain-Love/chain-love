@@ -6,8 +6,8 @@
             "plan": "Public",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -43,8 +43,8 @@
             "plan": "Public",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -80,49 +80,52 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 per 1M request",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
-                "300M CU per month, 330 CUPS"
+                "1500 req/min"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
+                "Basic monitoring",
                 "Usage analytics"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.alchemy.com/)",
+                "[Website](https://www.alchemy.com/)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/alchemy)"
             ],
             "address": null
         },
         {
-            "slug": "alchemy-mainnet-growth",
+            "slug": "alchemy-mainnet-pay-as-you-go",
             "provider": "Alchemy",
-            "plan": "Growth",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "49",
-            "queryPrice": null,
-            "uptimeSla": "99.9",
+            "accessPrice": "$49/$199",
+            "queryPrice": "$0.40/1M CUs",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -130,70 +133,30 @@
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
-                "400M CU per month, 600 CUPS"
+                "18000 req/min"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
-                "Custom monitoring"
+                "Custom alerts",
+                "Reporting"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.alchemy.com/)",
-                "[Docs](https://lens.xyz/docs/chain/tools/rpc/alchemy)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "alchemy-mainnet-scale",
-            "provider": "Alchemy",
-            "plan": "Scale",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "199",
-            "queryPrice": null,
-            "uptimeSla": "99.99",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "1.5B CU per month, 600 CUPS"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.alchemy.com/)",
+                "[Buy](https://www.alchemy.com/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/alchemy)"
             ],
             "address": null
@@ -204,9 +167,9 @@
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": "99.99",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -214,29 +177,30 @@
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
-                "Custom limits"
+                "custom limits"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Advanced analytics"
+                "Advanced analytics",
+                "Custom dashboards",
+                "Engineering support"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.alchemy.com/)",
+                "[Contact](https://www.alchemy.com/contact-sales)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/alchemy)"
             ],
             "address": null
@@ -247,8 +211,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 per 1M request",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -257,39 +221,42 @@
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
-                "300M CU per month, 330 CUPS"
+                "1500 req/min"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
+                "Basic monitoring",
                 "Usage analytics"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.alchemy.com/)",
+                "[Website](https://www.alchemy.com/)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/alchemy)"
             ],
             "address": null
         },
         {
-            "slug": "alchemy-testnet-growth",
+            "slug": "alchemy-testnet-pay-as-you-go",
             "provider": "Alchemy",
-            "plan": "Growth",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "49",
-            "queryPrice": null,
-            "uptimeSla": "99.9",
+            "accessPrice": "$49/$199",
+            "queryPrice": "$0.40/1M CUs",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -297,70 +264,30 @@
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
-                "400M CU per month, 600 CUPS"
+                "18000 req/min"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
-                "Custom monitoring"
+                "Custom alerts",
+                "Reporting"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.alchemy.com/)",
-                "[Docs](https://lens.xyz/docs/chain/tools/rpc/alchemy)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "alchemy-testnet-scale",
-            "provider": "Alchemy",
-            "plan": "Scale",
-            "nodeType": "Recent-State",
-            "chain": "testnet",
-            "accessPrice": "199",
-            "queryPrice": null,
-            "uptimeSla": "99.99",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "1.5B CU per month, 600 CUPS"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.alchemy.com/)",
+                "[Buy](https://www.alchemy.com/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/alchemy)"
             ],
             "address": null
@@ -371,9 +298,9 @@
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": "99.99",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom pricing",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -381,153 +308,108 @@
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace",
+                "nft",
+                "transfer",
+                "tokens"
             ],
             "limitations": [
-                "Custom limits"
+                "custom limits"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
+                "TX simulation"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Advanced analytics"
+                "Advanced analytics",
+                "Custom dashboards",
+                "Engineering support"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.alchemy.com/)",
+                "[Contact](https://www.alchemy.com/contact-sales)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/alchemy)"
             ],
             "address": null
         },
         {
-            "slug": "quicknode-mainnet-discover",
-            "provider": "QuickNode",
-            "plan": "Discover",
+            "slug": "quicknode-mainnet-free",
+            "provider": "Quicknode",
+            "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "0",
-            "queryPrice": "0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "100K API Credits per day, 3M API Credits per month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/)",
-                "[Docs](https://lens.xyz/docs/chain/tools/rpc/quicknode)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "quicknode-mainnet-build",
-            "provider": "QuickNode",
-            "plan": "Build",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "49",
-            "queryPrice": null,
-            "uptimeSla": "99.9",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
+            "availableApis": null,
             "limitations": [
-                "2M API Credits per day, 60M API Credits per month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/)",
-                "[Docs](https://lens.xyz/docs/chain/tools/rpc/quicknode)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "quicknode-mainnet-scale",
-            "provider": "QuickNode",
-            "plan": "Scale",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "299",
-            "queryPrice": null,
-            "uptimeSla": "99.99",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "10M API Credits per day, 300M API Credits per month"
+                "900 req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
-                "SAML SSO"
+                "Privacy preserving"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Advanced analytics"
+                "Basic dashboard"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.quicknode.com/)",
+                "[Website](https://www.quicknode.com/)",
+                "[Docs](https://lens.xyz/docs/chain/tools/rpc/quicknode)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "quicknode-mainnet-pay-as-you-go",
+            "provider": "Quicknode",
+            "plan": "Pay-as-you-go",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "$49/$299",
+            "queryPrice": "$10-24.8 per 1M requests",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "3000/7500/15000/30000 req/min"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring"
+            ],
+            "regions": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/quicknode)"
             ],
             "address": null
@@ -540,7 +422,7 @@
             "chain": "mainnet",
             "accessPrice": null,
             "queryPrice": null,
-            "uptimeSla": "99.99",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -576,13 +458,48 @@
             "address": null
         },
         {
-            "slug": "quicknode-testnet-discover",
-            "provider": "QuickNode",
-            "plan": "Discover",
+            "slug": "quicknode-testnet-free",
+            "provider": "Quicknode",
+            "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "0",
-            "queryPrice": "0",
+            "queryPrice": "$0",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": null,
+            "limitations": [
+                "900 req/min"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving"
+            ],
+            "monitoringAndAnalytics": [
+                "Basic dashboard"
+            ],
+            "regions": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://www.quicknode.com/)",
+                "[Docs](https://lens.xyz/docs/chain/tools/rpc/quicknode)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "quicknode-testnet-pay-as-you-go",
+            "provider": "Quicknode",
+            "plan": "Pay-as-you-go",
+            "nodeType": "Recent-State",
+            "chain": "testnet",
+            "accessPrice": "$49/$299",
+            "queryPrice": "$10-24.8 per 1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -590,111 +507,30 @@
             "trial": false,
             "availableApis": [
                 "eth",
+                "net",
                 "web3",
-                "net"
+                "debug",
+                "trace"
             ],
             "limitations": [
-                "100K API Credits per day, 3M API Credits per month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/)",
-                "[Docs](https://lens.xyz/docs/chain/tools/rpc/quicknode)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "quicknode-testnet-build",
-            "provider": "QuickNode",
-            "plan": "Build",
-            "nodeType": "Recent-State",
-            "chain": "testnet",
-            "accessPrice": "49",
-            "queryPrice": null,
-            "uptimeSla": "99.9",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "2M API Credits per day, 60M API Credits per month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/)",
-                "[Docs](https://lens.xyz/docs/chain/tools/rpc/quicknode)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "quicknode-testnet-scale",
-            "provider": "QuickNode",
-            "plan": "Scale",
-            "nodeType": "Recent-State",
-            "chain": "testnet",
-            "accessPrice": "299",
-            "queryPrice": null,
-            "uptimeSla": "99.99",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "10M API Credits per day, 300M API Credits per month"
+                "3000/7500/15000/30000 req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
-                "SAML SSO"
+                "Privacy preserving"
             ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
-                "Custom monitoring",
-                "Advanced analytics"
+                "Custom dashboards",
+                "Alerts & endpoints monitoring"
             ],
-            "regions": [
-                "Global"
-            ],
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.quicknode.com/)",
+                "[Buy](https://www.quicknode.com/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/quicknode)"
             ],
             "address": null
@@ -707,7 +543,7 @@
             "chain": "testnet",
             "accessPrice": null,
             "queryPrice": null,
-            "uptimeSla": "99.99",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -748,8 +584,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -781,31 +617,41 @@
             "address": null
         },
         {
-            "slug": "drpc-mainnet-premium",
+            "slug": "drpc-mainnet-pay-as-you-go",
             "provider": "dRPC",
-            "plan": "Premium",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "$0",
+            "queryPrice": "$6 per 1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace"
             ],
-            "limitations": null,
+            "limitations": [
+                "100 requests per second, 10.5M requests per month"
+            ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection"
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring"
+                "per-method analytics",
+                "latency",
+                "CU analytics"
             ],
             "regions": [
                 "Global"
@@ -814,7 +660,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://drpc.org/)",
+                "[Buy](https://drpc.org/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/drpc)"
             ],
             "address": null
@@ -825,8 +671,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -858,31 +704,41 @@
             "address": null
         },
         {
-            "slug": "drpc-testnet-premium",
+            "slug": "drpc-testnet-pay-as-you-go",
             "provider": "dRPC",
-            "plan": "Premium",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "$0",
+            "queryPrice": "$6 per 1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace"
             ],
-            "limitations": null,
+            "limitations": [
+                "100 requests per second, 10.5M requests per month"
+            ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection"
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring"
+                "per-method analytics",
+                "latency",
+                "CU analytics"
             ],
             "regions": [
                 "Global"
@@ -891,7 +747,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://drpc.org/)",
+                "[Buy](https://drpc.org/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/drpc)"
             ],
             "address": null
@@ -902,20 +758,24 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
-            "trial": false,
+            "starred": false,
+            "trial": true,
             "availableApis": [
                 "eth",
                 "web3",
                 "net"
             ],
-            "limitations": null,
+            "limitations": [
+                "25M TU/mo with rate limit 10 TU/s"
+            ],
             "securityImprovements": [
+                "Privacy Protected Relays",
+                "Transaction Sanitizers",
                 "DDoS Protection",
                 "IP Protection"
             ],
@@ -929,20 +789,20 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://tenderly.co/)",
+                "[Website](https://tenderly.co/)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/tenderly)"
             ],
             "address": null
         },
         {
-            "slug": "tenderly-mainnet-premium",
+            "slug": "tenderly-mainnet-pay-as-you-go",
             "provider": "Tenderly",
-            "plan": "Premium",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": "99.9",
+            "accessPrice": "$45/$50/$450/$500",
+            "queryPrice": "$10/1M TU",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -952,8 +812,13 @@
                 "web3",
                 "net"
             ],
-            "limitations": null,
+            "limitations": [
+                "35M TU/mo with rate limit 20 TU/s",
+                "350M TU/mo with rate limit 300 TU/s"
+            ],
             "securityImprovements": [
+                "Privacy Protected Relays",
+                "Transaction Sanitizers",
                 "DDoS Protection",
                 "IP Protection"
             ],
@@ -968,7 +833,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://tenderly.co/)",
+                "[Buy](https://tenderly.co/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/tenderly)"
             ],
             "address": null
@@ -979,20 +844,24 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": false,
+            "trial": true,
             "availableApis": [
                 "eth",
                 "web3",
                 "net"
             ],
-            "limitations": null,
+            "limitations": [
+                "25M TU/mo with rate limit 10 TU/s"
+            ],
             "securityImprovements": [
+                "Privacy Protected Relays",
+                "Transaction Sanitizers",
                 "DDoS Protection",
                 "IP Protection"
             ],
@@ -1006,20 +875,20 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://tenderly.co/)",
+                "[Website](https://tenderly.co/)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/tenderly)"
             ],
             "address": null
         },
         {
-            "slug": "tenderly-testnet-premium",
+            "slug": "tenderly-testnet-pay-as-you-go",
             "provider": "Tenderly",
-            "plan": "Premium",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": "99.9",
+            "accessPrice": "$45/$50/$450/$500",
+            "queryPrice": "$10/1M TU",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -1029,8 +898,13 @@
                 "web3",
                 "net"
             ],
-            "limitations": null,
+            "limitations": [
+                "35M TU/mo with rate limit 20 TU/s",
+                "350M TU/mo with rate limit 300 TU/s"
+            ],
             "securityImprovements": [
+                "Privacy Protected Relays",
+                "Transaction Sanitizers",
                 "DDoS Protection",
                 "IP Protection"
             ],
@@ -1045,14 +919,14 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://tenderly.co/)",
+                "[Buy](https://tenderly.co/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/tenderly)"
             ],
             "address": null
         },
         {
             "slug": "thirdweb-mainnet-free",
-            "provider": "thirdweb",
+            "provider": "ThirdWeb",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
@@ -1061,75 +935,65 @@
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
                 "net"
             ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+            "limitations": [
+                "100 requests per second",
+                "1M requests"
             ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://thirdweb.com/)",
+                "[Website](https://thirdweb.com/)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/thirdweb)"
             ],
             "address": null
         },
         {
-            "slug": "thirdweb-mainnet-premium",
-            "provider": "thirdweb",
-            "plan": "Premium",
+            "slug": "thirdweb-mainnet-pay-as-you-go",
+            "provider": "ThirdWeb",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "$5/$99",
+            "queryPrice": "$8 per 1M requests (volume discounts applies)",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
                 "net"
             ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+            "limitations": [
+                "100/250 requests per second"
             ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://thirdweb.com/)",
+                "[Buy](https://thirdweb.com/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/thirdweb)"
             ],
             "address": null
         },
         {
             "slug": "thirdweb-testnet-free",
-            "provider": "thirdweb",
+            "provider": "ThirdWeb",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
@@ -1145,77 +1009,67 @@
                 "web3",
                 "net"
             ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+            "limitations": [
+                "100 requests per second",
+                "1M requests"
             ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://thirdweb.com/)",
+                "[Website](https://thirdweb.com/)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/thirdweb)"
             ],
             "address": null
         },
         {
-            "slug": "thirdweb-testnet-premium",
-            "provider": "thirdweb",
-            "plan": "Premium",
+            "slug": "thirdweb-testnet-pay-as-you-go",
+            "provider": "ThirdWeb",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "$5/$99",
+            "queryPrice": "$8 per 1M requests (volume discounts applies)",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
                 "net"
             ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+            "limitations": [
+                "100/250 requests per second"
             ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
+            "regions": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://thirdweb.com/)",
+                "[Buy](https://thirdweb.com/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/thirdweb)"
             ],
             "address": null
         },
         {
             "slug": "chainstack-mainnet-free",
-            "provider": "Chainstack",
+            "provider": "ChainStack",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
+            "accessPrice": "$0",
+            "queryPrice": "included 3M req, extra $20 per 1M req",
+            "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "eth",
@@ -1223,14 +1077,14 @@
                 "net"
             ],
             "limitations": [
-                "3M RU per month, 100 RU per second"
+                "1500 req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics"
+                "Basic monitoring"
             ],
             "regions": [
                 "Global"
@@ -1239,39 +1093,43 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://chainstack.com/)",
+                "[Website](https://chainstack.com/)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/chainstack)"
             ],
             "address": null
         },
         {
-            "slug": "chainstack-mainnet-premium",
-            "provider": "Chainstack",
-            "plan": "Premium",
+            "slug": "chainstack-mainnet-pay-as-you-go",
+            "provider": "ChainStack",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": null,
+            "accessPrice": "$49 / 199 / 349",
+            "queryPrice": "included 20 / 80 / 140M req, extra $15 / 12.5 / 10 per 1M req",
+            "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace"
             ],
             "limitations": [
-                "20M RU per month, 600 RU per second"
+                "15k / 24k / 36k req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection"
+                "IP Protection",
+                "Dedicated infrastructure"
             ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
-                "Custom monitoring"
+                "Custom monitoring",
+                "Engineering team support"
             ],
             "regions": [
                 "Global"
@@ -1280,20 +1138,20 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://chainstack.com/)",
+                "[Buy](https://chainstack.com/pricing/)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/chainstack)"
             ],
             "address": null
         },
         {
             "slug": "chainstack-testnet-free",
-            "provider": "Chainstack",
+            "provider": "ChainStack",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
+            "accessPrice": "$0",
+            "queryPrice": "included 3M req, extra $20 per 1M req",
+            "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -1304,14 +1162,14 @@
                 "net"
             ],
             "limitations": [
-                "3M RU per month, 100 RU per second"
+                "1500 req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics"
+                "Basic monitoring"
             ],
             "regions": [
                 "Global"
@@ -1320,39 +1178,43 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://chainstack.com/)",
+                "[Website](https://chainstack.com/)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/chainstack)"
             ],
             "address": null
         },
         {
-            "slug": "chainstack-testnet-premium",
-            "provider": "Chainstack",
-            "plan": "Premium",
+            "slug": "chainstack-testnet-pay-as-you-go",
+            "provider": "ChainStack",
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": null,
+            "accessPrice": "$49 / 199 / 349",
+            "queryPrice": "included 20 / 80 / 140M req, extra $15 / 12.5 / 10 per 1M req",
+            "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
-                "net"
+                "net",
+                "debug",
+                "trace"
             ],
             "limitations": [
-                "20M RU per month, 600 RU per second"
+                "15k / 24k / 36k req/min"
             ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection"
+                "IP Protection",
+                "Dedicated infrastructure"
             ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
-                "Custom monitoring"
+                "Custom monitoring",
+                "Engineering team support"
             ],
             "regions": [
                 "Global"
@@ -1361,7 +1223,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://chainstack.com/)",
+                "[Buy](https://chainstack.com/pricing/)",
                 "[Docs](https://lens.xyz/docs/chain/tools/rpc/chainstack)"
             ],
             "address": null
