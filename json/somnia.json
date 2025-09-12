@@ -168,7 +168,7 @@
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$0.00",
-            "queryPrice": "$0 per 1M requests",
+            "queryPrice": "$0/1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -183,7 +183,15 @@
             "limitations": [
                 "~1800 req/min"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
+            ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Community support"
@@ -195,8 +203,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Register](https://www.ankr.com/rpc/home/)",
-                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
+                "[Website](https://www.ankr.com/rpc/home/)",
+                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "address": null
         },
@@ -207,7 +215,7 @@
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$10 included into query fees",
-            "queryPrice": "$20 per 1M requests",
+            "queryPrice": "$20/1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -222,7 +230,13 @@
             "limitations": [
                 "up to 90000 req/min"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Error tracing"
+            ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Custom monitoring",
@@ -235,8 +249,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.ankr.com/rpc/home/)",
-                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
+                "[Buy](https://www.ankr.com/rpc/pricing/)",
+                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "address": null
         },
@@ -246,8 +260,8 @@
             "plan": "Free",
             "nodeType": "Full Archive",
             "chain": "testnet",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -274,7 +288,8 @@
                 "requests amount monitoring API"
             ],
             "regions": [
-                "US"
+                "US",
+                "Asia"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
