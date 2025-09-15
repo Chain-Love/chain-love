@@ -10,11 +10,7 @@ def try_parse_json(value):
     value = value.strip()
     if (not value.startswith("[") and not value.endswith("]")) and (not value.startswith("{") and not value.endswith("}")):
         return value
-    try:
-        return json.loads(value)
-    except json.JSONDecodeError:
-        print(f"Failed to parse JSON-like string: {value}")
-    return value
+    return json.loads(value)
 
 def is_nullish(value: str) -> bool:
     return isinstance(value, str) and (value.strip().lower() == "null" or value.strip() == "")
@@ -25,8 +21,9 @@ def is_boolish(value: str) -> bool:
 def is_trueish(value: str) -> bool:
     return isinstance(value, str) and value.strip().lower() == "true"
 
-def normalize(data_by_category: dict) -> dict:
+def normalize(data_by_category: dict):
     result = {}
+    errors = []
     for category, items in data_by_category.items():
         result[category] = []
         for item in items:
@@ -37,9 +34,12 @@ def normalize(data_by_category: dict) -> dict:
                     new_item[key] = None
                 if is_boolish(value):
                     new_item[key] = is_trueish(value)
-                new_item[key] = try_parse_json(new_item[key])
+                try:
+                    new_item[key] = try_parse_json(new_item[key])
+                except Exception as e:
+                    errors.append(f"Failed to parse value '{value}' for key '{key}' in category '{category}' as JSON: {e}")
             result[category].append(new_item)
-    return result
+    return result, errors
 
 def load_csv_to_dict_list(file_path: str) -> list[dict]|None:
     if not os.path.exists(file_path):
@@ -139,7 +139,12 @@ def main():
                 provider_data_file_path=f"providers/{category}.csv",
             )
 
-        result = normalize(result)
+        result, errors = normalize(result)
+        if len(errors) > 0:
+            print(f"Errors while normalizing {network_name} JSON:")
+            for error in errors:
+                print(error)
+            return 1
 
         os.makedirs('json', exist_ok=True)
         with(open(f"json/{network_name}.json", 'w+')) as f:
