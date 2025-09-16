@@ -30,6 +30,29 @@ def rule_slug_unique(data):
             seen.add(slug)
     return errors
 
+def rule_provider_casing_consistent(data):
+    return rule_template_casing_consistent(data, "provider")
+
+def rule_template_casing_consistent(data, column_name):
+    errors = []
+    seen = {}
+    for idx, item in enumerate(data):
+        column_value = item.get(column_name)
+        if column_value is None:
+            continue
+        normalized_spelling = column_value.lower().strip()
+        if normalized_spelling in seen.keys():
+            spellings_except_current = list(filter(lambda x: x != column_value, seen[normalized_spelling]))
+            if len(spellings_except_current) == 0:
+                continue
+            quoted_spellings = list(map(lambda x: f"'{x}'", spellings_except_current))
+            known_spellings = ", ".join(quoted_spellings)
+            errors.append(f"Item {idx}: Inconsistent casing for {column_name} '{column_value}': got {known_spellings} and '{column_value}'")
+        else:
+            seen[normalized_spelling] = set()
+        seen[normalized_spelling].add(column_value)
+    return errors
+
 def rule_action_buttons_is_list_of_links(data):
     errors = []
     for idx, item in enumerate(data):
@@ -108,6 +131,7 @@ def main():
     rules.add_rule(rule_slug_unique)
     rules.add_rule(rule_no_unclosed_markdown)
     rules.add_rule(rule_action_buttons_is_list_of_links)
+    rules.add_rule(rule_provider_casing_consistent)
 
     validator = Draft7Validator(schema)
     for network_spec in os.listdir("json"):
