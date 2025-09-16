@@ -31,7 +31,9 @@ def rule_slug_unique(data):
     return errors
 
 def rule_provider_casing_consistent(data):
-    column_name = "provider"
+    return rule_template_casing_consistent(data, "provider")
+
+def rule_template_casing_consistent(data, column_name):
     errors = []
     seen = {}
     for idx, item in enumerate(data):
