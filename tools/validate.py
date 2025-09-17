@@ -3,6 +3,8 @@ import re
 import json
 from jsonschema import Draft7Validator
 from jsonpointer import resolve_pointer
+from csv_to_json import load_csv_to_dict_list, normalize
+import copy
 
 class Validator:
     def __init__(self):
@@ -163,7 +165,46 @@ def main():
                 had_errors = True
                 print(f"Error validating {category}: {err}")
                 print("---")
-        
+
+    # Create providers data
+    providers_data = {}
+    for category in os.listdir("providers"):
+        if not category.endswith(".csv"):
+            continue
+        category_name = category[:-4]
+        providers_data[category_name] = load_csv_to_dict_list(f"providers/{category}")
+
+    # Normalize providers data
+    providers_data, errors = normalize(providers_data)
+    if len(errors) > 0:
+        print(f"Errors while normalizing providers JSON:")
+        for error in errors:
+            print(error)
+        return 1
+    
+    # Override provider schema so the chain field is not required
+    provider_schema = copy.deepcopy(schema)
+    for definition in provider_schema['$defs'].keys():
+        if "chain" in provider_schema['$defs'][definition]['required']:
+            index = provider_schema['$defs'][definition]['required'].index("chain")
+            del provider_schema['$defs'][definition]['required'][index]
+    provider_validator = Draft7Validator(provider_schema)
+
+    # Validate providers data against schema
+    errors = sorted(provider_validator.iter_errors(providers_data), key=lambda e: list(e.absolute_path))
+    for err in errors:
+        had_errors = True
+        pointer = path_to_json_pointer(err.absolute_path)
+        try:
+            value = resolve_pointer(providers_data, "/" + "/".join(map(str, err.absolute_path)))
+        except Exception:
+            # sometimes the error concerns parent structure (e.g., missing required key)
+            value = None
+        print("Error message :", err.message)
+        print("JSON Pointer  :", pointer)
+        print("Offending value:", json.dumps(value, ensure_ascii=False))
+        print("Schema path   :", "/".join(map(str, err.absolute_schema_path)))
+        print("---")
 
     if had_errors:
         exit(1)
