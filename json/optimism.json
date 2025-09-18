@@ -3357,6 +3357,180 @@
             ]
         }
     ],
+    "faucet": [
+        {
+            "slug": "superchain-faucet",
+            "provider": "Optimism",
+            "chain": "sepolia",
+            "requiresLogin": true,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0.00",
+            "dripLimitAmount": "0.05 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://console.optimism.io/faucet?utm_source=op-docs&utm_medium=docs)"
+            ]
+        },
+        {
+            "slug": "alchemy-sepolia-faucet",
+            "provider": "Alchemy",
+            "chain": "sepolia",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": "0.001 ETH",
+            "price": "0",
+            "dripLimitAmount": "0.1 ETH",
+            "dripLimitPeriod": "72h",
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://www.alchemy.com/faucets/optimism-sepolia)"
+            ]
+        },
+        {
+            "slug": "chain-platform-sepolia-faucet",
+            "provider": "Chain Platform",
+            "chain": "sepolia",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0.00",
+            "dripLimitAmount": "0.1 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.chainplatform.co/faucets/ethereum-sepolia/)"
+            ]
+        },
+        {
+            "slug": "ethereum-ecosystem-sepolia-faucet",
+            "provider": "Ethereum Ecosystem",
+            "chain": "sepolia",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0.00",
+            "dripLimitAmount": "0.5 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Only ENS names are allowed to redeem"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://www.ethereum-ecosystem.com/faucets/optimism-sepolia)"
+            ]
+        },
+        {
+            "slug": "ethglobal-testnet-faucet",
+            "provider": "ETHGlobal",
+            "chain": "sepolia",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$69/$99/$129",
+            "dripLimitAmount": "0.05 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Available only on paid plans"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://ethglobal.com/faucet/op-sepolia-11155420)"
+            ]
+        },
+        {
+            "slug": "farcaster-frame-sepolia-faucet",
+            "provider": "LearnWeb3",
+            "chain": "sepolia",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0.00",
+            "dripLimitAmount": "0.01 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Need to have a Farcaster account"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://www.launchcaster.xyz/p/65b67aca2cccdd9d36e48a9c)"
+            ]
+        },
+        {
+            "slug": "infura-sepolia-faucet",
+            "provider": "Infura",
+            "chain": "sepolia",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": "0.001 ETH",
+            "price": "0",
+            "dripLimitAmount": "up to 0.5 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "The address must have Ethereum Mainnet transaction history"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://docs.metamask.io/developer-tools/faucet)"
+            ]
+        },
+        {
+            "slug": "native-usdc-sepolia-faucet",
+            "provider": "Circle",
+            "chain": "sepolia",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0.00",
+            "dripLimitAmount": "10 USDC",
+            "dripLimitPeriod": "1h",
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.circle.com/)"
+            ]
+        },
+        {
+            "slug": "quicknode-sepolia-faucet",
+            "provider": "QuickNode",
+            "chain": "sepolia",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": "0.001 ETH",
+            "price": "0",
+            "dripLimitAmount": "0.05 ETH",
+            "dripLimitPeriod": "12h",
+            "additionalNotes": [
+                "Testnet tokens for development"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.quicknode.com/optimism/sepolia)"
+            ]
+        },
+        {
+            "slug": "thirdweb-op-sepolia-faucet",
+            "provider": "Thirdweb",
+            "chain": "sepolia",
+            "requiresLogin": true,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$5/$99/$499/$1499",
+            "dripLimitAmount": "0.01 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Available only on paid plans"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://thirdweb.com/op-sepolia-testnet)"
+            ]
+        }
+    ],
     "wallet": [
         {
             "slug": "1inch",
