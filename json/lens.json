@@ -2444,7 +2444,7 @@
     "wallet": [
         {
             "slug": "metamask",
-            "provider": "ConsenSys",
+            "provider": "Metamask",
             "openSource": true,
             "supportedPlatforms": [
                 "Chrome",
@@ -2454,22 +2454,20 @@
                 "Android"
             ],
             "custodial": false,
-            "mfa": true,
+            "mfa": false,
             "msig": false,
-            "hardware": false,
+            "hardware": true,
             "keyExport": true,
-            "native": true,
+            "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "GHO",
-                "GRASS",
                 "ERC-20",
                 "ERC-721",
                 "ERC-1155"
             ],
             "staking": false,
-            "price": "0",
+            "price": "$0",
             "support": [
                 "email",
                 "helpdesk"
@@ -2485,7 +2483,7 @@
                 "ZH",
                 "JA"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Website](https://metamask.io/)"
             ]
@@ -2508,12 +2506,11 @@
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "GHO",
-                "GRASS",
                 "ERC-20",
-                "ERC-721"
+                "ERC-721",
+                "ERC-1155"
             ],
-            "staking": false,
+            "staking": true,
             "price": "Paid",
             "support": [
                 "email",
@@ -2530,7 +2527,7 @@
                 "ZH",
                 "JA"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Website](https://www.ledger.com/)"
             ]
@@ -2549,15 +2546,15 @@
             "msig": false,
             "hardware": false,
             "keyExport": true,
-            "native": true,
+            "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "GHO",
-                "GRASS",
-                "ERC-20"
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
             ],
-            "staking": false,
+            "staking": true,
             "price": "0",
             "support": [
                 "email",
@@ -2571,7 +2568,7 @@
                 "ZH",
                 "JA"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Website](https://trustwallet.com/)"
             ]
@@ -2590,20 +2587,18 @@
             "custodial": false,
             "mfa": true,
             "msig": false,
-            "hardware": false,
+            "hardware": true,
             "keyExport": true,
             "native": true,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "GHO",
-                "GRASS",
                 "ERC-20",
                 "ERC-721",
                 "ERC-1155"
             ],
             "staking": false,
-            "price": "0",
+            "price": "$0",
             "support": [
                 "email",
                 "discord",
@@ -2617,7 +2612,7 @@
                 "ZH",
                 "JA"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Website](https://rabby.io/)"
             ]
@@ -2625,7 +2620,7 @@
         {
             "slug": "phantom",
             "provider": "Phantom",
-            "openSource": false,
+            "openSource": true,
             "supportedPlatforms": [
                 "Chrome",
                 "Firefox",
@@ -2635,19 +2630,18 @@
             "custodial": false,
             "mfa": true,
             "msig": false,
-            "hardware": false,
+            "hardware": true,
             "keyExport": true,
-            "native": true,
+            "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "GHO",
-                "GRASS",
                 "ERC-20",
-                "ERC-721"
+                "ERC-721",
+                "ERC-1155"
             ],
             "staking": false,
-            "price": "0",
+            "price": "$0",
             "support": [
                 "email",
                 "helpdesk"
@@ -2658,7 +2652,7 @@
                 "ES",
                 "FR"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Website](https://phantom.app/)"
             ]
@@ -2666,7 +2660,7 @@
         {
             "slug": "zerion",
             "provider": "Zerion",
-            "openSource": false,
+            "openSource": true,
             "supportedPlatforms": [
                 "iOS",
                 "Android",
@@ -2677,16 +2671,15 @@
             "msig": false,
             "hardware": false,
             "keyExport": true,
-            "native": true,
+            "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "GHO",
-                "GRASS",
                 "ERC-20",
-                "ERC-721"
+                "ERC-721",
+                "ERC-1155"
             ],
-            "staking": false,
+            "staking": true,
             "price": "0",
             "support": [
                 "email",
@@ -2698,7 +2691,7 @@
                 "ES",
                 "FR"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Website](https://zerion.io/)"
             ]
@@ -2709,8 +2702,7 @@
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
-                "Android",
-                "Hardware"
+                "Android"
             ],
             "custodial": false,
             "mfa": true,
@@ -2721,11 +2713,11 @@
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "GHO",
-                "GRASS",
-                "ERC-20"
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
             ],
-            "staking": false,
+            "staking": true,
             "price": "Paid",
             "support": [
                 "email",
@@ -2737,7 +2729,7 @@
                 "ZH",
                 "JA"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Website](https://dcentwallet.com/)"
             ]
@@ -2756,16 +2748,14 @@
             "msig": false,
             "hardware": false,
             "keyExport": true,
-            "native": true,
+            "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "GHO",
-                "GRASS",
                 "ERC-20"
             ],
             "staking": false,
-            "price": "0",
+            "price": "$0",
             "support": [
                 "email",
                 "discord"
@@ -2792,16 +2782,14 @@
             "msig": false,
             "hardware": false,
             "keyExport": true,
-            "native": true,
+            "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "GHO",
-                "GRASS",
                 "ERC-20"
             ],
             "staking": false,
-            "price": "0",
+            "price": "$0",
             "support": [
                 "email",
                 "discord"
@@ -2829,16 +2817,14 @@
             "msig": false,
             "hardware": false,
             "keyExport": true,
-            "native": true,
+            "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "GHO",
-                "GRASS",
                 "ERC-20"
             ],
             "staking": false,
-            "price": "0",
+            "price": "$0",
             "support": [
                 "email",
                 "discord"
