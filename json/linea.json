@@ -3608,19 +3608,21 @@
     "wallet": [
         {
             "slug": "metamask",
-            "provider": "MetaMask",
-            "openSource": false,
+            "provider": "Metamask",
+            "openSource": true,
             "supportedPlatforms": [
-                "Web",
+                "Chrome",
+                "Firefox",
+                "Edge",
                 "iOS",
                 "Android"
             ],
             "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
             "keyExport": true,
-            "native": true,
+            "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
@@ -3629,20 +3631,23 @@
                 "ERC-1155"
             ],
             "staking": false,
-            "price": "Free",
+            "price": "$0",
             "support": [
-                "Email",
-                "Helpdesk"
+                "email",
+                "helpdesk"
             ],
             "audit": [
-                "Multiple audits by third parties"
+                "October 2024 by ConsenSys Diligence"
             ],
             "languages": [
                 "EN",
                 "ES",
-                "FR"
+                "FR",
+                "RU",
+                "ZH",
+                "JA"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Website](https://metamask.io/)"
             ]
@@ -3688,18 +3693,19 @@
         {
             "slug": "coinbasewallet",
             "provider": "Coinbase Wallet",
-            "openSource": false,
+            "openSource": true,
             "supportedPlatforms": [
+                "Chrome",
                 "iOS",
                 "Android"
             ],
             "custodial": false,
-            "mfa": true,
+            "mfa": false,
             "msig": false,
             "hardware": false,
             "keyExport": true,
             "native": true,
-            "evm": true,
+            "evm": false,
             "tendermint": false,
             "tokensSupport": [
                 "ERC-20",
@@ -3707,18 +3713,14 @@
                 "ERC-1155"
             ],
             "staking": false,
-            "price": "Free",
+            "price": "$0",
             "support": [
-                "Email",
-                "Helpdesk"
+                "email",
+                "helpdesk"
             ],
-            "audit": [
-                "Multiple audits by third parties"
-            ],
+            "audit": null,
             "languages": [
-                "EN",
-                "ES",
-                "FR"
+                "EN"
             ],
             "starred": false,
             "actionButtons": [
@@ -3766,16 +3768,17 @@
         },
         {
             "slug": "safepal",
-            "provider": "SafePal Wallet",
+            "provider": "SafePal",
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
-                "Android"
+                "Android",
+                "Hardware"
             ],
             "custodial": false,
             "mfa": true,
-            "msig": true,
-            "hardware": false,
+            "msig": false,
+            "hardware": true,
             "keyExport": true,
             "native": true,
             "evm": true,
@@ -3785,37 +3788,41 @@
                 "ERC-721",
                 "ERC-1155"
             ],
-            "staking": false,
-            "price": "Free",
+            "staking": true,
+            "price": "Paid",
             "support": [
-                "Email"
+                "email",
+                "telegram",
+                "discord"
             ],
-            "audit": [
-                "Audited by CertiK"
-            ],
+            "audit": null,
             "languages": [
-                "EN"
+                "EN",
+                "ZH",
+                "JA"
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://www.safepal.io/)"
+                "[Website](https://www.safepal.com/)"
             ]
         },
         {
             "slug": "okxwallet",
             "provider": "OKX Wallet",
-            "openSource": false,
+            "openSource": true,
             "supportedPlatforms": [
+                "Web",
+                "Extension",
                 "iOS",
                 "Android"
             ],
             "custodial": false,
-            "mfa": true,
+            "mfa": false,
             "msig": false,
             "hardware": false,
             "keyExport": true,
             "native": true,
-            "evm": true,
+            "evm": false,
             "tendermint": false,
             "tokensSupport": [
                 "ERC-20",
@@ -3823,16 +3830,15 @@
                 "ERC-1155"
             ],
             "staking": false,
-            "price": "Free",
+            "price": "$0",
             "support": [
-                "Email",
-                "Helpdesk"
+                "email",
+                "helpdesk"
             ],
-            "audit": [
-                "Not publicly disclosed"
-            ],
+            "audit": null,
             "languages": [
-                "EN"
+                "EN",
+                "ZH"
             ],
             "starred": false,
             "actionButtons": [
@@ -3892,7 +3898,7 @@
             "msig": false,
             "hardware": false,
             "keyExport": true,
-            "native": true,
+            "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
@@ -3900,15 +3906,13 @@
                 "ERC-721",
                 "ERC-1155"
             ],
-            "staking": false,
-            "price": "Free",
+            "staking": true,
+            "price": "0",
             "support": [
-                "Email",
-                "Helpdesk"
+                "email",
+                "helpdesk"
             ],
-            "audit": [
-                "Multiple security audits"
-            ],
+            "audit": null,
             "languages": [
                 "EN",
                 "ES",
@@ -3916,7 +3920,7 @@
                 "ZH",
                 "JA"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Website](https://trustwallet.com/)"
             ]
@@ -3960,60 +3964,53 @@
         },
         {
             "slug": "trezor",
-            "provider": "Trezor",
+            "provider": "Trezor (via MetaMask)",
             "openSource": false,
             "supportedPlatforms": [
-                "Hardware",
-                "Desktop",
-                "Web"
+                "Hardware"
             ],
             "custodial": false,
-            "mfa": true,
+            "mfa": false,
             "msig": true,
             "hardware": true,
             "keyExport": true,
             "native": true,
-            "evm": true,
+            "evm": false,
             "tendermint": false,
             "tokensSupport": [
                 "ERC-20",
-                "ERC-721"
+                "ERC-721",
+                "ERC-1155"
             ],
             "staking": false,
             "price": "Paid",
             "support": [
-                "Email",
-                "Helpdesk"
+                "email",
+                "helpdesk"
             ],
             "audit": [
-                "Multiple security audits"
+                "regular audits"
             ],
             "languages": [
-                "EN",
-                "FR",
-                "ES",
-                "DE",
-                "ZH",
-                "JA"
+                "EN"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Website](https://trezor.io/)"
             ]
         },
         {
             "slug": "ledger",
-            "provider": "Ledger",
+            "provider": "Ledger SAS",
             "openSource": false,
             "supportedPlatforms": [
-                "Hardware",
                 "Desktop",
                 "iOS",
                 "Android"
             ],
             "custodial": false,
             "mfa": true,
-            "msig": true,
+            "msig": false,
             "hardware": true,
             "keyExport": true,
             "native": true,
@@ -4021,16 +4018,17 @@
             "tendermint": false,
             "tokensSupport": [
                 "ERC-20",
-                "ERC-721"
+                "ERC-721",
+                "ERC-1155"
             ],
-            "staking": false,
+            "staking": true,
             "price": "Paid",
             "support": [
-                "Email",
-                "Helpdesk"
+                "email",
+                "helpdesk"
             ],
             "audit": [
-                "Multiple security audits"
+                "Regular audits by third parties"
             ],
             "languages": [
                 "EN",
@@ -4040,9 +4038,9 @@
                 "ZH",
                 "JA"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
-                "[Website](https://shop.ledger.com/products/ledger-nano-s-plus)"
+                "[Website](https://www.ledger.com/)"
             ]
         },
         {
@@ -4051,12 +4049,15 @@
             "openSource": true,
             "supportedPlatforms": [
                 "Chrome",
-                "Firefox"
+                "Brave",
+                "Edge",
+                "iOS",
+                "Android"
             ],
             "custodial": false,
             "mfa": true,
             "msig": false,
-            "hardware": false,
+            "hardware": true,
             "keyExport": true,
             "native": true,
             "evm": true,
@@ -4067,19 +4068,21 @@
                 "ERC-1155"
             ],
             "staking": false,
-            "price": "Free",
+            "price": "$0",
             "support": [
-                "Email",
-                "Discord"
+                "email",
+                "discord",
+                "telegram"
             ],
             "audit": [
-                "Audit by CertiK, 2023"
+                "Regular audits by third parties"
             ],
             "languages": [
                 "EN",
-                "ZH"
+                "ZH",
+                "JA"
             ],
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Website](https://rabby.io/)"
             ]
