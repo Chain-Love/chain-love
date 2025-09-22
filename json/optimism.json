@@ -3357,6 +3357,664 @@
             ]
         }
     ],
+    "bridge": [
+        {
+            "slug": "optimism-standart",
+            "provider": "Optimism",
+            "chain": "mainnet",
+            "technology": "Cross‑chain Messaging",
+            "openSource": true,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "supportedChains": [
+                "Ethereum",
+                "Optimism",
+                "Base",
+                "Unichain",
+                "Ink",
+                "World Chain",
+                "Mode Mainnet",
+                "Zora",
+                "Redstone",
+                "Fraxtal",
+                "Lisk",
+                "Arena Z"
+            ],
+            "availableApis": [
+                "Bridge API",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Blockscout",
+                "Optimism Explorer"
+            ],
+            "additionalFeatures": [
+                "Native token bridge with 7-day withdrawal delay, security via Ethereum fraud proofs"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "txSpeedSla": "1-3 min (from ETH to OP Mainnet),7 days (OP Mainnet ti ETH)",
+            "throughputSla": null,
+            "price": "Gas Fee on L1",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "7-day L2 to L1 withdrawal challenge period required",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://app.optimism.io/bridge/deposit)",
+                "[Docs](https://docs.optimism.io/app-developers/bridging/standard-bridge)"
+            ]
+        },
+        {
+            "slug": "orbiter-mainnet",
+            "provider": "Orbiter Finance",
+            "chain": "mainnet",
+            "technology": "Cross‑chain Messaging",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "Aleph Zero",
+                "Arbitrum",
+                "BNB Chain",
+                "Base",
+                "Blast",
+                "Ethereum",
+                "Ink",
+                "Lens",
+                "Linea",
+                "Lisk",
+                "Mode",
+                "Optimism",
+                "Polygon",
+                "Redstone",
+                "Scroll",
+                "Solana",
+                "Soneium",
+                "Unichain",
+                "World Chain",
+                "Zora",
+                "zkSync"
+            ],
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Low cost",
+                "Instant confirmation"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Peer-to-peer intents & liquidity providers",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://orbiter.finance)",
+                "[Docs](https://docs.orbiter.finance)"
+            ]
+        },
+        {
+            "slug": "across-mainnet",
+            "provider": "Across",
+            "chain": "mainnet",
+            "technology": "Cross‑chain Messaging",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "Aleph Zero",
+                "Arbitrum One",
+                "BNB Smart Chain",
+                "Base",
+                "Blast",
+                "Ethereum Mainnet",
+                "Ink",
+                "Lens",
+                "Linea",
+                "Lisk",
+                "Mode",
+                "Optimism",
+                "Polygon Network",
+                "Redstone",
+                "Scroll",
+                "Solana",
+                "Soneium",
+                "Unichain",
+                "World Chain",
+                "Zora",
+                "ZkSync Era"
+            ],
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Fast bridging",
+                "Single liquidity pool"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee + small protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured via UMA oracle + relayers",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "SDK",
+                "Web UI"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://app.across.to/bridge)",
+                "[Docs](https://docs.across.to/)"
+            ]
+        },
+        {
+            "slug": "rhinofi-mainnet",
+            "provider": "RhinoFi",
+            "chain": "mainnet",
+            "technology": "Cross-chain Stablecoin Bridge",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": null,
+            "availableApis": [
+                "Stablecoin Bridge API"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Smart deposit API from CEXes",
+                "Cross-chain liquidity flows"
+            ],
+            "assetTypes": [
+                "Stablecoins"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee + liquidity fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Liquidity-outpost pools, smart deposit routing",
+            "auditsPerformed": [
+                "Independent audits reported"
+            ],
+            "decentralizationModel": "Semi-Decentralized",
+            "sdk": [
+                "TypeScript"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://app.rhino.fi/bridge)",
+                "[Docs](https://docs.rhino.fi/get-started/introduction)"
+            ]
+        },
+        {
+            "slug": "stargate-mainnet",
+            "provider": "Stargate Finance",
+            "chain": "mainnet",
+            "technology": "Omnichain Liquidity Layer",
+            "openSource": true,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "supportedChains": [
+                "Base",
+                "Arbitrum",
+                "OP Mainnet",
+                "Linea",
+                "Ethereum",
+                "Unichain",
+                "Soneium",
+                "Hypercore",
+                "Aptos",
+                "Solana",
+                "Abstract",
+                "Ape",
+                "Astar",
+                "NEAR",
+                "Avalanche",
+                "Bera",
+                "Blast",
+                "BNB",
+                "BOB",
+                "Botanix",
+                "CELO",
+                "Core",
+                "Corn",
+                "Cronos",
+                "Cyber",
+                "Degen",
+                "Etherlink",
+                "Fantom",
+                "Flare",
+                "Flow",
+                "Fraxtal",
+                "Fuse",
+                "Glue",
+                "GNO",
+                "GOAT",
+                "Gravity",
+                "Hemi",
+                "HyperEVM",
+                "Ink",
+                "IOTA",
+                "Kaia",
+                "Katana",
+                "Kava",
+                "Lightlink",
+                "Lisk",
+                "Manta",
+                "Mantle",
+                "Metis",
+                "Mode",
+                "moonbeam",
+                "MOON",
+                "Morph",
+                "Nibiru",
+                "opBNB",
+                "Peaq",
+                "Plume",
+                "Polygon",
+                "zkEVM",
+                "Rari",
+                "Rootstock",
+                "Sanko",
+                "Scroll",
+                "SEI",
+                "Sonic",
+                "SOPH",
+                "Story",
+                "Superposition",
+                "Swell",
+                "TAC",
+                "TAIKO",
+                "TelosEVM",
+                "TON",
+                "Tron",
+                "Vana",
+                "Worldchain",
+                "X Layer",
+                "XDC",
+                "xpla",
+                "Zircuit",
+                "zkSync",
+                "Zora"
+            ],
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Pooled Liquidity Transfers",
+                "OFT Cross-chain Transfers"
+            ],
+            "additionalFeatures": [
+                "Unified Liquidity Pools",
+                "Low-Fee (0.06%)",
+                "OFT Support"
+            ],
+            "assetTypes": [
+                "ETH",
+                "USDC",
+                "USDT",
+                "ERC‑20",
+                "OFT"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee, Protocol Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Decentralized pools secured by LayerZero consensus",
+            "auditsPerformed": [
+                "Audit(s) by DeFi teams"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://stargate.finance/)"
+            ]
+        },
+        {
+            "slug": "rubic-mainnet",
+            "provider": "Rubic",
+            "chain": "mainnet",
+            "technology": "Bridge Aggregator",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "Eclipse",
+                "Soneium",
+                "Katana",
+                "Unichain",
+                "Ink",
+                "Abstract",
+                "Base",
+                "Arbitrum",
+                "Ethereum",
+                "Linea",
+                "Optimism",
+                "AlienX",
+                "Arbitrum Nova",
+                "Avalanche",
+                "Bera",
+                "Blast",
+                "BNB Chain",
+                "BOB",
+                "B²",
+                "Core",
+                "Cyber",
+                "Duckchain",
+                "Gnosis",
+                "Goat",
+                "Gravity",
+                "HashKey",
+                "Hemi",
+                "Lens",
+                "Lisk",
+                "Manta",
+                "Mantle",
+                "Matchain",
+                "Merlin",
+                "Metis",
+                "Mint",
+                "Mode",
+                "Morph",
+                "opBNB",
+                "Over",
+                "Polygon",
+                "Polygon zkEVM",
+                "RARI",
+                "Redstone",
+                "Scroll",
+                "Shape",
+                "Solana",
+                "Soon",
+                "svmBNB",
+                "Sonic",
+                "Story",
+                "Swan",
+                "Taiko",
+                "U2U Solaris",
+                "WorldChain",
+                "X Layer",
+                "Zeta",
+                "zkSync Era",
+                "Zero",
+                "Zircuit",
+                "Zora"
+            ],
+            "availableApis": [
+                "Bridge API",
+                "Swap API"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "15k+ tokens",
+                "100+ chains supported"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Depends on underlying bridge",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Security inherited from selected bridge",
+            "auditsPerformed": null,
+            "decentralizationModel": "Aggregator",
+            "sdk": [
+                "JS SDK",
+                "Web UI"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://rubic.exchange)",
+                "[Docs](https://docs.rubic.finance/)"
+            ]
+        },
+        {
+            "slug": "symbiosis-mainnet",
+            "provider": "Symbiosis",
+            "chain": "mainnet",
+            "technology": "Cross‑chain AMM Swap Bridge",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": null,
+            "availableApis": [
+                "Cross‑chain Swap",
+                "Bridge"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Aggregated liquidity across networks"
+            ],
+            "assetTypes": [
+                "ETH",
+                "USDC",
+                "ARB"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee + protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Security via canonical chains",
+            "auditsPerformed": [
+                "Trail of Bits"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI",
+                "SDK"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://app.symbiosis.finance/)",
+                "[Docs](https://docs.symbiosis.finance/)"
+            ]
+        },
+        {
+            "slug": "celer-cbridge",
+            "provider": "Celer",
+            "chain": "mainnet",
+            "technology": "Omnichain Messaging & OFT",
+            "openSource": true,
+            "support": [
+                "Contact us form"
+            ],
+            "supportedChains": [
+                "Ethereum",
+                "Polygon",
+                "BNB Chain",
+                "Avalanche",
+                "Arbitrum",
+                "Optimism",
+                "Base",
+                "Linea",
+                "Astar",
+                "Shiden"
+            ],
+            "availableApis": [
+                "Bridge API"
+            ],
+            "monitoringAndAnalytics": [
+                "Transaction Monitoring"
+            ],
+            "additionalFeatures": [
+                "StableSwap AMM curve",
+                "Fast bridging"
+            ],
+            "assetTypes": [
+                "ERC-20"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Decentralized network with economic security",
+            "auditsPerformed": [
+                "January 2023, by CertiK",
+                "January 2023, by PeckShield",
+                "January 2023, by SlowMist"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Node.JS"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://cbridge.celer.network)",
+                "[Docs](https://cbridge-docs.celer.network/)"
+            ]
+        },
+        {
+            "slug": "superbridge-mainnet",
+            "provider": "Superbridge",
+            "chain": "mainnet",
+            "technology": "Cross‑chain Messaging",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "Ethereum",
+                "Base",
+                "BNB Smart Chain",
+                "Arbitrum One",
+                "Unichain",
+                "OP Mainnet",
+                "Soneium",
+                "Linea Mainnet",
+                "World Chain",
+                "Ink",
+                "Celo",
+                "Swellchain",
+                "Superseed",
+                "BOB",
+                "Mode Mainnet",
+                "Zora",
+                "Lisk",
+                "Redstone",
+                "HashKey Chain",
+                "Ethernity",
+                "Mint Mainnet",
+                "Swan Chain",
+                "Orderly Network",
+                "Shape",
+                "Derive",
+                "Settlus",
+                "Cyber",
+                "Arena Z",
+                "Polynomial Mainnet",
+                "Lumio",
+                "Funki Mainnet",
+                "Automata Mainnet",
+                "Ancient8",
+                "Metal L2"
+            ],
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Native USDC via CCTP",
+                "Easy Mode withdrawals"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Economic security via OP‑Stack / Nitro and CCTP for USDC",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI",
+                "SDK CLI?"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://superbridge.app/)",
+                "[Docs](https://docs.superbridge.app/)"
+            ]
+        },
+        {
+            "slug": "synapse-mainnet",
+            "provider": "Synapse Protocol",
+            "chain": "mainnet",
+            "technology": "Cross-chain Asset & Messaging Bridge",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": null,
+            "availableApis": [
+                "Asset Transfer",
+                "Cross-chain Contract Calls"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Generalized Messaging",
+                "Token Swap"
+            ],
+            "assetTypes": [
+                "ERC-20",
+                "Stablecoins"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee + Bridge Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Liquidity pools with smart contract messaging",
+            "auditsPerformed": [
+                "Security Audits Available"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://synapseprotocol.com/)"
+            ]
+        }
+    ],
     "explorer": [
         {
             "slug": "blockscout-mainnet",
