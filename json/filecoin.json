@@ -1443,39 +1443,43 @@
     "explorer": [
         {
             "slug": "blockscout-mainnet",
-            "provider": "BlockScout",
+            "provider": "Blockscout",
             "chain": "mainnet",
-            "technology": "BlockScout",
+            "technology": "Open-source",
             "monitoringAndAnalytics": [
                 "Accounts",
                 "Transactions",
                 "Blocks",
                 "Tokens",
                 "Gas",
-                "Contracts"
+                "Contracts",
+                "Logs",
+                "Events"
             ],
             "additionalFeatures": [
                 "Token Tracker",
-                "Top Accounts tracker"
+                "Network Metrics"
             ],
-            "starred": false,
             "availableApis": [
-                "REST",
+                "REST API",
                 "GraphQL",
-                "JSON-RPC"
+                "RPC API",
+                "Eth RPC API"
             ],
             "sdk": [
-                "Node.JS"
+                "TypeScript",
+                "Node.js"
             ],
             "searchCapabilities": [
                 "Address",
-                "Message ID",
-                "Height",
+                "Transaction Hash",
+                "Block",
                 "Token"
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "0",
+            "pricing": "FREE",
+            "starred": false,
             "actionButtons": [
                 "[Explore](https://filecoin-testnet.blockscout.com/)",
                 "[Docs](https://docs.blockscout.com/)"
@@ -1483,39 +1487,43 @@
         },
         {
             "slug": "blockscout-calibnet",
-            "provider": "BlockScout",
+            "provider": "Blockscout",
             "chain": "calibnet",
-            "technology": "BlockScout",
+            "technology": "Open-source",
             "monitoringAndAnalytics": [
                 "Accounts",
                 "Transactions",
                 "Blocks",
                 "Tokens",
                 "Gas",
-                "Contracts"
+                "Contracts",
+                "Logs",
+                "Events"
             ],
             "additionalFeatures": [
                 "Token Tracker",
-                "Top Accounts tracker"
+                "Network Metrics"
             ],
-            "starred": false,
             "availableApis": [
-                "REST",
+                "REST API",
                 "GraphQL",
-                "JSON-RPC"
+                "RPC API",
+                "Eth RPC API"
             ],
             "sdk": [
-                "Node.JS"
+                "TypeScript",
+                "Node.js"
             ],
             "searchCapabilities": [
                 "Address",
-                "Message ID",
-                "Height",
+                "Transaction Hash",
+                "Block",
                 "Token"
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "0",
+            "pricing": "FREE",
+            "starred": false,
             "actionButtons": [
                 "[Explore](https://filecoin-testnet.blockscout.com/)",
                 "[Docs](https://docs.blockscout.com/)"
@@ -1535,7 +1543,6 @@
                 "Storage Capacity"
             ],
             "additionalFeatures": null,
-            "starred": false,
             "availableApis": null,
             "sdk": null,
             "searchCapabilities": [
@@ -1548,7 +1555,8 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "0",
+            "pricing": "Free",
+            "starred": false,
             "actionButtons": [
                 "[Explore](https://calibration.filscan.io)"
             ]
@@ -1567,7 +1575,6 @@
                 "Storage Capacity"
             ],
             "additionalFeatures": null,
-            "starred": false,
             "availableApis": null,
             "sdk": null,
             "searchCapabilities": [
@@ -1580,7 +1587,8 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "0",
+            "pricing": "Free",
+            "starred": false,
             "actionButtons": [
                 "[Explore](https://filscan.io)"
             ]
@@ -1597,7 +1605,6 @@
                 "Storage Providers"
             ],
             "additionalFeatures": null,
-            "starred": false,
             "availableApis": [
                 "REST"
             ],
@@ -1609,7 +1616,8 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "0",
+            "pricing": "Free",
+            "starred": false,
             "actionButtons": [
                 "[Explore](https://calibration.filfox.info)"
             ]
@@ -1626,7 +1634,6 @@
                 "Storage Providers"
             ],
             "additionalFeatures": null,
-            "starred": false,
             "availableApis": [
                 "REST"
             ],
@@ -1638,7 +1645,8 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "0",
+            "pricing": "Free",
+            "starred": false,
             "actionButtons": [
                 "[Explore](https://filfox.info)"
             ]
@@ -1655,7 +1663,6 @@
                 "Mempool"
             ],
             "additionalFeatures": null,
-            "starred": false,
             "availableApis": [
                 "JSON-RPC"
             ],
@@ -1669,7 +1676,8 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "0",
+            "pricing": "Free",
+            "starred": false,
             "actionButtons": [
                 "[Explore](https://beryx.io)"
             ]
@@ -1686,7 +1694,6 @@
                 "Mempool"
             ],
             "additionalFeatures": null,
-            "starred": false,
             "availableApis": [
                 "JSON-RPC"
             ],
@@ -1700,7 +1707,8 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "0",
+            "pricing": "Free",
+            "starred": false,
             "actionButtons": [
                 "[Explore](https://beryx.io)"
             ]
@@ -1743,7 +1751,6 @@
                 "Miner Revenue"
             ],
             "additionalFeatures": null,
-            "starred": false,
             "availableApis": null,
             "sdk": null,
             "searchCapabilities": [
@@ -1752,7 +1759,8 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": false,
-            "pricing": "0",
+            "pricing": "Free",
+            "starred": false,
             "actionButtons": [
                 "[Dashboard](https://dashboard.starboard.ventures/explorer)"
             ]
