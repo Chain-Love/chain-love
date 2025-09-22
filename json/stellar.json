@@ -3062,10 +3062,9 @@
         },
         {
             "slug": "ledger",
-            "provider": "Ledger",
+            "provider": "Ledger SAS",
             "openSource": false,
             "supportedPlatforms": [
-                "Hardware",
                 "Desktop",
                 "iOS",
                 "Android"
@@ -3076,20 +3075,21 @@
             "hardware": true,
             "keyExport": true,
             "native": true,
-            "evm": false,
+            "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "XLM",
-                "Stellar-based assets"
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
             ],
-            "staking": false,
+            "staking": true,
             "price": "Paid",
             "support": [
-                "Email",
-                "Helpdesk"
+                "email",
+                "helpdesk"
             ],
             "audit": [
-                "Multiple audits by third parties"
+                "Regular audits by third parties"
             ],
             "languages": [
                 "EN",
@@ -3101,20 +3101,20 @@
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://shop.ledger.com/products/ledger-nano-s-plus)"
+                "[Website](https://www.ledger.com/)"
             ]
         },
         {
             "slug": "tangem",
-            "provider": "Tangem",
-            "openSource": false,
+            "provider": "Tangem Wallet",
+            "openSource": true,
             "supportedPlatforms": [
                 "Hardware",
                 "iOS",
                 "Android"
             ],
             "custodial": false,
-            "mfa": true,
+            "mfa": false,
             "msig": false,
             "hardware": true,
             "keyExport": true,
@@ -3122,55 +3122,54 @@
             "evm": false,
             "tendermint": false,
             "tokensSupport": [
-                "XLM",
-                "Stellar-based assets"
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
             ],
             "staking": false,
             "price": "Paid",
             "support": [
-                "Email"
+                "email",
+                "helpdesk"
             ],
-            "audit": [
-                "Audit by Quantstamp, 2023"
-            ],
+            "audit": null,
             "languages": [
                 "EN",
-                "ZH",
-                "JA"
+                "DE"
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://tangem.com/en/)"
+                "[Website](https://tangem.com/)"
             ]
         },
         {
             "slug": "trezor",
-            "provider": "Trezor",
+            "provider": "Trezor (via MetaMask)",
             "openSource": false,
             "supportedPlatforms": [
-                "Hardware",
-                "Desktop"
+                "Hardware"
             ],
             "custodial": false,
-            "mfa": true,
-            "msig": false,
+            "mfa": false,
+            "msig": true,
             "hardware": true,
             "keyExport": true,
             "native": true,
             "evm": false,
             "tendermint": false,
             "tokensSupport": [
-                "XLM",
-                "Stellar-based assets"
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
             ],
             "staking": false,
             "price": "Paid",
             "support": [
-                "Email",
-                "Helpdesk"
+                "email",
+                "helpdesk"
             ],
             "audit": [
-                "Audit by Kraken Security, 2020"
+                "regular audits"
             ],
             "languages": [
                 "EN"
@@ -3194,18 +3193,19 @@
             "msig": false,
             "hardware": false,
             "keyExport": true,
-            "native": true,
-            "evm": false,
+            "native": false,
+            "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "XLM",
-                "Stellar-based assets"
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
             ],
-            "staking": false,
-            "price": "Free",
+            "staking": true,
+            "price": "0",
             "support": [
-                "Email",
-                "Helpdesk"
+                "email",
+                "helpdesk"
             ],
             "audit": null,
             "languages": [
@@ -3292,14 +3292,15 @@
         },
         {
             "slug": "zypto",
-            "provider": "Zypto",
-            "openSource": false,
+            "provider": "Zypto Wallet",
+            "openSource": true,
             "supportedPlatforms": [
                 "iOS",
-                "Android"
+                "Android",
+                "Web"
             ],
             "custodial": false,
-            "mfa": true,
+            "mfa": false,
             "msig": false,
             "hardware": false,
             "keyExport": true,
@@ -3307,13 +3308,15 @@
             "evm": false,
             "tendermint": false,
             "tokensSupport": [
-                "XLM",
-                "Stellar-based assets"
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
             ],
             "staking": false,
-            "price": "Free",
+            "price": "0",
             "support": [
-                "Email"
+                "email",
+                "helpdesk"
             ],
             "audit": null,
             "languages": [
@@ -3321,7 +3324,7 @@
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://zypto.com/defi-crypto-wallet-app/stellar)"
+                "[Website](https://zypto.com/)"
             ]
         }
     ],
