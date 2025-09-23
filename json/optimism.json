@@ -5223,6 +5223,258 @@
             ]
         }
     ],
+    "analytic": [
+        {
+            "slug": "blocknative-mainnet",
+            "provider": "Blocknative",
+            "chain": "mainnet",
+            "dataSources": [
+                "OP Stack Batch Transactions",
+                "Blob Data",
+                "Ethereum Mempool Transactions"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Batch Decoding API",
+                "Blob Archive API",
+                "Mempool Archive",
+                "Ethernow explorer"
+            ],
+            "price": "$0.00",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://www.blocknative.com/)"
+            ]
+        },
+        {
+            "slug": "tenderly-mainnet",
+            "provider": "Tenderly",
+            "chain": "mainnet",
+            "dataSources": [
+                "Transaction Monitoring",
+                "Contract Events",
+                "Alerts",
+                "Simulation RPC",
+                "Web3 Actions",
+                "Wallet Monitoring"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Alerts API",
+                "Web3 Actions API"
+            ],
+            "price": "$0/$45/mo/$450/mo/Custom",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://dashboard.tenderly.co/remy65/project/infrastructure)"
+            ]
+        },
+        {
+            "slug": "dune-mainnet",
+            "provider": "Dune",
+            "chain": "mainnet",
+            "dataSources": [
+                "Transactions",
+                "Gas Usage",
+                "Bridge Activity",
+                "Active Users",
+                "Token Transfers",
+                "Smart Contract Activity"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "SQL Queries",
+                "Visualizations"
+            ],
+            "price": "$0",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://dune.com/blockchains/optimism)"
+            ]
+        },
+        {
+            "slug": "growthepie-mainnet",
+            "provider": "growthepie",
+            "chain": "mainnet",
+            "dataSources": [
+                "Active wallets",
+                "Transactions Volume",
+                "Transactions throughput",
+                "Value secured",
+                "Revenue",
+                "Transactions costs",
+                "Most active contracts",
+                "Risk analysis"
+            ],
+            "hasDashboard": true,
+            "availableApis": [],
+            "price": "$0",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://www.growthepie.com/chains/optimism)"
+            ]
+        },
+        {
+            "slug": "op-analytics-mainnet",
+            "provider": "OP Analytics",
+            "chain": "mainnet",
+            "dataSources": [
+                "Incentive Tracking",
+                "Helper Functions",
+                "Public Analysis"
+            ],
+            "hasDashboard": false,
+            "availableApis": [
+                "GitHub API"
+            ],
+            "price": "$0.00",
+            "starred": false,
+            "actionButtons": [
+                "[GitHub](https://github.com/ethereum-optimism/op-analytics)"
+            ]
+        },
+        {
+            "slug": "nansen-mainnet",
+            "provider": "Nansen",
+            "chain": "mainnet",
+            "dataSources": [
+                "Exchange Flows",
+                "Token Distribution",
+                "DeFi Activity",
+                "NFT Analytics",
+                "Wallet Labels"
+            ],
+            "hasDashboard": true,
+            "availableApis": null,
+            "price": "Subscription-based",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://app.nansen.ai/macro/blockchains?chain=optimism)"
+            ]
+        },
+        {
+            "slug": "dappradar-mainnet",
+            "provider": "DappRadar",
+            "chain": "mainnet",
+            "dataSources": [
+                "Unique active wallets",
+                "Txs volume",
+                "Dapps number",
+                "Dapps volume",
+                "NFTs stats"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API",
+                "No historical data on free API"
+            ],
+            "price": "api for $0/$9.99/$199/$499 for 5/5/30/50 RPSecond and 100/2.5k/100k/1M RPMonth",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://dappradar.com/chain/optimism)"
+            ]
+        },
+        {
+            "slug": "l2beat-mainnet",
+            "provider": "L2BEAT",
+            "chain": "mainnet",
+            "dataSources": [
+                "TVL",
+                "On-chain costs",
+                "Risk analysis",
+                "Technical chain analysis"
+            ],
+            "hasDashboard": true,
+            "availableApis": [],
+            "price": "0",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://l2beat.com/scaling/projects/op-mainnet)"
+            ]
+        },
+        {
+            "slug": "blockworks-mainnet",
+            "provider": "Blockworks",
+            "chain": "mainnet",
+            "dataSources": [
+                "Network fees",
+                "Transaction activity",
+                "Contracts deployed",
+                "Tokens created",
+                "Retention rate",
+                "Economics per defi type",
+                "AI Agents",
+                "Stablecoins swaps",
+                "Meme coins"
+            ],
+            "hasDashboard": true,
+            "availableApis": [],
+            "price": "$0",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://blockworks.com/analytics/optimism)"
+            ]
+        },
+        {
+            "slug": "defillama-mainnet",
+            "provider": "DeFiLlama",
+            "chain": "mainnet",
+            "dataSources": [
+                "DeFi TVL",
+                "DEX & Perps Volume",
+                "Bridged Assets",
+                "Active Addresses",
+                "Stablecoin Supply"
+            ],
+            "hasDashboard": true,
+            "availableApis": null,
+            "price": "$0",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://defillama.com/chain/op-mainnet)"
+            ]
+        },
+        {
+            "slug": "glassnode-mainnet",
+            "provider": "Glassnode",
+            "chain": "mainnet",
+            "dataSources": [
+                "Address Metrics",
+                "Supply Dynamics",
+                "Exchange Reserves",
+                "Fee Revenue",
+                "Holder Metrics"
+            ],
+            "hasDashboard": true,
+            "availableApis": null,
+            "price": "Subscription-based",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://studio.glassnode.com/dashboards/asset-overview?a=OP)"
+            ]
+        },
+        {
+            "slug": "messari-mainnet",
+            "provider": "Messari",
+            "chain": "mainnet",
+            "dataSources": [
+                "Network Metrics",
+                "TVL & Market Data",
+                "On‑chain Usage Metrics"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Research Reports",
+                "API Access",
+                "Dashboard"
+            ],
+            "price": "$39",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://messari.io/project/optimism)"
+            ]
+        }
+    ],
     "wallet": [
         {
             "slug": "1inch",
