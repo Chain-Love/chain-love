@@ -180,7 +180,7 @@ def main():
         print(f"Errors while normalizing providers JSON:")
         for error in errors:
             print(error)
-        return 1
+        exit(1)
     
     # Override provider schema so the chain field is not required
     provider_schema = copy.deepcopy(schema)

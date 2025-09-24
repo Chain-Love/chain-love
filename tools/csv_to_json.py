@@ -144,7 +144,7 @@ def main():
             print(f"Errors while normalizing {network_name} JSON:")
             for error in errors:
                 print(error)
-            return 1
+            exit(1)
 
         os.makedirs('json', exist_ok=True)
         with(open(f"json/{network_name}.json", 'w+')) as f:
