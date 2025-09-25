@@ -432,6 +432,144 @@
             ]
         }
     ],
+    "oracle": [
+        {
+            "slug": "dia-mainnet",
+            "provider": "DIA",
+            "chain": "mainnet",
+            "technology": "DIA",
+            "accessPrice": "0 for non-production, \"Contact us\" for production",
+            "queryPrice": "0",
+            "dataTypes": [
+                "BTC",
+                "DIA",
+                "USDC"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
+            "sdk": null,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds"
+            ],
+            "additionalFeatures": null,
+            "auditsPerformed": [
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://www.diadata.org/docs/nexus/how-to-guides/fetch-price-data/chain-specific-guide/somnia#somnia)"
+            ]
+        },
+        {
+            "slug": "dia-testnet",
+            "provider": "DIA",
+            "chain": "testnet",
+            "technology": "DIA",
+            "accessPrice": "0 for non-production, \"Contact us\" for production",
+            "queryPrice": "0",
+            "dataTypes": [
+                "BTC",
+                "DIA",
+                "USDC"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
+            "sdk": null,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds"
+            ],
+            "additionalFeatures": null,
+            "auditsPerformed": [
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://www.diadata.org/docs/nexus/how-to-guides/fetch-price-data/chain-specific-guide/somnia#somnia)"
+            ]
+        },
+        {
+            "slug": "protofire-chainlink-mainnet",
+            "provider": "Protofire",
+            "chain": "mainnet",
+            "technology": "Chainlink",
+            "accessPrice": null,
+            "queryPrice": null,
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Compatible with Chainlink decentralized nodes"
+            ],
+            "auditsPerformed": null,
+            "starred": true,
+            "actionButtons": [
+                "[Docs](https://docs.somnia.network/developer/how-to-guides/oracles/protofire-price-feeds)"
+            ]
+        },
+        {
+            "slug": "protofire-chainlink-testnet",
+            "provider": "Protofire",
+            "chain": "testnet",
+            "technology": "Chainlink",
+            "accessPrice": null,
+            "queryPrice": null,
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Compatible with Chainlink decentralized nodes"
+            ],
+            "auditsPerformed": null,
+            "starred": true,
+            "actionButtons": [
+                "[Docs](https://docs.somnia.network/developer/how-to-guides/oracles/protofire-chainlink-vrf-v2.5)"
+            ]
+        }
+    ],
     "explorer": [
         {
             "slug": "somnia-mainnet",
