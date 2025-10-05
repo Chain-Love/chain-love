@@ -1003,14 +1003,14 @@
             "chain": "mainnet",
             "address": "0x0fd8fd1dc8162148cb9413062fe6c6b144335dbf",
             "technology": "The Graph",
-            "plan": "FREE",
+            "plan": "Free",
             "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
-            "supportSla": "24 hours",
-            "starred": true,
+            "supportSla": null,
+            "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -1040,14 +1040,14 @@
         },
         {
             "slug": "goldsky-mainnet-free",
-            "provider": "GoldSky",
+            "provider": "Goldsky",
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
-            "plan": "FREE",
+            "plan": "Free",
             "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "supportSla": null,
@@ -1056,121 +1056,88 @@
                 "GraphQL"
             ],
             "limitations": [
-                "20 RPC/10s <= 100,000 entities stored"
+                "20 RPC/10s",
+                "100K entities stored"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
             "monitoringAndAnalytics": [
                 "Subgraph logs",
-                "Usage logs"
+                "Usage analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "additionalFeatures": [
                 "Mirror",
-                "Support via Email"
+                "Email support"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://goldsky.com)",
-                "[Docs](https://docs.goldsky.com/introduction)"
+                "[Website](https://goldsky.com/chains/filecoin)",
+                "[Docs](https://docs.goldsky.com/chains/filecoin)"
             ],
             "blocksBehindSla": null
         },
         {
-            "slug": "goldsky-mainnet-scale",
-            "provider": "GoldSky",
+            "slug": "goldsky-mainnet-pay-as-you-go",
+            "provider": "Goldsky",
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
-            "plan": "SCALE",
+            "plan": "Pay-as-you-go",
             "trial": true,
-            "accessPrice": "37+",
-            "queryPrice": "0",
+            "accessPrice": "$73/month + $1 per 100k entities stored",
+            "queryPrice": null,
             "uptimeSla": null,
             "bandwidthSla": null,
-            "supportSla": "24 hours",
+            "supportSla": null,
             "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "50 RPC/10s $4 additionaly per 100,000 entities stored"
+                "50 RPC/10s"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
             "monitoringAndAnalytics": [
                 "Subgraph logs",
-                "Usage logs"
+                "Usage analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "additionalFeatures": [
                 "Mirror",
-                "Support via Email"
+                "Email support",
+                "Custom indexing"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://goldsky.com)",
-                "[Docs](https://docs.goldsky.com/introduction)"
+                "[Buy](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/chains/filecoin)"
             ],
             "blocksBehindSla": null
         },
         {
             "slug": "goldsky-mainnet-enterprise",
-            "provider": "GoldSky",
+            "provider": "Goldsky",
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
-            "plan": "ENTERPRISE",
+            "plan": "Enterprise",
             "trial": false,
-            "accessPrice": null,
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "supportSla": "4 hours",
-            "starred": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "1000+ RPC/10s 1$ per 100,000 entities stored"
-            ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": [
-                "Subgraph logs",
-                "Usage logs"
-            ],
-            "regions": null,
-            "additionalFeatures": [
-                "Mirror",
-                "Support via Slack and Email",
-                "Committed use discounts 20%+",
-                "Managed onboarding",
-                "White-label endpoints",
-                "Customized caching",
-                "Dedicated Mirror IP address",
-                "Professional services"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://goldsky.com)",
-                "[Docs](https://docs.goldsky.com/introduction)"
-            ],
-            "blocksBehindSla": null
-        },
-        {
-            "slug": "goldsky-calibnet-free",
-            "provider": "GoldSky",
-            "chain": "calibnet",
-            "address": null,
-            "technology": "The Graph",
-            "plan": "FREE",
-            "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "supportSla": null,
@@ -1179,108 +1146,175 @@
                 "GraphQL"
             ],
             "limitations": [
-                "20 RPC/10s <= 100,000 entities stored"
+                "1K+ RPC/10s"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
             "monitoringAndAnalytics": [
                 "Subgraph logs",
-                "Usage logs"
+                "Usage analytics",
+                "Custom dashboards"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "additionalFeatures": [
                 "Mirror",
-                "Support via Email"
+                "Slack and Email support",
+                "Managed onboarding",
+                "White-label endpoints",
+                "Customized caching",
+                "4 hours SLA"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://goldsky.com)",
-                "[Docs](https://docs.goldsky.com/introduction)"
+                "[Contact](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/chains/filecoin)"
             ],
             "blocksBehindSla": null
         },
         {
-            "slug": "goldsky-calibnet-scale",
-            "provider": "GoldSky",
+            "slug": "goldsky-calibnet-free",
+            "provider": "Goldsky",
             "chain": "calibnet",
             "address": null,
             "technology": "The Graph",
-            "plan": "SCALE",
-            "trial": true,
-            "accessPrice": "37+",
-            "queryPrice": "0",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
-            "supportSla": "24 hours",
+            "supportSla": null,
             "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "50 RPC/10s $4 additionaly per 100,000 entities stored"
+                "20 RPC/10s",
+                "100K entities stored"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
             "monitoringAndAnalytics": [
                 "Subgraph logs",
-                "Usage logs"
+                "Usage analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "additionalFeatures": [
                 "Mirror",
-                "Support via Email"
+                "Email support"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://goldsky.com)",
-                "[Docs](https://docs.goldsky.com/introduction)"
+                "[Website](https://goldsky.com/chains/filecoin)",
+                "[Docs](https://docs.goldsky.com/chains/filecoin)"
+            ],
+            "blocksBehindSla": null
+        },
+        {
+            "slug": "goldsky-calibnet-pay-as-you-go",
+            "provider": "Goldsky",
+            "chain": "calibnet",
+            "address": null,
+            "technology": "The Graph",
+            "plan": "Pay-as-you-go",
+            "trial": true,
+            "accessPrice": "$73/month + $1 per 100k entities stored",
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "50 RPC/10s"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Subgraph logs",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Mirror",
+                "Email support",
+                "Custom indexing"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/chains/filecoin)"
             ],
             "blocksBehindSla": null
         },
         {
             "slug": "goldsky-calibnet-enterprise",
-            "provider": "GoldSky",
+            "provider": "Goldsky",
             "chain": "calibnet",
             "address": null,
             "technology": "The Graph",
-            "plan": "ENTERPRISE",
+            "plan": "Enterprise",
             "trial": false,
-            "accessPrice": null,
-            "queryPrice": "0",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": null,
             "bandwidthSla": null,
-            "supportSla": "4 hours",
+            "supportSla": null,
             "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "1000+ RPC/10s 1$ per 100,000 entities stored"
+                "1K+ RPC/10s"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
             "monitoringAndAnalytics": [
                 "Subgraph logs",
-                "Usage logs"
+                "Usage analytics",
+                "Custom dashboards"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "additionalFeatures": [
                 "Mirror",
-                "Support via Slack and Email",
-                "Committed use discounts 20%+",
+                "Slack and Email support",
                 "Managed onboarding",
                 "White-label endpoints",
                 "Customized caching",
-                "Dedicated Mirror IP address",
-                "Professional services"
+                "4 hours SLA"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://goldsky.com)",
-                "[Docs](https://docs.goldsky.com/introduction)"
+                "[Contact](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/chains/filecoin)"
             ],
             "blocksBehindSla": null
         }
