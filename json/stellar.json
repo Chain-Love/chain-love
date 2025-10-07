@@ -913,199 +913,26 @@
     ],
     "indexing": [
         {
-            "slug": "subquery-mainnet-free",
-            "provider": "SubQuery",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "Free",
-            "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": true,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Custom API Creation",
-                "High Performance"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/stellar.html#stellar-soroban-combined-quick-start/)"
-            ]
-        },
-        {
-            "slug": "subquery-mainnet-enterprise",
-            "provider": "SubQuery",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "Enterprise",
-            "trial": false,
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "Custom limits"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Custom API Creation",
-                "High Performance",
-                "Custom Endpoints"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://subquery.network/)",
-                "[Docs](https://academy.subquery.network/)"
-            ]
-        },
-        {
-            "slug": "subquery-testnet-free",
-            "provider": "SubQuery",
-            "chain": "testnet",
-            "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "Free",
-            "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Custom API Creation",
-                "High Performance"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://academy.subquery.network/)"
-            ]
-        },
-        {
-            "slug": "subquery-testnet-enterprise",
-            "provider": "SubQuery",
-            "chain": "testnet",
-            "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "Enterprise",
-            "trial": false,
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "Custom limits"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Custom API Creation",
-                "High Performance",
-                "Custom Endpoints"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://subquery.network/)",
-                "[Docs](https://academy.subquery.network/)"
-            ]
-        },
-        {
             "slug": "goldsky-mainnet-free",
             "provider": "Goldsky",
             "chain": "mainnet",
             "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "FREE",
+            "technology": "The Graph",
+            "plan": "Free",
             "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
-            "starred": true,
+            "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "20 RPC/10s <= 100,000 entities stored"
+                "20 RPC/10s",
+                "100K entities stored"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1119,27 +946,26 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Subgraphs",
-                "Real-time Mirror Pipelines",
-                "Webhooks"
+                "Mirror",
+                "Email support"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.goldsky.com/)",
+                "[Website](https://goldsky.com/chains/stellar)",
                 "[Docs](https://docs.goldsky.com/chains/stellar/)"
             ]
         },
         {
-            "slug": "goldsky-mainnet-standard",
+            "slug": "goldsky-mainnet-pay-as-you-go",
             "provider": "Goldsky",
             "chain": "mainnet",
             "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "SCALE",
+            "technology": "The Graph",
+            "plan": "Pay-as-you-go",
             "trial": true,
-            "accessPrice": "50$",
+            "accessPrice": "$73/month + $1 per 100k entities stored",
             "queryPrice": null,
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -1150,7 +976,7 @@
                 "GraphQL"
             ],
             "limitations": [
-                "50 RPC/10s $4 additionaly per 100,000 entities stored"
+                "50 RPC/10s"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1164,15 +990,15 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Subgraphs",
-                "Real-time Mirror Pipelines",
-                "Webhooks"
+                "Mirror",
+                "Email support",
+                "Custom indexing"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://goldsky.com/)",
+                "[Buy](https://goldsky.com/pricing)",
                 "[Docs](https://docs.goldsky.com/chains/stellar/)"
             ]
         },
@@ -1181,11 +1007,11 @@
             "provider": "Goldsky",
             "chain": "mainnet",
             "address": null,
-            "technology": "Blockchain Data Indexing",
+            "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1195,7 +1021,7 @@
                 "GraphQL"
             ],
             "limitations": [
-                "1000+ RPC/10s 1$ per 100,000 entities stored"
+                "1K+ RPC/10s"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1211,15 +1037,18 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Subgraphs",
-                "Real-time Mirror Pipelines",
-                "Webhooks"
+                "Mirror",
+                "Slack and Email support",
+                "Managed onboarding",
+                "White-label endpoints",
+                "Customized caching",
+                "4 hours SLA"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://goldsky.com/)",
+                "[Contact](https://goldsky.com/)",
                 "[Docs](https://docs.goldsky.com/chains/stellar/)"
             ]
         },
@@ -1228,11 +1057,11 @@
             "provider": "Goldsky",
             "chain": "testnet",
             "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "FREE",
+            "technology": "The Graph",
+            "plan": "Free",
             "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1242,7 +1071,8 @@
                 "GraphQL"
             ],
             "limitations": [
-                "20 RPC/10s <= 100,000 entities stored"
+                "20 RPC/10s",
+                "100K entities stored"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1256,27 +1086,26 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Subgraphs",
-                "Real-time Mirror Pipelines",
-                "Webhooks"
+                "Mirror",
+                "Email support"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://goldsky.com/)",
+                "[Website](https://goldsky.com/chains/stellar)",
                 "[Docs](https://docs.goldsky.com/chains/stellar/)"
             ]
         },
         {
-            "slug": "goldsky-testnet-standard",
+            "slug": "goldsky-testnet-pay-as-you-go",
             "provider": "Goldsky",
             "chain": "testnet",
             "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "SCALE",
+            "technology": "The Graph",
+            "plan": "Pay-as-you-go",
             "trial": true,
-            "accessPrice": "50$",
+            "accessPrice": "$73/month + $1 per 100k entities stored",
             "queryPrice": null,
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -1287,7 +1116,7 @@
                 "GraphQL"
             ],
             "limitations": [
-                "50 RPC/10s $4 additionaly per 100,000 entities stored"
+                "50 RPC/10s"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1301,15 +1130,15 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Subgraphs",
-                "Real-time Mirror Pipelines",
-                "Webhooks"
+                "Mirror",
+                "Email support",
+                "Custom indexing"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://goldsky.com/)",
+                "[Buy](https://goldsky.com/pricing)",
                 "[Docs](https://docs.goldsky.com/chains/stellar/)"
             ]
         },
@@ -1318,7 +1147,550 @@
             "provider": "Goldsky",
             "chain": "testnet",
             "address": null,
-            "technology": "Blockchain Data Indexing",
+            "technology": "The Graph",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "1K+ RPC/10s"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Subgraph logs",
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Mirror",
+                "Slack and Email support",
+                "Managed onboarding",
+                "White-label endpoints",
+                "Customized caching",
+                "4 hours SLA"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Contact](https://goldsky.com/)",
+                "[Docs](https://docs.goldsky.com/chains/stellar/)"
+            ]
+        },
+        {
+            "slug": "mercury-mainnet-free",
+            "provider": "Mercury",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "ZephyrVM, Rust Soroban SDK",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0.00(14 days trial period)",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom Indexing",
+                "Real-time Data",
+                "Dashboards"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Docs](https://docs.mercurydata.app/)"
+            ]
+        },
+        {
+            "slug": "mercury-mainnet-pay-as-you-go",
+            "provider": "Mercury",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "ZephyrVM, Rust Soroban SDK",
+            "plan": "Pay-as-you-go",
+            "trial": false,
+            "accessPrice": "$79/mo",
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom Indexing",
+                "Real-time Data",
+                "Dashboards"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://docs.mercurydata.app/genaral-info/pricing)"
+            ]
+        },
+        {
+            "slug": "mercury-mainnet-enterprise",
+            "provider": "Mercury",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "ZephyrVM, Rust Soroban SDK",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "Custom",
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom Indexing",
+                "Real-time Data",
+                "Dashboards"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://docs.mercurydata.app/genaral-info/pricing)"
+            ]
+        },
+        {
+            "slug": "mercury-testnet-free",
+            "provider": "Mercury",
+            "chain": "testnet",
+            "address": null,
+            "technology": "ZephyrVM, Rust Soroban SDK",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0.00(14 days trial period)",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom Indexing",
+                "Real-time Data",
+                "Dashboards"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Docs](https://docs.mercurydata.app/)"
+            ]
+        },
+        {
+            "slug": "mercury-testnet-pay-as-you-go",
+            "provider": "Mercury",
+            "chain": "testnet",
+            "address": null,
+            "technology": "ZephyrVM, Rust Soroban SDK",
+            "plan": "Pay-as-you-go",
+            "trial": false,
+            "accessPrice": "$79/mo",
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom Indexing",
+                "Real-time Data",
+                "Dashboards"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://docs.mercurydata.app/genaral-info/pricing)"
+            ]
+        },
+        {
+            "slug": "mercury-testnet-enterprise",
+            "provider": "Mercury",
+            "chain": "testnet",
+            "address": null,
+            "technology": "ZephyrVM, Rust Soroban SDK",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "Custom",
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom Indexing",
+                "Real-time Data",
+                "Dashboards"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://docs.mercurydata.app/genaral-info/pricing)"
+            ]
+        },
+        {
+            "slug": "onfinality-mainnet-free",
+            "provider": "OnFinality",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "The Graph, Decentralized Data Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "400K response units/day",
+                "up to 40 response units/s"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Node Usage costs included in price",
+                "Support site"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://onfinality.io/en/networks/stellar)",
+                "[Docs](https://documentation.onfinality.io/support/publishing-your-subgraph-project)"
+            ]
+        },
+        {
+            "slug": "onfinality-mainnet-pay-as-you-go",
+            "provider": "OnFinality",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "The Graph, Decentralized Data Indexing",
+            "plan": "Pay-as-you-go",
+            "trial": false,
+            "accessPrice": "$49/$249",
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "20M/100M response units/mo",
+                "200/500 response units/s",
+                "unlimited response unit",
+                "$6/$3.75 per million additional response units"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Node and API Usage costs included in price",
+                "Telegram support",
+                "Support site"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/deploy-a-stellar-subquery-indexer-on-onfinality)"
+            ]
+        },
+        {
+            "slug": "onfinality-mainnet-enterprise",
+            "provider": "OnFinality",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "The Graph, Decentralized Data Indexing",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Support site",
+                "Priority support",
+                "Slack support",
+                "Telegram support"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/deploy-a-stellar-subquery-indexer-on-onfinality)"
+            ]
+        },
+        {
+            "slug": "subquery-mainnet-free",
+            "provider": "SubQuery",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "Decentralized Data Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "SQL"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "Decentralized storage",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Data lake logs",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "ETL query stack",
+                "Decentralized indexing",
+                "Discord support"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://subquery.network/indexer)",
+                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/stellar.html#stellar-soroban-combined-quick-start)"
+            ]
+        },
+        {
+            "slug": "subquery-mainnet-pay-as-you-go",
+            "provider": "SubQuery",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "Decentralized Data Indexing",
+            "plan": "Pay-as-you-go",
+            "trial": false,
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "SQL"
+            ],
+            "limitations": [
+                "Rate limits may apply"
+            ],
+            "securityImprovements": [
+                "Decentralized storage",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Data lake logs",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "ETL query stack",
+                "Decentralized indexing",
+                "Hard SLA with compensations"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://subquery.network/doc/subquery_network/node_operators/rewards.html#pricing-strategy)",
+                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/stellar.html#stellar-soroban-combined-quick-start)"
+            ]
+        },
+        {
+            "slug": "subquery-mainnet-enterprise",
+            "provider": "SubQuery",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "Decentralized Data Indexing",
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": null,
@@ -1329,35 +1701,168 @@
             "supportSla": null,
             "starred": false,
             "availableApis": [
-                "GraphQL"
+                "GraphQL",
+                "SQL"
             ],
-            "limitations": [
-                "1000+ RPC/10s 1$ per 100,000 entities stored"
-            ],
+            "limitations": null,
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
+                "Decentralized storage",
+                "IP Protection"
             ],
             "monitoringAndAnalytics": [
-                "Subgraph logs",
-                "Usage analytics",
-                "Custom dashboards"
+                "Data lake logs",
+                "Usage analytics"
             ],
             "regions": [
                 "Global"
             ],
             "additionalFeatures": [
-                "Subgraphs",
-                "Real-time Mirror Pipelines",
-                "Webhooks"
+                "ETL query stack",
+                "Decentralized indexing",
+                "Hard SLA with compensations"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://goldsky.com/)",
-                "[Docs](https://docs.goldsky.com/chains/stellar/)"
+                "[Contact](https://subquery.network/doc/subquery_network/node_operators/rewards.html#pricing-strategy)",
+                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/stellar.html#stellar-soroban-combined-quick-start)"
+            ]
+        },
+        {
+            "slug": "subquery-testnet-free",
+            "provider": "SubQuery",
+            "chain": "testnet",
+            "address": null,
+            "technology": "Decentralized Data Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "SQL"
+            ],
+            "limitations": [
+                "Rate limits apply"
+            ],
+            "securityImprovements": [
+                "Decentralized storage",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Data lake logs",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "ETL query stack",
+                "Decentralized indexing",
+                "Discord support"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://subquery.network/indexer)",
+                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/stellar.html#stellar-soroban-combined-quick-start)"
+            ]
+        },
+        {
+            "slug": "subquery-testnet-pay-as-you-go",
+            "provider": "SubQuery",
+            "chain": "testnet",
+            "address": null,
+            "technology": "Decentralized Data Indexing",
+            "plan": "Pay-as-you-go",
+            "trial": false,
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "SQL"
+            ],
+            "limitations": [
+                "Rate limits may apply"
+            ],
+            "securityImprovements": [
+                "Decentralized storage",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Data lake logs",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "ETL query stack",
+                "Decentralized indexing",
+                "Hard SLA with compensations"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://subquery.network/doc/subquery_network/node_operators/rewards.html#pricing-strategy)",
+                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/stellar.html#stellar-soroban-combined-quick-start)"
+            ]
+        },
+        {
+            "slug": "subquery-testnet-enterprise",
+            "provider": "SubQuery",
+            "chain": "testnet",
+            "address": null,
+            "technology": "Decentralized Data Indexing",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": null,
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "SQL"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "Decentralized storage",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Data lake logs",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "ETL query stack",
+                "Decentralized indexing",
+                "Hard SLA with compensations"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Contact](https://subquery.network/doc/subquery_network/node_operators/rewards.html#pricing-strategy)",
+                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/stellar.html#stellar-soroban-combined-quick-start)"
             ]
         },
         {
@@ -1365,25 +1870,24 @@
             "provider": "The Graph",
             "chain": "mainnet",
             "address": null,
-            "technology": "Substreams",
+            "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
-            "starred": true,
+            "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "up to 1TiB"
+                "Up to 100K queries/month"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+                "Decentralized infra"
             ],
             "monitoringAndAnalytics": [
                 "Subgraph logs",
@@ -1393,13 +1897,15 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Decentralized Subgraphs",
-                "Custom Queries"
+                "Hosted indexing",
+                "real-time data updates",
+                "Substreams"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
+                "[Website](https://thegraph.com/subgraphs/)",
                 "[Docs](https://thegraph.com/docs/en/supported-networks/stellar/)"
             ]
         },
@@ -1408,11 +1914,11 @@
             "provider": "The Graph",
             "chain": "mainnet",
             "address": null,
-            "technology": "Substreams",
-            "plan": "Pay as you go",
+            "technology": "The Graph",
+            "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "25$",
-            "queryPrice": "25$ per 1TiB",
+            "accessPrice": "$0.00",
+            "queryPrice": "$2 per 100k queries over free plan",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1421,13 +1927,9 @@
             "availableApis": [
                 "GraphQL"
             ],
-            "limitations": [
-                "up to 50TiB"
-            ],
+            "limitations": null,
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
+                "Decentralized infra"
             ],
             "monitoringAndAnalytics": [
                 "Subgraph logs",
@@ -1437,159 +1939,28 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Decentralized Subgraphs",
-                "Custom Queries",
-                "Custom Endpoints"
+                "Hosted indexing",
+                "real-time data updates",
+                "Substreams"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://thegraph.com/)",
+                "[Buy](https://thegraph.com/studio-pricing/)",
                 "[Docs](https://thegraph.com/docs/en/supported-networks/stellar/)"
             ]
         },
         {
-            "slug": "mercury-mainnet-free",
-            "provider": "Mercury",
+            "slug": "thegraph-mainnet-enterprise",
+            "provider": "The Graph",
             "chain": "mainnet",
             "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "FREE",
-            "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": true,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Custom Indexing",
-                "Real-time Data",
-                "Dashboards"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.mercurydata.app/)"
-            ]
-        },
-        {
-            "slug": "mercury-mainnet-basic",
-            "provider": "Mercury",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "Pay as you go",
-            "trial": false,
-            "accessPrice": "5-50$",
-            "queryPrice": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "Custom limits"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Custom Indexing",
-                "Real-time Data",
-                "Dashboards"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.mercurydata.app/)"
-            ]
-        },
-        {
-            "slug": "mercury-mainnet-enterprise",
-            "provider": "Mercury",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Blockchain Data Indexing",
+            "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
-            "queryPrice": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "Custom limits"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Custom Indexing",
-                "Real-time Data",
-                "Dashboards"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.mercurydata.app/)"
-            ]
-        },
-        {
-            "slug": "mercury-testnet-free",
-            "provider": "Mercury",
-            "chain": "testnet",
-            "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "FREE",
-            "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "queryPrice": "Custom pricing & SLAs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1600,115 +1971,26 @@
             ],
             "limitations": null,
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+                "Decentralized infra"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
+                "Subgraph logs",
+                "Usage analytics"
             ],
             "regions": [
                 "Global"
             ],
             "additionalFeatures": [
-                "Custom Indexing",
-                "Real-time Data",
-                "Dashboards"
+                "Enterprise priority support",
+                "Customized SLAs",
+                "Substreams"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.mercurydata.app/)"
-            ]
-        },
-        {
-            "slug": "mercury-testnet-basic",
-            "provider": "Mercury",
-            "chain": "testnet",
-            "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "Pay as you go",
-            "trial": false,
-            "accessPrice": "5-50$",
-            "queryPrice": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "Custom limits"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Custom Indexing",
-                "Real-time Data",
-                "Dashboards"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.mercurydata.app/)"
-            ]
-        },
-        {
-            "slug": "mercury-testnet-enterprise",
-            "provider": "Mercury",
-            "chain": "testnet",
-            "address": null,
-            "technology": "Blockchain Data Indexing",
-            "plan": "Enterprise",
-            "trial": false,
-            "accessPrice": "Custom",
-            "queryPrice": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "Custom limits"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Custom Indexing",
-                "Real-time Data",
-                "Dashboards"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.mercurydata.app/)"
+                "[Contact](https://thegraph.com/studio-pricing/)",
+                "[Docs](https://thegraph.com/docs/en/supported-networks/stellar/)"
             ]
         }
     ],
@@ -3340,7 +3622,7 @@
             "provider": "Stellar SDK (JavaScript)",
             "toolType": "SDK",
             "price": "Free",
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Docs](https://github.com/stellar/js-stellar-sdk)"
             ]
@@ -3355,7 +3637,7 @@
             "provider": "Stellar SDK (Rust)",
             "toolType": "SDK",
             "price": "Free",
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Docs](https://github.com/stellar/rs-soroban-sdk)"
             ]
@@ -3371,7 +3653,7 @@
             "provider": "Stellar SDK (Go)",
             "toolType": "SDK",
             "price": "Free",
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Docs](https://github.com/stellar/go)"
             ]
@@ -3387,7 +3669,7 @@
             "provider": "Stellar SDK (Python)",
             "toolType": "SDK",
             "price": "Free",
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Docs](https://github.com/StellarCN/py-stellar-base)"
             ]
@@ -3403,7 +3685,7 @@
             "provider": "Stellar SDK (Java)",
             "toolType": "SDK",
             "price": "Free",
-            "starred": true,
+            "starred": false,
             "actionButtons": [
                 "[Docs](https://github.com/lightsail-network/java-stellar-sdk)"
             ]
