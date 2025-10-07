@@ -315,6 +315,47 @@
     ],
     "indexing": [
         {
+            "slug": "chain-love-mainnet",
+            "provider": "Chain.Love",
+            "chain": "mainnet",
+            "address": "0x0fd8fd1dc8162148cb9413062fe6c6b144335dbf",
+            "technology": "The Graph",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting"
+            ],
+            "monitoringAndAnalytics": [
+                "Subgraph logs",
+                "Usage logs"
+            ],
+            "regions": [
+                "Japan"
+            ],
+            "additionalFeatures": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Deploy](https://somnia.chain.love/graph)",
+                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/)"
+            ]
+        },
+        {
             "slug": "chain-love-testnet",
             "provider": "Chain.Love",
             "chain": "testnet",
@@ -356,45 +397,178 @@
             ]
         },
         {
-            "slug": "ormi-testnet",
-            "provider": "Ormi",
-            "chain": "testnet",
+            "slug": "dipdup-mainnet-free",
+            "provider": "dipDup",
+            "chain": "mainnet",
             "address": null,
-            "technology": "The Graph",
+            "technology": "Modular Indexers",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 (self-hosted open-source)",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
             "availableApis": [
-                "GraphQL"
+                "GraphQL",
+                "Code-gen APIs"
             ],
-            "limitations": [
-                "Rate limits apply"
+            "limitations": null,
+            "securityImprovements": [
+                "Open-source stack security"
             ],
-            "securityImprovements": [],
-            "monitoringAndAnalytics": [],
+            "monitoringAndAnalytics": [
+                "Logs",
+                "Analytics"
+            ],
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "Fast setup templates",
+                "Open-source"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://subgraph.somnia.network/)",
-                "[Get help](mailto:hello@ormi.xyz)"
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/somnia)"
             ]
         },
         {
-            "slug": "chain-love-mainnet",
-            "provider": "Chain.Love",
+            "slug": "dipdup-mainnet-enterprise",
+            "provider": "dipDup",
             "chain": "mainnet",
-            "address": "0x0fd8fd1dc8162148cb9413062fe6c6b144335dbf",
+            "address": null,
+            "technology": "Modular Indexers",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 (self-hosted open-source)",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "Code-gen APIs"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "Open-source stack security"
+            ],
+            "monitoringAndAnalytics": [
+                "Logs",
+                "Analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Fast setup templates",
+                "Open-source"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/somnia)"
+            ]
+        },
+        {
+            "slug": "dipdup-testnet-free",
+            "provider": "dipDup",
+            "chain": "testnet",
+            "address": null,
+            "technology": "Modular Indexers",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 (self-hosted open-source)",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "Code-gen APIs"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "Open-source stack security"
+            ],
+            "monitoringAndAnalytics": [
+                "Logs",
+                "Analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Fast setup templates",
+                "Open-source"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/somnia)"
+            ]
+        },
+        {
+            "slug": "dipdup-testnet-enterprise",
+            "provider": "dipDup",
+            "chain": "testnet",
+            "address": null,
+            "technology": "Modular Indexers",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0 (self-hosted open-source)",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "Code-gen APIs"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "Open-source stack security"
+            ],
+            "monitoringAndAnalytics": [
+                "Logs",
+                "Analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Fast setup templates",
+                "Open-source"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/somnia)"
+            ]
+        },
+        {
+            "slug": "goldsky-testnet-free",
+            "provider": "Goldsky",
+            "chain": "testnet",
+            "address": null,
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
@@ -404,31 +578,386 @@
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
-            "starred": true,
+            "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
-            "limitations": null,
+            "limitations": [
+                "20 RPC/10s",
+                "100K entities stored"
+            ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting"
+                "IP Protection"
             ],
             "monitoringAndAnalytics": [
                 "Subgraph logs",
-                "Usage logs"
+                "Usage analytics"
             ],
             "regions": [
-                "Japan"
+                "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "Mirror",
+                "Email support"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Deploy](https://somnia.chain.love/graph)",
-                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/)"
+                "[Website](https://goldsky.com/chains/somnia)",
+                "[Docs](https://docs.goldsky.com/subgraphs/introduction)"
+            ]
+        },
+        {
+            "slug": "goldsky-testnet-pay-as-you-go",
+            "provider": "Goldsky",
+            "chain": "testnet",
+            "address": null,
+            "technology": "The Graph",
+            "plan": "Pay-as-you-go",
+            "trial": true,
+            "accessPrice": "$73/month + $1 per 100k entities stored",
+            "queryPrice": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "50 RPC/10s"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Subgraph logs",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Mirror",
+                "Email support",
+                "Custom indexing"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/subgraphs/introduction)"
+            ]
+        },
+        {
+            "slug": "goldsky-testnet-enterprise",
+            "provider": "Goldsky",
+            "chain": "testnet",
+            "address": null,
+            "technology": "The Graph",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "1K+ RPC/10s"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Subgraph logs",
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Mirror",
+                "Slack and Email support",
+                "Managed onboarding",
+                "White-label endpoints",
+                "Customized caching",
+                "4 hours SLA"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Contact](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/subgraphs/introduction)"
+            ]
+        },
+        {
+            "slug": "ormi-mainnet-free",
+            "provider": "Ormi Labs",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "The Graph",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "REST API"
+            ],
+            "limitations": [
+                "TPS: 20 req/10s",
+                "100K entities included"
+            ],
+            "securityImprovements": [
+                "Encryption and monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Email support"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://ormilabs.com/chain-list/somnia)",
+                "[Docs](https://docs.ormilabs.com/dedicated-env/somnia/subgraphs/overview#supported-networks)"
+            ]
+        },
+        {
+            "slug": "ormi-mainnet-pay-as-you-go",
+            "provider": "Ormi Labs",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "The Graph",
+            "plan": "Pay-as-you-go",
+            "trial": false,
+            "accessPrice": "$4 per 100k entities stored",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "REST API"
+            ],
+            "limitations": [
+                "TPS: 50 req/10s"
+            ],
+            "securityImprovements": [
+                "Encryption and monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Premium support via Email, Slack, and Telegram"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://ormilabs.com/pricing)",
+                "[Docs](https://docs.ormilabs.com/dedicated-env/somnia/subgraphs/overview#supported-networks)"
+            ]
+        },
+        {
+            "slug": "ormi-mainnet-enterprise",
+            "provider": "Ormi Labs",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "The Graph",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "$1 per 100k entities stored",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "REST API"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": [
+                "Encryption and monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Uptime and latency SLA",
+                "Optional dedicated environment"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Contact](https://calendly.com/ormilabs)",
+                "[Docs](https://docs.ormilabs.com/dedicated-env/somnia/subgraphs/overview#supported-networks)"
+            ]
+        },
+        {
+            "slug": "ormi-testnet-free",
+            "provider": "Ormi Labs",
+            "chain": "testnet",
+            "address": null,
+            "technology": "The Graph",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0.00",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "REST API"
+            ],
+            "limitations": [
+                "TPS: 20 req/10s",
+                "100K entities included"
+            ],
+            "securityImprovements": [
+                "Encryption and monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Email support"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://ormilabs.com/chain-list/somnia)",
+                "[Docs](https://docs.ormilabs.com/dedicated-env/somnia/subgraphs/overview#supported-networks)"
+            ]
+        },
+        {
+            "slug": "ormi-testnet-pay-as-you-go",
+            "provider": "Ormi Labs",
+            "chain": "testnet",
+            "address": null,
+            "technology": "The Graph",
+            "plan": "Pay-as-you-go",
+            "trial": false,
+            "accessPrice": "$4 per 100k entities stored",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "REST API"
+            ],
+            "limitations": [
+                "TPS: 50 req/10s"
+            ],
+            "securityImprovements": [
+                "Encryption and monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Premium support via Email, Slack, and Telegram"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://ormilabs.com/pricing)",
+                "[Docs](https://docs.ormilabs.com/dedicated-env/somnia/subgraphs/overview#supported-networks)"
+            ]
+        },
+        {
+            "slug": "ormi-testnet-enterprise",
+            "provider": "Ormi Labs",
+            "chain": "testnet",
+            "address": null,
+            "technology": "The Graph",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "$1 per 100k entities stored",
+            "queryPrice": "$0.00",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "GraphQL",
+                "REST API"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": [
+                "Encryption and monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Uptime and latency SLA",
+                "Optional dedicated environment"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Contact](https://calendly.com/ormilabs)",
+                "[Docs](https://docs.ormilabs.com/dedicated-env/somnia/subgraphs/overview#supported-networks)"
             ]
         }
     ],
