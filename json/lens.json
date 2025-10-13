@@ -1326,8 +1326,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1373,7 +1373,7 @@
             "plan": "Pay-as-you-go",
             "trial": false,
             "accessPrice": "$5/$45/$215/$415/$815/$2k",
-            "queryPrice": "$20/1M queries",
+            "queryPrice": "$20/1M queries, $25/1M entities",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1385,9 +1385,7 @@
             ],
             "limitations": [
                 "30 subgraph deployments",
-                "$20/1M queries",
-                "throughput 30 queries/s",
-                "stored entities $25/M"
+                "throughput 30 queries/s"
             ],
             "securityImprovements": [
                 "Secure API keys",
@@ -1419,7 +1417,7 @@
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
-            "queryPrice": "Custom",
+            "queryPrice": "Custom pricing & SLAs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1429,7 +1427,10 @@
                 "GraphQL",
                 "REST API"
             ],
-            "limitations": null,
+            "limitations": [
+                "Unlimited subgraph deployments",
+                "Custom limits"
+            ],
             "securityImprovements": [
                 "Secure API keys",
                 "Encrypted endpoints"
@@ -1462,8 +1463,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1509,7 +1510,7 @@
             "plan": "Pay-as-you-go",
             "trial": false,
             "accessPrice": "$5/$45/$215/$415/$815/$2k",
-            "queryPrice": "$20/1M queries",
+            "queryPrice": "$20/1M queries, $25/1M entities",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1521,9 +1522,7 @@
             ],
             "limitations": [
                 "30 subgraph deployments",
-                "$20/1M queries",
-                "throughput 30 queries/s",
-                "stored entities $25/M"
+                "throughput 30 queries/s"
             ],
             "securityImprovements": [
                 "Secure API keys",
@@ -1555,7 +1554,7 @@
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
-            "queryPrice": "Custom",
+            "queryPrice": "Custom pricing & SLAs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1565,7 +1564,10 @@
                 "GraphQL",
                 "REST API"
             ],
-            "limitations": null,
+            "limitations": [
+                "Unlimited subgraph deployments",
+                "Custom limits"
+            ],
             "securityImprovements": [
                 "Secure API keys",
                 "Encrypted endpoints"
@@ -1598,8 +1600,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": null,
+            "accessPrice": "$0",
+            "queryPrice": "$20/1M request units for extra usage",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1609,10 +1611,9 @@
                 "GraphQL"
             ],
             "limitations": [
-                "3M request units per month, 20 request units per subgraph request",
+                "3M request units/mo, 20 request units/subgraph request",
                 "25 RPS",
-                "1 subgraph",
-                "Extra usage is $20 per 1M request units"
+                "1 subgraph"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1647,7 +1648,7 @@
             "plan": "Pay-as-you-go",
             "trial": false,
             "accessPrice": "$5(first month only)/$49/$199/$349 + $72 per subgraph",
-            "queryPrice": null,
+            "queryPrice": "$15/$12.5/$10/1M request units for extra usage",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1657,10 +1658,9 @@
                 "GraphQL"
             ],
             "limitations": [
-                "20M/80M/140M request units per month, 20 request units per subgraph request",
+                "20M/80M/140M request units/mo, 20 request units/subgraph request",
                 "250/400/600 RPS",
-                "10/15/20 subgraphs",
-                "Extra usage is $15/$12.5/$10 per 1M request units"
+                "10/15/20 subgraphs"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1696,8 +1696,8 @@
             "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "$990.00",
-            "queryPrice": null,
+            "accessPrice": "$990",
+            "queryPrice": "$5/1M request units for extra usage",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1707,9 +1707,8 @@
                 "GraphQL"
             ],
             "limitations": [
-                "400M request units per month, 20 request units per subgraph request",
-                "Up to 1K RPS",
-                "Extra usage is $5 per 1M request units"
+                "400M request units/mo, 20 request units/subgraph request",
+                "Up to 1K RPS"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1747,8 +1746,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": null,
+            "accessPrice": "$0",
+            "queryPrice": "$20/1M request units for extra usage",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1758,10 +1757,9 @@
                 "GraphQL"
             ],
             "limitations": [
-                "3M request units per month, 20 request units per subgraph request",
+                "3M request units/mo, 20 request units/subgraph request",
                 "25 RPS",
-                "1 subgraph",
-                "Extra usage is $20 per 1M request units"
+                "1 subgraph"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1796,7 +1794,7 @@
             "plan": "Pay-as-you-go",
             "trial": false,
             "accessPrice": "$5(first month only)/$49/$199/$349 + $72 per subgraph",
-            "queryPrice": null,
+            "queryPrice": "$15/$12.5/$10/1M request units for extra usage",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1806,10 +1804,9 @@
                 "GraphQL"
             ],
             "limitations": [
-                "20M/80M/140M request units per month, 20 request units per subgraph request",
+                "20M/80M/140M request units/mo, 20 request units/subgraph request",
                 "250/400/600 RPS",
-                "10/15/20 subgraphs",
-                "Extra usage is $15/$12.5/$10 per 1M request units"
+                "10/15/20 subgraphs"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1845,8 +1842,8 @@
             "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "$990.00",
-            "queryPrice": null,
+            "accessPrice": "$990",
+            "queryPrice": "$5/1M request units for extra usage",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1856,9 +1853,8 @@
                 "GraphQL"
             ],
             "limitations": [
-                "400M request units per month, 20 request units per subgraph request",
-                "Up to 1K RPS",
-                "Extra usage is $5 per 1M request units"
+                "400M request units/mo, 20 request units/subgraph request",
+                "Up to 1K RPS"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1889,141 +1885,6 @@
             ]
         },
         {
-            "slug": "dune-mainnet",
-            "provider": "Dune",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Data Indexing",
-            "plan": "Free",
-            "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": true,
-            "availableApis": [
-                "SQL"
-            ],
-            "limitations": [
-                "Rate limits apply"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "SQL Queries",
-                "Custom Dashboards"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://dune.com/chains/lens)",
-                "[Docs](https://docs.dune.com/data-catalog/evm/lens/overview#lens-overview)"
-            ]
-        },
-        {
-            "slug": "dune-mainnet-pay-as-you-go",
-            "provider": "Dune",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Data Indexing",
-            "plan": "Pay-as-you-go",
-            "trial": true,
-            "accessPrice": null,
-            "queryPrice": "Subscription-based",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "SQL"
-            ],
-            "limitations": [
-                "Rate limits apply"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "SQL Queries",
-                "Custom Dashboards",
-                "Advanced Analytics"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://dune.com/pricing)",
-                "[Docs](https://docs.dune.com/data-catalog/evm/lens/overview#lens-overview)"
-            ]
-        },
-        {
-            "slug": "dune-mainnet-enterprise",
-            "provider": "Dune",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Data Indexing",
-            "plan": "Enterprise",
-            "trial": false,
-            "accessPrice": null,
-            "queryPrice": "Subscription-based",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "SQL"
-            ],
-            "limitations": [
-                "Custom limits"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "SQL Queries",
-                "Custom Dashboards",
-                "Managed Analytics"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://dune.com/enterprise)",
-                "[Docs](https://docs.dune.com/data-catalog/evm/lens/overview#lens-overview)"
-            ]
-        },
-        {
             "slug": "goldrush-mainnet-free",
             "provider": "Covalent",
             "chain": "mainnet",
@@ -2032,7 +1893,7 @@
             "plan": "Free",
             "trial": false,
             "accessPrice": "$0 (14 Day Free Trial)",
-            "queryPrice": "$0.00",
+            "queryPrice": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2074,8 +1935,8 @@
             "technology": "Unified Data API",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "$250.00",
-            "queryPrice": "Usage based, API rate limits apply",
+            "accessPrice": "$250",
+            "queryPrice": "$0.00077/Credit",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2159,7 +2020,7 @@
             "plan": "Free",
             "trial": false,
             "accessPrice": "$0 (14 Day Free Trial)",
-            "queryPrice": "$0.00",
+            "queryPrice": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2201,8 +2062,8 @@
             "technology": "Unified Data API",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "$250.00",
-            "queryPrice": "Usage based, API rate limits apply",
+            "accessPrice": "$250",
+            "queryPrice": "$0.00077/Credit",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2327,8 +2188,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2338,7 +2199,7 @@
                 "GraphQL"
             ],
             "limitations": [
-                "Up to 100K queries/month"
+                "100K queries/mo"
             ],
             "securityImprovements": [
                 "Decentralized infra"
@@ -2371,8 +2232,8 @@
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$2 per 100k queries over free plan",
+            "accessPrice": "$0",
+            "queryPrice": "$2/100K queries over free plan",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2448,27 +2309,25 @@
             ]
         },
         {
-            "slug": "thirdweb-mainnet",
+            "slug": "thirdweb-mainnet-free",
             "provider": "thirdweb Insight",
             "chain": "mainnet",
             "address": null,
             "technology": "Custom Data Indexing",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0 (14 Day Free Trial)",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
-            "starred": true,
+            "starred": false,
             "availableApis": [
                 "REST",
                 "GraphQL"
             ],
-            "limitations": [
-                "Rate limits apply"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection"
@@ -2498,9 +2357,9 @@
             "address": null,
             "technology": "Custom Data Indexing",
             "plan": "Pay-as-you-go",
-            "trial": true,
-            "accessPrice": null,
-            "queryPrice": "Subscription-based",
+            "trial": false,
+            "accessPrice": "$5/$99/$499",
+            "queryPrice": "$8/$6.8/1M queries",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2511,7 +2370,56 @@
                 "GraphQL"
             ],
             "limitations": [
-                "Custom limits"
+                "1RPS/10RPM",
+                "5RPS/100RPM",
+                "10RPS/500RPM"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom API Schemas",
+                "No ABI Required",
+                "Email support",
+                "Slack support",
+                "Telegram support"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://lens.xyz/docs/chain/tools/data-indexers/thirdweb)"
+            ]
+        },
+        {
+            "slug": "thirdweb-mainnet-enterprise",
+            "provider": "thirdweb Insight",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "Custom Data Indexing",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "up to $1499",
+            "queryPrice": "$5.4/1M queries",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "limitations": [
+                "30RPS/1500RPM"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -2528,13 +2436,16 @@
             "additionalFeatures": [
                 "Custom API Schemas",
                 "No ABI Required",
-                "Custom Endpoints"
+                "Email support",
+                "Slack support",
+                "Telegram support",
+                "Account Executive"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
+                "[Contact](https://thirdweb.com/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/data-indexers/thirdweb)"
             ]
         },
@@ -2546,8 +2457,8 @@
             "technology": "Custom Data Indexing",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "accessPrice": "$0 (14 Day Free Trial)",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2557,9 +2468,7 @@
                 "REST",
                 "GraphQL"
             ],
-            "limitations": [
-                "Rate limits apply"
-            ],
+            "limitations": null,
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection"
@@ -2578,7 +2487,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Website](https://thirdweb.com/lens)",
+                "[Website](https://thirdweb.com/lens-network-sepolia-testnet)",
                 "[Docs](https://lens.xyz/docs/chain/tools/data-indexers/thirdweb)"
             ]
         },
@@ -2589,9 +2498,9 @@
             "address": null,
             "technology": "Custom Data Indexing",
             "plan": "Pay-as-you-go",
-            "trial": true,
-            "accessPrice": null,
-            "queryPrice": "Subscription-based",
+            "trial": false,
+            "accessPrice": "$5/$99/$499",
+            "queryPrice": "$8/$6.8/1M queries",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2602,7 +2511,9 @@
                 "GraphQL"
             ],
             "limitations": [
-                "Rate limits apply"
+                "1RPS/10RPM",
+                "5RPS/100RPM",
+                "10RPS/500RPM"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -2616,13 +2527,66 @@
             ],
             "additionalFeatures": [
                 "Custom API Schemas",
-                "No ABI Required"
+                "No ABI Required",
+                "Email support",
+                "Slack support",
+                "Telegram support"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
                 "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://lens.xyz/docs/chain/tools/data-indexers/thirdweb)"
+            ]
+        },
+        {
+            "slug": "thirdweb-testnet-enterprise",
+            "provider": "thirdweb Insight",
+            "chain": "testnet",
+            "address": null,
+            "technology": "Custom Data Indexing",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "up to $1499",
+            "queryPrice": "$5.4/1M queries",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "limitations": [
+                "30RPS/1500RPM"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom API Schemas",
+                "No ABI Required",
+                "Email support",
+                "Slack support",
+                "Telegram support",
+                "Account Executive"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Contact](https://thirdweb.com/pricing)",
                 "[Docs](https://lens.xyz/docs/chain/tools/data-indexers/thirdweb)"
             ]
         }

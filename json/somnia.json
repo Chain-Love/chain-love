@@ -322,8 +322,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -363,8 +363,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -404,7 +404,7 @@
             "technology": "Modular Indexers",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
+            "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -446,7 +446,7 @@
             "technology": "Modular Indexers",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "$0.00",
+            "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -488,7 +488,7 @@
             "technology": "Modular Indexers",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
+            "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -530,7 +530,7 @@
             "technology": "Modular Indexers",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "$0.00",
+            "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -572,8 +572,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -598,8 +598,10 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Mirror",
-                "Email support"
+                "Real-time Mirror Pipelines",
+                "Email support",
+                "Subgraphs",
+                "Webhooks"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -617,8 +619,8 @@
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
             "trial": true,
-            "accessPrice": "$73/month + $1 per 100k entities stored",
-            "queryPrice": null,
+            "accessPrice": "$37/mo",
+            "queryPrice": "$4/100K entities stored",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -642,9 +644,11 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Mirror",
+                "Real-time Mirror Pipelines",
                 "Email support",
-                "Custom indexing"
+                "Custom indexing",
+                "Subgraphs",
+                "Webhooks"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -662,8 +666,8 @@
             "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
+            "accessPrice": "$37/mo",
+            "queryPrice": "$1/100K entities stored",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -689,12 +693,14 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Mirror",
+                "Real-time Mirror Pipelines",
                 "Slack and Email support",
                 "Managed onboarding",
                 "White-label endpoints",
                 "Customized caching",
-                "4 hours SLA"
+                "4 hours SLA",
+                "Subgraphs",
+                "Webhooks"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -712,8 +718,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -725,7 +731,8 @@
             ],
             "limitations": [
                 "TPS: 20 req/10s",
-                "100K entities included"
+                "100K entities included",
+                "3 custom subgraphs"
             ],
             "securityImprovements": [
                 "Encryption and monitoring"
@@ -755,8 +762,8 @@
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "$4 per 100k entities stored",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$4/100K entities stored",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -767,7 +774,8 @@
                 "REST API"
             ],
             "limitations": [
-                "TPS: 50 req/10s"
+                "TPS: 50 req/10s",
+                "unlimited custom subgraphs"
             ],
             "securityImprovements": [
                 "Encryption and monitoring"
@@ -797,8 +805,8 @@
             "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "$1 per 100k entities stored",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$1/100K entities stored",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -809,7 +817,8 @@
                 "REST API"
             ],
             "limitations": [
-                "Custom"
+                "Custom limits",
+                "unlimited custom subgraphs"
             ],
             "securityImprovements": [
                 "Encryption and monitoring"
@@ -840,8 +849,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -853,7 +862,8 @@
             ],
             "limitations": [
                 "TPS: 20 req/10s",
-                "100K entities included"
+                "100K entities included",
+                "3 custom subgraphs"
             ],
             "securityImprovements": [
                 "Encryption and monitoring"
@@ -883,8 +893,8 @@
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "$4 per 100k entities stored",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$4/100K entities stored",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -895,7 +905,8 @@
                 "REST API"
             ],
             "limitations": [
-                "TPS: 50 req/10s"
+                "TPS: 50 req/10s",
+                "unlimited custom subgraphs"
             ],
             "securityImprovements": [
                 "Encryption and monitoring"
@@ -925,8 +936,8 @@
             "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "$1 per 100k entities stored",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$1/100K entities stored",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -937,7 +948,8 @@
                 "REST API"
             ],
             "limitations": [
-                "Custom"
+                "Custom limits",
+                "unlimited custom subgraphs"
             ],
             "securityImprovements": [
                 "Encryption and monitoring"

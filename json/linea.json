@@ -1043,8 +1043,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "starred": false,
             "availableApis": [
                 "GraphQL",
@@ -1090,7 +1090,7 @@
             "plan": "Pay-as-you-go",
             "trial": false,
             "accessPrice": "$5/$45/$215/$415/$815/$2k",
-            "queryPrice": "$20/1M queries",
+            "queryPrice": "$20/1M queries, $25/1M entities",
             "starred": false,
             "availableApis": [
                 "GraphQL",
@@ -1098,9 +1098,7 @@
             ],
             "limitations": [
                 "30 subgraph deployments",
-                "$20/1M queries",
-                "throughput 30 queries/s",
-                "stored entities $25/M"
+                "throughput 30 queries/s"
             ],
             "securityImprovements": [
                 "Secure API keys",
@@ -1136,13 +1134,16 @@
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
-            "queryPrice": "Custom",
+            "queryPrice": "Custom pricing & SLAs",
             "starred": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
             ],
-            "limitations": null,
+            "limitations": [
+                "Unlimited subgraph deployments",
+                "Custom limits"
+            ],
             "securityImprovements": [
                 "Secure API keys",
                 "Encrypted endpoints"
@@ -1172,20 +1173,66 @@
             "supportSla": null
         },
         {
-            "slug": "bitscrunch-mainnet-pay-as-you-go",
+            "slug": "bitscrunch-mainnet-free",
             "provider": "bitsCrunch",
             "chain": "mainnet",
             "address": null,
-            "technology": "Analytics & Indexing",
-            "plan": "Pay-as-you-go",
+            "technology": "Decentralized Data Indexing",
+            "plan": "Free",
             "trial": false,
-            "accessPrice": "0",
-            "queryPrice": "Token-based / usage based",
+            "accessPrice": "$0",
+            "queryPrice": null,
             "starred": false,
             "availableApis": [
                 "REST API"
             ],
-            "limitations": null,
+            "limitations": [
+                "1K API requests"
+            ],
+            "securityImprovements": [
+                "IP protection",
+                "DDoS protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Dashboards",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "AI-powered analytics",
+                "Price estimation"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://bitscrunch.com/)",
+                "[Docs](https://docs.bitscrunch.com/docs/overview/about)"
+            ],
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null
+        },
+        {
+            "slug": "bitscrunch-mainnet-pay-as-you-go",
+            "provider": "bitsCrunch",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "Decentralized Data Indexing",
+            "plan": "Pay-as-you-go",
+            "trial": false,
+            "accessPrice": null,
+            "queryPrice": "$0.0002/API Credit",
+            "starred": false,
+            "availableApis": [
+                "REST API"
+            ],
+            "limitations": [
+                "Unlimited API requests"
+            ],
             "securityImprovements": [
                 "IP protection",
                 "DDoS protection"
@@ -1218,7 +1265,7 @@
             "provider": "bitsCrunch",
             "chain": "mainnet",
             "address": null,
-            "technology": "Analytics & Indexing",
+            "technology": "Decentralized Data Indexing",
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
@@ -1227,7 +1274,9 @@
             "availableApis": [
                 "REST API"
             ],
-            "limitations": null,
+            "limitations": [
+                "Custom limits"
+            ],
             "securityImprovements": [
                 "IP protection",
                 "DDoS protection"
@@ -1262,17 +1311,16 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": null,
+            "accessPrice": "$0",
+            "queryPrice": "$20/1M request units for extra usage",
             "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "3M request units per month, 20 request units per subgraph request",
+                "3M request units/mo, 20 request units/subgraph request",
                 "25 RPS",
-                "1 subgraph",
-                "Extra usage is $20 per 1M request units"
+                "1 subgraph"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1311,16 +1359,15 @@
             "plan": "Pay-as-you-go",
             "trial": false,
             "accessPrice": "$5(first month only)/$49/$199/$349 + $72 per subgraph",
-            "queryPrice": null,
+            "queryPrice": "$15/$12.5/$10/1M request units for extra usage",
             "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "20M/80M/140M request units per month, 20 request units per subgraph request",
+                "20M/80M/140M request units/mo, 20 request units/subgraph request",
                 "250/400/600 RPS",
-                "10/15/20 subgraphs",
-                "Extra usage is $15/$12.5/$10 per 1M request units"
+                "10/15/20 subgraphs"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1360,16 +1407,15 @@
             "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "$990.00",
-            "queryPrice": null,
+            "accessPrice": "$990",
+            "queryPrice": "$5/1M request units for extra usage",
             "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "400M request units per month, 20 request units per subgraph request",
-                "Up to 1K RPS",
-                "Extra usage is $5 per 1M request units"
+                "400M request units/mo, 20 request units/subgraph request",
+                "Up to 1K RPS"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1411,17 +1457,16 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": null,
+            "accessPrice": "$0",
+            "queryPrice": "$20/1M request units for extra usage",
             "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "3M request units per month, 20 request units per subgraph request",
+                "3M request units/mo, 20 request units/subgraph request",
                 "25 RPS",
-                "1 subgraph",
-                "Extra usage is $20 per 1M request units"
+                "1 subgraph"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1460,16 +1505,15 @@
             "plan": "Pay-as-you-go",
             "trial": false,
             "accessPrice": "$5(first month only)/$49/$199/$349 + $72 per subgraph",
-            "queryPrice": null,
+            "queryPrice": "$15/$12.5/$10/1M request units for extra usage",
             "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "20M/80M/140M request units per month, 20 request units per subgraph request",
+                "20M/80M/140M request units/mo, 20 request units/subgraph request",
                 "250/400/600 RPS",
-                "10/15/20 subgraphs",
-                "Extra usage is $15/$12.5/$10 per 1M request units"
+                "10/15/20 subgraphs"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1509,16 +1553,15 @@
             "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "$990.00",
-            "queryPrice": null,
+            "accessPrice": "$990",
+            "queryPrice": "$5/1M request units for extra usage",
             "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "400M request units per month, 20 request units per subgraph request",
-                "Up to 1K RPS",
-                "Extra usage is $5 per 1M request units"
+                "400M request units/mo, 20 request units/subgraph request",
+                "Up to 1K RPS"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1553,90 +1596,6 @@
             "supportSla": null
         },
         {
-            "slug": "dipdup-mainnet-free",
-            "provider": "dipDup",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Modular Indexers",
-            "plan": "Free",
-            "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0 (self-hosted open-source)",
-            "starred": false,
-            "availableApis": [
-                "GraphQL",
-                "Code-gen APIs"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "Open-source stack security"
-            ],
-            "monitoringAndAnalytics": [
-                "Logs",
-                "Analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Fast setup templates",
-                "Open-source"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://dipdup.io/)",
-                "[Docs](https://dipdup.io/docs/supported-networks/linea)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
-        },
-        {
-            "slug": "dipdup-mainnet-enterprise",
-            "provider": "dipDup",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Modular Indexers",
-            "plan": "Enterprise",
-            "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0 (self-hosted open-source)",
-            "starred": false,
-            "availableApis": [
-                "GraphQL",
-                "Code-gen APIs"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "Open-source stack security"
-            ],
-            "monitoringAndAnalytics": [
-                "Logs",
-                "Analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Fast setup templates",
-                "Open-source"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://dipdup.io/)",
-                "[Docs](https://dipdup.io/docs/supported-networks/linea)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
-        },
-        {
             "slug": "envio-mainnet-free",
             "provider": "Envio",
             "chain": "mainnet",
@@ -1644,8 +1603,8 @@
             "technology": "Custom Data Indexing",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": null,
             "starred": false,
             "availableApis": [
                 "GraphQL",
@@ -1694,18 +1653,18 @@
             "plan": "Pay-as-you-go",
             "trial": false,
             "accessPrice": "$70/$300/$800",
-            "queryPrice": null,
+            "queryPrice": "$0.1/$0.2/$0.5/extra indexing hour",
             "starred": false,
             "availableApis": [
                 "GraphQL",
                 "Custom Handlers"
             ],
             "limitations": [
-                "800 indexing hours, $0.1 per additional hour",
-                "250 req/min",
-                "<= 1M entities stored",
-                "5 networks",
-                "1K contracts"
+                "800 indexing hours",
+                "250/1K/2K req/min",
+                "<= 1M/10M/100M entities stored",
+                "5/10/15 networks",
+                "1K/10K/50K contracts"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1808,7 +1767,7 @@
             "plan": "Free",
             "trial": false,
             "accessPrice": "$0 (14 Day Free Trial)",
-            "queryPrice": "$0.00",
+            "queryPrice": null,
             "starred": false,
             "availableApis": [
                 "REST API"
@@ -1850,8 +1809,8 @@
             "technology": "Unified Data API",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "$250.00",
-            "queryPrice": "Usage based, API rate limits apply",
+            "accessPrice": "$250",
+            "queryPrice": "$0.00077/Credit",
             "starred": false,
             "availableApis": [
                 "REST API"
@@ -1935,7 +1894,7 @@
             "plan": "Free",
             "trial": false,
             "accessPrice": "$0 (14 Day Free Trial)",
-            "queryPrice": "$0.00",
+            "queryPrice": null,
             "starred": false,
             "availableApis": [
                 "REST API"
@@ -1977,8 +1936,8 @@
             "technology": "Unified Data API",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "$250.00",
-            "queryPrice": "Usage based, API rate limits apply",
+            "accessPrice": "$250",
+            "queryPrice": "$0.00077/Credit",
             "starred": false,
             "availableApis": [
                 "REST API"
@@ -2061,8 +2020,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "starred": false,
             "availableApis": [
                 "GraphQL"
@@ -2083,8 +2042,10 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Mirror",
-                "Email support"
+                "Real-time Mirror Pipelines",
+                "Email support",
+                "Subgraphs",
+                "Webhooks"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -2106,8 +2067,8 @@
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
             "trial": true,
-            "accessPrice": "$73/month + $1 per 100k entities stored",
-            "queryPrice": null,
+            "accessPrice": "$37/mo",
+            "queryPrice": "$4/100K entities stored",
             "starred": false,
             "availableApis": [
                 "GraphQL"
@@ -2127,9 +2088,11 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Mirror",
+                "Real-time Mirror Pipelines",
                 "Email support",
-                "Custom indexing"
+                "Custom indexing",
+                "Subgraphs",
+                "Webhooks"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -2151,8 +2114,8 @@
             "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
+            "accessPrice": "$37/mo",
+            "queryPrice": "$1/100K entities stored",
             "starred": false,
             "availableApis": [
                 "GraphQL"
@@ -2174,12 +2137,14 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Mirror",
+                "Real-time Mirror Pipelines",
                 "Slack and Email support",
                 "Managed onboarding",
                 "White-label endpoints",
                 "Customized caching",
-                "4 hours SLA"
+                "4 hours SLA",
+                "Subgraphs",
+                "Webhooks"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -2201,8 +2166,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "starred": false,
             "availableApis": [
                 "GraphQL"
@@ -2223,8 +2188,10 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Mirror",
-                "Email support"
+                "Real-time Mirror Pipelines",
+                "Email support",
+                "Subgraphs",
+                "Webhooks"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -2246,8 +2213,8 @@
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
             "trial": true,
-            "accessPrice": "$73/month + $1 per 100k entities stored",
-            "queryPrice": null,
+            "accessPrice": "$37/mo",
+            "queryPrice": "$4/100K entities stored",
             "starred": false,
             "availableApis": [
                 "GraphQL"
@@ -2267,9 +2234,11 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Mirror",
+                "Real-time Mirror Pipelines",
                 "Email support",
-                "Custom indexing"
+                "Custom indexing",
+                "Subgraphs",
+                "Webhooks"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -2291,8 +2260,8 @@
             "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
+            "accessPrice": "$37/mo",
+            "queryPrice": "$1/100K entities stored",
             "starred": false,
             "availableApis": [
                 "GraphQL"
@@ -2314,12 +2283,14 @@
                 "Global"
             ],
             "additionalFeatures": [
-                "Mirror",
+                "Real-time Mirror Pipelines",
                 "Slack and Email support",
                 "Managed onboarding",
                 "White-label endpoints",
                 "Customized caching",
-                "4 hours SLA"
+                "4 hours SLA",
+                "Subgraphs",
+                "Webhooks"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -2341,8 +2312,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": null,
             "starred": false,
             "availableApis": [
                 "API",
@@ -2350,7 +2321,8 @@
                 "Dashboards"
             ],
             "limitations": [
-                "10K credits/mo"
+                "10K credits/mo",
+                "360K credits/1 subgraph"
             ],
             "securityImprovements": [
                 "Security monitoring tools"
@@ -2387,7 +2359,7 @@
             "plan": "Pay-as-you-go",
             "trial": false,
             "accessPrice": "$50/$400",
-            "queryPrice": "Variable, usage metered",
+            "queryPrice": null,
             "starred": false,
             "availableApis": [
                 "API",
@@ -2395,7 +2367,8 @@
                 "Dashboards"
             ],
             "limitations": [
-                "125K/1M250K credits/mo"
+                "125K/1M250K credits/mo",
+                "360K credits/1 subgraph"
             ],
             "securityImprovements": [
                 "Security monitoring tools"
@@ -2479,8 +2452,8 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "starred": false,
             "availableApis": [
                 "GraphQL",
@@ -2488,7 +2461,8 @@
             ],
             "limitations": [
                 "TPS: 20 req/10s",
-                "100K entities included"
+                "100K entities included",
+                "3 custom subgraphs"
             ],
             "securityImprovements": [
                 "Encryption and monitoring"
@@ -2522,15 +2496,16 @@
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "$4 per 100k entities stored",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$4/100K entities stored",
             "starred": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
             ],
             "limitations": [
-                "TPS: 50 req/10s"
+                "TPS: 50 req/10s",
+                "unlimited custom subgraphs"
             ],
             "securityImprovements": [
                 "Encryption and monitoring"
@@ -2564,15 +2539,16 @@
             "technology": "The Graph",
             "plan": "Enterprise",
             "trial": false,
-            "accessPrice": "$1 per 100k entities stored",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$1/100K entities stored",
             "starred": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
             ],
             "limitations": [
-                "Custom"
+                "Custom limits",
+                "unlimited custom subgraphs"
             ],
             "securityImprovements": [
                 "Encryption and monitoring"
@@ -2607,8 +2583,8 @@
             "technology": "Decentralized Data Lakes",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "starred": false,
             "availableApis": [
                 "GraphQL",
@@ -2654,7 +2630,7 @@
             "plan": "Pay-as-you-go",
             "trial": false,
             "accessPrice": "$86+ (depending on squid needs may go up to $1.5k and higher)",
-            "queryPrice": "$0.00",
+            "queryPrice": "$0",
             "starred": false,
             "availableApis": [
                 "GraphQL",
@@ -2697,14 +2673,14 @@
             "technology": "The Graph",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "starred": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "Up to 100K queries/month"
+                "100K queries/mo"
             ],
             "securityImprovements": [
                 "Decentralized infra"
@@ -2741,8 +2717,8 @@
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$2 per 100k queries over free plan",
+            "accessPrice": "$0",
+            "queryPrice": "$2/100K queries over free plan",
             "starred": false,
             "availableApis": [
                 "GraphQL"
@@ -2811,6 +2787,288 @@
             "actionButtons": [
                 "[Contact](https://thegraph.com/studio-pricing/)",
                 "[Docs](https://thegraph.com/docs/en/supported-networks/linea/)"
+            ],
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null
+        },
+        {
+            "slug": "thirdweb-mainnet-free",
+            "provider": "thirdweb Insight",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "Custom Data Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0 (14 Day Free Trial)",
+            "queryPrice": "$0",
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom API Schemas",
+                "No ABI Required"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://thirdweb.com/linea)",
+                "[Docs](https://portal.thirdweb.com/insight)"
+            ],
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null
+        },
+        {
+            "slug": "thirdweb-mainnet-pay-as-you-go",
+            "provider": "thirdweb Insight",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "Custom Data Indexing",
+            "plan": "Pay-as-you-go",
+            "trial": false,
+            "accessPrice": "$5/$99/$499",
+            "queryPrice": "$8/$6.8/1M queries",
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "limitations": [
+                "1RPS/10RPM",
+                "5RPS/100RPM",
+                "10RPS/500RPM"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom API Schemas",
+                "No ABI Required",
+                "Email support",
+                "Slack support",
+                "Telegram support"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/insight)"
+            ],
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null
+        },
+        {
+            "slug": "thirdweb-mainnet-enterprise",
+            "provider": "thirdweb Insight",
+            "chain": "mainnet",
+            "address": null,
+            "technology": "Custom Data Indexing",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "up to $1499",
+            "queryPrice": "$5.4/1M queries",
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "limitations": [
+                "30RPS/1500RPM"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom API Schemas",
+                "No ABI Required",
+                "Email support",
+                "Slack support",
+                "Telegram support",
+                "Account Executive"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Contact](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/insight)"
+            ],
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null
+        },
+        {
+            "slug": "thirdweb-testnet-free",
+            "provider": "thirdweb Insight",
+            "chain": "testnet",
+            "address": null,
+            "technology": "Custom Data Indexing",
+            "plan": "Free",
+            "trial": false,
+            "accessPrice": "$0 (14 Day Free Trial)",
+            "queryPrice": "$0",
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom API Schemas",
+                "No ABI Required"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Website](https://thirdweb.com/linea-sepolia)",
+                "[Docs](https://portal.thirdweb.com/insight)"
+            ],
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null
+        },
+        {
+            "slug": "thirdweb-testnet-pay-as-you-go",
+            "provider": "thirdweb Insight",
+            "chain": "testnet",
+            "address": null,
+            "technology": "Custom Data Indexing",
+            "plan": "Pay-as-you-go",
+            "trial": false,
+            "accessPrice": "$5/$99/$499",
+            "queryPrice": "$8/$6.8/1M queries",
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "limitations": [
+                "1RPS/10RPM",
+                "5RPS/100RPM",
+                "10RPS/500RPM"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom API Schemas",
+                "No ABI Required",
+                "Email support",
+                "Slack support",
+                "Telegram support"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/insight)"
+            ],
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null
+        },
+        {
+            "slug": "thirdweb-testnet-enterprise",
+            "provider": "thirdweb Insight",
+            "chain": "testnet",
+            "address": null,
+            "technology": "Custom Data Indexing",
+            "plan": "Enterprise",
+            "trial": false,
+            "accessPrice": "up to $1499",
+            "queryPrice": "$5.4/1M queries",
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "limitations": [
+                "30RPS/1500RPM"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Custom API Schemas",
+                "No ABI Required",
+                "Email support",
+                "Slack support",
+                "Telegram support",
+                "Account Executive"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Contact](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/insight)"
             ],
             "uptimeSla": null,
             "bandwidthSla": null,
