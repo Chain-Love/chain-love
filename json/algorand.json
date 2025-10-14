@@ -508,5 +508,61 @@
             "blocksBehindSla": null,
             "supportSla": null
         }
+    ],
+    "faucet": [
+        {
+            "slug": "algorand-testnet-dispenser-algo",
+            "provider": "Algorand",
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "5 Algo",
+            "dripLimitPeriod": null,
+            "additionalNotes": [
+                "Required not to abuse it by requesting more Algos than needed for testing"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://dispenser.testnet.aws.algodev.network/)"
+            ]
+        },
+        {
+            "slug": "algorand-testnet-dispenser-usdc",
+            "provider": "Algorand",
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "100 USDC",
+            "dripLimitPeriod": null,
+            "additionalNotes": [
+                "Required not to abuse it by requesting more USDC than needed for testing"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://dispenser.testnet.aws.algodev.network/)"
+            ]
+        },
+        {
+            "slug": "algorand-testnet-dispenser-additional-algo",
+            "provider": "Algorand",
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "10 Algo",
+            "dripLimitPeriod": null,
+            "additionalNotes": [
+                "Required not to abuse it by requesting more Algos than needed for testing"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://bank.testnet.algorand.network/)"
+            ]
+        }
     ]
 }
