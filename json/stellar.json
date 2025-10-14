@@ -1474,8 +1474,8 @@
             "technology": "The Graph, Decentralized Data Indexing",
             "plan": "Free",
             "trial": false,
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1485,8 +1485,9 @@
                 "GraphQL"
             ],
             "limitations": [
-                "400K response units/day",
-                "up to 40 response units/s"
+                "2 active projects",
+                "Up to 500K stored entities",
+                "Up to 1K free deployment hours each month"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1519,8 +1520,8 @@
             "technology": "The Graph, Decentralized Data Indexing",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "$49/$249",
-            "queryPrice": null,
+            "accessPrice": "$0.08/deployment hour",
+            "queryPrice": "$3.5/additional 100K stored entities/mo, $0.07/each additional CU/deployment hour",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1530,10 +1531,10 @@
                 "GraphQL"
             ],
             "limitations": [
-                "20M/100M response units/mo",
-                "200/500 response units/s",
-                "unlimited response unit",
-                "$6/$3.75 per million additional response units"
+                "First 500K stored entities are free",
+                "$1/additional 100K stored entities/mo after 10M stored entities",
+                "Unlimited active projects and storage",
+                "Unlimited deployment hours each month"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1555,8 +1556,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/deploy-a-stellar-subquery-indexer-on-onfinality)"
+                "[Buy](https://indexing.onfinality.io/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/pricing)"
             ]
         },
         {
@@ -1568,7 +1569,7 @@
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
-            "queryPrice": "Custom",
+            "queryPrice": "Custom pricing & SLAs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1578,7 +1579,9 @@
                 "GraphQL"
             ],
             "limitations": [
-                "Custom limits"
+                "Custom limits",
+                "Unlimited active projects and storage",
+                "Unlimited deployment hours each month"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1601,8 +1604,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Contact](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/deploy-a-stellar-subquery-indexer-on-onfinality)"
+                "[Contact](https://indexing.onfinality.io/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/pricing)"
             ]
         },
         {
