@@ -564,5 +564,389 @@
                 "[Faucet](https://bank.testnet.algorand.network/)"
             ]
         }
+    ],
+    "wallet": [
+        {
+            "slug": "pera",
+            "provider": "Pera",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Web",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ALGO",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "helpdesk",
+                "telegram",
+                "github",
+                "reddit",
+                "discord",
+                "[chat support widget](perawallet.app/contact-us/)"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ID"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://perawallet.app/)"
+            ]
+        },
+        {
+            "slug": "defly",
+            "provider": "Defly",
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ALGO",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "twitter",
+                "telegram",
+                "website",
+                "discord",
+                "[email](support@defly.app)"
+            ],
+            "audit": [
+                "Kudelski security (June 2022)"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://defly.app/)"
+            ]
+        },
+        {
+            "slug": "ledger",
+            "provider": "Ledger SAS",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$79(Nano S Plus)/$70-$150(Nano X)/$249(Flex)/$399(Stax)",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "Regular audits by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "JA"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.ledger.com/)"
+            ]
+        },
+        {
+            "slug": "exodus",
+            "provider": "Exodus",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                " Chrome"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "TRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[twitter](@ExodusAssist)",
+                "helpdesk",
+                "email"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ES"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.exodus.com/)"
+            ]
+        },
+        {
+            "slug": "lute",
+            "provider": "Lute",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Web",
+                " Chrome"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": true,
+            "hardware": true,
+            "keyExport": false,
+            "native": false,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ARC-60"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "[telegram](Lute.algo Wallet - Official & Support)",
+                "website",
+                "twitter"
+            ],
+            "audit": null,
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://lute.app/)"
+            ]
+        },
+        {
+            "slug": "onekey",
+            "provider": "Onekey",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                " Chrome"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "SPL",
+                "USDT"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[email]( hi@onekey.so)",
+                "support website",
+                "twitter",
+                "github"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "FR",
+                "PT",
+                "PT-Br",
+                "RU",
+                "DE",
+                "ES",
+                "IT",
+                "ID",
+                "ZH",
+                "KO",
+                "UA",
+                "VI",
+                "HI",
+                "JA"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://onekey.so/)"
+            ]
+        },
+        {
+            "slug": "ellipal-titan",
+            "provider": "ELLIPAL",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "TRC-10 ",
+                "TRC-20"
+            ],
+            "staking": true,
+            "price": "$99",
+            "support": [
+                "[website](https://www.ellipal.com/pages/contact-us)"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "De",
+                "ZH"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.ellipal.com/products/ellipal-titan-mini)"
+            ]
+        },
+        {
+            "slug": "guarda",
+            "provider": "Guarda",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                " Chrome",
+                " Web"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "BEP-20",
+                "BEP-2",
+                "TRC-10",
+                "TRC-20",
+                "NEP-5"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[email](support@guarda.com)",
+                "telegram",
+                "twitter",
+                "youtube"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "RU"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://guarda.com/)"
+            ]
+        },
+        {
+            "slug": "trustwallet",
+            "provider": "Trust Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Chrome"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "ZH",
+                "JA"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://trustwallet.com/)"
+            ]
+        }
     ]
 }
