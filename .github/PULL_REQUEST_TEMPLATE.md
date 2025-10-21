@@ -14,13 +14,12 @@ Provide a concise summary of the change and why it’s needed.
 ## Scope
 - **Networks affected**: (e.g., ethereum, polygon, arbitrum; or global)
 - **Categories affected**: (e.g., rpc, wallet, explorer, indexing, bridge, analytic, devTool, oracle, faucet)
-- **Cross-chain provider?** If yes, also updated `providers/` CSVs: [ ] Yes [ ] N/A
 
 - Additional notes (constraints, naming, normalization), additional context / screenshots: 
 
 ## Links
-- Related issue(s): (e.g., Closes #123)
-- DB Improvement Proposal (DBIP), if schema-related: (e.g., #456)
+- Related issue(s): (e.g., Closes #XXX)
+- DB Improvement Proposal (DBIP), if schema-related: (e.g., #XXX)
 
 
 ## Validation checklist
