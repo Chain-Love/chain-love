@@ -8,7 +8,10 @@ def try_parse_json(value):
     if not isinstance(value, str):
         return value
     value = value.strip()
-    if (not value.startswith("[") and not value.endswith("]")) and (not value.startswith("{") and not value.endswith("}")):
+    if not (
+        (value.startswith("[") and value.endswith("]"))
+        or (value.startswith("{") and value.endswith("}"))
+    ):
         return value
     return json.loads(value)
 
