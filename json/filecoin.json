@@ -83,7 +83,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Website](https://www.ankr.com/rpc/home/)",
+                "[Website](https://www.ankr.com/web3-api/chains-list/filecoin/)",
                 "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#filecoin)"
             ],
             "address": null
@@ -180,8 +180,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "$0.00",
-            "queryPrice": "0.5$/1M CUs",
+            "accessPrice": "$0",
+            "queryPrice": "$0.5/1M CUs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -220,7 +220,7 @@
             "plan": "Dedicated",
             "nodeType": "FEVM Archive",
             "chain": "mainnet",
-            "accessPrice": "$3,500.00",
+            "accessPrice": "$3.5K",
             "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -261,7 +261,7 @@
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "calibnet",
-            "accessPrice": "$800.00",
+            "accessPrice": "$800",
             "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -302,7 +302,7 @@
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$5,000.00",
+            "accessPrice": "$5K",
             "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -343,7 +343,7 @@
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "$600.00",
+            "accessPrice": "$600",
             "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -384,7 +384,7 @@
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$1,000.00",
+            "accessPrice": "$1K",
             "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -425,8 +425,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "FEVM Archive",
             "chain": "mainnet",
-            "accessPrice": "$300.00",
-            "queryPrice": "1.5$/1M CUs",
+            "accessPrice": "$300",
+            "queryPrice": "$1.5/1M CUs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -465,8 +465,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$500.00",
-            "queryPrice": "3$/1M CUs",
+            "accessPrice": "$500",
+            "queryPrice": "$3/1M CUs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -551,8 +551,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$0.00",
-            "queryPrice": "1$/1M CUs",
+            "accessPrice": "$0",
+            "queryPrice": "$1/1M CUs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -591,8 +591,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -622,8 +622,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -837,8 +837,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -868,8 +868,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -958,7 +958,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Register](https://nownodes.io/pricing)",
+                "[Website](https://nownodes.io/nodes/filecoin-fil)",
                 "[Docs](https://nownodes.gitbook.io/fil-filecoin/)"
             ],
             "address": null
@@ -1334,29 +1334,36 @@
     "oracle": [
         {
             "slug": "pyth-mainnet",
-            "provider": "Pyth",
+            "provider": "Pyth Network",
             "chain": "mainnet",
-            "technology": "Custom",
+            "technology": "Pull Oracle",
             "accessPrice": "0",
-            "queryPrice": "1 wei",
+            "queryPrice": "0",
             "starred": false,
             "availableApis": [
-                "Price feed"
+                "Asset Price Feeds (incl. ARB/USD)"
             ],
             "monitoringAndAnalytics": [
                 "Real time price feeds"
             ],
-            "additionalFeatures": null,
-            "dataTypes": [
-                "FIL/USD"
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
             ],
-            "decentralizationModel": "decentralized",
-            "economicalSecurity": false,
-            "economicalSecurityNote": null,
-            "sdk": null,
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
             "auditsPerformed": [
-                "November 2022",
-                "by Certik"
+                "Trail of Bits (2023)",
+                "Certik (2022)"
             ],
             "actionButtons": [
                 "[FIL/USD](https://www.pyth.network/price-feeds/crypto-fil-usd)",
@@ -1365,29 +1372,36 @@
         },
         {
             "slug": "pyth-calibnet",
-            "provider": "Pyth",
+            "provider": "Pyth Network",
             "chain": "calibnet",
-            "technology": "Custom",
+            "technology": "Pull Oracle",
             "accessPrice": "0",
-            "queryPrice": "1 wei",
+            "queryPrice": "0",
             "starred": false,
             "availableApis": [
-                "Price feed"
+                "Asset Price Feeds (incl. ARB/USD)"
             ],
             "monitoringAndAnalytics": [
                 "Real time price feeds"
             ],
-            "additionalFeatures": null,
-            "dataTypes": [
-                "FIL/USD"
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
             ],
-            "decentralizationModel": "decentralized",
-            "economicalSecurity": false,
-            "economicalSecurityNote": null,
-            "sdk": null,
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
             "auditsPerformed": [
-                "November 2022",
-                "by Certik"
+                "Trail of Bits (2023)",
+                "Certik (2022)"
             ],
             "actionButtons": [
                 "[FIL/USD](https://www.pyth.network/price-feeds/crypto-fil-usd)",
@@ -1401,7 +1415,7 @@
             "provider": "Axelar",
             "chain": "mainnet",
             "technology": "Omnichain Messaging & GMP",
-            "openSource": false,
+            "openSource": true,
             "starred": false,
             "availableApis": [
                 "GMP"
@@ -1437,7 +1451,7 @@
             "provider": "Celer",
             "chain": "mainnet",
             "technology": "Omnichain Messaging & OFT",
-            "openSource": false,
+            "openSource": true,
             "starred": false,
             "availableApis": [
                 "Bridge API"
@@ -1852,24 +1866,19 @@
             "provider": "Dune",
             "chain": "mainnet",
             "dataSources": [
-                "Active deals",
-                "Data onboarding",
-                "Active users",
-                "Users with deals",
-                "Network power",
-                "Network utilization",
-                "Token price",
                 "Transactions",
-                "Active sectors",
-                "Retrievals",
-                "SP Locked funds"
+                "Gas Usage",
+                "Bridge Activity",
+                "Active Users",
+                "Token Transfers",
+                "Smart Contract Activity"
             ],
             "hasDashboard": true,
             "availableApis": [
                 "SQL Queries",
                 "Visualizations"
             ],
-            "price": "0",
+            "price": "$0",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](http://dune.com/kalen/filecoin-daily-metrics)"
@@ -1880,7 +1889,9 @@
             "provider": "Messari",
             "chain": "mainnet",
             "dataSources": [
-                "Transaction fees"
+                "Network Metrics",
+                "TVL & Market Data",
+                "On‑chain Usage Metrics"
             ],
             "hasDashboard": true,
             "availableApis": [
@@ -1888,7 +1899,7 @@
                 "API Access",
                 "Dashboard"
             ],
-            "price": "39",
+            "price": "$39",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://messari.io/project/filecoin)"
@@ -1932,7 +1943,7 @@
             ],
             "hasDashboard": true,
             "availableApis": null,
-            "price": "0",
+            "price": "$0",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://dashboard.starboard.ventures/)"
@@ -1953,7 +1964,7 @@
                 "Webhooks",
                 "Notifications"
             ],
-            "price": "0",
+            "price": "$0",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://filecoin.statuspage.io/)"
@@ -1974,7 +1985,7 @@
             ],
             "hasDashboard": true,
             "availableApis": null,
-            "price": "0",
+            "price": "$0",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://datacapstats.io/about)"
@@ -1990,7 +2001,7 @@
             ],
             "hasDashboard": false,
             "availableApis": null,
-            "price": "0",
+            "price": "FREE",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://filecoin.tools/)"
@@ -2006,7 +2017,7 @@
             ],
             "hasDashboard": false,
             "availableApis": null,
-            "price": "0",
+            "price": "FREE",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://filecoin.tools/)"
@@ -2139,110 +2150,128 @@
             "slug": "filecoin-signing-tools",
             "provider": "Filecoin Signing Tools",
             "toolType": "Lib",
+            "tag": [
+                "Tool"
+            ],
             "price": "0",
+            "description": "Filecoin signing libraries and tools for interacting with Filecoin actors",
             "starred": false,
             "actionButtons": [
                 "[Docs](https://docs.filecoin.io/reference/built-in-actors)"
-            ],
-            "description": null,
-            "tag": null
+            ]
         },
         {
             "slug": "fvm-assemblyscript-sdk",
             "provider": "FVM AssemblyScript SDK",
             "toolType": "SDK",
+            "tag": [
+                "SDK"
+            ],
             "price": "0",
+            "description": "AssemblyScript SDK for Filecoin Virtual Machine smart contract development",
             "starred": false,
             "actionButtons": [
                 "[GitHub](https://github.com/Zondax/fvm-as-sdk)"
-            ],
-            "description": null,
-            "tag": null
+            ]
         },
         {
             "slug": "fvm-tinygo-sdk",
             "provider": "FVM Go SDK",
             "toolType": "SDK",
+            "tag": [
+                "SDK"
+            ],
             "price": "0",
+            "description": "Go SDK for Filecoin Virtual Machine smart contract development",
             "starred": false,
             "actionButtons": [
                 "[GitHub](https://github.com/ipfs-force-community/go-fvm-sdk)"
-            ],
-            "description": null,
-            "tag": null
+            ]
         },
         {
             "slug": "powergate-textile",
             "provider": "PowerGate",
             "toolType": "SDK",
+            "tag": [
+                "SDK"
+            ],
             "price": "0",
+            "description": "Textile Powergate SDK for building on Filecoin",
             "starred": false,
             "actionButtons": [
                 "[Docs](https://docs.textile.io/powergate/)",
                 "[GitHub](https://github.com/textileio/powergate)"
-            ],
-            "description": null,
-            "tag": null
+            ]
         },
         {
             "slug": "tableland-db",
             "provider": "Tableland",
             "toolType": "DB",
+            "tag": [
+                "DB"
+            ],
             "price": "0",
+            "description": "Tableland database for decentralized data",
             "starred": false,
             "actionButtons": [
                 "[Website](https://tableland.xyz/)"
-            ],
-            "description": null,
-            "tag": null
+            ]
         },
         {
             "slug": "orbit-db",
             "provider": "OrbitDB",
             "toolType": "DB",
+            "tag": [
+                "DB"
+            ],
             "price": "0",
+            "description": "Peer-to-peer distributed database",
             "starred": false,
             "actionButtons": [
                 "[Website](https://orbitdb.org/)"
-            ],
-            "description": null,
-            "tag": null
+            ]
         },
         {
             "slug": "thread-db",
             "provider": "ThreadDB",
             "toolType": "DB",
+            "tag": [
+                "DB"
+            ],
             "price": "0",
+            "description": "ThreadDB database for decentralized apps",
             "starred": false,
             "actionButtons": [
                 "[Website](https://docs.textile.io/threads/)"
-            ],
-            "description": null,
-            "tag": null
+            ]
         },
         {
             "slug": "go-graphsplit",
             "provider": "Go GraphSplit",
             "toolType": "Data preparation",
+            "tag": [
+                "Data preparation"
+            ],
             "price": "0",
+            "description": "GraphSplit tool for preparing large datasets for Filecoin",
             "starred": false,
             "actionButtons": [
                 "[GitHub](https://github.com/filedrive-team/go-graphsplit)"
-            ],
-            "description": null,
-            "tag": null
+            ]
         },
         {
             "slug": "beryx-address-converter",
             "provider": "Beryx Address Converter",
             "toolType": "Address Converter",
+            "tag": [
+                "Tool"
+            ],
             "price": "0",
+            "description": "Utility to convert Filecoin addresses",
             "starred": false,
             "actionButtons": [
                 "[Website](https://beryx.io/address_converter)"
-            ],
-            "description": null,
-            "tag": null
+            ]
         }
     ]
 }
