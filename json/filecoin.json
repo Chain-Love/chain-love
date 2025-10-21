@@ -1414,63 +1414,89 @@
             "slug": "axelar-mainnet",
             "provider": "Axelar",
             "chain": "mainnet",
-            "technology": "Omnichain Messaging & GMP",
+            "technology": "General Message Passing",
             "openSource": true,
             "starred": false,
             "availableApis": [
-                "GMP"
+                "REST",
+                "GraphQL"
             ],
-            "monitoringAndAnalytics": null,
+            "monitoringAndAnalytics": [
+                "Yes (Axelarscan)"
+            ],
             "additionalFeatures": [
                 "Cross‑chain Messaging"
             ],
             "assetTypes": [
-                "ERC‑20",
-                "OFT"
+                "wFIL",
+                "wETH",
+                "wBTC",
+                "USDC",
+                "USDT"
             ],
             "txSpeedSla": null,
             "throughputSla": null,
-            "price": "Gas Fee",
+            "price": "[Gas Fee](https://support.edge.app/hc/en-us/articles/36422794159387-Axelar-AXL-Network-Fees)",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Secured via Axelar validator network",
-            "auditsPerformed": null,
+            "economicalSecurityNote": "Proof-of-stake permissionless validator set controls Axelar security protocols",
+            "auditsPerformed": [
+                "[GitHub](https://github.com/axelarnetwork/audits)"
+            ],
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript SDK"
             ],
             "actionButtons": [
-                "[Bridge](https://app.squidrouter.com/?chains=314)"
+                "[Bridge](https://app.squidrouter.com/?chains=314)",
+                "[Filecoin Cross-Chain Docs](https://docs.filecoin.io/smart-contracts/advanced/cross-chain-bridges)"
             ],
             "support": [
-                "Discord"
+                "Discord",
+                "Telegram",
+                "X"
             ],
-            "supportedChains": null
+            "supportedChains": [
+                "Ethereum",
+                "Polygon",
+                "BNB Chain",
+                "Avalanche",
+                "Arbitrum",
+                "Cosmos",
+                "Base",
+                "Optimism",
+                "Scroll",
+                "Fantom"
+            ]
         },
         {
             "slug": "celer-mainnet",
             "provider": "Celer",
             "chain": "mainnet",
-            "technology": "Omnichain Messaging & OFT",
+            "technology": "Lock & Mint + Message Passing",
             "openSource": true,
             "starred": false,
             "availableApis": [
-                "Bridge API"
+                "REST",
+                "SDK",
+                "WebSocket"
             ],
             "monitoringAndAnalytics": [
-                "Transaction Monitoring"
+                "Transaction Monitoring",
+                "[CelerScan](https://celerscan.com/)"
             ],
-            "additionalFeatures": [
-                "StableSwap AMM curve",
-                "Fast bridging"
-            ],
+            "additionalFeatures": [],
             "assetTypes": [
-                "ERC-20"
+                "wFIL",
+                "wETH",
+                "wBTC",
+                "USDC",
+                "USDT"
             ],
             "txSpeedSla": null,
             "throughputSla": null,
-            "price": "Gas Fee",
+            "price": "Gas fee",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Decentralized network with economic security",
+            "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
             "auditsPerformed": [
                 "January 2023, by CertiK",
                 "January 2023, by PeckShield",
@@ -1481,7 +1507,8 @@
                 "Node.JS"
             ],
             "actionButtons": [
-                "[Bridge](https://cbridge.celer.network/314/1/USDC)"
+                "[Celer cBridge App](https://cbridge.celer.network/314/1/USDC)",
+                "[Docs](https://cbridge-docs.celer.network/reference/faq)"
             ],
             "support": [
                 "Contact us form"
@@ -1496,7 +1523,51 @@
                 "Base",
                 "Linea",
                 "Astar",
-                "Shiden"
+                "Shiden",
+                "Fantom"
+            ]
+        },
+        {
+            "slug": "chainsafe-filecoin-bridge",
+            "provider": "ChainSafe Systems",
+            "chain": "testnet",
+            "technology": "Substrate-Based Bridge",
+            "openSource": true,
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "SDK"
+            ],
+            "monitoringAndAnalytics": [
+                "Partial – dev dashboards"
+            ],
+            "additionalFeatures": [
+                "Filecoin ↔ Substrate chains (experimental)"
+            ],
+            "assetTypes": [
+                "FIL",
+                "wFIL"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "[Gas fee](https://blog.chainsafe.io/transaction-fee-mechanism-design/)",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Open-source bridge/relayer framework built by ChainSafe; auditing for full Filecoin bridge not publicly final.",
+            "auditsPerformed": null,
+            "decentralizationModel": "Semi-decentralized",
+            "sdk": [
+                "Rust",
+                "JavaScript"
+            ],
+            "actionButtons": [
+                "[GitHub](https://github.com/ChainSafe/filecoindot)"
+            ],
+            "support": [
+                "Discord",
+                "Telegram"
+            ],
+            "supportedChains": [
+                "Polkadot Substrate-based chains, potentially Filecoin"
             ]
         }
     ],

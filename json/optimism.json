@@ -6734,7 +6734,7 @@
             "slug": "celer-cbridge",
             "provider": "Celer",
             "chain": "mainnet",
-            "technology": "Omnichain Messaging & OFT",
+            "technology": "Lock & Mint + Message Passing",
             "openSource": true,
             "support": [
                 "Contact us form"
@@ -6749,26 +6749,31 @@
                 "Base",
                 "Linea",
                 "Astar",
-                "Shiden"
+                "Shiden",
+                "Fantom"
             ],
             "availableApis": [
-                "Bridge API"
+                "REST",
+                "SDK",
+                "WebSocket"
             ],
             "monitoringAndAnalytics": [
-                "Transaction Monitoring"
+                "Transaction Monitoring",
+                "[CelerScan](https://celerscan.com/)"
             ],
-            "additionalFeatures": [
-                "StableSwap AMM curve",
-                "Fast bridging"
-            ],
+            "additionalFeatures": [],
             "assetTypes": [
-                "ERC-20"
+                "wFIL",
+                "wETH",
+                "wBTC",
+                "USDC",
+                "USDT"
             ],
             "txSpeedSla": null,
             "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Decentralized network with economic security",
+            "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
             "auditsPerformed": [
                 "January 2023, by CertiK",
                 "January 2023, by PeckShield",

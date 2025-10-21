@@ -6060,30 +6060,34 @@
             "slug": "celer-mainnet",
             "provider": "Celer",
             "chain": "mainnet",
-            "technology": "Omnichain Messaging & OFT",
+            "technology": "Lock & Mint + Message Passing",
             "openSource": true,
             "support": [
                 "Contact us form"
             ],
             "starred": false,
             "availableApis": [
-                "Bridge API"
+                "REST",
+                "SDK",
+                "WebSocket"
             ],
             "monitoringAndAnalytics": [
-                "Transaction Monitoring"
+                "Transaction Monitoring",
+                "[CelerScan](https://celerscan.com/)"
             ],
-            "additionalFeatures": [
-                "StableSwap AMM curve",
-                "Fast bridging"
-            ],
+            "additionalFeatures": [],
             "assetTypes": [
-                "ERC-20"
+                "wFIL",
+                "wETH",
+                "wBTC",
+                "USDC",
+                "USDT"
             ],
             "txSpeedSla": null,
             "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Decentralized network with economic security",
+            "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
             "auditsPerformed": [
                 "January 2023, by CertiK",
                 "January 2023, by PeckShield",
@@ -6107,7 +6111,8 @@
                 "Base",
                 "Linea",
                 "Astar",
-                "Shiden"
+                "Shiden",
+                "Fantom"
             ]
         },
         {
@@ -6156,29 +6161,39 @@
             "slug": "axelar-mainnet",
             "provider": "Axelar",
             "chain": "mainnet",
-            "technology": "Omnichain Messaging & GMP",
+            "technology": "General Message Passing",
             "openSource": true,
             "support": [
-                "Discord"
+                "Discord",
+                "Telegram",
+                "X"
             ],
             "starred": false,
             "availableApis": [
-                "GMP"
+                "REST",
+                "GraphQL"
             ],
-            "monitoringAndAnalytics": null,
+            "monitoringAndAnalytics": [
+                "Yes (Axelarscan)"
+            ],
             "additionalFeatures": [
                 "Cross‑chain Messaging"
             ],
             "assetTypes": [
-                "ERC‑20",
-                "OFT"
+                "wFIL",
+                "wETH",
+                "wBTC",
+                "USDC",
+                "USDT"
             ],
             "txSpeedSla": null,
             "throughputSla": null,
-            "price": "Gas Fee",
+            "price": "[Gas Fee](https://support.edge.app/hc/en-us/articles/36422794159387-Axelar-AXL-Network-Fees)",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Secured via Axelar validator network",
-            "auditsPerformed": null,
+            "economicalSecurityNote": "Proof-of-stake permissionless validator set controls Axelar security protocols",
+            "auditsPerformed": [
+                "[GitHub](https://github.com/axelarnetwork/audits)"
+            ],
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript SDK"
@@ -6186,7 +6201,18 @@
             "actionButtons": [
                 "[Bridge](https://app.squidrouter.com/)"
             ],
-            "supportedChains": null
+            "supportedChains": [
+                "Ethereum",
+                "Polygon",
+                "BNB Chain",
+                "Avalanche",
+                "Arbitrum",
+                "Cosmos",
+                "Base",
+                "Optimism",
+                "Scroll",
+                "Fantom"
+            ]
         },
         {
             "slug": "orbiter-mainnet",
