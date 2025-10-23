@@ -6,8 +6,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -19,7 +19,7 @@
                 "net"
             ],
             "limitations": [
-                "20,000 protected TXs per day"
+                "10K/20K protected relays/day"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays"
@@ -43,8 +43,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$9.9-$29.90",
-            "queryPrice": "$0.00",
+            "accessPrice": "$9.90/$29.90/mo, $8.33/$24.99/yearly",
+            "queryPrice": "$0",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -56,7 +56,7 @@
                 "net"
             ],
             "limitations": [
-                "40,000 - 100,000 protected transactions per day"
+                "40K/100K protected relays/day"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays",
@@ -117,8 +117,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0 per 1M request",
+            "accessPrice": "$0",
+            "queryPrice": "$0/1M request",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -164,7 +164,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$0.00",
+            "accessPrice": "$0",
             "queryPrice": "$0.40/1M CUs",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
@@ -265,8 +265,8 @@
             "plan": "Free",
             "nodeType": "Full Archive",
             "chain": "astar",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0 per 1M request",
+            "accessPrice": "$0",
+            "queryPrice": "$0/1M request",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -384,8 +384,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -419,8 +419,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "shibuya",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -454,8 +454,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "shiden",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1177,7 +1177,7 @@
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "$49/$299/$999 with 25M/150M/500M requests included",
-            "queryPrice": "$2 per 1M requests",
+            "queryPrice": "$2/1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1302,7 +1302,7 @@
             "nodeType": "Full Archive",
             "chain": "shibuya",
             "accessPrice": "$49/$299/$999 with 25M/150M/500M requests included",
-            "queryPrice": "$2 per 1M requests",
+            "queryPrice": "$2/1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1427,7 +1427,7 @@
             "nodeType": "Full Archive",
             "chain": "shiden",
             "accessPrice": "$49/$299/$999 with 25M/150M/500M requests included",
-            "queryPrice": "$2 per 1M requests",
+            "queryPrice": "$2/1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1518,18 +1518,37 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$0.00",
+            "accessPrice": "$0",
             "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
-            "limitations": null,
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "400K API daily limit",
+                "up to 40 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -1545,8 +1564,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "astar",
-            "accessPrice": "$49/$249 with 20M/100M units included",
-            "queryPrice": "$6/$3.75 per 1M units",
+            "accessPrice": "$49/$249",
+            "queryPrice": "$3.75/$6/1M extra units",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1557,9 +1576,13 @@
                 "Trace API"
             ],
             "limitations": [
-                "400k units/day"
+                "20M/100M API response units",
+                "200/500 response units/sec"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
             "monitoringAndAnalytics": [
                 "Requests count monitoring",
                 "Response time monitoring",
@@ -1568,14 +1591,16 @@
             ],
             "regions": [
                 "N.Virginia",
-                "Hong Kong"
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Website](https://onfinality.io/)",
-                "[Docs](https://documentation.onfinality.io/support/)"
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
         },
@@ -1596,8 +1621,14 @@
                 "Network native APIs",
                 "Trace API"
             ],
-            "limitations": null,
-            "securityImprovements": null,
+            "limitations": [
+                "Unlimited response units",
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
             "monitoringAndAnalytics": [
                 "Requests count monitoring",
                 "Response time monitoring",
@@ -1606,13 +1637,15 @@
             ],
             "regions": [
                 "N.Virginia",
-                "Hong Kong"
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Contact Sales](https://onfinality.io/pricing)",
+                "[Contact](https://onfinality.io/pricing)",
                 "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
@@ -1623,16 +1656,22 @@
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
             "limitations": null,
-            "securityImprovements": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
             "monitoringAndAnalytics": [
                 "Requests count monitoring",
                 "Response time monitoring",
@@ -1641,13 +1680,15 @@
             ],
             "regions": [
                 "N.Virginia",
-                "Hong Kong"
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://app.onfinality.io/)",
+                "[Contact](https://onfinality.io/en/pricing)",
                 "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
@@ -1658,23 +1699,39 @@
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "astar",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
             "limitations": null,
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://app.onfinality.io/)",
+                "[Contact](https://onfinality.io/en/pricing)",
                 "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
@@ -1685,23 +1742,39 @@
             "plan": "Dedicated",
             "nodeType": "Collator",
             "chain": "astar",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
             "limitations": null,
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://app.onfinality.io/)",
+                "[Contact](https://onfinality.io/en/pricing)",
                 "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
@@ -1712,23 +1785,39 @@
             "plan": "Dedicated",
             "nodeType": "Trace",
             "chain": "astar",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
             "limitations": null,
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://app.onfinality.io/)",
+                "[Contact](https://onfinality.io/en/pricing)",
                 "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
@@ -1739,18 +1828,37 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "shiden",
-            "accessPrice": "$0.00",
+            "accessPrice": "$0",
             "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
-            "limitations": null,
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "400K API daily limit",
+                "up to 40 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -1766,8 +1874,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "shiden",
-            "accessPrice": "$49/$249 with 20M/100M units included",
-            "queryPrice": "$6/$3.75 per 1M units",
+            "accessPrice": "$49/$249",
+            "queryPrice": "$3.75/$6/1M extra units",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1778,9 +1886,13 @@
                 "Trace API"
             ],
             "limitations": [
-                "400k units/day"
+                "20M/100M API response units",
+                "200/500 response units/sec"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
             "monitoringAndAnalytics": [
                 "Requests count monitoring",
                 "Response time monitoring",
@@ -1789,14 +1901,16 @@
             ],
             "regions": [
                 "N.Virginia",
-                "Hong Kong"
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Website](https://onfinality.io/)",
-                "[Docs](https://documentation.onfinality.io/support/)"
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
         },
@@ -1817,8 +1931,14 @@
                 "Network native APIs",
                 "Trace API"
             ],
-            "limitations": null,
-            "securityImprovements": null,
+            "limitations": [
+                "Unlimited response units",
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
             "monitoringAndAnalytics": [
                 "Requests count monitoring",
                 "Response time monitoring",
@@ -1827,13 +1947,15 @@
             ],
             "regions": [
                 "N.Virginia",
-                "Hong Kong"
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Contact Sales](https://onfinality.io/pricing)",
+                "[Contact](https://onfinality.io/pricing)",
                 "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
@@ -1844,16 +1966,22 @@
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "shiden",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
             "limitations": null,
-            "securityImprovements": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
             "monitoringAndAnalytics": [
                 "Requests count monitoring",
                 "Response time monitoring",
@@ -1862,13 +1990,15 @@
             ],
             "regions": [
                 "N.Virginia",
-                "Hong Kong"
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://app.onfinality.io/)",
+                "[Contact](https://onfinality.io/en/pricing)",
                 "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
@@ -1879,23 +2009,39 @@
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "shiden",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
             "limitations": null,
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://app.onfinality.io/)",
+                "[Contact](https://onfinality.io/en/pricing)",
                 "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
@@ -1906,23 +2052,39 @@
             "plan": "Dedicated",
             "nodeType": "Collator",
             "chain": "shiden",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
             "limitations": null,
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://app.onfinality.io/)",
+                "[Contact](https://onfinality.io/en/pricing)",
                 "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
@@ -2073,8 +2235,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2110,7 +2272,7 @@
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "$39/$169 with 400M/1.5B CU included",
-            "queryPrice": "$1 per 1M CU",
+            "queryPrice": "$1/1M CU",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2190,8 +2352,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "shiden",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2227,7 +2389,7 @@
             "nodeType": "Full Archive",
             "chain": "shiden",
             "accessPrice": "$39/$169 with 400M/1.5B CU included",
-            "queryPrice": "$1 per 1M CU",
+            "queryPrice": "$1/1M CU",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2307,8 +2469,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2348,8 +2510,8 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "shiden",
-            "accessPrice": "$0.00",
-            "queryPrice": "$0.00",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2390,7 +2552,7 @@
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$5/$99",
-            "queryPrice": "$8 per 1M requests (volume discounts applies)",
+            "queryPrice": "$8/1M requests (volume discounts applies)",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2431,7 +2593,7 @@
             "nodeType": "Recent-State",
             "chain": "shiden",
             "accessPrice": "$5/$99",
-            "queryPrice": "$8 per 1M requests (volume discounts applies)",
+            "queryPrice": "$8/1M requests (volume discounts applies)",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2471,8 +2633,8 @@
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$499 + Node price ()",
-            "queryPrice": "$8 per 1M requests (volume discounts applies)",
+            "accessPrice": "$499 + Node price",
+            "queryPrice": "$8/1M requests (volume discounts applies)",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2504,8 +2666,8 @@
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "shiden",
-            "accessPrice": "$499 + Node price ()",
-            "queryPrice": "$8 per 1M requests (volume discounts applies)",
+            "accessPrice": "$499 + Node price",
+            "queryPrice": "$8/1M requests (volume discounts applies)",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2538,7 +2700,7 @@
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$1499+",
-            "queryPrice": "$8 per 1M requests (volume discounts applies)",
+            "queryPrice": "$8/1M requests (volume discounts applies)",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2569,7 +2731,7 @@
             "nodeType": "Recent-State",
             "chain": "shiden",
             "accessPrice": "$1499+",
-            "queryPrice": "$8 per 1M requests (volume discounts applies)",
+            "queryPrice": "$8/1M requests (volume discounts applies)",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
