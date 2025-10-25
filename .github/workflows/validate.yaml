@@ -1,0 +1,52 @@
+name: "Validate JSON"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-json-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate-and-validate:
+    name: Generate JSON and validate (isolated)
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      
+      - name: Checkout json-tools branch with scripts
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: json-tools
+          path: json-tools
+      
+      - name: Copy scripts and schema to workspace
+        run: |
+          cp json-tools/tools/csv_to_json.py .
+          cp json-tools/tools/validate.py .
+          cp json-tools/tools/schema.json .
+          ls -l
+      
+      - name: Run scripts inside network-disabled container
+        run: |
+          docker run --rm \
+            --network=none \
+            -v ${{ github.workspace }}:/workspace \
+            -w /workspace \
+            python:3.10-slim \
+            /bin/bash -c "
+              pip install --no-index --find-links=json-tools/tools/wheels -r json-tools/tools/requirements.txt && \
+              python3 csv_to_json.py && \
+              python3 validate.py
+            "
