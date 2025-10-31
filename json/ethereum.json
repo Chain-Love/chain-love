@@ -175,7 +175,8 @@
                 "tokens"
             ],
             "limitations": [
-                "1500 req/min"
+                "25 req/sec",
+                "30M CU/mo"
             ],
             "securityImprovements": [
                 "TX simulation",
@@ -204,8 +205,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0.40/1M CUs",
+            "accessPrice": "$5/$45/$215/$415/$815/$2K",
+            "queryPrice": "$0.40/$0.45/1M CUs",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -222,7 +223,7 @@
                 "tokens"
             ],
             "limitations": [
-                "18000 req/min"
+                "300 req/sec"
             ],
             "securityImprovements": [
                 "TX simulation",
@@ -323,7 +324,8 @@
                 "tokens"
             ],
             "limitations": [
-                "1500 req/min"
+                "25 req/sec",
+                "30M CU/mo"
             ],
             "securityImprovements": [
                 "TX simulation",
@@ -352,8 +354,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "sepolia",
-            "accessPrice": "$0",
-            "queryPrice": "$0.40/1M CUs",
+            "accessPrice": "$5/$45/$215/$415/$815/$2K",
+            "queryPrice": "$0.40/$0.45/1M CUs",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -370,7 +372,7 @@
                 "tokens"
             ],
             "limitations": [
-                "18000 req/min"
+                "300 req/sec"
             ],
             "securityImprovements": [
                 "TX simulation",
@@ -466,7 +468,8 @@
                 "net"
             ],
             "limitations": [
-                "9000 CU/min"
+                "500K CU/day",
+                "150 Cups throughput limit"
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
@@ -491,7 +494,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$29/$139",
+            "accessPrice": "$29/$139/mo, $289/$1389/yearly",
             "queryPrice": "$0.58/$0.56 per 1M CUs",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
@@ -506,8 +509,8 @@
                 "trace"
             ],
             "limitations": [
-                "20000 CU/min",
-                "120000 CU/min"
+                "2M/10M CU/day",
+                "500/2K CUps throughput limit"
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
@@ -547,7 +550,10 @@
                 "debug",
                 "trace"
             ],
-            "limitations": null,
+            "limitations": [
+                "Custom limits",
+                "Unlimited throughput limit"
+            ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Advanced analytics",
@@ -585,7 +591,8 @@
                 "net"
             ],
             "limitations": [
-                "9000 CU/min"
+                "500K CU/day",
+                "150 Cups throughput limit"
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
@@ -610,7 +617,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "sepolia",
-            "accessPrice": "$29/$139",
+            "accessPrice": "$29/$139/mo, $289/$1389/yearly",
             "queryPrice": "$0.58/$0.56 per 1M CUs",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
@@ -625,8 +632,8 @@
                 "trace"
             ],
             "limitations": [
-                "20000 CU/min",
-                "120000 CU/min"
+                "2M/10M CU/day",
+                "500/2K CUps throughput limit"
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
@@ -666,7 +673,10 @@
                 "debug",
                 "trace"
             ],
-            "limitations": null,
+            "limitations": [
+                "Custom limits",
+                "Unlimited throughput limit"
+            ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Advanced analytics",
@@ -692,7 +702,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
-            "queryPrice": "$0/1M requests",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -705,7 +715,10 @@
                 "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "limitations": [
-                "~1800 req/min"
+                "free 200K API credits/mo",
+                "30 reqs/sec (node API)",
+                "30 reqs/min (advanced API)",
+                "1 project (personal API tokens)"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -727,8 +740,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Website](https://www.ankr.com/rpc/eth/)",
-                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#ethereum)"
+                "[Website](https://www.ankr.com/rpc/home/)",
+                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "address": null
         },
@@ -738,8 +751,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$10 included into 100M credits",
-            "queryPrice": "$0.10/1M credits",
+            "accessPrice": "up to $10(payg plan)/$500-$3K(deal plan)",
+            "queryPrice": "$0.02(evm compatible API)/$0.05(solana API)/$0.07(beacon chains API)/$0.01(other API)/$0.07(advanced API) per 1K reqs",
             "uptimeSla": "Custom SLA",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -754,7 +767,10 @@
                 "trace"
             ],
             "limitations": [
-                "up to 90000 req/min"
+                "100M(payg plan)/6B(deal plan +20% extra credits) API credits ",
+                "1.5K reqs/sec (node API)",
+                "1K reqs/min (advanced API)",
+                "3 projects (personal API tokens)"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -773,7 +789,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://www.ankr.com/rpc/pricing/)",
+                "[Buy](https://www.ankr.com/rpc/home/)",
                 "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#ethereum)"
             ],
             "address": null
@@ -784,7 +800,7 @@
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$1K included into query fees",
+            "accessPrice": "Custom",
             "queryPrice": "Custom pricing",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -819,8 +835,198 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Contact](https://meetings-eu1.hubspot.com/arsalan-evini?uuid=8742b958-0609-4b40-a460-3afe362624b2)",
-                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#ethereum)"
+                "[Contact](https://meetings-eu1.hubspot.com/arsalan-evini?uuid=1b49e1e7-1f13-474b-8561-2ad7279d4b9d)",
+                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "quicknode-mainnet-pay-as-you-go-archive",
+            "provider": "Quicknode",
+            "plan": "Pay-as-you-go",
+            "nodeType": "Full Archive",
+            "chain": "mainnet",
+            "accessPrice": "$49/$249/$499/$999/mo, $42/$212/$424$/$849/yearly",
+            "queryPrice": "$0.62/$0.55/$0.53/$0.5 per 1M extra API credits",
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "80M/450M/950M/2B API credits",
+                "10/20/50 endpoints",
+                "50/125/250/500 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "quicknode-mainnet-enterprise-archive",
+            "provider": "Quicknode",
+            "plan": "Enterprise",
+            "nodeType": "Full Archive",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "uptimeSla": "Commited SLAs",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "Custom limits",
+                "Unlimited endpoints"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving"
+            ],
+            "monitoringAndAnalytics": [
+                "Advanced analytics",
+                "Console API (Prometheus/Grafana)",
+                "Custom alerting & engineering support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "quicknode-sepolia-pay-as-you-go-archive",
+            "provider": "Quicknode",
+            "plan": "Pay-as-you-go",
+            "nodeType": "Full Archive",
+            "chain": "sepolia",
+            "accessPrice": "$49/$249/$499/$999/mo, $42/$212/$424$/$849/yearly",
+            "queryPrice": "$0.62/$0.55/$0.53/$0.5 per 1M extra API credits",
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "80M/450M/950M/2B API credits",
+                "10/20/50 endpoints",
+                "50/125/250/500 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "quicknode-sepolia-enterprise-archive",
+            "provider": "Quicknode",
+            "plan": "Enterprise",
+            "nodeType": "Full Archive",
+            "chain": "sepolia",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "uptimeSla": "Commited SLAs",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "Custom limits",
+                "Unlimited endpoints"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving"
+            ],
+            "monitoringAndAnalytics": [
+                "Advanced analytics",
+                "Console API (Prometheus/Grafana)",
+                "Custom alerting & engineering support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
             ],
             "address": null
         },
@@ -845,7 +1051,8 @@
                 "trace"
             ],
             "limitations": [
-                "1200 req/min"
+                "50M Rus/mo",
+                "20 req/sec rate limit"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -862,8 +1069,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Website](https://blockpi.io/chain/ethereum)",
-                "[Docs](https://docs.blockpi.io/build/api-reference/ethereum)"
+                "[Website](https://blockpi.io/)",
+                "[Docs](https://docs.blockpi.io/)"
             ],
             "address": null
         },
@@ -888,7 +1095,8 @@
                 "trace"
             ],
             "limitations": [
-                "1200 / 60k / 150k req/min"
+                "actual RU usage+50M/mo/125M CUs/750M CUs",
+                "20/1K/2.5K req/sec rate limit"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -905,8 +1113,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Buy](https://blockpi.io/pricing)",
-                "[Docs](https://docs.blockpi.io/build/api-reference/ethereum)"
+                "[Buy](https://blockpi.io/pricing/)",
+                "[Docs](https://docs.blockpi.io/)"
             ],
             "address": null
         },
@@ -930,7 +1138,9 @@
                 "debug",
                 "trace"
             ],
-            "limitations": null,
+            "limitations": [
+                "custom limits"
+            ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
@@ -948,8 +1158,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Contact](https://blockpi.io/pricing)",
-                "[Docs](https://docs.blockpi.io/build/api-reference/ethereum)"
+                "[Contact](https://blockpi.io/pricing/)",
+                "[Docs](https://docs.blockpi.io/)"
             ],
             "address": null
         },
@@ -972,7 +1182,8 @@
                 "net"
             ],
             "limitations": [
-                "120 req/min"
+                "120 req/min",
+                "3 projects"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -989,8 +1200,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Website](https://platform.chainbase.com/chainNetwork/Ethereum)",
-                "[Docs](https://docs.chainbase.com/catalog/Ethereum/Overview)"
+                "[Register](https://platform.chainbase.com/pricing)",
+                "[Docs](https://docs.chainbase.com/platform/features/api/chain-rpc)"
             ],
             "address": null
         },
@@ -1013,7 +1224,8 @@
                 "net"
             ],
             "limitations": [
-                "600 req/min"
+                "600 req/min",
+                "15 projects"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1033,7 +1245,7 @@
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
                 "[Buy](https://platform.chainbase.com/pricing)",
-                "[Docs](https://docs.chainbase.com/catalog/Ethereum/Overview)"
+                "[Docs](https://docs.chainbase.com/platform/features/api/chain-rpc)"
             ],
             "address": null
         },
@@ -1072,100 +1284,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Contact](https://platform.chainbase.com/contact)",
-                "[Docs](https://docs.chainbase.com/catalog/Ethereum/Overview)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chain-love-free-full-archive-mainnet",
-            "provider": "Chain.Love",
-            "plan": "Free",
-            "nodeType": "Full Archive",
-            "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": true,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "100k requests per month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting"
-            ],
-            "monitoringAndAnalytics": [
-                "per-method analytics",
-                "requests amount monitoring API"
-            ],
-            "regions": [
-                "US",
-                "Asia"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://eth.chain.love/rpc)",
-                "[Docs](https://chain-love.gitbook.io/chain-love-docs/blockchains/ethereum)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chain-love-free-full-archive-sepolia",
-            "provider": "Chain.Love",
-            "plan": "Free",
-            "nodeType": "Full Archive",
-            "chain": "sepolia",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": true,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "100k requests per month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting"
-            ],
-            "monitoringAndAnalytics": [
-                "per-method analytics",
-                "requests amount monitoring API"
-            ],
-            "regions": [
-                "US",
-                "Asia"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://eth.chain.love/rpc)",
-                "[Docs](https://chain-love.gitbook.io/chain-love-docs/blockchains/ethereum)"
+                "[Buy](https://platform.chainbase.com/pricing)",
+                "[Docs](https://docs.chainbase.com/platform/features/api/chain-rpc)"
             ],
             "address": null
         },
@@ -1190,8 +1310,8 @@
                 "trace"
             ],
             "limitations": [
-                "1500 req/min",
-                "12.5M req/month"
+                "25 req/sec",
+                "12.5M req/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1209,7 +1329,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Website](https://www.chainnodes.org/chains/ethereum)",
+                "[Website](https://www.chainnodes.org)",
                 "[Docs](https://www.chainnodes.org/docs)"
             ],
             "address": null
@@ -1220,8 +1340,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$1K",
-            "queryPrice": "$2/1M requests",
+            "accessPrice": "$50/$250/$1K/mo, $500/$2.5K/$10K/yearly",
+            "queryPrice": "$50/13M requests/mo",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1235,54 +1355,8 @@
                 "trace"
             ],
             "limitations": [
-                "15000 req/min",
-                "500M req/month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Data Consistency"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Priority support"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.chainnodes.org/pricing)",
-                "[Docs](https://www.chainnodes.org/docs)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chainnodes-mainnet-enterprise-archive",
-            "provider": "Chainnodes",
-            "plan": "Enterprise",
-            "nodeType": "Full Archive",
-            "chain": "mainnet",
-            "accessPrice": "$50 /$250",
-            "queryPrice": null,
-            "uptimeSla": "99.90%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "3000 / 6000 req/min",
-                "25/125M req/month"
+                "50/100/500 req/sec",
+                "25M125M/500M req/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1327,8 +1401,8 @@
                 "trace"
             ],
             "limitations": [
-                "1500 req/min",
-                "12.5M req/month"
+                "25 req/sec",
+                "12.5M req/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1346,7 +1420,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Website](https://www.chainnodes.org/chains/ethereum)",
+                "[Website](https://www.chainnodes.org)",
                 "[Docs](https://www.chainnodes.org/docs)"
             ],
             "address": null
@@ -1357,8 +1431,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "sepolia",
-            "accessPrice": "$1K",
-            "queryPrice": "$2/1M requests",
+            "accessPrice": "$50/$250/$1K/mo, $500/$2.5K/$10K/yearly",
+            "queryPrice": "$50/13M requests/mo",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1372,54 +1446,8 @@
                 "trace"
             ],
             "limitations": [
-                "15000 req/min",
-                "500M req/month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Data Consistency"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Priority support"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.chainnodes.org/pricing)",
-                "[Docs](https://www.chainnodes.org/docs)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chainnodes-sepolia-enterprise-archive",
-            "provider": "Chainnodes",
-            "plan": "Enterprise",
-            "nodeType": "Full Archive",
-            "chain": "sepolia",
-            "accessPrice": "$50 /$250",
-            "queryPrice": null,
-            "uptimeSla": "99.90%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "3000 / 6000 req/min",
-                "25/125M req/month"
+                "50/100/500 req/sec",
+                "25M125M/500M req/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1464,8 +1492,8 @@
                 "trace"
             ],
             "limitations": [
-                "1500 req/min",
-                "12.5M req/month"
+                "25 req/sec",
+                "12.5M req/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1483,7 +1511,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Website](https://www.chainnodes.org/chains/ethereum)",
+                "[Website](https://www.chainnodes.org)",
                 "[Docs](https://www.chainnodes.org/docs)"
             ],
             "address": null
@@ -1494,8 +1522,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "hoodi",
-            "accessPrice": "$1K",
-            "queryPrice": "$2/1M requests",
+            "accessPrice": "$50/$250/$1K/mo, $500/$2.5K/$10K/yearly",
+            "queryPrice": "$50/13M requests/mo",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1509,54 +1537,8 @@
                 "trace"
             ],
             "limitations": [
-                "15000 req/min",
-                "500M req/month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Data Consistency"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Priority support"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.chainnodes.org/pricing)",
-                "[Docs](https://www.chainnodes.org/docs)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chainnodes-hoodi-enterprise-archive",
-            "provider": "Chainnodes",
-            "plan": "Enterprise",
-            "nodeType": "Full Archive",
-            "chain": "hoodi",
-            "accessPrice": "$50 /$250",
-            "queryPrice": null,
-            "uptimeSla": "99.90%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "3000 / 6000 req/min",
-                "25/125M req/month"
+                "50/100/500 req/sec",
+                "25M125M/500M req/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1587,7 +1569,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
-            "queryPrice": "included 3M requests, extra $20/1M requests",
+            "queryPrice": "extra $20/1M requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1599,7 +1581,8 @@
                 "net"
             ],
             "limitations": [
-                "1500 req/min"
+                "25 RPS",
+                "3M requests/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1616,8 +1599,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Website](https://chainstack.com/build-better-with-ethereum/)",
-                "[Docs](https://docs.chainstack.com/reference/ethereum-getting-started#getting-started-ethereum)"
+                "[Website](https://chainstack.com)",
+                "[Docs](https://docs.chainstack.com/docs/)"
             ],
             "address": null
         },
@@ -1627,8 +1610,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$49/$199 /$349",
-            "queryPrice": "included 20M/80M/140M requests, extra $15/$12.5 /$10/1M requests",
+            "accessPrice": "$49/$199/$349",
+            "queryPrice": "extra $15/$12.5/$10 per 1M requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1642,7 +1625,8 @@
                 "trace"
             ],
             "limitations": [
-                "15k / 24k / 36k req/min"
+                "250/400/600 RPS",
+                "20M/80M/140M requests"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1662,7 +1646,7 @@
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
                 "[Buy](https://chainstack.com/pricing/)",
-                "[Docs](https://docs.chainstack.com/reference/ethereum-getting-started#getting-started-ethereum)"
+                "[Docs](https://docs.chainstack.com/docs/)"
             ],
             "address": null
         },
@@ -1672,8 +1656,8 @@
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "€990",
-            "queryPrice": "included 400M requests, extra $5/1M requests",
+            "accessPrice": "$990",
+            "queryPrice": "extra $5/1M requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1686,7 +1670,9 @@
                 "debug",
                 "trace"
             ],
-            "limitations": null,
+            "limitations": [
+                "400M requests"
+            ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
@@ -1703,188 +1689,8 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Contact](https://console.chainstack.com/user/account#login)",
-                "[Docs](https://docs.chainstack.com/reference/ethereum-getting-started#getting-started-ethereum)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "quicknode-mainnet-pay-as-you-go-archive",
-            "provider": "Quicknode",
-            "plan": "Pay-as-you-go",
-            "nodeType": "Full Archive",
-            "chain": "mainnet",
-            "accessPrice": "$49/$249/$500/$999 included into query fees",
-            "queryPrice": "$10-24.8/1M requests",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "3000/7500/15000/30000 req/min"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/ethereum)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "quicknode-mainnet-enterprise-archive",
-            "provider": "Quicknode",
-            "plan": "Enterprise",
-            "nodeType": "Full Archive",
-            "chain": "mainnet",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "uptimeSla": "Commited SLAs",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving"
-            ],
-            "monitoringAndAnalytics": [
-                "Advanced analytics",
-                "Console API (Prometheus/Grafana)",
-                "Custom alerting & engineering support"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)",
-                "[Docs](https://www.quicknode.com/docs/ethereum)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "quicknode-sepolia-pay-as-you-go-archive",
-            "provider": "Quicknode",
-            "plan": "Pay-as-you-go",
-            "nodeType": "Full Archive",
-            "chain": "sepolia",
-            "accessPrice": "$49/$249/$500/$999 included into query fees",
-            "queryPrice": "$10-24.8/1M requests",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "3000/7500/15000/30000 req/min"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/ethereum)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "quicknode-sepolia-enterprise-archive",
-            "provider": "Quicknode",
-            "plan": "Enterprise",
-            "nodeType": "Full Archive",
-            "chain": "sepolia",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "uptimeSla": "Commited SLAs",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving"
-            ],
-            "monitoringAndAnalytics": [
-                "Advanced analytics",
-                "Console API (Prometheus/Grafana)",
-                "Custom alerting & engineering support"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)",
-                "[Docs](https://www.quicknode.com/docs/ethereum)"
+                "[Contact](https://console.chainstack.com/user/account#signup?plan=enterprise)",
+                "[Docs](https://docs.chainstack.com/docs/)"
             ],
             "address": null
         }

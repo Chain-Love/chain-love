@@ -6,7 +6,7 @@
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$1K included into query fees",
+            "accessPrice": "Custom",
             "queryPrice": "Custom pricing",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -51,7 +51,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
-            "queryPrice": "$0/1M requests",
+            "queryPrice": "$0.00",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -61,7 +61,10 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "~1800 req/min"
+                "free 200K API credits/mo",
+                "30 reqs/sec (node API)",
+                "30 reqs/min (advanced API)",
+                "1 project (personal API tokens)"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -94,8 +97,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$10 included into query fees",
-            "queryPrice": "$20/1M requests",
+            "accessPrice": "up to $10(payg plan)/$500-$3K(deal plan)",
+            "queryPrice": "$0.02(evm compatible API)/$0.05(solana API)/$0.07(beacon chains API)/$0.01(other API)/$0.07(advanced API) per 1K reqs",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -106,7 +109,10 @@
                 "Advanced Ankr API"
             ],
             "limitations": [
-                "up to 90000 req/min"
+                "100M(payg plan)/6B(deal plan +20% extra credits) API credits ",
+                "1.5K reqs/sec (node API)",
+                "1K reqs/min (advanced API)",
+                "3 projects (personal API tokens)"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -653,9 +659,9 @@
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "calibnet",
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -664,7 +670,7 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "100 req/s, 10.5M req/mo"
+                "Unlimited RPS, up to 300M reqs/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -701,7 +707,7 @@
             "chain": "calibnet",
             "accessPrice": "$0",
             "queryPrice": "$6/1M requests",
-            "uptimeSla": null,
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -710,7 +716,7 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "100 req/s, 10.5M req/mo"
+                "5K req/s, 20M CUs"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -745,9 +751,9 @@
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -756,7 +762,7 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "100 req/s, 10.5M req/mo"
+                "Unlimited RPS, up to 300M reqs/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -793,7 +799,7 @@
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$6/1M requests",
-            "uptimeSla": null,
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -802,7 +808,7 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "100 req/s, 10.5M req/mo"
+                "5K req/s, 20M CUs"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -899,9 +905,9 @@
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "€500 included into requests, yearly 10% discount",
-            "queryPrice": "€5/1M requests",
-            "uptimeSla": null,
+            "accessPrice": "€500/mo, €5500/yearly",
+            "queryPrice": "€0.5/100K extra requests",
+            "uptimeSla": "99.95%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -910,7 +916,7 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "100M req/mo bundled, 100 keys limit"
+                "100M req/mo, up to 100 API keys"
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
@@ -932,9 +938,9 @@
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "Free (100K included only)",
-            "uptimeSla": null,
+            "accessPrice": "€0",
+            "queryPrice": "€0",
+            "uptimeSla": "99.95%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -943,9 +949,9 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "100k requests",
-                "no more than 1 month",
-                "no more than 1 key"
+                "100K reqs/mo",
+                "1 month only",
+                "1 API key/15 RPS limit"
             ],
             "securityImprovements": [
                 "Domain name protection"
@@ -969,9 +975,9 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "€20/€200/€500 included into requests, yearly 10% discount",
-            "queryPrice": "€50/€10/€5 /1M requests",
-            "uptimeSla": null,
+            "accessPrice": "€20/€200/mo, €220/€2200/yearly",
+            "queryPrice": "€5/€1/100K extra requests",
+            "uptimeSla": "99.95%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -980,8 +986,8 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "1M / 30M / 100M requests per month",
-                "3 / 25 / 100 api key"
+                "1M/30M reqs/mo",
+                "up to 3/up to 25 API keys"
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": null,

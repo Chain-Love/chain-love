@@ -93,7 +93,9 @@
                 "web3",
                 "net"
             ],
-            "limitations": null,
+            "limitations": [
+                "custom limits"
+            ],
             "securityImprovements": [
                 "Privacy Protected Relays",
                 "Transaction Sanitizers"
@@ -135,7 +137,8 @@
                 "tokens"
             ],
             "limitations": [
-                "1500 req/min"
+                "25 req/sec",
+                "30M CU/mo"
             ],
             "securityImprovements": [
                 "TX simulation",
@@ -164,8 +167,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$0",
-            "queryPrice": "$0.40/1M CUs",
+            "accessPrice": "$5/$45/$215/$415/$815/$2K",
+            "queryPrice": "$0.40/$0.45/1M CUs",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -182,7 +185,7 @@
                 "tokens"
             ],
             "limitations": [
-                "18000 req/min"
+                "300 req/sec"
             ],
             "securityImprovements": [
                 "TX simulation",
@@ -278,7 +281,8 @@
                 "net"
             ],
             "limitations": [
-                "9000 CU/min"
+                "500K CU/day",
+                "150 Cups throughput limit"
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
@@ -303,7 +307,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "astar",
-            "accessPrice": "$29/$139",
+            "accessPrice": "$29/$139/mo, $289/$1389/yearly",
             "queryPrice": "$0.58/$0.56 per 1M CUs",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
@@ -318,8 +322,8 @@
                 "trace"
             ],
             "limitations": [
-                "20000 CU/min",
-                "120000 CU/min"
+                "2M/10M CU/day",
+                "500/2K CUps throughput limit"
             ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
@@ -359,7 +363,10 @@
                 "debug",
                 "trace"
             ],
-            "limitations": null,
+            "limitations": [
+                "Custom limits",
+                "Unlimited throughput limit"
+            ],
             "securityImprovements": null,
             "monitoringAndAnalytics": [
                 "Advanced analytics",
@@ -501,7 +508,10 @@
                 "web3",
                 "net"
             ],
-            "limitations": null,
+            "limitations": [
+                "up to 400M CUs/mo",
+                "custom limits"
+            ],
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": [
@@ -539,7 +549,10 @@
                 "web3",
                 "net"
             ],
-            "limitations": null,
+            "limitations": [
+                "up to 400M CUs/mo",
+                "custom limits"
+            ],
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": [
@@ -577,7 +590,10 @@
                 "web3",
                 "net"
             ],
-            "limitations": null,
+            "limitations": [
+                "up to 400M CUs/mo",
+                "custom limits"
+            ],
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": [

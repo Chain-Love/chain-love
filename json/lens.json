@@ -98,7 +98,8 @@
                 "tokens"
             ],
             "limitations": [
-                "1500 req/min"
+                "25 req/sec",
+                "30M CU/mo"
             ],
             "securityImprovements": [
                 "TX simulation",
@@ -128,7 +129,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$49/$199",
-            "queryPrice": "$0.40/1M CUs",
+            "queryPrice": "$0.40/$0.45/1M CUs",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -145,7 +146,7 @@
                 "tokens"
             ],
             "limitations": [
-                "18000 req/min"
+                "300 req/sec"
             ],
             "securityImprovements": [
                 "TX simulation",
@@ -246,7 +247,8 @@
                 "tokens"
             ],
             "limitations": [
-                "1500 req/min"
+                "25 req/sec",
+                "30M CU/mo"
             ],
             "securityImprovements": [
                 "TX simulation",
@@ -276,7 +278,7 @@
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$49/$199",
-            "queryPrice": "$0.40/1M CUs",
+            "queryPrice": "$0.40/$0.45/1M CUs",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -293,7 +295,7 @@
                 "tokens"
             ],
             "limitations": [
-                "18000 req/min"
+                "300 req/sec"
             ],
             "securityImprovements": [
                 "TX simulation",
@@ -371,13 +373,13 @@
             "address": null
         },
         {
-            "slug": "quicknode-mainnet-pay-as-you-go",
+            "slug": "quicknode-mainnet-pay-as-you-go-recent-state",
             "provider": "Quicknode",
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$49/$299",
-            "queryPrice": "$10-24.8/1M requests",
+            "queryPrice": "$0.62/$0.55/$0.53/$0.5 per 1M extra API credits",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -391,7 +393,9 @@
                 "trace"
             ],
             "limitations": [
-                "3000/7500/15000/30000 req/min"
+                "80M/450M/950M/2B API credits",
+                "10/20/50 endpoints",
+                "50/125/250/500 reqs/sec"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -461,13 +465,13 @@
             "address": null
         },
         {
-            "slug": "quicknode-testnet-pay-as-you-go",
+            "slug": "quicknode-testnet-pay-as-you-go-recent-state",
             "provider": "Quicknode",
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$49/$299",
-            "queryPrice": "$10-24.8/1M requests",
+            "queryPrice": "$0.62/$0.55/$0.53/$0.5 per 1M extra API credits",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -481,7 +485,9 @@
                 "trace"
             ],
             "limitations": [
-                "3000/7500/15000/30000 req/min"
+                "80M/450M/950M/2B API credits",
+                "10/20/50 endpoints",
+                "50/125/250/500 reqs/sec"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -558,7 +564,7 @@
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
-            "uptimeSla": null,
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -568,7 +574,9 @@
                 "web3",
                 "net"
             ],
-            "limitations": null,
+            "limitations": [
+                "100 req/s, free 210M CUs/mo"
+            ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection"
@@ -596,7 +604,7 @@
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$6/1M requests",
-            "uptimeSla": null,
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -609,7 +617,7 @@
                 "trace"
             ],
             "limitations": [
-                "100 req/s, 10.5M req/mo"
+                "5K req/s, 20M CUs"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -645,7 +653,7 @@
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
-            "uptimeSla": null,
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -655,7 +663,9 @@
                 "web3",
                 "net"
             ],
-            "limitations": null,
+            "limitations": [
+                "100 req/s, free 210M CUs/mo"
+            ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection"
@@ -683,7 +693,7 @@
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$6/1M requests",
-            "uptimeSla": null,
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
@@ -696,7 +706,7 @@
                 "trace"
             ],
             "limitations": [
-                "100 req/s, 10.5M req/mo"
+                "5K req/s, 20M CUs"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1067,7 +1077,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
-            "queryPrice": "included 3M requests, extra $20/1M requests",
+            "queryPrice": "extra $20/1M requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1079,7 +1089,8 @@
                 "net"
             ],
             "limitations": [
-                "1500 req/min"
+                "25 RPS",
+                "3M requests/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1107,8 +1118,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$49/$199 /$349",
-            "queryPrice": "included 20M/80M/140M requests, extra $15/$12.5 /$10/1M requests",
+            "accessPrice": "$49/$199/$349",
+            "queryPrice": "extra $15/$12.5/$10 per 1M requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1122,7 +1133,8 @@
                 "trace"
             ],
             "limitations": [
-                "15k / 24k / 36k req/min"
+                "250/400/600 RPS",
+                "20M/80M/140M requests"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1153,7 +1165,7 @@
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$0",
-            "queryPrice": "included 3M requests, extra $20/1M requests",
+            "queryPrice": "extra $20/1M requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1165,7 +1177,8 @@
                 "net"
             ],
             "limitations": [
-                "1500 req/min"
+                "25 RPS",
+                "3M requests/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1193,8 +1206,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "$49/$199 /$349",
-            "queryPrice": "included 20M/80M/140M requests, extra $15/$12.5 /$10/1M requests",
+            "accessPrice": "$49/$199/$349",
+            "queryPrice": "extra $15/$12.5/$10 per 1M requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1208,7 +1221,8 @@
                 "trace"
             ],
             "limitations": [
-                "15k / 24k / 36k req/min"
+                "250/400/600 RPS",
+                "20M/80M/140M requests"
             ],
             "securityImprovements": [
                 "DDoS Protection",
