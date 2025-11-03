@@ -9300,14 +9300,15 @@
     ],
     "explorer": [
         {
-            "slug": "arkham",
-            "provider": "Arkham Intelligence",
+            "slug": "arkham-mainnet",
+            "provider": "Arkham",
             "chain": "mainnet",
-            "technology": "Custom (Analytics/Intel)",
+            "technology": "Custom",
             "monitoringAndAnalytics": [
                 "Accounts",
                 "Transactions",
-                "Tokens"
+                "Tokens",
+                "Contracts"
             ],
             "additionalFeatures": [
                 "Entity Labeling",
@@ -9316,7 +9317,7 @@
                 "Portfolio Tracking"
             ],
             "availableApis": [
-                "REST"
+                "REST API"
             ],
             "sdk": [
                 "Python",
@@ -9330,7 +9331,7 @@
             ],
             "smartContractsVerifications": false,
             "fullHistory": true,
-            "pricing": "partially paid",
+            "pricing": "Partially paid",
             "starred": false,
             "actionButtons": [
                 "[Explore](https://intel.arkm.com/)",
@@ -9354,13 +9355,15 @@
             ],
             "additionalFeatures": [
                 "Token Tracker",
-                "Network Metrics"
+                "Network Metrics",
+                "NFT Tracking"
             ],
             "availableApis": [
                 "REST API",
                 "GraphQL",
                 "RPC API",
-                "Eth RPC API"
+                "Eth RPC API",
+                "JSON-RPC"
             ],
             "sdk": [
                 "TypeScript",
@@ -9370,11 +9373,13 @@
                 "Address",
                 "Transaction Hash",
                 "Block",
-                "Token"
+                "Token",
+                "Message ID",
+                "Height"
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "FREE",
+            "pricing": "Free",
             "starred": false,
             "actionButtons": [
                 "[Explore](https://base-sepolia.blockscout.com/)"
@@ -9384,7 +9389,7 @@
             "slug": "etherscan-sepolia",
             "provider": "Etherscan",
             "chain": "sepolia",
-            "technology": "Proprietary",
+            "technology": "Custom",
             "monitoringAndAnalytics": [
                 "Accounts",
                 "Transactions",
@@ -9396,7 +9401,7 @@
                 "Network Metrics"
             ],
             "availableApis": [
-                "REST"
+                "REST API"
             ],
             "sdk": null,
             "searchCapabilities": [
@@ -9413,7 +9418,7 @@
             ]
         },
         {
-            "slug": "dexguru",
+            "slug": "dexguru-mainnet",
             "provider": "DexGuru",
             "chain": "mainnet",
             "technology": "Web",
@@ -9456,19 +9461,29 @@
                 "Blocks",
                 "Tokens",
                 "Gas",
-                "Contracts"
+                "Contracts",
+                "Accounts",
+                "Token transfers",
+                "Address Activity"
             ],
             "additionalFeatures": [
                 "Token Tracker",
                 "Smart Contract Verification",
-                "Address Labels"
+                "Address Labels",
+                "Address Monitoring",
+                "APIs",
+                "Network Overview",
+                "Price Charts",
+                "Amoy Contract Verification"
             ],
             "availableApis": [
                 "REST API",
                 "GraphQL",
                 "RPC API"
             ],
-            "sdk": null,
+            "sdk": [
+                "TypeScript"
+            ],
             "searchCapabilities": [
                 "Address",
                 "Transaction Hash",
@@ -9477,7 +9492,7 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "FREE",
+            "pricing": "Free",
             "starred": false,
             "actionButtons": [
                 "[Explore](https://www.oklink.com/base)"
@@ -9521,38 +9536,40 @@
             ]
         },
         {
-            "slug": "tenderly-explorer",
+            "slug": "tenderly-explorer-mainnet",
             "provider": "Tenderly",
             "chain": "mainnet",
-            "technology": "Developer Explorer",
+            "technology": "Custom",
             "monitoringAndAnalytics": [
                 "Accounts",
                 "Transactions",
                 "Blocks",
-                "Contracts"
+                "Contracts",
+                "Gas"
             ],
             "additionalFeatures": [
-                "Smart contract debugging",
-                "Gas optimization",
-                "Transaction trace"
+                "Virtual TestNet Creation",
+                "Smart Contract Debugging",
+                "Gas Optimization",
+                "Transaction Trace"
             ],
             "availableApis": [
-                "REST"
+                "REST API"
             ],
             "sdk": null,
             "searchCapabilities": [
                 "Address",
                 "Transaction",
                 "Block",
-                "Token"
+                "Token",
+                "Contract"
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "FREE/$45/mo/$450/mo",
+            "pricing": "Free/$50/$500/mo, $45/$450/yearly",
             "starred": false,
             "actionButtons": [
-                "[Explore](https://tenderly.co/)",
-                "[Docs](https://docs.tenderly.co/products)"
+                "[Explore](https://docs.tenderly.co/developer-explorer)"
             ]
         }
     ],

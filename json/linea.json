@@ -4109,19 +4109,30 @@
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
-                "Accounts",
                 "Transactions",
                 "Blocks",
-                "Tokens"
+                "Tokens",
+                "Gas",
+                "Contracts",
+                "Accounts",
+                "Token transfers",
+                "Address Activity"
             ],
             "additionalFeatures": [
                 "Token Tracker",
+                "Smart Contract Verification",
+                "Address Labels",
                 "Address Monitoring",
-                "APIs"
+                "APIs",
+                "Network Overview",
+                "Price Charts",
+                "Amoy Contract Verification"
             ],
             "starred": false,
             "availableApis": [
-                "REST"
+                "REST API",
+                "GraphQL",
+                "RPC API"
             ],
             "sdk": [
                 "TypeScript"
@@ -4132,7 +4143,7 @@
                 "Block",
                 "Token"
             ],
-            "smartContractsVerifications": false,
+            "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
             "actionButtons": [
@@ -4146,19 +4157,30 @@
             "chain": "sepolia",
             "technology": "Custom",
             "monitoringAndAnalytics": [
-                "Accounts",
                 "Transactions",
                 "Blocks",
-                "Tokens"
+                "Tokens",
+                "Gas",
+                "Contracts",
+                "Accounts",
+                "Token transfers",
+                "Address Activity"
             ],
             "additionalFeatures": [
                 "Token Tracker",
+                "Smart Contract Verification",
+                "Address Labels",
                 "Address Monitoring",
-                "APIs"
+                "APIs",
+                "Network Overview",
+                "Price Charts",
+                "Amoy Contract Verification"
             ],
             "starred": false,
             "availableApis": [
-                "REST"
+                "REST API",
+                "GraphQL",
+                "RPC API"
             ],
             "sdk": [
                 "TypeScript"
@@ -4169,7 +4191,7 @@
                 "Block",
                 "Token"
             ],
-            "smartContractsVerifications": false,
+            "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
             "actionButtons": [
@@ -4181,24 +4203,29 @@
             "slug": "blockscout-mainnet",
             "provider": "Blockscout",
             "chain": "mainnet",
-            "technology": "Blockscout",
+            "technology": "Open-source",
             "monitoringAndAnalytics": [
                 "Accounts",
                 "Transactions",
                 "Blocks",
                 "Tokens",
                 "Gas",
-                "Contracts"
+                "Contracts",
+                "Logs",
+                "Events"
             ],
             "additionalFeatures": [
                 "Token Tracker",
-                "NFT Tracking",
-                "Network Metrics"
+                "Network Metrics",
+                "NFT Tracking"
             ],
             "starred": false,
             "availableApis": [
-                "REST",
-                "GraphQL"
+                "REST API",
+                "GraphQL",
+                "RPC API",
+                "Eth RPC API",
+                "JSON-RPC"
             ],
             "sdk": [
                 "TypeScript",
@@ -4208,7 +4235,9 @@
                 "Address",
                 "Transaction Hash",
                 "Block",
-                "Token"
+                "Token",
+                "Message ID",
+                "Height"
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
@@ -4222,24 +4251,29 @@
             "slug": "blockscout-sepolia",
             "provider": "Blockscout",
             "chain": "sepolia",
-            "technology": "Blockscout",
+            "technology": "Open-source",
             "monitoringAndAnalytics": [
                 "Accounts",
                 "Transactions",
                 "Blocks",
                 "Tokens",
                 "Gas",
-                "Contracts"
+                "Contracts",
+                "Logs",
+                "Events"
             ],
             "additionalFeatures": [
                 "Token Tracker",
-                "NFT Tracking",
-                "Network Metrics"
+                "Network Metrics",
+                "NFT Tracking"
             ],
             "starred": false,
             "availableApis": [
-                "REST",
-                "GraphQL"
+                "REST API",
+                "GraphQL",
+                "RPC API",
+                "Eth RPC API",
+                "JSON-RPC"
             ],
             "sdk": [
                 "TypeScript",
@@ -4249,7 +4283,9 @@
                 "Address",
                 "Transaction Hash",
                 "Block",
-                "Token"
+                "Token",
+                "Message ID",
+                "Height"
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
@@ -4267,7 +4303,8 @@
             "monitoringAndAnalytics": [
                 "Accounts",
                 "Transactions",
-                "Tokens"
+                "Tokens",
+                "Contracts"
             ],
             "additionalFeatures": [
                 "Entity Labeling",
@@ -4275,9 +4312,9 @@
                 "De-anonymization",
                 "Portfolio Tracking"
             ],
-            "starred": true,
+            "starred": false,
             "availableApis": [
-                "REST"
+                "REST API"
             ],
             "sdk": [
                 "Python",
@@ -4291,7 +4328,7 @@
             ],
             "smartContractsVerifications": false,
             "fullHistory": true,
-            "pricing": "partially paid",
+            "pricing": "Partially paid",
             "actionButtons": [
                 "[Explore](https://intel.arkm.com/)",
                 "[Docs](https://codex.arkm.com/)"
