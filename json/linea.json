@@ -4913,36 +4913,38 @@
             ],
             "hasDashboard": true,
             "availableApis": null,
-            "price": "Subscription-based",
+            "price": "$749/$299/$749/mo (monthly plan), $674/$269/$674/mo (quarterly plan), $599/$249/$599/mo (yearly plan)",
             "starred": false,
             "actionButtons": [
-                "[Dashboard](https://www.cookie3.com/)"
+                "[Dashboard](https://app.cookie3.co/)"
             ]
         },
         {
             "slug": "dune-linea-mainnet",
-            "provider": "Dune Analytics",
+            "provider": "Dune",
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
-                "Active Users",
-                "Token Price",
-                "Tokens",
                 "Gas Usage",
-                "Contracts",
-                "FTSO Data"
+                "Bridge Activity",
+                "Active Users",
+                "Token Transfers",
+                "Smart Contract Activity"
             ],
             "hasDashboard": true,
-            "availableApis": null,
-            "price": "0",
-            "starred": true,
+            "availableApis": [
+                "SQL Queries",
+                "Visualizations"
+            ],
+            "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
+            "starred": false,
             "actionButtons": [
                 "[Dashboard](https://dune.com/linea/linea-overview)"
             ]
         },
         {
             "slug": "arkham-intel-mainnet",
-            "provider": "Arkham Intelligence",
+            "provider": "Arkham",
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
@@ -4951,9 +4953,13 @@
                 "DApp Interactions"
             ],
             "hasDashboard": true,
-            "availableApis": null,
-            "price": "Subscription-based",
-            "starred": true,
+            "availableApis": [
+                "REST API",
+                "WebSocket API",
+                "Arkham Exchange API"
+            ],
+            "price": "Custom",
+            "starred": false,
             "actionButtons": [
                 "[Dashboard](https://intel.arkm.com/explorer/entity/linea)"
             ]

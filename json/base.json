@@ -10131,20 +10131,19 @@
             "provider": "Dune",
             "chain": "mainnet",
             "dataSources": [
-                "Total value bridged",
-                "Whales ranking",
-                "Net value flow",
-                "Fees & Revenue",
-                "Users",
-                "Daily ETH volume",
-                "DEX Volume"
+                "Transactions",
+                "Gas Usage",
+                "Bridge Activity",
+                "Active Users",
+                "Token Transfers",
+                "Smart Contract Activity"
             ],
             "hasDashboard": true,
             "availableApis": [
                 "SQL Queries",
                 "Visualizations"
             ],
-            "price": "0",
+            "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
             "starred": false,
             "actionButtons": [
                 "[DEX Metrics](https://dune.com/sealaunch/dex-metrics-on-base)",
@@ -10167,7 +10166,7 @@
                 "REST API",
                 "No historical data on free API"
             ],
-            "price": "api for $0/$9.99/$199/$499 for 5/5/30/50 RPSecond and 100/2.5k/100k/1M RPMonth",
+            "price": "api for $0/$9.99/$199/$499 for 5/5/30/50 RPS and 100/2.5K/100K/1M RPM",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://dappradar.com/chain/base)"
@@ -10185,8 +10184,10 @@
                 "Stablecoin Supply"
             ],
             "hasDashboard": true,
-            "availableApis": null,
-            "price": "$0",
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0/$49/$300/mo (monthly plan), $0 (2 months free)/$40.83/mo ($490/year)/$250/mo (3K/year) (yearly plan)",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://defillama.com/chain/base)"
@@ -10208,7 +10209,11 @@
                 "Meme coins"
             ],
             "hasDashboard": true,
-            "availableApis": [],
+            "availableApis": [
+                "Data API",
+                "Supported Data Types",
+                "Additional Tools and Libraries"
+            ],
             "price": "$0",
             "starred": false,
             "actionButtons": [
@@ -10226,8 +10231,10 @@
                 "Technical chain analysis"
             ],
             "hasDashboard": true,
-            "availableApis": [],
-            "price": "0",
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://l2beat.com/scaling/projects/base)"
@@ -10247,7 +10254,7 @@
             "availableApis": [
                 "JSON-RPC with 60 RPS"
             ],
-            "price": "$0",
+            "price": "$0/$350/mo (monthly plan), $0/$292/mo (yearly plan)",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://tokenterminal.com/explorer/projects/base)"
@@ -10268,7 +10275,9 @@
                 "Risk analysis"
             ],
             "hasDashboard": true,
-            "availableApis": [],
+            "availableApis": [
+                "REST API"
+            ],
             "price": "$0",
             "starred": false,
             "actionButtons": [
@@ -10280,17 +10289,20 @@
             "provider": "Sentry by Aleno",
             "chain": "mainnet",
             "dataSources": [
-                "",
-                ""
+                "Asset prices",
+                "TVL",
+                "Cross-chain activity metrics",
+                "Cross protocol data",
+                "Market analysis metrics"
             ],
             "hasDashboard": false,
             "availableApis": [
-                "[REST API](https://docs.aleno.ai/apis/rest-v1)"
+                "REST API"
             ],
-            "price": "$0+",
+            "price": "Custom",
             "starred": false,
             "actionButtons": [
-                "[Docs](https://docs.aleno.ai/apis/rest-v1)"
+                "[Dashboard](https://docs.aleno.ai/supported-liquidity-sources#blockchains-dex-sources)"
             ]
         },
         {
@@ -10302,9 +10314,9 @@
             ],
             "hasDashboard": true,
             "availableApis": [
-                "[REST API](https://jiffyscan.mintlify.app/api-reference/getting-started)"
+                "REST API"
             ],
-            "price": "$0/$43/$83 for 5/10/25 RPSecond and 1k/10k/50k RPDay",
+            "price": "$0/$54/$103/mo (monthly plan), $0/$43/$83/mo (yearly plan)",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://jiffyscan.xyz/?network=base)"

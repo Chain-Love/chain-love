@@ -1389,24 +1389,25 @@
     "analytic": [
         {
             "slug": "dune-mainnet",
-            "provider": "Dune Analytics",
+            "provider": "Dune",
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
-                "Active Users",
-                "Token Price",
-                "Tokens",
                 "Gas Usage",
-                "Contracts",
-                "FTSO Data"
+                "Bridge Activity",
+                "Active Users",
+                "Token Transfers",
+                "Smart Contract Activity"
             ],
             "hasDashboard": true,
-            "availableApis": null,
-            "price": "0",
-            "starred": true,
+            "availableApis": [
+                "SQL Queries",
+                "Visualizations"
+            ],
+            "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
+            "starred": false,
             "actionButtons": [
-                "[Dashboard](https://dune.com/)",
-                "[Docs](https://docs.dune.com/)"
+                "[Dashboard](https://dune.com/chains/somnia)"
             ]
         }
     ],

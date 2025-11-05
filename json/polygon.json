@@ -7069,17 +7069,21 @@
         {
             "slug": "nansen-polygon",
             "provider": "Nansen",
-            "chain": "polygon",
+            "chain": "mainnet",
             "dataSources": [
-                "Macro Analytics",
-                "Wallet Tracking",
-                "Portfolio",
-                "On-Chain Activity",
-                "Bridge Activity"
+                "Exchange Flows",
+                "Token Distribution",
+                "DeFi Activity",
+                "NFT Analytics",
+                "Wallet Labels"
             ],
             "hasDashboard": true,
-            "availableApis": null,
-            "price": "Subscription-based",
+            "availableApis": [
+                "Smart Money API",
+                "Profiler API",
+                "API Keys"
+            ],
+            "price": "$0/$69/mo (monthly plan), $0/$49/mo (yearly plan)",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://app.nansen.ai/macro/blockchains?chain=polygon)"
@@ -7088,16 +7092,19 @@
         {
             "slug": "messari-polygon",
             "provider": "Messari",
-            "chain": "polygon",
+            "chain": "mainnet",
             "dataSources": [
                 "Network Metrics",
                 "TVL & Market Data",
-                "On-chain Usage Metrics",
-                "Market Intelligence"
+                "On‑chain Usage Metrics"
             ],
             "hasDashboard": true,
-            "availableApis": null,
-            "price": "Subscription-based",
+            "availableApis": [
+                "Research Reports",
+                "API Access",
+                "Dashboard"
+            ],
+            "price": "$0 (7-day free trial)/$29.99/mo/4K/year",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://messari.io/project/polygon-ecosystem-token)"
@@ -7106,7 +7113,7 @@
         {
             "slug": "dexscreener-polygon",
             "provider": "DexScreener",
-            "chain": "polygon",
+            "chain": "mainnet",
             "dataSources": [
                 "DEX Trading Pairs",
                 "Token Prices",
@@ -7116,7 +7123,7 @@
             ],
             "hasDashboard": true,
             "availableApis": null,
-            "price": "FREE",
+            "price": "$0",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://dexscreener.com/polygon)"
@@ -7125,18 +7132,22 @@
         {
             "slug": "dune-polygon",
             "provider": "Dune",
-            "chain": "polygon",
+            "chain": "mainnet",
             "dataSources": [
                 "Transactions",
                 "Gas Usage",
-                "Smart Contract Activity",
+                "Bridge Activity",
+                "Active Users",
                 "Token Transfers",
-                "Analytics Queries"
+                "Smart Contract Activity"
             ],
             "hasDashboard": true,
-            "availableApis": null,
-            "price": "FREE",
-            "starred": true,
+            "availableApis": [
+                "SQL Queries",
+                "Visualizations"
+            ],
+            "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
+            "starred": false,
             "actionButtons": [
                 "[Dashboard](https://dune.com/blockchains/polygon)"
             ]
@@ -7144,16 +7155,20 @@
         {
             "slug": "arkham-polygon",
             "provider": "Arkham",
-            "chain": "polygon",
+            "chain": "mainnet",
             "dataSources": [
-                "Entity Explorer",
-                "Address Attribution",
-                "Holder Concentration",
-                "Entity Monitoring"
+                "Transactions",
+                "Active Users",
+                "Contracts",
+                "DApp Interactions"
             ],
             "hasDashboard": true,
-            "availableApis": null,
-            "price": "Subscription-based",
+            "availableApis": [
+                "REST API",
+                "WebSocket API",
+                "Arkham Exchange API"
+            ],
+            "price": "Custom",
             "starred": false,
             "actionButtons": [
                 "[Dashboard](https://intel.arkm.com/explorer/entity/polygon)"
