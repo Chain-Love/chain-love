@@ -3482,143 +3482,160 @@
             "slug": "chainlink-linea",
             "provider": "Chainlink",
             "chain": "mainnet",
-            "technology": "Decentralized Oracle Network",
-            "starred": true,
+            "technology": "Decentralized Oracle",
+            "starred": false,
             "availableApis": [
-                "Data Feeds",
-                "CCIP (cross-chain)"
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
             ],
             "monitoringAndAnalytics": [
-                "Real-time data feeds",
-                "Cross-chain data"
+                "Node performance metrics"
             ],
             "additionalFeatures": [
-                "Universal oracle services",
-                "Hybrid smart contracts"
+                "Economic Aggregation",
+                "Cross-chain support"
             ],
             "dataTypes": [
-                "Price feeds",
-                "Asset data",
-                "NFT floor prices"
+                "Asset Prices",
+                "Randomness"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Secured by consensus, broad decentralized networks",
+            "economicalSecurityNote": "Audited network, high TVL",
             "sdk": [
-                "JavaScript",
-                "TypeScript"
+                "TypeScript",
+                "Solidity"
             ],
             "auditsPerformed": [
-                "Multiple industry audits"
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
             ],
             "actionButtons": [
                 "[Docs](https://docs.chain.link)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "chainlink-linea-sepolia",
             "provider": "Chainlink",
             "chain": "sepolia",
-            "technology": "Decentralized Oracle Network",
-            "starred": true,
+            "technology": "Decentralized Oracle",
+            "starred": false,
             "availableApis": [
-                "Data Feeds",
-                "CCIP (cross-chain)"
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
             ],
             "monitoringAndAnalytics": [
-                "Real-time data feeds",
-                "Cross-chain data"
+                "Node performance metrics"
             ],
             "additionalFeatures": [
-                "Universal oracle services",
-                "Hybrid smart contracts"
+                "Economic Aggregation",
+                "Cross-chain support"
             ],
             "dataTypes": [
-                "Price feeds",
-                "Asset data",
-                "NFT floor prices"
+                "Asset Prices",
+                "Randomness"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Secured by consensus, broad decentralized networks",
+            "economicalSecurityNote": "Audited network, high TVL",
             "sdk": [
-                "JavaScript",
-                "TypeScript"
+                "TypeScript",
+                "Solidity"
             ],
             "auditsPerformed": [
-                "Multiple industry audits"
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
             ],
             "actionButtons": [
                 "[Docs](https://docs.chain.link)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "api3-linea",
             "provider": "API3",
             "chain": "mainnet",
-            "technology": "Decentralized Oracle Network",
-            "starred": true,
+            "technology": "Push & Pull Oracle",
+            "starred": false,
             "availableApis": [
-                "Traditional API integration"
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
             ],
             "monitoringAndAnalytics": [
-                "Real-time API data"
+                "Feed health dashboard"
             ],
             "additionalFeatures": [
-                "Secure, decentralized APIs"
+                "Quantum RNG"
             ],
             "dataTypes": [
-                "Various API data"
+                "Asset Prices",
+                "Randomness"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Secure decentralized data APIs",
+            "economicalSecurityNote": "First‑party dAPI model",
             "sdk": [
-                "JavaScript"
+                "TypeScript",
+                "Solidity"
             ],
-            "auditsPerformed": null,
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ],
             "actionButtons": [
                 "[Docs](https://docs.api3.org)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "dia-linea",
             "provider": "DIA",
             "chain": "mainnet",
-            "technology": "Decentralized Oracle Network",
+            "technology": "DIA",
             "starred": false,
             "availableApis": [
-                "Price Feeds"
+                "REST",
+                "GraphQL"
             ],
             "monitoringAndAnalytics": [
-                "Real-time price feeds"
+                "Real-time Price Feeds"
             ],
             "additionalFeatures": [
-                "Multi-source aggregation"
+                "Cross-chain compatibility",
+                "Customizable data feeds",
+                "Customizable data feeds",
+                "Advanced architecture using Layer 2 rollup"
             ],
             "dataTypes": [
-                "Cryptocurrency prices"
+                "BTC",
+                "DIA",
+                "USDC"
             ],
             "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Secured by multi-source data aggregation",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
             "sdk": [
-                "JavaScript"
+                "Solidity",
+                "Vyper"
             ],
             "auditsPerformed": [
-                "Audit by Hacken, 2023"
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
             ],
             "actionButtons": [
                 "[Docs](https://docs.diadata.org)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "tellor-linea",
@@ -3650,9 +3667,7 @@
             ],
             "actionButtons": [
                 "[Docs](https://docs.tellor.io)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "tellor-linea-sepolia",
@@ -3684,133 +3699,148 @@
             ],
             "actionButtons": [
                 "[Docs](https://docs.tellor.io)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
-            "slug": "pythnet-linea",
+            "slug": "pyth-linea",
             "provider": "Pyth Network",
             "chain": "mainnet",
-            "technology": "Decentralized Market Data",
-            "starred": true,
+            "technology": "Pull Oracle",
+            "starred": false,
             "availableApis": [
-                "Financial market data"
+                "Asset Price Feeds (incl. ARB/USD)"
             ],
             "monitoringAndAnalytics": [
-                "Real-time market data"
+                "Real time price feeds"
             ],
             "additionalFeatures": [
-                "Fast update times"
+                "Cross‑chain via Wormhole"
             ],
             "dataTypes": [
-                "Financial market data"
+                "Asset Prices",
+                "FX",
+                "Metals"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "High-speed market data delivery",
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
             "sdk": [
-                "JavaScript"
+                "Solidity",
+                "Python SDK"
             ],
-            "auditsPerformed": null,
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ],
             "actionButtons": [
                 "[Docs](https://docs.pyth.network)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
-            "slug": "pythnet-linea-sepolia",
+            "slug": "pyth-linea-sepolia",
             "provider": "Pyth Network",
             "chain": "sepolia",
-            "technology": "Decentralized Market Data",
-            "starred": true,
+            "technology": "Pull Oracle",
+            "starred": false,
             "availableApis": [
-                "Financial market data"
+                "Asset Price Feeds (incl. ARB/USD)"
             ],
             "monitoringAndAnalytics": [
-                "Real-time market data"
+                "Real time price feeds"
             ],
             "additionalFeatures": [
-                "Fast update times"
+                "Cross‑chain via Wormhole"
             ],
             "dataTypes": [
-                "Financial market data"
+                "Asset Prices",
+                "FX",
+                "Metals"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "High-speed market data delivery on testnet",
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
             "sdk": [
-                "JavaScript"
+                "Solidity",
+                "Python SDK"
             ],
-            "auditsPerformed": null,
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ],
             "actionButtons": [
                 "[Docs](https://docs.pyth.network)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "redstone-linea",
             "provider": "RedStone",
             "chain": "mainnet",
-            "technology": "High-frequency Oracle",
-            "starred": true,
+            "technology": "Modular Oracle",
+            "starred": false,
             "availableApis": [
-                "Fast data feeds"
+                "Price Feeds",
+                "Custom Data"
             ],
             "monitoringAndAnalytics": [
-                "Less than 10s update frequency"
+                "Custom Delivery Monitoring"
             ],
             "additionalFeatures": [
-                "Suitable for real-time data"
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
             ],
             "dataTypes": [
-                "Various high-frequency data"
+                "Token Prices",
+                "Custom External Data"
             ],
-            "decentralizationModel": "Decentralized",
+            "decentralizationModel": "Hybrid",
             "economicalSecurity": true,
-            "economicalSecurityNote": "High-frequency, fast update oracles",
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
             "sdk": [
-                "JavaScript"
+                "JavaScript",
+                "Solidity"
             ],
-            "auditsPerformed": null,
+            "auditsPerformed": [
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
+            ],
             "actionButtons": [
                 "[Docs](https://docs.redstone.finance)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "supra-linea",
             "provider": "Supra",
             "chain": "mainnet",
-            "technology": "High-throughput Oracle",
+            "technology": "Decentralized Oracle",
             "starred": false,
             "availableApis": [
-                "High throughput feeds"
+                "Price Feed",
+                "VRF",
+                "REST"
             ],
             "monitoringAndAnalytics": [
-                "High scalability"
+                "Real-time Dashboard"
             ],
             "additionalFeatures": [
-                "Novel oracle architecture"
+                "High-speed oracle data with low-latency feeds"
             ],
             "dataTypes": [
-                "Various data types"
+                "Price Feeds",
+                "Randomness"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Efficient high-throughput oracle design",
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
             "sdk": [
-                "JavaScript"
+                "TypeScript"
             ],
-            "auditsPerformed": null,
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ],
             "actionButtons": [
                 "[Docs](https://docs.supra.com/oracles)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "umbrella-linea",
@@ -3839,9 +3869,7 @@
             "auditsPerformed": null,
             "actionButtons": [
                 "[Docs](https://umbrella-network.github.io/technical-documentation/umbrella-network/docs/getting-started-1.html)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "eoracle-linea",
@@ -3870,9 +3898,7 @@
             "auditsPerformed": null,
             "actionButtons": [
                 "[Docs](https://docs.eo.app/docs/)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         }
     ],
     "bridge": [

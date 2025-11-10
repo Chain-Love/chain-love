@@ -2526,33 +2526,38 @@
             "slug": "chainlink-mainnet",
             "provider": "Chainlink",
             "chain": "mainnet",
-            "technology": "Decentralized Oracle Network",
-            "accessPrice": "0",
-            "queryPrice": "LINK Fee",
-            "starred": true,
+            "technology": "Decentralized Oracle",
+            "starred": false,
             "availableApis": [
-                "Price Feed"
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
             ],
             "monitoringAndAnalytics": [
-                "Real-time Price Feeds"
+                "Node performance metrics"
             ],
             "additionalFeatures": [
-                "Decentralized Data Aggregation",
-                "Multi-chain Support"
+                "Economic Aggregation",
+                "Cross-chain support"
             ],
             "dataTypes": [
-                "Cryptocurrency Prices",
-                "NFT Floor Prices",
-                "Rates and Volatility"
+                "Asset Prices",
+                "Randomness"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Chainlink-based security",
+            "economicalSecurityNote": "Audited network, high TVL",
             "sdk": [
+                "TypeScript",
                 "Solidity"
             ],
             "auditsPerformed": [
-                "Multiple audits by Chainlink, 2023"
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
             ],
             "actionButtons": [
                 "[Docs](https://lens.xyz/docs/chain/tools/oracles/chainlink)"
@@ -2562,33 +2567,38 @@
             "slug": "chainlink-testnet",
             "provider": "Chainlink",
             "chain": "testnet",
-            "technology": "Decentralized Oracle Network",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "technology": "Decentralized Oracle",
             "starred": false,
             "availableApis": [
-                "Price Feed"
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
             ],
             "monitoringAndAnalytics": [
-                "Real-time Price Feeds"
+                "Node performance metrics"
             ],
             "additionalFeatures": [
-                "Decentralized Data Aggregation",
-                "Multi-chain Support"
+                "Economic Aggregation",
+                "Cross-chain support"
             ],
             "dataTypes": [
-                "Cryptocurrency Prices",
-                "NFT Floor Prices",
-                "Rates and Volatility"
+                "Asset Prices",
+                "Randomness"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Chainlink-based security",
+            "economicalSecurityNote": "Audited network, high TVL",
             "sdk": [
+                "TypeScript",
                 "Solidity"
             ],
             "auditsPerformed": [
-                "Multiple audits by Chainlink, 2023"
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
             ],
             "actionButtons": [
                 "[Docs](https://lens.xyz/docs/chain/tools/oracles/chainlink)"
@@ -2596,36 +2606,35 @@
         },
         {
             "slug": "redstone-mainnet",
-            "provider": "Redstone",
+            "provider": "RedStone",
             "chain": "mainnet",
             "technology": "Modular Oracle",
-            "accessPrice": "0",
-            "queryPrice": "GHO Fee",
-            "starred": true,
+            "starred": false,
             "availableApis": [
-                "Price Feed",
-                "Custom Feeds"
+                "Price Feeds",
+                "Custom Data"
             ],
             "monitoringAndAnalytics": [
-                "Real-time Price Feeds",
-                "Custom Data Monitoring"
+                "Custom Delivery Monitoring"
             ],
             "additionalFeatures": [
-                "Push and Pull Models",
-                "Customizable Data Sources"
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
             ],
             "dataTypes": [
-                "Cryptocurrency Prices",
-                "Custom Feeds"
+                "Token Prices",
+                "Custom External Data"
             ],
-            "decentralizationModel": "Decentralized",
+            "decentralizationModel": "Hybrid",
             "economicalSecurity": true,
-            "economicalSecurityNote": "On-chain data source security",
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
             "sdk": [
-                "Solidity",
-                "JavaScript"
+                "JavaScript",
+                "Solidity"
             ],
             "auditsPerformed": [
+                "Trail of Bits",
                 "Audit by PeckShield, 2023"
             ],
             "actionButtons": [
@@ -2634,36 +2643,35 @@
         },
         {
             "slug": "redstone-testnet",
-            "provider": "Redstone",
+            "provider": "RedStone",
             "chain": "testnet",
             "technology": "Modular Oracle",
-            "accessPrice": "0",
-            "queryPrice": "0",
             "starred": false,
             "availableApis": [
-                "Price Feed",
-                "Custom Feeds"
+                "Price Feeds",
+                "Custom Data"
             ],
             "monitoringAndAnalytics": [
-                "Real-time Price Feeds",
-                "Custom Data Monitoring"
+                "Custom Delivery Monitoring"
             ],
             "additionalFeatures": [
-                "Push and Pull Models",
-                "Customizable Data Sources"
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
             ],
             "dataTypes": [
-                "Cryptocurrency Prices",
-                "Custom Feeds"
+                "Token Prices",
+                "Custom External Data"
             ],
-            "decentralizationModel": "Decentralized",
+            "decentralizationModel": "Hybrid",
             "economicalSecurity": true,
-            "economicalSecurityNote": "On-chain data source security",
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
             "sdk": [
-                "Solidity",
-                "JavaScript"
+                "JavaScript",
+                "Solidity"
             ],
             "auditsPerformed": [
+                "Trail of Bits",
                 "Audit by PeckShield, 2023"
             ],
             "actionButtons": [

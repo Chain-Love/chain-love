@@ -1122,8 +1122,6 @@
             "provider": "DIA",
             "chain": "mainnet",
             "technology": "DIA",
-            "accessPrice": "0 for non-production, \"Contact us\" for production",
-            "queryPrice": "0",
             "dataTypes": [
                 "BTC",
                 "DIA",
@@ -1132,7 +1130,10 @@
             "decentralizationModel": "Decentralized",
             "economicalSecurity": false,
             "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
-            "sdk": null,
+            "sdk": [
+                "Solidity",
+                "Vyper"
+            ],
             "availableApis": [
                 "REST",
                 "GraphQL"
@@ -1140,7 +1141,12 @@
             "monitoringAndAnalytics": [
                 "Real-time Price Feeds"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "Cross-chain compatibility",
+                "Customizable data feeds",
+                "Customizable data feeds",
+                "Advanced architecture using Layer 2 rollup"
+            ],
             "auditsPerformed": [
                 "April 2025, by MixBytes",
                 "May 2022, by Chainsulting"
@@ -1155,8 +1161,6 @@
             "provider": "DIA",
             "chain": "testnet",
             "technology": "DIA",
-            "accessPrice": "0 for non-production, \"Contact us\" for production",
-            "queryPrice": "0",
             "dataTypes": [
                 "BTC",
                 "DIA",
@@ -1165,7 +1169,10 @@
             "decentralizationModel": "Decentralized",
             "economicalSecurity": false,
             "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
-            "sdk": null,
+            "sdk": [
+                "Solidity",
+                "Vyper"
+            ],
             "availableApis": [
                 "REST",
                 "GraphQL"
@@ -1173,7 +1180,12 @@
             "monitoringAndAnalytics": [
                 "Real-time Price Feeds"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "Cross-chain compatibility",
+                "Customizable data feeds",
+                "Customizable data feeds",
+                "Advanced architecture using Layer 2 rollup"
+            ],
             "auditsPerformed": [
                 "April 2025, by MixBytes",
                 "May 2022, by Chainsulting"
@@ -1188,8 +1200,6 @@
             "provider": "Protofire",
             "chain": "mainnet",
             "technology": "Chainlink",
-            "accessPrice": null,
-            "queryPrice": null,
             "dataTypes": [
                 "Asset Prices",
                 "Randomness"
@@ -1223,8 +1233,6 @@
             "provider": "Protofire",
             "chain": "testnet",
             "technology": "Chainlink",
-            "accessPrice": null,
-            "queryPrice": null,
             "dataTypes": [
                 "Asset Prices",
                 "Randomness"

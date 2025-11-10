@@ -2206,9 +2206,7 @@
             ],
             "actionButtons": [
                 "[XLM/USDC](https://lightecho.io/?from_asset=XLM&to_asset=USDC)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "lightecho-testnet",
@@ -2245,77 +2243,96 @@
             ],
             "actionButtons": [
                 "[XLM/USDC](https://lightecho.io/?from_asset=XLM&to_asset=USDC)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "band-mainnet",
             "provider": "Band Protocol",
             "chain": "mainnet",
-            "technology": "Decentralized Oracle Network",
-            "starred": true,
+            "technology": "Cross-chain Oracle",
+            "starred": false,
             "availableApis": [
-                "Price Feed"
+                "Oracle Scripts",
+                "IBC Feeds"
             ],
             "monitoringAndAnalytics": [
-                "Real-time Price Feeds"
+                "Validator Performance"
             ],
             "additionalFeatures": [
-                "Cross-chain Data Aggregation"
+                "IBC compatibility",
+                "Flexible scripting"
             ],
             "dataTypes": [
-                "Cryptocurrency Prices"
+                "Token Prices",
+                "ASTR",
+                "ATOM",
+                "AVAX",
+                "BNB",
+                "BUSD",
+                "DAI",
+                "DOT",
+                "ETH",
+                "FTM",
+                "MATIC",
+                "SOL",
+                "USDC",
+                "USDT",
+                "WBTC"
             ],
-            "decentralizationModel": "Decentralized",
+            "decentralizationModel": "Delegated Proof-of-Stake",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Chainlink-like security via consensus-based aggregation",
+            "economicalSecurityNote": "Cosmos-based staking model",
             "sdk": [
-                "JavaScript"
+                "CosmJS",
+                "Solidity"
             ],
             "auditsPerformed": [
-                "Audit by Runtime Verification, 2023"
+                "CertiK"
             ],
             "actionButtons": [
                 "[XLM/USD](https://data.bandprotocol.com/symbol/XLM/)",
                 "[Docs](https://docs.bandchain.org//)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "dia-mainnet",
             "provider": "DIA",
             "chain": "mainnet",
-            "technology": "Decentralized Oracle Network",
-            "starred": true,
+            "technology": "DIA",
+            "starred": false,
             "availableApis": [
-                "Price Feed"
+                "REST",
+                "GraphQL"
             ],
             "monitoringAndAnalytics": [
                 "Real-time Price Feeds"
             ],
             "additionalFeatures": [
-                "Multi-source Aggregation"
+                "Cross-chain compatibility",
+                "Customizable data feeds",
+                "Customizable data feeds",
+                "Advanced architecture using Layer 2 rollup"
             ],
             "dataTypes": [
-                "Cryptocurrency Prices"
+                "BTC",
+                "DIA",
+                "USDC"
             ],
             "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Secured by multi-source data aggregation",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
             "sdk": [
-                "JavaScript"
+                "Solidity",
+                "Vyper"
             ],
             "auditsPerformed": [
-                "Audit by Hacken, 2023"
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
             ],
             "actionButtons": [
                 "[XLM/USD](https://www.diadata.org/app/price/asset/Stellar/0x0000000000000000000000000000000000000000/)",
                 "[Docs](https://www.diadata.org/docs/data-products-and-tools/token-price-feeds#data-sources/)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "reflector-mainnet",
@@ -2350,9 +2367,7 @@
             ],
             "actionButtons": [
                 "[Docs](https://reflector.network/docs)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         },
         {
             "slug": "reflector-testnet",
@@ -2387,9 +2402,7 @@
             ],
             "actionButtons": [
                 "[Docs](https://reflector.network/docs)"
-            ],
-            "accessPrice": null,
-            "queryPrice": null
+            ]
         }
     ],
     "bridge": [

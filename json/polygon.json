@@ -5082,40 +5082,38 @@
             "slug": "chainlink-mainnet",
             "provider": "Chainlink",
             "chain": "mainnet",
-            "technology": "Decentralized Oracle Network",
-            "accessPrice": "0",
-            "queryPrice": "0",
-            "starred": true,
+            "technology": "Decentralized Oracle",
+            "starred": false,
             "availableApis": [
-                "Price Feeds",
+                "Price Feed",
                 "VRF",
-                "CCIP"
+                "Proof of Reserve"
             ],
             "monitoringAndAnalytics": [
-                "Dashboard",
-                "Uptime Monitoring",
-                "Node Stats"
+                "Node performance metrics"
             ],
             "additionalFeatures": [
-                "Decentralized data aggregation",
-                "cross-chain communication"
+                "Economic Aggregation",
+                "Cross-chain support"
             ],
             "dataTypes": [
-                "Price Feeds",
-                "Randomness",
-                "Cross-chain Data"
+                "Asset Prices",
+                "Randomness"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Uses decentralized oracle nodes, staking, and reputation system",
+            "economicalSecurityNote": "Audited network, high TVL",
             "sdk": [
-                "JavaScript SDK",
+                "TypeScript",
                 "Solidity"
             ],
             "auditsPerformed": [
-                "Multiple audits by Trail of Bits (2020)",
-                "Least Authority (2021)",
-                "ConsenSys Diligence; ongoing security reviews"
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
             ],
             "actionButtons": [
                 "[POL/USD](https://data.chain.link/streams/pol-usd)",
@@ -5126,74 +5124,74 @@
             "slug": "api3-mainnet",
             "provider": "API3",
             "chain": "mainnet",
-            "technology": "Decentralized Oracle Network",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "technology": "Push & Pull Oracle",
             "starred": false,
             "availableApis": [
-                "Data Feeds",
-                "OEV Rewards"
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
             ],
             "monitoringAndAnalytics": [
-                "Dashboards",
-                "OEV auction monitoring"
+                "Feed health dashboard"
             ],
             "additionalFeatures": [
-                "Oracle Extractable Value rewards",
-                "decentralized data oracles"
+                "Quantum RNG"
             ],
             "dataTypes": [
-                "Price Feeds",
-                "Data Feeds"
+                "Asset Prices",
+                "Randomness"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Community governance with token-based staking and monitoring",
+            "economicalSecurityNote": "First‑party dAPI model",
             "sdk": [
-                "API3 SDK",
-                "REST API"
+                "TypeScript",
+                "Solidity"
             ],
             "auditsPerformed": [
-                "Audited by OpenZeppelin (Dec 2021)",
-                "Trail of Bits (2022)"
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
             ],
             "actionButtons": [
                 "[Docs](https://docs.api3.org/dapps/)"
             ]
         },
         {
-            "slug": "diadata-mainnet",
+            "slug": "dia-mainnet",
             "provider": "DIA",
             "chain": "mainnet",
-            "technology": "Trustless Oracle Provider",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "technology": "DIA",
             "starred": false,
             "availableApis": [
-                "Price Feeds",
-                "Randomness"
+                "REST",
+                "GraphQL"
             ],
             "monitoringAndAnalytics": [
-                "On-chain Data Feeds Monitoring"
+                "Real-time Price Feeds"
             ],
             "additionalFeatures": [
-                "Direct source data",
-                "transparent feeds",
-                "broad asset coverage"
+                "Cross-chain compatibility",
+                "Customizable data feeds",
+                "Customizable data feeds",
+                "Advanced architecture using Layer 2 rollup"
             ],
             "dataTypes": [
-                "Price Feeds",
-                "RWAs",
-                "Randomness"
+                "BTC",
+                "DIA",
+                "USDC"
             ],
             "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Multi-source direct data and decentralized validation",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
             "sdk": [
-                "Solidity SDK"
+                "Solidity",
+                "Vyper"
             ],
             "auditsPerformed": [
-                "Audited by Quantstamp (May 2021)"
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
             ],
             "actionButtons": [
                 "[Docs](https://www.diadata.org/docs/home)"
@@ -5201,36 +5199,34 @@
         },
         {
             "slug": "pyth-mainnet",
-            "provider": "Pyth",
+            "provider": "Pyth Network",
             "chain": "mainnet",
-            "technology": "Decentralized Market Data",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "technology": "Pull Oracle",
             "starred": false,
             "availableApis": [
-                "Price Feeds",
-                "Real-time Market Data"
+                "Asset Price Feeds (incl. ARB/USD)"
             ],
             "monitoringAndAnalytics": [
-                "Explorer",
-                "Price Feed Health"
+                "Real time price feeds"
             ],
             "additionalFeatures": [
-                "High-frequency market data",
-                "first-party data sources"
+                "Cross‑chain via Wormhole"
             ],
             "dataTypes": [
-                "Price Feeds",
-                "Market Data"
+                "Asset Prices",
+                "FX",
+                "Metals"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Supported by over 120 leading financial institutions",
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
             "sdk": [
-                "Solidity SDK"
+                "Solidity",
+                "Python SDK"
             ],
             "auditsPerformed": [
-                "Audited by Trail of Bits (February 2022)"
+                "Trail of Bits (2023)",
+                "Certik (2022)"
             ],
             "actionButtons": [
                 "[Docs](https://docs.pyth.network/price-feeds/getting-started)"
@@ -5240,34 +5236,32 @@
             "slug": "uma-mainnet",
             "provider": "UMA",
             "chain": "mainnet",
-            "technology": "Decentralized Financial Primitives",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "technology": "Optimistic Oracle",
             "starred": false,
             "availableApis": [
-                "Data Feeds",
-                "Optimistic Oracle"
+                "OO API",
+                "Assertion API"
             ],
             "monitoringAndAnalytics": [
-                "Governance Dashboard"
+                "Vote Challenges"
             ],
             "additionalFeatures": [
-                "Optimistic oracle",
-                "economic incentives for data accuracy"
+                "Dispute resolution",
+                "Broad data support"
             ],
             "dataTypes": [
-                "Price Feeds",
-                "Data Feeds"
+                "Anything verifiable on-chain"
             ],
-            "decentralizationModel": "Decentralized",
+            "decentralizationModel": "Optimistic + Governance",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Optimistic oracle design with dispute resolution",
+            "economicalSecurityNote": "Bonding and dispute mechanism",
             "sdk": [
-                "Solidity SDK"
+                "JavaScript",
+                "Solidity"
             ],
             "auditsPerformed": [
-                "Audited by ConsenSys Diligence (Aug 2021)",
-                "Trail of Bits (2022)"
+                "OpenZeppelin",
+                "Sherlock"
             ],
             "actionButtons": [
                 "[Docs](https://docs.umaproject.org/)"
@@ -5278,8 +5272,6 @@
             "provider": "Seda",
             "chain": "mainnet",
             "technology": "Decentralized Oracle Network",
-            "accessPrice": "0",
-            "queryPrice": "0",
             "starred": false,
             "availableApis": [
                 "Price Feeds"
@@ -5308,13 +5300,12 @@
             "slug": "supra-mainnet",
             "provider": "Supra",
             "chain": "mainnet",
-            "technology": "Decentralized Oracle Network",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "technology": "Decentralized Oracle",
             "starred": false,
             "availableApis": [
-                "Price Feeds",
-                "VRF"
+                "Price Feed",
+                "VRF",
+                "REST"
             ],
             "monitoringAndAnalytics": [
                 "Real-time Dashboard"
@@ -5330,7 +5321,7 @@
             "economicalSecurity": true,
             "economicalSecurityNote": "Validator node network with cryptographic proofs",
             "sdk": [
-                "JavaScript SDK"
+                "TypeScript"
             ],
             "auditsPerformed": [
                 "Audited by Halborn Security (2023)"
@@ -5343,40 +5334,38 @@
             "slug": "chainlink-amoy",
             "provider": "Chainlink",
             "chain": "amoy",
-            "technology": "Decentralized Oracle Network",
-            "accessPrice": "0",
-            "queryPrice": "0",
+            "technology": "Decentralized Oracle",
             "starred": false,
             "availableApis": [
-                "Price Feeds",
+                "Price Feed",
                 "VRF",
-                "CCIP"
+                "Proof of Reserve"
             ],
             "monitoringAndAnalytics": [
-                "Dashboard",
-                "Uptime Monitoring",
-                "Node Stats"
+                "Node performance metrics"
             ],
             "additionalFeatures": [
-                "Decentralized data aggregation",
-                "cross-chain communication"
+                "Economic Aggregation",
+                "Cross-chain support"
             ],
             "dataTypes": [
-                "Price Feeds",
-                "Randomness",
-                "Cross-chain Data"
+                "Asset Prices",
+                "Randomness"
             ],
             "decentralizationModel": "Decentralized",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Uses decentralized oracle nodes, staking, and reputation system",
+            "economicalSecurityNote": "Audited network, high TVL",
             "sdk": [
-                "JavaScript SDK",
+                "TypeScript",
                 "Solidity"
             ],
             "auditsPerformed": [
-                "Multiple audits by Trail of Bits (2020)",
-                "Least Authority (2021)",
-                "ConsenSys Diligence; ongoing security reviews"
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
             ],
             "actionButtons": [
                 "[Docs](https://docs.chain.link/)"
