@@ -557,5 +557,1840 @@
             "blocksBehindSla": "0",
             "supportSla": "24/7 priority support"
         }
+    ],
+    "wallet": [
+        {
+            "slug": "1inch",
+            "provider": "1inch",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [],
+            "audit": [],
+            "languages": [
+                "EN",
+                "RU",
+                "JA",
+                "KO",
+                "VI",
+                "PT",
+                "AR",
+                "ZH",
+                "FR",
+                "ES",
+                "KO",
+                "ID",
+                "UK",
+                "HI"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://1inch.io/wallet)"
+            ]
+        },
+        {
+            "slug": "base-wallet",
+            "provider": "Base",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Chrome",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": null,
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.coinbase.com/wallet)"
+            ]
+        },
+        {
+            "slug": "coolwallet",
+            "provider": "Coolwallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "Paid",
+            "support": [
+                "email",
+                "telegram"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ZH"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.coolwallet.io/)"
+            ]
+        },
+        {
+            "slug": "dcent",
+            "provider": "D’CENT",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "Paid",
+            "support": [
+                "email",
+                "telegram"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ZH",
+                "JA"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://dcentwallet.com/)"
+            ]
+        },
+        {
+            "slug": "fxwallet",
+            "provider": "FxWallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "[email](mailto:support@fxwallet.com)"
+            ],
+            "audit": [],
+            "languages": [
+                "EN",
+                "ZH"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.fxwallet.com/)"
+            ]
+        },
+        {
+            "slug": "ledger",
+            "provider": "Ledger SAS",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "Paid",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "Regular audits by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "JA"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.ledger.com/)"
+            ]
+        },
+        {
+            "slug": "metamask",
+            "provider": "Metamask",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Chrome",
+                "Firefox",
+                "Edge",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "October 2024 by ConsenSys Diligence"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "RU",
+                "ZH",
+                "JA"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://metamask.io/)"
+            ]
+        },
+        {
+            "slug": "okxwallet",
+            "provider": "OKX Wallet",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Web",
+                "Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ZH"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.okx.com/wallet)"
+            ]
+        },
+        {
+            "slug": "phantom",
+            "provider": "Phantom",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Chrome",
+                "Firefox",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ES",
+                "FR"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://phantom.app/)"
+            ]
+        },
+        {
+            "slug": "safepal",
+            "provider": "SafePal",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Hardware"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "Paid",
+            "support": [
+                "email",
+                "telegram",
+                "discord"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ZH",
+                "JA"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.safepal.com/)"
+            ]
+        },
+        {
+            "slug": "talisman",
+            "provider": "Talisman",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Chrome",
+                "Firefox",
+                "Edge",
+                "Brave",
+                "Arc"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155",
+                "DOT",
+                "KSM"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "Discord",
+                "GitHub",
+                "Portal"
+            ],
+            "audit": [
+                "Third-party audits"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.talisman.xyz/)"
+            ]
+        },
+        {
+            "slug": "tangem",
+            "provider": "Tangem Wallet",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Hardware",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "DE"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://tangem.com/)"
+            ]
+        },
+        {
+            "slug": "tokenpocket",
+            "provider": "TokenPocket",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Chrome"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "telegram",
+                "discord"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ZH",
+                "JA"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.tokenpocket.pro/)"
+            ]
+        },
+        {
+            "slug": "trezor",
+            "provider": "Trezor (via MetaMask)",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Hardware"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "regular audits"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://trezor.io/)"
+            ]
+        },
+        {
+            "slug": "zerion",
+            "provider": "Zerion",
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Chrome"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "discord"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ES",
+                "FR"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://zerion.io/)"
+            ]
+        },
+        {
+            "slug": "zypto",
+            "provider": "Zypto Wallet",
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": null,
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://zypto.com/)"
+            ]
+        },
+        {
+            "slug": "wigwam",
+            "provider": "Wigwam",
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Chrome",
+                "Desktop"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "[email](mailto:info@wigwam.app)",
+                "[help guides](https://wigwam.app/help)"
+            ],
+            "audit": [
+                "January 2024 by Halborn"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "IT",
+                "JA",
+                "KO",
+                "RU",
+                "UK",
+                "ZH"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://wigwam.app/)"
+            ]
+        },
+        {
+            "slug": "gate",
+            "provider": "Gate",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Chrome",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "telegram",
+                "discord"
+            ],
+            "audit": [
+                "January 2024 by Hacken"
+            ],
+            "languages": [
+                "EN",
+                "ZH"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.gate.com/web3)"
+            ]
+        },
+        {
+            "slug": "unstoppable",
+            "provider": "Unstoppable",
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "HRC-20"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "x",
+                "telegram"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "DE",
+                "KO",
+                "PT",
+                "RU",
+                "ZH",
+                "ES",
+                "TR"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://unstoppable.money/)"
+            ]
+        },
+        {
+            "slug": "zengo",
+            "provider": "Zengo",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "24/7 live chat",
+                "x",
+                "facebook",
+                "telegram"
+            ],
+            "audit": [
+                "annual audit"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](http://zengo.com/)"
+            ]
+        },
+        {
+            "slug": "zengo-pro",
+            "provider": "Zengo Pro",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20"
+            ],
+            "staking": true,
+            "price": "$9.99/mo, $49.99/year",
+            "support": [
+                "email",
+                "24/7 live chat",
+                "x",
+                "facebook",
+                "telegram"
+            ],
+            "audit": [
+                "annual audit"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](http://zengo.com/pro/)"
+            ]
+        },
+        {
+            "slug": "pillar",
+            "provider": "Pillar",
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155",
+                "ERC-7579"
+            ],
+            "staking": false,
+            "price": "Paid(On-chain transactions only)",
+            "support": [
+                "discord",
+                "x",
+                "github"
+            ],
+            "audit": [],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://pillar.fi/)"
+            ]
+        },
+        {
+            "slug": "taho",
+            "provider": "Taho",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": false,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "ERC-721"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "discod",
+                "x",
+                "github"
+            ],
+            "audit": [],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://taho.xyz/)"
+            ]
+        },
+        {
+            "slug": "c98wallet",
+            "provider": "C98wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "SPL",
+                "PRC-20",
+                "VRC-25"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "x",
+                "discord"
+            ],
+            "audit": [
+                "audit with code"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "JA",
+                "PT",
+                "KO",
+                "ZH",
+                "ES",
+                "TR",
+                "ID",
+                "RU",
+                "TH",
+                "VI"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://coin98.com/)"
+            ]
+        },
+        {
+            "slug": "frontier",
+            "provider": "Frontier",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": false,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "ERC-721"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "x",
+                "discord",
+                "telegram"
+            ],
+            "audit": [],
+            "languages": [
+                "EN",
+                "FR",
+                "KO",
+                "ZH",
+                "TR",
+                "TH",
+                "VI"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.frontier.xyz/)"
+            ]
+        },
+        {
+            "slug": "ctrl-wallet",
+            "provider": "Ctrl Wallet",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155",
+                "BEP-20"
+            ],
+            "staking": true,
+            "price": "Paid",
+            "support": [
+                "chatbot"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://ctrl.xyz/)"
+            ]
+        },
+        {
+            "slug": "haha-wallet",
+            "provider": "Haha Wallet",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155",
+                "BEP-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.haha.me/)"
+            ]
+        },
+        {
+            "slug": "kryptogo-wallet",
+            "provider": "Kryptogo Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email",
+                "telegram",
+                "discord",
+                "x"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.kryptogo.com/products/wallet)"
+            ]
+        },
+        {
+            "slug": "gem-wallet",
+            "provider": "Gem Wallet",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "chat on website"
+            ],
+            "audit": [
+                "open to anyone"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://gemwallet.com/)"
+            ]
+        },
+        {
+            "slug": "holdstation",
+            "provider": "Holdstation",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155",
+                "BEP-20"
+            ],
+            "staking": true,
+            "price": "Paid",
+            "support": [
+                "help center on website",
+                "x",
+                "discord"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://holdstation.com)"
+            ]
+        },
+        {
+            "slug": "atomic-wallet",
+            "provider": "Atomic Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "TRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "x",
+                "telegram"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://atomicwallet.io)"
+            ]
+        },
+        {
+            "slug": "saakuru-wallet",
+            "provider": "Saakuru Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "ID",
+                "TL",
+                "VI",
+                "ZH",
+                "JA",
+                "TH",
+                "DE"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.saakuru.com/app)"
+            ]
+        },
+        {
+            "slug": "ecoin-wallet",
+            "provider": "Ecoin Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155",
+                "BEP-20"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "ID",
+                "JA",
+                "PT"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://ecoinwallet.org/)"
+            ]
+        },
+        {
+            "slug": "nufi-wallet",
+            "provider": "Nufi Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "audit internally",
+                "third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://nu.fi/)"
+            ]
+        },
+        {
+            "slug": "coin-wallet",
+            "provider": "Coin Wallet",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "ARC-20",
+                "TRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "regular internal security audit"
+            ],
+            "languages": [
+                "EN",
+                "PL",
+                "FR",
+                "DE",
+                "IT",
+                "DA",
+                "NL",
+                "RU",
+                "TL",
+                "ZH",
+                "AR",
+                "HI",
+                "UR",
+                "KO",
+                "ES",
+                "CS",
+                "FI",
+                "EL",
+                "TR",
+                "PT",
+                "PT-BR",
+                "RO",
+                "JA",
+                "SR",
+                "HU",
+                "SV",
+                "NO",
+                "FA",
+                "UK",
+                "TH",
+                "AF",
+                "MS",
+                "ID",
+                "LV"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://coin.space/)"
+            ]
+        },
+        {
+            "slug": "clave-wallet",
+            "provider": "Clave Wallet",
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155",
+                "BEP-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.getclave.com/)"
+            ]
+        },
+        {
+            "slug": "walletverse",
+            "provider": "Wallet Verse",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "telegram",
+                "discord",
+                "x",
+                "youtube"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://walletverse.io/)"
+            ]
+        },
+        {
+            "slug": "iron-wallet",
+            "provider": "Iron Wallet",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "in-app chat",
+                "discord",
+                "x"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://ironwallet.io/)"
+            ]
+        },
+        {
+            "slug": "kraken-wallet",
+            "provider": "Kraken Wallet",
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "SPL"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.kraken.com/wallet)"
+            ]
+        },
+        {
+            "slug": "backpack",
+            "provider": "Backpack",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "SPL",
+                "ERC-721"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "discord",
+                "chatbot"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://backpack.exchange/)"
+            ]
+        },
+        {
+            "slug": "solflare",
+            "provider": "Solflare",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android",
+                "webapp"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "SPL"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "discord",
+                "chatbot",
+                "x"
+            ],
+            "audit": [
+                "Third-party audits"
+            ],
+            "languages": [
+                "EN",
+                "RU",
+                "ZH",
+                "MALAY",
+                "ID"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Doc](https://docs.solflare.com/solflare)"
+            ]
+        },
+        {
+            "slug": "onekey",
+            "provider": "OneKey",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                " Chrome"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "EIP-721",
+                "EIP-1155",
+                "SPL",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[email](hi@onekey.so)",
+                "support website",
+                "x",
+                "github"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "FR",
+                "PT",
+                "PT-Br",
+                "RU",
+                "DE",
+                "ES",
+                "IT",
+                "ID",
+                "ZH",
+                "KO",
+                "UA",
+                "VI",
+                "HI",
+                "JA"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://onekey.so/)"
+            ]
+        },
+        {
+            "slug": "exodus",
+            "provider": "Exodus",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                " Chrome"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "TRC-20",
+                "SPL",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[x](@ExodusAssist)",
+                "helpdesk",
+                "email"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ES"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.exodus.com/)"
+            ]
+        }
     ]
 }
