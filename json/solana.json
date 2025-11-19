@@ -558,6 +558,82 @@
             "supportSla": "24/7 priority support"
         }
     ],
+    "faucet": [
+        {
+            "slug": "solana-devnet-faucet",
+            "provider": "Solana",
+            "chain": "devnet",
+            "requiresLogin": true,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "0.5/1/2.5/5 SOL",
+            "dripLimitPeriod": "8h",
+            "additionalNotes": [
+                "Requires GitHub authentification",
+                "Maximum 2 requests per 8 hours"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.solana.com/)"
+            ]
+        },
+        {
+            "slug": "quicknode-faucet",
+            "provider": "QuickNode",
+            "chain": "devnet",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": "0.05 SOL",
+            "price": "$0",
+            "dripLimitAmount": "0.05 SOL",
+            "dripLimitPeriod": null,
+            "additionalNotes": [
+                "Testnet tokens for development"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.quicknode.com/solana/devnet)"
+            ]
+        },
+        {
+            "slug": "chainstack-faucet",
+            "provider": "Chainstack",
+            "chain": "devnet",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": "0.08 SOL",
+            "price": "$0",
+            "dripLimitAmount": "Up to 1 SOL",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Requires Chainstack API key",
+                "The address must have transaction history"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.chainstack.com/solana-devnet-faucet)"
+            ]
+        },
+        {
+            "slug": "ghost-faucet",
+            "provider": "GHOST",
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "0.01 SOL",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Testnet tokens for development"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://ghostchain.io/faucet/solana-testnet/)"
+            ]
+        }
+    ],
     "wallet": [
         {
             "slug": "1inch",
