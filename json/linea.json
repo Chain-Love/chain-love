@@ -21,10 +21,11 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens"
+                "tokens",
+                "node"
             ],
             "limitations": [
-                "25 req/sec",
+                "25 reqs/sec",
                 "30M CU/mo"
             ],
             "securityImprovements": [
@@ -69,7 +70,8 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens"
+                "tokens",
+                "node"
             ],
             "limitations": [
                 "300 req/sec"
@@ -120,7 +122,8 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens"
+                "tokens",
+                "node"
             ],
             "limitations": [
                 "custom limits"
@@ -169,7 +172,6 @@
                 "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "limitations": [
-                "100M(payg plan)/6B(deal plan +20% extra credits) API credits ",
                 "1.5K reqs/sec (node API)",
                 "1K reqs/min (advanced API)",
                 "3 projects (personal API tokens)"
@@ -205,7 +207,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "Custom",
-            "queryPrice": "Custom pricing",
+            "queryPrice": "custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -218,7 +220,7 @@
                 "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
             ],
             "limitations": [
-                "up to 900000 req/min"
+                "custom limits"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -250,13 +252,13 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$49/$249/$499/$999/mo, $42/$212/$424$/$849/yearly",
+            "accessPrice": "$49/$249/$499/$999/mo (monthly plan), $42/$212/$424$/$849/mo (yearly plan)",
             "queryPrice": "$0.62/$0.55/$0.53/$0.5 per 1M extra API credits",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "eth",
                 "net",
@@ -306,7 +308,13 @@
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
             "limitations": [
                 "Custom limits",
                 "Unlimited endpoints"
@@ -321,7 +329,9 @@
                 "Console API (Prometheus/Grafana)",
                 "Custom alerting & engineering support"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -353,12 +363,15 @@
                 "1 API key/15 RPS limit"
             ],
             "securityImprovements": [
-                "Domain name protection"
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
             ],
             "monitoringAndAnalytics": [
                 "per-key analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -374,7 +387,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "€20/€200/mo, €220/€2200/yearly",
+            "accessPrice": "€20/€200 (monthly plan), €220/€2200 (yearly plan)",
             "queryPrice": "€5/€1/100K extra requests",
             "uptimeSla": "99.95%",
             "bandwidthSla": null,
@@ -388,9 +401,16 @@
                 "1M/30M reqs/mo",
                 "up to 3/up to 25 API keys"
             ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -520,7 +540,7 @@
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$1499+",
+            "accessPrice": "up to $1499",
             "queryPrice": "$8/1M requests (volume discounts applies)",
             "uptimeSla": null,
             "bandwidthSla": null,
@@ -631,15 +651,16 @@
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
-            "trial": true,
+            "starred": false,
+            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
                 "net"
             ],
             "limitations": [
-                "3M credits/day with throughput 500 credits/sec"
+                "3M credits/day with throughput 500 credits/sec",
+                "1 API Key"
             ],
             "securityImprovements": [
                 "Enterprise-grade security"
@@ -671,7 +692,7 @@
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "eth",
@@ -681,8 +702,8 @@
                 "trace"
             ],
             "limitations": [
-                "15M credits/day with throughput 4k credits/sec",
-                "75M credits/day with throughput 40k credits/sec "
+                "15M/75M credits/day with throughput 4K/40K credits/sec",
+                "5/unlimited API Keys"
             ],
             "securityImprovements": [
                 "Enterprise-grade security"
@@ -712,9 +733,9 @@
             "accessPrice": "Custom",
             "queryPrice": "Custom",
             "uptimeSla": "Custom",
-            "bandwidthSla": "Custom",
-            "blocksBehindSla": "Custom",
-            "starred": true,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "eth",
@@ -724,7 +745,7 @@
                 "trace"
             ],
             "limitations": [
-                "Custom"
+                "custom limits"
             ],
             "securityImprovements": [
                 "Advanced security, support SLA"
@@ -757,15 +778,16 @@
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
-            "trial": true,
+            "starred": false,
+            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
                 "net"
             ],
             "limitations": [
-                "3M credits/day with throughput 500 credits/sec"
+                "3M credits/day with throughput 500 credits/sec",
+                "1 API Key"
             ],
             "securityImprovements": [
                 "Enterprise-grade security"
@@ -797,7 +819,7 @@
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "starred": true,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "eth",
@@ -807,8 +829,8 @@
                 "trace"
             ],
             "limitations": [
-                "15M credits/day with throughput 4k credits/sec",
-                "75M credits/day with throughput 40k credits/sec "
+                "15M/75M credits/day with throughput 4K/40K credits/sec",
+                "5/unlimited API Keys"
             ],
             "securityImprovements": [
                 "Enterprise-grade security"
@@ -838,9 +860,9 @@
             "accessPrice": "Custom",
             "queryPrice": "Custom",
             "uptimeSla": "Custom",
-            "bandwidthSla": "Custom",
-            "blocksBehindSla": "Custom",
-            "starred": true,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
             "trial": false,
             "availableApis": [
                 "eth",
@@ -850,7 +872,7 @@
                 "trace"
             ],
             "limitations": [
-                "Custom"
+                "custom limits"
             ],
             "securityImprovements": [
                 "Advanced security, support SLA"
@@ -879,7 +901,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
-            "queryPrice": "extra $20/1M requests",
+            "queryPrice": "$20/1M extra requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -920,8 +942,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$49/$199/$349",
-            "queryPrice": "extra $15/$12.5/$10 per 1M requests",
+            "accessPrice": "$49/$199/$349/mo (monthly plan), $40/$166/$290/mo (yearly plan)",
+            "queryPrice": "$15/$12.5/$10 per 1M extra requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -936,7 +958,8 @@
             ],
             "limitations": [
                 "250/400/600 RPS",
-                "20M/80M/140M requests"
+                "20M/80M/140M requests",
+                "10,15,20 nodes"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -966,9 +989,9 @@
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$990",
-            "queryPrice": "extra $5/1M requests",
-            "uptimeSla": "99.90%",
+            "accessPrice": "up to $990/mo (monthly plan), up to $825/mo (yearly plan)",
+            "queryPrice": "$5/1M extra requests",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,

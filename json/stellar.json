@@ -19,7 +19,8 @@
             ],
             "limitations": [
                 "3M CUs/mo",
-                "5 reqs/sec"
+                "5 RPS",
+                "1 Test Key"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -63,8 +64,10 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "15-65M/115-365 CUs/mo",
-                "100/200 reqs/sec"
+                "15-65M/115-365M CUs/mo",
+                "100/200 RPS",
+                "1 Test Key",
+                "10 Live Keys"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -152,7 +155,8 @@
             ],
             "limitations": [
                 "3M CUs/mo",
-                "5 reqs/sec"
+                "5 RPS",
+                "1 Test Key"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -196,8 +200,10 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "15-65M/115-365 CUs/mo",
-                "100/200 reqs/sec"
+                "15-65M/115-365M CUs/mo",
+                "100/200 RPS",
+                "1 Test Key",
+                "10 Live Keys"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -272,13 +278,13 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$49/$249/$499/$999/mo, $42/$212/$424$/$849/yearly",
+            "accessPrice": "$49/$249/$499/$999/mo (monthly plan), $42/$212/$424$/$849/mo (yearly plan)",
             "queryPrice": "$0.62/$0.55/$0.53/$0.5 per 1M extra API credits",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "horizon"
             ],
@@ -341,7 +347,9 @@
                 "Console API (Prometheus/Grafana)",
                 "Custom alerting & engineering support"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -357,13 +365,13 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "$49/$249/$499/$999/mo, $42/$212/$424$/$849/yearly",
+            "accessPrice": "$49/$249/$499/$999/mo (monthly plan), $42/$212/$424$/$849/mo (yearly plan)",
             "queryPrice": "$0.62/$0.55/$0.53/$0.5 per 1M extra API credits",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "horizon"
             ],
@@ -426,7 +434,9 @@
                 "Console API (Prometheus/Grafana)",
                 "Custom alerting & engineering support"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -443,7 +453,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
-            "queryPrice": "$0.00",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -454,7 +464,7 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "free 200K API credits/mo",
+                "free 200M API credits/mo",
                 "30 reqs/sec (node API)",
                 "30 reqs/min (advanced API)",
                 "1 project (personal API tokens)"
@@ -502,7 +512,6 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "100M(payg plan)/6B(deal plan +20% extra credits) API credits ",
                 "1.5K reqs/sec (node API)",
                 "1K reqs/min (advanced API)",
                 "3 projects (personal API tokens)"
@@ -538,7 +547,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "Custom",
-            "queryPrice": "Custom pricing",
+            "queryPrice": "custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -549,7 +558,7 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "up to 900000 req/min"
+                "custom limits"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -582,7 +591,7 @@
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$0",
-            "queryPrice": "$0.00",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -593,7 +602,7 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "free 200K API credits/mo",
+                "free 200M API credits/mo",
                 "30 reqs/sec (node API)",
                 "30 reqs/min (advanced API)",
                 "1 project (personal API tokens)"
@@ -641,7 +650,6 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "100M(payg plan)/6B(deal plan +20% extra credits) API credits ",
                 "1.5K reqs/sec (node API)",
                 "1K reqs/min (advanced API)",
                 "3 projects (personal API tokens)"
@@ -677,7 +685,7 @@
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "Custom",
-            "queryPrice": "Custom pricing",
+            "queryPrice": "custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -688,7 +696,7 @@
                 "soroban-rpc"
             ],
             "limitations": [
-                "up to 900000 req/min"
+                "custom limits"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -737,12 +745,15 @@
                 "1 API key/15 RPS limit"
             ],
             "securityImprovements": [
-                "Domain name protection"
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
             ],
             "monitoringAndAnalytics": [
                 "per-key analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -758,7 +769,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "€20/€200/mo, €220/€2200/yearly",
+            "accessPrice": "€20/€200 (monthly plan), €220/€2200 (yearly plan)",
             "queryPrice": "€5/€1/100K extra requests",
             "uptimeSla": "99.95%",
             "bandwidthSla": null,
@@ -773,9 +784,16 @@
                 "1M/30M reqs/mo",
                 "up to 3/up to 25 API keys"
             ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -808,12 +826,15 @@
                 "1 API key/15 RPS limit"
             ],
             "securityImprovements": [
-                "Domain name protection"
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
             ],
             "monitoringAndAnalytics": [
                 "per-key analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -829,7 +850,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "€20/€200/mo, €220/€2200/yearly",
+            "accessPrice": "€20/€200 (monthly plan), €220/€2200 (yearly plan)",
             "queryPrice": "€5/€1/100K extra requests",
             "uptimeSla": "99.95%",
             "bandwidthSla": null,
@@ -844,9 +865,16 @@
                 "1M/30M reqs/mo",
                 "up to 3/up to 25 API keys"
             ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,

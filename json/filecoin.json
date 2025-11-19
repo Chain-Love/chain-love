@@ -7,7 +7,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "Custom",
-            "queryPrice": "Custom pricing",
+            "queryPrice": "custom",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -18,7 +18,7 @@
                 "Advanced Ankr API"
             ],
             "limitations": [
-                "up to 900000 req/min"
+                "custom limits"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -51,7 +51,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
-            "queryPrice": "$0.00",
+            "queryPrice": "$0",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -61,7 +61,7 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "free 200K API credits/mo",
+                "free 200M API credits/mo",
                 "30 reqs/sec (node API)",
                 "30 reqs/min (advanced API)",
                 "1 project (personal API tokens)"
@@ -109,7 +109,6 @@
                 "Advanced Ankr API"
             ],
             "limitations": [
-                "100M(payg plan)/6B(deal plan +20% extra credits) API credits ",
                 "1.5K reqs/sec (node API)",
                 "1K reqs/min (advanced API)",
                 "3 projects (personal API tokens)"
@@ -155,7 +154,7 @@
                 "All read methods + MPoolPush"
             ],
             "limitations": [
-                "100k requests per month"
+                "100K requests per month"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -526,7 +525,7 @@
                 "trace"
             ],
             "limitations": [
-                "100k requests per month"
+                "100K requests per month"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -654,7 +653,7 @@
             "address": null
         },
         {
-            "slug": "drpc-calibnet-enterprise",
+            "slug": "drpc-calibnet-enterprise-recent-state",
             "provider": "dRPC",
             "plan": "Enterprise",
             "nodeType": "Recent-State",
@@ -700,7 +699,7 @@
             "address": null
         },
         {
-            "slug": "drpc-calibnet-pay-as-you-go",
+            "slug": "drpc-calibnet-pay-as-you-go-recent-state",
             "provider": "dRPC",
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
@@ -746,7 +745,7 @@
             "address": null
         },
         {
-            "slug": "drpc-mainnet-enterprise",
+            "slug": "drpc-mainnet-enterprise-recent-state",
             "provider": "dRPC",
             "plan": "Enterprise",
             "nodeType": "Recent-State",
@@ -792,7 +791,7 @@
             "address": null
         },
         {
-            "slug": "drpc-mainnet-pay-as-you-go",
+            "slug": "drpc-mainnet-pay-as-you-go-recent-state",
             "provider": "dRPC",
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
@@ -905,7 +904,7 @@
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "€500/mo, €5500/yearly",
+            "accessPrice": "€500 (monthly plan), €5500 (yearly plan)",
             "queryPrice": "€0.5/100K extra requests",
             "uptimeSla": "99.95%",
             "bandwidthSla": null,
@@ -918,11 +917,17 @@
             "limitations": [
                 "100M req/mo, up to 100 API keys"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
+            ],
             "monitoringAndAnalytics": [
                 "per-key analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -954,12 +959,15 @@
                 "1 API key/15 RPS limit"
             ],
             "securityImprovements": [
-                "Domain name protection"
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
             ],
             "monitoringAndAnalytics": [
                 "per-key analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -975,7 +983,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "€20/€200/mo, €220/€2200/yearly",
+            "accessPrice": "€20/€200 (monthly plan), €220/€2200 (yearly plan)",
             "queryPrice": "€5/€1/100K extra requests",
             "uptimeSla": "99.95%",
             "bandwidthSla": null,
@@ -989,9 +997,16 @@
                 "1M/30M reqs/mo",
                 "up to 3/up to 25 API keys"
             ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,

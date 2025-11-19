@@ -95,10 +95,11 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens"
+                "tokens",
+                "node"
             ],
             "limitations": [
-                "25 req/sec",
+                "25 reqs/sec",
                 "30M CU/mo"
             ],
             "securityImprovements": [
@@ -143,7 +144,8 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens"
+                "tokens",
+                "node"
             ],
             "limitations": [
                 "300 req/sec"
@@ -194,7 +196,8 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens"
+                "tokens",
+                "node"
             ],
             "limitations": [
                 "custom limits"
@@ -244,10 +247,11 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens"
+                "tokens",
+                "node"
             ],
             "limitations": [
-                "25 req/sec",
+                "25 reqs/sec",
                 "30M CU/mo"
             ],
             "securityImprovements": [
@@ -292,7 +296,8 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens"
+                "tokens",
+                "node"
             ],
             "limitations": [
                 "300 req/sec"
@@ -343,7 +348,8 @@
                 "trace",
                 "nft",
                 "transfer",
-                "tokens"
+                "tokens",
+                "node"
             ],
             "limitations": [
                 "custom limits"
@@ -384,7 +390,7 @@
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "eth",
                 "net",
@@ -427,8 +433,8 @@
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -476,7 +482,7 @@
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
-            "trial": true,
+            "trial": false,
             "availableApis": [
                 "eth",
                 "net",
@@ -519,8 +525,8 @@
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": null,
-            "queryPrice": null,
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -557,7 +563,7 @@
             "address": null
         },
         {
-            "slug": "drpc-mainnet-free",
+            "slug": "drpc-mainnet-free-recent-state",
             "provider": "dRPC",
             "plan": "Free",
             "nodeType": "Recent-State",
@@ -597,7 +603,7 @@
             "address": null
         },
         {
-            "slug": "drpc-mainnet-pay-as-you-go",
+            "slug": "drpc-mainnet-pay-as-you-go-recent-state",
             "provider": "dRPC",
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
@@ -646,7 +652,7 @@
             "address": null
         },
         {
-            "slug": "drpc-testnet-free",
+            "slug": "drpc-testnet-free-recent-state",
             "provider": "dRPC",
             "plan": "Free",
             "nodeType": "Recent-State",
@@ -686,7 +692,7 @@
             "address": null
         },
         {
-            "slug": "drpc-testnet-pay-as-you-go",
+            "slug": "drpc-testnet-pay-as-you-go-recent-state",
             "provider": "dRPC",
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
@@ -782,7 +788,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$45/$50/$450/$500",
+            "accessPrice": "$45/$450/mo (monthly plan), $50/$500 (yearly plan)",
             "queryPrice": "$10/1M TU",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
@@ -795,8 +801,7 @@
                 "net"
             ],
             "limitations": [
-                "35M TU/mo with rate limit 20 TU/s",
-                "350M TU/mo with rate limit 300 TU/s"
+                "35M/350M TU/mo with rate limit 20/300 TU/s"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays",
@@ -868,7 +873,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "$45/$50/$450/$500",
+            "accessPrice": "$45/$450/mo (monthly plan), $50/$500 (yearly plan)",
             "queryPrice": "$10/1M TU",
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
@@ -881,8 +886,7 @@
                 "net"
             ],
             "limitations": [
-                "35M TU/mo with rate limit 20 TU/s",
-                "350M TU/mo with rate limit 300 TU/s"
+                "35M/350M TU/mo with rate limit 20/300 TU/s"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays",
@@ -1077,7 +1081,7 @@
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
-            "queryPrice": "extra $20/1M requests",
+            "queryPrice": "$20/1M extra requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1118,8 +1122,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$49/$199/$349",
-            "queryPrice": "extra $15/$12.5/$10 per 1M requests",
+            "accessPrice": "$49/$199/$349/mo (monthly plan), $40/$166/$290/mo (yearly plan)",
+            "queryPrice": "$15/$12.5/$10 per 1M extra requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1134,7 +1138,8 @@
             ],
             "limitations": [
                 "250/400/600 RPS",
-                "20M/80M/140M requests"
+                "20M/80M/140M requests",
+                "10,15,20 nodes"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -1165,7 +1170,7 @@
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$0",
-            "queryPrice": "extra $20/1M requests",
+            "queryPrice": "$20/1M extra requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1206,8 +1211,8 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "$49/$199/$349",
-            "queryPrice": "extra $15/$12.5/$10 per 1M requests",
+            "accessPrice": "$49/$199/$349/mo (monthly plan), $40/$166/$290/mo (yearly plan)",
+            "queryPrice": "$15/$12.5/$10 per 1M extra requests",
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1222,7 +1227,8 @@
             ],
             "limitations": [
                 "250/400/600 RPS",
-                "20M/80M/140M requests"
+                "20M/80M/140M requests",
+                "10,15,20 nodes"
             ],
             "securityImprovements": [
                 "DDoS Protection",

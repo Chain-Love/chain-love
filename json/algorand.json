@@ -19,7 +19,8 @@
             ],
             "limitations": [
                 "3M CUs/mo",
-                "5 reqs/sec"
+                "5 RPS",
+                "1 Test Key"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -64,8 +65,10 @@
                 "net"
             ],
             "limitations": [
-                "15-65M/115-365 CUs/mo",
-                "100/200 reqs/sec"
+                "15-65M/115-365M CUs/mo",
+                "100/200 RPS",
+                "1 Test Key",
+                "10 Live Keys"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -155,7 +158,8 @@
             ],
             "limitations": [
                 "3M CUs/mo",
-                "5 reqs/sec"
+                "5 RPS",
+                "1 Test Key"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -200,8 +204,10 @@
                 "net"
             ],
             "limitations": [
-                "15-65M/115-365 CUs/mo",
-                "100/200 reqs/sec"
+                "15-65M/115-365M CUs/mo",
+                "100/200 RPS",
+                "1 Test Key",
+                "10 Live Keys"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -291,7 +297,8 @@
             ],
             "limitations": [
                 "3M CUs/mo",
-                "5 reqs/sec"
+                "5 RPS",
+                "1 Test Key"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -336,8 +343,10 @@
                 "net"
             ],
             "limitations": [
-                "15-65M/115-365 CUs/mo",
-                "100/200 reqs/sec"
+                "15-65M/115-365M CUs/mo",
+                "100/200 RPS",
+                "1 Test Key",
+                "10 Live Keys"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -427,7 +436,8 @@
             ],
             "limitations": [
                 "3M CUs/mo",
-                "5 reqs/sec"
+                "5 RPS",
+                "1 Test Key"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -472,8 +482,10 @@
                 "net"
             ],
             "limitations": [
-                "15-65M/115-365 CUs/mo",
-                "100/200 reqs/sec"
+                "15-65M/115-365M CUs/mo",
+                "100/200 RPS",
+                "1 Test Key",
+                "10 Live Keys"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -591,21 +603,23 @@
             "address": null
         },
         {
-            "slug": "getblock-mainnet-free",
+            "slug": "getblock-mainnet-free-recent-state",
             "provider": "GetBlock",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
-            "uptimeSla": "99.90%",
+            "uptimeSla": "99.98%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "50K CU",
@@ -620,7 +634,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -636,21 +650,23 @@
             "address": null
         },
         {
-            "slug": "getblock-mainnet-pay-as-you-go",
+            "slug": "getblock-mainnet-pay-as-you-go-recent-state",
             "provider": "GetBlock",
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "$49/$199/$499",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU",
-            "uptimeSla": "99.90%",
+            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
+            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
+            "uptimeSla": "99.98%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "50M/220M/600M CU",
@@ -665,7 +681,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -681,21 +697,23 @@
             "address": null
         },
         {
-            "slug": "getblock-mainnet-enterprise",
+            "slug": "getblock-mainnet-enterprise-recent-state",
             "provider": "GetBlock",
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "Up to $999",
+            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
             "queryPrice": "Custom",
-            "uptimeSla": "99.90%",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "custom limits"
@@ -708,8 +726,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard",
-                "Advanced statistics"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -725,21 +742,23 @@
             "address": null
         },
         {
-            "slug": "getblock-mainnet-dedicated",
+            "slug": "getblock-mainnet-dedicated-recent-state",
             "provider": "GetBlock",
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "Up to $1K",
             "queryPrice": "Custom",
-            "uptimeSla": "99.90%",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "custom limits",
@@ -754,7 +773,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -770,21 +789,23 @@
             "address": null
         },
         {
-            "slug": "getblock-mainnet-pay-as-you-go-archive",
+            "slug": "getblock-mainnet-pay-as-you-go-full-archive",
             "provider": "GetBlock",
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "$49/$199/$499",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU",
-            "uptimeSla": "99.90%",
+            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
+            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
+            "uptimeSla": "99.98%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "50M/220M/600M CU",
@@ -799,7 +820,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -815,21 +836,23 @@
             "address": null
         },
         {
-            "slug": "getblock-mainnet-enterprise-archive",
+            "slug": "getblock-mainnet-enterprise-full-archive",
             "provider": "GetBlock",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "mainnet",
-            "accessPrice": "Up to $999",
+            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
             "queryPrice": "Custom",
-            "uptimeSla": "99.90%",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "custom limits"
@@ -842,8 +865,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard",
-                "Advanced statistics"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -859,21 +881,23 @@
             "address": null
         },
         {
-            "slug": "getblock-mainnet-dedicated-archive",
+            "slug": "getblock-mainnet-dedicated-full-archive",
             "provider": "GetBlock",
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "Up to $1K",
             "queryPrice": "Custom",
-            "uptimeSla": "99.90%",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "custom limits",
@@ -888,7 +912,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -904,21 +928,23 @@
             "address": null
         },
         {
-            "slug": "getblock-testnet-free",
+            "slug": "getblock-testnet-free-recent-state",
             "provider": "GetBlock",
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
-            "uptimeSla": "99.90%",
+            "uptimeSla": "99.98%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "50K CU",
@@ -933,7 +959,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -949,21 +975,23 @@
             "address": null
         },
         {
-            "slug": "getblock-testnet-pay-as-you-go",
+            "slug": "getblock-testnet-pay-as-you-go-recent-state",
             "provider": "GetBlock",
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "$49/$199/$499",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU",
-            "uptimeSla": "99.90%",
+            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
+            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
+            "uptimeSla": "99.98%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "50M/220M/600M CU",
@@ -978,7 +1006,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -994,21 +1022,23 @@
             "address": null
         },
         {
-            "slug": "getblock-testnet-enterprise",
+            "slug": "getblock-testnet-enterprise-recent-state",
             "provider": "GetBlock",
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "Up to $999",
+            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
             "queryPrice": "Custom",
-            "uptimeSla": "99.90%",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "custom limits"
@@ -1021,8 +1051,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard",
-                "Advanced statistics"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -1038,21 +1067,23 @@
             "address": null
         },
         {
-            "slug": "getblock-testnet-dedicated",
+            "slug": "getblock-testnet-dedicated-recent-state",
             "provider": "GetBlock",
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "Up to $1K",
             "queryPrice": "Custom",
-            "uptimeSla": "99.90%",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "custom limits",
@@ -1067,7 +1098,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -1083,21 +1114,23 @@
             "address": null
         },
         {
-            "slug": "getblock-testnet-pay-as-you-go-archive",
+            "slug": "getblock-testnet-pay-as-you-go-full-archive",
             "provider": "GetBlock",
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "testnet",
-            "accessPrice": "$49/$199/$499",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU",
-            "uptimeSla": "99.90%",
+            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
+            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
+            "uptimeSla": "99.98%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "50M/220M/600M CU",
@@ -1112,7 +1145,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -1128,21 +1161,23 @@
             "address": null
         },
         {
-            "slug": "getblock-testnet-enterprise-archive",
+            "slug": "getblock-testnet-enterprise-full-archive",
             "provider": "GetBlock",
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "testnet",
-            "accessPrice": "Up to $999",
+            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
             "queryPrice": "Custom",
-            "uptimeSla": "99.90%",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "custom limits"
@@ -1155,8 +1190,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard",
-                "Advanced statistics"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -1172,21 +1206,23 @@
             "address": null
         },
         {
-            "slug": "getblock-testnet-dedicated-archive",
+            "slug": "getblock-testnet-dedicated-full-archive",
             "provider": "GetBlock",
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "testnet",
             "accessPrice": "Up to $1K",
             "queryPrice": "Custom",
-            "uptimeSla": "99.90%",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
             "availableApis": [
                 "Algorand Native API",
                 "Indexer API",
-                "Algo API"
+                "Algo API",
+                "NFTs",
+                "WebSockets"
             ],
             "limitations": [
                 "custom limits",
@@ -1201,7 +1237,7 @@
             ],
             "monitoringAndAnalytics": [
                 "Real-time performance tracking",
-                "Algorand Metrics Dashboard"
+                "Advanced monitoring and analytics"
             ],
             "regions": [
                 "Global"
@@ -1777,12 +1813,15 @@
                 "1 API key/15 RPS limit"
             ],
             "securityImprovements": [
-                "Domain name protection"
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
             ],
             "monitoringAndAnalytics": [
                 "per-key analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -1799,7 +1838,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "€20/€200/mo, €220/€2200/yearly",
+            "accessPrice": "€20/€200 (monthly plan), €220/€2200 (yearly plan)",
             "queryPrice": "€5/€1/100K extra requests",
             "uptimeSla": "99.95%",
             "bandwidthSla": null,
@@ -1812,9 +1851,16 @@
                 "1M/30M reqs/mo",
                 "up to 3/up to 25 API keys"
             ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -1831,7 +1877,7 @@
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
-            "accessPrice": "€500/mo, €5500/yearly",
+            "accessPrice": "€500 (monthly plan), €5500 (yearly plan)",
             "queryPrice": "€0.5/100K extra requests",
             "uptimeSla": "99.95%",
             "bandwidthSla": null,
@@ -1843,11 +1889,17 @@
             "limitations": [
                 "100M req/mo, up to 100 API keys"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
+            ],
             "monitoringAndAnalytics": [
                 "per-key analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -1870,13 +1922,23 @@
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
             "limitations": [
                 "Unlimited reqs/mo, no API keys - access via personal credentials"
             ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -1908,12 +1970,15 @@
                 "1 API key/15 RPS limit"
             ],
             "securityImprovements": [
-                "Domain name protection"
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
             ],
             "monitoringAndAnalytics": [
                 "per-key analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -1930,7 +1995,7 @@
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "€20/€200/mo, €220/€2200/yearly",
+            "accessPrice": "€20/€200 (monthly plan), €220/€2200 (yearly plan)",
             "queryPrice": "€5/€1/100K extra requests",
             "uptimeSla": "99.95%",
             "bandwidthSla": null,
@@ -1943,9 +2008,16 @@
                 "1M/30M reqs/mo",
                 "up to 3/up to 25 API keys"
             ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -1962,7 +2034,7 @@
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "testnet",
-            "accessPrice": "€500/mo, €5500/yearly",
+            "accessPrice": "€500 (monthly plan), €5500 (yearly plan)",
             "queryPrice": "€0.5/100K extra requests",
             "uptimeSla": "99.95%",
             "bandwidthSla": null,
@@ -1974,11 +2046,17 @@
             "limitations": [
                 "100M req/mo, up to 100 API keys"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
+            ],
             "monitoringAndAnalytics": [
                 "per-key analytics"
             ],
-            "regions": null,
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -2001,13 +2079,23 @@
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
             "limitations": [
                 "Unlimited reqs/mo, no API keys - access via personal credentials"
             ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
