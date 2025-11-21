@@ -1,17 +1,65 @@
-slug,tag,provider,toolType,price,description,starred,actionButtons
-base-onchain-kit,"[""Onchain Commerce"", ""NFT minting"",""Funding flow"", ""Social profile"" ]",OnchainKit,SDK,0,go-to SDK for building onchain applications with pre-built templates,TRUE,"[""[Docs](https://docs.base.org/onchainkit/getting-started/)""]"
-base-agent-kit,"[""AI agents""]",AgentKit,Tool,0,Toolkit enabling AI agents to interact with blockchain networks with secure wallet management and comprehensive onchain capabilities,TRUE,"[""[Docs](https://docs.cdp.coinbase.com/agent-kit/welcome)""]"
-base-mini-kit,"[""React"", ""Mini apps"", ""Farcaster""]",MiniKit,Tool,0,Official SDK for building Mini Apps that work seamlessly across Base App and other Farcaster clients,TRUE,"[""[Docs](https://docs.base.org/mini-apps/technical-reference/minikit/overview)""]"
-base-account-smart-wallet,"[""Payments"", ""Wallet"", ""Multichain""]",Smart Wallet,SDK,0,With the Base Account SDK you can connect to over one hundred thousand users and unlock authentication and payments with just a few lines of code,TRUE,"[""[Docs](https://docs.base.org/base-account/overview/what-is-base-account)""]"
-base-paymaster,"[""Account Abstraction""]",Paymaster,API,0,Account abstraction endpoints to send transactions and sponsor gas,TRUE,"[""[Docs](https://docs.cdp.coinbase.com/paymaster/introduction/welcome)""]"
-base-onchain-test-kit,"[""Test"", ""Framework""]",OnchainTestKit,Framework,0,End-to-end testing framework for blockchain apps,TRUE,"[""[Docs](https://docs.base.org/onchainkit/guides/testing-with-onchaintestkit)""]"
-base-appchains,"[""Blockspace"", ""Appchains""]",Appchains,Appchain,Custom,Provides dedicated high speed blockspace-meaning your app's performance won't be affected by network congestion from other applications,TRUE,"[""[Docs](https://docs.cdp.coinbase.com/base-appchains/introduction/welcome)""]"
-thirdweb,,!provider:thirdweb,,Custom,,FALSE,
-biconomy,,!provider:biconomy,,Custom,,FALSE,
-base-safe,"[""Account Abstraction"", ""Wallet""]",Safe,SDK/API,0,"Provides modular smart account infrastructure and account abstraction stack via their Safe Account Abstraction SDK, API, and Protocol.",FALSE,"[""[Docs](https://docs.safe.global/sdk/overview)""]"
-base-stackup,"[""Account Abstraction"", ""Wallet""]",Stackup,Tool,0,Provides smart account tooling for building account abstraction within your apps. They offer Paymaster and Bundler APIs for sponsoring gas and sending account abstraction transactions.,FALSE,"[""[Docs](https://docs.stackup.fi/)""]"
-walletkit,"[""JavaScript"", ""Wallet""]",WalletKit,SDK,0,"SDK for wallet generation, backup/recovery, and secure interaction in blockchain apps",FALSE,"[""[Website](https://walletkit.com/)""]"
-base-sequence,"[""Payments"", ""Wallet""]",Sequence,SDK/API,0,"The modular crypto infrastructure stack that unifies wallets, 1-click cross-chain payments, and real-time data layers across EVMs.",FALSE,"[""[Docs](https://docs.sequence.xyz/home)""]"
-privy,"[""Authentication"", ""Wallet""]",Privy,API,0,"Securely spin up whitelabel wallets, sign transactions, and integrate onchain infrastructure-all through one simple API",FALSE,"[""[Docs](https://docs.privy.io/welcome)""]"
-crossmint,"[""Payments"", ""Authentication"", ""Wallet""]",Crossmint,SDK/API,0,"Deploy smart contracts, create email wallets, enable credit-card and cross chain payments, and use APIs to create, distribute, sell, store, and edit NFTs. ",FALSE,"[""[Docs](http://docs.crossmint.com/introduction/about-crossmint)""]"
-pimlico,"[""Account Abstraction"", ""Wallet""]",Pilmico,Tool,,"Provides an infrastructure platform that makes building smart accounts simpler. If you are developing, an ERC-4337 smart account, they provide bundlers, verifying paymasters, ERC-20 paymasters,",FALSE,"[""[Docs](https://docs.pimlico.io/)""]"
+slug,provider,toolType,tag,price,description,starred,actionButtons
+base-onchain-kit,"[""Onchain Commerce"",""NFT minting"",""Funding flow"",""Social profile"" ]",OnchainKit,SDK,$0,go-to SDK for building onchain applications with pre-built templates,TRUE,"[""[Docs](https://docs.base.org/onchainkit/getting-started/)""]"
+base-agent-kit,"[""AI agents""]",AgentKit,Tool,$0,Toolkit enabling AI agents to interact with blockchain networks with secure wallet management and comprehensive onchain capabilities,TRUE,"[""[Docs](https://docs.cdp.coinbase.com/agent-kit/welcome)""]"
+base-mini-kit,"[""React"",""Mini apps"",""Farcaster""]",MiniKit,Tool,$0,Official SDK for building Mini Apps that work seamlessly across Base App and other Farcaster clients,TRUE,"[""[Docs](https://docs.base.org/mini-apps/technical-reference/minikit/overview)""]"
+base-account-smart-wallet,"[""Payments"",""Wallet"",""Multichain""]",Smart Wallet,SDK,$0,With the Base Account SDK you can connect to over one hundred thousand users and unlock authentication and payments with just a few lines of code,TRUE,"[""[Docs](https://docs.base.org/base-account/overview/what-is-base-account)""]"
+base-paymaster,"[""Account Abstraction""]",Paymaster,API,$0,Account abstraction endpoints to send transactions and sponsor gas,TRUE,"[""[Docs](https://docs.cdp.coinbase.com/paymaster/introduction/welcome)""]"
+base-onchain-test-kit,"[""Test"",""Framework""]",OnchainTestKit,Framework,$0,End-to-end testing framework for blockchain apps,TRUE,"[""[Docs](https://docs.base.org/onchainkit/guides/testing-with-onchaintestkit)""]"
+base-appchains,"[""Blockspace"",""Appchains""]",Appchains,Appchain,Custom,Provides dedicated high speed blockspace-meaning your app's performance won't be affected by network congestion from other applications,TRUE,"[""[Docs](https://docs.cdp.coinbase.com/base-appchains/introduction/welcome)""]"
+thirdweb,,!provider:thirdweb,,,,,,
+biconomy,,!provider:biconomy,,,,,,
+base-safe,"[""Account Abstraction"",""Wallet""]",Safe,SDK/API,$0,"Provides modular smart account infrastructure and account abstraction stack via their Safe Account Abstraction SDK, API, and Protocol.",FALSE,"[""[Docs](https://docs.safe.global/sdk/overview)""]"
+base-stackup,"[""Account Abstraction"",""Wallet""]",Stackup,Tool,$0,Provides smart account tooling for building account abstraction within your apps. They offer Paymaster and Bundler APIs for sponsoring gas and sending account abstraction transactions.,FALSE,"[""[Docs](https://docs.stackup.fi/)""]"
+walletkit,"[""JavaScript"",""Wallet""]",WalletKit,SDK,$0,"SDK for wallet generation, backup/recovery, and secure interaction in blockchain apps",FALSE,"[""[Website](https://walletkit.com/)""]"
+base-sequence,"[""Payments"",""Wallet""]",Sequence,SDK/API,$0,"The modular crypto infrastructure stack that unifies wallets, 1-click cross-chain payments, and real-time data layers across EVMs.",FALSE,"[""[Docs](https://docs.sequence.xyz/home)""]"
+privy,"[""Authentication"",""Wallet""]",Privy,API,$0,"Securely spin up whitelabel wallets, sign transactions, and integrate onchain infrastructure-all through one simple API",FALSE,"[""[Docs](https://docs.privy.io/welcome)""]"
+crossmint,"[""Payments"",""Authentication"",""Wallet""]",Crossmint,SDK/API,$0,"Deploy smart contracts, create email wallets, enable credit-card and cross chain payments, and use APIs to create, distribute, sell, store, and edit NFTs. ",FALSE,"[""[Docs](http://docs.crossmint.com/introduction/about-crossmint)""]"
+pimlico,"[""Account Abstraction"",""Wallet""]",Pilmico,Tool,,"Provides an infrastructure platform that makes building smart accounts simpler. If you are developing, an ERC-4337 smart account, they provide bundlers, verifying paymasters, ERC-20 paymasters,",FALSE,"[""[Docs](https://docs.pimlico.io/)""]"
+smartmuv,!provider:smartmuv,,,,,,
+goldsky,!provider:goldsky,,,,,,
+waffle,!provider:waffle,,,,,,
+typeChain,!provider:typeChain,,,,,,
+anyalt,!provider:anyalt,,,,,,
+huffmate,!provider:huffmate,,,,,,
+krebit,!provider:krebit,,,,,,
+alchemy-smart-wallet,!provider:alchemy-smart-wallet,,,,,,
+arka,!provider:arka,,,,,,
+alchemy-bundler,!provider:alchemy-bundler,,,,,,
+alchemy-gas-manager,!provider:alchemy-gas-manager,,,,,,
+aa-bundler,!provider:aa-bundler,,,,,,
+alchemy-sdk,!provider:alchemy-sdk,,,,,,
+vscode,!provider:vscode,,,,,,
+ethereum-etl,!provider:ethereum-etl,,,,,,
+mosaia,!provider:mosaia,,,,,,
+superchain-dev-console,!provider:superchain-dev-console,,,,,,
+apillon,!provider:apillon,,,,,,
+trianle,!provider:triangle,,,,,,
+ziion-linux-distro,!provider:ziion-linux-distro,,,,,,
+dapprovals,!provider:dapprovals,,,,,,
+connectkit,!provider:connectkit,,,,,,
+ape-worx-evm-trace,!provider:ape-worx-evm-trace,,,,,,
+cyvers,!provider:cyvers,,,,,,
+failsafe,!provider:failsafe,,,,,,
+blowfish,!provider:blowfish,,,,,,
+venly,!provider:venly,,,,,,
+decubate-tms,!provider:decubate-tms,,,,,,
+univoucher,!provider:univoucher,,,,,,
+mobula,!provider:mobula,,,,,,
+beaconcha.in,!provider:beaconcha.in,,,,,,
+hela,!provider:hela,,,,,,
+polyzoa,!provider:polyzoa,,,,,,
+codeslaw,!provider:codeslaw,,,,,,
+replit,!provider:replit,,,,,,
+toolblox,!provider:toolblox,,,,,,
+coinsdo,!provider:coinsdo,,,,,,
+mpcvault,!provider:mpcvault,,,,,,
+chainide,!provider:chainide,,,,,,
+tatum,!provider:tatum,,,,,,
+datacurve,!provider:datacurve,,,,,,
+dappkit,!provider:dappkit,,,,,,
+alchemy-sdk,!provider:alchemy-sdk,,,,,,
+kurtosis,!provider:kurtosis,,,,,,
+orderly-network,!provider:orderly-network,,,,,,
+quicknode-sdk,!provider:quicknode-sdk,,,,,,
+vyper,!provider:vyper,,,,,,
+curvegrid,!provider:curvegrid,,,,,,
