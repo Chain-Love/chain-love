@@ -19316,24 +19316,6 @@
     ],
     "faucet": [
         {
-            "slug": "quicknode-sepolia-faucet",
-            "provider": "QuickNode",
-            "chain": "sepolia",
-            "requiresLogin": true,
-            "hasCaptcha": false,
-            "requiredMainnetBalance": "0.001 ETH",
-            "price": "$0",
-            "dripLimitAmount": "0.001 ETH",
-            "dripLimitPeriod": null,
-            "additionalNotes": [
-                "Testnet tokens for development"
-            ],
-            "starred": false,
-            "actionButtons": [
-                "[Get ETH](https://faucet.quicknode.com/arbitrum/sepolia)"
-            ]
-        },
-        {
             "slug": "alchemy-sepolia-faucet",
             "provider": "Alchemy",
             "chain": "sepolia",
@@ -19341,31 +19323,138 @@
             "hasCaptcha": true,
             "requiredMainnetBalance": "0.001 ETH",
             "price": "$0",
-            "dripLimitAmount": null,
-            "dripLimitPeriod": null,
-            "additionalNotes": null,
+            "dripLimitAmount": "0.1 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Requires mainnet activity",
+                "Requires to have a low enough existing balance since wallets with a significant amount of testnet tokens are not eligible for additional claims"
+            ],
             "starred": false,
             "actionButtons": [
-                "[Get ETH](https://www.alchemy.com/faucets/arbitrum-sepolia)"
+                "[Faucet](https://www.alchemy.com/faucets/arbitrum-sepolia)"
             ]
         },
         {
-            "slug": "chainlink-sepolia-faucet",
+            "slug": "chainlink-sepolia-faucet-eth",
             "provider": "Chainlink",
             "chain": "sepolia",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": "1 LINK",
             "price": "$0",
-            "dripLimitAmount": null,
-            "dripLimitPeriod": null,
+            "dripLimitAmount": "0.5 ETH",
+            "dripLimitPeriod": "2h",
             "additionalNotes": [
-                "One request for native tokens at time",
-                "Also provides LINK"
+                "One request for native tokens at time"
             ],
             "starred": false,
             "actionButtons": [
-                "[Get ETH](https://faucets.chain.link/arbitrum-sepolia)"
+                "[Faucet](https://faucets.chain.link/arbitrum-sepolia)"
+            ]
+        },
+        {
+            "slug": "circle-faucet-usdc",
+            "provider": "Circle",
+            "chain": "sepolia",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "10 USDC",
+            "dripLimitPeriod": "1h",
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.circle.com/)"
+            ]
+        },
+        {
+            "slug": "ethglobal-sepolia-faucet",
+            "provider": "EthGlobal",
+            "chain": "sepolia",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$69/$99/$129",
+            "dripLimitAmount": "0.05 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Available only on paid plans"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://ethglobal.com/faucet/arbitrum-sepolia-421614)"
+            ]
+        },
+        {
+            "slug": "getblock-sepolia-faucet",
+            "provider": "GetBlock",
+            "chain": "sepolia",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": "0.005 ETH",
+            "price": "$0",
+            "dripLimitAmount": "0.1 ETH",
+            "dripLimitPeriod": null,
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://getblock.io/faucet/arb-sepolia/)"
+            ]
+        },
+        {
+            "slug": "learnweb3-sepolia-faucet",
+            "provider": "LearnWeb3",
+            "chain": "sepolia",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "0.01 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Github authentication required"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://learnweb3.io/faucets/arbitrum_sepolia/)"
+            ]
+        },
+        {
+            "slug": "quicknode-sepolia-faucet",
+            "provider": "QuickNode",
+            "chain": "sepolia",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": "0.001 ETH",
+            "price": "$0",
+            "dripLimitAmount": "0.05 ETH",
+            "dripLimitPeriod": "12h",
+            "additionalNotes": [
+                "Requires transaction history"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.quicknode.com/arbitrum/sepolia)"
+            ]
+        },
+        {
+            "slug": "stakely-mainnet-faucet",
+            "provider": "Stakely",
+            "chain": "mainnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "0.000005 ETH",
+            "dripLimitPeriod": null,
+            "additionalNotes": [
+                "Requires to make the tweet in X about requesting tokens",
+                "Need to have low or zero mainnet balance for asking mainnet tokens"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://stakely.io/faucet/arbitrum-eth)"
             ]
         }
     ],

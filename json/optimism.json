@@ -8980,7 +8980,10 @@
             "price": "$0",
             "dripLimitAmount": "0.1 ETH",
             "dripLimitPeriod": "72h",
-            "additionalNotes": null,
+            "additionalNotes": [
+                "Requires mainnet activity",
+                "Requires to have a low enough existing balance since wallets with a significant amount of testnet tokens are not eligible for additional claims"
+            ],
             "starred": false,
             "actionButtons": [
                 "[Faucet](https://www.alchemy.com/faucets/optimism-sepolia)"
@@ -9101,7 +9104,7 @@
             "dripLimitAmount": "0.05 ETH",
             "dripLimitPeriod": "12h",
             "additionalNotes": [
-                "Testnet tokens for development"
+                "Requires transaction history"
             ],
             "starred": false,
             "actionButtons": [
