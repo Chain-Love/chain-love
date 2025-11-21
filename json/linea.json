@@ -6149,19 +6149,19 @@
             ]
         },
         {
-            "slug": "iron-wallet",
-            "provider": "Iron Wallet",
-            "openSource": true,
+            "slug": "fluvi-wallet",
+            "provider": "Fluvi Wallet",
+            "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
                 "iOS",
                 "Android"
             ],
             "custodial": false,
-            "mfa": false,
+            "mfa": true,
             "msig": false,
             "hardware": true,
-            "keyExport": true,
+            "keyExport": false,
             "native": false,
             "evm": true,
             "tendermint": false,
@@ -6175,13 +6175,10 @@
                 "TRC-10",
                 "BRC-20"
             ],
-            "staking": false,
+            "staking": true,
             "price": "$0",
             "support": [
-                "email",
-                "in-app chat",
-                "discord",
-                "x"
+                "email"
             ],
             "audit": [
                 "audit by third parties"
@@ -6191,49 +6188,59 @@
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://ironwallet.io/)"
+                "[Website](https://fluviwallet.xyz/)"
             ]
         },
         {
-            "slug": "pier-wallet",
-            "provider": "Pier Wallet",
-            "openSource": false,
+            "slug": "wigwam",
+            "provider": "Wigwam",
+            "openSource": true,
             "supportedPlatforms": [
-                "Browser Extension",
                 "iOS",
-                "Android"
+                "Android",
+                "Chrome",
+                "Desktop"
             ],
             "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
             "keyExport": true,
             "native": false,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "EIP-4337"
+                "ERC-20",
+                "ERC-721"
             ],
             "staking": false,
             "price": "$0",
             "support": [
-                "email",
-                "discord"
+                "[email](mailto:info@wigwam.app)",
+                "[help guides](https://wigwam.app/help)"
             ],
             "audit": [
-                "not availale"
+                "January 2024 by Halborn"
             ],
             "languages": [
-                "EN"
+                "EN",
+                "ES",
+                "FR",
+                "IT",
+                "JA",
+                "KO",
+                "RU",
+                "UK",
+                "ZH"
             ],
             "starred": false,
             "actionButtons": [
-                "[DOC](https://docs.pierwallet.com/)"
+                "[Website](https://wigwam.app/)"
             ]
         },
         {
-            "slug": "stackup",
-            "provider": "Stackup",
+            "slug": "coinomi-wallet",
+            "provider": "Coinomi Wallet",
             "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -6245,26 +6252,133 @@
             "msig": false,
             "hardware": false,
             "keyExport": true,
-            "native": false,
-            "evm": true,
+            "native": true,
+            "evm": false,
             "tendermint": false,
             "tokensSupport": [
-                "EIP-4337"
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
             ],
-            "staking": false,
+            "staking": true,
             "price": "$0",
             "support": [
-                "email"
+                "email",
+                "discord",
+                "telegram"
             ],
             "audit": [
-                "not availale"
+                "audit by third parties"
             ],
             "languages": [
-                "EN"
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO",
+                "UR",
+                "HR",
+                "MY"
             ],
             "starred": false,
             "actionButtons": [
-                "[Doc](https://docs.stackup.fi/docs/stackup-essentials-guide)"
+                "[Website](https://www.coinomi.com/en/)"
+            ]
+        },
+        {
+            "slug": "math-wallet",
+            "provider": "Math Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "x",
+                "telegram"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.mathwallet.org/)"
             ]
         }
     ],

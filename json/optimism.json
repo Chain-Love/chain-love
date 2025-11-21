@@ -10884,8 +10884,87 @@
             ]
         },
         {
-            "slug": "iron-wallet",
-            "provider": "Iron Wallet",
+            "slug": "binance-wallet",
+            "provider": "Binance Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20",
+                "ERC-404",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "24/7 live chat"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO",
+                "UR",
+                "HR",
+                "MY",
+                "SI",
+                "LO",
+                "DA",
+                "HU",
+                "RO",
+                "FIL"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.binance.com/en/web3wallet)"
+            ]
+        },
+        {
+            "slug": "blocto-wallet",
+            "provider": "Blocto Wallet",
             "openSource": true,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -10893,10 +10972,104 @@
                 "Android"
             ],
             "custodial": false,
-            "mfa": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "4337"
+            ],
+            "staking": true,
+            "price": "Paid",
+            "support": [
+                "email",
+                "x",
+                "discord",
+                "telegram",
+                "webform"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "RU",
+                "JA",
+                "KO",
+                "PT",
+                "ZH",
+                "ES",
+                "KO"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://blocto.io/)"
+            ]
+        },
+        {
+            "slug": "ownbit",
+            "provider": "Ownbit",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "x",
+                "telegram"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "NL",
+                "FL"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://ownbit.io/en/)"
+            ]
+        },
+        {
+            "slug": "fluvi-wallet",
+            "provider": "Fluvi Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
             "msig": false,
             "hardware": true,
-            "keyExport": true,
+            "keyExport": false,
             "native": false,
             "evm": true,
             "tendermint": false,
@@ -10910,13 +11083,10 @@
                 "TRC-10",
                 "BRC-20"
             ],
-            "staking": false,
+            "staking": true,
             "price": "$0",
             "support": [
-                "email",
-                "in-app chat",
-                "discord",
-                "x"
+                "email"
             ],
             "audit": [
                 "audit by third parties"
@@ -10926,49 +11096,12 @@
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://ironwallet.io/)"
+                "[Website](https://fluviwallet.xyz/)"
             ]
         },
         {
-            "slug": "pier-wallet",
-            "provider": "Pier Wallet",
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": false,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "EIP-4337"
-            ],
-            "staking": false,
-            "price": "$0",
-            "support": [
-                "email",
-                "discord"
-            ],
-            "audit": [
-                "not availale"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false,
-            "actionButtons": [
-                "[DOC](https://docs.pierwallet.com/)"
-            ]
-        },
-        {
-            "slug": "stackup",
-            "provider": "Stackup",
+            "slug": "coinomi-wallet",
+            "provider": "Coinomi Wallet",
             "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -10980,26 +11113,133 @@
             "msig": false,
             "hardware": false,
             "keyExport": true,
-            "native": false,
-            "evm": true,
+            "native": true,
+            "evm": false,
             "tendermint": false,
             "tokensSupport": [
-                "EIP-4337"
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
             ],
-            "staking": false,
+            "staking": true,
             "price": "$0",
             "support": [
-                "email"
+                "email",
+                "discord",
+                "telegram"
             ],
             "audit": [
-                "not availale"
+                "audit by third parties"
             ],
             "languages": [
-                "EN"
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO",
+                "UR",
+                "HR",
+                "MY"
             ],
             "starred": false,
             "actionButtons": [
-                "[Doc](https://docs.stackup.fi/docs/stackup-essentials-guide)"
+                "[Website](https://www.coinomi.com/en/)"
+            ]
+        },
+        {
+            "slug": "math-wallet",
+            "provider": "Math Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "x",
+                "telegram"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.mathwallet.org/)"
             ]
         }
     ],

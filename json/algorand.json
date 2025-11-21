@@ -4618,9 +4618,9 @@
             ]
         },
         {
-            "slug": "iron-wallet",
-            "provider": "Iron Wallet",
-            "openSource": true,
+            "slug": "coinomi-wallet",
+            "provider": "Coinomi Wallet",
+            "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
                 "iOS",
@@ -4629,10 +4629,10 @@
             "custodial": false,
             "mfa": false,
             "msig": false,
-            "hardware": true,
+            "hardware": false,
             "keyExport": true,
-            "native": false,
-            "evm": true,
+            "native": true,
+            "evm": false,
             "tendermint": false,
             "tokensSupport": [
                 "ERC-20",
@@ -4644,23 +4644,99 @@
                 "TRC-10",
                 "BRC-20"
             ],
-            "staking": false,
+            "staking": true,
             "price": "$0",
             "support": [
                 "email",
-                "in-app chat",
                 "discord",
-                "x"
+                "telegram"
             ],
             "audit": [
                 "audit by third parties"
             ],
             "languages": [
-                "EN"
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO",
+                "UR",
+                "HR",
+                "MY"
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://ironwallet.io/)"
+                "[Website](https://www.coinomi.com/en/)"
+            ]
+        },
+        {
+            "slug": "cwallet",
+            "provider": "Cwallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "24/7 live chat",
+                "x",
+                "discord",
+                "telegram",
+                "webform"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "24 Others"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://cwallet.com/)"
             ]
         }
     ],

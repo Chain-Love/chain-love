@@ -6358,9 +6358,9 @@
             ]
         },
         {
-            "slug": "iron-wallet",
-            "provider": "Iron Wallet",
-            "openSource": true,
+            "slug": "coinomi-wallet",
+            "provider": "Coinomi Wallet",
+            "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
                 "iOS",
@@ -6369,10 +6369,10 @@
             "custodial": false,
             "mfa": false,
             "msig": false,
-            "hardware": true,
+            "hardware": false,
             "keyExport": true,
-            "native": false,
-            "evm": true,
+            "native": true,
+            "evm": false,
             "tendermint": false,
             "tokensSupport": [
                 "ERC-20",
@@ -6384,28 +6384,55 @@
                 "TRC-10",
                 "BRC-20"
             ],
-            "staking": false,
+            "staking": true,
             "price": "$0",
             "support": [
                 "email",
-                "in-app chat",
                 "discord",
-                "x"
+                "telegram"
             ],
             "audit": [
                 "audit by third parties"
             ],
             "languages": [
-                "EN"
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO",
+                "UR",
+                "HR",
+                "MY"
             ],
             "starred": false,
             "actionButtons": [
-                "[Website](https://ironwallet.io/)"
+                "[Website](https://www.coinomi.com/en/)"
             ]
         },
         {
-            "slug": "pier-wallet",
-            "provider": "Pier Wallet",
+            "slug": "math-wallet",
+            "provider": "Math Wallet",
             "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -6417,27 +6444,60 @@
             "msig": true,
             "hardware": false,
             "keyExport": true,
-            "native": false,
+            "native": true,
             "evm": true,
-            "tendermint": false,
+            "tendermint": true,
             "tokensSupport": [
-                "EIP-4337"
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
             ],
-            "staking": false,
+            "staking": true,
             "price": "$0",
             "support": [
                 "email",
-                "discord"
+                "x",
+                "telegram"
             ],
             "audit": [
-                "not availale"
+                "audit by third parties"
             ],
             "languages": [
-                "EN"
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO"
             ],
             "starred": false,
             "actionButtons": [
-                "[DOC](https://docs.pierwallet.com/)"
+                "[Website](https://www.mathwallet.org/)"
             ]
         }
     ],
