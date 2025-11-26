@@ -13,7 +13,8 @@
     "devTool": { "type": "array", "items": { "$ref": "#/$defs/devTool" } },
     "faucet": { "type": "array", "items": { "$ref": "#/$defs/faucet" } },
     "analytic": { "type": "array", "items": { "$ref": "#/$defs/analytic" } },
-    "wallet": { "type": "array", "items": { "$ref": "#/$defs/wallet" } }
+    "wallet": { "type": "array", "items": { "$ref": "#/$defs/wallet" } },
+    "columns": { "$ref": "#/$defs/columns" }
   },
   "$defs": {
     "rpc": {
@@ -219,8 +220,6 @@
         "provider": { "type": "string" },
         "chain": { "type": "string" },
         "technology": { "type": "string" },
-        "accessPrice": { "type": ["string", "null"] },
-        "queryPrice": { "type": ["string", "null"] },
         "starred": { "type": "boolean" },
         "availableApis": {
           "type": ["array", "null"],
@@ -256,8 +255,6 @@
         "provider",
         "chain",
         "technology",
-        "accessPrice",
-        "queryPrice",
         "starred",
         "availableApis",
         "monitoringAndAnalytics",
@@ -507,6 +504,22 @@
         "starred",
         "actionButtons"
       ]
+    },
+
+    "columns": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rpc": { "type": "array", "items": { "type": "string" } },
+        "indexing": { "type": "array", "items": { "type": "string" } },
+        "oracle": { "type": "array", "items": { "type": "string" } },
+        "bridge": { "type": "array", "items": { "type": "string" } },
+        "explorer": { "type": "array", "items": { "type": "string" } },
+        "faucet": { "type": "array", "items": { "type": "string" } },
+        "analytic": { "type": "array", "items": { "type": "string" } },
+        "wallet": { "type": "array", "items": { "type": "string" } },
+        "devTool": { "type": "array", "items": { "type": "string" } }
+      }
     }
   }
 }
