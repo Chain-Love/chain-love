@@ -1633,6 +1633,185 @@
             ]
         }
     ],
+    "faucet": [
+        {
+            "slug": "stakely-faucet",
+            "provider": "Stakely",
+            "chain": "mainnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "0.00088 APT",
+            "dripLimitPeriod": null,
+            "additionalNotes": [
+                "Requires to make the tweet in X about requesting tokens",
+                "Need to have low or zero mainnet balance for asking mainnet tokens"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://stakely.io/faucet/aptos-apt)"
+            ]
+        },
+        {
+            "slug": "circle-faucet-usdc",
+            "provider": "Circle",
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "1 USDC",
+            "dripLimitPeriod": "1h",
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.circle.com/)"
+            ]
+        }
+    ],
+    "wallet": [
+        {
+            "slug": "trustwallet",
+            "provider": "Trust Wallet",
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Chrome"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "ZH",
+                "JA"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://trustwallet.com/)"
+            ]
+        },
+        {
+            "slug": "onekey",
+            "provider": "OneKey",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                " Chrome"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "EIP-721",
+                "EIP-1155",
+                "SPL",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[email](hi@onekey.so)",
+                "support website",
+                "x",
+                "github"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "FR",
+                "PT",
+                "PT-Br",
+                "RU",
+                "DE",
+                "ES",
+                "IT",
+                "ID",
+                "ZH",
+                "KO",
+                "UA",
+                "VI",
+                "HI",
+                "JA"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://onekey.so/)"
+            ]
+        },
+        {
+            "slug": "exodus",
+            "provider": "Exodus",
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                " Chrome"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "TRC-20",
+                "SPL",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[x](@ExodusAssist)",
+                "helpdesk",
+                "email"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ES"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.exodus.com/)"
+            ]
+        }
+    ],
     "columns": {
         "rpc": [
             "slug",
@@ -1655,6 +1834,42 @@
             "verifiedUptime",
             "verifiedLatency",
             "verifiedBlocksBehindAvg",
+            "starred",
+            "actionButtons"
+        ],
+        "faucet": [
+            "slug",
+            "provider",
+            "chain",
+            "requiresLogin",
+            "hasCaptcha",
+            "requiredMainnetBalance",
+            "price",
+            "dripLimitAmount",
+            "dripLimitPeriod",
+            "additionalNotes",
+            "starred",
+            "actionButtons"
+        ],
+        "wallet": [
+            "slug",
+            "provider",
+            "openSource",
+            "supportedPlatforms",
+            "custodial",
+            "mfa",
+            "msig",
+            "hardware",
+            "keyExport",
+            "native",
+            "evm",
+            "tendermint",
+            "tokensSupport",
+            "staking",
+            "price",
+            "support",
+            "audit",
+            "languages",
             "starred",
             "actionButtons"
         ]
