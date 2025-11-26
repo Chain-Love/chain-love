@@ -160,6 +160,8 @@ def main():
         
         # Validate data against rules
         for category in data.keys():
+            if category == "columns":
+                continue
             errors = rules.validate(data[category])
             for err in errors:
                 had_errors = True
@@ -185,6 +187,8 @@ def main():
     # Override provider schema so the chain field is not required
     provider_schema = copy.deepcopy(schema)
     for definition in provider_schema['$defs'].keys():
+        if definition == "columns":
+            continue
         if "chain" in provider_schema['$defs'][definition]['required']:
             index = provider_schema['$defs'][definition]['required'].index("chain")
             del provider_schema['$defs'][definition]['required'][index]
