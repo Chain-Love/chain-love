@@ -1,0 +1,87 @@
+{
+    "faucet": [
+        {
+            "slug": "sui-faucet",
+            "provider": "Sui",
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "1 SUI",
+            "dripLimitPeriod": null,
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.sui.io/?network=testnet)"
+            ]
+        },
+        {
+            "slug": "blockbolt-sui-faucet",
+            "provider": "Blockbolt",
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "1 SUI",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.blockbolt.io/)"
+            ]
+        },
+        {
+            "slug": "stakely-faucet",
+            "provider": "Stakely",
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": null,
+            "dripLimitPeriod": null,
+            "additionalNotes": [
+                "Requires to make the tweet in X about requesting tokens",
+                "Need to have low or zero mainnet balance for asking mainnet tokens"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://stakely.io/faucet/sui-testnet-sui)"
+            ]
+        },
+        {
+            "slug": "circle-faucet-usdc",
+            "provider": "Circle",
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "1 USDC",
+            "dripLimitPeriod": "1h",
+            "additionalNotes": null,
+            "starred": false,
+            "actionButtons": [
+                "[Faucet](https://faucet.circle.com/)"
+            ]
+        }
+    ],
+    "columns": {
+        "faucet": [
+            "slug",
+            "provider",
+            "chain",
+            "requiresLogin",
+            "hasCaptcha",
+            "requiredMainnetBalance",
+            "price",
+            "dripLimitAmount",
+            "dripLimitPeriod",
+            "additionalNotes",
+            "starred",
+            "actionButtons"
+        ]
+    }
+}
