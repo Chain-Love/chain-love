@@ -2,8 +2,13 @@ name: Link Checker
 
 on:
   workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
 jobs:
   linkChecker:
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.pull_request.labels.*.name, 'check-links')
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -16,9 +21,23 @@ jobs:
         with:
           fail: false
           args: --extensions csv --accept 200,204,400,401,403,405,429 .
-        
+
+# For labeled PRs
+
+      - name: Comment on PR
+        if: >
+          github.event_name == 'pull_request' &&
+          steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body-path: ./lychee/out.md
+
+# Or for events dispatched from workflows
       - name: Create Issue From File
-        if: steps.lychee.outputs.exit_code != 0
+        if: >
+          github.event_name == 'workflow_dispatch' &&
+          steps.lychee.outputs.exit_code != 0
         uses: peter-evans/create-issue-from-file@v5
         with:
           title: Link Checker Report
