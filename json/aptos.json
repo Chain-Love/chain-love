@@ -1633,6 +1633,543 @@
             ]
         }
     ],
+    "oracle": [
+        {
+            "slug": "chainlink-mainnet",
+            "provider": "Chainlink",
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.chain.link/ccip/directory/mainnet/chain/aptos-mainnet)"
+            ]
+        },
+        {
+            "slug": "chainlink-testnet",
+            "provider": "Chainlink",
+            "chain": "testnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.chain.link/ccip/directory/testnet/chain/aptos-testnet)"
+            ]
+        },
+        {
+            "slug": "pyth-mainnet",
+            "provider": "Pyth Network",
+            "chain": "mainnet",
+            "technology": "Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/aptos)"
+            ]
+        },
+        {
+            "slug": "pyth-testnet",
+            "provider": "Pyth Network",
+            "chain": "testnet",
+            "technology": "Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/aptos)"
+            ]
+        },
+        {
+            "slug": "supra-mainnet",
+            "provider": "Supra",
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle#aptos)"
+            ]
+        },
+        {
+            "slug": "supra-testnet",
+            "provider": "Supra",
+            "chain": "testnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle#aptos)"
+            ]
+        }
+    ],
+    "bridge": [
+        {
+            "slug": "celer-mainnet",
+            "provider": "Celer",
+            "chain": "mainnet",
+            "technology": "Lock & Mint + Message Passing",
+            "openSource": true,
+            "support": [
+                "Contact us form"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "polygon",
+                "bnb chain",
+                "avalanche",
+                "arbitrum",
+                "optimism",
+                "base",
+                "linea",
+                "astar",
+                "shiden",
+                "fantom",
+                "unichain",
+                "zksync era",
+                "arbitrum nova",
+                "aptos",
+                "flow evm",
+                "metis",
+                "oasis emerald",
+                "evmos",
+                "aurora",
+                "moonbeam",
+                "moonriver",
+                "boba",
+                "gnosis",
+                "aura mainnet",
+                "bitcoin",
+                "blast",
+                "conflux",
+                "filecoin",
+                "flow cadence",
+                "gravity alpha mainnet",
+                "injective",
+                "kava evm co-chain",
+                "klaytn",
+                "manta pacific mainnet",
+                "milkomeda c1",
+                "oasis sapphire",
+                "oasis hub-layer",
+                "platon",
+                "redbelly",
+                "sx",
+                "scroll",
+                "sui mainnet",
+                "x layer",
+                "opbnb"
+            ],
+            "availableApis": [
+                "REST",
+                "SDK",
+                "WebSocket"
+            ],
+            "monitoringAndAnalytics": [
+                "Transaction Monitoring",
+                "[CelerScan](https://celerscan.com/)"
+            ],
+            "additionalFeatures": [
+                "Decentralized cross‑chain transfers"
+            ],
+            "assetTypes": [
+                "wFIL",
+                "wETH",
+                "wBTC",
+                "USDC",
+                "USDT"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
+            "auditsPerformed": [
+                "January 2023, by CertiK",
+                "January 2023, by PeckShield",
+                "January 2023, by SlowMist"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Node.JS"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://cbridge.celer.network)",
+                "[Docs](https://cbridge-docs.celer.network/)"
+            ]
+        },
+        {
+            "slug": "interport-mainnet",
+            "provider": "Interport Finance",
+            "chain": "mainnet",
+            "technology": "Meta‑DEX Cross‑chain Swap Bridge",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "solana",
+                "arbitrum",
+                "bnb chain",
+                "blast",
+                "zksync",
+                "base",
+                "scroll",
+                "optimism",
+                "linea",
+                "manta pacific",
+                "polygon",
+                "opbnb",
+                "avalanche",
+                "eon",
+                "fantom",
+                "sui",
+                "aptos",
+                "kava",
+                "metis",
+                "mantle",
+                "sei",
+                "aurora",
+                "corel",
+                "berachain",
+                "inkl",
+                "kaia",
+                "iota",
+                "taiko",
+                "rari",
+                "flare",
+                "gravity",
+                "lightlink",
+                "plume",
+                "abstract",
+                "flow",
+                "gnosis",
+                "astar",
+                "celo",
+                "sonic",
+                "soneium",
+                "mind",
+                "hemi",
+                "rootstock",
+                "hyperevm",
+                "world chain",
+                "codex",
+                "unichain",
+                "botanix",
+                "tac",
+                "bitlayer",
+                "hedera",
+                "mode",
+                "ronin",
+                "shibarium",
+                "wemix",
+                "zircuit",
+                "b²",
+                "bob",
+                "xdc",
+                "plasma",
+                "og",
+                "corn",
+                "katana",
+                "hashkey"
+            ],
+            "availableApis": [
+                "Cross‑chain Swap",
+                "Single‑chain DEX routing"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Meta-Dex aggregation",
+                "Bridge-free routing"
+            ],
+            "assetTypes": [
+                "ERC‑20",
+                "Stablecoins"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Swap fees",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Aggregates cross-chain messaging",
+            "auditsPerformed": [
+                "Audits available"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://app.interport.fi)",
+                "[Docs](https://docs.interport.fi)"
+            ]
+        },
+        {
+            "slug": "meson-mainnet",
+            "provider": "Meson",
+            "chain": "mainnet",
+            "technology": "Stablecoin Bridge",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ancient8",
+                "arbitrum",
+                "avalanche",
+                "base",
+                "berachain",
+                "bitlayer",
+                "blast",
+                "bob",
+                "bnb chain",
+                "b² network",
+                "celo",
+                "cronos",
+                "ethereum",
+                "gnosis",
+                "hashkey chain",
+                "hemi",
+                "kava",
+                "linea",
+                "manta",
+                "mantle",
+                "merlin",
+                "metis",
+                "mode",
+                "moonbeam",
+                "morph",
+                "opbnb",
+                "optimism",
+                "plume",
+                "polygon",
+                "polygon zkevm",
+                "scroll",
+                "sei",
+                "skale europa",
+                "skale nebula",
+                "skale calypso",
+                "solana",
+                "soneium",
+                "starknet",
+                "taiko",
+                "tron",
+                "zetachain",
+                "zircuit",
+                "zksync era",
+                "meme core",
+                "exsat",
+                "zklink nova",
+                "x layer",
+                "conflux espace",
+                "sonic",
+                "aurora",
+                "kroma",
+                "aptos",
+                "sui",
+                "zkfair",
+                "map protocol",
+                "core",
+                "inevm",
+                "bouncebit",
+                "bevm",
+                "ailayer",
+                "iotex",
+                "ckb",
+                "duckchain",
+                "neo x",
+                "corn",
+                "taker",
+                "thundercore",
+                "rootstock",
+                "hyperevm",
+                "plasma"
+            ],
+            "availableApis": [
+                "Stablecoin Swaps"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "USDT/USDC optimization",
+                "Fast settlement"
+            ],
+            "assetTypes": [
+                "USDT",
+                "USDC"
+            ],
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "price": "Low Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured via cryptographic proofs and liquidity partners",
+            "auditsPerformed": [
+                "Trail of Bits"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
+            "starred": false,
+            "actionButtons": [
+                "[Bridge](https://meson.fi/)",
+                "[Docs](https://meson.fi/docs)"
+            ]
+        }
+    ],
     "faucet": [
         {
             "slug": "stakely-faucet",
@@ -1834,6 +2371,46 @@
             "verifiedUptime",
             "verifiedLatency",
             "verifiedBlocksBehindAvg",
+            "starred",
+            "actionButtons"
+        ],
+        "oracle": [
+            "slug",
+            "provider",
+            "chain",
+            "technology",
+            "dataTypes",
+            "decentralizationModel",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "sdk",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "auditsPerformed",
+            "starred",
+            "actionButtons"
+        ],
+        "bridge": [
+            "slug",
+            "provider",
+            "chain",
+            "technology",
+            "openSource",
+            "support",
+            "supportedChains",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "assetTypes",
+            "txSpeedSla",
+            "throughputSla",
+            "price",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "auditsPerformed",
+            "decentralizationModel",
+            "sdk",
             "starred",
             "actionButtons"
         ],
