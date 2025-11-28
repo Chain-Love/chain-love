@@ -2170,6 +2170,185 @@
             ]
         }
     ],
+    "explorer": [
+        {
+            "slug": "aptos-labs-explorer-mainnet",
+            "provider": "Aptos",
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Gas",
+                "Contracts",
+                "Validators",
+                "Events"
+            ],
+            "additionalFeatures": [
+                "User-Friendly Interface",
+                "Ecosystem Snapshot",
+                "Detailed Transaction Pages",
+                "Comprehensive Data Views",
+                "Neon Color Coding"
+            ],
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "sdk": [
+                "TypeScript",
+                "Python",
+                "Go",
+                "Rust"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false,
+            "actionButtons": [
+                "[Explore](https://explorer.aptoslabs.com/?network=mainnet)"
+            ]
+        },
+        {
+            "slug": "aptos-labs-explorer-testnet",
+            "provider": "Aptos",
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Gas",
+                "Contracts",
+                "Validators",
+                "Events"
+            ],
+            "additionalFeatures": [
+                "User-Friendly Interface",
+                "Ecosystem Snapshot",
+                "Detailed Transaction Pages",
+                "Comprehensive Data Views",
+                "Neon Color Coding"
+            ],
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "sdk": [
+                "TypeScript",
+                "Python",
+                "Go",
+                "Rust"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false,
+            "actionButtons": [
+                "[Explore](https://explorer.aptoslabs.com/?network=testnet)"
+            ]
+        },
+        {
+            "slug": "aptos-xangle-explorer-mainnet",
+            "provider": "Xangle",
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Gas",
+                "Contracts",
+                "Validators",
+                "Tokens",
+                "NFTs",
+                "Flows"
+            ],
+            "additionalFeatures": [
+                "Enterprise-Grade Reliability",
+                "Comprehensive Data Coverage",
+                "Focus On Transparency and community engagement"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": [
+                "TypeScript",
+                "Python",
+                "Go",
+                "Rust"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token",
+                "Module"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false,
+            "actionButtons": [
+                "[Explore](https://aptos-explorer.xangle.io/?chain=mainnet)"
+            ]
+        },
+        {
+            "slug": "oklink-mainnet",
+            "provider": "OKLink",
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts",
+                "Accounts",
+                "Token transfers",
+                "Address Activity"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "Smart Contract Verification",
+                "Address Labels",
+                "Address Monitoring",
+                "APIs",
+                "Network Overview",
+                "Price Charts",
+                "Amoy Contract Verification"
+            ],
+            "availableApis": [
+                "REST API",
+                "GraphQL",
+                "RPC API"
+            ],
+            "sdk": [
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false,
+            "actionButtons": [
+                "[Explore](https://www.oklink.com/aptos)"
+            ]
+        }
+    ],
     "faucet": [
         {
             "slug": "stakely-faucet",
@@ -2204,6 +2383,75 @@
             "starred": false,
             "actionButtons": [
                 "[Faucet](https://faucet.circle.com/)"
+            ]
+        }
+    ],
+    "analytic": [
+        {
+            "slug": "dune-mainnet",
+            "provider": "Dune",
+            "chain": "mainnet",
+            "dataSources": [
+                "Transactions",
+                "Gas Usage",
+                "Bridge Activity",
+                "Active Users",
+                "Token Transfers",
+                "Smart Contract Activity"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "SQL Queries",
+                "Visualizations"
+            ],
+            "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://dune.com/blockchains/aptos)"
+            ]
+        },
+        {
+            "slug": "messari-mainnet",
+            "provider": "Messari",
+            "chain": "mainnet",
+            "dataSources": [
+                "Network Metrics",
+                "TVL & Market Data",
+                "On‑chain Usage Metrics"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Research Reports",
+                "API Access",
+                "Dashboard"
+            ],
+            "price": "$0 (7-day free trial)/$29.99/mo/4K/year",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://messari.io/project/aptos)"
+            ]
+        },
+        {
+            "slug": "nansen-mainnet",
+            "provider": "Nansen",
+            "chain": "mainnet",
+            "dataSources": [
+                "Exchange Flows",
+                "Token Distribution",
+                "DeFi Activity",
+                "NFT Analytics",
+                "Wallet Labels"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Smart Money API",
+                "Profiler API",
+                "API Keys"
+            ],
+            "price": "$0/$69/mo (monthly plan), $0/$49/mo (yearly plan)",
+            "starred": false,
+            "actionButtons": [
+                "[Dashboard](https://app.nansen.ai/macro/blockchains?chain=aptos)"
             ]
         }
     ],
@@ -2414,6 +2662,22 @@
             "starred",
             "actionButtons"
         ],
+        "explorer": [
+            "slug",
+            "provider",
+            "chain",
+            "technology",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "availableApis",
+            "sdk",
+            "searchCapabilities",
+            "smartContractsVerifications",
+            "fullHistory",
+            "pricing",
+            "starred",
+            "actionButtons"
+        ],
         "faucet": [
             "slug",
             "provider",
@@ -2425,6 +2689,17 @@
             "dripLimitAmount",
             "dripLimitPeriod",
             "additionalNotes",
+            "starred",
+            "actionButtons"
+        ],
+        "analytic": [
+            "slug",
+            "provider",
+            "chain",
+            "dataSources",
+            "hasDashboard",
+            "availableApis",
+            "price",
             "starred",
             "actionButtons"
         ],
