@@ -34,9 +34,10 @@ def rule_slug_unique(data):
 
 def rule_slug_kebab_case(data):
     errors = []
+    KEBAB_CASE_RE = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
     for idx, item in enumerate(data):
         slug = item.get("slug")
-        if not re.match("^[a-z0-9-]+$", slug):
+        if not bool(KEBAB_CASE_RE.match(slug)):
             errors.append(f"Item {idx}: slug '{slug}' must be kebab-case")
     return errors
 
