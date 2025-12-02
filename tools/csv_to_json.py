@@ -4,6 +4,13 @@ import os
 
 PROVIDER_REF_PREFIX = "!provider:"
 
+def col_letter(idx: int) -> str:
+    """Convert 0-based index to Excel column letters."""
+    result = ""
+    while idx >= 0:
+        result = chr(ord('A') + (idx % 26)) + result
+        idx = idx // 26 - 1
+    return result
 
 def try_parse_json(value):
     if not isinstance(value, str):
@@ -48,17 +55,70 @@ def normalize(data_by_category: dict):
             result[category].append(new_item)
     return result, errors
 
+def validate_header(file_path: str, header: list[str]):
+    # Check for empty header names
+    for i, h in enumerate(header):
+        if h is None or h.strip() == "":
+            raise ValueError(
+                f"{file_path}: Header column {col_letter(i)} exists but is empty"
+            )
+
+    # Check for duplicates
+    seen = {}
+    duplicates = {}
+
+    for idx, name in enumerate(header):
+        if name not in seen:
+            seen[name] = [idx]
+        else:
+            seen[name].append(idx)
+
+    # Extract duplicates
+    for name, idxs in seen.items():
+        if len(idxs) > 1:
+            duplicates[name] = idxs
+
+    if duplicates:
+        # Build pretty error message
+        lines = [f"{file_path}: Duplicate header names detected:"]
+        for name, idxs in duplicates.items():
+            cols = ", ".join(col_letter(i) for i in idxs)
+            lines.append(f'  - "{name}" appears in columns {cols}')
+
+        # Show full header with Excel letters
+        header_with_positions = ", ".join(
+            f"{col_letter(i)}:{header[i]}" for i in range(len(header))
+        )
+        lines.append(f"Full header: {header_with_positions}")
+
+        raise ValueError("\n".join(lines))
 
 def load_csv_to_dict_list(file_path: str) -> list[dict] | None:
     if not os.path.exists(file_path):
         return None
 
-    result = []
-    with open(file_path, "r") as file:
-        reader = csv.DictReader(file)
+
+    with open(file_path, "r", newline="") as file:
+        reader = csv.reader(file)
+        try:
+            header = next(reader)
+        except StopIteration:
+            raise Exception(f"File {file_path} is empty")
+
+        # Validate header
+        validate_header(file_path, header)
+        
+        expected_cols = len(header)
+        rows = []
+        row_number = 2 # Skip header row
         for row in reader:
-            result.append(row)
-    return result
+            # Extra or missing commas
+            if len(row) != expected_cols:
+                raise ValueError(f"{file_path}: row {row_number} has {len(row)} columns, expected {expected_cols}")
+            row_dict = dict(zip(header, row))
+            rows.append(row_dict)
+            row_number += 1
+        return rows
 
 
 def find_one_by_slug(dict_list: list[dict], slug: str) -> dict | None:
