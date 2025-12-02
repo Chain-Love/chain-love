@@ -4152,11 +4152,11 @@
             ]
         },
         {
-            "slug": "indexing-co-free",
+            "slug": "indexing-co-mainnet-free",
             "provider": "The Indexing Company",
             "chain": "mainnet",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Free",
             "trial": false,
             "accessPrice": "$0",
@@ -4198,16 +4198,15 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/base)"
             ]
         },
         {
-            "slug": "indexing-co-free-testnet",
+            "slug": "indexing-co-testnet-free",
             "provider": "The Indexing Company",
             "chain": "testnet",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Free",
             "trial": false,
             "accessPrice": "$0",
@@ -4249,132 +4248,23 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base_sepolia)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/base_sepolia)"
             ]
         },
         {
-            "slug": "indexing-co-starter",
+            "slug": "indexing-co-mainnet-pay-as-you-go",
             "provider": "The Indexing Company",
             "chain": "mainnet",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "Usage-based",
+            "accessPrice": "Usage-based/Subscription-based",
             "queryPrice": "Included",
-            "uptimeSla": "99.90%",
-            "bandwidthSla": null,
-            "blocksBehindSla": "2",
-            "supportSla": "Standard Support",
-            "starred": false,
-            "availableApis": [
-                "SQL",
-                "REST",
-                "Webhooks"
-            ],
-            "limitations": [
-                "Up to 3 networks",
-                "Wallet & ERC20 tracking",
-                "Multi-chain decoding (swaps, bridges, payments)",
-                "Custom transformations",
-                "Historical + real-time stream"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Whitelisting",
-                "Private Endpoints",
-                "Secure API Keys",
-                "End-to-end encryption"
-            ],
-            "monitoringAndAnalytics": [
-                "Pipeline logs",
-                "Delivery metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Slack & Email support",
-                "PostgreSQL delivery",
-                "Webhook delivery"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base)",
-                "[Contact Sales](mailto:hello@indexing.co)"
-            ]
-        },
-        {
-            "slug": "indexing-co-starter-testnet",
-            "provider": "The Indexing Company",
-            "chain": "testnet",
-            "address": null,
-            "technology": "The Neighborhood",
-            "plan": "Pay-as-you-go",
-            "trial": false,
-            "accessPrice": "Usage-based",
-            "queryPrice": "Included",
-            "uptimeSla": "99.90%",
-            "bandwidthSla": null,
-            "blocksBehindSla": "2",
-            "supportSla": "Standard Support",
-            "starred": false,
-            "availableApis": [
-                "SQL",
-                "REST",
-                "Webhooks"
-            ],
-            "limitations": [
-                "Up to 3 networks",
-                "Wallet & ERC20 tracking",
-                "Multi-chain decoding (swaps, bridges, payments)",
-                "Custom transformations",
-                "Historical + real-time stream"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Whitelisting",
-                "Private Endpoints",
-                "Secure API Keys",
-                "End-to-end encryption"
-            ],
-            "monitoringAndAnalytics": [
-                "Pipeline logs",
-                "Delivery metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Slack & Email support",
-                "PostgreSQL delivery",
-                "Webhook delivery"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base_sepolia)",
-                "[Contact Sales](mailto:hello@indexing.co)"
-            ]
-        },
-        {
-            "slug": "indexing-co-growth",
-            "provider": "The Indexing Company",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "The Neighborhood",
-            "plan": "Pay-as-you-go",
-            "trial": false,
-            "accessPrice": "Subscription-based",
-            "queryPrice": "Included",
-            "uptimeSla": "99.95%",
+            "uptimeSla": "99.90%/99.95%",
             "bandwidthSla": "Guaranteed",
-            "blocksBehindSla": "1",
-            "supportSla": "Dedicated Support",
+            "blocksBehindSla": "2/(1)",
+            "supportSla": "Standard Support/Dedicated Support",
             "starred": false,
             "availableApis": [
                 "SQL",
@@ -4382,10 +4272,11 @@
                 "Webhooks"
             ],
             "limitations": [
-                "Up to 10 networks",
+                "Up to 3/up to 10 networks",
                 "Wallet & ERC20 tracking",
                 "Multi-chain decoding (swaps, bridges, payments)",
                 "Custom transformations",
+                "Historical + real-time stream",
                 "Schema mapping design"
             ],
             "securityImprovements": [
@@ -4396,6 +4287,8 @@
                 "End-to-end encryption"
             ],
             "monitoringAndAnalytics": [
+                "Pipeline logs",
+                "Delivery metrics",
                 "Logs",
                 "Analytics",
                 "Alerting & Monitoring"
@@ -4404,6 +4297,9 @@
                 "Global"
             ],
             "additionalFeatures": [
+                "Slack & Email support",
+                "PostgreSQL delivery",
+                "Webhook delivery",
                 "Dedicated Support Engineer",
                 "SLA-backed uptime",
                 "System Integration support"
@@ -4412,24 +4308,23 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/base)"
             ]
         },
         {
-            "slug": "indexing-co-growth-testnet",
+            "slug": "indexing-co-testnet-pay-as-you-go",
             "provider": "The Indexing Company",
             "chain": "testnet",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "Subscription-based",
+            "accessPrice": "Usage-based/Subscription-based",
             "queryPrice": "Included",
-            "uptimeSla": "99.95%",
+            "uptimeSla": "99.90%/99.95%",
             "bandwidthSla": "Guaranteed",
-            "blocksBehindSla": "1",
-            "supportSla": "Dedicated Support",
+            "blocksBehindSla": "2/(1)",
+            "supportSla": "Standard Support/Dedicated Support",
             "starred": false,
             "availableApis": [
                 "SQL",
@@ -4437,10 +4332,11 @@
                 "Webhooks"
             ],
             "limitations": [
-                "Up to 10 networks",
+                "Up to 3/up to 10 networks",
                 "Wallet & ERC20 tracking",
                 "Multi-chain decoding (swaps, bridges, payments)",
                 "Custom transformations",
+                "Historical + real-time stream",
                 "Schema mapping design"
             ],
             "securityImprovements": [
@@ -4451,6 +4347,8 @@
                 "End-to-end encryption"
             ],
             "monitoringAndAnalytics": [
+                "Pipeline logs",
+                "Delivery metrics",
                 "Logs",
                 "Analytics",
                 "Alerting & Monitoring"
@@ -4459,6 +4357,9 @@
                 "Global"
             ],
             "additionalFeatures": [
+                "Slack & Email support",
+                "PostgreSQL delivery",
+                "Webhook delivery",
                 "Dedicated Support Engineer",
                 "SLA-backed uptime",
                 "System Integration support"
@@ -4467,16 +4368,15 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base_sepolia)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/base_sepolia)"
             ]
         },
         {
-            "slug": "indexing-co-enterprise",
+            "slug": "indexing-co-mainnet-enterprise",
             "provider": "The Indexing Company",
             "chain": "mainnet",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
@@ -4522,16 +4422,15 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/base)"
             ]
         },
         {
-            "slug": "indexing-co-enterprise-testnet",
+            "slug": "indexing-co-testnet-enterprise",
             "provider": "The Indexing Company",
             "chain": "testnet",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
@@ -4577,8 +4476,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base_sepolia)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/base_sepolia)"
             ]
         },
         {

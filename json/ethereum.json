@@ -3817,11 +3817,11 @@
             "supportSla": null
         },
         {
-            "slug": "indexing-co-free",
+            "slug": "indexing-co-mainnet-free",
             "provider": "The Indexing Company",
             "chain": "mainnet",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Free",
             "trial": false,
             "accessPrice": "$0",
@@ -3859,8 +3859,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/ethereum)"
             ],
             "uptimeSla": "99.50%",
             "bandwidthSla": null,
@@ -3868,11 +3867,11 @@
             "supportSla": "Standard Support"
         },
         {
-            "slug": "indexing-co-free-hoodi",
+            "slug": "indexing-co-hoodi-free",
             "provider": "The Indexing Company",
             "chain": "hoodi",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Free",
             "trial": false,
             "accessPrice": "$0",
@@ -3910,8 +3909,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum_hoodi)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/ethereum_hoodi)"
             ],
             "uptimeSla": "99.50%",
             "bandwidthSla": null,
@@ -3919,11 +3917,11 @@
             "supportSla": "Standard Support"
         },
         {
-            "slug": "indexing-co-free-sepolia",
+            "slug": "indexing-co-sepolia-free",
             "provider": "The Indexing Company",
             "chain": "sepolia",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Free",
             "trial": false,
             "accessPrice": "$0",
@@ -3961,8 +3959,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum_sepolia)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/ethereum_sepolia)"
             ],
             "uptimeSla": "99.50%",
             "bandwidthSla": null,
@@ -3970,14 +3967,14 @@
             "supportSla": "Standard Support"
         },
         {
-            "slug": "indexing-co-starter",
+            "slug": "indexing-co-mainnet-pay-as-you-go",
             "provider": "The Indexing Company",
             "chain": "mainnet",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "Usage-based",
+            "accessPrice": "Usage-based/Subscription-based",
             "queryPrice": "Included",
             "starred": false,
             "availableApis": [
@@ -3986,11 +3983,12 @@
                 "Webhooks"
             ],
             "limitations": [
-                "Up to 3 networks",
+                "Up to 3/up to 10 networks",
                 "Wallet & ERC20 tracking",
                 "Multi-chain decoding (swaps, bridges, payments)",
                 "Custom transformations",
-                "Historical + real-time stream"
+                "Historical + real-time stream",
+                "Schema mapping design"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -4001,7 +3999,10 @@
             ],
             "monitoringAndAnalytics": [
                 "Pipeline logs",
-                "Delivery metrics"
+                "Delivery metrics",
+                "Logs",
+                "Analytics",
+                "Alerting & Monitoring"
             ],
             "regions": [
                 "Global"
@@ -4009,29 +4010,31 @@
             "additionalFeatures": [
                 "Slack & Email support",
                 "PostgreSQL delivery",
-                "Webhook delivery"
+                "Webhook delivery",
+                "Dedicated Support Engineer",
+                "SLA-backed uptime",
+                "System Integration support"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/ethereum)"
             ],
-            "uptimeSla": "99.90%",
-            "bandwidthSla": null,
-            "blocksBehindSla": "2",
-            "supportSla": "Standard Support"
+            "uptimeSla": "99.90%/99.95%",
+            "bandwidthSla": "Guaranteed",
+            "blocksBehindSla": "2/(1)",
+            "supportSla": "Standard Support/Dedicated Support"
         },
         {
-            "slug": "indexing-co-starter-hoodi",
+            "slug": "indexing-co-hoodi-pay-as-you-go",
             "provider": "The Indexing Company",
             "chain": "hoodi",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "Usage-based",
+            "accessPrice": "Usage-based/Subscription-based",
             "queryPrice": "Included",
             "starred": false,
             "availableApis": [
@@ -4040,11 +4043,12 @@
                 "Webhooks"
             ],
             "limitations": [
-                "Up to 3 networks",
+                "Up to 3/up to 10 networks",
                 "Wallet & ERC20 tracking",
                 "Multi-chain decoding (swaps, bridges, payments)",
                 "Custom transformations",
-                "Historical + real-time stream"
+                "Historical + real-time stream",
+                "Schema mapping design"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -4055,7 +4059,10 @@
             ],
             "monitoringAndAnalytics": [
                 "Pipeline logs",
-                "Delivery metrics"
+                "Delivery metrics",
+                "Logs",
+                "Analytics",
+                "Alerting & Monitoring"
             ],
             "regions": [
                 "Global"
@@ -4063,29 +4070,31 @@
             "additionalFeatures": [
                 "Slack & Email support",
                 "PostgreSQL delivery",
-                "Webhook delivery"
+                "Webhook delivery",
+                "Dedicated Support Engineer",
+                "SLA-backed uptime",
+                "System Integration support"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum_hoodi)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/ethereum_hoodi)"
             ],
-            "uptimeSla": "99.90%",
-            "bandwidthSla": null,
-            "blocksBehindSla": "2",
-            "supportSla": "Standard Support"
+            "uptimeSla": "99.90%/99.95%",
+            "bandwidthSla": "Guaranteed",
+            "blocksBehindSla": "2/(1)",
+            "supportSla": "Standard Support/Dedicated Support"
         },
         {
-            "slug": "indexing-co-starter-sepolia",
+            "slug": "indexing-co-sepolia-pay-as-you-go",
             "provider": "The Indexing Company",
             "chain": "sepolia",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "Usage-based",
+            "accessPrice": "Usage-based/Subscription-based",
             "queryPrice": "Included",
             "starred": false,
             "availableApis": [
@@ -4094,11 +4103,12 @@
                 "Webhooks"
             ],
             "limitations": [
-                "Up to 3 networks",
+                "Up to 3/up to 10 networks",
                 "Wallet & ERC20 tracking",
                 "Multi-chain decoding (swaps, bridges, payments)",
                 "Custom transformations",
-                "Historical + real-time stream"
+                "Historical + real-time stream",
+                "Schema mapping design"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -4109,7 +4119,10 @@
             ],
             "monitoringAndAnalytics": [
                 "Pipeline logs",
-                "Delivery metrics"
+                "Delivery metrics",
+                "Logs",
+                "Analytics",
+                "Alerting & Monitoring"
             ],
             "regions": [
                 "Global"
@@ -4117,191 +4130,28 @@
             "additionalFeatures": [
                 "Slack & Email support",
                 "PostgreSQL delivery",
-                "Webhook delivery"
+                "Webhook delivery",
+                "Dedicated Support Engineer",
+                "SLA-backed uptime",
+                "System Integration support"
             ],
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum_sepolia)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/ethereum_sepolia)"
             ],
-            "uptimeSla": "99.90%",
-            "bandwidthSla": null,
-            "blocksBehindSla": "2",
-            "supportSla": "Standard Support"
+            "uptimeSla": "99.90%/99.95%",
+            "bandwidthSla": "Guaranteed",
+            "blocksBehindSla": "2/(1)",
+            "supportSla": "Standard Support/Dedicated Support"
         },
         {
-            "slug": "indexing-co-growth",
+            "slug": "indexing-co-mainnet-enterprise",
             "provider": "The Indexing Company",
             "chain": "mainnet",
             "address": null,
-            "technology": "The Neighborhood",
-            "plan": "Pay-as-you-go",
-            "trial": false,
-            "accessPrice": "Subscription-based",
-            "queryPrice": "Included",
-            "starred": false,
-            "availableApis": [
-                "SQL",
-                "REST",
-                "Webhooks"
-            ],
-            "limitations": [
-                "Up to 10 networks",
-                "Wallet & ERC20 tracking",
-                "Multi-chain decoding (swaps, bridges, payments)",
-                "Custom transformations",
-                "Schema mapping design"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Whitelisting",
-                "Private Endpoints",
-                "Secure API Keys",
-                "End-to-end encryption"
-            ],
-            "monitoringAndAnalytics": [
-                "Logs",
-                "Analytics",
-                "Alerting & Monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Dedicated Support Engineer",
-                "SLA-backed uptime",
-                "System Integration support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum)",
-                "[Contact Sales](mailto:hello@indexing.co)"
-            ],
-            "uptimeSla": "99.95%",
-            "bandwidthSla": "Guaranteed",
-            "blocksBehindSla": "1",
-            "supportSla": "Dedicated Support"
-        },
-        {
-            "slug": "indexing-co-growth-hoodi",
-            "provider": "The Indexing Company",
-            "chain": "hoodi",
-            "address": null,
-            "technology": "The Neighborhood",
-            "plan": "Pay-as-you-go",
-            "trial": false,
-            "accessPrice": "Subscription-based",
-            "queryPrice": "Included",
-            "starred": false,
-            "availableApis": [
-                "SQL",
-                "REST",
-                "Webhooks"
-            ],
-            "limitations": [
-                "Up to 10 networks",
-                "Wallet & ERC20 tracking",
-                "Multi-chain decoding (swaps, bridges, payments)",
-                "Custom transformations",
-                "Schema mapping design"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Whitelisting",
-                "Private Endpoints",
-                "Secure API Keys",
-                "End-to-end encryption"
-            ],
-            "monitoringAndAnalytics": [
-                "Logs",
-                "Analytics",
-                "Alerting & Monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Dedicated Support Engineer",
-                "SLA-backed uptime",
-                "System Integration support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum_hoodi)",
-                "[Contact Sales](mailto:hello@indexing.co)"
-            ],
-            "uptimeSla": "99.95%",
-            "bandwidthSla": "Guaranteed",
-            "blocksBehindSla": "1",
-            "supportSla": "Dedicated Support"
-        },
-        {
-            "slug": "indexing-co-growth-sepolia",
-            "provider": "The Indexing Company",
-            "chain": "sepolia",
-            "address": null,
-            "technology": "The Neighborhood",
-            "plan": "Pay-as-you-go",
-            "trial": false,
-            "accessPrice": "Subscription-based",
-            "queryPrice": "Included",
-            "starred": false,
-            "availableApis": [
-                "SQL",
-                "REST",
-                "Webhooks"
-            ],
-            "limitations": [
-                "Up to 10 networks",
-                "Wallet & ERC20 tracking",
-                "Multi-chain decoding (swaps, bridges, payments)",
-                "Custom transformations",
-                "Schema mapping design"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Whitelisting",
-                "Private Endpoints",
-                "Secure API Keys",
-                "End-to-end encryption"
-            ],
-            "monitoringAndAnalytics": [
-                "Logs",
-                "Analytics",
-                "Alerting & Monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Dedicated Support Engineer",
-                "SLA-backed uptime",
-                "System Integration support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum_sepolia)",
-                "[Contact Sales](mailto:hello@indexing.co)"
-            ],
-            "uptimeSla": "99.95%",
-            "bandwidthSla": "Guaranteed",
-            "blocksBehindSla": "1",
-            "supportSla": "Dedicated Support"
-        },
-        {
-            "slug": "indexing-co-enterprise",
-            "provider": "The Indexing Company",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
@@ -4343,8 +4193,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/ethereum)"
             ],
             "uptimeSla": "99.95%",
             "bandwidthSla": "Guaranteed",
@@ -4352,11 +4201,11 @@
             "supportSla": "24/7 priority support"
         },
         {
-            "slug": "indexing-co-enterprise-hoodi",
+            "slug": "indexing-co-hoodi-enterprise",
             "provider": "The Indexing Company",
             "chain": "hoodi",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
@@ -4398,8 +4247,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum_hoodi)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/ethereum_hoodi)"
             ],
             "uptimeSla": "99.95%",
             "bandwidthSla": "Guaranteed",
@@ -4407,11 +4255,11 @@
             "supportSla": "24/7 priority support"
         },
         {
-            "slug": "indexing-co-enterprise-sepolia",
+            "slug": "indexing-co-sepolia-enterprise",
             "provider": "The Indexing Company",
             "chain": "sepolia",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
@@ -4453,8 +4301,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/ethereum_sepolia)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/ethereum_sepolia)"
             ],
             "uptimeSla": "99.95%",
             "bandwidthSla": "Guaranteed",

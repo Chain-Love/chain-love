@@ -1352,11 +1352,11 @@
             "blocksBehindSla": null
         },
         {
-            "slug": "indexing-co-free",
+            "slug": "indexing-co-mainnet-free",
             "provider": "The Indexing Company",
             "chain": "mainnet",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Free",
             "trial": false,
             "accessPrice": "$0",
@@ -1397,78 +1397,23 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/filecoin)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/filecoin)"
             ],
             "blocksBehindSla": "2"
         },
         {
-            "slug": "indexing-co-starter",
+            "slug": "indexing-co-mainnet-pay-as-you-go",
             "provider": "The Indexing Company",
             "chain": "mainnet",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Pay-as-you-go",
             "trial": false,
-            "accessPrice": "Usage-based",
+            "accessPrice": "Usage-based/Subscription-based",
             "queryPrice": "Included",
-            "uptimeSla": "99.90%",
-            "bandwidthSla": null,
-            "supportSla": "Standard Support",
-            "starred": false,
-            "availableApis": [
-                "SQL",
-                "REST",
-                "Webhooks"
-            ],
-            "limitations": [
-                "Up to 3 networks",
-                "Wallet & ERC20 tracking",
-                "Multi-chain decoding (swaps, bridges, payments)",
-                "Custom transformations",
-                "Historical + real-time stream"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Whitelisting",
-                "Private Endpoints",
-                "Secure API Keys",
-                "End-to-end encryption"
-            ],
-            "monitoringAndAnalytics": [
-                "Pipeline logs",
-                "Delivery metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Slack & Email support",
-                "PostgreSQL delivery",
-                "Webhook delivery"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/filecoin)",
-                "[Contact Sales](mailto:hello@indexing.co)"
-            ],
-            "blocksBehindSla": "2"
-        },
-        {
-            "slug": "indexing-co-growth",
-            "provider": "The Indexing Company",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "The Neighborhood",
-            "plan": "Pay-as-you-go",
-            "trial": false,
-            "accessPrice": "Subscription-based",
-            "queryPrice": "Included",
-            "uptimeSla": "99.95%",
+            "uptimeSla": "99.90%/99.95%",
             "bandwidthSla": "Guaranteed",
-            "supportSla": "Dedicated Support",
+            "supportSla": "Standard Support/Dedicated Support",
             "starred": false,
             "availableApis": [
                 "SQL",
@@ -1476,10 +1421,11 @@
                 "Webhooks"
             ],
             "limitations": [
-                "Up to 10 networks",
+                "Up to 3/up to 10 networks",
                 "Wallet & ERC20 tracking",
                 "Multi-chain decoding (swaps, bridges, payments)",
                 "Custom transformations",
+                "Historical + real-time stream",
                 "Schema mapping design"
             ],
             "securityImprovements": [
@@ -1490,6 +1436,8 @@
                 "End-to-end encryption"
             ],
             "monitoringAndAnalytics": [
+                "Pipeline logs",
+                "Delivery metrics",
                 "Logs",
                 "Analytics",
                 "Alerting & Monitoring"
@@ -1498,6 +1446,9 @@
                 "Global"
             ],
             "additionalFeatures": [
+                "Slack & Email support",
+                "PostgreSQL delivery",
+                "Webhook delivery",
                 "Dedicated Support Engineer",
                 "SLA-backed uptime",
                 "System Integration support"
@@ -1506,17 +1457,16 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/filecoin)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/filecoin)"
             ],
-            "blocksBehindSla": "1"
+            "blocksBehindSla": "2/(1)"
         },
         {
-            "slug": "indexing-co-enterprise",
+            "slug": "indexing-co-mainnet-enterprise",
             "provider": "The Indexing Company",
             "chain": "mainnet",
             "address": null,
-            "technology": "The Neighborhood",
+            "technology": "Custom",
             "plan": "Enterprise",
             "trial": false,
             "accessPrice": "Custom",
@@ -1561,8 +1511,7 @@
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/filecoin)",
-                "[Contact Sales](mailto:hello@indexing.co)"
+                "[Docs](https://docs.indexing.co/networks/filecoin)"
             ],
             "blocksBehindSla": "0"
         }
