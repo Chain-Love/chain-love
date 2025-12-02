@@ -56,68 +56,81 @@ def normalize(data_by_category: dict):
     return result, errors
 
 def validate_header(file_path: str, header: list[str]):
+    errors = []
+
     # Check for empty header names
     for i, h in enumerate(header):
         if h is None or h.strip() == "":
-            raise ValueError(
+            errors.append(
                 f"{file_path}: Header column {col_letter(i)} exists but is empty"
             )
 
     # Check for duplicates
     seen = {}
-    duplicates = {}
-
     for idx, name in enumerate(header):
         if name not in seen:
             seen[name] = [idx]
         else:
             seen[name].append(idx)
 
-    # Extract duplicates
     for name, idxs in seen.items():
         if len(idxs) > 1:
-            duplicates[name] = idxs
-
-    if duplicates:
-        # Build pretty error message
-        lines = [f"{file_path}: Duplicate header names detected:"]
-        for name, idxs in duplicates.items():
             cols = ", ".join(col_letter(i) for i in idxs)
-            lines.append(f'  - "{name}" appears in columns {cols}')
+            errors.append(
+                f'  - Duplicate: "{name}" appears in columns {cols}'
+            )
 
-        # Show full header with Excel letters
+    if errors:
         header_with_positions = ", ".join(
             f"{col_letter(i)}:{header[i]}" for i in range(len(header))
         )
-        lines.append(f"Full header: {header_with_positions}")
-
-        raise ValueError("\n".join(lines))
+        msg = (
+            f"{file_path}: Header validation failed:\n" +
+            "\n".join(errors) +
+            f"\nFull header: {header_with_positions}"
+        )
+        raise ValueError(msg)
 
 def load_csv_to_dict_list(file_path: str) -> list[dict] | None:
     if not os.path.exists(file_path):
         return None
 
-
     with open(file_path, "r", newline="") as file:
         reader = csv.reader(file)
+
         try:
             header = next(reader)
         except StopIteration:
             raise Exception(f"File {file_path} is empty")
 
-        # Validate header
+        # Validate header (multi-error)
         validate_header(file_path, header)
-        
+
         expected_cols = len(header)
         rows = []
-        row_number = 2 # Skip header row
-        for row in reader:
-            # Extra or missing commas
-            if len(row) != expected_cols:
-                raise ValueError(f"{file_path}: row {row_number} has {len(row)} columns, expected {expected_cols}")
-            row_dict = dict(zip(header, row))
+        errors = []
+        row_number = 2  # header is row 1
+
+        for raw_row in reader:
+            if len(raw_row) != expected_cols:
+                errors.append(f"{file_path}: Row {row_number} has {len(raw_row)} columns, expected {expected_cols}")
+                row_number += 1
+                continue
+
+            for col_idx, val in enumerate(raw_row):
+                if val is None:
+                    errors.append(f"{file_path}: Row {row_number}, Column {col_letter(col_idx)} is None")
+    
+            row_dict = dict(zip(header, raw_row))
             rows.append(row_dict)
             row_number += 1
+
+        if errors:
+            raise ValueError(
+                f"CSV validation failed for {file_path}:\n" +
+                "\n".join(errors)
+            )
+
         return rows
 
 
