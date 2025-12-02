@@ -3897,10 +3897,10 @@
             "address": null
         },
         {
-            "slug": "chainbase-one-free-recent-state",
+            "slug": "chainbase-one-free-custom",
             "provider": "ChainBase",
             "plan": "Free",
-            "nodeType": "Recent-State",
+            "nodeType": "Custom",
             "chain": "one",
             "accessPrice": "$0",
             "queryPrice": "$0",
@@ -3910,9 +3910,11 @@
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "basic",
+                "nft",
+                "token",
+                "domain",
+                "inscription"
             ],
             "limitations": [
                 "2 reqs/sec",
@@ -3939,10 +3941,10 @@
             "address": null
         },
         {
-            "slug": "chainbase-one-pay-as-you-go-recent-state",
+            "slug": "chainbase-one-pay-as-you-go-custom",
             "provider": "ChainBase",
             "plan": "Pay-as-you-go",
-            "nodeType": "Recent-State",
+            "nodeType": "Custom",
             "chain": "one",
             "accessPrice": "$99",
             "queryPrice": null,
@@ -3952,9 +3954,11 @@
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "basic",
+                "nft",
+                "token",
+                "domain",
+                "inscription"
             ],
             "limitations": [
                 "10 reqs/sec",
@@ -3983,106 +3987,24 @@
             "address": null
         },
         {
-            "slug": "chainbase-one-enterprise-recent-state",
+            "slug": "chainbase-one-enterprise-custom",
             "provider": "ChainBase",
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "one",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
+            "uptimeSla": "Custom",
+            "bandwidthSla": "Custom",
+            "blocksBehindSla": "Custom",
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Data Consistency"
-            ],
-            "monitoringAndAnalytics": [
-                "Advanced analytics",
-                "Custom monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://platform.chainbase.com/contact)",
-                "[Docs](https://docs.chainbase.com/catalog/Arbitrum/Overview#the-major-features-of-the-arbitrum-blockchain)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chainbase-one-pay-as-you-go-full-archive",
-            "provider": "ChainBase",
-            "plan": "Pay-as-you-go",
-            "nodeType": "Full Archive",
-            "chain": "one",
-            "accessPrice": "$99",
-            "queryPrice": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "10 reqs/sec",
-                "15 projects"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Data Consistency"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Support portal"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://platform.chainbase.com/pricing)",
-                "[Docs](https://docs.chainbase.com/catalog/Arbitrum/Overview#the-major-features-of-the-arbitrum-blockchain)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "chainbase-one-enterprise-full-archive",
-            "provider": "ChainBase",
-            "plan": "Enterprise",
-            "nodeType": "Full Archive",
-            "chain": "one",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "basic",
+                "nft",
+                "token",
+                "domain",
+                "inscription"
             ],
             "limitations": null,
             "securityImprovements": [

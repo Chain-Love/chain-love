@@ -1176,7 +1176,7 @@
             "slug": "chainbase-mainnet-free",
             "provider": "ChainBase",
             "plan": "Free",
-            "nodeType": "Recent-State",
+            "nodeType": "Custom",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
@@ -1186,9 +1186,11 @@
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "basic",
+                "nft",
+                "token",
+                "domain",
+                "inscription"
             ],
             "limitations": [
                 "2 reqs/sec",
@@ -1218,7 +1220,7 @@
             "slug": "chainbase-mainnet-pay-as-you-go",
             "provider": "ChainBase",
             "plan": "Pay-as-you-go",
-            "nodeType": "Recent-State",
+            "nodeType": "Custom",
             "chain": "mainnet",
             "accessPrice": "$99",
             "queryPrice": null,
@@ -1228,9 +1230,11 @@
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "basic",
+                "nft",
+                "token",
+                "domain",
+                "inscription"
             ],
             "limitations": [
                 "10 reqs/sec",
@@ -1266,15 +1270,17 @@
             "chain": "mainnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
+            "uptimeSla": "Custom",
+            "bandwidthSla": "Custom",
+            "blocksBehindSla": "Custom",
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "basic",
+                "nft",
+                "token",
+                "domain",
+                "inscription"
             ],
             "limitations": null,
             "securityImprovements": [
