@@ -117,10 +117,6 @@ def load_csv_to_dict_list(file_path: str) -> list[dict] | None:
                 row_number += 1
                 continue
 
-            for col_idx, val in enumerate(raw_row):
-                if val is None:
-                    errors.append(f"{file_path}: Row {row_number}, Column {col_letter(col_idx)} is None")
-    
             row_dict = dict(zip(header, raw_row))
             rows.append(row_dict)
             row_number += 1
