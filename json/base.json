@@ -1151,7 +1151,7 @@
             "address": null
         },
         {
-            "slug": "publicnode-com-free-recent-state-mainnet",
+            "slug": "publicnode-mainnet-free-recent-state",
             "provider": "PublicNode",
             "plan": "Free",
             "nodeType": "Recent-State",
@@ -1191,7 +1191,7 @@
             "address": null
         },
         {
-            "slug": "publicnode-com-free-recent-state-testnet",
+            "slug": "publicnode-testnet-free-recent-state",
             "provider": "PublicNode",
             "plan": "Free",
             "nodeType": "Recent-State",
@@ -1231,46 +1231,7 @@
             "address": null
         },
         {
-            "slug": "subquery-free-mainnet-recent-state",
-            "provider": "Subquery",
-            "plan": "Free",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Decentralized RPC endpoints",
-                "Multi-chain support"
-            ],
-            "limitations": [
-                "Rate limits apply"
-            ],
-            "securityImprovements": [
-                "Decentralized storage",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Data lake logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://app.subquery.network/explorer/project/0x05/overview)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "subquery-free-mainnet-full-archive",
+            "slug": "subquery-mainnet-free-full-archive",
             "provider": "Subquery",
             "plan": "Free",
             "nodeType": "Full Archive",
@@ -1309,10 +1270,10 @@
             "address": null
         },
         {
-            "slug": "subquery-free-testnet-recent-state",
+            "slug": "subquery-testnet-free-full-archive",
             "provider": "Subquery",
             "plan": "Free",
-            "nodeType": "Recent-State",
+            "nodeType": "Full Archive",
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
@@ -1343,18 +1304,18 @@
             "verifiedBlocksBehindAvg": null,
             "starred": false,
             "actionButtons": [
-                "[Website](https://app.subquery.network/explorer/project/0x05/overview)"
+                "[Website](https://app.subquery.network/explorer/project/0x06/overview)"
             ],
             "address": null
         },
         {
-            "slug": "subquery-free-testnet-full-archive",
+            "slug": "subquery-mainnet-pay-as-you-go-full-archive",
             "provider": "Subquery",
-            "plan": "Free",
+            "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
-            "chain": "testnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
+            "chain": "mainnet",
+            "accessPrice": null,
+            "queryPrice": "1.5K/3K SQT/1M requests",
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1364,7 +1325,46 @@
                 "Multi-chain support"
             ],
             "limitations": [
-                "Rate limits apply"
+                "Price may vary depending on the value of the token"
+            ],
+            "securityImprovements": [
+                "Decentralized storage",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Data lake logs",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://app.subquery.network/explorer/project/0x06/overview)"
+            ],
+            "address": null
+        },
+        {
+            "slug": "subquery-testnet-pay-as-you-go-full-archive",
+            "provider": "Subquery",
+            "plan": "Pay-as-you-go",
+            "nodeType": "Full Archive",
+            "chain": "testnet",
+            "accessPrice": null,
+            "queryPrice": "1.5K/3K SQT/1M requests",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "trial": false,
+            "availableApis": [
+                "Decentralized RPC endpoints",
+                "Multi-chain support"
+            ],
+            "limitations": [
+                "Price may vary depending on the value of the token"
             ],
             "securityImprovements": [
                 "Decentralized storage",
@@ -1931,902 +1931,6 @@
             "actionButtons": [
                 "[Contact](https://tenderly.co/pricing)",
                 "[Docs](https://docs.tenderly.co/supported-networks)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "therpc-free-recent-state-mainnet",
-            "provider": "TheRPC",
-            "plan": "Free",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "uptimeSla": "95-97%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Multi-chain support"
-            ],
-            "limitations": [
-                "5/15 RPC calls/sec"
-            ],
-            "securityImprovements": [
-                "Authentication mechanisms",
-                "Data encryption",
-                "Secure bindings"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time monitoring",
-                "Blockchain analytics",
-                "Detecting critical events"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://therpc.io/chains)",
-                "[Docs](https://therpc.io/docs/base)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "therpc-pay-as-you-go-recent-state-mainnet",
-            "provider": "TheRPC",
-            "plan": "Pay-as-you-go",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0.49/1M CU",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Multi-chain support"
-            ],
-            "limitations": [
-                "500 RPC calls/sec"
-            ],
-            "securityImprovements": [
-                "Authentication mechanisms",
-                "Data encryption",
-                "Secure bindings"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time monitoring",
-                "Blockchain analytics",
-                "Detecting critical events"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Buy](https://therpc.io/pricing)",
-                "[Docs](https://therpc.io/docs/base)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "therpc-enterprise-recent-state-mainnet",
-            "provider": "TheRPC",
-            "plan": "Enterprise",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Multi-chain support"
-            ],
-            "limitations": [
-                "Unlimited RPC calls/sec"
-            ],
-            "securityImprovements": [
-                "Authentication mechanisms",
-                "Data encryption",
-                "Secure bindings"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time monitoring",
-                "Blockchain analytics",
-                "Detecting critical events"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Contact](https://therpc.io/login?redirect=%2Fdashboard%2Fplans)",
-                "[Docs](https://therpc.io/docs/base)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "therpc-free-recent-state-testnet",
-            "provider": "TheRPC",
-            "plan": "Free",
-            "nodeType": "Recent-State",
-            "chain": "testnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "uptimeSla": "95-97%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Multi-chain support"
-            ],
-            "limitations": [
-                "5/15 RPC calls/sec"
-            ],
-            "securityImprovements": [
-                "Authentication mechanisms",
-                "Data encryption",
-                "Secure bindings"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time monitoring",
-                "Blockchain analytics",
-                "Detecting critical events"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://therpc.io/chains)",
-                "[Docs](https://therpc.io/docs/base)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "therpc-pay-as-you-go-recent-state-testnet",
-            "provider": "TheRPC",
-            "plan": "Pay-as-you-go",
-            "nodeType": "Recent-State",
-            "chain": "testnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0.49/1M CU",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Multi-chain support"
-            ],
-            "limitations": [
-                "500 RPC calls/sec"
-            ],
-            "securityImprovements": [
-                "Authentication mechanisms",
-                "Data encryption",
-                "Secure bindings"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time monitoring",
-                "Blockchain analytics",
-                "Detecting critical events"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Buy](https://therpc.io/pricing)",
-                "[Docs](https://therpc.io/docs/base)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "therpc-enterprise-recent-state-testnet",
-            "provider": "TheRPC",
-            "plan": "Enterprise",
-            "nodeType": "Recent-State",
-            "chain": "testnet",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Multi-chain support"
-            ],
-            "limitations": [
-                "Unlimited RPC calls/sec"
-            ],
-            "securityImprovements": [
-                "Authentication mechanisms",
-                "Data encryption",
-                "Secure bindings"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time monitoring",
-                "Blockchain analytics",
-                "Detecting critical events"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Contact](https://therpc.io/login?redirect=%2Fdashboard%2Fplans)",
-                "[Docs](https://therpc.io/docs/base)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-mainnet-free-recent-state",
-            "provider": "GetBlock",
-            "plan": "Free",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "uptimeSla": "99.98%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "50K CU",
-                "20 RPS",
-                "2 Access Tokens"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://getblock.io/)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-mainnet-pay-as-you-go-recent-state",
-            "provider": "GetBlock",
-            "plan": "Pay-as-you-go",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
-            "uptimeSla": "99.98%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "50M/220M/600M CU",
-                "100/300/500 RPS",
-                "10/25/50 Access Tokens"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Buy](https://getblock.io/pricing/)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-mainnet-enterprise-recent-state",
-            "provider": "GetBlock",
-            "plan": "Enterprise",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "custom limits"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Contact](https://account.getblock.io/sign-up)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-mainnet-dedicated-recent-state",
-            "provider": "GetBlock",
-            "plan": "Dedicated",
-            "nodeType": "Recent-State",
-            "chain": "mainnet",
-            "accessPrice": "Up to $1K",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "custom limits",
-                "unlimited requests",
-                "unlimited rate limit"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Contact](https://account.getblock.io/sign-up)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-mainnet-pay-as-you-go-full-archive",
-            "provider": "GetBlock",
-            "plan": "Pay-as-you-go",
-            "nodeType": "Full Archive",
-            "chain": "mainnet",
-            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
-            "uptimeSla": "99.98%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "50M/220M/600M CU",
-                "100/300/500 RPS",
-                "10/25/50 Access Tokens"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Buy](https://getblock.io/pricing/)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-mainnet-enterprise-full-archive",
-            "provider": "GetBlock",
-            "plan": "Enterprise",
-            "nodeType": "Full Archive",
-            "chain": "mainnet",
-            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "custom limits"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Contact](https://account.getblock.io/sign-up)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-mainnet-dedicated-full-archive",
-            "provider": "GetBlock",
-            "plan": "Dedicated",
-            "nodeType": "Full Archive",
-            "chain": "mainnet",
-            "accessPrice": "Up to $1K",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "custom limits",
-                "unlimited requests",
-                "unlimited rate limit"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Contact](https://account.getblock.io/sign-up)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-testnet-free-recent-state",
-            "provider": "GetBlock",
-            "plan": "Free",
-            "nodeType": "Recent-State",
-            "chain": "testnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "uptimeSla": "99.98%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "50K CU",
-                "20 RPS",
-                "2 Access Tokens"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://getblock.io/)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-testnet-pay-as-you-go-recent-state",
-            "provider": "GetBlock",
-            "plan": "Pay-as-you-go",
-            "nodeType": "Recent-State",
-            "chain": "testnet",
-            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
-            "uptimeSla": "99.98%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "50M/220M/600M CU",
-                "100/300/500 RPS",
-                "10/25/50 Access Tokens"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Buy](https://getblock.io/pricing/)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-testnet-enterprise-recent-state",
-            "provider": "GetBlock",
-            "plan": "Enterprise",
-            "nodeType": "Recent-State",
-            "chain": "testnet",
-            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "custom limits"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Contact](https://account.getblock.io/sign-up)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-testnet-dedicated-recent-state",
-            "provider": "GetBlock",
-            "plan": "Dedicated",
-            "nodeType": "Recent-State",
-            "chain": "testnet",
-            "accessPrice": "Up to $1K",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "custom limits",
-                "unlimited requests",
-                "unlimited rate limit"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Contact](https://account.getblock.io/sign-up)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-testnet-pay-as-you-go-full-archive",
-            "provider": "GetBlock",
-            "plan": "Pay-as-you-go",
-            "nodeType": "Full Archive",
-            "chain": "testnet",
-            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
-            "uptimeSla": "99.98%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "50M/220M/600M CU",
-                "100/300/500 RPS",
-                "10/25/50 Access Tokens"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Buy](https://getblock.io/pricing/)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-testnet-enterprise-full-archive",
-            "provider": "GetBlock",
-            "plan": "Enterprise",
-            "nodeType": "Full Archive",
-            "chain": "testnet",
-            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "custom limits"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Contact](https://account.getblock.io/sign-up)",
-                "[Docs](https://docs.getblock.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "getblock-testnet-dedicated-full-archive",
-            "provider": "GetBlock",
-            "plan": "Dedicated",
-            "nodeType": "Full Archive",
-            "chain": "testnet",
-            "accessPrice": "Up to $1K",
-            "queryPrice": "Custom",
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "custom limits",
-                "unlimited requests",
-                "unlimited rate limit"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Contact](https://account.getblock.io/sign-up)",
-                "[Docs](https://docs.getblock.io/)"
             ],
             "address": null
         }

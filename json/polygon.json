@@ -401,7 +401,13 @@
                 "500K CU/day",
                 "150 Cups throughput limit"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "IP Whitelisting",
+                "JWT Authentication",
+                "Smart Contract Address Restrictions",
+                "Front-Running Protection",
+                "Comprehensive Analytics Dashboard"
+            ],
             "monitoringAndAnalytics": [
                 "Basic monitoring",
                 "Usage analytics"
@@ -443,7 +449,13 @@
                 "2M/10M CU/day",
                 "500/2K CUps throughput limit"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "IP Whitelisting",
+                "JWT Authentication",
+                "Smart Contract Address Restrictions",
+                "Front-Running Protection",
+                "Comprehensive Analytics Dashboard"
+            ],
             "monitoringAndAnalytics": [
                 "Usage analytics",
                 "Custom alerts",
@@ -486,7 +498,13 @@
                 "custom limits",
                 "unlimited throughput limit"
             ],
-            "securityImprovements": null,
+            "securityImprovements": [
+                "IP Whitelisting",
+                "JWT Authentication",
+                "Smart Contract Address Restrictions",
+                "Front-Running Protection",
+                "Comprehensive Analytics Dashboard"
+            ],
             "monitoringAndAnalytics": [
                 "Advanced analytics",
                 "Custom dashboards",
@@ -1118,8 +1136,8 @@
         {
             "slug": "chainbase-polygon-free",
             "provider": "ChainBase",
-            "plan": "Free",
-            "nodeType": "Custom",
+            "plan": "Custom",
+            "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
@@ -1129,11 +1147,9 @@
             "starred": false,
             "trial": false,
             "availableApis": [
-                "basic",
-                "nft",
-                "token",
-                "domain",
-                "inscription"
+                "eth",
+                "web3",
+                "net"
             ],
             "limitations": [
                 "2 reqs/sec",
@@ -1162,8 +1178,8 @@
         {
             "slug": "chainbase-polygon-pay-as-you-go",
             "provider": "ChainBase",
-            "plan": "Pay-as-you-go",
-            "nodeType": "Custom",
+            "plan": "Custom",
+            "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$99",
             "queryPrice": null,
@@ -1173,11 +1189,9 @@
             "starred": false,
             "trial": false,
             "availableApis": [
-                "basic",
-                "nft",
-                "token",
-                "domain",
-                "inscription"
+                "eth",
+                "web3",
+                "net"
             ],
             "limitations": [
                 "10 reqs/sec",
@@ -1208,22 +1222,20 @@
         {
             "slug": "chainbase-polygon-enterprise",
             "provider": "ChainBase",
-            "plan": "Enterprise",
-            "nodeType": "Recent-State",
+            "plan": "Custom",
+            "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
-            "uptimeSla": "Custom",
-            "bandwidthSla": "Custom",
-            "blocksBehindSla": "Custom",
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "basic",
-                "nft",
-                "token",
-                "domain",
-                "inscription"
+                "eth",
+                "web3",
+                "net"
             ],
             "limitations": null,
             "securityImprovements": [
