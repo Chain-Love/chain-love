@@ -18,7 +18,6 @@ The goal is to build a **clean, comparable dataset** that developers and researc
 
 Each **network folder** contains CSVs grouped by service type.
 
-
 ## How to Contribute
 
 1. **Fork & branch**: Fork the repo and create a descriptive branch (e.g. `add-ankr-provider`).
