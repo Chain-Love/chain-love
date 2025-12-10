@@ -1,6 +1,8 @@
 import csv
 import json
 import os
+import string
+import unicodedata
 
 PROVIDER_REF_PREFIX = "!provider:"
 
@@ -91,10 +93,97 @@ def validate_header(file_path: str, header: list[str]):
         )
         raise ValueError(msg)
 
+def validate_utf8_with_position(file_path: str):
+    """
+    Reads the file in binary mode and decodes line by line,
+    so we can pinpoint the exact UTF-8 failure.
+    """
+    with open(file_path, "rb") as f:
+        line_number = 1
+        byte_offset = 0
+
+        for raw_line in f:
+            try:
+                raw_line.decode("utf-8")
+            except UnicodeDecodeError as e:
+                bad_byte = raw_line[e.start]
+                column_number = e.start + 1  # make it human-friendly (1-based)
+
+                raise ValueError(
+                    f"File {file_path} is not valid UTF-8:\n"
+                    f"  Invalid byte 0x{bad_byte:02X} at global byte offset {byte_offset + e.start}\n"
+                    f"  Line {line_number}, column {column_number}\n"
+                    f"  Decoder error: {e}"
+                ) from None
+
+            byte_offset += len(raw_line)
+            line_number += 1
+
+# Allowed ASCII baseline
+BASE_ALLOWED = set(string.printable)
+EXTRA_ALLOWED = {
+    "\u2013",  # EN DASH –
+    "\u2014",  # EM DASH —
+    "\u2011",  # NON-BREAKING HYPHEN -
+    "\u00A0",  # NON-BREAKING SPACE (NBSP)
+}
+
+def is_currency_symbol(ch: str) -> bool:
+    return unicodedata.category(ch) == "Sc"
+
+def is_superscript(ch: str) -> bool:
+    return unicodedata.category(ch) == "No"
+
+def is_arrow(ch: str) -> bool:
+    name = unicodedata.name(ch, "")
+    return "ARROW" in name
+
+def scan_for_unexpected_unicode(file_path: str):
+    """
+    Allowed:
+      - ASCII printable
+      - Currency symbols
+      - Dashes and NBSP
+      - Superscripts
+      - Any Unicode arrow
+    Everything else rejected.
+    """
+    with open(file_path, "r", encoding="utf-8") as f:
+        for lineno, line in enumerate(f, start=1):
+            for col, ch in enumerate(line, start=1):
+
+                if ch in BASE_ALLOWED:
+                    continue
+
+                if ch in EXTRA_ALLOWED:
+                    continue
+
+                if is_currency_symbol(ch):
+                    continue
+
+                if is_superscript(ch):
+                    continue
+
+                if is_arrow(ch):
+                    continue
+
+                # → Not allowed
+                code = ord(ch)
+                name = unicodedata.name(ch, "UNKNOWN")
+                raise ValueError(
+                    f"Unexpected unicode character in {file_path}:\n"
+                    f"  '{ch}' (U+{code:04X}, {name})\n"
+                    f"  Line {lineno}, column {col}"
+                )
+
 def load_csv_to_dict_list(file_path: str) -> list[dict] | None:
     if not os.path.exists(file_path):
         return None
 
+    # Validate non-unicode characters
+    validate_utf8_with_position(file_path)
+    scan_for_unexpected_unicode(file_path)
+    
     with open(file_path, "r", newline="") as file:
         reader = csv.reader(file)
 
