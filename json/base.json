@@ -1,80 +1,135 @@
 {
     "rpc": [
         {
-            "slug": "0xrpc-free-recent-state-mainnet",
+            "slug": "0xrpc-mainnet-free-recent-state",
             "provider": "0xrpc",
+            "actionButtons": [
+                "[Docs](https://0xrpc.github.io/)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": null,
             "limitations": null,
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://0xrpc.github.io/)"
-            ],
+            "trial": false,
             "address": null
         },
         {
-            "slug": "1rpc-free-recent-state-mainnet",
+            "slug": "1rpc-mainnet-public-recent-state",
             "provider": "1rpc",
-            "plan": "Free",
+            "actionButtons": [
+                "[Website](https://www.1rpc.io/)",
+                "[Docs](https://docs.1rpc.io/)"
+            ],
+            "plan": "Public",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
                 "net"
             ],
             "limitations": [
-                "10K/20K protected reqs/day"
+                "10K protected reqs/day"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays"
             ],
-            "monitoringAndAnalytics": null,
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Usage analytics",
+                "Advanced analytics",
+                "Customizable alerting and reporting",
+                "Transaction sanitizers"
+            ],
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
+            "trial": false,
+            "address": null
+        },
+        {
+            "slug": "1rpc-mainnet-free-recent-state",
+            "provider": "1rpc",
             "actionButtons": [
                 "[Website](https://www.1rpc.io/)",
                 "[Docs](https://docs.1rpc.io/)"
             ],
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "mainnet",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "20K protected reqs/day"
+            ],
+            "securityImprovements": [
+                "Privacy Protected Relays"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Usage analytics",
+                "Advanced analytics",
+                "Customizable alerting and reporting",
+                "Transaction sanitizers"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "starred": false,
+            "trial": false,
             "address": null
         },
         {
-            "slug": "1rpc-pay-as-you-go-recent-state-mainnet",
+            "slug": "1rpc-mainnet-pay-as-you-go-recent-state",
             "provider": "1rpc",
+            "actionButtons": [
+                "[Buy](https://www.1rpc.io/#pricing)",
+                "[Docs](https://docs.1rpc.io/)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$9.90/$29.90/mo, $8.33/$24.99/yearly",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
@@ -87,69 +142,38 @@
                 "Privacy Protected Relays",
                 "Transaction Sanitizers"
             ],
-            "monitoringAndAnalytics": null,
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Usage analytics",
+                "Advanced analytics",
+                "Customizable alerting and reporting",
+                "Transaction sanitizers"
+            ],
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
+            "trial": false,
+            "address": null
+        },
+        {
+            "slug": "1rpc-testnet-pay-as-you-go-recent-state",
+            "provider": "1rpc",
             "actionButtons": [
                 "[Buy](https://www.1rpc.io/#pricing)",
                 "[Docs](https://docs.1rpc.io/)"
             ],
-            "address": null
-        },
-        {
-            "slug": "1rpc-free-recent-state-testnet",
-            "provider": "1rpc",
-            "plan": "Free",
-            "nodeType": "Recent-State",
-            "chain": "testnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "10K/20K protected reqs/day"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays"
-            ],
-            "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.1rpc.io/)",
-                "[Docs](https://docs.1rpc.io/)"
-            ],
-            "address": null
-        },
-        {
-            "slug": "1rpc-pay-as-you-go-recent-state-testnet",
-            "provider": "1rpc",
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$9.90/$29.90/mo, $8.33/$24.99/yearly",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
@@ -162,32 +186,38 @@
                 "Privacy Protected Relays",
                 "Transaction Sanitizers"
             ],
-            "monitoringAndAnalytics": null,
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Usage analytics",
+                "Advanced analytics",
+                "Customizable alerting and reporting",
+                "Transaction sanitizers"
+            ],
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Buy](https://www.1rpc.io/#pricing)",
-                "[Docs](https://docs.1rpc.io/)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "alchemy-free-recent-state-mainnet",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/rpc/base)",
+                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0/1M request",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
@@ -215,28 +245,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://www.alchemy.com/rpc/base)",
-                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "alchemy-pay-as-you-go-recent-state-mainnet",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Buy](https://www.alchemy.com/pricing)",
+                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$5/$45/$215/$415/$815/$2K",
             "queryPrice": "$0.40/$0.45/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
@@ -267,28 +297,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Buy](https://www.alchemy.com/pricing)",
-                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "alchemy-enterprise-recent-state-mainnet",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Contact](https://www.alchemy.com/contact-sales)",
+                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
@@ -318,28 +348,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Contact](https://www.alchemy.com/contact-sales)",
-                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "alchemy-free-recent-state-testnet",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/rpc/base-sepolia)",
+                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$0/1M request",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
@@ -367,28 +397,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://www.alchemy.com/rpc/base-sepolia)",
-                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "alchemy-pay-as-you-go-recent-state-testnet",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Buy](https://www.alchemy.com/pricing)",
+                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$5/$45/$215/$415/$815/$2K",
             "queryPrice": "$0.40/$0.45/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
@@ -419,28 +449,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Buy](https://www.alchemy.com/pricing)",
-                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "alchemy-enterprise-recent-state-testnet",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Contact](https://www.alchemy.com/contact-sales)",
+                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
@@ -470,28 +500,27 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Contact](https://www.alchemy.com/contact-sales)",
-                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "base-rpc-free-recent-state-mainnet",
             "provider": "Base",
+            "actionButtons": [
+                "[Website](https://www.base.org/)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "NFT API",
                 "Token API",
@@ -516,27 +545,27 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://www.base.org/)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "base-rpc-free-recent-state-testnet",
             "provider": "Base",
+            "actionButtons": [
+                "[Website](https://www.base.org/)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "NFT API",
                 "Token API",
@@ -561,27 +590,27 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://www.base.org/)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "llamanodes-free-recent-state-mainnet",
             "provider": "LlamaNodes",
+            "actionButtons": [
+                "[Website](https://llamarpc.com/base)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Low latency",
                 "Advanced monitoring tools",
@@ -601,27 +630,27 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://llamarpc.com/base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "meowrpc-free-recent-state-mainnet",
             "provider": "MeowRPC",
+            "actionButtons": [
+                "[Website](https://meowrpc.com/)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Blockchain data queries",
                 "Transaction submission",
@@ -643,27 +672,28 @@
                 "South America East",
                 "US West"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://meowrpc.com/)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "nodies-free-recent-state-mainnet",
             "provider": "Nodies",
+            "actionButtons": [
+                "[Website](https://www.nodies.app/)",
+                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Multi-chain support"
             ],
@@ -681,28 +711,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://www.nodies.app/)",
-                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "nodies-pay-as-you-go-recent-state-mainnet",
             "provider": "Nodies",
+            "actionButtons": [
+                "[Buy](https://www.nodies.app/pricing)",
+                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$50/$200",
             "queryPrice": "$0.0000075/$0.000005 per excess request",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": null,
             "limitations": [
                 "10M/50M req/mo",
@@ -718,28 +748,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Buy](https://www.nodies.app/pricing)",
-                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "nodies-enterprise-recent-state-mainnet",
             "provider": "Nodies",
+            "actionButtons": [
+                "[Contact](https://www.nodies.app/contact-us)",
+                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": null,
             "limitations": [
                 "No rate limit"
@@ -754,28 +784,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Contact](https://www.nodies.app/contact-us)",
-                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "nodies-free-recent-state-testnet",
             "provider": "Nodies",
+            "actionButtons": [
+                "[Website](https://www.nodies.app/)",
+                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": null,
             "limitations": [
                 "4M req/mo",
@@ -791,28 +821,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://www.nodies.app/)",
-                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "nodies-pay-as-you-go-recent-state-testnet",
             "provider": "Nodies",
+            "actionButtons": [
+                "[Buy](https://www.nodies.app/pricing)",
+                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$50/$200",
             "queryPrice": "$0.0000075/$0.000005 per excess request",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": null,
             "limitations": [
                 "10M/50M req/mo",
@@ -828,28 +858,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Buy](https://www.nodies.app/pricing)",
-                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "nodies-enterprise-recent-state-testnet",
             "provider": "Nodies",
+            "actionButtons": [
+                "[Contact](https://www.nodies.app/contact-us)",
+                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": null,
             "limitations": [
                 "No rate limit"
@@ -864,28 +894,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Contact](https://www.nodies.app/contact-us)",
-                "[Docs](https://docs.nodies.app/overview/supported-blockchains)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "onfinality-free-mainnet-full-archive",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Website](https://onfinality.io/en/networks/base)",
+                "[Docs](https://onfinality.io/networks/base)"
+            ],
             "plan": "Free",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Network native APIs",
                 "Trace API"
@@ -910,28 +940,28 @@
                 "Tokyo",
                 "Frankfurt"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://onfinality.io/en/networks/base)",
-                "[Docs](https://onfinality.io/networks/base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "onfinality-pay-as-you-go-mainnet-full-archive",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/pricing)",
+                "[Docs](https://onfinality.io/networks/base)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "$49/$249",
             "queryPrice": "$3.75/$6/1M extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Network native APIs",
                 "Trace API"
@@ -956,28 +986,28 @@
                 "Tokyo",
                 "Frankfurt"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Buy](https://onfinality.io/pricing)",
-                "[Docs](https://onfinality.io/networks/base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "onfinality-enterprise-mainnet-full-archive",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/pricing)",
+                "[Docs](https://onfinality.io/networks/base)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Network native APIs",
                 "Trace API"
@@ -1002,28 +1032,28 @@
                 "Tokyo",
                 "Frankfurt"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Contact](https://onfinality.io/pricing)",
-                "[Docs](https://onfinality.io/networks/base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "onfinality-free-testnet-full-archive",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Website](https://onfinality.io/en/networks/base)",
+                "[Docs](https://onfinality.io/networks/base)"
+            ],
             "plan": "Free",
             "nodeType": "Full Archive",
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Network native APIs",
                 "Trace API"
@@ -1048,28 +1078,28 @@
                 "Tokyo",
                 "Frankfurt"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://onfinality.io/en/networks/base)",
-                "[Docs](https://onfinality.io/networks/base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "onfinality-pay-as-you-go-testnet-full-archive",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/pricing)",
+                "[Docs](https://onfinality.io/networks/base)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "testnet",
             "accessPrice": "$49/$249",
             "queryPrice": "$3.75/$6/1M extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Network native APIs",
                 "Trace API"
@@ -1094,28 +1124,28 @@
                 "Tokyo",
                 "Frankfurt"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Buy](https://onfinality.io/pricing)",
-                "[Docs](https://onfinality.io/networks/base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "onfinality-enterprise-testnet-full-archive",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/pricing)",
+                "[Docs](https://onfinality.io/networks/base)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "testnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Network native APIs",
                 "Trace API"
@@ -1140,28 +1170,27 @@
                 "Tokyo",
                 "Frankfurt"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Contact](https://onfinality.io/pricing)",
-                "[Docs](https://onfinality.io/networks/base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
-            "slug": "publicnode-mainnet-free-recent-state",
+            "slug": "publicnode-mainnet-public-recent-state",
             "provider": "PublicNode",
-            "plan": "Free",
+            "actionButtons": [
+                "[Docs](https://base.publicnode.com/)"
+            ],
+            "plan": "Public",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
@@ -1181,27 +1210,27 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://base.publicnode.com/)"
-            ],
+            "trial": false,
             "address": null
         },
         {
-            "slug": "publicnode-testnet-free-recent-state",
+            "slug": "publicnode-testnet-public-recent-state",
             "provider": "PublicNode",
-            "plan": "Free",
+            "actionButtons": [
+                "[Docs](https://base.publicnode.com/)"
+            ],
+            "plan": "Public",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "eth",
                 "web3",
@@ -1221,27 +1250,27 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://base.publicnode.com/)"
-            ],
+            "trial": false,
             "address": null
         },
         {
-            "slug": "subquery-mainnet-free-full-archive",
+            "slug": "subquery-mainnet-public-full-archive",
             "provider": "Subquery",
-            "plan": "Free",
+            "actionButtons": [
+                "[Website](https://app.subquery.network/explorer/project/0x06/overview)"
+            ],
+            "plan": "Public",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Decentralized RPC endpoints",
                 "Multi-chain support"
@@ -1260,27 +1289,27 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://app.subquery.network/explorer/project/0x06/overview)"
-            ],
+            "trial": false,
             "address": null
         },
         {
-            "slug": "subquery-testnet-free-full-archive",
+            "slug": "subquery-testnet-public-full-archive",
             "provider": "Subquery",
-            "plan": "Free",
+            "actionButtons": [
+                "[Website](https://app.subquery.network/explorer/project/0x06/overview)"
+            ],
+            "plan": "Public",
             "nodeType": "Full Archive",
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Decentralized RPC endpoints",
                 "Multi-chain support"
@@ -1299,27 +1328,27 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://app.subquery.network/explorer/project/0x06/overview)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "subquery-mainnet-pay-as-you-go-full-archive",
             "provider": "Subquery",
+            "actionButtons": [
+                "[Website](https://app.subquery.network/explorer/project/0x06/overview)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "mainnet",
             "accessPrice": null,
-            "queryPrice": "1.5K/3K SQT/1M requests",
+            "queryPrice": "1.5K/3K SQT/1M reqs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Decentralized RPC endpoints",
                 "Multi-chain support"
@@ -1338,27 +1367,27 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://app.subquery.network/explorer/project/0x06/overview)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "subquery-testnet-pay-as-you-go-full-archive",
             "provider": "Subquery",
+            "actionButtons": [
+                "[Website](https://app.subquery.network/explorer/project/0x06/overview)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "testnet",
             "accessPrice": null,
-            "queryPrice": "1.5K/3K SQT/1M requests",
+            "queryPrice": "1.5K/3K SQT/1M reqs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Decentralized RPC endpoints",
                 "Multi-chain support"
@@ -1377,27 +1406,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://app.subquery.network/explorer/project/0x06/overview)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "tatum-free-mainnet-recent-state",
             "provider": "Tatum",
+            "actionButtons": [
+                "[Website](https://tatum.io/chain/base)",
+                "[Docs](https://docs.tatum.io/reference/rpc-base)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Wallet and address management",
                 "Transaction broadcasting",
@@ -1424,28 +1454,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://tatum.io/chain/base)",
-                "[Docs](https://docs.tatum.io/reference/rpc-base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "tatum-pay-as-you-go-mainnet-recent-state",
             "provider": "Tatum",
+            "actionButtons": [
+                "[Buy](https://tatum.io/pricing)",
+                "[Docs](https://docs.tatum.io/reference/rpc-base)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$49/mo, $29/yearly, $25/2 years",
-            "queryPrice": "$0.000009/extra credit, $9/M extra credits",
+            "queryPrice": "$0.000009/extra credit, $9/1M extra credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Wallet and address management",
                 "Transaction broadcasting",
@@ -1473,28 +1503,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Buy](https://tatum.io/pricing)",
-                "[Docs](https://docs.tatum.io/reference/rpc-base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "tatum-enterprise-mainnet-recent-state",
             "provider": "Tatum",
+            "actionButtons": [
+                "[Contact](https://tatum.io/get-in-touch)",
+                "[Docs](https://docs.tatum.io/reference/rpc-base)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Wallet and address management",
                 "Transaction broadcasting",
@@ -1522,28 +1552,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Contact](https://tatum.io/get-in-touch)",
-                "[Docs](https://docs.tatum.io/reference/rpc-base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "tatum-free-testnet-recent-state",
             "provider": "Tatum",
+            "actionButtons": [
+                "[Website](https://tatum.io/chain/base)",
+                "[Docs](https://docs.tatum.io/reference/rpc-base)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Wallet and address management",
                 "Transaction broadcasting",
@@ -1570,28 +1600,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://tatum.io/chain/base)",
-                "[Docs](https://docs.tatum.io/reference/rpc-base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "tatum-pay-as-you-go-testnet-recent-state",
             "provider": "Tatum",
+            "actionButtons": [
+                "[Buy](https://tatum.io/pricing)",
+                "[Docs](https://docs.tatum.io/reference/rpc-base)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$49/mo, $29/yearly, $25/2 years",
-            "queryPrice": "$0.000009/extra credit, $9/M extra credits",
+            "queryPrice": "$0.000009/extra credit, $9/1M extra credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Wallet and address management",
                 "Transaction broadcasting",
@@ -1619,28 +1649,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Buy](https://tatum.io/pricing)",
-                "[Docs](https://docs.tatum.io/reference/rpc-base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "tatum-enterprise-testnet-recent-state",
             "provider": "Tatum",
+            "actionButtons": [
+                "[Contact](https://tatum.io/get-in-touch)",
+                "[Docs](https://docs.tatum.io/reference/rpc-base)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": false,
             "availableApis": [
                 "Wallet and address management",
                 "Transaction broadcasting",
@@ -1668,28 +1698,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Contact](https://tatum.io/get-in-touch)",
-                "[Docs](https://docs.tatum.io/reference/rpc-base)"
-            ],
+            "trial": false,
             "address": null
         },
         {
             "slug": "tenderly-free-mainnet-recent-state",
             "provider": "Tenderly",
+            "actionButtons": [
+                "[Website](https://tenderly.co/)",
+                "[Docs](https://docs.tenderly.co/supported-networks)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": true,
             "availableApis": [
                 "eth",
                 "web3",
@@ -1710,28 +1740,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://tenderly.co/)",
-                "[Docs](https://docs.tenderly.co/supported-networks)"
-            ],
+            "trial": true,
             "address": null
         },
         {
             "slug": "tenderly-pay-as-you-go-mainnet-recent-state",
             "provider": "Tenderly",
+            "actionButtons": [
+                "[Buy](https://tenderly.co/pricing)",
+                "[Docs](https://docs.tenderly.co/supported-networks)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "$45/$450/mo (monthly plan), $50/$500 (yearly plan)",
             "queryPrice": "$10/1M TU",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": true,
             "availableApis": [
                 "eth",
                 "web3",
@@ -1753,28 +1783,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Buy](https://tenderly.co/pricing)",
-                "[Docs](https://docs.tenderly.co/supported-networks)"
-            ],
+            "trial": true,
             "address": null
         },
         {
             "slug": "tenderly-enterprise-mainnet-recent-state",
             "provider": "Tenderly",
+            "actionButtons": [
+                "[Contact](https://tenderly.co/pricing)",
+                "[Docs](https://docs.tenderly.co/supported-networks)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "mainnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": true,
             "availableApis": [
                 "eth",
                 "web3",
@@ -1796,28 +1826,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Contact](https://tenderly.co/pricing)",
-                "[Docs](https://docs.tenderly.co/supported-networks)"
-            ],
+            "trial": true,
             "address": null
         },
         {
             "slug": "tenderly-free-testnet-recent-state",
             "provider": "Tenderly",
+            "actionButtons": [
+                "[Website](https://tenderly.co/)",
+                "[Docs](https://docs.tenderly.co/supported-networks)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": true,
             "availableApis": [
                 "eth",
                 "web3",
@@ -1838,28 +1868,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Website](https://tenderly.co/)",
-                "[Docs](https://docs.tenderly.co/supported-networks)"
-            ],
+            "trial": true,
             "address": null
         },
         {
             "slug": "tenderly-pay-as-you-go-testnet-recent-state",
             "provider": "Tenderly",
+            "actionButtons": [
+                "[Buy](https://tenderly.co/pricing)",
+                "[Docs](https://docs.tenderly.co/supported-networks)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "$45/$450/mo (monthly plan), $50/$500 (yearly plan)",
             "queryPrice": "$10/1M TU",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": true,
             "availableApis": [
                 "eth",
                 "web3",
@@ -1881,28 +1911,28 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Buy](https://tenderly.co/pricing)",
-                "[Docs](https://docs.tenderly.co/supported-networks)"
-            ],
+            "trial": true,
             "address": null
         },
         {
             "slug": "tenderly-enterprise-testnet-recent-state",
             "provider": "Tenderly",
+            "actionButtons": [
+                "[Contact](https://tenderly.co/pricing)",
+                "[Docs](https://docs.tenderly.co/supported-networks)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "testnet",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "trial": true,
             "availableApis": [
                 "eth",
                 "web3",
@@ -1924,14 +1954,8 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "starred": false,
-            "actionButtons": [
-                "[Contact](https://tenderly.co/pricing)",
-                "[Docs](https://docs.tenderly.co/supported-networks)"
-            ],
+            "trial": true,
             "address": null
         }
     ],
@@ -1939,18 +1963,25 @@
         {
             "slug": "alchemy-mainnet-free",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/rpc/base)",
+                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -1973,30 +2004,30 @@
             ],
             "additionalFeatures": [
                 "Discord support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://www.alchemy.com/rpc/base)",
-                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
             ]
         },
         {
             "slug": "alchemy-mainnet-pay-as-you-go",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Buy](https://www.alchemy.com/pricing)",
+                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$5/$45/$215/$415/$815/$2K",
             "queryPrice": "$20/1M queries, $25/1M entities",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -2017,30 +2048,30 @@
             ],
             "additionalFeatures": [
                 "Priority support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.alchemy.com/pricing)",
-                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
             ]
         },
         {
             "slug": "alchemy-mainnet-enterprise",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Contact](https://auth.alchemy.com/?redirectUrl=https%3A%2F%2Fdashboard.alchemy.com%2Fsignup%2F%3Fa%3Dpricing%26appRedir%3D1)",
+                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -2064,30 +2095,30 @@
                 "Unlimited apps & webhooks",
                 "<2m response time VIP support",
                 "SLA"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://auth.alchemy.com/?redirectUrl=https%3A%2F%2Fdashboard.alchemy.com%2Fsignup%2F%3Fa%3Dpricing%26appRedir%3D1)",
-                "[Docs](https://www.alchemy.com/docs/reference/base-api-quickstart)"
             ]
         },
         {
             "slug": "alchemy-testnet-free",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/rpc/base-sepolia)",
+                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -2110,30 +2141,30 @@
             ],
             "additionalFeatures": [
                 "Discord support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://www.alchemy.com/rpc/base-sepolia)",
-                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
             ]
         },
         {
             "slug": "alchemy-testnet-pay-as-you-go",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Buy](https://www.alchemy.com/pricing)",
+                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$5/$45/$215/$415/$815/$2K",
             "queryPrice": "$20/1M queries, $25/1M entities",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -2154,30 +2185,30 @@
             ],
             "additionalFeatures": [
                 "Priority support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.alchemy.com/pricing)",
-                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
             ]
         },
         {
             "slug": "alchemy-testnet-enterprise",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Contact](https://auth.alchemy.com/?redirectUrl=https%3A%2F%2Fdashboard.alchemy.com%2Fsignup%2F%3Fa%3Dpricing%26appRedir%3D1)",
+                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -2201,161 +2232,30 @@
                 "Unlimited apps & webhooks",
                 "<2m response time VIP support",
                 "SLA"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://auth.alchemy.com/?redirectUrl=https%3A%2F%2Fdashboard.alchemy.com%2Fsignup%2F%3Fa%3Dpricing%26appRedir%3D1)",
-                "[Docs](https://www.alchemy.com/docs/choosing-a-web3-network#base-sepolia-testnet)"
-            ]
-        },
-        {
-            "slug": "bitscrunch-mainnet-free",
-            "provider": "bitsCrunch",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Custom",
-            "plan": "Free",
-            "trial": false,
-            "accessPrice": "$0",
-            "queryPrice": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "REST API"
-            ],
-            "limitations": [
-                "1K API requests"
-            ],
-            "securityImprovements": [
-                "IP protection",
-                "DDoS protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Dashboards",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "AI-powered analytics",
-                "Price estimation"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://bitscrunch.com/ai-powered-apis)",
-                "[Docs](https://docs.bitscrunch.com/docs/overview/about)"
-            ]
-        },
-        {
-            "slug": "bitscrunch-mainnet-pay-as-you-go",
-            "provider": "bitsCrunch",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Custom",
-            "plan": "Pay-as-you-go",
-            "trial": false,
-            "accessPrice": null,
-            "queryPrice": "$0.0002/API Credit",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "REST API"
-            ],
-            "limitations": [
-                "Unlimited API requests"
-            ],
-            "securityImprovements": [
-                "IP protection",
-                "DDoS protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Dashboards",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "AI-powered analytics",
-                "Price estimation"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://bitscrunch.com/ai-powered-apis)",
-                "[Docs](https://docs.bitscrunch.com/docs/overview/about)"
-            ]
-        },
-        {
-            "slug": "bitscrunch-mainnet-enterprise",
-            "provider": "bitsCrunch",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Custom",
-            "plan": "Enterprise",
-            "trial": false,
-            "accessPrice": "Custom",
-            "queryPrice": "Custom pricing & SLAs",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "REST API"
-            ],
-            "limitations": [
-                "Custom limits"
-            ],
-            "securityImprovements": [
-                "IP protection",
-                "DDoS protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Dashboards",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Enterprise tier features"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://bitscrunch.com/ai-powered-apis)",
-                "[Docs](https://docs.bitscrunch.com/docs/overview/about)"
             ]
         },
         {
             "slug": "chain-love-mainnet-free",
             "provider": "Chain.Love",
+            "actionButtons": [
+                "[Website](https://base.chain.love/graph/15)",
+                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/base)"
+            ],
             "chain": "mainnet",
             "address": "0x0fd8fd1dc8162148cb9413062fe6c6b144335dbf",
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2373,30 +2273,30 @@
             "regions": [
                 "Japan"
             ],
-            "additionalFeatures": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://base.chain.love/graph/15)",
-                "[Docs](https://protofire-org.gitbook.io/proteus-shield-docs/blockchains/base)"
-            ]
+            "additionalFeatures": null
         },
         {
             "slug": "chainstack-mainnet-free",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Website](https://chainstack.com/build-better-with-base/)",
+                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$20/1M request units for extra usage",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2420,30 +2320,30 @@
                 "Custom Subgraphs",
                 "GraphQL Queries",
                 "Standard Support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://chainstack.com/build-better-with-base/)",
-                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
             ]
         },
         {
             "slug": "chainstack-mainnet-pay-as-you-go",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/#subgraph)",
+                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$5(first month only)/$49/$199/$349 + $72 per subgraph",
             "queryPrice": "$15/$12.5/$10/1M request units for extra usage",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2469,30 +2369,30 @@
                 "Custom Subgraphs",
                 "GraphQL Queries",
                 "Standard Support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://chainstack.com/pricing/#subgraph)",
-                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
             ]
         },
         {
             "slug": "chainstack-mainnet-enterprise",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Contact](https://console.chainstack.com/user/account#signup?plan=enterprise)",
+                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$990",
             "queryPrice": "$5/1M request units for extra usage",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2519,30 +2419,30 @@
                 "GraphQL Queries",
                 "Standard Support",
                 "Platform Automation"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://console.chainstack.com/user/account#signup?plan=enterprise)",
-                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
             ]
         },
         {
             "slug": "chainstack-testnet-free",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Website](https://chainstack.com/build-better-with-base/)",
+                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$20/1M request units for extra usage",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2566,30 +2466,30 @@
                 "Custom Subgraphs",
                 "GraphQL Queries",
                 "Standard Support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://chainstack.com/build-better-with-base/)",
-                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
             ]
         },
         {
             "slug": "chainstack-testnet-pay-as-you-go",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/#subgraph)",
+                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$5(first month only)/$49/$199/$349 + $72 per subgraph",
             "queryPrice": "$15/$12.5/$10/1M request units for extra usage",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2615,30 +2515,30 @@
                 "Custom Subgraphs",
                 "GraphQL Queries",
                 "Standard Support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://chainstack.com/pricing/#subgraph)",
-                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
             ]
         },
         {
             "slug": "chainstack-testnet-enterprise",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Contact](https://console.chainstack.com/user/account#signup?plan=enterprise)",
+                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$990",
             "queryPrice": "$5/1M request units for extra usage",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2665,30 +2565,30 @@
                 "GraphQL Queries",
                 "Standard Support",
                 "Platform Automation"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://console.chainstack.com/user/account#signup?plan=enterprise)",
-                "[Docs](https://docs.chainstack.com/reference/base-api-reference#getting-started-base)"
             ]
         },
         {
             "slug": "dipdup-mainnet-free",
             "provider": "dipDup",
+            "actionButtons": [
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Code-gen APIs"
@@ -2707,30 +2607,30 @@
             "additionalFeatures": [
                 "Fast setup templates",
                 "Open-source"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://dipdup.io/)",
-                "[Docs](https://dipdup.io/docs/supported-networks/base)"
             ]
         },
         {
             "slug": "dipdup-mainnet-enterprise",
             "provider": "dipDup",
+            "actionButtons": [
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Code-gen APIs"
@@ -2749,30 +2649,30 @@
             "additionalFeatures": [
                 "Fast setup templates",
                 "Open-source"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://dipdup.io/)",
-                "[Docs](https://dipdup.io/docs/supported-networks/base)"
             ]
         },
         {
             "slug": "dipdup-testnet-free",
             "provider": "dipDup",
+            "actionButtons": [
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/base#base-sepolia)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Code-gen APIs"
@@ -2791,30 +2691,30 @@
             "additionalFeatures": [
                 "Fast setup templates",
                 "Open-source"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://dipdup.io/)",
-                "[Docs](https://dipdup.io/docs/supported-networks/base#base-sepolia)"
             ]
         },
         {
             "slug": "dipdup-testnet-enterprise",
             "provider": "dipDup",
+            "actionButtons": [
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/base#base-sepolia)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Code-gen APIs"
@@ -2833,30 +2733,30 @@
             "additionalFeatures": [
                 "Fast setup templates",
                 "Open-source"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://dipdup.io/)",
-                "[Docs](https://dipdup.io/docs/supported-networks/base#base-sepolia)"
             ]
         },
         {
             "slug": "envio-mainnet-free",
             "provider": "Envio",
+            "actionButtons": [
+                "[Website](https://envio.dev/)",
+                "[Docs](https://docs.envio.dev/docs/HyperIndex/base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Custom Handlers"
@@ -2882,30 +2782,30 @@
                 "Multichain Indexing",
                 "Email support",
                 "JS/TS/ReScript indexers"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://envio.dev/)",
-                "[Docs](https://docs.envio.dev/docs/HyperIndex/base)"
             ]
         },
         {
             "slug": "envio-mainnet-pay-as-you-go",
             "provider": "Envio",
+            "actionButtons": [
+                "[Buy](https://envio.dev/pricing)",
+                "[Docs](https://docs.envio.dev/docs/HyperIndex/base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$70/$300/$800",
             "queryPrice": "$0.1/$0.2/$0.5/extra indexing hour",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Custom Handlers"
@@ -2937,30 +2837,30 @@
                 "Backups",
                 "Static Production Endpoint",
                 "Scalable custom indexers"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://envio.dev/pricing)",
-                "[Docs](https://docs.envio.dev/docs/HyperIndex/base)"
             ]
         },
         {
             "slug": "envio-mainnet-dedicated",
             "provider": "Envio",
+            "actionButtons": [
+                "[Contact](https://discord.com/invite/envio)",
+                "[Docs](https://docs.envio.dev/docs/HyperIndex/base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Dedicated",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Custom Handlers",
@@ -2996,30 +2896,30 @@
                 "Static Production Endpoint",
                 "Private Deployments",
                 "Premium Support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://discord.com/invite/envio)",
-                "[Docs](https://docs.envio.dev/docs/HyperIndex/base)"
             ]
         },
         {
             "slug": "envio-testnet-free",
             "provider": "Envio",
+            "actionButtons": [
+                "[Website](https://envio.dev/)",
+                "[Docs](https://docs.envio.dev/docs/HyperIndex/base-sepolia)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Custom Handlers"
@@ -3045,30 +2945,30 @@
                 "Multichain Indexing",
                 "Email support",
                 "JS/TS/ReScript indexers"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://envio.dev/)",
-                "[Docs](https://docs.envio.dev/docs/HyperIndex/base-sepolia)"
             ]
         },
         {
             "slug": "envio-testnet-pay-as-you-go",
             "provider": "Envio",
+            "actionButtons": [
+                "[Buy](https://envio.dev/pricing)",
+                "[Docs](https://docs.envio.dev/docs/HyperIndex/base-sepolia)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$70/$300/$800",
             "queryPrice": "$0.1/$0.2/$0.5/extra indexing hour",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Custom Handlers"
@@ -3100,30 +3000,30 @@
                 "Backups",
                 "Static Production Endpoint",
                 "Scalable custom indexers"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://envio.dev/pricing)",
-                "[Docs](https://docs.envio.dev/docs/HyperIndex/base-sepolia)"
             ]
         },
         {
             "slug": "envio-testnet-dedicated",
             "provider": "Envio",
+            "actionButtons": [
+                "[Buy](https://discord.com/invite/envio)",
+                "[Docs](https://docs.envio.dev/docs/HyperIndex/base-sepolia)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Dedicated",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Custom Handlers",
@@ -3159,30 +3059,29 @@
                 "Static Production Endpoint",
                 "Private Deployments",
                 "Premium Support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://discord.com/invite/envio)",
-                "[Docs](https://docs.envio.dev/docs/HyperIndex/base-sepolia)"
             ]
         },
         {
             "slug": "ghostgraph-mainnet-free",
             "provider": "GhostGraph",
+            "actionButtons": [
+                "[Docs](https://docs.tryghost.xyz/ghostgraph/overview)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3207,37 +3106,38 @@
             "additionalFeatures": [
                 "Telegram support",
                 "Community library"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.tryghost.xyz/ghostgraph/overview)"
             ]
         },
         {
             "slug": "ghostgraph-mainnet-pay-as-you-go",
             "provider": "GhostGraph",
+            "actionButtons": [
+                "[Buy](https://app.ghostlogs.xyz)",
+                "[Docs](https://docs.tryghost.xyz/ghostgraph/overview)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
-            "accessPrice": "$49",
-            "queryPrice": "$50/1M/extra entities",
+            "accessPrice": "$49/$249",
+            "queryPrice": "$50/$25 per 1M extra entities",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
             "limitations": [
-                "10 deployed graphs",
-                "10 queries/sec",
-                "2M queries",
-                "500K entities"
+                "10/30 deployed graphs",
+                "10/40 queries/sec",
+                "2M/20M queries",
+                "500K/5M entities"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -3254,30 +3154,30 @@
                 "Telegram support",
                 "Community library",
                 "Proxy finder"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://app.ghostlogs.xyz)",
-                "[Docs](https://docs.tryghost.xyz/ghostgraph/overview)"
             ]
         },
         {
             "slug": "ghostgraph-mainnet-enterprise",
             "provider": "GhostGraph",
+            "actionButtons": [
+                "[Contact](https://app.ghostlogs.xyz)",
+                "[Docs](https://docs.tryghost.xyz/ghostgraph/overview)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "SQL"
@@ -3303,30 +3203,29 @@
                 "Proxy finder",
                 "Mirroring",
                 "Dune incremental uploads"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://app.ghostlogs.xyz)",
-                "[Docs](https://docs.tryghost.xyz/ghostgraph/overview)"
             ]
         },
         {
             "slug": "ghostgraph-testnet-free",
             "provider": "GhostGraph",
+            "actionButtons": [
+                "[Docs](https://docs.tryghost.xyz/ghostgraph/overview)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3351,29 +3250,30 @@
             "additionalFeatures": [
                 "Telegram support",
                 "Community library"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.tryghost.xyz/ghostgraph/overview)"
             ]
         },
         {
             "slug": "goldrush-mainnet-free",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Website](https://goldrush.dev/chains/base/)",
+                "[Docs](https://goldrush.dev/docs/chains/base#base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0 (14 Day Free Trial)",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -3393,30 +3293,30 @@
             ],
             "additionalFeatures": [
                 "Historic & real-time blockchain data"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://goldrush.dev/chains/base/)",
-                "[Docs](https://goldrush.dev/docs/chains/base#base)"
             ]
         },
         {
             "slug": "goldrush-mainnet-pay-as-you-go",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Buy](https://goldrush.dev/pricing/)",
+                "[Docs](https://goldrush.dev/docs/chains/base#base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$250",
-            "queryPrice": "$0.00077/Credit",
+            "queryPrice": "$770/1M Credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -3436,30 +3336,30 @@
             ],
             "additionalFeatures": [
                 "Historic & real-time blockchain data"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://goldrush.dev/pricing/)",
-                "[Docs](https://goldrush.dev/docs/chains/base#base)"
             ]
         },
         {
             "slug": "goldrush-mainnet-enterprise",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Contact](https://goldrush.dev/pricing/)",
+                "[Docs](https://goldrush.dev/docs/chains/base#base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -3477,30 +3377,30 @@
             ],
             "additionalFeatures": [
                 "Custom enterprise features"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://goldrush.dev/pricing/)",
-                "[Docs](https://goldrush.dev/docs/chains/base#base)"
             ]
         },
         {
             "slug": "goldrush-testnet-free",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Website](https://goldrush.dev/chains/base/)",
+                "[Docs](https://goldrush.dev/docs/chains/base#base)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0 (14 Day Free Trial)",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -3520,30 +3420,30 @@
             ],
             "additionalFeatures": [
                 "Historic & real-time blockchain data"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://goldrush.dev/chains/base/)",
-                "[Docs](https://goldrush.dev/docs/chains/base#base)"
             ]
         },
         {
             "slug": "goldrush-testnet-pay-as-you-go",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Buy](https://goldrush.dev/pricing/)",
+                "[Docs](https://goldrush.dev/docs/chains/base#base)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$250",
-            "queryPrice": "$0.00077/Credit",
+            "queryPrice": "$770/1M Credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -3563,30 +3463,30 @@
             ],
             "additionalFeatures": [
                 "Historic & real-time blockchain data"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://goldrush.dev/pricing/)",
-                "[Docs](https://goldrush.dev/docs/chains/base#base)"
             ]
         },
         {
             "slug": "goldrush-testnet-enterprise",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Contact](https://goldrush.dev/pricing/)",
+                "[Docs](https://goldrush.dev/docs/chains/base#base)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -3604,30 +3504,30 @@
             ],
             "additionalFeatures": [
                 "Custom enterprise features"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://goldrush.dev/pricing/)",
-                "[Docs](https://goldrush.dev/docs/chains/base#base)"
             ]
         },
         {
             "slug": "goldsky-mainnet-free",
             "provider": "Goldsky",
+            "actionButtons": [
+                "[Website](https://goldsky.com/chains/base)",
+                "[Docs](https://docs.goldsky.com/subgraphs/introduction)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3651,30 +3551,30 @@
                 "Email support",
                 "Subgraphs",
                 "Webhooks"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://goldsky.com/chains/base)",
-                "[Docs](https://docs.goldsky.com/subgraphs/introduction)"
             ]
         },
         {
             "slug": "goldsky-mainnet-pay-as-you-go",
             "provider": "Goldsky",
+            "actionButtons": [
+                "[Buy](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/mirror/guides/token-transfers/stablecoin-addresses#base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": true,
             "accessPrice": "$37/mo",
-            "queryPrice": "$4/100K entities stored",
+            "queryPrice": "$40/1M entities stored",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": true,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3698,30 +3598,30 @@
                 "Custom indexing",
                 "Subgraphs",
                 "Webhooks"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://goldsky.com/pricing)",
-                "[Docs](https://docs.goldsky.com/mirror/guides/token-transfers/stablecoin-addresses#base)"
             ]
         },
         {
             "slug": "goldsky-mainnet-enterprise",
             "provider": "Goldsky",
+            "actionButtons": [
+                "[Contact](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/mirror/guides/token-transfers/stablecoin-addresses#base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$37/mo",
-            "queryPrice": "$1/100K entities stored",
+            "queryPrice": "$10/1M entities stored",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3750,30 +3650,30 @@
                 "4 hours SLA",
                 "Subgraphs",
                 "Webhooks"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://goldsky.com/pricing)",
-                "[Docs](https://docs.goldsky.com/mirror/guides/token-transfers/stablecoin-addresses#base)"
             ]
         },
         {
             "slug": "goldsky-testnet-free",
             "provider": "Goldsky",
+            "actionButtons": [
+                "[Website](https://goldsky.com/chains/base)",
+                "[Docs](https://docs.goldsky.com/subgraphs/introduction)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3797,30 +3697,30 @@
                 "Email support",
                 "Subgraphs",
                 "Webhooks"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://goldsky.com/chains/base)",
-                "[Docs](https://docs.goldsky.com/subgraphs/introduction)"
             ]
         },
         {
             "slug": "goldsky-testnet-pay-as-you-go",
             "provider": "Goldsky",
+            "actionButtons": [
+                "[Buy](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/mirror/guides/token-transfers/stablecoin-addresses#base)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": true,
             "accessPrice": "$37/mo",
-            "queryPrice": "$4/100K entities stored",
+            "queryPrice": "$40/1M entities stored",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": true,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3844,30 +3744,30 @@
                 "Custom indexing",
                 "Subgraphs",
                 "Webhooks"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://goldsky.com/pricing)",
-                "[Docs](https://docs.goldsky.com/mirror/guides/token-transfers/stablecoin-addresses#base)"
             ]
         },
         {
             "slug": "goldsky-testnet-enterprise",
             "provider": "Goldsky",
+            "actionButtons": [
+                "[Contact](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/mirror/guides/token-transfers/stablecoin-addresses#base)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$37/mo",
-            "queryPrice": "$1/100K entities stored",
+            "queryPrice": "$10/1M entities stored",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3896,30 +3796,29 @@
                 "4 hours SLA",
                 "Subgraphs",
                 "Webhooks"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://goldsky.com/pricing)",
-                "[Docs](https://docs.goldsky.com/mirror/guides/token-transfers/stablecoin-addresses#base)"
             ]
         },
         {
             "slug": "indexing-co-mainnet-free",
             "provider": "The Indexing Company",
+            "actionButtons": [
+                "[Docs](https://docs.indexing.co/networks/base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "Included",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.50%",
             "bandwidthSla": null,
             "blocksBehindSla": "2",
             "supportSla": "Standard Support",
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "SQL",
                 "REST",
@@ -3947,29 +3846,29 @@
                 "PostgreSQL delivery",
                 "Webhook delivery",
                 "Auto-schema generation"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base)"
             ]
         },
         {
             "slug": "indexing-co-testnet-free",
             "provider": "The Indexing Company",
+            "actionButtons": [
+                "[Docs](https://docs.indexing.co/networks/base_sepolia)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "Included",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.50%",
             "bandwidthSla": null,
             "blocksBehindSla": "2",
             "supportSla": "Standard Support",
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "SQL",
                 "REST",
@@ -3997,29 +3896,29 @@
                 "PostgreSQL delivery",
                 "Webhook delivery",
                 "Auto-schema generation"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base_sepolia)"
             ]
         },
         {
             "slug": "indexing-co-mainnet-pay-as-you-go",
             "provider": "The Indexing Company",
+            "actionButtons": [
+                "[Docs](https://docs.indexing.co/networks/base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "Usage-based/Subscription-based",
             "queryPrice": "Included",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%/99.95%",
             "bandwidthSla": "Guaranteed",
             "blocksBehindSla": "2/(1)",
             "supportSla": "Standard Support/Dedicated Support",
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "SQL",
                 "REST",
@@ -4057,29 +3956,29 @@
                 "Dedicated Support Engineer",
                 "SLA-backed uptime",
                 "System Integration support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base)"
             ]
         },
         {
             "slug": "indexing-co-testnet-pay-as-you-go",
             "provider": "The Indexing Company",
+            "actionButtons": [
+                "[Docs](https://docs.indexing.co/networks/base_sepolia)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "Usage-based/Subscription-based",
             "queryPrice": "Included",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%/99.95%",
             "bandwidthSla": "Guaranteed",
             "blocksBehindSla": "2/(1)",
             "supportSla": "Standard Support/Dedicated Support",
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "SQL",
                 "REST",
@@ -4117,29 +4016,29 @@
                 "Dedicated Support Engineer",
                 "SLA-backed uptime",
                 "System Integration support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base_sepolia)"
             ]
         },
         {
             "slug": "indexing-co-mainnet-enterprise",
             "provider": "The Indexing Company",
+            "actionButtons": [
+                "[Docs](https://docs.indexing.co/networks/base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.95%",
             "bandwidthSla": "Guaranteed",
             "blocksBehindSla": "0",
             "supportSla": "24/7 priority support",
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "SQL",
                 "REST",
@@ -4171,29 +4070,29 @@
                 "Hybrid cloud/bare metal delivery",
                 "Compliance-ready infra",
                 "Priority support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base)"
             ]
         },
         {
             "slug": "indexing-co-testnet-enterprise",
             "provider": "The Indexing Company",
+            "actionButtons": [
+                "[Docs](https://docs.indexing.co/networks/base_sepolia)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.95%",
             "bandwidthSla": "Guaranteed",
             "blocksBehindSla": "0",
             "supportSla": "24/7 priority support",
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "SQL",
                 "REST",
@@ -4225,29 +4124,30 @@
                 "Hybrid cloud/bare metal delivery",
                 "Compliance-ready infra",
                 "Priority support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/base_sepolia)"
             ]
         },
         {
             "slug": "mobula-mainnet-free",
             "provider": "Mobula",
+            "actionButtons": [
+                "[Website](https://mobula.io/)",
+                "[Docs](https://docs.mobula.io/blockchains/base#base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "API",
                 "SDK",
@@ -4270,30 +4170,30 @@
                 "Support for private analytics",
                 "High throughput",
                 "Support on Discord"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://mobula.io/)",
-                "[Docs](https://docs.mobula.io/blockchains/base#base)"
             ]
         },
         {
             "slug": "mobula-mainnet-pay-as-you-go",
             "provider": "Mobula",
+            "actionButtons": [
+                "[Buy](https://docs.mobula.io/pricing)",
+                "[Docs](https://docs.mobula.io/blockchains/base#base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$50/$400",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "API",
                 "SDK",
@@ -4317,30 +4217,30 @@
                 "High throughput",
                 "WSS feeds",
                 "24/7 support on Telegram, Discord, and Slack"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://docs.mobula.io/pricing)",
-                "[Docs](https://docs.mobula.io/blockchains/base#base)"
             ]
         },
         {
             "slug": "mobula-mainnet-enterprise",
             "provider": "Mobula",
+            "actionButtons": [
+                "[Contact](https://t.me/mobuladevelopers?start=Enterprise)",
+                "[Docs](https://docs.mobula.io/blockchains/base#base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Up to $750",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "API",
                 "SDK",
@@ -4364,30 +4264,30 @@
                 "WSS feeds",
                 "24/7 support on Telegram, Discord, and Slack",
                 "Custom endpoints"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://t.me/mobuladevelopers?start=Enterprise)",
-                "[Docs](https://docs.mobula.io/blockchains/base#base)"
             ]
         },
         {
             "slug": "onfinality-mainnet-free",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Website](https://onfinality.io/en/networks/base)",
+                "[Docs](https://documentation.onfinality.io/support/base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph, Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -4410,30 +4310,30 @@
             "additionalFeatures": [
                 "Node Usage costs included in price",
                 "Support site"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://onfinality.io/en/networks/base)",
-                "[Docs](https://documentation.onfinality.io/support/base)"
             ]
         },
         {
             "slug": "onfinality-mainnet-pay-as-you-go",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://indexing.onfinality.io/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/pricing)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph, Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$0.08/deployment hour",
-            "queryPrice": "$3.5/additional 100K stored entities/mo, $0.07/each additional CU/deployment hour",
+            "queryPrice": "$35/additional 1M stored entities/mo, $0.07/each additional CU/deployment hour",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -4458,30 +4358,30 @@
                 "Node and API Usage costs included in price",
                 "Telegram support",
                 "Support site"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://indexing.onfinality.io/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/pricing)"
             ]
         },
         {
             "slug": "onfinality-mainnet-enterprise",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://indexing.onfinality.io/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/base)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph, Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -4506,30 +4406,30 @@
                 "Priority support",
                 "Slack support",
                 "Telegram support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://indexing.onfinality.io/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/base)"
             ]
         },
         {
             "slug": "onfinality-testnet-free",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Website](https://onfinality.io/en/networks/base)",
+                "[Docs](https://documentation.onfinality.io/support/base)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph, Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -4552,30 +4452,30 @@
             "additionalFeatures": [
                 "Node Usage costs included in price",
                 "Support site"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://onfinality.io/en/networks/base)",
-                "[Docs](https://documentation.onfinality.io/support/base)"
             ]
         },
         {
             "slug": "onfinality-testnet-pay-as-you-go",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://indexing.onfinality.io/login)",
+                "[Docs](https://documentation.onfinality.io/support/base)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph, Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$0.08/deployment hour",
-            "queryPrice": "$3.5/additional 100K stored entities/mo, $0.07/each additional CU/deployment hour",
+            "queryPrice": "$35/additional 1M stored entities/mo, $0.07/each additional CU/deployment hour",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -4600,30 +4500,30 @@
                 "Node and API Usage costs included in price",
                 "Telegram support",
                 "Support site"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://indexing.onfinality.io/login)",
-                "[Docs](https://documentation.onfinality.io/support/base)"
             ]
         },
         {
             "slug": "onfinality-testnet-enterprise",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://indexing.onfinality.io/login)",
+                "[Docs](https://documentation.onfinality.io/support/base)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph, Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -4648,30 +4548,30 @@
                 "Priority support",
                 "Slack support",
                 "Telegram support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://indexing.onfinality.io/login)",
-                "[Docs](https://documentation.onfinality.io/support/base)"
             ]
         },
         {
             "slug": "ormi-mainnet-free",
             "provider": "Ormi Labs",
+            "actionButtons": [
+                "[Website](https://ormilabs.com/chain-list/base)",
+                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -4692,30 +4592,30 @@
             ],
             "additionalFeatures": [
                 "Email support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://ormilabs.com/chain-list/base)",
-                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
             ]
         },
         {
             "slug": "ormi-mainnet-pay-as-you-go",
             "provider": "Ormi Labs",
+            "actionButtons": [
+                "[Buy](https://ormilabs.com/pricing)",
+                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$0",
-            "queryPrice": "$4/100K entities stored",
+            "queryPrice": "$40/1M entities stored",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -4735,30 +4635,30 @@
             ],
             "additionalFeatures": [
                 "Premium support via Email, Slack, and Telegram"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://ormilabs.com/pricing)",
-                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
             ]
         },
         {
             "slug": "ormi-mainnet-enterprise",
             "provider": "Ormi Labs",
+            "actionButtons": [
+                "[Contact](https://calendly.com/ormilabs)",
+                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$0",
-            "queryPrice": "$1/100K entities stored",
+            "queryPrice": "$10/1M entities stored",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -4779,30 +4679,30 @@
             "additionalFeatures": [
                 "Uptime and latency SLA",
                 "Optional dedicated environment"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://calendly.com/ormilabs)",
-                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
             ]
         },
         {
             "slug": "ormi-testnet-free",
             "provider": "Ormi Labs",
+            "actionButtons": [
+                "[Website](https://ormilabs.com/chain-list/base)",
+                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -4823,30 +4723,30 @@
             ],
             "additionalFeatures": [
                 "Email support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://ormilabs.com/chain-list/base)",
-                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
             ]
         },
         {
             "slug": "ormi-testnet-pay-as-you-go",
             "provider": "Ormi Labs",
+            "actionButtons": [
+                "[Buy](https://ormilabs.com/pricing)",
+                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$0",
-            "queryPrice": "$4/100K entities stored",
+            "queryPrice": "$40/1M entities stored",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -4866,30 +4766,30 @@
             ],
             "additionalFeatures": [
                 "Premium support via Email, Slack, and Telegram"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://ormilabs.com/pricing)",
-                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
             ]
         },
         {
             "slug": "ormi-testnet-enterprise",
             "provider": "Ormi Labs",
+            "actionButtons": [
+                "[Contact](https://calendly.com/ormilabs)",
+                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$0",
-            "queryPrice": "$1/100K entities stored",
+            "queryPrice": "$10/1M entities stored",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -4910,30 +4810,30 @@
             "additionalFeatures": [
                 "Uptime and latency SLA",
                 "Optional dedicated environment"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://calendly.com/ormilabs)",
-                "[Docs](https://docs.ormilabs.com/data-apis/overview#supported-networks)"
             ]
         },
         {
             "slug": "sqd-mainnet-free",
             "provider": "SQD Cloud",
+            "actionButtons": [
+                "[Website](https://www.sqd.ai/network)",
+                "[Docs](https://docs.sqd.ai/subsquid-network/reference/networks/?ph_cross_site=019976bd-8b2b-7de3-bb63-3565d79c7df2)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Decentralized Data Lakes",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "SQL"
@@ -4956,30 +4856,30 @@
                 "ETL query stack",
                 "Decentralized indexing",
                 "Discord support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://www.sqd.ai/network)",
-                "[Docs](https://docs.sqd.ai/subsquid-network/reference/networks/?ph_cross_site=019976bd-8b2b-7de3-bb63-3565d79c7df2)"
             ]
         },
         {
             "slug": "sqd-mainnet-pay-as-you-go",
             "provider": "SQD Cloud",
+            "actionButtons": [
+                "[Buy](https://docs.sqd.ai/cloud/pricing/#pay-as-you-go-prices)",
+                "[Docs](https://docs.sqd.ai/subsquid-network/reference/networks/?ph_cross_site=019976bd-8b2b-7de3-bb63-3565d79c7df2)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Decentralized Data Lakes",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$86+ (depending on squid needs may go up to $1.5K and higher)",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "SQL"
@@ -5000,30 +4900,30 @@
                 "ETL query stack",
                 "Decentralized indexing",
                 "Hard SLA with compensations"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://docs.sqd.ai/cloud/pricing/#pay-as-you-go-prices)",
-                "[Docs](https://docs.sqd.ai/subsquid-network/reference/networks/?ph_cross_site=019976bd-8b2b-7de3-bb63-3565d79c7df2)"
             ]
         },
         {
             "slug": "sqd-testnet-free",
             "provider": "SQD Cloud",
+            "actionButtons": [
+                "[Website](https://www.sqd.ai/network)",
+                "[Docs](https://docs.sqd.ai/subsquid-network/reference/networks/?ph_cross_site=019976bd-8b2b-7de3-bb63-3565d79c7df2)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Decentralized Data Lakes",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "SQL"
@@ -5046,30 +4946,30 @@
                 "ETL query stack",
                 "Decentralized indexing",
                 "Discord support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://www.sqd.ai/network)",
-                "[Docs](https://docs.sqd.ai/subsquid-network/reference/networks/?ph_cross_site=019976bd-8b2b-7de3-bb63-3565d79c7df2)"
             ]
         },
         {
             "slug": "sqd-testnet-pay-as-you-go",
             "provider": "SQD Cloud",
+            "actionButtons": [
+                "[Buy](https://docs.sqd.ai/cloud/pricing/#pay-as-you-go-prices)",
+                "[Docs](https://docs.sqd.ai/subsquid-network/reference/networks/?ph_cross_site=019976bd-8b2b-7de3-bb63-3565d79c7df2)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Decentralized Data Lakes",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$86+ (depending on squid needs may go up to $1.5K and higher)",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "SQL"
@@ -5090,82 +4990,36 @@
                 "ETL query stack",
                 "Decentralized indexing",
                 "Hard SLA with compensations"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://docs.sqd.ai/cloud/pricing/#pay-as-you-go-prices)",
-                "[Docs](https://docs.sqd.ai/subsquid-network/reference/networks/?ph_cross_site=019976bd-8b2b-7de3-bb63-3565d79c7df2)"
-            ]
-        },
-        {
-            "slug": "subquery-mainnet-free",
-            "provider": "SubQuery",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Custom",
-            "plan": "Free",
-            "trial": false,
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL",
-                "SQL"
-            ],
-            "limitations": [
-                "Rate limits apply"
-            ],
-            "securityImprovements": [
-                "Decentralized storage",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Data lake logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "ETL query stack",
-                "Decentralized indexing",
-                "Discord support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://app.subquery.network/explorer/home)",
-                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/base.html)"
             ]
         },
         {
             "slug": "subquery-mainnet-pay-as-you-go",
             "provider": "SubQuery",
+            "actionButtons": [
+                "[Buy](https://subquery.network/doc/subquery_network/node_operators/plans.html#creating-a-fixed-price-plan)",
+                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/base.html)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": null,
-            "queryPrice": null,
+            "queryPrice": "15K SQT/1M  reqs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "SQL"
             ],
             "limitations": [
-                "Rate limits may apply"
+                "Price may vary depending on the value of the token"
             ],
             "securityImprovements": [
                 "Decentralized storage",
@@ -5182,210 +5036,30 @@
                 "ETL query stack",
                 "Decentralized indexing",
                 "Hard SLA with compensations"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://subquery.network/doc/subquery_network/node_operators/plans.html#creating-a-fixed-price-plan)",
-                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/base.html)"
-            ]
-        },
-        {
-            "slug": "subquery-mainnet-enterprise",
-            "provider": "SubQuery",
-            "chain": "mainnet",
-            "address": null,
-            "technology": "Custom",
-            "plan": "Enterprise",
-            "trial": false,
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL",
-                "SQL"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "Decentralized storage",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Data lake logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "ETL query stack",
-                "Decentralized indexing",
-                "Hard SLA with compensations"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Enterprise](https://subquery.network/doc/subquery_network/node_operators/plans.html#creating-a-fixed-price-plan)",
-                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/base.html)"
-            ]
-        },
-        {
-            "slug": "subquery-testnet-free",
-            "provider": "SubQuery",
-            "chain": "testnet",
-            "address": null,
-            "technology": "Custom",
-            "plan": "Free",
-            "trial": false,
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL",
-                "SQL"
-            ],
-            "limitations": [
-                "Rate limits apply"
-            ],
-            "securityImprovements": [
-                "Decentralized storage",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Data lake logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "ETL query stack",
-                "Decentralized indexing",
-                "Discord support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://app.subquery.network/explorer/home)",
-                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/base-sepolia.html#base-sepolia-quick-start)"
-            ]
-        },
-        {
-            "slug": "subquery-testnet-pay-as-you-go",
-            "provider": "SubQuery",
-            "chain": "testnet",
-            "address": null,
-            "technology": "Custom",
-            "plan": "Pay-as-you-go",
-            "trial": false,
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL",
-                "SQL"
-            ],
-            "limitations": [
-                "Rate limits may apply"
-            ],
-            "securityImprovements": [
-                "Decentralized storage",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Data lake logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "ETL query stack",
-                "Decentralized indexing",
-                "Hard SLA with compensations"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://subquery.network/doc/subquery_network/node_operators/plans.html#creating-a-fixed-price-plan)",
-                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/base-sepolia.html#base-sepolia-quick-start)"
-            ]
-        },
-        {
-            "slug": "subquery-testnet-enterprise",
-            "provider": "SubQuery",
-            "chain": "testnet",
-            "address": null,
-            "technology": "Custom",
-            "plan": "Enterprise",
-            "trial": false,
-            "accessPrice": null,
-            "queryPrice": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL",
-                "SQL"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "Decentralized storage",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Data lake logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "ETL query stack",
-                "Decentralized indexing",
-                "Hard SLA with compensations"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://subquery.network/doc/subquery_network/node_operators/plans.html#creating-a-fixed-price-plan)",
-                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/base-sepolia.html#base-sepolia-quick-start)"
             ]
         },
         {
             "slug": "thegraph-mainnet-free",
             "provider": "The Graph",
+            "actionButtons": [
+                "[Website](https://thegraph.com/networks/base/?subnetwork=base-mainnet)",
+                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -5406,30 +5080,30 @@
                 "Hosted indexing",
                 "real-time data updates",
                 "Substreams"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://thegraph.com/networks/base/?subnetwork=base-mainnet)",
-                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
             ]
         },
         {
             "slug": "thegraph-mainnet-pay-as-you-go",
             "provider": "The Graph",
+            "actionButtons": [
+                "[Buy](https://thegraph.com/studio-pricing/)",
+                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$0",
-            "queryPrice": "$2/100K queries over free plan",
+            "queryPrice": "$20/1M queries over free plan",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -5448,30 +5122,30 @@
                 "Hosted indexing",
                 "real-time data updates",
                 "Substreams"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://thegraph.com/studio-pricing/)",
-                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
             ]
         },
         {
             "slug": "thegraph-mainnet-enterprise",
             "provider": "The Graph",
+            "actionButtons": [
+                "[Contact](https://thegraph.com/studio-pricing/)",
+                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -5490,30 +5164,30 @@
                 "Enterprise priority support",
                 "Customized SLAs",
                 "Substreams"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://thegraph.com/studio-pricing/)",
-                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
             ]
         },
         {
             "slug": "thegraph-testnet-free",
             "provider": "The Graph",
+            "actionButtons": [
+                "[Website](https://thegraph.com/networks/base/?subnetwork=base-sepolia)",
+                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -5534,30 +5208,30 @@
                 "Hosted indexing",
                 "real-time data updates",
                 "Substreams"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://thegraph.com/networks/base/?subnetwork=base-sepolia)",
-                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
             ]
         },
         {
             "slug": "thegraph-testnet-pay-as-you-go",
             "provider": "The Graph",
+            "actionButtons": [
+                "[Buy](https://thegraph.com/studio-pricing/)",
+                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$0",
-            "queryPrice": "$2/100K queries over free plan",
+            "queryPrice": "$20/1M queries over free plan",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -5576,30 +5250,30 @@
                 "Hosted indexing",
                 "real-time data updates",
                 "Substreams"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://thegraph.com/studio-pricing/)",
-                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
             ]
         },
         {
             "slug": "thegraph-testnet-enterprise",
             "provider": "The Graph",
+            "actionButtons": [
+                "[Contact](https://thegraph.com/studio-pricing/)",
+                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -5618,30 +5292,30 @@
                 "Enterprise priority support",
                 "Customized SLAs",
                 "Substreams"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://thegraph.com/studio-pricing/)",
-                "[Docs](https://thegraph.com/docs/en/supported-networks/base/)"
             ]
         },
         {
             "slug": "thirdweb-mainnet-free",
             "provider": "thirdweb Insight",
+            "actionButtons": [
+                "[Website](https://thirdweb.com/base)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0 (14 Day Free Trial)",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST",
                 "GraphQL"
@@ -5660,30 +5334,30 @@
             "additionalFeatures": [
                 "Custom API Schemas",
                 "No ABI Required"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://thirdweb.com/base)",
-                "[Docs](https://portal.thirdweb.com/)"
             ]
         },
         {
             "slug": "thirdweb-mainnet-pay-as-you-go",
             "provider": "thirdweb Insight",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$5/$99/$499",
             "queryPrice": "$8/$6.8/1M queries",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST",
                 "GraphQL"
@@ -5709,30 +5383,30 @@
                 "Email support",
                 "Slack support",
                 "Telegram support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
             ]
         },
         {
             "slug": "thirdweb-mainnet-enterprise",
             "provider": "thirdweb Insight",
+            "actionButtons": [
+                "[Contact](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "chain": "mainnet",
             "address": null,
             "technology": "Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "up to $1499",
             "queryPrice": "$5.4/1M queries",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST",
                 "GraphQL"
@@ -5759,30 +5433,30 @@
                 "Slack support",
                 "Telegram support",
                 "Account Executive"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
             ]
         },
         {
             "slug": "thirdweb-testnet-free",
             "provider": "thirdweb Insight",
+            "actionButtons": [
+                "[Website](https://thirdweb.com/base-sepolia-testnet)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0 (14 Day Free Trial)",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST",
                 "GraphQL"
@@ -5801,30 +5475,30 @@
             "additionalFeatures": [
                 "Custom API Schemas",
                 "No ABI Required"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://thirdweb.com/base-sepolia-testnet)",
-                "[Docs](https://portal.thirdweb.com/)"
             ]
         },
         {
             "slug": "thirdweb-testnet-pay-as-you-go",
             "provider": "thirdweb Insight",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$5/$99/$499",
             "queryPrice": "$8/$6.8/1M queries",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST",
                 "GraphQL"
@@ -5850,30 +5524,30 @@
                 "Email support",
                 "Slack support",
                 "Telegram support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
             ]
         },
         {
             "slug": "thirdweb-testnet-enterprise",
             "provider": "thirdweb Insight",
+            "actionButtons": [
+                "[Contact](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "chain": "testnet",
             "address": null,
             "technology": "Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "up to $1499",
             "queryPrice": "$5.4/1M queries",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST",
                 "GraphQL"
@@ -5900,13 +5574,6 @@
                 "Slack support",
                 "Telegram support",
                 "Account Executive"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
             ]
         }
     ],
@@ -6832,7 +6499,7 @@
             ],
             "monitoringAndAnalytics": null,
             "additionalFeatures": [
-                "BTC → ETH swap in ~10 min"
+                "BTC → ETH swap in ~10 min"
             ],
             "assetTypes": [
                 "BTC",
@@ -8706,7 +8373,7 @@
             ],
             "monitoringAndAnalytics": null,
             "additionalFeatures": [
-                "BTC → ETH swap in ~10 min"
+                "BTC → ETH swap in ~10 min"
             ],
             "assetTypes": [
                 "BTC",
@@ -11470,52 +11137,52 @@
         "rpc": [
             "slug",
             "provider",
+            "actionButtons",
             "plan",
             "nodeType",
             "chain",
             "accessPrice",
             "queryPrice",
+            "verifiedUptime",
+            "verifiedLatency",
+            "verifiedBlocksBehindAvg",
             "uptimeSla",
             "bandwidthSla",
             "blocksBehindSla",
-            "trial",
             "availableApis",
             "limitations",
             "securityImprovements",
             "monitoringAndAnalytics",
             "regions",
-            "verifiedUptime",
-            "verifiedLatency",
-            "verifiedBlocksBehindAvg",
             "starred",
-            "actionButtons",
+            "trial",
             "address"
         ],
         "indexing": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "address",
             "technology",
             "plan",
-            "trial",
             "accessPrice",
             "queryPrice",
+            "verifiedUptime",
+            "verifiedLatency",
+            "verifiedBlocksBehindAvg",
             "uptimeSla",
             "bandwidthSla",
             "blocksBehindSla",
             "supportSla",
             "starred",
+            "trial",
             "availableApis",
             "limitations",
             "securityImprovements",
             "monitoringAndAnalytics",
             "regions",
-            "additionalFeatures",
-            "verifiedUptime",
-            "verifiedLatency",
-            "verifiedBlocksBehindAvg",
-            "actionButtons"
+            "additionalFeatures"
         ],
         "oracle": [
             "slug",

@@ -1,13 +1,20 @@
 {
     "rpc": [
         {
-            "slug": "1rpc-astar-free",
+            "slug": "1rpc-astar-public-recent-state",
             "provider": "1rpc",
-            "plan": "Free",
+            "actionButtons": [
+                "[Website](https://1rpc.io)",
+                "[Docs](https://docs.1rpc.io/)"
+            ],
+            "plan": "Public",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -19,32 +26,81 @@
                 "net"
             ],
             "limitations": [
-                "10K/20K protected reqs/day"
+                "10K protected reqs/day"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays"
             ],
-            "monitoringAndAnalytics": null,
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Usage analytics",
+                "Advanced analytics",
+                "Customizable alerting and reporting",
+                "Transaction sanitizers"
+            ],
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
+            "address": null
+        },
+        {
+            "slug": "1rpc-astar-free",
+            "provider": "1rpc",
             "actionButtons": [
                 "[Website](https://1rpc.io)",
                 "[Docs](https://docs.1rpc.io/)"
+            ],
+            "plan": "Free",
+            "nodeType": "Recent-State",
+            "chain": "astar",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "20K protected reqs/day"
+            ],
+            "securityImprovements": [
+                "Privacy Protected Relays"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Usage analytics",
+                "Advanced analytics",
+                "Customizable alerting and reporting",
+                "Transaction sanitizers"
+            ],
+            "regions": [
+                "Global"
             ],
             "address": null
         },
         {
             "slug": "1rpc-astar-pay-as-you-go",
             "provider": "1rpc",
+            "actionButtons": [
+                "[Buy](https://www.1rpc.io/#pricing)",
+                "[Docs](https://docs.1rpc.io/)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$9.90/$29.90/mo, $8.33/$24.99/yearly",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -62,27 +118,33 @@
                 "Privacy Protected Relays",
                 "Transaction Sanitizers"
             ],
-            "monitoringAndAnalytics": null,
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Usage analytics",
+                "Advanced analytics",
+                "Customizable alerting and reporting",
+                "Transaction sanitizers"
+            ],
             "regions": [
                 "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.1rpc.io/#pricing)",
-                "[Docs](https://docs.1rpc.io/)"
             ],
             "address": null
         },
         {
             "slug": "1rpc-astar-enterprise",
             "provider": "1rpc",
+            "actionButtons": [
+                "[Contact](https://www.1rpc.io/#pricing)",
+                "[Docs](https://docs.1rpc.io/)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "custom",
-            "queryPrice": "custom",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -100,27 +162,33 @@
                 "Privacy Protected Relays",
                 "Transaction Sanitizers"
             ],
-            "monitoringAndAnalytics": null,
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Usage analytics",
+                "Advanced analytics",
+                "Customizable alerting and reporting",
+                "Transaction sanitizers"
+            ],
             "regions": [
                 "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.1rpc.io/#pricing)",
-                "[Docs](https://docs.1rpc.io/)"
             ],
             "address": null
         },
         {
-            "slug": "alchemy-astar-free-archive",
+            "slug": "alchemy-astar-free-recent-state",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Website](https://alchemy.com)",
+                "[Docs](https://www.alchemy.com/docs)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$0",
             "queryPrice": "$0/1M request",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -153,23 +221,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://alchemy.com)",
-                "[Docs](https://www.alchemy.com/docs)"
-            ],
             "address": null
         },
         {
-            "slug": "alchemy-astar-pay-as-you-go-archive",
+            "slug": "alchemy-astar-pay-as-you-go-recent-state",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Buy](https://www.alchemy.com/pricing)",
+                "[Docs](https://www.alchemy.com/docs)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$5/$45/$215/$415/$815/$2K",
             "queryPrice": "$0.40/$0.45/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -205,23 +273,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.alchemy.com/pricing)",
-                "[Docs](https://www.alchemy.com/docs)"
-            ],
             "address": null
         },
         {
-            "slug": "alchemy-astar-enterprise-archive",
+            "slug": "alchemy-astar-enterprise-recent-state",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Contact](https://www.alchemy.com/contact-sales)",
+                "[Docs](https://www.alchemy.com/docs)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -256,23 +324,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.alchemy.com/contact-sales)",
-                "[Docs](https://www.alchemy.com/docs)"
-            ],
             "address": null
         },
         {
             "slug": "allthatnode-astar-free-archive",
             "provider": "AllThatNode",
+            "actionButtons": [
+                "[Website](https://www.allthatnode.com)",
+                "[Docs](https://docs.allthatnode.com/docs/welcome-to-all-that-node)"
+            ],
             "plan": "Free",
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "$0",
             "queryPrice": "$0/1M request",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -301,23 +369,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://www.allthatnode.com)",
-                "[Docs](https://docs.allthatnode.com/docs/welcome-to-all-that-node)"
-            ],
             "address": null
         },
         {
             "slug": "allthatnode-astar-pay-as-you-go-archive",
             "provider": "AllThatNode",
+            "actionButtons": [
+                "[Buy](https://www.allthatnode.com/pricing.dsrv)",
+                "[Docs](https://docs.allthatnode.com/docs/welcome-to-all-that-node)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "$29/$139/mo, $289/$1389/yearly",
             "queryPrice": "$0.58/$0.56 per 1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -350,23 +418,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.allthatnode.com/pricing.dsrv)",
-                "[Docs](https://docs.allthatnode.com/docs/welcome-to-all-that-node)"
-            ],
             "address": null
         },
         {
             "slug": "allthatnode-astar-enterprise-archive",
             "provider": "AllThatNode",
+            "actionButtons": [
+                "[Contact](https://www.allthatnode.com/pricing.dsrv)",
+                "[Docs](https://docs.allthatnode.com/docs/welcome-to-all-that-node)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -399,23 +467,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.allthatnode.com/pricing.dsrv)",
-                "[Docs](https://docs.allthatnode.com/docs/welcome-to-all-that-node)"
-            ],
             "address": null
         },
         {
             "slug": "astar-free",
             "provider": "Astar",
+            "actionButtons": [
+                "[Website](https://astar.network)",
+                "[Docs](https://docs.astar.network)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -434,23 +502,23 @@
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://astar.network)",
-                "[Docs](https://docs.astar.network)"
-            ],
             "address": null
         },
         {
             "slug": "astar-shibuya-free",
             "provider": "Astar",
+            "actionButtons": [
+                "[Website](https://astar.network)",
+                "[Docs](https://docs.astar.network)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "shibuya",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -469,23 +537,23 @@
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://astar.network)",
-                "[Docs](https://docs.astar.network)"
-            ],
             "address": null
         },
         {
             "slug": "astar-shiden-free",
             "provider": "Astar",
+            "actionButtons": [
+                "[Website](https://astar.network)",
+                "[Docs](https://docs.astar.network)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "shiden",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -504,23 +572,23 @@
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://astar.network)",
-                "[Docs](https://docs.astar.network)"
-            ],
             "address": null
         },
         {
             "slug": "blockdaemon-astar-dedicated",
             "provider": "Blockdaemon",
+            "actionButtons": [
+                "[Contact](https://www.blockdaemon.com/api/pricing#form-jump)",
+                "[Docs](https://docs.blockdaemon.com/docs)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -552,24 +620,24 @@
                 "Europe",
                 "South America",
                 "US"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.blockdaemon.com/api/pricing#form-jump)",
-                "[Docs](https://docs.blockdaemon.com/docs)"
             ],
             "address": null
         },
         {
             "slug": "blockdaemon-shibuya-dedicated",
             "provider": "Blockdaemon",
+            "actionButtons": [
+                "[Contact](https://www.blockdaemon.com/api/pricing#form-jump)",
+                "[Docs](https://docs.blockdaemon.com/docs)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "shibuya",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -601,24 +669,24 @@
                 "Europe",
                 "South America",
                 "US"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.blockdaemon.com/api/pricing#form-jump)",
-                "[Docs](https://docs.blockdaemon.com/docs)"
             ],
             "address": null
         },
         {
             "slug": "blockdaemon-shiden-dedicated",
             "provider": "Blockdaemon",
+            "actionButtons": [
+                "[Contact](https://www.blockdaemon.com/api/pricing#form-jump)",
+                "[Docs](https://docs.blockdaemon.com/docs)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "shiden",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "99.90%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -651,23 +719,23 @@
                 "South America",
                 "US"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.blockdaemon.com/api/pricing#form-jump)",
-                "[Docs](https://docs.blockdaemon.com/docs)"
-            ],
             "address": null
         },
         {
             "slug": "dwellir-astar-free-archive",
             "provider": "Dwellir",
+            "actionButtons": [
+                "[Website](https://www.dwellir.com/)",
+                "[Docs](https://www.dwellir.com/docs/)"
+            ],
             "plan": "Free",
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "$5 (once)",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -689,24 +757,24 @@
             "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://www.dwellir.com/)",
-                "[Docs](https://www.dwellir.com/docs/)"
             ],
             "address": null
         },
         {
             "slug": "dwellir-astar-pay-as-you-go-archive",
             "provider": "Dwellir",
+            "actionButtons": [
+                "[Buy](https://www.dwellir.com/pricing)",
+                "[Docs](https://www.dwellir.com/docs/)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "$49/$299/$999",
             "queryPrice": "$5/$3/$2/1M requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -729,24 +797,24 @@
             "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.dwellir.com/pricing)",
-                "[Docs](https://www.dwellir.com/docs/)"
             ],
             "address": null
         },
         {
             "slug": "dwellir-astar-dedicated-archive",
             "provider": "Dwellir",
+            "actionButtons": [
+                "[Contact](https://www.dwellir.com/contact)",
+                "[Docs](https://www.dwellir.com/docs/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -764,24 +832,24 @@
             "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.dwellir.com/contact)",
-                "[Docs](https://www.dwellir.com/docs/)"
             ],
             "address": null
         },
         {
             "slug": "dwellir-astar-dedicated",
             "provider": "Dwellir",
+            "actionButtons": [
+                "[Contact](https://www.dwellir.com/contact)",
+                "[Docs](https://www.dwellir.com/docs/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -799,24 +867,24 @@
             "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.dwellir.com/contact)",
-                "[Docs](https://www.dwellir.com/docs/)"
             ],
             "address": null
         },
         {
             "slug": "dwellir-shibuya-free-archive",
             "provider": "Dwellir",
+            "actionButtons": [
+                "[Website](https://www.dwellir.com/)",
+                "[Docs](https://www.dwellir.com/docs/)"
+            ],
             "plan": "Free",
             "nodeType": "Full Archive",
             "chain": "shibuya",
             "accessPrice": "$5 (once)",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -838,24 +906,24 @@
             "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://www.dwellir.com/)",
-                "[Docs](https://www.dwellir.com/docs/)"
             ],
             "address": null
         },
         {
             "slug": "dwellir-shibuya-pay-as-you-go-archive",
             "provider": "Dwellir",
+            "actionButtons": [
+                "[Buy](https://www.dwellir.com/pricing)",
+                "[Docs](https://www.dwellir.com/docs/)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "shibuya",
             "accessPrice": "$49/$299/$999",
             "queryPrice": "$5/$3/$2/1M requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -879,23 +947,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.dwellir.com/pricing)",
-                "[Docs](https://www.dwellir.com/docs/)"
-            ],
             "address": null
         },
         {
             "slug": "dwellir-shibuya-dedicated-archive",
             "provider": "Dwellir",
+            "actionButtons": [
+                "[Contact](https://www.dwellir.com/contact)",
+                "[Docs](https://www.dwellir.com/docs/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "shibuya",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -913,24 +981,24 @@
             "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.dwellir.com/contact)",
-                "[Docs](https://www.dwellir.com/docs/)"
             ],
             "address": null
         },
         {
             "slug": "dwellir-shibuya-dedicated",
             "provider": "Dwellir",
+            "actionButtons": [
+                "[Contact](https://www.dwellir.com/contact)",
+                "[Docs](https://www.dwellir.com/docs/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "shibuya",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -949,23 +1017,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.dwellir.com/contact)",
-                "[Docs](https://www.dwellir.com/docs/)"
-            ],
             "address": null
         },
         {
             "slug": "dwellir-shiden-free-archive",
             "provider": "Dwellir",
+            "actionButtons": [
+                "[Website](https://www.dwellir.com/)",
+                "[Docs](https://www.dwellir.com/docs/)"
+            ],
             "plan": "Free",
             "nodeType": "Full Archive",
             "chain": "shiden",
             "accessPrice": "$5 (once)",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -988,23 +1056,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://www.dwellir.com/)",
-                "[Docs](https://www.dwellir.com/docs/)"
-            ],
             "address": null
         },
         {
             "slug": "dwellir-shiden-pay-as-you-go-archive",
             "provider": "Dwellir",
+            "actionButtons": [
+                "[Buy](https://www.dwellir.com/pricing)",
+                "[Docs](https://www.dwellir.com/docs/)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "shiden",
             "accessPrice": "$49/$299/$999",
             "queryPrice": "$5/$3/$2/1M requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1028,23 +1096,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.dwellir.com/pricing)",
-                "[Docs](https://www.dwellir.com/docs/)"
-            ],
             "address": null
         },
         {
             "slug": "dwellir-shiden-dedicated-archive",
             "provider": "Dwellir",
+            "actionButtons": [
+                "[Contact](https://www.dwellir.com/contact)",
+                "[Docs](https://www.dwellir.com/docs/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "shiden",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1063,23 +1131,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.dwellir.com/contact)",
-                "[Docs](https://www.dwellir.com/docs/)"
-            ],
             "address": null
         },
         {
             "slug": "onfinality-astar-pay-as-you-go",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "$49/$249",
             "queryPrice": "$3.75/$6/1M extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1108,24 +1176,24 @@
                 "Ireland",
                 "Tokyo",
                 "Frankfurt"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
         },
         {
             "slug": "onfinality-astar-enterprise",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1155,23 +1223,23 @@
                 "Tokyo",
                 "Frankfurt"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://onfinality.io/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
-            ],
             "address": null
         },
         {
             "slug": "onfinality-astar-dedicated-archive",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1197,24 +1265,24 @@
                 "Ireland",
                 "Tokyo",
                 "Frankfurt"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
         },
         {
             "slug": "onfinality-astar-dedicated-collator",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Collator",
             "chain": "astar",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1240,24 +1308,24 @@
                 "Ireland",
                 "Tokyo",
                 "Frankfurt"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
         },
         {
             "slug": "onfinality-astar-dedicated-trace",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Trace",
             "chain": "astar",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1284,23 +1352,23 @@
                 "Tokyo",
                 "Frankfurt"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
-            ],
             "address": null
         },
         {
             "slug": "onfinality-shiden-pay-as-you-go",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "shiden",
             "accessPrice": "$49/$249",
             "queryPrice": "$3.75/$6/1M extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1330,23 +1398,23 @@
                 "Tokyo",
                 "Frankfurt"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
-            ],
             "address": null
         },
         {
             "slug": "onfinality-shiden-enterprise",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "shiden",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1376,23 +1444,23 @@
                 "Tokyo",
                 "Frankfurt"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://onfinality.io/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
-            ],
             "address": null
         },
         {
             "slug": "onfinality-shiden-dedicated-archive",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Full Archive",
             "chain": "shiden",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1418,24 +1486,24 @@
                 "Ireland",
                 "Tokyo",
                 "Frankfurt"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
             ],
             "address": null
         },
         {
             "slug": "onfinality-shiden-dedicated-collator",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Collator",
             "chain": "shiden",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1462,163 +1530,171 @@
                 "Tokyo",
                 "Frankfurt"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
-            ],
             "address": null
         },
         {
             "slug": "radiumblock-astar-free",
             "provider": "RadiumBlock",
+            "actionButtons": [
+                "[Website](https://radiumblock.com)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "Decentralized RPC endpoints",
+                "Multi-chain support"
+            ],
             "limitations": [
                 "rate limiting applies"
             ],
             "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://radiumblock.com)"
+            "monitoringAndAnalytics": [
+                "Advanced encryption protocols",
+                "Continuous monitoring",
+                "Automated failover mechanisms"
+            ],
+            "regions": [
+                "Global"
             ],
             "address": null
         },
         {
-            "slug": "radiumblock-astar-dedicated",
+            "slug": "radiumblock-astar-pay-as-you-go",
             "provider": "RadiumBlock",
-            "plan": "Dedicated",
+            "actionButtons": [
+                "[Buy](https://radiumblock.com/pricing.html)"
+            ],
+            "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$375/$725/$990+",
-            "queryPrice": "$0",
+            "accessPrice": "$150/$400/$750",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "Decentralized RPC endpoints",
+                "Multi-chain support"
+            ],
             "limitations": [
                 "rate limiting applies"
             ],
             "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact sales](https://radiumblock.com/contact.html)"
+            "monitoringAndAnalytics": [
+                "Advanced encryption protocols",
+                "Continuous monitoring",
+                "Automated failover mechanisms"
+            ],
+            "regions": [
+                "Global"
             ],
             "address": null
         },
         {
             "slug": "radiumblock-astar-enterprise",
             "provider": "RadiumBlock",
+            "actionButtons": [
+                "[Contact](https://radiumblock.com/contact.html)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "astar",
-            "accessPrice": "$150/$400/$750+",
-            "queryPrice": "$15/$8/$0",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "Decentralized RPC endpoints",
+                "Multi-chain support"
+            ],
             "limitations": [
                 "rate limiting applies"
             ],
             "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact sales](https://radiumblock.com/contact.html)"
+            "monitoringAndAnalytics": [
+                "Advanced encryption protocols",
+                "Continuous monitoring",
+                "Automated failover mechanisms"
             ],
-            "address": null
-        },
-        {
-            "slug": "radiumblock-shiden-dedicated",
-            "provider": "RadiumBlock",
-            "plan": "Dedicated",
-            "nodeType": "Recent-State",
-            "chain": "shiden",
-            "accessPrice": "$375/$725/$990+",
-            "queryPrice": "$0",
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": null,
-            "limitations": [
-                "rate limiting applies"
-            ],
-            "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact sales](https://radiumblock.com/contact.html)"
+            "regions": [
+                "Global"
             ],
             "address": null
         },
         {
             "slug": "radiumblock-shiden-enterprise",
             "provider": "RadiumBlock",
+            "actionButtons": [
+                "[Contact](https://radiumblock.com/contact.html)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "shiden",
-            "accessPrice": "$150/$400/$750+",
-            "queryPrice": "$15/$8/$0",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "starred": false,
             "trial": false,
-            "availableApis": null,
+            "availableApis": [
+                "Decentralized RPC endpoints",
+                "Multi-chain support"
+            ],
             "limitations": [
                 "rate limiting applies"
             ],
             "securityImprovements": null,
-            "monitoringAndAnalytics": null,
-            "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact sales](https://radiumblock.com/contact.html)"
+            "monitoringAndAnalytics": [
+                "Advanced encryption protocols",
+                "Continuous monitoring",
+                "Automated failover mechanisms"
+            ],
+            "regions": [
+                "Global"
             ],
             "address": null
         },
         {
             "slug": "startale-astar-free",
             "provider": "Startale",
+            "actionButtons": [
+                "[Website](https://startale.com/en/scs/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1638,23 +1714,23 @@
                 "Success/Fail rate"
             ],
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://startale.com/en/scs/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
-            ],
             "address": null
         },
         {
             "slug": "startale-astar-pay-as-you-go",
             "provider": "Startale",
+            "actionButtons": [
+                "[Buy](https://startale.com/en/scs/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "$39/$169 with 400M/1.5B CU included",
             "queryPrice": "$1/1M CU",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1680,23 +1756,23 @@
                 "Success/Fail rate"
             ],
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://startale.com/en/scs/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
-            ],
             "address": null
         },
         {
             "slug": "startale-astar-enterprise",
             "provider": "Startale",
+            "actionButtons": [
+                "[Buy](https://startale.com/en/scs/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "astar",
             "accessPrice": "Custom",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "Custom",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1719,23 +1795,23 @@
                 "Success/Fail rate"
             ],
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://startale.com/en/scs/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
-            ],
             "address": null
         },
         {
             "slug": "startale-shiden-free",
             "provider": "Startale",
+            "actionButtons": [
+                "[Website](https://startale.com/en/scs/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "shiden",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1755,23 +1831,23 @@
                 "Success/Fail rate"
             ],
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://startale.com/en/scs/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
-            ],
             "address": null
         },
         {
             "slug": "startale-shiden-pay-as-you-go",
             "provider": "Startale",
+            "actionButtons": [
+                "[Buy](https://startale.com/en/scs/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Full Archive",
             "chain": "shiden",
             "accessPrice": "$39/$169 with 400M/1.5B CU included",
             "queryPrice": "$1/1M CU",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1797,23 +1873,23 @@
                 "Success/Fail rate"
             ],
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://startale.com/en/scs/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
-            ],
             "address": null
         },
         {
             "slug": "startale-shiden-enterprise",
             "provider": "Startale",
+            "actionButtons": [
+                "[Buy](https://startale.com/en/scs/pricing)",
+                "[Docs](https://documentation.onfinality.io/)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Full Archive",
             "chain": "shiden",
             "accessPrice": "Custom",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": "Custom",
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1836,23 +1912,23 @@
                 "Success/Fail rate"
             ],
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://startale.com/en/scs/pricing)",
-                "[Docs](https://documentation.onfinality.io/)"
-            ],
             "address": null
         },
         {
             "slug": "thirdweb-astar-free",
             "provider": "ThirdWeb",
+            "actionButtons": [
+                "[Website](https://thirdweb.com/)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1876,24 +1952,24 @@
             ],
             "regions": [
                 "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://thirdweb.com/)",
-                "[Docs](https://portal.thirdweb.com/)"
             ],
             "address": null
         },
         {
             "slug": "thirdweb-shiden-free",
             "provider": "ThirdWeb",
+            "actionButtons": [
+                "[Website](https://thirdweb.com/)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "plan": "Free",
             "nodeType": "Recent-State",
             "chain": "shiden",
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1918,23 +1994,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://thirdweb.com/)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
             "address": null
         },
         {
             "slug": "thirdweb-astar-pay-as-you-go",
             "provider": "ThirdWeb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$5/$99",
             "queryPrice": "$8/1M requests (volume discounts applies)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -1958,24 +2034,24 @@
             ],
             "regions": [
                 "Global"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
             ],
             "address": null
         },
         {
             "slug": "thirdweb-shiden-pay-as-you-go",
             "provider": "ThirdWeb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "plan": "Pay-as-you-go",
             "nodeType": "Recent-State",
             "chain": "shiden",
             "accessPrice": "$5/$99",
             "queryPrice": "$8/1M requests (volume discounts applies)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2000,23 +2076,23 @@
             "regions": [
                 "Global"
             ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
             "address": null
         },
         {
             "slug": "thirdweb-astar-dedicated",
             "provider": "ThirdWeb",
+            "actionButtons": [
+                "[Website](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "$499 + Node price",
             "queryPrice": "$8/1M requests (volume discounts applies)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2033,23 +2109,23 @@
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
             "address": null
         },
         {
             "slug": "thirdweb-shiden-dedicated",
             "provider": "ThirdWeb",
+            "actionButtons": [
+                "[Website](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "plan": "Dedicated",
             "nodeType": "Recent-State",
             "chain": "shiden",
             "accessPrice": "$499 + Node price",
             "queryPrice": "$8/1M requests (volume discounts applies)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2066,23 +2142,23 @@
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
             "address": null
         },
         {
             "slug": "thirdweb-astar-enterprise",
             "provider": "ThirdWeb",
+            "actionButtons": [
+                "[Contact](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "astar",
             "accessPrice": "up to $1499",
             "queryPrice": "$8/1M requests (volume discounts applies)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2097,23 +2173,23 @@
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
             "address": null
         },
         {
             "slug": "thirdweb-shiden-enterprise",
             "provider": "ThirdWeb",
+            "actionButtons": [
+                "[Contact](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
             "plan": "Enterprise",
             "nodeType": "Recent-State",
             "chain": "shiden",
             "accessPrice": "up to $1499",
             "queryPrice": "$8/1M requests (volume discounts applies)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
@@ -2128,13 +2204,6 @@
             "securityImprovements": null,
             "monitoringAndAnalytics": null,
             "regions": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
             "address": null
         }
     ],
@@ -2142,14 +2211,25 @@
         {
             "slug": "alchemy-astar-free",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/astar)",
+                "[Docs](https://www.alchemy.com/docs/reference/astar-api-faq#what-testnet-should-i-use-for-astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -2172,30 +2252,30 @@
             ],
             "additionalFeatures": [
                 "Discord support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://www.alchemy.com/astar)",
-                "[Docs](https://www.alchemy.com/docs/reference/astar-api-faq#what-testnet-should-i-use-for-astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "alchemy-astar-pay-as-you-go",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Buy](https://www.alchemy.com/pricing)",
+                "[Docs](https://www.alchemy.com/docs/reference/astar-api-faq#what-testnet-should-i-use-for-astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$5/$45/$215/$415/$815/$2K",
             "queryPrice": "$20/1M queries, $25/1M entities",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -2216,30 +2296,30 @@
             ],
             "additionalFeatures": [
                 "Priority support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://www.alchemy.com/pricing)",
-                "[Docs](https://www.alchemy.com/docs/reference/astar-api-faq#what-testnet-should-i-use-for-astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "alchemy-astar-enterprise",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Contact](https://www.alchemy.com/contact-sales-platinum)",
+                "[Docs](https://www.alchemy.com/docs/reference/astar-api-faq#what-testnet-should-i-use-for-astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "REST API"
@@ -2263,30 +2343,29 @@
                 "Unlimited apps & webhooks",
                 "<2m response time VIP support",
                 "SLA"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://www.alchemy.com/contact-sales-platinum)",
-                "[Docs](https://www.alchemy.com/docs/reference/astar-api-faq#what-testnet-should-i-use-for-astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "chain-love-astar-free",
             "provider": "Chain.Love",
+            "actionButtons": [
+                "[Deploy](https://astar.chain.love/graph)"
+            ],
             "chain": "astar",
             "address": "0x0fd8fd1dc8162148cb9413062fe6c6b144335dbf",
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2304,29 +2383,29 @@
             "regions": [
                 "Japan"
             ],
-            "additionalFeatures": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Deploy](https://astar.chain.love/graph)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            "additionalFeatures": null
         },
         {
             "slug": "chain-love-shibuya-free",
             "provider": "Chain.Love",
+            "actionButtons": [
+                "[Deploy](https://astar.chain.love/graph)"
+            ],
             "chain": "shibuya",
             "address": "0x0fd8fd1dc8162148cb9413062fe6c6b144335dbf",
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2344,29 +2423,29 @@
             "regions": [
                 "Japan"
             ],
-            "additionalFeatures": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Deploy](https://astar.chain.love/graph)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            "additionalFeatures": null
         },
         {
             "slug": "chain-love-shiden-free",
             "provider": "Chain.Love",
+            "actionButtons": [
+                "[Deploy](https://astar.chain.love/graph)"
+            ],
             "chain": "shiden",
             "address": "0x0fd8fd1dc8162148cb9413062fe6c6b144335dbf",
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2384,29 +2463,30 @@
             "regions": [
                 "Japan"
             ],
-            "additionalFeatures": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Deploy](https://astar.chain.love/graph)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            "additionalFeatures": null
         },
         {
             "slug": "chainstack-astar-free",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Website](https://chainstack.com/protocols/astar/)",
+                "[Docs](https://docs.chainstack.com/docs/protocols-networks#networks)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$20/1M request units for extra usage",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2430,30 +2510,30 @@
                 "Custom Subgraphs",
                 "GraphQL Queries",
                 "Standard Support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://chainstack.com/protocols/astar/)",
-                "[Docs](https://docs.chainstack.com/docs/protocols-networks#networks)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "chainstack-astar-pay-as-you-go",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/)",
+                "[Docs](https://docs.chainstack.com/docs/protocols-networks#networks)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$5(first month only)/$49/$199/$349 + $72 per subgraph",
             "queryPrice": "$15/$12.5/$10/1M request units for extra usage",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2479,30 +2559,30 @@
                 "Custom Subgraphs",
                 "GraphQL Queries",
                 "Standard Support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://chainstack.com/pricing/)",
-                "[Docs](https://docs.chainstack.com/docs/protocols-networks#networks)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "chainstack-astar-enterprise",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Contact](https://console.chainstack.com/user/account#signup?plan=enterprise)",
+                "[Docs](https://docs.chainstack.com/docs/protocols-networks#networks)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$990",
             "queryPrice": "$5/1M request units for extra usage",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -2529,30 +2609,30 @@
                 "GraphQL Queries",
                 "Standard Support",
                 "Platform Automation"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://console.chainstack.com/user/account#signup?plan=enterprise)",
-                "[Docs](https://docs.chainstack.com/docs/protocols-networks#networks)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "dipdup-astar-free",
             "provider": "dipDup",
+            "actionButtons": [
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Code-gen APIs"
@@ -2571,30 +2651,30 @@
             "additionalFeatures": [
                 "Fast setup templates",
                 "Open-source"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://dipdup.io/)",
-                "[Docs](https://dipdup.io/docs/supported-networks/astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "dipdup-astar-enterprise",
             "provider": "dipDup",
+            "actionButtons": [
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Code-gen APIs"
@@ -2613,30 +2693,30 @@
             "additionalFeatures": [
                 "Fast setup templates",
                 "Open-source"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://dipdup.io/)",
-                "[Docs](https://dipdup.io/docs/supported-networks/astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "dipdup-shibuya-free",
             "provider": "dipDup",
+            "actionButtons": [
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/astar)"
+            ],
             "chain": "shibuya",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Code-gen APIs"
@@ -2655,30 +2735,30 @@
             "additionalFeatures": [
                 "Fast setup templates",
                 "Open-source"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://dipdup.io/)",
-                "[Docs](https://dipdup.io/docs/supported-networks/astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "dipdup-shibuya-enterprise",
             "provider": "dipDup",
+            "actionButtons": [
+                "[Website](https://dipdup.io/)",
+                "[Docs](https://dipdup.io/docs/supported-networks/astar)"
+            ],
             "chain": "shibuya",
             "address": null,
             "technology": "Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0 (self-hosted open-source)",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Code-gen APIs"
@@ -2697,30 +2777,30 @@
             "additionalFeatures": [
                 "Fast setup templates",
                 "Open-source"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://dipdup.io/)",
-                "[Docs](https://dipdup.io/docs/supported-networks/astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "envio-astar-free",
             "provider": "Envio",
+            "actionButtons": [
+                "[Website](https://envio.dev/)",
+                "[Docs](https://docs.envio.dev/docs/HyperIndex/astar-zkevm)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Custom Handlers"
@@ -2746,30 +2826,30 @@
                 "Multichain Indexing",
                 "Email support",
                 "JS/TS/ReScript indexers"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://envio.dev/)",
-                "[Docs](https://docs.envio.dev/docs/HyperIndex/astar-zkevm)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "envio-astar-pay-as-you-go",
             "provider": "Envio",
+            "actionButtons": [
+                "[Buy](https://envio.dev/pricing)",
+                "[Docs](https://docs.envio.dev/docs/HyperIndex/astar-zkyoto)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$70/$300/$800",
             "queryPrice": "$0.1/$0.2/$0.5/extra indexing hour",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Custom Handlers"
@@ -2801,30 +2881,30 @@
                 "Backups",
                 "Static Production Endpoint",
                 "Scalable custom indexers"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://envio.dev/pricing)",
-                "[Docs](https://docs.envio.dev/docs/HyperIndex/astar-zkyoto)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "envio-astar-dedicated",
             "provider": "Envio",
+            "actionButtons": [
+                "[Contact](https://discord.com/invite/envio)",
+                "[Docs](https://docs.envio.dev/docs/HyperIndex/astar-zkevm)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Custom",
             "plan": "Dedicated",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "Custom Handlers",
@@ -2860,30 +2940,30 @@
                 "Static Production Endpoint",
                 "Private Deployments",
                 "Premium Support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://discord.com/invite/envio)",
-                "[Docs](https://docs.envio.dev/docs/HyperIndex/astar-zkevm)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "goldrush-astar-free",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Website](https://goldrush.dev/)",
+                "[Docs](https://goldrush.dev/docs/chains/astar#astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0 (14 Day Free Trial)",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -2903,30 +2983,30 @@
             ],
             "additionalFeatures": [
                 "Historic & real-time blockchain data"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://goldrush.dev/)",
-                "[Docs](https://goldrush.dev/docs/chains/astar#astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "goldrush-astar-pay-as-you-go",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Buy](https://goldrush.dev/pricing/)",
+                "[Docs](https://goldrush.dev/docs/chains/astar#astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$250",
-            "queryPrice": "$0.00077/Credit",
+            "queryPrice": "$770/1M Credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -2946,30 +3026,30 @@
             ],
             "additionalFeatures": [
                 "Historic & real-time blockchain data"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://goldrush.dev/pricing/)",
-                "[Docs](https://goldrush.dev/docs/chains/astar#astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "goldrush-astar-enterprise",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Contact](https://goldrush.dev/pricing/)",
+                "[Docs](https://goldrush.dev/docs/chains/astar#astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -2987,30 +3067,30 @@
             ],
             "additionalFeatures": [
                 "Custom enterprise features"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://goldrush.dev/pricing/)",
-                "[Docs](https://goldrush.dev/docs/chains/astar#astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "goldrush-shibuya-free",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Website](https://goldrush.dev/)",
+                "[Docs](https://goldrush.dev/docs/chains/shibuya#shibuya-testnet)"
+            ],
             "chain": "shibuya",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0 (14 Day Free Trial)",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -3030,30 +3110,30 @@
             ],
             "additionalFeatures": [
                 "Historic & real-time blockchain data"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://goldrush.dev/)",
-                "[Docs](https://goldrush.dev/docs/chains/shibuya#shibuya-testnet)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "goldrush-shibuya-pay-as-you-go",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Buy](https://goldrush.dev/pricing/)",
+                "[Docs](https://goldrush.dev/docs/chains/shibuya#shibuya-testnet)"
+            ],
             "chain": "shibuya",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$250",
-            "queryPrice": "$0.00077/Credit",
+            "queryPrice": "$770/1M Credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -3073,30 +3153,30 @@
             ],
             "additionalFeatures": [
                 "Historic & real-time blockchain data"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://goldrush.dev/pricing/)",
-                "[Docs](https://goldrush.dev/docs/chains/shibuya#shibuya-testnet)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "goldrush-shibuya-enterprise",
             "provider": "Covalent",
+            "actionButtons": [
+                "[Contact](https://goldrush.dev/pricing/)",
+                "[Docs](https://goldrush.dev/docs/chains/shibuya#shibuya-testnet)"
+            ],
             "chain": "shibuya",
             "address": null,
             "technology": "Unified Data API",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "REST API"
             ],
@@ -3114,30 +3194,30 @@
             ],
             "additionalFeatures": [
                 "Custom enterprise features"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://goldrush.dev/pricing/)",
-                "[Docs](https://goldrush.dev/docs/chains/shibuya#shibuya-testnet)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "goldsky-astar-free",
             "provider": "Goldsky",
+            "actionButtons": [
+                "[Deploy](https://app.goldsky.com/)",
+                "[Docs](https://docs.goldsky.com/chains/supported-networks)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3161,30 +3241,30 @@
                 "Email support",
                 "Subgraphs",
                 "Webhooks"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Deploy](https://app.goldsky.com/)",
-                "[Docs](https://docs.goldsky.com/chains/supported-networks)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "goldsky-astar-pay-as-you-go",
             "provider": "Goldsky",
+            "actionButtons": [
+                "[Buy](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/chains/supported-networks)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": true,
             "accessPrice": "$37/mo",
-            "queryPrice": "$4/100K entities stored",
+            "queryPrice": "$40/1M entities stored",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": true,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3208,30 +3288,30 @@
                 "Custom indexing",
                 "Subgraphs",
                 "Webhooks"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://goldsky.com/pricing)",
-                "[Docs](https://docs.goldsky.com/chains/supported-networks)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "goldsky-astar-enterprise",
             "provider": "Goldsky",
+            "actionButtons": [
+                "[Contact](https://goldsky.com/pricing)",
+                "[Docs](https://docs.goldsky.com/chains/supported-networks)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "$37/mo",
-            "queryPrice": "$1/100K entities stored",
+            "queryPrice": "$10/1M entities stored",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3260,30 +3340,29 @@
                 "4 hours SLA",
                 "Subgraphs",
                 "Webhooks"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://goldsky.com/pricing)",
-                "[Docs](https://docs.goldsky.com/chains/supported-networks)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "indexing-co-astar-free",
             "provider": "The Indexing Company",
+            "actionButtons": [
+                "[Docs](https://docs.indexing.co/networks/astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "Included",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.50%",
+            "bandwidthSla": null,
+            "blocksBehindSla": "2",
+            "supportSla": "Standard Support",
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "SQL",
                 "REST",
@@ -3311,29 +3390,29 @@
                 "PostgreSQL delivery",
                 "Webhook delivery",
                 "Auto-schema generation"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/astar)"
-            ],
-            "uptimeSla": "99.50%",
-            "bandwidthSla": null,
-            "blocksBehindSla": "2",
-            "supportSla": "Standard Support"
+            ]
         },
         {
             "slug": "indexing-co-astar-pay-as-you-go",
             "provider": "The Indexing Company",
+            "actionButtons": [
+                "[Docs](https://docs.indexing.co/networks/astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "Usage-based/Subscription-based",
             "queryPrice": "Included",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%/99.95%",
+            "bandwidthSla": "Guaranteed",
+            "blocksBehindSla": "2/(1)",
+            "supportSla": "Standard Support/Dedicated Support",
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "SQL",
                 "REST",
@@ -3371,29 +3450,29 @@
                 "Dedicated Support Engineer",
                 "SLA-backed uptime",
                 "System Integration support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/astar)"
-            ],
-            "uptimeSla": "99.90%/99.95%",
-            "bandwidthSla": "Guaranteed",
-            "blocksBehindSla": "2/(1)",
-            "supportSla": "Standard Support/Dedicated Support"
+            ]
         },
         {
             "slug": "indexing-co-astar-enterprise",
             "provider": "The Indexing Company",
+            "actionButtons": [
+                "[Docs](https://docs.indexing.co/networks/astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": "Guaranteed",
+            "blocksBehindSla": "0",
+            "supportSla": "24/7 priority support",
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "SQL",
                 "REST",
@@ -3425,29 +3504,30 @@
                 "Hybrid cloud/bare metal delivery",
                 "Compliance-ready infra",
                 "Priority support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Docs](https://docs.indexing.co/networks/astar)"
-            ],
-            "uptimeSla": "99.95%",
-            "bandwidthSla": "Guaranteed",
-            "blocksBehindSla": "0",
-            "supportSla": "24/7 priority support"
+            ]
         },
         {
             "slug": "mobula-astar-free",
             "provider": "Mobula",
+            "actionButtons": [
+                "[Website](https://mobula.io/)",
+                "[Docs](https://docs.mobula.io/blockchains/astar#astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "API",
                 "SDK",
@@ -3470,30 +3550,30 @@
                 "Support for private analytics",
                 "High throughput",
                 "Support on Discord"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://mobula.io/)",
-                "[Docs](https://docs.mobula.io/blockchains/astar#astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "mobula-astar-pay-as-you-go",
             "provider": "Mobula",
+            "actionButtons": [
+                "[Buy](https://docs.mobula.io/pricing)",
+                "[Docs](https://docs.mobula.io/blockchains/astar#astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$50/$400",
             "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "API",
                 "SDK",
@@ -3517,30 +3597,30 @@
                 "High throughput",
                 "WSS feeds",
                 "24/7 support on Telegram, Discord, and Slack"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://docs.mobula.io/pricing)",
-                "[Docs](https://docs.mobula.io/blockchains/astar#astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "mobula-astar-enterprise",
             "provider": "Mobula",
+            "actionButtons": [
+                "[Contact](https://t.me/mobuladevelopers?start=Enterprise)",
+                "[Docs](https://docs.mobula.io/blockchains/astar#astar)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Up to $750",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "API",
                 "SDK",
@@ -3564,30 +3644,30 @@
                 "WSS feeds",
                 "24/7 support on Telegram, Discord, and Slack",
                 "Custom endpoints"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://t.me/mobuladevelopers?start=Enterprise)",
-                "[Docs](https://docs.mobula.io/blockchains/astar#astar)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "onfinality-astar-free",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Website](https://onfinality.io/en/networks/astar)",
+                "[Docs](https://documentation.onfinality.io/support/)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph, Custom",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3610,30 +3690,30 @@
             "additionalFeatures": [
                 "Node Usage costs included in price",
                 "Support site"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://onfinality.io/en/networks/astar)",
-                "[Docs](https://documentation.onfinality.io/support/)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "onfinality-astar-pay-as-you-go",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://indexing.onfinality.io/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/pricing)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph, Custom",
             "plan": "Pay-as-you-go",
-            "trial": false,
             "accessPrice": "$0.08/deployment hour",
-            "queryPrice": "$3.5/additional 100K stored entities/mo, $0.07/each additional CU/deployment hour",
+            "queryPrice": "$35/additional 1M stored entities/mo, $0.07/each additional CU/deployment hour",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3658,30 +3738,30 @@
                 "Node and API Usage costs included in price",
                 "Telegram support",
                 "Support site"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://indexing.onfinality.io/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/pricing)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "onfinality-astar-enterprise",
             "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://indexing.onfinality.io/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/pricing)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "The Graph, Custom",
             "plan": "Enterprise",
-            "trial": false,
             "accessPrice": "Custom",
             "queryPrice": "Custom pricing & SLAs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL"
             ],
@@ -3706,30 +3786,30 @@
                 "Priority support",
                 "Slack support",
                 "Telegram support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://indexing.onfinality.io/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/pricing)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "sqd-astar-free",
             "provider": "SQD Cloud",
+            "actionButtons": [
+                "[Deploy](https://www.sqd.ai/)",
+                "[Docs](https://docs.sqd.ai/subsquid-network/reference/networks/?ph_cross_site=019976bd-8b2b-7de3-bb63-3565d79c7df2)"
+            ],
             "chain": "astar",
             "address": null,
             "technology": "Decentralized Data Lakes",
             "plan": "Free",
-            "trial": false,
             "accessPrice": "$0",
             "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "SQL"
@@ -3752,166 +3832,30 @@
                 "ETL query stack",
                 "Decentralized indexing",
                 "Discord support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Deploy](https://www.sqd.ai/)",
-                "[Docs](https://docs.sqd.ai/subsquid-network/reference/networks/?ph_cross_site=019976bd-8b2b-7de3-bb63-3565d79c7df2)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
+            ]
         },
         {
             "slug": "sqd-astar-pay-as-you-go",
             "provider": "SQD Cloud",
-            "chain": "astar",
-            "address": null,
-            "technology": "Decentralized Data Lakes",
-            "plan": "Pay-as-you-go",
-            "trial": false,
-            "accessPrice": "$86+ (depending on squid needs may go up to $1.5K and higher)",
-            "queryPrice": "$0",
-            "starred": false,
-            "availableApis": [
-                "GraphQL",
-                "SQL"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "Decentralized storage",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Data lake logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "ETL query stack",
-                "Decentralized indexing",
-                "Hard SLA with compensations"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
             "actionButtons": [
                 "[Buy](https://docs.sqd.ai/cloud/pricing/)",
                 "[Docs](https://docs.sqd.ai/subsquid-network/reference/networks/?ph_cross_site=019976bd-8b2b-7de3-bb63-3565d79c7df2)"
             ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
-        },
-        {
-            "slug": "subquery-astar-free",
-            "provider": "SubQuery",
             "chain": "astar",
             "address": null,
-            "technology": "Custom",
-            "plan": "Free",
-            "trial": false,
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "starred": false,
-            "availableApis": [
-                "GraphQL",
-                "SQL"
-            ],
-            "limitations": [
-                "Rate limits apply"
-            ],
-            "securityImprovements": [
-                "Decentralized storage",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Data lake logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "ETL query stack",
-                "Decentralized indexing",
-                "Discord support"
-            ],
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Website](https://app.subquery.network/)",
-                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/polkadot-astar.html#astar-wasm-quick-start)"
-            ],
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null
-        },
-        {
-            "slug": "subquery-astar-pay-as-you-go",
-            "provider": "SubQuery",
-            "chain": "astar",
-            "address": null,
-            "technology": "Custom",
+            "technology": "Decentralized Data Lakes",
             "plan": "Pay-as-you-go",
-            "trial": false,
-            "accessPrice": null,
-            "queryPrice": null,
-            "starred": false,
-            "availableApis": [
-                "GraphQL",
-                "SQL"
-            ],
-            "limitations": [
-                "Rate limits may apply"
-            ],
-            "securityImprovements": [
-                "Decentralized storage",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Data lake logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "ETL query stack",
-                "Decentralized indexing",
-                "Hard SLA with compensations"
-            ],
+            "accessPrice": "$86+ (depending on squid needs may go up to $1.5K and higher)",
+            "queryPrice": "$0",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Buy](https://subquery.network/doc/subquery_network/node_operators/rewards.html#pricing-strategy)",
-                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/polkadot-astar.html#astar-wasm-quick-start)"
-            ],
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "supportSla": null
-        },
-        {
-            "slug": "subquery-astar-enterprise",
-            "provider": "SubQuery",
-            "chain": "astar",
-            "address": null,
-            "technology": "Custom",
-            "plan": "Enterprise",
-            "trial": false,
-            "accessPrice": null,
-            "queryPrice": null,
+            "supportSla": null,
             "starred": false,
+            "trial": false,
             "availableApis": [
                 "GraphQL",
                 "SQL"
@@ -3932,18 +3876,53 @@
                 "ETL query stack",
                 "Decentralized indexing",
                 "Hard SLA with compensations"
+            ]
+        },
+        {
+            "slug": "subquery-astar-pay-as-you-go",
+            "provider": "SubQuery",
+            "actionButtons": [
+                "[Buy](https://subquery.network/doc/subquery_network/node_operators/rewards.html#pricing-strategy)",
+                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/polkadot-astar.html#astar-wasm-quick-start)"
             ],
+            "chain": "astar",
+            "address": null,
+            "technology": "Custom",
+            "plan": "Pay-as-you-go",
+            "accessPrice": null,
+            "queryPrice": "15K SQT/1M  reqs",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "actionButtons": [
-                "[Contact](https://subquery.network/doc/subquery_network/node_operators/rewards.html#pricing-strategy)",
-                "[Docs](https://subquery.network/doc/indexer/quickstart/quickstart_chains/polkadot-astar.html#astar-wasm-quick-start)"
-            ],
             "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
-            "supportSla": null
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "GraphQL",
+                "SQL"
+            ],
+            "limitations": [
+                "Price may vary depending on the value of the token"
+            ],
+            "securityImprovements": [
+                "Decentralized storage",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Data lake logs",
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "ETL query stack",
+                "Decentralized indexing",
+                "Hard SLA with compensations"
+            ]
         }
     ],
     "oracle": [
@@ -6486,11 +6465,15 @@
         "rpc": [
             "slug",
             "provider",
+            "actionButtons",
             "plan",
             "nodeType",
             "chain",
             "accessPrice",
             "queryPrice",
+            "verifiedUptime",
+            "verifiedLatency",
+            "verifiedBlocksBehindAvg",
             "uptimeSla",
             "bandwidthSla",
             "blocksBehindSla",
@@ -6501,37 +6484,33 @@
             "securityImprovements",
             "monitoringAndAnalytics",
             "regions",
-            "verifiedUptime",
-            "verifiedLatency",
-            "verifiedBlocksBehindAvg",
-            "actionButtons",
             "address"
         ],
         "indexing": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "address",
             "technology",
             "plan",
-            "trial",
             "accessPrice",
             "queryPrice",
+            "verifiedUptime",
+            "verifiedLatency",
+            "verifiedBlocksBehindAvg",
+            "uptimeSla",
+            "bandwidthSla",
+            "blocksBehindSla",
+            "supportSla",
             "starred",
+            "trial",
             "availableApis",
             "limitations",
             "securityImprovements",
             "monitoringAndAnalytics",
             "regions",
-            "additionalFeatures",
-            "verifiedUptime",
-            "verifiedLatency",
-            "verifiedBlocksBehindAvg",
-            "actionButtons",
-            "uptimeSla",
-            "bandwidthSla",
-            "blocksBehindSla",
-            "supportSla"
+            "additionalFeatures"
         ],
         "oracle": [
             "slug",
