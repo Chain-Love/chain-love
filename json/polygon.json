@@ -7461,6 +7461,9 @@
         {
             "slug": "nansen-polygon",
             "provider": "Nansen",
+            "actionButtons": [
+                "[Dashboard](https://app.nansen.ai/macro/blockchains?chain=polygon)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Exchange Flows",
@@ -7476,14 +7479,14 @@
                 "API Keys"
             ],
             "price": "$0/$69/mo (monthly plan), $0/$49/mo (yearly plan)",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://app.nansen.ai/macro/blockchains?chain=polygon)"
-            ]
+            "starred": false
         },
         {
             "slug": "messari-polygon",
             "provider": "Messari",
+            "actionButtons": [
+                "[Dashboard](https://messari.io/project/polygon-ecosystem-token)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Network Metrics",
@@ -7497,14 +7500,14 @@
                 "Dashboard"
             ],
             "price": "$0 (7-day free trial)/$29.99/mo/4K/year",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://messari.io/project/polygon-ecosystem-token)"
-            ]
+            "starred": false
         },
         {
             "slug": "dexscreener-polygon",
             "provider": "DexScreener",
+            "actionButtons": [
+                "[Dashboard](https://dexscreener.com/polygon)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "DEX Trading Pairs",
@@ -7518,14 +7521,14 @@
                 "REST API"
             ],
             "price": "$0",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://dexscreener.com/polygon)"
-            ]
+            "starred": false
         },
         {
             "slug": "dune-polygon",
             "provider": "Dune",
+            "actionButtons": [
+                "[Dashboard](https://dune.com/blockchains/polygon)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
@@ -7541,14 +7544,14 @@
                 "Visualizations"
             ],
             "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://dune.com/blockchains/polygon)"
-            ]
+            "starred": false
         },
         {
             "slug": "arkham-polygon",
             "provider": "Arkham",
+            "actionButtons": [
+                "[Dashboard](https://intel.arkm.com/explorer/entity/polygon)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
@@ -7563,10 +7566,7 @@
                 "Arkham Exchange API"
             ],
             "price": "Custom",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://intel.arkm.com/explorer/entity/polygon)"
-            ]
+            "starred": false
         }
     ],
     "wallet": [
@@ -9953,13 +9953,13 @@
         "analytic": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "dataSources",
             "hasDashboard",
             "availableApis",
             "price",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "wallet": [
             "slug",

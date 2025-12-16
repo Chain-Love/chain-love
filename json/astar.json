@@ -4878,6 +4878,9 @@
         {
             "slug": "messari-astar",
             "provider": "Messari",
+            "actionButtons": [
+                "[Get tokens](https://messari.io/project/astar-network/network-metrics)"
+            ],
             "chain": "astar",
             "dataSources": [
                 "Network Metrics",
@@ -4891,10 +4894,7 @@
                 "Dashboard"
             ],
             "price": "$0 (7-day free trial)/$29.99/mo/4K/year",
-            "starred": false,
-            "actionButtons": [
-                "[Get tokens](https://messari.io/project/astar-network/network-metrics)"
-            ]
+            "starred": false
         }
     ],
     "wallet": [
@@ -6585,13 +6585,13 @@
         "analytic": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "dataSources",
             "hasDashboard",
             "availableApis",
             "price",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "wallet": [
             "slug",

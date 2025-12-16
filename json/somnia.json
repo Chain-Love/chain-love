@@ -1265,6 +1265,9 @@
         {
             "slug": "dune-mainnet",
             "provider": "Dune",
+            "actionButtons": [
+                "[Dashboard](https://dune.com/chains/somnia)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
@@ -1280,10 +1283,7 @@
                 "Visualizations"
             ],
             "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://dune.com/chains/somnia)"
-            ]
+            "starred": false
         }
     ],
     "wallet": [
@@ -2311,13 +2311,13 @@
         "analytic": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "dataSources",
             "hasDashboard",
             "availableApis",
             "price",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "wallet": [
             "slug",

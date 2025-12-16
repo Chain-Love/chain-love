@@ -5369,6 +5369,9 @@
         {
             "slug": "cookie3-mainnet",
             "provider": "Cookie3",
+            "actionButtons": [
+                "[Dashboard](https://app.cookie3.co/)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Onchain Analytics",
@@ -5380,14 +5383,14 @@
             "hasDashboard": true,
             "availableApis": null,
             "price": "$749/$299/$749/mo (monthly plan), $674/$269/$674/mo (quarterly plan), $599/$249/$599/mo (yearly plan)",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://app.cookie3.co/)"
-            ]
+            "starred": false
         },
         {
             "slug": "dune-linea-mainnet",
             "provider": "Dune",
+            "actionButtons": [
+                "[Dashboard](https://dune.com/linea/linea-overview)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
@@ -5403,14 +5406,14 @@
                 "Visualizations"
             ],
             "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://dune.com/linea/linea-overview)"
-            ]
+            "starred": false
         },
         {
             "slug": "arkham-intel-mainnet",
             "provider": "Arkham",
+            "actionButtons": [
+                "[Dashboard](https://intel.arkm.com/explorer/entity/linea)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
@@ -5425,10 +5428,7 @@
                 "Arkham Exchange API"
             ],
             "price": "Custom",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://intel.arkm.com/explorer/entity/linea)"
-            ]
+            "starred": false
         }
     ],
     "wallet": [
@@ -7277,13 +7277,13 @@
         "analytic": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "dataSources",
             "hasDashboard",
             "availableApis",
             "price",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "wallet": [
             "slug",

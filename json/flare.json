@@ -2892,6 +2892,9 @@
         {
             "slug": "dune-mainnet",
             "provider": "Dune",
+            "actionButtons": [
+                "[Dashboard](https://dune.com/flare/flare-network-overview)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
@@ -2907,14 +2910,14 @@
                 "Visualizations"
             ],
             "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://dune.com/flare/flare-network-overview)"
-            ]
+            "starred": false
         },
         {
             "slug": "arkham-mainnet",
             "provider": "Arkham",
+            "actionButtons": [
+                "[Dashboard](https://intel.arkm.com/explorer/entity/flare-network)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
@@ -2929,14 +2932,14 @@
                 "Arkham Exchange API"
             ],
             "price": "Custom",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://intel.arkm.com/explorer/entity/flare-network)"
-            ]
+            "starred": false
         },
         {
             "slug": "flaresystems-mainnet",
             "provider": "Flare Systems",
+            "actionButtons": [
+                "[Dashboard](https://flare-systems-explorer.flare.network/)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "FTSO Data",
@@ -2948,14 +2951,14 @@
             "hasDashboard": true,
             "availableApis": null,
             "price": "$0",
-            "starred": true,
-            "actionButtons": [
-                "[Dashboard](https://flare-systems-explorer.flare.network/)"
-            ]
+            "starred": true
         },
         {
             "slug": "flarespace-mainnet",
             "provider": "Flare.Space",
+            "actionButtons": [
+                "[Dashboard](https://flare.space/)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Delegation Metrics",
@@ -2967,14 +2970,14 @@
             "hasDashboard": true,
             "availableApis": null,
             "price": "$0",
-            "starred": true,
-            "actionButtons": [
-                "[Dashboard](https://flare.space/)"
-            ]
+            "starred": true
         },
         {
             "slug": "flaremetrics-mainnet",
             "provider": "Flare Metrics",
+            "actionButtons": [
+                "[Dashboard](https://flaremetrics.io/)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "FTSO Data",
@@ -2986,14 +2989,14 @@
             "hasDashboard": true,
             "availableApis": null,
             "price": "$0",
-            "starred": true,
-            "actionButtons": [
-                "[Dashboard](https://flaremetrics.io/)"
-            ]
+            "starred": true
         },
         {
             "slug": "flaremetrics-songbird",
             "provider": "Flare Metrics",
+            "actionButtons": [
+                "[Dashboard](https://flaremetrics.io/songbird)"
+            ],
             "chain": "songbird",
             "dataSources": [
                 "FTSO Data",
@@ -3005,10 +3008,7 @@
             "hasDashboard": true,
             "availableApis": null,
             "price": "$0",
-            "starred": true,
-            "actionButtons": [
-                "[Dashboard](https://flaremetrics.io/songbird)"
-            ]
+            "starred": true
         }
     ],
     "wallet": [
@@ -4708,13 +4708,13 @@
         "analytic": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "dataSources",
             "hasDashboard",
             "availableApis",
             "price",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "wallet": [
             "slug",

@@ -2571,6 +2571,9 @@
         {
             "slug": "dune-mainnet",
             "provider": "Dune",
+            "actionButtons": [
+                "[Dashboard](http://dune.com/kalen/filecoin-daily-metrics)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
@@ -2586,14 +2589,14 @@
                 "Visualizations"
             ],
             "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](http://dune.com/kalen/filecoin-daily-metrics)"
-            ]
+            "starred": false
         },
         {
             "slug": "messari-mainnet",
             "provider": "Messari",
+            "actionButtons": [
+                "[Dashboard](https://messari.io/project/filecoin)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Network Metrics",
@@ -2607,14 +2610,14 @@
                 "Dashboard"
             ],
             "price": "$0 (7-day free trial)/$29.99/mo/4K/year",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://messari.io/project/filecoin)"
-            ]
+            "starred": false
         },
         {
             "slug": "starboard-mainnet",
             "provider": "Starboard",
+            "actionButtons": [
+                "[Dashboard](https://dashboard.starboard.ventures/dashboard/analytics#capacityservices-storage-state)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "DeFI Deposits / Borrows",
@@ -2656,14 +2659,14 @@
                 "Hardhat plugin API"
             ],
             "price": "$0",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://dashboard.starboard.ventures/dashboard/analytics#capacityservices-storage-state)"
-            ]
+            "starred": false
         },
         {
             "slug": "statuspage-mainnet",
             "provider": "Status Page",
+            "actionButtons": [
+                "[Dashboard](https://filecoin.statuspage.io/)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Uptime",
@@ -2677,14 +2680,14 @@
                 "Notifications"
             ],
             "price": "$0/$29/$99/$399/$1499/mo (public page), $79/$249/$599/$1499/mo (private page), up to $300 (audience-specific page)",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://filecoin.statuspage.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "fil-plus-datacap",
             "provider": "FilPlus DataCap Stats",
+            "actionButtons": [
+                "[Dashboard](https://datacapstats.io/about)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "DataCap Usage",
@@ -2700,14 +2703,14 @@
                 "REST API"
             ],
             "price": "$0",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://datacapstats.io/about)"
-            ]
+            "starred": false
         },
         {
             "slug": "cid-checker-mainnet",
             "provider": "CID Checker",
+            "actionButtons": [
+                "[Dashboard](https://filecoin.tools/)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Active Deals",
@@ -2718,14 +2721,14 @@
                 "REST API"
             ],
             "price": "$0",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://filecoin.tools/)"
-            ]
+            "starred": false
         },
         {
             "slug": "cid-checker-calibnet",
             "provider": "CID Checker",
+            "actionButtons": [
+                "[Dashboard](https://filecoin.tools/)"
+            ],
             "chain": "calibnet",
             "dataSources": [
                 "Active Deals",
@@ -2736,10 +2739,7 @@
                 "REST API"
             ],
             "price": "$0",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://filecoin.tools/)"
-            ]
+            "starred": false
         }
     ],
     "wallet": [
@@ -4271,13 +4271,13 @@
         "analytic": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "dataSources",
             "hasDashboard",
             "availableApis",
             "price",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "wallet": [
             "slug",

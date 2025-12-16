@@ -9167,6 +9167,10 @@
         {
             "slug": "dune-mainnet",
             "provider": "Dune",
+            "actionButtons": [
+                "[DEX Metrics](https://dune.com/sealaunch/dex-metrics-on-base)",
+                "[Network analytics](https://dune.com/tk-research/base)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Transactions",
@@ -9182,15 +9186,14 @@
                 "Visualizations"
             ],
             "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
-            "starred": false,
-            "actionButtons": [
-                "[DEX Metrics](https://dune.com/sealaunch/dex-metrics-on-base)",
-                "[Network analytics](https://dune.com/tk-research/base)"
-            ]
+            "starred": false
         },
         {
             "slug": "dappradar-mainnet",
             "provider": "DappRadar",
+            "actionButtons": [
+                "[Dashboard](https://dappradar.com/chain/base)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Unique active wallets",
@@ -9205,14 +9208,14 @@
                 "No historical data on free API"
             ],
             "price": "api for $0/$9.99/$199/$499 for 5/5/30/50 RPS and 100/2.5K/100K/1M RPM",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://dappradar.com/chain/base)"
-            ]
+            "starred": false
         },
         {
             "slug": "defillama-mainnet",
             "provider": "DeFiLlama",
+            "actionButtons": [
+                "[Dashboard](https://defillama.com/chain/base)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "DeFi TVL",
@@ -9226,14 +9229,14 @@
                 "REST API"
             ],
             "price": "$0/$49/$300/mo (monthly plan), $0 (2 months free)/$40.83/mo ($490/year)/$250/mo (3K/year) (yearly plan)",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://defillama.com/chain/base)"
-            ]
+            "starred": false
         },
         {
             "slug": "blockworks-mainnet",
             "provider": "Blockworks",
+            "actionButtons": [
+                "[Dashboard](https://blockworks.com/analytics/base)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Network fees",
@@ -9253,14 +9256,14 @@
                 "Additional Tools and Libraries"
             ],
             "price": "$0",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://blockworks.com/analytics/base)"
-            ]
+            "starred": false
         },
         {
             "slug": "l2beat-mainnet",
             "provider": "L2BEAT",
+            "actionButtons": [
+                "[Dashboard](https://l2beat.com/scaling/projects/base)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "TVL",
@@ -9273,14 +9276,14 @@
                 "REST API"
             ],
             "price": "$0",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://l2beat.com/scaling/projects/base)"
-            ]
+            "starred": false
         },
         {
             "slug": "tokenterminal",
             "provider": "token terminal",
+            "actionButtons": [
+                "[Dashboard](https://tokenterminal.com/explorer/projects/base)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Active wallets",
@@ -9293,14 +9296,14 @@
                 "JSON-RPC with 60 RPS"
             ],
             "price": "$0/$350/mo (monthly plan), $0/$292/mo (yearly plan)",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://tokenterminal.com/explorer/projects/base)"
-            ]
+            "starred": false
         },
         {
             "slug": "growthepie-mainnet",
             "provider": "growthepie",
+            "actionButtons": [
+                "[Dashboard](https://www.growthepie.com/chains/base)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Active wallets",
@@ -9317,14 +9320,14 @@
                 "REST API"
             ],
             "price": "$0",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://www.growthepie.com/chains/base)"
-            ]
+            "starred": false
         },
         {
             "slug": "sentry-aleno-mainnet",
             "provider": "Sentry by Aleno",
+            "actionButtons": [
+                "[Dashboard](https://docs.aleno.ai/supported-liquidity-sources#blockchains-dex-sources)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "Asset prices",
@@ -9338,14 +9341,14 @@
                 "REST API"
             ],
             "price": "Custom",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://docs.aleno.ai/supported-liquidity-sources#blockchains-dex-sources)"
-            ]
+            "starred": false
         },
         {
             "slug": "jiffyscan-mainnet",
             "provider": "jiffyscan.xyz",
+            "actionButtons": [
+                "[Dashboard](https://jiffyscan.xyz/?network=base)"
+            ],
             "chain": "mainnet",
             "dataSources": [
                 "ERC4337 analytics"
@@ -9355,10 +9358,7 @@
                 "REST API"
             ],
             "price": "$0/$54/$103/mo (monthly plan), $0/$43/$83/mo (yearly plan)",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://jiffyscan.xyz/?network=base)"
-            ]
+            "starred": false
         }
     ],
     "wallet": [
@@ -11257,13 +11257,13 @@
         "analytic": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "dataSources",
             "hasDashboard",
             "availableApis",
             "price",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "wallet": [
             "slug",
