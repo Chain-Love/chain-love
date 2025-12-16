@@ -1919,8 +1919,14 @@
         {
             "slug": "axelar-mainnet",
             "provider": "Axelar",
+            "actionButtons": [
+                "[Bridge](https://app.squidrouter.com/?chains=314)",
+                "[Filecoin Cross-Chain Docs](https://docs.filecoin.io/smart-contracts/advanced/cross-chain-bridges)"
+            ],
             "chain": "mainnet",
             "technology": "General Message Passing",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "starred": false,
             "availableApis": [
@@ -1940,8 +1946,6 @@
                 "USDC",
                 "USDT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "[Gas Fee](https://support.edge.app/hc/en-us/articles/36422794159387-Axelar-AXL-Network-Fees)",
             "economicalSecurity": true,
             "economicalSecurityNote": "Proof-of-stake permissionless validator set controls Axelar security protocols",
@@ -1951,10 +1955,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript SDK"
-            ],
-            "actionButtons": [
-                "[Bridge](https://app.squidrouter.com/?chains=314)",
-                "[Filecoin Cross-Chain Docs](https://docs.filecoin.io/smart-contracts/advanced/cross-chain-bridges)"
             ],
             "support": [
                 "Discord",
@@ -2063,8 +2063,14 @@
         {
             "slug": "celer-mainnet",
             "provider": "Celer",
+            "actionButtons": [
+                "[Celer cBridge App](https://cbridge.celer.network/314/1/USDC)",
+                "[Docs](https://cbridge-docs.celer.network/reference/faq)"
+            ],
             "chain": "mainnet",
             "technology": "Lock & Mint + Message Passing",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "starred": false,
             "availableApis": [
@@ -2086,8 +2092,6 @@
                 "USDC",
                 "USDT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
@@ -2099,10 +2103,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "Node.JS"
-            ],
-            "actionButtons": [
-                "[Celer cBridge App](https://cbridge.celer.network/314/1/USDC)",
-                "[Docs](https://cbridge-docs.celer.network/reference/faq)"
             ],
             "support": [
                 "Contact us form"
@@ -2158,8 +2158,13 @@
         {
             "slug": "chainsafe-filecoin-bridge",
             "provider": "ChainSafe Systems",
+            "actionButtons": [
+                "[GitHub](https://github.com/ChainSafe/filecoindot)"
+            ],
             "chain": "testnet",
             "technology": "Substrate-Based Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "starred": false,
             "availableApis": [
@@ -2176,8 +2181,6 @@
                 "FIL",
                 "wFIL"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "[Gas fee](https://blog.chainsafe.io/transaction-fee-mechanism-design/)",
             "economicalSecurity": true,
             "economicalSecurityNote": "Open-source bridge/relayer framework built by ChainSafe; auditing for full Filecoin bridge not publicly final.",
@@ -2186,9 +2189,6 @@
             "sdk": [
                 "Rust",
                 "JavaScript"
-            ],
-            "actionButtons": [
-                "[GitHub](https://github.com/ChainSafe/filecoindot)"
             ],
             "support": [
                 "Discord",
@@ -4218,23 +4218,23 @@
         "bridge": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
+            "txSpeedSla",
+            "throughputSla",
             "openSource",
             "starred",
             "availableApis",
             "monitoringAndAnalytics",
             "additionalFeatures",
             "assetTypes",
-            "txSpeedSla",
-            "throughputSla",
             "price",
             "economicalSecurity",
             "economicalSecurityNote",
             "auditsPerformed",
             "decentralizationModel",
             "sdk",
-            "actionButtons",
             "support",
             "supportedChains"
         ],

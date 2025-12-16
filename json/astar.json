@@ -4217,8 +4217,14 @@
         {
             "slug": "celer-astar",
             "provider": "Celer",
+            "actionButtons": [
+                "[Bridge](https://cbridge.celer.network)",
+                "[Docs](https://cbridge-docs.celer.network/)"
+            ],
             "chain": "astar",
             "technology": "Lock & Mint + Message Passing",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Contact us form"
@@ -4243,8 +4249,6 @@
                 "USDC",
                 "USDT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
@@ -4256,10 +4260,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "Node.JS"
-            ],
-            "actionButtons": [
-                "[Bridge](https://cbridge.celer.network)",
-                "[Docs](https://cbridge-docs.celer.network/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -4312,8 +4312,14 @@
         {
             "slug": "celer-shiden",
             "provider": "Celer",
+            "actionButtons": [
+                "[Bridge](https://cbridge.celer.network)",
+                "[Docs](https://cbridge-docs.celer.network/)"
+            ],
             "chain": "shiden",
             "technology": "Lock & Mint + Message Passing",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Contact us form"
@@ -4338,8 +4344,6 @@
                 "USDC",
                 "USDT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
@@ -4351,10 +4355,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "Node.JS"
-            ],
-            "actionButtons": [
-                "[Bridge](https://cbridge.celer.network)",
-                "[Docs](https://cbridge-docs.celer.network/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -4407,8 +4407,14 @@
         {
             "slug": "wanchain-bridge-astar",
             "provider": "Wanchain",
+            "actionButtons": [
+                "[Bridge](https://bridge.wanchain.org/AssetBridge)",
+                "[Docs](https://docs.wanchain.org/)"
+            ],
             "chain": "astar",
             "technology": "Asset Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Telegram",
@@ -4429,8 +4435,6 @@
             "assetTypes": [
                 "ERC-20: USDT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "10.2%, min. 0.2 USD, has discounts up to 80% based on WAN token holdings",
             "economicalSecurity": true,
             "economicalSecurityNote": "Secured via Wanchain validators and smart contracts",
@@ -4440,10 +4444,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "Node.JS SDK"
-            ],
-            "actionButtons": [
-                "[Bridge](https://bridge.wanchain.org/AssetBridge)",
-                "[Docs](https://docs.wanchain.org/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -6532,8 +6532,11 @@
         "bridge": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
+            "txSpeedSla",
+            "throughputSla",
             "openSource",
             "support",
             "starred",
@@ -6541,15 +6544,12 @@
             "monitoringAndAnalytics",
             "additionalFeatures",
             "assetTypes",
-            "txSpeedSla",
-            "throughputSla",
             "price",
             "economicalSecurity",
             "economicalSecurityNote",
             "auditsPerformed",
             "decentralizationModel",
             "sdk",
-            "actionButtons",
             "supportedChains"
         ],
         "explorer": [

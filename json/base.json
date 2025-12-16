@@ -6243,8 +6243,14 @@
         {
             "slug": "hyperlane-mainnet",
             "provider": "Hyperlane",
+            "actionButtons": [
+                "[Bridge](https://hyperlane.xyz/)",
+                "[Docs](https://docs.hyperlane.xyz/)"
+            ],
             "chain": "mainnet",
             "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -6262,8 +6268,6 @@
             "assetTypes": [
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Economic security via modular ISMs and validator staking",
@@ -6271,10 +6275,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript CLI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://hyperlane.xyz)",
-                "[Docs](https://docs.hyperlane.xyz)"
             ],
             "supportedChains": [
                 "abstract",
@@ -6413,8 +6413,14 @@
         {
             "slug": "superbridge-mainnet",
             "provider": "Superbridge",
+            "actionButtons": [
+                "[Bridge](https://superbridge.app/)",
+                "[Docs](https://docs.superbridge.app/)"
+            ],
             "chain": "mainnet",
             "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -6432,8 +6438,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Economic security via OP‑Stack / Nitro and CCTP for USDC",
@@ -6442,10 +6446,6 @@
             "sdk": [
                 "Web UI",
                 "SDK CLI?"
-            ],
-            "actionButtons": [
-                "[Bridge](https://superbridge.app)",
-                "[Docs](https://docs.superbridge.app)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -6487,8 +6487,14 @@
         {
             "slug": "garden-mainnet",
             "provider": "Garden",
+            "actionButtons": [
+                "[Bridge](https://app.garden.finance)",
+                "[Docs](https://docs.garden.finance/)"
+            ],
             "chain": "mainnet",
             "technology": "BTC‑to‑ETH Swap Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -6505,8 +6511,6 @@
                 "BTC",
                 "ETH"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Swap fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Relayer‑based swap execution",
@@ -6514,10 +6518,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "Web UI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://garden.finance)",
-                "[Docs](https://docs.garden.finance)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -6539,8 +6539,14 @@
         {
             "slug": "across-mainnet",
             "provider": "Across",
+            "actionButtons": [
+                "[Bridge](https://app.across.to/bridge)",
+                "[Docs](https://docs.across.to/)"
+            ],
             "chain": "mainnet",
             "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -6558,8 +6564,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + small protocol fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Secured via UMA oracle + relayers",
@@ -6568,10 +6572,6 @@
             "sdk": [
                 "SDK",
                 "Web UI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://across.to)",
-                "[Docs](https://docs.across.to)"
             ],
             "supportedChains": [
                 "hyperevm",
@@ -6600,8 +6600,14 @@
         {
             "slug": "hop-mainnet",
             "provider": "Hop",
+            "actionButtons": [
+                "[Bridge](https://app.hop.exchange/)",
+                "[Docs](https://docs.hop.exchange/developer-docs/)"
+            ],
             "chain": "mainnet",
             "technology": "Layer-2 Token Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -6618,8 +6624,6 @@
             "assetTypes": [
                 "ERC-20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + liquidity fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Liquidity provider bonds via AMM model",
@@ -6629,10 +6633,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://app.hop.exchange/)",
-                "[Docs](https://docs.hop.exchange/developer-docs/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -6649,8 +6649,13 @@
         {
             "slug": "synapse-mainnet",
             "provider": "Synapse Protocol",
+            "actionButtons": [
+                "[Bridge](https://synapseprotocol.com/)"
+            ],
             "chain": "mainnet",
             "technology": "Cross-chain Asset & Messaging Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -6669,8 +6674,6 @@
                 "ERC-20",
                 "Stablecoins"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + Bridge Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Liquidity pools with smart contract messaging",
@@ -6680,9 +6683,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://synapseprotocol.com/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -6717,8 +6717,14 @@
         {
             "slug": "stargate-mainnet",
             "provider": "Stargate Finance",
+            "actionButtons": [
+                "[Bridge](https://stargate.finance/)",
+                "[Docs](https://stargateprotocol.gitbook.io/)"
+            ],
             "chain": "mainnet",
             "technology": "Omnichain Liquidity Layer",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord",
@@ -6745,8 +6751,6 @@
                 "ERC‑20",
                 "OFT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee, Protocol Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Decentralized pools secured by LayerZero consensus",
@@ -6756,10 +6760,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://stargate.finance/transfer)",
-                "[Docs](https://docs.stargate.finance)"
             ],
             "supportedChains": [
                 "base",
@@ -6857,8 +6857,14 @@
         {
             "slug": "celer-mainnet",
             "provider": "Celer",
+            "actionButtons": [
+                "[Bridge](https://cbridge.celer.network)",
+                "[Docs](https://cbridge-docs.celer.network/)"
+            ],
             "chain": "mainnet",
             "technology": "Lock & Mint + Message Passing",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Contact us form"
@@ -6883,8 +6889,6 @@
                 "USDC",
                 "USDT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
@@ -6896,10 +6900,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "Node.JS"
-            ],
-            "actionButtons": [
-                "[Bridge](https://cbridge.celer.network)",
-                "[Docs](https://cbridge-docs.celer.network/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -6952,8 +6952,14 @@
         {
             "slug": "wormhole-mainnet",
             "provider": "Wormhole",
+            "actionButtons": [
+                "[Bridge](https://portalbridge.com/)",
+                "[Docs](https://wormhole.com/docs/)"
+            ],
             "chain": "mainnet",
             "technology": "Generic Messaging & Asset Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -6973,8 +6979,6 @@
                 "OFT",
                 "NFT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Independent guardian set across ~30 chains",
@@ -6984,10 +6988,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://portalbridge.com/)",
-                "[Docs](https://wormhole.com/docs/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -7021,8 +7021,14 @@
         {
             "slug": "axelar-mainnet",
             "provider": "Axelar",
+            "actionButtons": [
+                "[Bridge](https://www.axelar.network/)",
+                "[Docs](https://docs.axelar.dev/)"
+            ],
             "chain": "mainnet",
             "technology": "General Message Passing",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord",
@@ -7047,8 +7053,6 @@
                 "USDC",
                 "USDT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "[Gas Fee](https://support.edge.app/hc/en-us/articles/36422794159387-Axelar-AXL-Network-Fees)",
             "economicalSecurity": true,
             "economicalSecurityNote": "Proof-of-stake permissionless validator set controls Axelar security protocols",
@@ -7058,9 +7062,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript SDK"
-            ],
-            "actionButtons": [
-                "[Bridge](https://app.squidrouter.com/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -7164,8 +7165,14 @@
         {
             "slug": "orbiter-mainnet",
             "provider": "Orbiter Finance",
+            "actionButtons": [
+                "[Bridge](https://orbiter.finance)",
+                "[Docs](https://docs.orbiter.finance)"
+            ],
             "chain": "mainnet",
             "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -7183,8 +7190,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Peer-to-peer intents & liquidity providers",
@@ -7192,10 +7197,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "Web UI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://www.orbiter.finance)",
-                "[Docs](https://docs.orbiter.finance)"
             ],
             "supportedChains": [
                 "arbitrum",
@@ -7281,8 +7282,14 @@
         {
             "slug": "routerprotocol-mainnet",
             "provider": "Router Protocol",
+            "actionButtons": [
+                "[Bridge](https://routernitro.com/swap)",
+                "[Docs](https://docs.routerprotocol.com/)"
+            ],
             "chain": "mainnet",
             "technology": "Chain Abstraction",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -7299,8 +7306,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + protocol fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Security via settlement chains",
@@ -7309,10 +7314,6 @@
             "sdk": [
                 "SDK",
                 "Web UI?"
-            ],
-            "actionButtons": [
-                "[Bridge](https://routernitro.com/swap)",
-                "[Docs](https://docs.routerprotocol.com)"
             ],
             "supportedChains": [
                 "arbitrum one",
@@ -7339,8 +7340,13 @@
         {
             "slug": "chainlink-bridge-mainnet",
             "provider": "Chainlink Bridge",
+            "actionButtons": [
+                "[Bridge](https://chain.link/cross-chain)"
+            ],
             "chain": "mainnet",
             "technology": "Oracle‑Powered Asset & Messaging Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -7360,8 +7366,6 @@
                 "Stablecoins",
                 "NFT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + relayer fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Security by Chainlink decentralized oracle network",
@@ -7371,9 +7375,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://chain.link/cross-chain)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -7398,8 +7399,14 @@
         {
             "slug": "chainport-mainnet",
             "provider": "ChainPort",
+            "actionButtons": [
+                "[Bridge](https://app.chainport.io/)",
+                "[Docs](https://docs.chainport.io/)"
+            ],
             "chain": "mainnet",
             "technology": "Cross‑chain Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -7417,8 +7424,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + 0.3% fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Smart contract custody with optional insurance",
@@ -7426,10 +7431,6 @@
             "decentralizationModel": "Partially Decentralized",
             "sdk": [
                 "Web UI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://www.chainport.io)",
-                "[Docs](https://docs.chainport.io)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -7463,8 +7464,14 @@
         {
             "slug": "symbiosis-mainnet",
             "provider": "Symbiosis",
+            "actionButtons": [
+                "[Bridge](https://app.symbiosis.finance/)",
+                "[Docs](https://docs.symbiosis.finance/)"
+            ],
             "chain": "mainnet",
             "technology": "Cross‑chain AMM Swap Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -7483,8 +7490,6 @@
                 "USDC",
                 "ARB"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + protocol fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Security via canonical chains",
@@ -7495,10 +7500,6 @@
             "sdk": [
                 "Web UI",
                 "SDK"
-            ],
-            "actionButtons": [
-                "[Bridge](https://symbiosis.finance/bridge-arbitrum-one)",
-                "[Docs](https://docs.symbiosis.finance)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -7557,8 +7558,14 @@
         {
             "slug": "smolrefuel-mainnet",
             "provider": "SmolRefuel",
+            "actionButtons": [
+                "[Bridge](https://smolrefuel.com)",
+                "[Docs](https://docs.smolrefuel.com)"
+            ],
             "chain": "mainnet",
             "technology": "Gas Refuel Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -7576,8 +7583,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee swap model",
             "economicalSecurity": false,
             "economicalSecurityNote": "Non-custodial, gas-only utility",
@@ -7585,10 +7590,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://smolrefuel.com)",
-                "[Docs](https://docs.smolrefuel.com)"
             ],
             "supportedChains": [
                 "og",
@@ -7744,8 +7745,14 @@
         {
             "slug": "valuerouter-mainnet",
             "provider": "ValueRouter",
+            "actionButtons": [
+                "[Bridge](https://app.valuerouter.com)",
+                "[Docs](https://docs.valuerouter.com/)"
+            ],
             "chain": "mainnet",
             "technology": "Bridge Aggregator",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -7764,8 +7771,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + routing fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Security depends on routed bridge",
@@ -7773,10 +7778,6 @@
             "decentralizationModel": null,
             "sdk": [
                 "Web UI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://app.valuerouter.com)",
-                "[Docs](https://docs.valuerouter.com)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -7792,8 +7793,14 @@
         {
             "slug": "veda-mainnet",
             "provider": "Veda",
+            "actionButtons": [
+                "[Site](https://veda.tech)",
+                "[Docs](https://veda.tech)"
+            ],
             "chain": "mainnet",
             "technology": "Intent-based Cross-chain Bridge & Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -7813,8 +7820,6 @@
                 "Stablecoins",
                 "Data"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + protocol fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Intent settlement with dispute module",
@@ -7822,10 +7827,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Site](https://veda.tech)",
-                "[Docs](https://veda.tech)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -7836,8 +7837,14 @@
         {
             "slug": "crosscurve-mainnet",
             "provider": "CrossCurve",
+            "actionButtons": [
+                "[Bridge](https://app.crosscurve.fi/)",
+                "[Docs](https://docs.crosscurve.fi)"
+            ],
             "chain": "mainnet",
             "technology": "NFT & Token Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -7856,8 +7863,6 @@
                 "ERC‑20",
                 "ERC‑721"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Modular design with relayer fallback",
@@ -7865,10 +7870,6 @@
             "decentralizationModel": "Modular",
             "sdk": [
                 "Web UI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://crosscurve.fi)",
-                "[Docs](https://docs.crosscurve.fi)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -7907,8 +7908,14 @@
         {
             "slug": "messina-mainnet",
             "provider": "MessinaOne Bridge",
+            "actionButtons": [
+                "[Bridge](https://messina.one/bridge)",
+                "[Docs](https://messinaone.gitbook.io/messina/)"
+            ],
             "chain": "mainnet",
             "technology": "Cross‑chain Bridge via Wormhole",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -7926,8 +7933,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Audited by Certik & Kudelski",
@@ -7938,10 +7943,6 @@
             "decentralizationModel": "Partially Decentralized",
             "sdk": [
                 "Web UI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://messina.one/bridge)",
-                "[Docs](https://messinaone.gitbook.io/messina/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -7958,8 +7959,14 @@
         {
             "slug": "universalx-mainnet",
             "provider": "UniversalX",
+            "actionButtons": [
+                "[Site](https://universalx.app)",
+                "[Docs](https://universalx.app)"
+            ],
             "chain": "mainnet",
             "technology": "Chain‑agnostic Trading Platform (no classical bridge)",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": false,
             "support": [
                 "Discord"
@@ -7979,8 +7986,6 @@
                 "USDC",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Swap/Trade fees",
             "economicalSecurity": false,
             "economicalSecurityNote": "Chain abstraction, no bridge needed",
@@ -7988,10 +7993,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Site](https://universalx.app)",
-                "[Docs](https://universalx.app)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -8007,8 +8008,14 @@
         {
             "slug": "ecoportal-mainnet",
             "provider": "Eco Portal",
+            "actionButtons": [
+                "[Bridge](https://portal.eco.com/)",
+                "[Docs](https://docs.eco.com/)"
+            ],
             "chain": "mainnet",
             "technology": "Stablecoin Router",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -8027,8 +8034,6 @@
                 "USDC",
                 "USDT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + minimal service fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Security via route providers",
@@ -8037,10 +8042,6 @@
             "sdk": [
                 "Web UI",
                 "SDK"
-            ],
-            "actionButtons": [
-                "[Bridge](https://portal.eco.com)",
-                "[Docs](https://docs.eco.com)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -8058,8 +8059,14 @@
         {
             "slug": "cometprotocol-mainnet",
             "provider": "Comet Protocol",
+            "actionButtons": [
+                "[Bridge](https://cometbridge.app/?original=Optimism&target=Soneium&symbol=ETH)",
+                "[Docs](https://docs.cometprotocol.com/)"
+            ],
             "chain": "mainnet",
             "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": false,
             "support": [
                 "Discord"
@@ -8081,8 +8088,6 @@
                 "ERC‑20",
                 "BTC"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Inherits security from base chains",
@@ -8092,10 +8097,6 @@
             "decentralizationModel": "Partially Decentralized",
             "sdk": [
                 "TypeScript SDK"
-            ],
-            "actionButtons": [
-                "[Bridge](https://cometbridge.app/?original=Optimism&target=Soneium&symbol=ETH)",
-                "[Docs](https://docs.cometprotocol.com/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -8117,8 +8118,14 @@
         {
             "slug": "hyperlane-testnet",
             "provider": "Hyperlane",
+            "actionButtons": [
+                "[Bridge](https://hyperlane.xyz/)",
+                "[Docs](https://docs.hyperlane.xyz/)"
+            ],
             "chain": "testnet",
             "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -8136,8 +8143,6 @@
             "assetTypes": [
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Economic security via modular ISMs and validator staking",
@@ -8145,10 +8150,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript CLI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://hyperlane.xyz)",
-                "[Docs](https://docs.hyperlane.xyz)"
             ],
             "supportedChains": [
                 "abstract",
@@ -8287,8 +8288,14 @@
         {
             "slug": "superbridge-testnet",
             "provider": "Superbridge",
+            "actionButtons": [
+                "[Bridge](https://superbridge.app/)",
+                "[Docs](https://docs.superbridge.app/)"
+            ],
             "chain": "testnet",
             "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -8306,8 +8313,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Economic security via OP‑Stack / Nitro and CCTP for USDC",
@@ -8316,10 +8321,6 @@
             "sdk": [
                 "Web UI",
                 "SDK CLI?"
-            ],
-            "actionButtons": [
-                "[Bridge](https://superbridge.app)",
-                "[Docs](https://docs.superbridge.app)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -8361,8 +8362,14 @@
         {
             "slug": "garden-testnet",
             "provider": "Garden",
+            "actionButtons": [
+                "[Bridge](https://app.garden.finance)",
+                "[Docs](https://docs.garden.finance/)"
+            ],
             "chain": "testnet",
             "technology": "BTC‑to‑ETH Swap Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -8379,8 +8386,6 @@
                 "BTC",
                 "ETH"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Swap fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Relayer‑based swap execution",
@@ -8388,10 +8393,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "Web UI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://garden.finance)",
-                "[Docs](https://docs.garden.finance)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -8413,8 +8414,14 @@
         {
             "slug": "across-testnet",
             "provider": "Across",
+            "actionButtons": [
+                "[Bridge](https://app.across.to/bridge)",
+                "[Docs](https://docs.across.to/)"
+            ],
             "chain": "testnet",
             "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -8432,8 +8439,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + small protocol fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Secured via UMA oracle + relayers",
@@ -8442,10 +8447,6 @@
             "sdk": [
                 "SDK",
                 "Web UI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://across.to)",
-                "[Docs](https://docs.across.to)"
             ],
             "supportedChains": [
                 "hyperevm",
@@ -8474,8 +8475,14 @@
         {
             "slug": "hop-testnet",
             "provider": "Hop",
+            "actionButtons": [
+                "[Bridge](https://app.hop.exchange/)",
+                "[Docs](https://docs.hop.exchange/developer-docs/)"
+            ],
             "chain": "testnet",
             "technology": "Layer-2 Token Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -8492,8 +8499,6 @@
             "assetTypes": [
                 "ERC-20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + liquidity fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Liquidity provider bonds via AMM model",
@@ -8503,10 +8508,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://app.hop.exchange/)",
-                "[Docs](https://docs.hop.exchange/developer-docs/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -8523,8 +8524,14 @@
         {
             "slug": "wormhole-testnet",
             "provider": "Wormhole",
+            "actionButtons": [
+                "[Bridge](https://portalbridge.com/)",
+                "[Docs](https://wormhole.com/docs/)"
+            ],
             "chain": "testnet",
             "technology": "Generic Messaging & Asset Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -8544,8 +8551,6 @@
                 "OFT",
                 "NFT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Independent guardian set across ~30 chains",
@@ -8555,10 +8560,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://portalbridge.com/)",
-                "[Docs](https://wormhole.com/docs/)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -8592,8 +8593,14 @@
         {
             "slug": "orbiter-testnet",
             "provider": "Orbiter Finance",
+            "actionButtons": [
+                "[Bridge](https://orbiter.finance)",
+                "[Docs](https://docs.orbiter.finance)"
+            ],
             "chain": "testnet",
             "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -8611,8 +8618,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Peer-to-peer intents & liquidity providers",
@@ -8620,10 +8625,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "Web UI"
-            ],
-            "actionButtons": [
-                "[Bridge](https://www.orbiter.finance)",
-                "[Docs](https://docs.orbiter.finance)"
             ],
             "supportedChains": [
                 "arbitrum",
@@ -8709,8 +8710,13 @@
         {
             "slug": "chainlink-bridge-testnet",
             "provider": "Chainlink Bridge",
+            "actionButtons": [
+                "[Bridge](https://chain.link/cross-chain)"
+            ],
             "chain": "testnet",
             "technology": "Oracle‑Powered Asset & Messaging Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -8730,8 +8736,6 @@
                 "Stablecoins",
                 "NFT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee + relayer fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Security by Chainlink decentralized oracle network",
@@ -8741,9 +8745,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://chain.link/cross-chain)"
             ],
             "supportedChains": [
                 "ethereum",
@@ -11204,8 +11205,11 @@
         "bridge": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
+            "txSpeedSla",
+            "throughputSla",
             "openSource",
             "support",
             "starred",
@@ -11213,15 +11217,12 @@
             "monitoringAndAnalytics",
             "additionalFeatures",
             "assetTypes",
-            "txSpeedSla",
-            "throughputSla",
             "price",
             "economicalSecurity",
             "economicalSecurityNote",
             "auditsPerformed",
             "decentralizationModel",
             "sdk",
-            "actionButtons",
             "supportedChains"
         ],
         "explorer": [

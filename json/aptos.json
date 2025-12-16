@@ -5361,7 +5361,13 @@
         {
             "slug": "celer-mainnet",
             "provider": "Celer",
+            "actionButtons": [
+                "[Bridge](https://cbridge.celer.network)",
+                "[Docs](https://cbridge-docs.celer.network/)"
+            ],
             "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "technology": "Lock & Mint + Message Passing",
             "openSource": true,
             "support": [
@@ -5433,8 +5439,6 @@
                 "USDC",
                 "USDT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
@@ -5447,16 +5451,18 @@
             "sdk": [
                 "Node.JS"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Bridge](https://cbridge.celer.network)",
-                "[Docs](https://cbridge-docs.celer.network/)"
-            ]
+            "starred": false
         },
         {
             "slug": "interport-mainnet",
             "provider": "Interport Finance",
+            "actionButtons": [
+                "[Bridge](https://app.interport.fi)",
+                "[Docs](https://docs.interport.fi)"
+            ],
             "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "technology": "Meta‑DEX Cross‑chain Swap Bridge",
             "openSource": true,
             "support": [
@@ -5542,8 +5548,6 @@
                 "ERC‑20",
                 "Stablecoins"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Swap fees",
             "economicalSecurity": true,
             "economicalSecurityNote": "Aggregates cross-chain messaging",
@@ -5554,16 +5558,18 @@
             "sdk": [
                 "TypeScript"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Bridge](https://app.interport.fi)",
-                "[Docs](https://docs.interport.fi)"
-            ]
+            "starred": false
         },
         {
             "slug": "meson-mainnet",
             "provider": "Meson",
+            "actionButtons": [
+                "[Bridge](https://meson.fi/)",
+                "[Docs](https://meson.fi/docs)"
+            ],
             "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "technology": "Stablecoin Bridge",
             "openSource": true,
             "support": [
@@ -5653,8 +5659,6 @@
                 "USDT",
                 "USDC"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Low Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Secured via cryptographic proofs and liquidity partners",
@@ -5665,16 +5669,18 @@
             "sdk": [
                 "Web UI"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Bridge](https://meson.fi/)",
-                "[Docs](https://meson.fi/docs)"
-            ]
+            "starred": false
         },
         {
             "slug": "layerzero-mainnet",
             "provider": "LayerZero Labs",
+            "actionButtons": [
+                "[Bridge](https://layerzero.bridge.harmony.one/one)",
+                "[Docs](https://docs.layerzero.network/v2)"
+            ],
             "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "technology": "Omnichain Messaging & OFT",
             "openSource": true,
             "support": [
@@ -5706,8 +5712,6 @@
                 "ETH",
                 "ERC‑20 OFT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Configurable DVN consensus across chains",
@@ -5720,16 +5724,18 @@
             "sdk": [
                 "TypeScript"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Bridge](https://layerzero.bridge.harmony.one/one)",
-                "[Docs](https://docs.layerzero.network/v2)"
-            ]
+            "starred": false
         },
         {
             "slug": "stargate-mainnet",
             "provider": "Stargate Finance",
+            "actionButtons": [
+                "[Bridge](https://stargate.finance/)",
+                "[Docs](https://stargateprotocol.gitbook.io/)"
+            ],
             "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "technology": "Omnichain Liquidity Layer",
             "openSource": true,
             "support": [
@@ -5848,8 +5854,6 @@
                 "ERC‑20",
                 "OFT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee, Protocol Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Decentralized pools secured by LayerZero consensus",
@@ -5860,15 +5864,18 @@
             "sdk": [
                 "TypeScript"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Bridge](https://stargate.finance/)"
-            ]
+            "starred": false
         },
         {
             "slug": "wormhole-mainnet",
             "provider": "Wormhole",
+            "actionButtons": [
+                "[Bridge](https://portalbridge.com/)",
+                "[Docs](https://wormhole.com/docs/)"
+            ],
             "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "technology": "Generic Messaging & Asset Bridge",
             "openSource": true,
             "support": [
@@ -5916,8 +5923,6 @@
                 "OFT",
                 "NFT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Independent guardian set across ~30 chains",
@@ -5928,16 +5933,18 @@
             "sdk": [
                 "TypeScript"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Bridge](https://portalbridge.com/)",
-                "[Docs](https://wormhole.com/docs/)"
-            ]
+            "starred": false
         },
         {
             "slug": "messina-mainnet",
             "provider": "MessinaOne Bridge",
+            "actionButtons": [
+                "[Bridge](https://messina.one/bridge)",
+                "[Docs](https://messinaone.gitbook.io/messina/)"
+            ],
             "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "technology": "Cross‑chain Bridge via Wormhole",
             "openSource": true,
             "support": [
@@ -5966,8 +5973,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Audited by Certik & Kudelski",
@@ -5979,16 +5984,18 @@
             "sdk": [
                 "Web UI"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Bridge](https://messina.one/bridge)",
-                "[Docs](https://messinaone.gitbook.io/messina/)"
-            ]
+            "starred": false
         },
         {
             "slug": "rubic-mainnet",
             "provider": "Rubic",
+            "actionButtons": [
+                "[Bridge](https://rubic.exchange)",
+                "[Docs](https://docs.rubic.finance/)"
+            ],
             "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "technology": "Bridge Aggregator",
             "openSource": true,
             "support": [
@@ -6058,8 +6065,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Depends on underlying bridge",
             "economicalSecurity": true,
             "economicalSecurityNote": "Security inherited from selected bridge",
@@ -6069,11 +6074,7 @@
                 "JS SDK",
                 "Web UI"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Bridge](https://rubic.exchange)",
-                "[Docs](https://docs.rubic.finance/)"
-            ]
+            "starred": false
         }
     ],
     "explorer": [
@@ -7007,7 +7008,10 @@
         "bridge": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
+            "txSpeedSla",
+            "throughputSla",
             "technology",
             "openSource",
             "support",
@@ -7016,16 +7020,13 @@
             "monitoringAndAnalytics",
             "additionalFeatures",
             "assetTypes",
-            "txSpeedSla",
-            "throughputSla",
             "price",
             "economicalSecurity",
             "economicalSecurityNote",
             "auditsPerformed",
             "decentralizationModel",
             "sdk",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "explorer": [
             "slug",

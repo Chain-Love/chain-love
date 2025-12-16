@@ -2292,108 +2292,227 @@
         {
             "slug": "layerzero-mainnet",
             "provider": "LayerZero Labs",
+            "actionButtons": [
+                "[Bridge](https://layerzero.bridge.harmony.one/one)",
+                "[Docs](https://docs.layerzero.network/v2)"
+            ],
             "chain": "mainnet",
-            "technology": "Cross-chain Messaging",
-            "openSource": false,
+            "technology": "Omnichain Messaging & OFT",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
             "support": [
                 "Discord",
                 "Email"
             ],
-            "supportedChains": null,
-            "starred": true,
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "base",
+                "linea",
+                "arbitrum",
+                "harmony"
+            ],
+            "starred": false,
             "availableApis": [
-                "Cross-chain Messaging",
-                "Asset Transfer"
+                "REST API",
+                "GraphQL"
             ],
             "monitoringAndAnalytics": [
                 "Blockscout",
                 "Custom Dashboards"
             ],
             "additionalFeatures": [
-                "Omnichain Fungible Tokens",
-                "Cross-chain Governance"
+                "Omnichain Fungible Token",
+                "Unified Liquidity Pools",
+                "Cross‑chain Governance"
             ],
             "assetTypes": [
-                "FLR",
-                "SGB",
-                "ERC-20",
-                "OFT"
+                "ETH",
+                "ERC‑20 OFT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Over-collateralized messaging",
-            "auditsPerformed": null,
+            "economicalSecurityNote": "Configurable DVN consensus across chains",
+            "auditsPerformed": [
+                "Ackee Blockchain Protocol Audit (Mar 2022)",
+                "ChainSecurity OFT/OApp Audit",
+                "Zellic Core Audit"
+            ],
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://layerzero.network/)",
-                "[Docs](https://docs.layerzero.network/v2/deployments/evm-chains/flare-mainnet-oft-quickstart)"
             ]
         },
         {
             "slug": "stargate-mainnet",
-            "provider": "Stargate",
+            "provider": "Stargate Finance",
+            "actionButtons": [
+                "[Bridge](https://stargate.finance/)",
+                "[Docs](https://stargateprotocol.gitbook.io/)"
+            ],
             "chain": "mainnet",
-            "technology": "Liquidity Transfer Protocol",
-            "openSource": false,
+            "technology": "Omnichain Liquidity Layer",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
             "support": [
                 "Discord",
                 "Email"
             ],
-            "supportedChains": null,
-            "starred": true,
+            "supportedChains": [
+                "base",
+                "plasma",
+                "arbitrum",
+                "optimism",
+                "linea",
+                "ethereum",
+                "unichain",
+                "soneium",
+                "hyperliquid",
+                "solana",
+                "og",
+                "abstract",
+                "ape",
+                "abstract",
+                "aptos",
+                "near",
+                "avalanche",
+                "berachain",
+                "blast",
+                "bnb chain",
+                "bob",
+                "botanix",
+                "celo",
+                "core",
+                "corn",
+                "cronos",
+                "cyber",
+                "degen",
+                "edu",
+                "ethereal",
+                "etherlink",
+                "fantom",
+                "flare",
+                "flow",
+                "fraxtal",
+                "fuse",
+                "glue",
+                "gnosis",
+                "goat",
+                "gravity",
+                "hedera",
+                "hemi",
+                "hyperevm",
+                "ink",
+                "iota",
+                "kaia",
+                "katana",
+                "kava",
+                "lightlink",
+                "lisk",
+                "manta",
+                "mantle",
+                "metis",
+                "mode",
+                "moonbeam",
+                "moon",
+                "morph",
+                "nibiru",
+                "opbnb",
+                "peaq",
+                "plume",
+                "polygon",
+                "zkevm",
+                "rari",
+                "rootstock",
+                "sanko",
+                "scroll",
+                "sei",
+                "somnia",
+                "sonic",
+                "soph",
+                "story",
+                "sui",
+                "superposition",
+                "swell",
+                "tac",
+                "taiko",
+                "telosevm",
+                "ton",
+                "tron",
+                "vana",
+                "viction",
+                "worldchain",
+                "x layer",
+                "xdc",
+                "xpla",
+                "zircuit",
+                "zksync",
+                "zkverify",
+                "zora"
+            ],
+            "starred": false,
             "availableApis": [
-                "Asset Transfer"
+                "REST API",
+                "GraphQL"
             ],
             "monitoringAndAnalytics": [
-                "Blockscout",
-                "Custom Dashboards"
+                "Pooled Liquidity Transfers",
+                "OFT Cross-chain Transfers"
             ],
             "additionalFeatures": [
                 "Unified Liquidity Pools",
-                "Instant Finality"
+                "Low-Fee (0.06%)",
+                "OFT Support"
             ],
             "assetTypes": [
-                "FLR",
-                "SGB",
+                "ETH",
                 "USDC",
                 "USDT",
-                "ETH",
-                "ERC-20"
+                "ERC‑20",
+                "OFT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee, Protocol Fee",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Backed by LayerZero security",
-            "auditsPerformed": null,
+            "economicalSecurityNote": "Decentralized pools secured by LayerZero consensus",
+            "auditsPerformed": [
+                "Audit(s) by DeFi teams"
+            ],
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://stargate.finance/)",
-                "[Docs](https://stargateprotocol.gitbook.io/stargate/v2-developer-docs/technical-reference/mainnet-contracts#flare)"
             ]
         },
         {
             "slug": "zkbridge-mainnet",
             "provider": "zkBridge",
+            "actionButtons": [
+                "[Bridge](https://zkbridge.com/token)",
+                "[Docs](https://docs.zkbridge.com/)"
+            ],
             "chain": "mainnet",
-            "technology": "Zero-Knowledge Proofs",
-            "openSource": false,
+            "technology": "Omnichain Messaging & OFT",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
             "support": [
                 "Discord",
                 "Email"
             ],
-            "supportedChains": null,
-            "starred": true,
+            "supportedChains": [
+                "ethereum",
+                "polygon",
+                "linea",
+                "base",
+                "bnb chain",
+                "opbnb",
+                "arbitrum one",
+                "optimism"
+            ],
+            "starred": false,
             "availableApis": [
-                "Cross-chain Messaging"
+                "REST API"
             ],
             "monitoringAndAnalytics": [
                 "Custom Dashboards"
@@ -2406,8 +2525,6 @@
                 "SGB",
                 "ERC-20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "ZK-proof based security",
@@ -2415,10 +2532,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "actionButtons": [
-                "[Bridge](https://zkbridge.com/)",
-                "[Docs](https://docs.zkbridge.com/layerzero-zklightclient-configurations/layerzero-v2-zklightclient-dvn-addresses)"
             ]
         }
     ],
@@ -4655,8 +4768,11 @@
         "bridge": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
+            "txSpeedSla",
+            "throughputSla",
             "openSource",
             "support",
             "supportedChains",
@@ -4665,15 +4781,12 @@
             "monitoringAndAnalytics",
             "additionalFeatures",
             "assetTypes",
-            "txSpeedSla",
-            "throughputSla",
             "price",
             "economicalSecurity",
             "economicalSecurityNote",
             "auditsPerformed",
             "decentralizationModel",
-            "sdk",
-            "actionButtons"
+            "sdk"
         ],
         "explorer": [
             "slug",

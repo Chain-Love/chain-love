@@ -2484,93 +2484,129 @@
     "bridge": [
         {
             "slug": "allbridge-mainnet",
-            "provider": "Allbridge",
+            "provider": "Allbridge Core",
+            "actionButtons": [
+                "[Bridge](https://core.allbridge.io/)",
+                "[Docs](https://docs-core.allbridge.io/)"
+            ],
             "chain": "mainnet",
-            "technology": "Liquidity Pool",
-            "openSource": false,
+            "technology": "Stablecoin Bridge via Native Liquidity",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
             "support": [
-                "Discord",
-                "Email"
+                "Discord"
             ],
-            "starred": true,
+            "starred": false,
             "availableApis": [
-                "Asset Transfer"
+                "Stablecoin Transfer"
             ],
-            "monitoringAndAnalytics": [
-                "Custom Dashboards"
-            ],
+            "monitoringAndAnalytics": null,
             "additionalFeatures": [
-                "Liquidity Pool Bridging",
-                "Multi-chain Support"
+                "No wrapping",
+                "Native liquidity pools",
+                "CEX-to-chain deposits"
             ],
             "assetTypes": [
-                "USDC"
+                "Stablecoins",
+                "ERC-20"
             ],
-            "price": "Gas Fee",
+            "price": "Gas Fee + protocol fee",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Liquidity pool security",
+            "economicalSecurityNote": "Native stablecoin pools, messaging-agnostic",
             "auditsPerformed": [
-                "Audit by Hacken, 2022"
+                "Independent audits (per DefiLlama)"
             ],
             "decentralizationModel": "Decentralized",
             "sdk": [
-                "JavaScript"
+                "TypeScript"
             ],
-            "actionButtons": [
-                "[Bridge](https://allbridge.io/)",
-                "[Docs](https://docs.allbridge.io/)"
-            ],
-            "supportedChains": null,
-            "txSpeedSla": null,
-            "throughputSla": null
+            "supportedChains": [
+                "arbitrum",
+                "avalanche",
+                "base",
+                "bnb chain",
+                "celo",
+                "ethereum",
+                "linea",
+                "optimism",
+                "polygon",
+                "sonic",
+                "solana",
+                "stellar",
+                "sui",
+                "tron",
+                "unichain"
+            ]
         },
         {
             "slug": "allbridge-testnet",
-            "provider": "Allbridge",
+            "provider": "Allbridge Core",
+            "actionButtons": [
+                "[Bridge](https://core.allbridge.io/)",
+                "[Docs](https://docs-core.allbridge.io/)"
+            ],
             "chain": "testnet",
-            "technology": "Liquidity Pool",
-            "openSource": false,
+            "technology": "Stablecoin Bridge via Native Liquidity",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
             "support": [
-                "Discord",
-                "Email"
+                "Discord"
             ],
-            "starred": true,
+            "starred": false,
             "availableApis": [
-                "Asset Transfer"
+                "Stablecoin Transfer"
             ],
-            "monitoringAndAnalytics": [
-                "Custom Dashboards"
-            ],
+            "monitoringAndAnalytics": null,
             "additionalFeatures": [
-                "Liquidity Pool Bridging",
-                "Multi-chain Support"
+                "No wrapping",
+                "Native liquidity pools",
+                "CEX-to-chain deposits"
             ],
             "assetTypes": [
-                "USDC"
+                "Stablecoins",
+                "ERC-20"
             ],
-            "price": "Gas Fee",
+            "price": "Gas Fee + protocol fee",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Liquidity pool security",
+            "economicalSecurityNote": "Native stablecoin pools, messaging-agnostic",
             "auditsPerformed": [
-                "Audit by Hacken, 2022"
+                "Independent audits (per DefiLlama)"
             ],
             "decentralizationModel": "Decentralized",
             "sdk": [
-                "JavaScript"
+                "TypeScript"
             ],
-            "actionButtons": [
-                "[Bridge](https://allbridge.io/)",
-                "[Docs](https://docs.allbridge.io/)"
-            ],
-            "supportedChains": null,
-            "txSpeedSla": null,
-            "throughputSla": null
+            "supportedChains": [
+                "arbitrum",
+                "avalanche",
+                "base",
+                "bnb chain",
+                "celo",
+                "ethereum",
+                "linea",
+                "optimism",
+                "polygon",
+                "sonic",
+                "solana",
+                "stellar",
+                "sui",
+                "tron",
+                "unichain"
+            ]
         },
         {
             "slug": "tricorn-mainnet",
             "provider": "Tricorn",
+            "actionButtons": [
+                "[Bridge](https://tricorn.network/)",
+                "[Docs](https://tricorn.network/)"
+            ],
             "chain": "mainnet",
             "technology": "Cross-chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": false,
             "support": [
                 "Discord",
@@ -2601,19 +2637,19 @@
             "sdk": [
                 "TypeScript"
             ],
-            "actionButtons": [
-                "[Bridge](https://tricorn.network/)",
-                "[Docs](https://tricorn.network/)"
-            ],
-            "supportedChains": null,
-            "txSpeedSla": null,
-            "throughputSla": null
+            "supportedChains": null
         },
         {
             "slug": "tricorn-testnet",
             "provider": "Tricorn",
+            "actionButtons": [
+                "[Bridge](https://tricorn.network/)",
+                "[Docs](https://tricorn.network/)"
+            ],
             "chain": "testnet",
             "technology": "Cross-chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": false,
             "support": [
                 "Discord",
@@ -2644,13 +2680,7 @@
             "sdk": [
                 "TypeScript"
             ],
-            "actionButtons": [
-                "[Bridge](https://tricorn.network/)",
-                "[Docs](https://tricorn.network/)"
-            ],
-            "supportedChains": null,
-            "txSpeedSla": null,
-            "throughputSla": null
+            "supportedChains": null
         }
     ],
     "explorer": [
@@ -4998,8 +5028,11 @@
         "bridge": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
+            "txSpeedSla",
+            "throughputSla",
             "openSource",
             "support",
             "starred",
@@ -5013,10 +5046,7 @@
             "auditsPerformed",
             "decentralizationModel",
             "sdk",
-            "actionButtons",
-            "supportedChains",
-            "txSpeedSla",
-            "throughputSla"
+            "supportedChains"
         ],
         "explorer": [
             "slug",

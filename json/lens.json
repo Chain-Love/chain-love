@@ -2689,8 +2689,14 @@
         {
             "slug": "zksync-mainnet",
             "provider": "ZKsync",
+            "actionButtons": [
+                "[Bridge](https://bridge.zksync.io/)",
+                "[Docs](https://lens.xyz/docs/chain/tools/bridging/zksync)"
+            ],
             "chain": "mainnet",
             "technology": "ZK Rollup",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": false,
             "support": [
                 "Discord",
@@ -2714,8 +2720,6 @@
                 "USDC",
                 "USDT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Inherits Ethereum security",
@@ -2726,17 +2730,19 @@
             "sdk": [
                 "Solidity"
             ],
-            "actionButtons": [
-                "[Bridge](https://bridge.zksync.io/)",
-                "[Docs](https://lens.xyz/docs/chain/tools/bridging/zksync)"
-            ],
             "supportedChains": null
         },
         {
             "slug": "zksync-testnet",
             "provider": "ZKsync",
+            "actionButtons": [
+                "[Bridge](https://portal.testnet.lens.dev/bridge/)",
+                "[Docs](https://lens.xyz/docs/chain/tools/bridging/zksync)"
+            ],
             "chain": "testnet",
             "technology": "ZK Rollup",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": false,
             "support": [
                 "Discord",
@@ -2760,8 +2766,6 @@
                 "USDC",
                 "USDT"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Inherits Ethereum Sepolia security",
@@ -2772,109 +2776,141 @@
             "sdk": [
                 "Solidity"
             ],
-            "actionButtons": [
-                "[Bridge](https://portal.testnet.lens.dev/bridge/)",
-                "[Docs](https://lens.xyz/docs/chain/tools/bridging/zksync)"
-            ],
             "supportedChains": null
         },
         {
             "slug": "across-mainnet",
             "provider": "Across",
+            "actionButtons": [
+                "[Bridge](https://app.across.to/bridge)",
+                "[Docs](https://docs.across.to/)"
+            ],
             "chain": "mainnet",
-            "technology": "Intent-based Cross-chain Messaging",
-            "openSource": false,
-            "support": [
-                "Discord",
-                "Email"
-            ],
-            "starred": true,
-            "availableApis": [
-                "Cross-chain Messaging",
-                "Asset Transfer"
-            ],
-            "monitoringAndAnalytics": [
-                "Custom Dashboards"
-            ],
-            "additionalFeatures": [
-                "Intent-based Bridging",
-                "Fast Finality"
-            ],
-            "assetTypes": [
-                "GHO",
-                "ETH",
-                "USDC",
-                "USDT"
-            ],
+            "technology": "Cross‑chain Messaging",
             "txSpeedSla": null,
             "throughputSla": null,
-            "price": "Gas Fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Optimistic intent-based security",
-            "auditsPerformed": [
-                "Audit by Trail of Bits, 2022"
+            "openSource": true,
+            "support": [
+                "Discord"
             ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Fast bridging",
+                "Single liquidity pool"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + small protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured via UMA oracle + relayers",
+            "auditsPerformed": null,
             "decentralizationModel": "Decentralized",
             "sdk": [
-                "JavaScript"
+                "SDK",
+                "Web UI"
             ],
-            "actionButtons": [
-                "[Bridge](https://across.to/)",
-                "[Docs](https://lens.xyz/docs/chain/tools/bridging/across)"
-            ],
-            "supportedChains": null
+            "supportedChains": [
+                "hyperevm",
+                "arbitrum one",
+                "bnb chain",
+                "base",
+                "blast",
+                "ethereum",
+                "ink",
+                "lens",
+                "linea",
+                "lisk",
+                "mode",
+                "optimism",
+                "polygon",
+                "redstone",
+                "scroll",
+                "solana",
+                "soneium",
+                "unichain",
+                "world chain",
+                "zora",
+                "zksync era"
+            ]
         },
         {
             "slug": "across-testnet",
             "provider": "Across",
+            "actionButtons": [
+                "[Bridge](https://app.across.to/bridge)",
+                "[Docs](https://docs.across.to/)"
+            ],
             "chain": "testnet",
-            "technology": "Intent-based Cross-chain Messaging",
-            "openSource": false,
+            "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
             "support": [
-                "Discord",
-                "Email"
+                "Discord"
             ],
             "starred": false,
             "availableApis": [
-                "Cross-chain Messaging",
                 "Asset Transfer"
             ],
-            "monitoringAndAnalytics": [
-                "Custom Dashboards"
-            ],
+            "monitoringAndAnalytics": null,
             "additionalFeatures": [
-                "Intent-based Bridging",
-                "Fast Finality"
+                "Fast bridging",
+                "Single liquidity pool"
             ],
             "assetTypes": [
-                "GRASS",
                 "ETH",
-                "USDC",
-                "USDT"
+                "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "price": "Gas Fee",
+            "price": "Gas Fee + small protocol fee",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Optimistic intent-based security",
-            "auditsPerformed": [
-                "Audit by Trail of Bits, 2022"
-            ],
+            "economicalSecurityNote": "Secured via UMA oracle + relayers",
+            "auditsPerformed": null,
             "decentralizationModel": "Decentralized",
             "sdk": [
-                "JavaScript"
+                "SDK",
+                "Web UI"
             ],
-            "actionButtons": [
-                "[Bridge](https://across.to/)",
-                "[Docs](https://lens.xyz/docs/chain/tools/bridging/across)"
-            ],
-            "supportedChains": null
+            "supportedChains": [
+                "hyperevm",
+                "arbitrum one",
+                "bnb chain",
+                "base",
+                "blast",
+                "ethereum",
+                "ink",
+                "lens",
+                "linea",
+                "lisk",
+                "mode",
+                "optimism",
+                "polygon",
+                "redstone",
+                "scroll",
+                "solana",
+                "soneium",
+                "unichain",
+                "world chain",
+                "zora",
+                "zksync era"
+            ]
         },
         {
             "slug": "lensbridge-mainnet",
             "provider": "Lens Bridge",
+            "actionButtons": [
+                "[Bridge](https://lens.xyz/bridge)",
+                "[Docs](https://lens.xyz/docs/chain/tools/bridging/lens)"
+            ],
             "chain": "mainnet",
             "technology": "Cross-chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": false,
             "support": [
                 "Discord",
@@ -2900,8 +2936,6 @@
                 "ERC-20",
                 "ERC-721"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Inherits Lens Network security",
@@ -2911,10 +2945,6 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "Solidity"
-            ],
-            "actionButtons": [
-                "[Bridge](https://lens.xyz/bridge)",
-                "[Docs](https://lens.xyz/docs/chain/tools/bridging/lens)"
             ],
             "supportedChains": null
         }
@@ -4155,8 +4185,11 @@
         "bridge": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
+            "txSpeedSla",
+            "throughputSla",
             "openSource",
             "support",
             "starred",
@@ -4164,15 +4197,12 @@
             "monitoringAndAnalytics",
             "additionalFeatures",
             "assetTypes",
-            "txSpeedSla",
-            "throughputSla",
             "price",
             "economicalSecurity",
             "economicalSecurityNote",
             "auditsPerformed",
             "decentralizationModel",
             "sdk",
-            "actionButtons",
             "supportedChains"
         ],
         "explorer": [

@@ -3099,8 +3099,14 @@
         {
             "slug": "messina",
             "provider": "MessinaOne Bridge",
+            "actionButtons": [
+                "[Bridge](https://messina.one/bridge)",
+                "[Docs](https://messinaone.gitbook.io/messina/)"
+            ],
             "chain": "mainnet",
             "technology": "Cross‑chain Bridge via Wormhole",
+            "txSpeedSla": null,
+            "throughputSla": null,
             "openSource": true,
             "support": [
                 "Discord"
@@ -3128,8 +3134,6 @@
                 "ETH",
                 "ERC‑20"
             ],
-            "txSpeedSla": null,
-            "throughputSla": null,
             "price": "Gas Fee",
             "economicalSecurity": true,
             "economicalSecurityNote": "Audited by Certik & Kudelski",
@@ -3141,11 +3145,7 @@
             "sdk": [
                 "Web UI"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Bridge](https://messina.one/bridge)",
-                "[Docs](https://messinaone.gitbook.io/messina/)"
-            ]
+            "starred": false
         }
     ],
     "explorer": [
@@ -4859,8 +4859,11 @@
         "bridge": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
+            "txSpeedSla",
+            "throughputSla",
             "openSource",
             "support",
             "supportedChains",
@@ -4868,16 +4871,13 @@
             "monitoringAndAnalytics",
             "additionalFeatures",
             "assetTypes",
-            "txSpeedSla",
-            "throughputSla",
             "price",
             "economicalSecurity",
             "economicalSecurityNote",
             "auditsPerformed",
             "decentralizationModel",
             "sdk",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "explorer": [
             "slug",
