@@ -3929,6 +3929,7 @@
         {
             "slug": "acurast-astar",
             "provider": "Acurast",
+            "actionButtons": null,
             "chain": "astar",
             "technology": "Custom",
             "starred": false,
@@ -3960,12 +3961,12 @@
             "auditsPerformed": [
                 "Acurast Chain Audit by Monethic, covering the Acurast Substrate and Pallets (2025)",
                 "Acurast Token Smart Contract Audit by inference for the ACU ERC20 Token Contract for EVM deployments (2025)"
-            ],
-            "actionButtons": null
+            ]
         },
         {
             "slug": "band-astar",
             "provider": "Band Protocol",
+            "actionButtons": null,
             "chain": "astar",
             "technology": "Cross-chain Oracle",
             "starred": false,
@@ -4006,12 +4007,12 @@
             ],
             "auditsPerformed": [
                 "CertiK"
-            ],
-            "actionButtons": null
+            ]
         },
         {
             "slug": "band-shibuya",
             "provider": "Band Protocol",
+            "actionButtons": null,
             "chain": "shibuya",
             "technology": "Cross-chain Oracle",
             "starred": false,
@@ -4052,12 +4053,12 @@
             ],
             "auditsPerformed": [
                 "CertiK"
-            ],
-            "actionButtons": null
+            ]
         },
         {
             "slug": "band-shiden",
             "provider": "Band Protocol",
+            "actionButtons": null,
             "chain": "shiden",
             "technology": "Cross-chain Oracle",
             "starred": false,
@@ -4098,12 +4099,12 @@
             ],
             "auditsPerformed": [
                 "CertiK"
-            ],
-            "actionButtons": null
+            ]
         },
         {
             "slug": "dia-astar",
             "provider": "DIA",
+            "actionButtons": null,
             "chain": "astar",
             "technology": "DIA",
             "starred": true,
@@ -4135,12 +4136,12 @@
             "auditsPerformed": [
                 "April 2025, by MixBytes",
                 "May 2022, by Chainsulting"
-            ],
-            "actionButtons": null
+            ]
         },
         {
             "slug": "dia-shiden",
             "provider": "DIA",
+            "actionButtons": null,
             "chain": "shiden",
             "technology": "DIA",
             "starred": true,
@@ -4172,12 +4173,12 @@
             "auditsPerformed": [
                 "April 2025, by MixBytes",
                 "May 2022, by Chainsulting"
-            ],
-            "actionButtons": null
+            ]
         },
         {
             "slug": "dia-shibuya",
             "provider": "DIA",
+            "actionButtons": null,
             "chain": "shibuya",
             "technology": "DIA",
             "starred": true,
@@ -4209,8 +4210,7 @@
             "auditsPerformed": [
                 "April 2025, by MixBytes",
                 "May 2022, by Chainsulting"
-            ],
-            "actionButtons": null
+            ]
         }
     ],
     "bridge": [
@@ -4901,6 +4901,9 @@
         {
             "slug": "metamask",
             "provider": "Metamask",
+            "actionButtons": [
+                "[Website](https://metamask.io/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "Chrome",
@@ -4939,14 +4942,14 @@
                 "ZH",
                 "JA"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://metamask.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "bifrost",
             "provider": "Bifrost",
+            "actionButtons": [
+                "[Website](https://bifrostwallet.com/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
@@ -4974,14 +4977,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://bifrostwallet.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "ledger",
             "provider": "Ledger SAS",
+            "actionButtons": [
+                "[Website](https://www.ledger.com/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "Desktop",
@@ -5018,14 +5021,14 @@
                 "ZH",
                 "JA"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.ledger.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "solidifi",
             "provider": "SolidiFi",
+            "actionButtons": [
+                "[Website](https://solidifi.app/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
@@ -5052,14 +5055,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://solidifi.app/)"
-            ]
+            "starred": false
         },
         {
             "slug": "oxenflow",
             "provider": "Oxenflow",
+            "actionButtons": [
+                "[Website](https://oxenflow.io/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
@@ -5087,14 +5090,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://oxenflow.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "safepal",
             "provider": "SafePal",
+            "actionButtons": [
+                "[Website](https://www.safepal.com/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
@@ -5127,14 +5130,14 @@
                 "ZH",
                 "JA"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.safepal.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "tokenpocket",
             "provider": "TokenPocket",
+            "actionButtons": [
+                "[Website](https://www.tokenpocket.pro/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
@@ -5167,14 +5170,14 @@
                 "ZH",
                 "JA"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.tokenpocket.pro/)"
-            ]
+            "starred": false
         },
         {
             "slug": "coolwallet",
             "provider": "Coolwallet",
+            "actionButtons": [
+                "[Website](https://www.coolwallet.io/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
@@ -5204,14 +5207,14 @@
                 "EN",
                 "ZH"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.coolwallet.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "dcent",
             "provider": "D'CENT",
+            "actionButtons": [
+                "[Website](https://dcentwallet.com/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
@@ -5242,14 +5245,14 @@
                 "ZH",
                 "JA"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://dcentwallet.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "rabby",
             "provider": "Rabby",
+            "actionButtons": [
+                "[Website](https://rabby.io/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "Chrome",
@@ -5286,14 +5289,14 @@
                 "ZH",
                 "JA"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://rabby.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "trustwallet",
             "provider": "Trust Wallet",
+            "actionButtons": [
+                "[Website](https://trustwallet.com/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
@@ -5327,14 +5330,14 @@
                 "ZH",
                 "JA"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://trustwallet.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "zerion",
             "provider": "Zerion",
+            "actionButtons": [
+                "[Website](https://zerion.io/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "iOS",
@@ -5366,14 +5369,14 @@
                 "ES",
                 "FR"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://zerion.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "phantom",
             "provider": "Phantom",
+            "actionButtons": [
+                "[Website](https://phantom.app/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "Chrome",
@@ -5406,14 +5409,14 @@
                 "ES",
                 "FR"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://phantom.app/)"
-            ]
+            "starred": false
         },
         {
             "slug": "novawallet",
             "provider": "Nova Wallet",
+            "actionButtons": [
+                "[Website](https://novawallet.io)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "iOS",
@@ -5444,14 +5447,14 @@
             ],
             "audit": null,
             "languages": null,
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://novawallet.io)"
-            ]
+            "starred": false
         },
         {
             "slug": "subwallet",
             "provider": "SubWallet",
+            "actionButtons": [
+                "[Website](https://www.subwallet.app/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "Chrome",
@@ -5484,14 +5487,14 @@
             ],
             "audit": null,
             "languages": null,
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.subwallet.app/)"
-            ]
+            "starred": false
         },
         {
             "slug": "talisman",
             "provider": "Talisman",
+            "actionButtons": [
+                "[Website](https://www.talisman.xyz/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "Chrome",
@@ -5528,14 +5531,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.talisman.xyz/)"
-            ]
+            "starred": false
         },
         {
             "slug": "fearless",
             "provider": "Fearless Wallet",
+            "actionButtons": [
+                "[Website](https://fearlesswallet.io/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "iOS",
@@ -5568,14 +5571,14 @@
             "languages": [
                 "Multilingual"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://fearlesswallet.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "polkawallet",
             "provider": "Polkawallet",
+            "actionButtons": [
+                "[Website](https://polkawallet.io/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "iOS",
@@ -5605,14 +5608,14 @@
             ],
             "audit": null,
             "languages": null,
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://polkawallet.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "kraken-wallet",
             "provider": "Kraken Wallet",
+            "actionButtons": [
+                "[Website](https://www.kraken.com/wallet)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "iOS",
@@ -5649,14 +5652,14 @@
                 "PL",
                 "PT"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.kraken.com/wallet)"
-            ]
+            "starred": false
         },
         {
             "slug": "backpack",
             "provider": "Backpack",
+            "actionButtons": [
+                "[Website](https://backpack.exchange/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -5689,14 +5692,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://backpack.exchange/)"
-            ]
+            "starred": false
         },
         {
             "slug": "stackup",
             "provider": "Stackup",
+            "actionButtons": [
+                "[Doc](https://docs.stackup.fi/docs/stackup-essentials-guide)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -5725,14 +5728,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Doc](https://docs.stackup.fi/docs/stackup-essentials-guide)"
-            ]
+            "starred": false
         },
         {
             "slug": "clear-evm-wallet",
             "provider": "Clear EVM Wallet",
+            "actionButtons": [
+                "[DOC](https://clear-wallet.flashsoft.eu/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "Browser Extension"
@@ -5762,14 +5765,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[DOC](https://clear-wallet.flashsoft.eu/)"
-            ]
+            "starred": false
         },
         {
             "slug": "dapp-pocket",
             "provider": "Dapp Pocket",
+            "actionButtons": [
+                "[Website](https://www.dapppocket.io/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -5799,14 +5802,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.dapppocket.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "ronin-wallet",
             "provider": "Ronin Wallet",
+            "actionButtons": [
+                "[Website](https://wallet.roninchain.com/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -5839,14 +5842,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://wallet.roninchain.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "kryptogo-wallet",
             "provider": "Kryptogo Wallet",
+            "actionButtons": [
+                "[Website](https://www.kryptogo.com/products/wallet)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -5883,14 +5886,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.kryptogo.com/products/wallet)"
-            ]
+            "starred": false
         },
         {
             "slug": "sender",
             "provider": "Sender",
+            "actionButtons": [
+                "[Website](https://docs.senderwallet.io/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -5921,14 +5924,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://docs.senderwallet.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "kuma-wallet",
             "provider": "Kuma Wallet",
+            "actionButtons": [
+                "[Website](https://kumawallet.io/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -5966,14 +5969,14 @@
                 "IT",
                 "JA"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://kumawallet.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "ultimate",
             "provider": "Jupiter",
+            "actionButtons": [
+                "[Website](https://ultimate.app/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -6008,14 +6011,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://ultimate.app/)"
-            ]
+            "starred": false
         },
         {
             "slug": "gem-wallet",
             "provider": "Gem Wallet",
+            "actionButtons": [
+                "[Website](https://gemwallet.com/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -6044,14 +6047,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://gemwallet.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "saakuru-wallet",
             "provider": "Saakuru Wallet",
+            "actionButtons": [
+                "[Website](https://www.saakuru.com/app)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
@@ -6095,14 +6098,14 @@
                 "TH",
                 "DE"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.saakuru.com/app)"
-            ]
+            "starred": false
         },
         {
             "slug": "nufi-wallet",
             "provider": "Nufi Wallet",
+            "actionButtons": [
+                "[Website](https://nu.fi/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -6139,14 +6142,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://nu.fi/)"
-            ]
+            "starred": false
         },
         {
             "slug": "coin-wallet",
             "provider": "Coin Wallet",
+            "actionButtons": [
+                "[Website](https://coin.space/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -6211,14 +6214,14 @@
                 "ID",
                 "LV"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://coin.space/)"
-            ]
+            "starred": false
         },
         {
             "slug": "clave-wallet",
             "provider": "Clave Wallet",
+            "actionButtons": [
+                "[Website](https://www.getclave.com/)"
+            ],
             "openSource": true,
             "supportedPlatforms": [
                 "iOS",
@@ -6249,14 +6252,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.getclave.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "walletverse",
             "provider": "Wallet Verse",
+            "actionButtons": [
+                "[Website](https://walletverse.io/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "iOS",
@@ -6295,14 +6298,14 @@
             "languages": [
                 "EN"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://walletverse.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "coinomi-wallet",
             "provider": "Coinomi Wallet",
+            "actionButtons": [
+                "[Website](https://www.coinomi.com/en/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -6368,14 +6371,14 @@
                 "HR",
                 "MY"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.coinomi.com/en/)"
-            ]
+            "starred": false
         },
         {
             "slug": "math-wallet",
             "provider": "Math Wallet",
+            "actionButtons": [
+                "[Website](https://www.mathwallet.org/)"
+            ],
             "openSource": false,
             "supportedPlatforms": [
                 "Browser Extension",
@@ -6438,10 +6441,7 @@
                 "HA",
                 "YO"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Website](https://www.mathwallet.org/)"
-            ]
+            "starred": false
         }
     ],
     "devTool": [
@@ -6515,6 +6515,7 @@
         "oracle": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "starred",
@@ -6526,8 +6527,7 @@
             "economicalSecurity",
             "economicalSecurityNote",
             "sdk",
-            "auditsPerformed",
-            "actionButtons"
+            "auditsPerformed"
         ],
         "bridge": [
             "slug",
@@ -6596,6 +6596,7 @@
         "wallet": [
             "slug",
             "provider",
+            "actionButtons",
             "openSource",
             "supportedPlatforms",
             "custodial",
@@ -6612,8 +6613,7 @@
             "support",
             "audit",
             "languages",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "devTool": [
             "slug",
