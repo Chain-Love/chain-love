@@ -6081,6 +6081,9 @@
         {
             "slug": "aptos-labs-explorer-mainnet",
             "provider": "Aptos",
+            "actionButtons": [
+                "[Explore](https://explorer.aptoslabs.com/?network=mainnet)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -6116,14 +6119,14 @@
             "smartContractsVerifications": false,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://explorer.aptoslabs.com/?network=mainnet)"
-            ]
+            "starred": false
         },
         {
             "slug": "aptos-labs-explorer-testnet",
             "provider": "Aptos",
+            "actionButtons": [
+                "[Explore](https://explorer.aptoslabs.com/?network=testnet)"
+            ],
             "chain": "testnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -6159,14 +6162,14 @@
             "smartContractsVerifications": false,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://explorer.aptoslabs.com/?network=testnet)"
-            ]
+            "starred": false
         },
         {
             "slug": "aptos-xangle-explorer-mainnet",
             "provider": "Xangle",
+            "actionButtons": [
+                "[Explore](https://aptos-explorer.xangle.io/?chain=mainnet)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -6203,14 +6206,14 @@
             "smartContractsVerifications": false,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://aptos-explorer.xangle.io/?chain=mainnet)"
-            ]
+            "starred": false
         },
         {
             "slug": "oklink-mainnet",
             "provider": "OKLink",
+            "actionButtons": [
+                "[Explore](https://www.oklink.com/aptos)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -6250,16 +6253,16 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://www.oklink.com/aptos)"
-            ]
+            "starred": false
         }
     ],
     "faucet": [
         {
             "slug": "stakely-faucet",
             "provider": "Stakely",
+            "actionButtons": [
+                "[Faucet](https://stakely.io/faucet/aptos-apt)"
+            ],
             "chain": "mainnet",
             "requiresLogin": false,
             "hasCaptcha": true,
@@ -6271,14 +6274,14 @@
                 "Requires to make the tweet in X about requesting tokens",
                 "Need to have low or zero mainnet balance for asking mainnet tokens"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://stakely.io/faucet/aptos-apt)"
-            ]
+            "starred": false
         },
         {
             "slug": "circle-faucet-usdc",
             "provider": "Circle",
+            "actionButtons": [
+                "[Faucet](https://faucet.circle.com/)"
+            ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": false,
@@ -6287,10 +6290,7 @@
             "dripLimitAmount": "1 USDC",
             "dripLimitPeriod": "1h",
             "additionalNotes": null,
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://faucet.circle.com/)"
-            ]
+            "starred": false
         }
     ],
     "analytic": [
@@ -7031,6 +7031,7 @@
         "explorer": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "monitoringAndAnalytics",
@@ -7041,12 +7042,12 @@
             "smartContractsVerifications",
             "fullHistory",
             "pricing",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
@@ -7055,8 +7056,7 @@
             "dripLimitAmount",
             "dripLimitPeriod",
             "additionalNotes",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "analytic": [
             "slug",

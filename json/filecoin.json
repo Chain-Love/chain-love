@@ -2203,6 +2203,10 @@
         {
             "slug": "blockscout-mainnet",
             "provider": "Blockscout",
+            "actionButtons": [
+                "[Explore](https://filecoin-testnet.blockscout.com/)",
+                "[Docs](https://docs.blockscout.com/)"
+            ],
             "chain": "mainnet",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -2242,15 +2246,15 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://filecoin-testnet.blockscout.com/)",
-                "[Docs](https://docs.blockscout.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "blockscout-calibnet",
             "provider": "Blockscout",
+            "actionButtons": [
+                "[Explore](https://filecoin-testnet.blockscout.com/)",
+                "[Docs](https://docs.blockscout.com/)"
+            ],
             "chain": "calibnet",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -2290,15 +2294,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://filecoin-testnet.blockscout.com/)",
-                "[Docs](https://docs.blockscout.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "filscan-calibnet",
             "provider": "FilScan",
+            "actionButtons": [
+                "[Explore](https://calibration.filscan.io)"
+            ],
             "chain": "calibnet",
             "technology": "custom",
             "monitoringAndAnalytics": [
@@ -2323,14 +2326,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://calibration.filscan.io)"
-            ]
+            "starred": false
         },
         {
             "slug": "filscan-mainnet",
             "provider": "FilScan",
+            "actionButtons": [
+                "[Explore](https://filscan.io)"
+            ],
             "chain": "mainnet",
             "technology": "custom",
             "monitoringAndAnalytics": [
@@ -2355,14 +2358,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://filscan.io)"
-            ]
+            "starred": false
         },
         {
             "slug": "filfox-calibnet",
             "provider": "FilFox",
+            "actionButtons": [
+                "[Explore](https://calibration.filfox.info)"
+            ],
             "chain": "calibnet",
             "technology": "custom",
             "monitoringAndAnalytics": [
@@ -2384,14 +2387,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://calibration.filfox.info)"
-            ]
+            "starred": false
         },
         {
             "slug": "filfox-mainnet",
             "provider": "FilFox",
+            "actionButtons": [
+                "[Explore](https://filfox.info)"
+            ],
             "chain": "mainnet",
             "technology": "custom",
             "monitoringAndAnalytics": [
@@ -2413,14 +2416,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://filfox.info)"
-            ]
+            "starred": false
         },
         {
             "slug": "beryx-calibnet",
             "provider": "Beryx",
+            "actionButtons": [
+                "[Explore](https://beryx.io)"
+            ],
             "chain": "calibnet",
             "technology": "custom",
             "monitoringAndAnalytics": [
@@ -2444,14 +2447,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://beryx.io)"
-            ]
+            "starred": false
         },
         {
             "slug": "beryx-mainnet",
             "provider": "Beryx",
+            "actionButtons": [
+                "[Explore](https://beryx.io)"
+            ],
             "chain": "mainnet",
             "technology": "custom",
             "monitoringAndAnalytics": [
@@ -2475,18 +2478,18 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://beryx.io)"
-            ]
+            "starred": false
         },
         {
             "slug": "starboard-mainnet",
             "provider": "Starboard",
+            "actionButtons": [
+                "[Dashboard](https://dashboard.starboard.ventures/explorer)"
+            ],
             "chain": "mainnet",
             "technology": "custom",
             "monitoringAndAnalytics": [
-                "DeFI Deposits / Borrows",
+                "DeFI Deposits /Borrows",
                 "Storage Capacity",
                 "Data Utilization Rate",
                 "Active Miners",
@@ -2527,24 +2530,21 @@
             "smartContractsVerifications": true,
             "fullHistory": false,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Dashboard](https://dashboard.starboard.ventures/explorer)"
-            ]
+            "starred": false
         }
     ],
     "faucet": [
         {
             "slug": "beryx-faucet",
             "provider": "Beryx",
-            "chain": "calibnet",
-            "requiresLogin": false,
-            "hasCaptcha": false,
-            "price": "0",
-            "starred": false,
             "actionButtons": [
                 "[Get tokens](https://beryx.io/faucet)"
             ],
+            "chain": "calibnet",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "price": "$0",
+            "starred": false,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -2553,14 +2553,14 @@
         {
             "slug": "chainsafe-faucet",
             "provider": "ChainSafe",
-            "chain": "calibnet",
-            "requiresLogin": false,
-            "hasCaptcha": false,
-            "price": "0",
-            "starred": false,
             "actionButtons": [
                 "[Get tokens](https://faucet.calibnet.chainsafe-fil.io/funds.html)"
             ],
+            "chain": "calibnet",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "price": "$0",
+            "starred": false,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -4241,6 +4241,7 @@
         "explorer": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "monitoringAndAnalytics",
@@ -4251,18 +4252,17 @@
             "smartContractsVerifications",
             "fullHistory",
             "pricing",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
             "price",
             "starred",
-            "actionButtons",
             "requiredMainnetBalance",
             "dripLimitAmount",
             "dripLimitPeriod",

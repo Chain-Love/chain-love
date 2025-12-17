@@ -10918,6 +10918,9 @@
         {
             "slug": "etherscan-mainnet",
             "provider": "Etherscan",
+            "actionButtons": [
+                "[Explore](https://etherscan.io)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -10942,14 +10945,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://etherscan.io)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "etherscan-sepolia",
             "provider": "Etherscan",
+            "actionButtons": [
+                "[Explore](https://sepolia.etherscan.io)"
+            ],
             "chain": "sepolia",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -10974,14 +10977,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://sepolia.etherscan.io)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "etherscan-hoodi",
             "provider": "Etherscan",
+            "actionButtons": [
+                "[Explore](https://hoodi.etherscan.io)"
+            ],
             "chain": "hoodi",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -11006,14 +11009,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://hoodi.etherscan.io)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "blockscout-mainnet",
             "provider": "Blockscout",
+            "actionButtons": [
+                "[Explore](https://eth.blockscout.com)"
+            ],
             "chain": "mainnet",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -11053,14 +11056,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://eth.blockscout.com)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "blockscout-sepolia",
             "provider": "Blockscout",
+            "actionButtons": [
+                "[Explore](https://eth-sepolia.blockscout.com)"
+            ],
             "chain": "sepolia",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -11100,14 +11103,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://eth-sepolia.blockscout.com)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "ethvm-mainnet",
             "provider": "EthVM",
+            "actionButtons": [
+                "[Explore](https://ethvm.com)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -11132,14 +11135,14 @@
             ],
             "smartContractsVerifications": false,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://ethvm.com)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "etherchain-mainnet",
             "provider": "Etherchain",
+            "actionButtons": [
+                "[Explore](https://www.etherchain.org)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -11165,14 +11168,14 @@
             ],
             "smartContractsVerifications": false,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://www.etherchain.org)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "ethplorer-mainnet",
             "provider": "Ethplorer",
+            "actionButtons": [
+                "[Explore](https://ethplorer.io)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -11197,14 +11200,14 @@
             ],
             "smartContractsVerifications": false,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://ethplorer.io)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "blockchair-mainnet",
             "provider": "Blockchair",
+            "actionButtons": [
+                "[Explore](https://blockchair.com/ethereum)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -11232,14 +11235,14 @@
             ],
             "smartContractsVerifications": false,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://blockchair.com/ethereum)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "tokenview-mainnet",
             "provider": "TokenView",
+            "actionButtons": [
+                "[Explore](https://eth.tokenview.io)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -11264,26 +11267,23 @@
             ],
             "smartContractsVerifications": false,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://eth.tokenview.io)"
-            ]
+            "pricing": "Free"
         }
     ],
     "faucet": [
         {
             "slug": "chainlink-sepolia",
             "provider": "Chainlink",
+            "actionButtons": [
+                "[Faucet](https://faucets.chain.link/sepolia)",
+                "[Docs](https://blog.chain.link/sepolia-eth/)"
+            ],
             "chain": "sepolia",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": "1 LINK",
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Open](https://faucets.chain.link/sepolia)",
-                "[Docs](https://blog.chain.link/sepolia-eth/)"
-            ],
             "additionalNotes": [
                 "One request for native tokens at time"
             ],
@@ -11293,15 +11293,15 @@
         {
             "slug": "chainstack-sepolia",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Docs](https://faucet.chainstack.com/sepolia-testnet-faucet)"
+            ],
             "chain": "sepolia",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": "0.08 ETH",
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://faucet.chainstack.com/sepolia-testnet-faucet)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.5",
             "dripLimitPeriod": "24"
@@ -11309,16 +11309,16 @@
         {
             "slug": "getblock-sepolia",
             "provider": "GetBlock",
+            "actionButtons": [
+                "[Open](https://getblock.io/faucet/)",
+                "[Docs](https://getblock.io/blog/free-eth-faucets-testnet-at-getblock/)"
+            ],
             "chain": "sepolia",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": "0.005 ETH",
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Open](https://getblock.io/faucet/)",
-                "[Docs](https://getblock.io/blog/free-eth-faucets-testnet-at-getblock/)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.1",
             "dripLimitPeriod": "24"
@@ -11326,15 +11326,15 @@
         {
             "slug": "alchemy-sepolia",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Docs](https://sepoliafaucet.com)"
+            ],
             "chain": "sepolia",
             "requiresLogin": false,
             "hasCaptcha": true,
             "requiredMainnetBalance": "0.001 ETH",
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://sepoliafaucet.com)"
-            ],
             "additionalNotes": [
                 "Requires mainnet activity",
                 "Requires to have a low enough existing balance since wallets with a significant amount of testnet tokens are not eligible for additional claims"
@@ -11345,15 +11345,15 @@
         {
             "slug": "tatum-sepolia",
             "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://tatum.io/faucets/sepolia)"
+            ],
             "chain": "sepolia",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": "0.001 ETH",
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://tatum.io/faucets/sepolia)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.002",
             "dripLimitPeriod": "24"
@@ -11361,15 +11361,15 @@
         {
             "slug": "quicknode-sepolia",
             "provider": "QuickNode",
+            "actionButtons": [
+                "[Docs](https://faucet.quicknode.com)"
+            ],
             "chain": "sepolia",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": "0.001 ETH",
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://faucet.quicknode.com)"
-            ],
             "additionalNotes": [
                 "Requires transaction history"
             ],
@@ -11379,15 +11379,15 @@
         {
             "slug": "ghost-sepolia",
             "provider": "GHOST",
+            "actionButtons": [
+                "[Docs](https://ghostchain.io/faucet/ethereum-sepolia/)"
+            ],
             "chain": "sepolia",
             "requiresLogin": false,
             "hasCaptcha": false,
             "requiredMainnetBalance": null,
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://ghostchain.io/faucet/ethereum-sepolia/)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.01",
             "dripLimitPeriod": "24"
@@ -11395,15 +11395,15 @@
         {
             "slug": "infura-sepolia",
             "provider": "Infura",
+            "actionButtons": [
+                "[Docs](https://infura.io/faucet)"
+            ],
             "chain": "sepolia",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": null,
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://infura.io/faucet)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.5",
             "dripLimitPeriod": "24"
@@ -11411,15 +11411,15 @@
         {
             "slug": "pk910-sepolia",
             "provider": "PK910 PoW Faucet",
+            "actionButtons": [
+                "[Docs](https://sepolia-faucet.pk910.de)"
+            ],
             "chain": "sepolia",
             "requiresLogin": false,
             "hasCaptcha": false,
             "requiredMainnetBalance": null,
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://sepolia-faucet.pk910.de)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.05",
             "dripLimitPeriod": null
@@ -11427,15 +11427,15 @@
         {
             "slug": "rockx-sepolia",
             "provider": "RockX",
+            "actionButtons": [
+                "[Docs](https://access.rockx.com/faucet-sepolia)"
+            ],
             "chain": "sepolia",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": null,
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://access.rockx.com/faucet-sepolia)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0",
             "dripLimitPeriod": "24"
@@ -11443,15 +11443,15 @@
         {
             "slug": "chainstack-hoodi",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Docs](https://faucet.chainstack.com/hoodi-testnet-faucet)"
+            ],
             "chain": "hoodi",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": "0.08 ETH",
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://faucet.chainstack.com/hoodi-testnet-faucet)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.5",
             "dripLimitPeriod": "24"
@@ -11459,15 +11459,15 @@
         {
             "slug": "quicknode-hoodi",
             "provider": "QuickNode",
+            "actionButtons": [
+                "[Docs](https://faucet.quicknode.com)"
+            ],
             "chain": "hoodi",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": "0.001 ETH",
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://faucet.quicknode.com)"
-            ],
             "additionalNotes": [
                 "Requires transaction history"
             ],
@@ -11477,15 +11477,15 @@
         {
             "slug": "tatum-hoodi",
             "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://tatum.io/faucets/hoodi)"
+            ],
             "chain": "hoodi",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": "0.001 ETH",
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://tatum.io/faucets/hoodi)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.002",
             "dripLimitPeriod": "24"
@@ -11493,15 +11493,15 @@
         {
             "slug": "google-cloud-sepolia",
             "provider": "Google Cloud",
+            "actionButtons": [
+                "[Docs](https://cloud.google.com/application/web3/faucet/ethereum/sepolia)"
+            ],
             "chain": "sepolia",
             "requiresLogin": false,
             "hasCaptcha": true,
             "requiredMainnetBalance": null,
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://cloud.google.com/application/web3/faucet/ethereum/sepolia)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.05",
             "dripLimitPeriod": "24"
@@ -11509,15 +11509,15 @@
         {
             "slug": "automata-hoodi",
             "provider": "Automata",
+            "actionButtons": [
+                "[Docs](https://hoodifaucet.io)"
+            ],
             "chain": "hoodi",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": null,
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://hoodifaucet.io)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.01",
             "dripLimitPeriod": "0.1"
@@ -11525,15 +11525,15 @@
         {
             "slug": "ghost-hoodi",
             "provider": "GHOST",
+            "actionButtons": [
+                "[Docs](https://ghostchain.io/faucet/ethereum-hoodi/)"
+            ],
             "chain": "hoodi",
             "requiresLogin": false,
             "hasCaptcha": false,
             "requiredMainnetBalance": null,
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://ghostchain.io/faucet/ethereum-hoodi/)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.01",
             "dripLimitPeriod": "24"
@@ -11541,15 +11541,15 @@
         {
             "slug": "pk910-hoodi",
             "provider": "PK910 PoW Faucet",
+            "actionButtons": [
+                "[Docs](https://hoodi-faucet.pk910.de)"
+            ],
             "chain": "hoodi",
             "requiresLogin": false,
             "hasCaptcha": false,
             "requiredMainnetBalance": null,
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://hoodi-faucet.pk910.de)"
-            ],
             "additionalNotes": null,
             "dripLimitAmount": "0.05",
             "dripLimitPeriod": null
@@ -11557,15 +11557,15 @@
         {
             "slug": "stakely-hoodi",
             "provider": "Stakely",
+            "actionButtons": [
+                "[Docs](https://stakely.io/faucet/ethereum-hoodi-testnet-eth)"
+            ],
             "chain": "hoodi",
             "requiresLogin": false,
             "hasCaptcha": true,
             "requiredMainnetBalance": null,
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Docs](https://stakely.io/faucet/ethereum-hoodi-testnet-eth)"
-            ],
             "additionalNotes": [
                 "Requires to make the tweet in X about requesting tokens",
                 "Need to have low or zero mainnet balance for asking mainnet tokens"
@@ -14976,6 +14976,7 @@
         "explorer": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "monitoringAndAnalytics",
@@ -14986,19 +14987,18 @@
             "searchCapabilities",
             "smartContractsVerifications",
             "fullHistory",
-            "pricing",
-            "actionButtons"
+            "pricing"
         ],
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
             "requiredMainnetBalance",
             "price",
             "starred",
-            "actionButtons",
             "additionalNotes",
             "dripLimitAmount",
             "dripLimitPeriod"

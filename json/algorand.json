@@ -3152,6 +3152,9 @@
         {
             "slug": "allo-mainnet",
             "provider": "Allo",
+            "actionButtons": [
+                "[Explorer](https://allo.info/)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -3184,14 +3187,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explorer](https://allo.info/)"
-            ]
+            "starred": false
         },
         {
             "slug": "pera-mainnet",
             "provider": "Pera",
+            "actionButtons": [
+                "[Explorer](https://explorer.perawallet.app/)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -3219,14 +3222,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explorer](https://explorer.perawallet.app/)"
-            ]
+            "starred": false
         },
         {
             "slug": "pera-testnet",
             "provider": "Pera",
+            "actionButtons": [
+                "[Explorer](https://explorer.perawallet.app/)"
+            ],
             "chain": "testnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -3254,14 +3257,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explorer](https://explorer.perawallet.app/)"
-            ]
+            "starred": false
         },
         {
             "slug": "bitquery-mainnet",
             "provider": "Bitquery",
+            "actionButtons": [
+                "[Explorer](https://explorer.bitquery.io/eos/address/algorand)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -3285,16 +3288,16 @@
             "smartContractsVerifications": false,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explorer](https://explorer.bitquery.io/eos/address/algorand)"
-            ]
+            "starred": false
         }
     ],
     "faucet": [
         {
             "slug": "algorand-testnet-dispenser-algo",
             "provider": "Algorand",
+            "actionButtons": [
+                "[Faucet](https://dispenser.testnet.aws.algodev.network/)"
+            ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": true,
@@ -3305,14 +3308,14 @@
             "additionalNotes": [
                 "Required not to abuse it by requesting more Algos than needed for testing"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://dispenser.testnet.aws.algodev.network/)"
-            ]
+            "starred": false
         },
         {
             "slug": "algorand-testnet-dispenser-usdc",
             "provider": "Algorand",
+            "actionButtons": [
+                "[Faucet](https://dispenser.testnet.aws.algodev.network/)"
+            ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": true,
@@ -3323,14 +3326,14 @@
             "additionalNotes": [
                 "Required not to abuse it by requesting more USDC than needed for testing"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://dispenser.testnet.aws.algodev.network/)"
-            ]
+            "starred": false
         },
         {
             "slug": "algorand-testnet-dispenser-additional-algo",
             "provider": "Algorand",
+            "actionButtons": [
+                "[Faucet](https://bank.testnet.algorand.network/)"
+            ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": true,
@@ -3341,10 +3344,7 @@
             "additionalNotes": [
                 "Required not to abuse it by requesting more Algos than needed for testing"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://bank.testnet.algorand.network/)"
-            ]
+            "starred": false
         }
     ],
     "analytic": [
@@ -4882,6 +4882,7 @@
         "explorer": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "monitoringAndAnalytics",
@@ -4892,12 +4893,12 @@
             "smartContractsVerifications",
             "fullHistory",
             "pricing",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
@@ -4906,8 +4907,7 @@
             "dripLimitAmount",
             "dripLimitPeriod",
             "additionalNotes",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "analytic": [
             "slug",

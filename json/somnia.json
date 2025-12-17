@@ -1133,6 +1133,10 @@
         {
             "slug": "somnia-mainnet",
             "provider": "Somnia",
+            "actionButtons": [
+                "[Explore](https://mainnet.somnia.w3us.site/)",
+                "[Docs](https://docs.somnia.network/developer/infrastructure-providers/explorers)"
+            ],
             "chain": "mainnet",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -1164,15 +1168,15 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://mainnet.somnia.w3us.site/)",
-                "[Docs](https://docs.somnia.network/developer/infrastructure-providers/explorers)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "somnia-testnet",
             "provider": "Somnia",
+            "actionButtons": [
+                "[Explore](https://shannon-explorer.somnia.network/)",
+                "[Docs](https://docs.somnia.network/developer/infrastructure-providers/explorers)"
+            ],
             "chain": "testnet",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -1204,25 +1208,21 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://shannon-explorer.somnia.network/)",
-                "[Docs](https://docs.somnia.network/developer/infrastructure-providers/explorers)"
-            ]
+            "pricing": "Free"
         }
     ],
     "faucet": [
         {
             "slug": "somnia-testnet-faucet",
             "provider": "Somnia Network",
-            "chain": "testnet",
-            "requiresLogin": false,
-            "hasCaptcha": true,
-            "price": "0",
-            "starred": false,
             "actionButtons": [
                 "[Get tokens](https://testnet.somnia.network/)"
             ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "price": "$0",
+            "starred": false,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -1231,14 +1231,14 @@
         {
             "slug": "somnia-thirdweb-faucet",
             "provider": "Thirdweb",
-            "chain": "testnet",
-            "requiresLogin": false,
-            "hasCaptcha": true,
-            "price": "0",
-            "starred": false,
             "actionButtons": [
                 "[Get tokens](https://thirdweb.com/somnia-shannon-testnet)"
             ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "price": "$0",
+            "starred": false,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -1247,14 +1247,14 @@
         {
             "slug": "somnia-google-cloud-faucet",
             "provider": "Google Cloud",
-            "chain": "testnet",
-            "requiresLogin": false,
-            "hasCaptcha": true,
-            "price": "0",
-            "starred": false,
             "actionButtons": [
                 "[Get tokens](https://cloud.google.com/application/web3/faucet/somnia/shannon)"
             ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "price": "$0",
+            "starred": false,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -2281,6 +2281,7 @@
         "explorer": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "monitoringAndAnalytics",
@@ -2291,18 +2292,17 @@
             "searchCapabilities",
             "smartContractsVerifications",
             "fullHistory",
-            "pricing",
-            "actionButtons"
+            "pricing"
         ],
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
             "price",
             "starred",
-            "actionButtons",
             "requiredMainnetBalance",
             "dripLimitAmount",
             "dripLimitPeriod",

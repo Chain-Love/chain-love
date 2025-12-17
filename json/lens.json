@@ -2953,6 +2953,10 @@
         {
             "slug": "lens-explorer-mainnet",
             "provider": "Lens Network",
+            "actionButtons": [
+                "[Explore](https://explorer.lens.xyz/)",
+                "[Docs](https://lens.xyz/docs/chain/overview)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -2983,15 +2987,15 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://explorer.lens.xyz/)",
-                "[Docs](https://lens.xyz/docs/chain/overview)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "lens-explorer-testnet",
             "provider": "Lens Network",
+            "actionButtons": [
+                "[Explore](https://explorer.testnet.lens.xyz/)",
+                "[Docs](https://lens.xyz/docs/chain/overview)"
+            ],
             "chain": "testnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -3022,15 +3026,15 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://explorer.testnet.lens.xyz/)",
-                "[Docs](https://lens.xyz/docs/chain/overview)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "lenscan-mainnet",
             "provider": "Lenscan",
+            "actionButtons": [
+                "[Explore](https://lenscan.io/)",
+                "[Docs](https://lens.xyz/docs/chain/overview)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -3061,15 +3065,15 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://lenscan.io/)",
-                "[Docs](https://lens.xyz/docs/chain/overview)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "lenscan-testnet",
             "provider": "Lenscan",
+            "actionButtons": [
+                "[Explore](https://testnet.lenscan.io/)",
+                "[Docs](https://lens.xyz/docs/chain/overview)"
+            ],
             "chain": "testnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -3100,25 +3104,21 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://testnet.lenscan.io/)",
-                "[Docs](https://lens.xyz/docs/chain/overview)"
-            ]
+            "pricing": "Free"
         }
     ],
     "faucet": [
         {
             "slug": "lenscan-testnet-faucet",
             "provider": "Lenscan",
-            "chain": "testnet",
-            "requiresLogin": true,
-            "hasCaptcha": true,
-            "price": "0",
-            "starred": false,
             "actionButtons": [
                 "[Get tokens](https://testnet.lenscan.io/)"
             ],
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": true,
+            "price": "$0",
+            "starred": false,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -3127,14 +3127,14 @@
         {
             "slug": "alchemy-testnet-faucet",
             "provider": "Alchemy",
-            "chain": "testnet",
-            "requiresLogin": true,
-            "hasCaptcha": true,
-            "price": "0",
-            "starred": false,
             "actionButtons": [
                 "[Get tokens](https://www.alchemy.com/faucets/lens-sepolia)"
             ],
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": true,
+            "price": "$0",
+            "starred": false,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -3143,14 +3143,14 @@
         {
             "slug": "thirdweb-testnet-faucet",
             "provider": "thirdweb",
-            "chain": "testnet",
-            "requiresLogin": true,
-            "hasCaptcha": true,
-            "price": "0",
-            "starred": false,
             "actionButtons": [
                 "[Get tokens](https://thirdweb.com/faucets)"
             ],
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": true,
+            "price": "$0",
+            "starred": false,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -4208,6 +4208,7 @@
         "explorer": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "monitoringAndAnalytics",
@@ -4218,18 +4219,17 @@
             "searchCapabilities",
             "smartContractsVerifications",
             "fullHistory",
-            "pricing",
-            "actionButtons"
+            "pricing"
         ],
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
             "price",
             "starred",
-            "actionButtons",
             "requiredMainnetBalance",
             "dripLimitAmount",
             "dripLimitPeriod",

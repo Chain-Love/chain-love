@@ -9216,6 +9216,9 @@
         {
             "slug": "blockscout-mainnet",
             "provider": "Blockscout",
+            "actionButtons": [
+                "[Explore](https://explorer.optimism.io/)"
+            ],
             "chain": "mainnet",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -9255,14 +9258,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://explorer.optimism.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "blockscout-sepolia",
             "provider": "Blockscout",
+            "actionButtons": [
+                "[Explore](https://testnet-explorer.optimism.io/)"
+            ],
             "chain": "sepolia",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -9302,14 +9305,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://testnet-explorer.optimism.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "etherscan-mainnet",
             "provider": "Etherscan",
+            "actionButtons": [
+                "[Explore](https://explorer.optimism.io/)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -9334,14 +9337,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://explorer.optimism.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "etherscan-sepolia",
             "provider": "Etherscan",
+            "actionButtons": [
+                "[Explore](https://testnet-explorer.optimism.io/)"
+            ],
             "chain": "sepolia",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -9366,14 +9369,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://testnet-explorer.optimism.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "superchain-mainnet",
             "provider": "Routescan",
+            "actionButtons": [
+                "[Explore](https://thesuperscan.io/)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -9398,14 +9401,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://thesuperscan.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "superchain-testnet",
             "provider": "Routescan",
+            "actionButtons": [
+                "[Explore](https://testnet.thesuperscan.io/)"
+            ],
             "chain": "testnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -9430,14 +9433,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://testnet.thesuperscan.io/)"
-            ]
+            "starred": false
         },
         {
             "slug": "tenderly-explorer-mainnet",
             "provider": "Tenderly",
+            "actionButtons": [
+                "[Explore](https://docs.tenderly.co/developer-explorer?mtm_campaign=ext-docs&mtm_kwd=optimism)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -9467,14 +9470,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free/$50/$500/mo, $45/$450/yearly",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://docs.tenderly.co/developer-explorer?mtm_campaign=ext-docs&mtm_kwd=optimism)"
-            ]
+            "starred": false
         },
         {
             "slug": "tenderly-explorer-sepolia",
             "provider": "Tenderly",
+            "actionButtons": [
+                "[Explore](https://docs.tenderly.co/developer-explorer?mtm_campaign=ext-docs&mtm_kwd=optimism)"
+            ],
             "chain": "sepolia",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -9504,32 +9507,32 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free/$50/$500/mo, $45/$450/yearly",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://docs.tenderly.co/developer-explorer?mtm_campaign=ext-docs&mtm_kwd=optimism)"
-            ]
+            "starred": false
         }
     ],
     "faucet": [
         {
             "slug": "superchain-faucet",
             "provider": "Optimism",
+            "actionButtons": [
+                "[Faucet](https://console.optimism.io/faucet?utm_source=op-docs&utm_medium=docs)"
+            ],
             "chain": "testnet",
             "requiresLogin": true,
             "hasCaptcha": true,
             "requiredMainnetBalance": null,
-            "price": "$0.00",
+            "price": "$0",
             "dripLimitAmount": "0.05 ETH",
             "dripLimitPeriod": "24h",
             "additionalNotes": null,
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://console.optimism.io/faucet?utm_source=op-docs&utm_medium=docs)"
-            ]
+            "starred": false
         },
         {
             "slug": "alchemy-sepolia-faucet",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Faucet](https://www.alchemy.com/faucets/optimism-sepolia)"
+            ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": true,
@@ -9541,48 +9544,48 @@
                 "Requires mainnet activity",
                 "Requires to have a low enough existing balance since wallets with a significant amount of testnet tokens are not eligible for additional claims"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://www.alchemy.com/faucets/optimism-sepolia)"
-            ]
+            "starred": false
         },
         {
             "slug": "chain-platform-sepolia-faucet",
             "provider": "Chain Platform",
+            "actionButtons": [
+                "[Faucet](https://faucet.chainplatform.co/faucets/ethereum-sepolia/)"
+            ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": true,
             "requiredMainnetBalance": null,
-            "price": "$0.00",
+            "price": "$0",
             "dripLimitAmount": "0.1 ETH",
             "dripLimitPeriod": "24h",
             "additionalNotes": null,
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://faucet.chainplatform.co/faucets/ethereum-sepolia/)"
-            ]
+            "starred": false
         },
         {
             "slug": "ethereum-ecosystem-sepolia-faucet",
             "provider": "Ethereum Ecosystem",
+            "actionButtons": [
+                "[Faucet](https://www.ethereum-ecosystem.com/faucets/optimism-sepolia)"
+            ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": true,
             "requiredMainnetBalance": null,
-            "price": "$0.00",
+            "price": "$0",
             "dripLimitAmount": "0.5 ETH",
             "dripLimitPeriod": "24h",
             "additionalNotes": [
                 "Only ENS names are allowed to redeem"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://www.ethereum-ecosystem.com/faucets/optimism-sepolia)"
-            ]
+            "starred": false
         },
         {
             "slug": "ethglobal-testnet-faucet",
             "provider": "ETHGlobal",
+            "actionButtons": [
+                "[Faucet](https://ethglobal.com/faucet/op-sepolia-11155420)"
+            ],
             "chain": "testnet",
             "requiresLogin": true,
             "hasCaptcha": false,
@@ -9593,32 +9596,32 @@
             "additionalNotes": [
                 "Available only on paid plans"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://ethglobal.com/faucet/op-sepolia-11155420)"
-            ]
+            "starred": false
         },
         {
             "slug": "farcaster-frame-sepolia-faucet",
             "provider": "LearnWeb3",
+            "actionButtons": [
+                "[Faucet](https://www.launchcaster.xyz/p/65b67aca2cccdd9d36e48a9c)"
+            ],
             "chain": "testnet",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": null,
-            "price": "$0.00",
+            "price": "$0",
             "dripLimitAmount": "0.01 ETH",
             "dripLimitPeriod": "24h",
             "additionalNotes": [
                 "Need to have a Farcaster account"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://www.launchcaster.xyz/p/65b67aca2cccdd9d36e48a9c)"
-            ]
+            "starred": false
         },
         {
             "slug": "infura-sepolia-faucet",
             "provider": "Infura",
+            "actionButtons": [
+                "[Faucet](https://docs.metamask.io/developer-tools/faucet)"
+            ],
             "chain": "testnet",
             "requiresLogin": true,
             "hasCaptcha": false,
@@ -9629,30 +9632,30 @@
             "additionalNotes": [
                 "The address must have Ethereum Mainnet transaction history"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://docs.metamask.io/developer-tools/faucet)"
-            ]
+            "starred": false
         },
         {
             "slug": "native-usdc-sepolia-faucet",
             "provider": "Circle",
+            "actionButtons": [
+                "[Faucet](https://faucet.circle.com/)"
+            ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": false,
             "requiredMainnetBalance": null,
-            "price": "$0.00",
+            "price": "$0",
             "dripLimitAmount": "10 USDC",
             "dripLimitPeriod": "1h",
             "additionalNotes": null,
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://faucet.circle.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "quicknode-sepolia-faucet",
             "provider": "QuickNode",
+            "actionButtons": [
+                "[Faucet](https://faucet.quicknode.com/optimism/sepolia)"
+            ],
             "chain": "testnet",
             "requiresLogin": true,
             "hasCaptcha": false,
@@ -9663,14 +9666,14 @@
             "additionalNotes": [
                 "Requires transaction history"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://faucet.quicknode.com/optimism/sepolia)"
-            ]
+            "starred": false
         },
         {
             "slug": "thirdweb-op-sepolia-faucet",
             "provider": "Thirdweb",
+            "actionButtons": [
+                "[Faucet](https://thirdweb.com/op-sepolia-testnet)"
+            ],
             "chain": "testnet",
             "requiresLogin": true,
             "hasCaptcha": true,
@@ -9681,10 +9684,7 @@
             "additionalNotes": [
                 "Available only on paid plans"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://thirdweb.com/op-sepolia-testnet)"
-            ]
+            "starred": false
         }
     ],
     "analytic": [
@@ -12209,6 +12209,7 @@
         "explorer": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "monitoringAndAnalytics",
@@ -12219,12 +12220,12 @@
             "smartContractsVerifications",
             "fullHistory",
             "pricing",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
@@ -12233,8 +12234,7 @@
             "dripLimitAmount",
             "dripLimitPeriod",
             "additionalNotes",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "analytic": [
             "slug",

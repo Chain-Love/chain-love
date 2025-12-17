@@ -8771,6 +8771,10 @@
         {
             "slug": "arkham-mainnet",
             "provider": "Arkham",
+            "actionButtons": [
+                "[Explore](https://intel.arkm.com/)",
+                "[Docs](https://codex.arkm.com/)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -8801,15 +8805,14 @@
             "smartContractsVerifications": false,
             "fullHistory": true,
             "pricing": "Partially paid",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://intel.arkm.com/)",
-                "[Docs](https://codex.arkm.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "blockscout-sepolia",
             "provider": "Blockscout",
+            "actionButtons": [
+                "[Explore](https://base-sepolia.blockscout.com/)"
+            ],
             "chain": "sepolia",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -8849,14 +8852,14 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://base-sepolia.blockscout.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "etherscan-sepolia",
             "provider": "Etherscan",
+            "actionButtons": [
+                "[Explore](https://sepolia.basescan.org/)"
+            ],
             "chain": "sepolia",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -8881,14 +8884,15 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://sepolia.basescan.org/)"
-            ]
+            "starred": false
         },
         {
             "slug": "dexguru-mainnet",
             "provider": "DexGuru",
+            "actionButtons": [
+                "[Explore](https://base.dex.guru/)",
+                "[Docs](https://dexguru.readme.io/docs/getting-started)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -8913,16 +8917,15 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "FREE/$199/mo",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://base.dex.guru/)",
-                "[Docs](https://dexguru.readme.io/docs/getting-started)"
-            ]
+            "pricing": "Free/$199/mo",
+            "starred": false
         },
         {
             "slug": "oklink-mainnet",
             "provider": "OKLink",
+            "actionButtons": [
+                "[Explore](https://www.oklink.com/base)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -8962,14 +8965,15 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://www.oklink.com/base)"
-            ]
+            "starred": false
         },
         {
             "slug": "routescan-mainnet",
             "provider": "Routescan",
+            "actionButtons": [
+                "[Explore](https://routescan.io/)",
+                "[Docs](https://routescan.io/documentation/api/etherscan-like/accounts)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -8997,16 +9001,15 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "FREE",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://routescan.io/)",
-                "[Docs](https://routescan.io/documentation/api/etherscan-like/accounts)"
-            ]
+            "pricing": "Free/$199/mo",
+            "starred": false
         },
         {
             "slug": "tenderly-explorer-mainnet",
             "provider": "Tenderly",
+            "actionButtons": [
+                "[Explore](https://docs.tenderly.co/developer-explorer)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -9036,34 +9039,34 @@
             "smartContractsVerifications": true,
             "fullHistory": true,
             "pricing": "Free/$50/$500/mo, $45/$450/yearly",
-            "starred": false,
-            "actionButtons": [
-                "[Explore](https://docs.tenderly.co/developer-explorer)"
-            ]
+            "starred": false
         }
     ],
     "faucet": [
         {
             "slug": "coinbase-developer-platform-faucet",
             "provider": "Coinbase",
+            "actionButtons": [
+                "[Faucet](https://login.coinbase.com/)"
+            ],
             "chain": "testnet",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": null,
-            "price": "$0.00",
+            "price": "$0",
             "dripLimitAmount": "0.0001 ETH",
             "dripLimitPeriod": "24h",
             "additionalNotes": [
                 "Requires heavy identity scanning"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://login.coinbase.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "thirdweb-faucet",
             "provider": "Thirdweb",
+            "actionButtons": [
+                "[Faucet](https://thirdweb.com/base-sepolia-testnet)"
+            ],
             "chain": "testnet",
             "requiresLogin": true,
             "hasCaptcha": true,
@@ -9074,94 +9077,91 @@
             "additionalNotes": [
                 "Available only on a paid plans"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://thirdweb.com/base-sepolia-testnet)"
-            ]
+            "starred": false
         },
         {
             "slug": "alchemy-faucet",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Faucet](https://www.alchemy.com/faucets/base-sepolia)"
+            ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": true,
             "requiredMainnetBalance": "0.001 ETH",
-            "price": "$0.00",
+            "price": "$0",
             "dripLimitAmount": "0.1 ETH/1 ETH72h",
             "dripLimitPeriod": "72h",
             "additionalNotes": null,
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://www.alchemy.com/faucets/base-sepolia)"
-            ]
+            "starred": false
         },
         {
             "slug": "chainstack-faucet",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Faucet](https://faucet.chainstack.com/base-testnet-faucet)"
+            ],
             "chain": "testnet",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": "0.08 ETH",
-            "price": "$0.00",
+            "price": "$0",
             "dripLimitAmount": "0.5 ETH",
             "dripLimitPeriod": "24h",
             "additionalNotes": [
                 "The address must have transaction history"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://faucet.chainstack.com/base-testnet-faucet)"
-            ]
+            "starred": false
         },
         {
             "slug": "quicknode-faucet",
             "provider": "QuickNode",
+            "actionButtons": [
+                "[Faucet](https://faucet.quicknode.com/drip)"
+            ],
             "chain": "sepolia",
             "requiresLogin": false,
             "hasCaptcha": false,
             "requiredMainnetBalance": "0.001 ETH",
-            "price": "$0.00",
+            "price": "$0",
             "dripLimitAmount": "0.001 ETH",
             "dripLimitPeriod": "12h",
             "additionalNotes": null,
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://faucet.quicknode.com/drip)"
-            ]
+            "starred": false
         },
         {
             "slug": "learnweb3-faucet",
             "provider": "LearnWeb3",
+            "actionButtons": [
+                "[Faucet](https://learnweb3.io/faucets/base_sepolia/)"
+            ],
             "chain": "testnet",
             "requiresLogin": true,
             "hasCaptcha": false,
             "requiredMainnetBalance": null,
-            "price": "$0.00",
+            "price": "$0",
             "dripLimitAmount": "0.01 ETH",
             "dripLimitPeriod": "24h",
             "additionalNotes": null,
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://learnweb3.io/faucets/base_sepolia/)"
-            ]
+            "starred": false
         },
         {
             "slug": "ethereum-ecosystem-faucet",
             "provider": "Ethereum Ecosystem",
+            "actionButtons": [
+                "[Faucet](https://www.ethereum-ecosystem.com/faucets/base-sepolia)"
+            ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": true,
             "requiredMainnetBalance": null,
-            "price": "$0.00",
+            "price": "$0",
             "dripLimitAmount": "0.5 ETH",
             "dripLimitPeriod": "24h",
             "additionalNotes": [
                 "Only ENS names are allowed to redeem"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://www.ethereum-ecosystem.com/faucets/base-sepolia)"
-            ]
+            "starred": false
         }
     ],
     "analytic": [
@@ -11228,6 +11228,7 @@
         "explorer": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "monitoringAndAnalytics",
@@ -11238,12 +11239,12 @@
             "smartContractsVerifications",
             "fullHistory",
             "pricing",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
@@ -11252,8 +11253,7 @@
             "dripLimitAmount",
             "dripLimitPeriod",
             "additionalNotes",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "analytic": [
             "slug",

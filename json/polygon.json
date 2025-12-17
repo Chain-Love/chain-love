@@ -7988,6 +7988,9 @@
         {
             "slug": "polygonscan-mainnet",
             "provider": "Polygonscan",
+            "actionButtons": [
+                "[Explorer](https://polygonscan.com/)"
+            ],
             "chain": "mainnet",
             "technology": "Etherscan",
             "monitoringAndAnalytics": [
@@ -8012,14 +8015,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explorer](https://polygonscan.com/)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "polygonscan-amoy",
             "provider": "Polygonscan",
+            "actionButtons": [
+                "[Explorer](https://amoy.polygonscan.com/)"
+            ],
             "chain": "amoy",
             "technology": "Etherscan",
             "monitoringAndAnalytics": [
@@ -8043,14 +8046,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explorer](https://amoy.polygonscan.com/)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "blockscout-mainnet",
             "provider": "Blockscout",
+            "actionButtons": [
+                "[Explorer](https://polygon.blockscout.com/)"
+            ],
             "chain": "mainnet",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -8090,14 +8093,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explorer](https://polygon.blockscout.com/)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "oklink-mainnet",
             "provider": "OKLink",
+            "actionButtons": [
+                "[Explorer](https://www.oklink.com/polygon)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -8137,14 +8140,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explorer](https://www.oklink.com/polygon)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "oklink-amoy",
             "provider": "OKLink",
+            "actionButtons": [
+                "[Explorer](https://www.oklink.com/amoy)"
+            ],
             "chain": "amoy",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -8184,14 +8187,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explorer](https://www.oklink.com/amoy)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "okxexplorer-mainnet",
             "provider": "OKX",
+            "actionButtons": [
+                "[Explorer](https://web3.okx.com/explorer/polygon)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -8219,14 +8222,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explorer](https://web3.okx.com/explorer/polygon)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "okxexplorer-amoy",
             "provider": "OKX",
+            "actionButtons": [
+                "[Explorer](https://web3.okx.com/explorer/amoy)"
+            ],
             "chain": "amoy",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -8254,84 +8257,81 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explorer](https://web3.okx.com/explorer/amoy)"
-            ]
+            "pricing": "Free"
         }
     ],
     "faucet": [
         {
             "slug": "polygon-official-amoy-faucet",
             "provider": "Polygon",
+            "actionButtons": [
+                "[Get POL](https://faucet.polygon.technology/)"
+            ],
             "chain": "amoy",
             "requiresLogin": false,
             "hasCaptcha": true,
             "requiredMainnetBalance": null,
-            "price": "0",
+            "price": "$0",
             "dripLimitAmount": "0.2 AMOY",
             "dripLimitPeriod": "24h",
             "additionalNotes": [
                 "Official Polygon faucet (Amoy)"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Get POL](https://faucet.polygon.technology/)"
-            ]
+            "starred": false
         },
         {
             "slug": "alchemy-amoy-faucet",
             "provider": "Alchemy",
+            "actionButtons": [
+                "[Get POL](https://www.alchemy.com/faucets/polygon-amoy)"
+            ],
             "chain": "amoy",
             "requiresLogin": false,
             "hasCaptcha": true,
             "requiredMainnetBalance": "0.001 POL",
-            "price": "0",
+            "price": "$0",
             "dripLimitAmount": "0.05 AMOY",
             "dripLimitPeriod": "72h",
             "additionalNotes": [
                 "requires a minimum Polygon PoS mainnet balance of 0.001 POL"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Get POL](https://www.alchemy.com/faucets/polygon-amoy)"
-            ]
+            "starred": false
         },
         {
             "slug": "quicknode-amoy-faucet",
             "provider": "QuickNode",
+            "actionButtons": [
+                "[Get POL](https://faucet.quicknode.com/polygon)"
+            ],
             "chain": "amoy",
             "requiresLogin": false,
             "hasCaptcha": false,
             "requiredMainnetBalance": "0.001 ETH",
-            "price": "0",
+            "price": "$0",
             "dripLimitAmount": "0.05 AMOY",
             "dripLimitPeriod": "12h",
             "additionalNotes": [
                 "Share a tweet to get 1x bonus"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Get POL](https://faucet.quicknode.com/polygon)"
-            ]
+            "starred": false
         },
         {
             "slug": "chainlink-amoy-faucet",
             "provider": "Chainlink",
+            "actionButtons": [
+                "[Get POL](https://faucets.chain.link/polygon-amoy)"
+            ],
             "chain": "amoy",
             "requiresLogin": true,
             "hasCaptcha": true,
             "requiredMainnetBalance": "1 LINK",
-            "price": "0",
+            "price": "$0",
             "dripLimitAmount": "0.5 AMOY",
             "dripLimitPeriod": null,
             "additionalNotes": [
                 "Also provides test LINK tokens"
             ],
-            "starred": true,
-            "actionButtons": [
-                "[Get POL](https://faucets.chain.link/polygon-amoy)"
-            ]
+            "starred": true
         }
     ],
     "analytic": [
@@ -10800,6 +10800,7 @@
         "explorer": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "monitoringAndAnalytics",
@@ -10810,12 +10811,12 @@
             "searchCapabilities",
             "smartContractsVerifications",
             "fullHistory",
-            "pricing",
-            "actionButtons"
+            "pricing"
         ],
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
@@ -10824,8 +10825,7 @@
             "dripLimitAmount",
             "dripLimitPeriod",
             "additionalNotes",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "analytic": [
             "slug",

@@ -4499,6 +4499,9 @@
         {
             "slug": "subscan-mainnet",
             "provider": "Subscan",
+            "actionButtons": [
+                "[Explore](https://astar.subscan.io/)"
+            ],
             "chain": "astar",
             "technology": "Subscan",
             "monitoringAndAnalytics": [
@@ -4546,14 +4549,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free, paid versions of API for $19-$399 for 5/10/30 RPS. Yearly discounts apply",
-            "actionButtons": [
-                "[Explore](https://astar.subscan.io/)"
-            ]
+            "pricing": "Free, paid versions of API for $19-$399 for 5/10/30 RPS. Yearly discounts apply"
         },
         {
             "slug": "subscan-shibuya",
             "provider": "Subscan",
+            "actionButtons": [
+                "[Explore](https://shibuya.subscan.io/)"
+            ],
             "chain": "shibuya",
             "technology": "Subscan",
             "monitoringAndAnalytics": [
@@ -4601,14 +4604,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free, paid versions of API for $19-$399 for 5/10/30 RPS. Yearly discounts apply",
-            "actionButtons": [
-                "[Explore](https://shibuya.subscan.io/)"
-            ]
+            "pricing": "Free, paid versions of API for $19-$399 for 5/10/30 RPS. Yearly discounts apply"
         },
         {
             "slug": "subscan-shiden",
             "provider": "Subscan",
+            "actionButtons": [
+                "[Explore](https://shiden.subscan.io/)"
+            ],
             "chain": "shiden",
             "technology": "Subscan",
             "monitoringAndAnalytics": [
@@ -4656,14 +4659,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free, paid versions of API for $19-$399 for 5/10/30 RPS. Yearly discounts apply",
-            "actionButtons": [
-                "[Explore](https://shiden.subscan.io/)"
-            ]
+            "pricing": "Free, paid versions of API for $19-$399 for 5/10/30 RPS. Yearly discounts apply"
         },
         {
             "slug": "blockscout-astar",
             "provider": "Blockscout",
+            "actionButtons": [
+                "[Explore](https://astar.blockscout.com/txs)"
+            ],
             "chain": "astar",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -4703,14 +4706,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://astar.blockscout.com/txs)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "blockscout-shibuya",
             "provider": "Blockscout",
+            "actionButtons": [
+                "[Explore](https://shibuya.blockscout.com/txs)"
+            ],
             "chain": "shibuya",
             "technology": "Blockscout",
             "monitoringAndAnalytics": [
@@ -4750,14 +4753,14 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://shibuya.blockscout.com/txs)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "polkadot-js-astar",
             "provider": "Polkadot.JS",
+            "actionButtons": [
+                "[Explore](https://polkadot.js.org/apps/)"
+            ],
             "chain": "astar",
             "technology": "Polkadot.JS",
             "monitoringAndAnalytics": [
@@ -4791,14 +4794,14 @@
             ],
             "smartContractsVerifications": false,
             "fullHistory": false,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://polkadot.js.org/apps/)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "polkadot-js-shiden",
             "provider": "Polkadot.JS",
+            "actionButtons": [
+                "[Explore](https://polkadot.js.org/apps/)"
+            ],
             "chain": "shiden",
             "technology": "Polkadot.JS",
             "monitoringAndAnalytics": [
@@ -4832,24 +4835,21 @@
             ],
             "smartContractsVerifications": false,
             "fullHistory": false,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://polkadot.js.org/apps/)"
-            ]
+            "pricing": "Free"
         }
     ],
     "faucet": [
         {
             "slug": "astar-shibuya",
             "provider": "Astar",
+            "actionButtons": [
+                "[Get tokens](https://portal.astar.network/shibuya-testnet/assets)"
+            ],
             "chain": "shibuya",
             "requiresLogin": true,
             "hasCaptcha": true,
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Get tokens](https://portal.astar.network/shibuya-testnet/assets)"
-            ],
             "requiredMainnetBalance": null,
             "dripLimitAmount": "10 SBY",
             "dripLimitPeriod": null,
@@ -4858,14 +4858,14 @@
         {
             "slug": "chainlink-shibuya",
             "provider": "Chainlink",
+            "actionButtons": [
+                "[Get tokens](https://faucets.chain.link/astar-shibuya)"
+            ],
             "chain": "shibuya",
             "requiresLogin": true,
             "hasCaptcha": false,
             "price": "$0",
             "starred": false,
-            "actionButtons": [
-                "[Get tokens](https://faucets.chain.link/astar-shibuya)"
-            ],
             "requiredMainnetBalance": "1 LINK",
             "dripLimitAmount": "25 LINK",
             "dripLimitPeriod": "2h",
@@ -6555,6 +6555,7 @@
         "explorer": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "monitoringAndAnalytics",
@@ -6565,18 +6566,17 @@
             "searchCapabilities",
             "smartContractsVerifications",
             "fullHistory",
-            "pricing",
-            "actionButtons"
+            "pricing"
         ],
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
             "price",
             "starred",
-            "actionButtons",
             "requiredMainnetBalance",
             "dripLimitAmount",
             "dripLimitPeriod",

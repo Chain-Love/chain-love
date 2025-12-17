@@ -785,6 +785,9 @@
         {
             "slug": "solana-devnet-faucet",
             "provider": "Solana",
+            "actionButtons": [
+                "[Faucet](https://faucet.solana.com/)"
+            ],
             "chain": "devnet",
             "requiresLogin": true,
             "hasCaptcha": true,
@@ -796,14 +799,14 @@
                 "Requires GitHub authentification",
                 "Maximum 2 requests per 8 hours"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://faucet.solana.com/)"
-            ]
+            "starred": false
         },
         {
             "slug": "quicknode-faucet",
             "provider": "QuickNode",
+            "actionButtons": [
+                "[Faucet](https://faucet.quicknode.com/solana/devnet)"
+            ],
             "chain": "devnet",
             "requiresLogin": true,
             "hasCaptcha": false,
@@ -814,14 +817,14 @@
             "additionalNotes": [
                 "Requires transaction history"
             ],
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://faucet.quicknode.com/solana/devnet)"
-            ]
+            "starred": false
         },
         {
             "slug": "chainstack-faucet",
             "provider": "Chainstack",
+            "actionButtons": [
+                "[Faucet](https://faucet.chainstack.com/solana-devnet-faucet)"
+            ],
             "chain": "devnet",
             "requiresLogin": true,
             "hasCaptcha": false,
@@ -830,14 +833,14 @@
             "dripLimitAmount": "Up to 1 SOL",
             "dripLimitPeriod": null,
             "additionalNotes": null,
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://faucet.chainstack.com/solana-devnet-faucet)"
-            ]
+            "starred": false
         },
         {
             "slug": "ghost-faucet",
             "provider": "GHOST",
+            "actionButtons": [
+                "[Faucet](https://ghostchain.io/faucet/solana-testnet/)"
+            ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": false,
@@ -846,10 +849,7 @@
             "dripLimitAmount": "0.01 SOL",
             "dripLimitPeriod": null,
             "additionalNotes": null,
-            "starred": false,
-            "actionButtons": [
-                "[Faucet](https://ghostchain.io/faucet/solana-testnet/)"
-            ]
+            "starred": false
         }
     ],
     "wallet": [
@@ -2741,6 +2741,7 @@
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
@@ -2749,8 +2750,7 @@
             "dripLimitAmount",
             "dripLimitPeriod",
             "additionalNotes",
-            "starred",
-            "actionButtons"
+            "starred"
         ],
         "wallet": [
             "slug",

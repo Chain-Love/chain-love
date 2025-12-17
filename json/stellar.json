@@ -2687,6 +2687,10 @@
         {
             "slug": "stellarexpert-mainnet",
             "provider": "StellarExpert",
+            "actionButtons": [
+                "[Explore](https://stellar.expert/)",
+                "[Docs](https://stellar.expert/openapi.html)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -2716,15 +2720,15 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://stellar.expert/)",
-                "[Docs](https://stellar.expert/openapi.html)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "stellarexpert-testnet",
             "provider": "StellarExpert",
+            "actionButtons": [
+                "[Explore](https://stellar.expert/)",
+                "[Docs](https://stellar.expert/openapi.html)"
+            ],
             "chain": "testnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -2754,15 +2758,15 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://stellar.expert/)",
-                "[Docs](https://stellar.expert/openapi.html)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "stellarchain-mainnet",
             "provider": "StellarChain",
+            "actionButtons": [
+                "[Explore](https://stellarchain.io/)",
+                "[Docs](https://stellarchain.io/)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -2791,15 +2795,15 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://stellarchain.io/)",
-                "[Docs](https://stellarchain.io/)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "stellarchain-testnet",
             "provider": "StellarChain",
+            "actionButtons": [
+                "[Explore](https://stellarchain.io/)",
+                "[Docs](https://stellarchain.io/)"
+            ],
             "chain": "testnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -2828,15 +2832,15 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://stellarchain.io/)",
-                "[Docs](https://stellarchain.io/)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "blockchair-mainnet",
             "provider": "Blockchair",
+            "actionButtons": [
+                "[Explore](https://blockchair.com/stellar)",
+                "[Docs](https://blockchair.com/about)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -2864,15 +2868,15 @@
             ],
             "smartContractsVerifications": false,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://blockchair.com/stellar)",
-                "[Docs](https://blockchair.com/about)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "blockchair-testnet",
             "provider": "Blockchair",
+            "actionButtons": [
+                "[Explore](https://blockchair.com/stellar)",
+                "[Docs](https://blockchair.com/about)"
+            ],
             "chain": "testnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -2900,15 +2904,15 @@
             ],
             "smartContractsVerifications": false,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://blockchair.com/stellar)",
-                "[Docs](https://blockchair.com/about)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "steexp-mainnet",
             "provider": "Steexp",
+            "actionButtons": [
+                "[Explore](https://steexp.com/)",
+                "[Docs](https://steexp.com/)"
+            ],
             "chain": "mainnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -2937,15 +2941,15 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://steexp.com/)",
-                "[Docs](https://steexp.com/)"
-            ]
+            "pricing": "Free"
         },
         {
             "slug": "steexp-testnet",
             "provider": "Steexp",
+            "actionButtons": [
+                "[Explore](https://steexp.com/)",
+                "[Docs](https://steexp.com/)"
+            ],
             "chain": "testnet",
             "technology": "Custom",
             "monitoringAndAnalytics": [
@@ -2974,25 +2978,21 @@
             ],
             "smartContractsVerifications": true,
             "fullHistory": true,
-            "pricing": "Free",
-            "actionButtons": [
-                "[Explore](https://steexp.com/)",
-                "[Docs](https://steexp.com/)"
-            ]
+            "pricing": "Free"
         }
     ],
     "faucet": [
         {
             "slug": "friendbot-testnet",
             "provider": "Friendbot",
-            "chain": "testnet",
-            "requiresLogin": false,
-            "hasCaptcha": false,
-            "price": "Free",
-            "starred": true,
             "actionButtons": [
                 "[Get XLM tokens](https://developers.stellar.org/docs/tools/quickstart/faucet)"
             ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "price": "$0",
+            "starred": true,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -3001,14 +3001,14 @@
         {
             "slug": "triangle-testnet",
             "provider": "Triangle Platform",
-            "chain": "testnet",
-            "requiresLogin": false,
-            "hasCaptcha": true,
-            "price": "Free",
-            "starred": false,
             "actionButtons": [
                 "[Get XLM tokens](https://faucet.triangleplatform.com/stellar/testnet)"
             ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "price": "$0",
+            "starred": false,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -3017,14 +3017,14 @@
         {
             "slug": "circle-usdc-testnet",
             "provider": "Circle",
-            "chain": "testnet",
-            "requiresLogin": false,
-            "hasCaptcha": true,
-            "price": "Free",
-            "starred": false,
             "actionButtons": [
                 "[Get USDC tokens](https://faucet.circle.com/)"
             ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "price": "$0",
+            "starred": false,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -3033,14 +3033,14 @@
         {
             "slug": "rodi-testnet",
             "provider": "Rodi Software",
-            "chain": "testnet",
-            "requiresLogin": false,
-            "hasCaptcha": false,
-            "price": "Free",
-            "starred": false,
             "actionButtons": [
                 "[Get XLM tokens](https://rodisoftware.com/sophia_survey/faucet.php)"
             ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "price": "$0",
+            "starred": false,
             "requiredMainnetBalance": null,
             "dripLimitAmount": null,
             "dripLimitPeriod": null,
@@ -5051,6 +5051,7 @@
         "explorer": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "technology",
             "monitoringAndAnalytics",
@@ -5061,18 +5062,17 @@
             "searchCapabilities",
             "smartContractsVerifications",
             "fullHistory",
-            "pricing",
-            "actionButtons"
+            "pricing"
         ],
         "faucet": [
             "slug",
             "provider",
+            "actionButtons",
             "chain",
             "requiresLogin",
             "hasCaptcha",
             "price",
             "starred",
-            "actionButtons",
             "requiredMainnetBalance",
             "dripLimitAmount",
             "dripLimitPeriod",
