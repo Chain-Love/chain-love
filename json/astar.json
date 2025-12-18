@@ -6447,17 +6447,1943 @@
     "devTool": [
         {
             "slug": "gas-station",
+            "provider": "Astar Gas Station",
+            "toolType": "Gas Oracle",
             "tag": [
-                "JavaScript",
                 "Gas"
             ],
-            "provider": "The Astar Gas Station",
-            "toolType": "Gas Calculator",
-            "price": "$0",
-            "description": "as price estimation api",
-            "starred": true,
+            "price": "Hybrid pricing model",
+            "description": "It functions as a gas oracle, similar to an EVM GAS PRICE API within the Astar ecosystem, providing real-time estimates for gas prices.",
+            "starred": false,
             "actionButtons": [
-                "[Docs](https://docs.astar.network/docs/build/environment/gas-station/)"
+                "[Docs](https://docs.astar.network/docs/build/environment/gas-station)"
+            ]
+        },
+        {
+            "slug": "type-chain",
+            "provider": "TypeChain",
+            "toolType": "Code generator for blockchain development",
+            "tag": [
+                "TypeScript",
+                "Smart Contracts",
+                "Code Generation",
+                "Type Safety",
+                "dApp Development"
+            ],
+            "price": "Custom",
+            "description": "It provides TypeScript bindings for Ethereum smart contracts, generating a type-safe API for interacting with them in decentralized applications",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://github.com/dethcrypto/TypeChain)"
+            ]
+        },
+        {
+            "slug": "huffmate",
+            "provider": "Huffmate",
+            "toolType": "Smart contract library",
+            "tag": [
+                "Huff-language",
+                "Smart-contracts",
+                "Solidity-tools"
+            ],
+            "price": "Custom",
+            "description": "It provides a library of hyper-optimized Huff smart contracts intended as resources for learning and implementation, rather than a compiler or debugger",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://github.com/huff-language/huffmate)"
+            ]
+        },
+        {
+            "slug": "krebit",
+            "provider": "Krebit",
+            "toolType": "Reputation scoring",
+            "tag": [
+                "Decentralized identity",
+                "Verifiable credentials",
+                "Web3 reputation systems"
+            ],
+            "price": "Custom",
+            "description": "It is a reputation scoring platform for digital assets and decentralized finance that allows developers to integrate creditworthiness credentials into their applications",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://hackers.tools/d/krebit)"
+            ]
+        },
+        {
+            "slug": "arka-free",
+            "provider": "Arka",
+            "toolType": "Account Abstraction",
+            "tag": [
+                "ERC-4337",
+                "Paymaster",
+                "Gasless transactions",
+                "Etherspot SDK"
+            ],
+            "price": "$0",
+            "description": "Provides gasless transactions, sponsored transactions, and alternative gas payments using ERC-20 tokens, adhering to the ERC-4337 standard to improve dApp user experience",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://etherspot.io/arka-paymaster/)"
+            ]
+        },
+        {
+            "slug": "arka-pay-as-you-go",
+            "provider": "Arka",
+            "toolType": "Account Abstraction",
+            "tag": [
+                "ERC-4337",
+                "Paymaster",
+                "Gasless transactions",
+                "Etherspot SDK"
+            ],
+            "price": "$49/$99/$299/mo",
+            "description": "Provides gasless transactions, sponsored transactions, and alternative gas payments using ERC-20 tokens, adhering to the ERC-4337 standard to improve dApp user experience",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://etherspot.io/arka-paymaster/)"
+            ]
+        },
+        {
+            "slug": "arka-enterprise",
+            "provider": "Arka",
+            "toolType": "Account Abstraction",
+            "tag": [
+                "ERC-4337",
+                "Paymaster",
+                "Gasless transactions",
+                "Etherspot SDK"
+            ],
+            "price": "Custom",
+            "description": "Provides gasless transactions, sponsored transactions, and alternative gas payments using ERC-20 tokens, adhering to the ERC-4337 standard to improve dApp user experience",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://etherspot.io/arka-paymaster/)"
+            ]
+        },
+        {
+            "slug": "alchemy-bundler-free",
+            "provider": "Alchemy Bundler",
+            "toolType": "Account Abstraction",
+            "tag": [
+                "Account Abstraction",
+                "ERC-4337",
+                "Bundler",
+                "Web3 development",
+                "Smart contract wallets"
+            ],
+            "price": "$0",
+            "description": "It is a developer tool that aggregates multiple blockchain operations into a single transaction for efficient, reliable execution on-chain",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/pricing)",
+                "[GitHub](https://github.com/alchemyplatform/rundler)"
+            ]
+        },
+        {
+            "slug": "alchemy-bundler-pay-as-you-go",
+            "provider": "Alchemy Bundler",
+            "toolType": "Account Abstraction",
+            "tag": [
+                "Account Abstraction",
+                "ERC-4337",
+                "Bundler",
+                "Web3 development",
+                "Smart contract wallets"
+            ],
+            "price": "$5/11 CUs",
+            "description": "It is a developer tool that aggregates multiple blockchain operations into a single transaction for efficient, reliable execution on-chain",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/pricing)",
+                "[GitHub](https://github.com/alchemyplatform/rundler)"
+            ]
+        },
+        {
+            "slug": "alchemy-bundler-enterprise",
+            "provider": "Alchemy Bundler",
+            "toolType": "Account Abstraction",
+            "tag": [
+                "Account Abstraction",
+                "ERC-4337",
+                "Bundler",
+                "Web3 development",
+                "Smart contract wallets"
+            ],
+            "price": "Custom",
+            "description": "It is a developer tool that aggregates multiple blockchain operations into a single transaction for efficient, reliable execution on-chain",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/pricing)",
+                "[GitHub](https://github.com/alchemyplatform/rundler)"
+            ]
+        },
+        {
+            "slug": "alchemy-gas-manager-free",
+            "provider": "Alchemy Gas Manager",
+            "toolType": "Gas tool or Web3 wallet tool",
+            "tag": [
+                "Gas sponsorship",
+                "Gasless transactions",
+                "Paymaster",
+                "Transaction fee management"
+            ],
+            "price": "$0",
+            "description": "It is an ERC-4337 compliant paymaster, allowing developers to sponsor the gas fees for their users on a blockchain",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/dapps/gas-manager)",
+                "[Website](https://www.alchemy.com/pricing)"
+            ]
+        },
+        {
+            "slug": "alchemy-gas-manager-pay-as-you-go",
+            "provider": "Alchemy Gas Manager",
+            "toolType": "Gas tool or Web3 wallet tool",
+            "tag": [
+                "Gas sponsorship",
+                "Gasless transactions",
+                "Paymaster",
+                "Transaction fee management"
+            ],
+            "price": "$5/11 CUs",
+            "description": "It is an ERC-4337 compliant paymaster, allowing developers to sponsor the gas fees for their users on a blockchain",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/dapps/gas-manager)",
+                "[Website](https://www.alchemy.com/pricing)"
+            ]
+        },
+        {
+            "slug": "alchemy-gas-manager-enterprise",
+            "provider": "Alchemy Gas Manager",
+            "toolType": "Gas tool or Web3 wallet tool",
+            "tag": [
+                "Gas sponsorship",
+                "Gasless transactions",
+                "Paymaster",
+                "Transaction fee management"
+            ],
+            "price": "Custom",
+            "description": "It is an ERC-4337 compliant paymaster, allowing developers to sponsor the gas fees for their users on a blockchain",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/dapps/gas-manager)",
+                "[Website](https://www.alchemy.com/pricing)"
+            ]
+        },
+        {
+            "slug": "ethereum-etl",
+            "provider": "Ethereum ETL",
+            "toolType": "Blockchain data extraction tool",
+            "tag": [
+                "Ethereum ETL",
+                "Blockchain data analytics",
+                "Web3 data infrastructure",
+                "ETL (Extract, Transform, Load)",
+                "On-chain data"
+            ],
+            "price": "Custom",
+            "description": "It provides Python and Rust scripts to extract, transform, and load (ETL) data from the Ethereum blockchain into more convenient formats like CSV files, JSON files, or relational databases (such as PostgreSQL)",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://github.com/blockchain-etl/ethereum-etl)"
+            ]
+        },
+        {
+            "slug": "moralis-free",
+            "provider": "Moralis",
+            "toolType": "SDK",
+            "tag": [
+                "Web3 SDK",
+                "Backend"
+            ],
+            "price": "$0",
+            "description": "One-stop web3 development platform offering a unified SDK and APIs for building dApps",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.moralis.io/)",
+                "[Websites](https://moralis.com/pricing/)"
+            ]
+        },
+        {
+            "slug": "moralis-pay-as-you-go",
+            "provider": "Moralis",
+            "toolType": "SDK",
+            "tag": [
+                "Web3 SDK",
+                "Backend"
+            ],
+            "price": "$49/$199/$490/mo",
+            "description": "One-stop web3 development platform offering a unified SDK and APIs for building dApps",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.moralis.io/)",
+                "[Websites](https://moralis.com/pricing/)"
+            ]
+        },
+        {
+            "slug": "moralis-enterprise",
+            "provider": "Moralis",
+            "toolType": "SDK",
+            "tag": [
+                "Web3 SDK",
+                "Backend"
+            ],
+            "price": "Custom",
+            "description": "One-stop web3 development platform offering a unified SDK and APIs for building dApps",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.moralis.io/)",
+                "[Websites](https://moralis.com/pricing/)"
+            ]
+        },
+        {
+            "slug": "apillon-free",
+            "provider": "Apillon",
+            "toolType": "Web3 development platform",
+            "tag": [
+                "dApp development",
+                "Blockchain APIs",
+                "Web3 APIs"
+            ],
+            "price": "$0",
+            "description": "It provides developers with APIs, SDKs, and a dashboard to simplify creating decentralized applications by abstracting blockchain complexities and offering access to Polkadot parachain-powered services",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://apillon.io/)"
+            ]
+        },
+        {
+            "slug": "apillon-pay-as-you-go",
+            "provider": "Apillon",
+            "toolType": "Web3 development platform",
+            "tag": [
+                "dApp development",
+                "Blockchain APIs",
+                "Web3 APIs"
+            ],
+            "price": "$19.90/mo",
+            "description": "It provides developers with APIs, SDKs, and a dashboard to simplify creating decentralized applications by abstracting blockchain complexities and offering access to Polkadot parachain-powered services",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://apillon.io/)"
+            ]
+        },
+        {
+            "slug": "apillon-enterprise",
+            "provider": "Apillon",
+            "toolType": "Web3 development platform",
+            "tag": [
+                "dApp development",
+                "Blockchain APIs",
+                "Web3 APIs"
+            ],
+            "price": "$79.9/mo",
+            "description": "It provides developers with APIs, SDKs, and a dashboard to simplify creating decentralized applications by abstracting blockchain complexities and offering access to Polkadot parachain-powered services",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://apillon.io/)"
+            ]
+        },
+        {
+            "slug": "triangle",
+            "provider": "Triangle",
+            "toolType": "Blockchain wallet infrastructure APIs",
+            "tag": [
+                "Web3 Developer tools",
+                "Wallet Infrastructure API",
+                "Blockchain API",
+                "Embed Web3 Experiences"
+            ],
+            "price": "Custom",
+            "description": "It is a Web3 wallet infrastructure APIs and dedicated blockchain nodes for developers, aiming to simplify blockchain technology integration into applications",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.triangleplatform.com/)"
+            ]
+        },
+        {
+            "slug": "ziion-linux-distro",
+            "provider": "Ziion Linux distro",
+            "toolType": "Blockchain development and security testing",
+            "tag": [
+                "Security Testing",
+                "Vulnerability Assessment",
+                "Cybersecurity",
+                "Virtual Machine"
+            ],
+            "price": "Custom",
+            "description": "Functions as a specialized, pre-configured provider of developer and security tools for the blockchain and Web3 ecosystem",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.ziion.org/)"
+            ]
+        },
+        {
+            "slug": "dapprovals-pay-as-you-go",
+            "provider": "dApprovals",
+            "toolType": "Transaction Approval Management and Active Risk Mitigation",
+            "tag": [
+                "Code Review Approvals",
+                "Deployment Approvals",
+                "CI/CD Approvals",
+                "Infrastructure Approvals"
+            ],
+            "price": "£12/£18",
+            "description": "Provides services for managing and securing Web3 transaction approvals",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://dapproval.com/)"
+            ]
+        },
+        {
+            "slug": "dapprovals-enterprise",
+            "provider": "dApprovals",
+            "toolType": "Transaction Approval Management and Active Risk Mitigation",
+            "tag": [
+                "Code Review Approvals",
+                "Deployment Approvals",
+                "CI/CD Approvals",
+                "Infrastructure Approvals"
+            ],
+            "price": "Custom",
+            "description": "Provides services for managing and securing Web3 transaction approvals",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://dapproval.com/)"
+            ]
+        },
+        {
+            "slug": "connectkit",
+            "provider": "ConnectKit",
+            "toolType": "Web3 wallet connection library/toolkit",
+            "tag": [
+                "Wallet Connect",
+                "Web3 wallet",
+                "Typescript",
+                "React Component Library"
+            ],
+            "price": "Custom",
+            "description": "React component library for Web3 frontend developers that simplifies the process of connecting a user's cryptocurrency wallet to a decentralized application",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://family.co/docs/connectkit)"
+            ]
+        },
+        {
+            "slug": "ape-worx-evm-trace",
+            "provider": "ApeWorx EVM Trace",
+            "toolType": "Debugging tool and Solidity tool",
+            "tag": [
+                "EVM Trace",
+                "Ethereum Debugging",
+                "Smart Contract Debugging",
+                "Transaction Tracing"
+            ],
+            "price": "Custom",
+            "description": "Python-dependent developer tool designed for debugging and analyzing Ethereum Virtual Machine transactions and smart contract execution",
+            "starred": false,
+            "actionButtons": [
+                "[Github](https://github.com/ApeWorX/evm-trace)"
+            ]
+        },
+        {
+            "slug": "cyvers",
+            "provider": "Cyvers",
+            "toolType": "Web3 and blockchain security",
+            "tag": [
+                "Web3 Security",
+                "Blockchain Security",
+                "Real-Time Threat Detection",
+                "Machine Learning Security"
+            ],
+            "price": "Custom",
+            "description": "It is a Web3 security company that provides developers with tools and an AI-powered platform for real-time threat detection, prevention, and compliance in blockchain ecosystems",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://cyvers.ai/)"
+            ]
+        },
+        {
+            "slug": "failsafe",
+            "provider": "FailSafe",
+            "toolType": "Blockchain and AI security and compliance",
+            "tag": [
+                "AI Security",
+                "Penetration Testing",
+                "Real-Time Threat Detection",
+                "Security Audits"
+            ],
+            "price": "Custom",
+            "description": "It focused on security and compliance for the blockchain, Web3, and AI industries",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://getfailsafe.com/)"
+            ]
+        },
+        {
+            "slug": "decubate-tms",
+            "provider": "Decubate TMS",
+            "toolType": "Web3 Token Management and Tokenization Infrastructure",
+            "tag": [
+                "no-code token platform",
+                "token minting",
+                "liquidity farming"
+            ],
+            "price": "$5K",
+            "description": "It is a no-code, all-in-one platform that provides Web3 builders and projects with the necessary tools to launch, manage, and scale their tokens efficiently and securely",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://tms.finance/)"
+            ]
+        },
+        {
+            "slug": "univoucher",
+            "provider": "UniVoucher",
+            "toolType": "Decentralized protocol for creating and managing cryptocurrency gift cards across multiple EVM-compatible blockchains",
+            "tag": [
+                "gift card",
+                "payment gateway",
+                "wallet integration"
+            ],
+            "price": "Custom",
+            "description": "It offers an API and documentation that allow developers to integrate the functionality of creating and managing decentralized, tangible crypto gift cards into their own applications",
+            "starred": false,
+            "actionButtons": [
+                "[Doc](https://docs.univoucher.com/developers/integration-guide/#content-security-policy-csp-configuration)"
+            ]
+        },
+        {
+            "slug": "polyzoa",
+            "provider": "Polyzoa",
+            "toolType": "Web3 security tools",
+            "tag": [
+                "Anti-scam solutions",
+                "Threat Detection",
+                "Phishing Protection",
+                "Web3 Security"
+            ],
+            "price": "Custom",
+            "description": "Developer tool provider in the Web3 space that offers an anti-scam security layer for blockchain infrastructure",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.polyzoa.xyz/)"
+            ]
+        },
+        {
+            "slug": "codeslaw",
+            "provider": "Codeslaw",
+            "toolType": "Allow developers to search for and explore verified smart contract code across the Ethereum ecosystem",
+            "tag": [
+                "Smart Contract Search Engine",
+                "Verified Contract Code",
+                "Web3 Development"
+            ],
+            "price": "Custom",
+            "description": "Developer tool and search engine that allows developers to search for and explore verified smart contract code across various blockchain networks, primarily Ethereum",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.codeslaw.app/)"
+            ]
+        },
+        {
+            "slug": "toolblox-free",
+            "provider": "Toolblox",
+            "toolType": "No-code smart contract and decentralized application builder",
+            "tag": [
+                "Software development kit",
+                "API development",
+                "Programming utility",
+                "Coding tools"
+            ],
+            "price": "$0",
+            "description": "No-code platform for building, deploying, and managing smart contracts and decentralized applications on various blockchain networks",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.toolblox.net/)"
+            ]
+        },
+        {
+            "slug": "toolblox-pay-as-you-go",
+            "provider": "Toolblox",
+            "toolType": "No-code smart contract and decentralized application builder",
+            "tag": [
+                "Software development kit",
+                "API development",
+                "Programming utility",
+                "Coding tools"
+            ],
+            "price": "$42/$142/$180/mo",
+            "description": "No-code platform for building, deploying, and managing smart contracts and decentralized applications on various blockchain networks",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.toolblox.net/)"
+            ]
+        },
+        {
+            "slug": "toolblox-enterprise",
+            "provider": "Toolblox",
+            "toolType": "No-code smart contract and decentralized application builder",
+            "tag": [
+                "Software development kit",
+                "API development",
+                "Programming utility",
+                "Coding tools"
+            ],
+            "price": "Custom",
+            "description": "No-code platform for building, deploying, and managing smart contracts and decentralized applications on various blockchain networks",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.toolblox.net/)"
+            ]
+        },
+        {
+            "slug": "dappkit",
+            "provider": "Dappkit",
+            "toolType": "Software Development Kit and a development framework",
+            "tag": [
+                "dApp development",
+                "Web3 SDK",
+                "Blockchain development",
+                "Smart contract interaction"
+            ],
+            "price": "$0",
+            "description": "It is a free, open-source Software Development Kit and platform that streamlines the creation and integration of web3 applications by providing pre-built tools, components, and code libraries",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://dappkit.dev/)"
+            ]
+        },
+        {
+            "slug": "alchemy-sdk-free",
+            "provider": "Alchemy SDK",
+            "toolType": "Web3 Software Development Kit",
+            "tag": [
+                "Web3 development",
+                "Blockchain developer tools",
+                "Ethereum development",
+                "dApp development"
+            ],
+            "price": "$0",
+            "description": "It is a powerful JavaScript/TypeScript library that serves as the core of Alchemy's comprehensive web3 development platform, allowing developers to easily connect their decentralized applications to various blockchains and leverage enhanced developer tools and infrastructure",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/docs)",
+                "[Website](https://www.alchemy.com/pricing)"
+            ]
+        },
+        {
+            "slug": "alchemy-sdk-pay-as-you-go",
+            "provider": "Alchemy SDK",
+            "toolType": "Web3 Software Development Kit",
+            "tag": [
+                "Web3 development",
+                "Blockchain developer tools",
+                "Ethereum development",
+                "dApp development"
+            ],
+            "price": "$5/11 CUs",
+            "description": "It is a powerful JavaScript/TypeScript library that serves as the core of Alchemy's comprehensive web3 development platform, allowing developers to easily connect their decentralized applications to various blockchains and leverage enhanced developer tools and infrastructure",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/docs)",
+                "[Website](https://www.alchemy.com/pricing)"
+            ]
+        },
+        {
+            "slug": "alchemy-sdk-enterprise",
+            "provider": "Alchemy SDK",
+            "toolType": "Web3 Software Development Kit",
+            "tag": [
+                "Web3 development",
+                "Blockchain developer tools",
+                "Ethereum development",
+                "dApp development"
+            ],
+            "price": "Custom",
+            "description": "It is a powerful JavaScript/TypeScript library that serves as the core of Alchemy's comprehensive web3 development platform, allowing developers to easily connect their decentralized applications to various blockchains and leverage enhanced developer tools and infrastructure",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/docs)",
+                "[Website](https://www.alchemy.com/pricing)"
+            ]
+        },
+        {
+            "slug": "kurtosis",
+            "provider": "Kurtosis",
+            "toolType": "Distributed application development platform",
+            "tag": [
+                "Reproducible testnets",
+                "Private testnets",
+                "Docker",
+                "Kubernetes",
+                "Ethereum developer tools"
+            ],
+            "price": "Custom",
+            "description": "It offers a platform for packaging, launching, and managing ephemeral development and testing environments for distributed systems, especially in the Web3/blockchain space",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.kurtosis.com/)"
+            ]
+        },
+        {
+            "slug": "orderly",
+            "provider": "Orderly",
+            "toolType": "Decentralized Finance trading infrastructure for developers",
+            "tag": [
+                "Web3 trading infrastructure",
+                "Order book infrastructure",
+                "DEX SDK"
+            ],
+            "price": "Custom",
+            "description": "It provides the necessary tools and infrastructure for developers to create decentralized applications with a centralized exchange like trading experience",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://orderly.network/)"
+            ]
+        },
+        {
+            "slug": "vyper",
+            "provider": "Vyper",
+            "toolType": "Pythonic programming language",
+            "tag": [
+                "Compiler",
+                "Pythonic programming language",
+                "SDK",
+                "Command-line interface tools",
+                "Interactive environment"
+            ],
+            "price": "Custom",
+            "description": "It is a contract-oriented, Pythonic programming language and associated tools for building secure and auditable smart contracts targeting the Ethereum Virtual Machine",
+            "starred": false,
+            "actionButtons": [
+                "[Doc](https://docs.vyperlang.org/en/latest/)"
+            ]
+        },
+        {
+            "slug": "assembly-script",
+            "provider": "AssemblyScript",
+            "toolType": "Programming language and a compiler that targets WebAssembly",
+            "tag": [
+                "WebAssembly",
+                "TypeScript",
+                "JavaScript"
+            ],
+            "price": "Custom",
+            "description": "It offers a compiler and toolchain allowing developers to write high-performance code in a TypeScript-like language and compile it to WebAssembly",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.assemblyscript.org/introduction.html)"
+            ]
+        },
+        {
+            "slug": "alchemy-transact-free",
+            "provider": "Alchemy Transact",
+            "toolType": "Web3 transaction tools.",
+            "tag": [
+                "Blockchain transactions",
+                "Faster Ethereum transactions",
+                "Reliable transaction API"
+            ],
+            "price": "$0",
+            "description": "It provides developers with APIs and features to manage the entire transaction lifecycle, from creation and simulation to sending and monitoring, across various blockchain networks",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/blog/alchemy-transact-the-smart-transaction-platform)",
+                "[Website](https://www.alchemy.com/pricing)"
+            ]
+        },
+        {
+            "slug": "alchemy-transact-pay-as-you-go",
+            "provider": "Alchemy Transact",
+            "toolType": "Web3 transaction tools.",
+            "tag": [
+                "Blockchain transactions",
+                "Faster Ethereum transactions",
+                "Reliable transaction API"
+            ],
+            "price": "$5/11 CUs",
+            "description": "It provides developers with APIs and features to manage the entire transaction lifecycle, from creation and simulation to sending and monitoring, across various blockchain networks",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/blog/alchemy-transact-the-smart-transaction-platform)",
+                "[Website](https://www.alchemy.com/pricing)"
+            ]
+        },
+        {
+            "slug": "alchemy-transact-enterprise",
+            "provider": "Alchemy Transact",
+            "toolType": "Web3 transaction tools.",
+            "tag": [
+                "Blockchain transactions",
+                "Faster Ethereum transactions",
+                "Reliable transaction API"
+            ],
+            "price": "Custom",
+            "description": "It provides developers with APIs and features to manage the entire transaction lifecycle, from creation and simulation to sending and monitoring, across various blockchain networks",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/blog/alchemy-transact-the-smart-transaction-platform)",
+                "[Website](https://www.alchemy.com/pricing)"
+            ]
+        },
+        {
+            "slug": "sign-protocol",
+            "provider": "Sign Protocol",
+            "toolType": "Blockchain-based electronic signatures and digital attestations",
+            "tag": [
+                "Blockchain signature tools",
+                "Smart contracts",
+                "Web3 identity/attestation"
+            ],
+            "price": "Custom",
+            "description": "It offers a suite of tools and APIs for integrating blockchain-based, legally compliant document signing and data verification functionalities into other Web3 applications",
+            "starred": false,
+            "actionButtons": [
+                "[Doc](https://docs.ethsign.xyz/)"
+            ]
+        },
+        {
+            "slug": "starton-free",
+            "provider": "Starton",
+            "toolType": "Web3 development platform",
+            "tag": [
+                "Web3 API for developers",
+                "build Web3 applications",
+                "Web3 development platform"
+            ],
+            "price": "€0",
+            "description": "It provides a unified API and a suite of tools to simplify the integration of blockchain technology into applications",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.starton.io/)"
+            ]
+        },
+        {
+            "slug": "starton-pay-as-you-go",
+            "provider": "Starton",
+            "toolType": "Web3 development platform",
+            "tag": [
+                "Web3 API for developers",
+                "build Web3 applications",
+                "Web3 development platform"
+            ],
+            "price": "€99/mo/project",
+            "description": "It provides a unified API and a suite of tools to simplify the integration of blockchain technology into applications",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.starton.io/)"
+            ]
+        },
+        {
+            "slug": "starton-enterprise",
+            "provider": "Starton",
+            "toolType": "Web3 development platform",
+            "tag": [
+                "Web3 API for developers",
+                "build Web3 applications",
+                "Web3 development platform"
+            ],
+            "price": "Custom",
+            "description": "It provides a unified API and a suite of tools to simplify the integration of blockchain technology into applications",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.starton.io/)"
+            ]
+        },
+        {
+            "slug": "chain-ide",
+            "provider": "ChainIDE",
+            "toolType": "Cloud-based, multi-chain Integrated Development Environment",
+            "tag": [
+                "Web3 IDE",
+                "Blockchain development tools",
+                "Cloud-based IDE",
+                "Smart contract development"
+            ],
+            "price": "Custom",
+            "description": "It provides a cloud-based, multi-chain Integrated Development Environment that offers a comprehensive, all-in-one platform for developers to build, test, and deploy decentralized applications and smart contracts",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://chainide.com/)"
+            ]
+        },
+        {
+            "slug": "intellij-solidity-plugin",
+            "provider": "Intellij Solidity Plugin",
+            "toolType": "Integrated Development Environment extension",
+            "tag": [
+                "IntelliJ",
+                "JetBrains",
+                "IDE Plugin"
+            ],
+            "price": "Custom",
+            "description": "It provides a comprehensive suite of developer tools that deeply integrate the writing, testing, debugging, and deployment of Solidity smart contracts directly within the JetBrains integrated development environment",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://github.com/intellij-solidity/intellij-solidity)"
+            ]
+        },
+        {
+            "slug": "forge",
+            "provider": "Forge",
+            "toolType": "Smart contract development and testing framework",
+            "tag": [
+                "Testing Framework"
+            ],
+            "price": "Custom",
+            "description": "It is a command-line interface tool designed for Ethereum developers to build, test, debug, deploy, and verify Solidity smart contracts",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://github.com/foundry-rs/foundry/tree/master/crates/forge)"
+            ]
+        },
+        {
+            "slug": "scaffold-eth",
+            "provider": "Scaffold ETH",
+            "toolType": "Full-stack decentralized application development toolkit",
+            "tag": [
+                "dApp development",
+                "Ethereum development",
+                "smart contract development"
+            ],
+            "price": "Custom",
+            "description": "It streamlines the complex development process by providing a pre-configured template that integrates a local blockchain environment, smart contract development tools, and a dynamic frontend",
+            "starred": false,
+            "actionButtons": [
+                "[GitHub](https://github.com/scaffold-eth/scaffold-eth)"
+            ]
+        },
+        {
+            "slug": "huff",
+            "provider": "Huff",
+            "toolType": "Low-level programming language",
+            "tag": [
+                "EVM programming language",
+                "Ethereum smart contracts",
+                "Low-level smart contract language"
+            ],
+            "price": "Custom",
+            "description": "It is a low-level programming language and associated ecosystem of developer tools used for writing extremely optimized smart contracts on the Ethereum Virtual Machine",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://huff.sh/)"
+            ]
+        },
+        {
+            "slug": "brownie",
+            "provider": "Brownie",
+            "toolType": "Smart contract development and testing framework",
+            "tag": [
+                "Python framework for Ethereum smart contracts"
+            ],
+            "price": "$0",
+            "description": "It provides developers with a robust set of tools to write, test, debug, and deploy smart contracts using the Python programming language instead of JavaScript/TypeScript, which is more common in Web3 development",
+            "starred": false,
+            "actionButtons": [
+                "[GitHub](https://github.com/eth-brownie/brownie)"
+            ]
+        },
+        {
+            "slug": "jeb-decompiler",
+            "provider": "PNF Software",
+            "toolType": "Reverse engineering",
+            "tag": [
+                "Reverse Engineering",
+                "Decompiler",
+                "Disassembler",
+                "Debugger",
+                "Code Analysis"
+            ],
+            "price": "Custom",
+            "description": "It is a powerful interactive reverse-engineering platform used for the disassembly, decompilation, debugging, and analysis of complex code and document files",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.pnfsoftware.com/jeb/manual/ethereum/)"
+            ]
+        },
+        {
+            "slug": "web3-py",
+            "provider": "Web3.py",
+            "toolType": "Python library for interacting with the Ethereum blockchain",
+            "tag": [
+                "Web3.py"
+            ],
+            "price": "Custom",
+            "description": "It allows Python developers to build decentralized applications without needing to work directly with the underlying, complex JSON-RPC protocols",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://web3py.readthedocs.io/)"
+            ]
+        },
+        {
+            "slug": "etherspot",
+            "provider": "Etherspot Prime SDK",
+            "toolType": "SDK",
+            "tag": [
+                "Account Abstraction",
+                "Wallet SDK"
+            ],
+            "price": "Custom",
+            "description": "Account Abstraction SDK providing Web2-like smart wallet experiences i.e social logins batched transactions to Ethereum dApps",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://etherspot.fyi/)"
+            ]
+        },
+        {
+            "slug": "echidna",
+            "provider": "Echidna",
+            "toolType": "Smart contract security",
+            "tag": [
+                "Smart contract security",
+                "Fuzzing tool",
+                "Property-based testing",
+                "Ethereum developer tools",
+                "Solidity testing"
+            ],
+            "price": "Custom",
+            "description": "It is an open-source property-based fuzzer for Ethereum smart contracts, developed by the security firm Trail of Bits",
+            "starred": false,
+            "actionButtons": [
+                "[Github](https://github.com/crytic/echidna)"
+            ]
+        },
+        {
+            "slug": "fuzzlib",
+            "provider": "Fuzzlib",
+            "toolType": "Fuzz testing library",
+            "tag": [
+                "Fuzz Testing",
+                "Software Testing",
+                "Security Testing",
+                "Vulnerability Research"
+            ],
+            "price": "Custom",
+            "description": "It helps Web3 developers enhance the security and stability of their smart contracts by streamlining the fuzzing process",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://github.com/perimetersec/fuzzlib)"
+            ]
+        },
+        {
+            "slug": "wake",
+            "provider": "Wake",
+            "toolType": "Development and testing framework specifically designed for Solidity",
+            "tag": [
+                "Testing framework based on pytest",
+                "Vulnerability & code quality detectors",
+                "Static analysis framework"
+            ],
+            "price": "Custom",
+            "description": "It provides a suite of developer tools focused on the development, testing, and security analysis of Solidity smart contracts, serving primarily as a development and testing framework using Python",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://getwake.io/)"
+            ]
+        },
+        {
+            "slug": "walletkit-pay-as-you-go",
+            "provider": "WalletKit",
+            "toolType": "SDK",
+            "tag": [
+                "JavaScript",
+                "Wallet"
+            ],
+            "price": "$75/mo",
+            "description": "It provides the underlying infrastructure and features that allow wallets to securely connect and interact with thousands of decentralized applications across various blockchains via the WalletConnect network",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://walletkit.com/)"
+            ]
+        },
+        {
+            "slug": "walletkit-enterprise",
+            "provider": "WalletKit",
+            "toolType": "SDK",
+            "tag": [
+                "JavaScript",
+                "Wallet"
+            ],
+            "price": "Custom",
+            "description": "It provides the underlying infrastructure and features that allow wallets to securely connect and interact with thousands of decentralized applications across various blockchains via the WalletConnect network",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://walletkit.com/)"
+            ]
+        },
+        {
+            "slug": "quicknode-sdk-free",
+            "provider": "Quicknode SDK",
+            "toolType": "Designed to simplify interaction with blockchain infrastructure",
+            "tag": [
+                "QuickNode SDK",
+                "Web3 development",
+                "Blockchain API",
+                "Node provider"
+            ],
+            "price": "$0",
+            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure.",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.quicknode.com/guides/tags/ethereum)"
+            ]
+        },
+        {
+            "slug": "quicknode-sdk-pay-as-you-go",
+            "provider": "Quicknode SDK",
+            "toolType": "Designed to simplify interaction with blockchain infrastructure",
+            "tag": [
+                "QuickNode SDK",
+                "Web3 development",
+                "Blockchain API",
+                "Node provider"
+            ],
+            "price": "$42/$212/$424",
+            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure.",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.quicknode.com/guides/tags/ethereum)"
+            ]
+        },
+        {
+            "slug": "quicknode-sdk-enterprise",
+            "provider": "Quicknode SDK",
+            "toolType": "Designed to simplify interaction with blockchain infrastructure",
+            "tag": [
+                "QuickNode SDK",
+                "Web3 development",
+                "Blockchain API",
+                "Node provider"
+            ],
+            "price": "$849",
+            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure.",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.quicknode.com/guides/tags/ethereum)"
+            ]
+        },
+        {
+            "slug": "biconomy",
+            "provider": "Biconomy",
+            "toolType": "SDK",
+            "tag": [
+                "Gasless",
+                "Relayer",
+                "Account Abstraction"
+            ],
+            "price": "Custom",
+            "description": "Multichain relayer infrastructure offering gasless transactions transaction batching and other features to simplify Web3 UX and onboarding",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.biconomy.io/)"
+            ]
+        },
+        {
+            "slug": "blocknative-batch-decoder",
+            "provider": "Blocknative",
+            "toolType": "Monitor, manage, and optimize blockchain transactions",
+            "tag": [
+                "Batch Decoder",
+                "Mempool Analysis",
+                "OP Stack",
+                "Explorer"
+            ],
+            "price": "Hybrid pricing model",
+            "description": "It offers a suite of APIs, SDKs, and tools that help developers and traders monitor, manage, and optimize blockchain transactions by providing visibility into the mempool",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://blocknative.com/)",
+                "[Doc](https://docs.blocknative.com/ethernow/batch-decoder-api)"
+            ]
+        },
+        {
+            "slug": "chainlink-ccip",
+            "provider": "Chainlink CCIP",
+            "toolType": "SDK",
+            "tag": [
+                "SDK"
+            ],
+            "price": "Custom",
+            "description": "Blockchain interoperability protocol for transferring tokens and messages across chains",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.chain.link/ccip)"
+            ]
+        },
+        {
+            "slug": "crossmint-free",
+            "provider": "Crossmint",
+            "toolType": "SDK",
+            "tag": [
+                "NFT",
+                "Minting",
+                "Payments",
+                "Fiat On-Ramp"
+            ],
+            "price": "$0",
+            "description": "Platform enabling fiat on-ramp for NFTs, letting users mint NFTs with credit cards; supports Optimism for seamless onboarding of new users",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://crossmint.com/)"
+            ]
+        },
+        {
+            "slug": "crossmint-enterprise",
+            "provider": "Crossmint",
+            "toolType": "SDK",
+            "tag": [
+                "NFT",
+                "Minting",
+                "Payments",
+                "Fiat On-Ramp"
+            ],
+            "price": "Custom",
+            "description": "Platform enabling fiat on-ramp for NFTs, letting users mint NFTs with credit cards; supports Optimism for seamless onboarding of new users",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://crossmint.com/)"
+            ]
+        },
+        {
+            "slug": "dapp-launchpad",
+            "provider": "Dapp Launchpad",
+            "toolType": "Tool",
+            "tag": [
+                "JavaScript",
+                "Boilerplate"
+            ],
+            "price": "Custom",
+            "description": "Boilerplate and toolkits for launching Polygon dApps fast",
+            "starred": false,
+            "actionButtons": [
+                "[GitHub](https://github.com/0xPolygon/dapp-launchpad)"
+            ]
+        },
+        {
+            "slug": "foundry",
+            "provider": "Foundry",
+            "toolType": "Framework",
+            "tag": [
+                "Rust",
+                "Framework"
+            ],
+            "price": "Custom",
+            "description": "Solidity-native smart contract development toolkit written in Rust offering blazing-fast compilation and testing",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://book.getfoundry.sh/)"
+            ]
+        },
+        {
+            "slug": "ganache",
+            "provider": "Ganache",
+            "toolType": "Tool",
+            "tag": [
+                "Local blockchain",
+                "Testing"
+            ],
+            "price": "Custom",
+            "description": "Personal Ethereum blockchain for local development enabling fast testing of contracts in a controlled environment",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://archive.trufflesuite.com/docs/ganache/)"
+            ]
+        },
+        {
+            "slug": "gas-station-network",
+            "provider": "Gas Station Network",
+            "toolType": "Tool",
+            "tag": [
+                "Web",
+                "API"
+            ],
+            "price": "$0",
+            "description": "Gas price oracle API and dashboard for Polygon estimating current gas prices for dApps UX",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.polygon.technology/tools/gas/polygon-gas-station/)"
+            ]
+        },
+        {
+            "slug": "halliday",
+            "provider": "Halliday",
+            "toolType": "SDK",
+            "tag": [
+                "SDK"
+            ],
+            "price": "Custom",
+            "description": "Fiat-to-crypto onramp via credit cards, Apple Pay and Google Pay for GHO/GRASS",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.halliday.xyz/)"
+            ]
+        },
+        {
+            "slug": "hardhat",
+            "provider": "Hardhat",
+            "toolType": "Framework",
+            "tag": [
+                "JavaScript",
+                "Framework"
+            ],
+            "price": "Custom",
+            "description": "Versatile Ethereum development framework simplifying smart contract building testing and deployment",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://hardhat.org/docs)"
+            ]
+        },
+        {
+            "slug": "ipfs",
+            "provider": "IPFS",
+            "toolType": "Tool",
+            "tag": [
+                "Go",
+                "JavaScript",
+                "Storage"
+            ],
+            "price": "Custom",
+            "description": "Distributed file storage protocol commonly used by Polygon dApps",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.ipfs.io/)"
+            ]
+        },
+        {
+            "slug": "magic",
+            "provider": "Magic",
+            "toolType": "SDK",
+            "tag": [
+                "Email login",
+                "Social logins",
+                "Wallet SDK"
+            ],
+            "price": "Custom",
+            "description": "Web3 onboarding SDK for creating non-custodial wallets using familiar Web2 logins eliminating seed phrases",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://magic.link/)"
+            ]
+        },
+        {
+            "slug": "onchain-kit",
+            "provider": "Coinbase",
+            "toolType": "SDK",
+            "tag": [
+                "Onchain Commerce",
+                "NFT minting",
+                "Funding flow",
+                "Social profile"
+            ],
+            "price": "$0",
+            "description": "Go-to SDK for building onchain applications with pre-built templates",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.coinbase.com/blog/a-simple-guide-to-the-web3-developer-stack)"
+            ]
+        },
+        {
+            "slug": "onchain-test-kit",
+            "provider": "OnchainTestKit",
+            "toolType": "Framework",
+            "tag": [
+                "Test",
+                "Framework"
+            ],
+            "price": "$0",
+            "description": "End-to-end testing framework for blockchain apps",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.coinbase.com/developer-platform/solutions/account-abstraction-kit)"
+            ]
+        },
+        {
+            "slug": "openfort-free",
+            "provider": "Openfort",
+            "toolType": "Tool",
+            "tag": [
+                "Wallet Infrastructure",
+                "Open-source",
+                "Onboarding",
+                "Cross-app Wallet"
+            ],
+            "price": "$0",
+            "description": "Open-source wallet infrastructure for rapid integration of wallet functions, intuitive onboarding, and flexible user journeys for any application or ecosystem",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://openfort.xyz/)"
+            ]
+        },
+        {
+            "slug": "openfort-pay-as-you-go",
+            "provider": "Openfort",
+            "toolType": "Tool",
+            "tag": [
+                "Wallet Infrastructure",
+                "Open-source",
+                "Onboarding",
+                "Cross-app Wallet"
+            ],
+            "price": "$99/$249/$599/mo",
+            "description": "Open-source wallet infrastructure for rapid integration of wallet functions, intuitive onboarding, and flexible user journeys for any application or ecosystem",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://openfort.xyz/)"
+            ]
+        },
+        {
+            "slug": "openfort-enterprise",
+            "provider": "Openfort",
+            "toolType": "Tool",
+            "tag": [
+                "Wallet Infrastructure",
+                "Open-source",
+                "Onboarding",
+                "Cross-app Wallet"
+            ],
+            "price": "Custom",
+            "description": "Open-source wallet infrastructure for rapid integration of wallet functions, intuitive onboarding, and flexible user journeys for any application or ecosystem",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://openfort.xyz/)"
+            ]
+        },
+        {
+            "slug": "orbit-db",
+            "provider": "Orbit DB",
+            "toolType": "Peer-to-peer database or a decentralized database management system",
+            "tag": [
+                "Decentralized database"
+            ],
+            "price": "Custom",
+            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://orbitdb.org/)"
+            ]
+        },
+        {
+            "slug": "paymaster",
+            "provider": "Paymaster",
+            "toolType": "API",
+            "tag": [
+                "Account Abstraction"
+            ],
+            "price": "Custom",
+            "description": "Account abstraction endpoints to send transactions and sponsor gas",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.cdp.coinbase.com/paymaster/introduction/welcome)"
+            ]
+        },
+        {
+            "slug": "pimlico",
+            "provider": "Pimlico",
+            "toolType": "Tool",
+            "tag": [
+                "Smart Accounts",
+                "Bundlers",
+                "Paymasters",
+                "ERC-4337"
+            ],
+            "price": "Custom",
+            "description": "Infrastructure platform for building smart accounts with bundlers, verifying paymasters, and ERC-20 paymasters for gas sponsorship and enhanced transaction flows",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.pimlico.io/)"
+            ]
+        },
+        {
+            "slug": "portal-free",
+            "provider": "Portal",
+            "toolType": "Tool",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "price": "$0",
+            "description": "Main developer portal with docs, faucet, explorer hub, and access to Amoy testnet, RPC endpoints",
+            "starred": false,
+            "actionButtons": [
+                "[Portal](https://portal.polygon.technology/)",
+                "[Doc](https://www.portalhq.io/)"
+            ]
+        },
+        {
+            "slug": "portal-pay-as-you-go",
+            "provider": "Portal",
+            "toolType": "Tool",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "price": "$499",
+            "description": "Main developer portal with docs, faucet, explorer hub, and access to Amoy testnet, RPC endpoints",
+            "starred": false,
+            "actionButtons": [
+                "[Portal](https://portal.polygon.technology/)",
+                "[Doc](https://www.portalhq.io/)"
+            ]
+        },
+        {
+            "slug": "portal-enterprise",
+            "provider": "Portal",
+            "toolType": "Tool",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "price": "Custom",
+            "description": "Main developer portal with docs, faucet, explorer hub, and access to Amoy testnet, RPC endpoints",
+            "starred": false,
+            "actionButtons": [
+                "[Portal](https://portal.polygon.technology/)",
+                "[Doc](https://www.portalhq.io/)"
+            ]
+        },
+        {
+            "slug": "privy",
+            "provider": "Privy",
+            "toolType": "API",
+            "tag": [
+                "Authentication",
+                "Wallet"
+            ],
+            "price": "Custom",
+            "description": "Securely spin up whitelabel wallets, sign transactions, and integrate onchain infrastructure-all through one simple API",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.privy.io/welcome)"
+            ]
+        },
+        {
+            "slug": "remix",
+            "provider": "Remix",
+            "toolType": "IDE",
+            "tag": [
+                "IDE",
+                "Solidity"
+            ],
+            "price": "Custom",
+            "description": "Open-source online IDE for writing compiling and debugging Ethereum smart contracts",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://remix-ide.readthedocs.io/)"
+            ]
+        },
+        {
+            "slug": "reown",
+            "provider": "Reown",
+            "toolType": "Tool",
+            "tag": [
+                "Smart Wallets",
+                "Social Login",
+                "Paymasters",
+                "Gas Sponsorship"
+            ],
+            "price": "Custom",
+            "description": "Tools to build user-friendly smart wallets with social login, paymaster configuration for gas fees sponsorship and chain abstraction for seamless UX",
+            "starred": false,
+            "actionButtons": [
+                "[Websites](https://reown.com/)",
+                "[Docs](https://docs.reown.com/)"
+            ]
+        },
+        {
+            "slug": "sequence",
+            "provider": "Sequence",
+            "toolType": "SDK/API",
+            "tag": [
+                "Payments",
+                "Wallet"
+            ],
+            "price": "Custom",
+            "description": "The modular crypto infrastructure stack that unifies wallets, 1-click cross-chain payments, and real-time data layers across EVMs",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.sequence.xyz/home)"
+            ]
+        },
+        {
+            "slug": "stackup-free",
+            "provider": "Stackup",
+            "toolType": "Tool",
+            "tag": [
+                "Account Abstraction",
+                "Wallet"
+            ],
+            "price": "$0",
+            "description": "Provides smart account tooling for building account abstraction within your apps. They offer Paymaster and Bundler APIs for sponsoring gas and sending account abstraction transactions",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.stackup.fi/)"
+            ]
+        },
+        {
+            "slug": "stackup-pay-as-you-go",
+            "provider": "Stackup",
+            "toolType": "Tool",
+            "tag": [
+                "Account Abstraction",
+                "Wallet"
+            ],
+            "price": "$500/mo",
+            "description": "Provides smart account tooling for building account abstraction within your apps. They offer Paymaster and Bundler APIs for sponsoring gas and sending account abstraction transactions",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.stackup.fi/)"
+            ]
+        },
+        {
+            "slug": "stackup-enterprise",
+            "provider": "Stackup",
+            "toolType": "Tool",
+            "tag": [
+                "Account Abstraction",
+                "Wallet"
+            ],
+            "price": "Custom",
+            "description": "Provides smart account tooling for building account abstraction within your apps. They offer Paymaster and Bundler APIs for sponsoring gas and sending account abstraction transactions",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.stackup.fi/)"
+            ]
+        },
+        {
+            "slug": "superchain-dev-console",
+            "provider": "Superchain Dev Console",
+            "toolType": "Web3 development platform",
+            "tag": [
+                "Superchain",
+                "OP Stack",
+                "Optimism",
+                "Layer 2"
+            ],
+            "price": "Custom",
+            "description": "It helps developers build, test, launch, and grow decentralized applications within the Superchain ecosystem",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://console.optimism.io/)"
+            ]
+        },
+        {
+            "slug": "tenderly",
+            "provider": "Tenderly",
+            "toolType": "Platform",
+            "tag": [
+                "Debugging",
+                "Monitoring",
+                "Simulation"
+            ],
+            "price": "Custom",
+            "description": "Comprehensive development platform offering advanced smart contract debugging transaction simulation and monitoring services",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://tenderly.co/)",
+                "[Docs](https://docs.tenderly.co/)"
+            ]
+        },
+        {
+            "slug": "thirdweb-aa",
+            "provider": "Thirdweb Account Abstraction",
+            "toolType": "SDK",
+            "tag": [
+                "SDK"
+            ],
+            "price": "Custom",
+            "description": "Comprehensive solution for smart accounts with paymaster and sponsored transactions",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://portal.thirdweb.com/engine/v2/features/account-abstraction)"
+            ]
+        },
+        {
+            "slug": "truffle",
+            "provider": "Truffle",
+            "toolType": "Framework",
+            "tag": [
+                "JavaScript",
+                "Framework"
+            ],
+            "price": "Custom",
+            "description": "Ethereum development environment to build deploy and test smart contracts",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://archive.trufflesuite.com/docs)"
+            ]
+        },
+        {
+            "slug": "walletconnect",
+            "provider": "WalletConnect",
+            "toolType": "SDK",
+            "tag": [
+                "Wallet Integration",
+                "Protocol"
+            ],
+            "price": "Custom",
+            "description": "Open-source protocol that securely connects mobile wallets to decentralized applications for transaction signing  and secure interaction in blockchain apps\"",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.walletconnect.com/)"
+            ]
+        },
+        {
+            "slug": "zksync-elastic",
+            "provider": "ZKsync Elastic Chain",
+            "toolType": "SDK",
+            "tag": [
+                "SDK"
+            ],
+            "price": "0",
+            "description": "Trustless asset transfers and fast cross-chain interactions between ZKsync chains",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.zksync.io/zksync-network/sdk)"
+            ]
+        },
+        {
+            "slug": "matic-js",
+            "provider": "Matic.js",
+            "toolType": "SDK",
+            "tag": [
+                "JavaScript",
+                "SDK"
+            ],
+            "price": "Custom",
+            "description": "Official JavaScript SDK for cross-chain bridging and asset management on Polygon",
+            "starred": false,
+            "actionButtons": [
+                "[GitHub](https://github.com/0xPolygon/matic.js)"
+            ]
+        },
+        {
+            "slug": "web3-js",
+            "provider": "Web3.js",
+            "toolType": "Library",
+            "tag": [
+                "JavaScript",
+                "Library"
+            ],
+            "price": "Custom",
+            "description": "JavaScript/TypeScript library that provides an API to interact with Ethereum nodes i.e send transactions query blockchain",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://web3js.readthedocs.io/)"
+            ]
+        },
+        {
+            "slug": "4everland-free",
+            "provider": "4everland",
+            "toolType": "Decentralized cloud computing infrastructure",
+            "tag": [
+                "Storage",
+                "IPFS",
+                "Decentralized"
+            ],
+            "price": "$0",
+            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.4everland.org/)"
+            ]
+        },
+        {
+            "slug": "4everland-pay-as-you-go",
+            "provider": "4everland",
+            "toolType": "Decentralized cloud computing infrastructure",
+            "tag": [
+                "Storage",
+                "IPFS",
+                "Decentralized"
+            ],
+            "price": "Custom",
+            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.4everland.org/)"
+            ]
+        },
+        {
+            "slug": "apeworx",
+            "provider": "ApeWorx",
+            "toolType": "Ape Framework: easy-to-use Web3 tool for compiling, testing, interacting with smart contracts via CLI",
+            "tag": [
+                "Web3",
+                "CLI",
+                "Smart Contracts"
+            ],
+            "price": "Custom",
+            "description": "It provides a suite of Python-based, modular tools for Web3 developers to build, test, and deploy smart contracts and automated applications across various blockchain networks",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.apeworx.io/)"
+            ]
+        },
+        {
+            "slug": "cookbook-dev",
+            "provider": "Cookbook.dev",
+            "toolType": "Registry of Solidity primitives, libraries and smart contracts for cross-chain usage",
+            "tag": [
+                "Smart Contracts",
+                "Registry",
+                "Solidity"
+            ],
+            "price": "Custom",
+            "description": "It offers an open-source smart contract registry and an AI-powered ecosystem to help developers research, build, and deploy smart contracts quickly and efficiently",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://www.cookbook.dev)"
+            ]
+        },
+        {
+            "slug": "laika-ai",
+            "provider": "Laika AI",
+            "toolType": "On-chain data layer and tooling platform leveraging AI for advanced analysis",
+            "tag": [
+                "AI",
+                "On-chain Data",
+                "Analytics"
+            ],
+            "price": "Custom",
+            "description": "It offers an enterprise API and an SDK for custom agent development, allowing other developers to integrate its analytics and smart contract auditing features into their own applications",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://laikalabs.ai/)"
+            ]
+        },
+        {
+            "slug": "limechain",
+            "provider": "LimeChain",
+            "toolType": "Blockchain consulting and development services with dev tooling",
+            "tag": [
+                "Consulting",
+                "Development",
+                "Blockchain"
+            ],
+            "price": "Custom",
+            "description": "It helps developers create smart contracts, run nodes, manage multi-sigs, and integrate AI agents for enhanced Web3 projects",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://limechain.tech)"
+            ]
+        },
+        {
+            "slug": "multicall3",
+            "provider": "Multicall3",
+            "toolType": "Aggregates multiple contract reads and calls into single JSON-RPC requests",
+            "tag": [
+                "Contract Calls",
+                "Aggregation",
+                "RPC"
+            ],
+            "price": "Custom",
+            "description": "It enables the batching of multiple calls to other smart contracts into a single transaction",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://www.multicall3.com)"
+            ]
+        },
+        {
+            "slug": "reservoir",
+            "provider": "Reservoir",
+            "toolType": "Developer tools for NFT buying, selling, minting, and order handling",
+            "tag": [
+                "NFT",
+                "Orderbook",
+                "Marketplace"
+            ],
+            "price": "Custom",
+            "description": "Reservoir is a developer platform that lets you interact with the NFT market using a single toolkit. With the tools, you can build custom marketplaces, embed buying and selling into your app, and get distribution for your protocol's liquidity, among many other use cases",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://nft.reservoir.tools/reference/what-is-reservoir)"
+            ]
+        },
+        {
+            "slug": "vialabs",
+            "provider": "VIA Labs",
+            "toolType": "Decentralized trustless omnichain communication protocol",
+            "tag": [
+                "Interoperability",
+                "Omnichain",
+                "Infrastructure"
+            ],
+            "price": "Custom",
+            "description": "It offers APIs and smart contract modules",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://developer.vialabs.io/)"
+            ]
+        },
+        {
+            "slug": "zerodev",
+            "provider": "ZeroDev",
+            "toolType": "Embedded fully programmable wallet powered by account abstraction with web2 UI and automation",
+            "tag": [
+                "Account Abstraction",
+                "Programmable Wallet",
+                "UI"
+            ],
+            "price": "Custom",
+            "description": "It provides a software development kit for developers to build user-friendly applications and smart wallets with advanced features",
+            "starred": false,
+            "actionButtons": [
+                "[Docs](https://docs.zerodev.app/)"
+            ]
+        },
+        {
+            "slug": "alchemy-smart-wallet-free",
+            "provider": "Alchemy Smart Wallet",
+            "toolType": "Wallet Developer Tools",
+            "tag": [
+                "Account Abstraction",
+                "Smart Contract Wallets",
+                "Wallet Developer Tools",
+                "Embedded Wallets"
+            ],
+            "price": "$0",
+            "description": "Provides the infrastructure to build secure, user-friendly web3 applications, streamlining the onboarding process for end-users",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/smart-wallets-infrastructure)",
+                "[Website](https://www.alchemy.com/pricing)"
+            ]
+        },
+        {
+            "slug": "alchemy-smart-wallet-pay-as-you-go",
+            "provider": "Alchemy Smart Wallet",
+            "toolType": "Wallet Developer Tools",
+            "tag": [
+                "Account Abstraction",
+                "Smart Contract Wallets",
+                "Wallet Developer Tools",
+                "Embedded Wallets"
+            ],
+            "price": "$5/11 CUs",
+            "description": "Provides the infrastructure to build secure, user-friendly web3 applications, streamlining the onboarding process for end-users",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/smart-wallets-infrastructure)",
+                "[Website](https://www.alchemy.com/pricing)"
+            ]
+        },
+        {
+            "slug": "alchemy-smart-wallet-enterprise",
+            "provider": "Alchemy Smart Wallet",
+            "toolType": "Wallet Developer Tools",
+            "tag": [
+                "Account Abstraction",
+                "Smart Contract Wallets",
+                "Wallet Developer Tools",
+                "Embedded Wallets"
+            ],
+            "price": "Custom",
+            "description": "Provides the infrastructure to build secure, user-friendly web3 applications, streamlining the onboarding process for end-users",
+            "starred": false,
+            "actionButtons": [
+                "[Website](https://www.alchemy.com/smart-wallets-infrastructure)",
+                "[Website](https://www.alchemy.com/pricing)"
             ]
         }
     ],
@@ -6617,9 +8543,9 @@
         ],
         "devTool": [
             "slug",
-            "tag",
             "provider",
             "toolType",
+            "tag",
             "price",
             "description",
             "starred",
