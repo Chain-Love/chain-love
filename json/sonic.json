@@ -1,0 +1,73 @@
+{
+    "faucet": [
+        {
+            "slug": "chainlink-faucet-link",
+            "provider": "Chainlink",
+            "actionButtons": [
+                "[Faucet](https://faucets.chain.link/)"
+            ],
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "starred": false,
+            "additionalNotes": [
+                "Provides LINK"
+            ],
+            "dripLimitAmount": "25 LINK",
+            "dripLimitPeriod": "2h"
+        },
+        {
+            "slug": "stakely-faucet",
+            "provider": "Stakely",
+            "actionButtons": [
+                "[Faucet](https://stakely.io/faucet/sonic-s)"
+            ],
+            "chain": "mainnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "starred": false,
+            "additionalNotes": [
+                "Requires to make the tweet in X about requesting tokens",
+                "Need to have low or zero mainnet balance for asking mainnet tokens"
+            ],
+            "dripLimitAmount": "0.01 S",
+            "dripLimitPeriod": null
+        },
+        {
+            "slug": "circle-faucet-usdc",
+            "provider": "Circle",
+            "actionButtons": [
+                "[Faucet](https://faucet.circle.com/)"
+            ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "starred": false,
+            "additionalNotes": null,
+            "dripLimitAmount": "1 USDC",
+            "dripLimitPeriod": "2h"
+        }
+    ],
+    "columns": {
+        "faucet": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "requiresLogin",
+            "hasCaptcha",
+            "requiredMainnetBalance",
+            "price",
+            "starred",
+            "additionalNotes",
+            "dripLimitAmount",
+            "dripLimitPeriod"
+        ]
+    }
+}
