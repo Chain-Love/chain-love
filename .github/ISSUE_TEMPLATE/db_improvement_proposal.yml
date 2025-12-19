@@ -1,0 +1,87 @@
+name: DB Improvement Proposal (DBIP)
+description: Propose changes to the Chain.Love data model (categories/tables or columns)
+title: "[DBIP] <short summary>"
+labels: [DBIP]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to propose improvements to the data schema of this repo: adding/removing categories (tables), adding/removing/modifying columns, or other schema-level changes.
+
+        Before submitting, review the Column Definitions in the wiki to keep wording, value types, and examples consistent:
+        - Column Definitions: [Column Definitions](../../wiki)
+
+  - type: dropdown
+    id: proposal_type
+    attributes:
+      label: Proposal type
+      description: Select all that apply
+      multiple: true
+      options:
+        - Add category (table)
+        - Remove category (table)
+        - Add column
+        - Remove column
+        - Modify column
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: affected_scope
+    attributes:
+      label: Affected scope (files/folders/chains)
+      description: Specify where this change applies
+      placeholder: e.g., providers/rpc.csv; networks/*/rpc.csv; networks/ethereum/*.csv; global
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation / problem statement
+      description: What problem does this solve? Who benefits and how?
+      placeholder: A clear, concise description of the problem or gap in the current schema
+    validations:
+      required: true
+
+  - type: textarea
+    id: detailed_proposal
+    attributes:
+      label: Detailed proposal
+      description: Describe the exact change(s). Fill the relevant sections below.
+      value: |
+        If proposing a new/changed category (table):
+        - Category name:
+        - Purpose and scope:
+        - Primary use cases:
+        - Example entities/providers to include:
+        - Does this category applies to specific chains? If so, list them:
+        - Required columns (list):
+        - Optional columns (list):
+
+        If proposing column change(s):
+        - Category/table (rpc | wallet | explorer | indexing | bridge | analytic | devTool | oracle):
+        - Column name:
+        - Change type (add | remove | modify):
+        - New/updated definition:
+        - Value type and allowed values (string | number | boolean | JSON array | JSON object | NULL | enum:<values>):
+        - Examples (concise):
+        - Notes (constraints, normalization guidance (check wiki for references)):
+    validations:
+      required: true
+
+  - type: input
+    id: contact
+    attributes:
+      label: Contact (optional)
+      description: How to reach you for clarifications
+      placeholder: Discord / GitHub / email
+
+  - type: input
+    id: address
+    attributes:
+      label: Rewards address (optional)
+      description: Where to send your rewards for patching our database
+      placeholder: 0x... (ETH Mainnet)

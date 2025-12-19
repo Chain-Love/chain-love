@@ -1,0 +1,67 @@
+name: Link Checker
+
+on:
+  workflow_dispatch:
+  pull_request_target:
+    types: [opened, synchronize, reopened, labeled]
+
+jobs:
+  linkChecker:
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.pull_request.labels.*.name, 'check-links')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Extract PR metadata
+        id: pr-metadata
+        run: |
+          echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+          echo "HEAD_SHA=${{ github.event.pull_request.head.sha }}" >> $GITHUB_OUTPUT
+          echo "HEAD_REPO=${{ github.event.pull_request.head.repo.full_name }}" >> $GITHUB_OUTPUT
+      
+      - name: Run link checker and check file
+        id: check-links
+        run: |
+          # Run link checker
+          docker run --rm \
+            --network none \
+            -v "${{ runner.temp }}/lychee-output:/output" \
+            ghcr.io/lycheeverse/lychee \
+            --output /output/out.md \
+            --extensions csv \
+            --accept 200,204,400,401,403,405,429 \
+            "https://raw.githubusercontent.com/${{ steps.pr-metadata.outputs.HEAD_REPO }}/${{ steps.pr-metadata.outputs.HEAD_SHA }}/" || true
+          
+          # Check if output file exists and has content
+          if [ -f "${{ runner.temp }}/lychee-output/out.md" ]; then
+            FILESIZE=$(stat -c%s "${{ runner.temp }}/lychee-output/out.md" 2>/dev/null || echo 0)
+            if [ "$FILESIZE" -gt 100 ]; then
+              echo "HAS_ERRORS=true" >> $GITHUB_OUTPUT
+            else
+              echo "HAS_ERRORS=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "HAS_ERRORS=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Comment on PR
+        if: >
+          github.event_name == 'pull_request_target' &&
+          steps.check-links.outputs.HAS_ERRORS == 'true'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ steps.pr-metadata.outputs.PR_NUMBER }}
+          body-path: ${{ runner.temp }}/lychee-output/out.md
+
+      - name: Create Issue From File
+        if: >
+          github.event_name == 'workflow_dispatch' &&
+          steps.check-links.outputs.HAS_ERRORS == 'true'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Link Checker Report
+          content-filepath: ${{ runner.temp }}/lychee-output/out.md
+          labels: report, automated issue
