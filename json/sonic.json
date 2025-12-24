@@ -1402,6 +1402,439 @@
             ]
         }
     ],
+    "oracle": [
+        {
+            "slug": "api3-mainnet",
+            "provider": "API3",
+            "actionButtons": [
+                "[Website](https://market.api3.org/sonic)"
+            ],
+            "chain": "mainnet",
+            "technology": "Push & Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "api3-testnet",
+            "provider": "API3",
+            "actionButtons": [
+                "[Website](https://market.api3.org/sonic-testnet)"
+            ],
+            "chain": "testnet",
+            "technology": "Push & Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "band-mainnet",
+            "provider": "Band Protocol",
+            "actionButtons": [
+                "[Docs](https://docs.bandchain.org/develop/supported-blockchains/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross-chain Oracle",
+            "dataTypes": [
+                "Token Prices",
+                "ASTR",
+                "ATOM",
+                "AVAX",
+                "BNB",
+                "BUSD",
+                "DAI",
+                "DOT",
+                "ETH",
+                "FTM",
+                "MATIC",
+                "SOL",
+                "USDC",
+                "USDT",
+                "WBTC"
+            ],
+            "decentralizationModel": "Delegated Proof-of-Stake",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Cosmos-based staking model",
+            "sdk": [
+                "CosmJS",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Oracle Scripts",
+                "IBC Feeds"
+            ],
+            "monitoringAndAnalytics": [
+                "Validator Performance"
+            ],
+            "additionalFeatures": [
+                "IBC compatibility",
+                "Flexible scripting"
+            ],
+            "auditsPerformed": [
+                "CertiK"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "band-testnet",
+            "provider": "Band Protocol",
+            "actionButtons": [
+                "[Docs](https://docs.bandchain.org/develop/supported-blockchains/)"
+            ],
+            "chain": "testnet",
+            "technology": "Cross-chain Oracle",
+            "dataTypes": [
+                "Token Prices",
+                "ASTR",
+                "ATOM",
+                "AVAX",
+                "BNB",
+                "BUSD",
+                "DAI",
+                "DOT",
+                "ETH",
+                "FTM",
+                "MATIC",
+                "SOL",
+                "USDC",
+                "USDT",
+                "WBTC"
+            ],
+            "decentralizationModel": "Delegated Proof-of-Stake",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Cosmos-based staking model",
+            "sdk": [
+                "CosmJS",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Oracle Scripts",
+                "IBC Feeds"
+            ],
+            "monitoringAndAnalytics": [
+                "Validator Performance"
+            ],
+            "additionalFeatures": [
+                "IBC compatibility",
+                "Flexible scripting"
+            ],
+            "auditsPerformed": [
+                "CertiK"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "chainlink-mainnet",
+            "provider": "Chainlink",
+            "actionButtons": [
+                "[Docs](https://docs.chain.link/ccip/directory/mainnet/chain/sonic-mainnet)"
+            ],
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "chainlink-testnet",
+            "provider": "Chainlink",
+            "actionButtons": [
+                "[Docs](https://docs.chain.link/ccip/directory/testnet/chain/sonic-testnet-blaze)"
+            ],
+            "chain": "testnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "dia-mainnet",
+            "provider": "DIA",
+            "actionButtons": [
+                "[Docs](https://www.diadata.org/docs/guides/chain-specific-guide/sonic#additional-details)"
+            ],
+            "chain": "mainnet",
+            "technology": "DIA",
+            "dataTypes": [
+                "BTC",
+                "DIA",
+                "USDC"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
+            "sdk": [
+                "Solidity",
+                "Vyper"
+            ],
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds"
+            ],
+            "additionalFeatures": [
+                "Cross-chain compatibility",
+                "Customizable data feeds",
+                "Customizable data feeds",
+                "Advanced architecture using Layer 2 rollup"
+            ],
+            "auditsPerformed": [
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "pyth-mainnet",
+            "provider": "Pyth Network",
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/evm#mainnets)"
+            ],
+            "chain": "mainnet",
+            "technology": "Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "pyth-testnet",
+            "provider": "Pyth Network",
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/evm#testnets)"
+            ],
+            "chain": "testnet",
+            "technology": "Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "supra-mainnet",
+            "provider": "Supra",
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle/networks)"
+            ],
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "supra-testnet",
+            "provider": "Supra",
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle/networks)"
+            ],
+            "chain": "testnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ],
+            "starred": false
+        }
+    ],
     "explorer": [
         {
             "slug": "sonicscan-mainnet",
@@ -1785,6 +2218,23 @@
             "monitoringAndAnalytics",
             "additionalFeatures",
             "regions"
+        ],
+        "oracle": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "dataTypes",
+            "decentralizationModel",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "sdk",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "auditsPerformed",
+            "starred"
         ],
         "explorer": [
             "slug",
