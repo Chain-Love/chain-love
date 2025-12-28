@@ -177,7 +177,11 @@ onfinality-sepolia-free-full-archive,!provider:onfinality-free-full-archive,"[""
 onfinality-sepolia-pay-as-you-go-full-archive,!provider:onfinality-pay-as-you-go-full-archive,"[""[Buy](https://onfinality.io/en/pricing)"",""[Docs](https://documentation.onfinality.io/support/arbitrum)""]",Pay-as-you-go,Archive,sepolia,$0,Usage Based,,,,,,,,,,,,,,
 onfinality-sepolia-enterprise-full-archive,!provider:onfinality-enterprise-full-archive,"[""[Contact](https://onfinality.io/en/pricing)"",""[Docs](https://documentation.onfinality.io/support/arbitrum)""]",Enterprise,Archive,sepolia,Custom,Custom,,,,,,,,,,,,,,
 publicnode-one-public-recent-state,!provider:publicnode-public-recent-state,"[""[Website](https://arbitrum-one-rpc.publicnode.com)""]",Free,Recent State,one,$0,Free,,,,,,,,,,,,,,
-publicnode-nova-public-recent-state,!provider:publicnode-public-recent-state,"[""[Website](https://arbitrum-nova-rpc.publicnode.com)""]",Free,Recent State,nova,$0,Free,,,,,,,,,,,,,,
+```python
+import csv
+import io
+
+input_data = """publicnode-nova-public-recent-state,!provider:publicnode-public-recent-state,"[""[Website](https://arbitrum-nova-rpc.publicnode.com)""]",Free,Recent State,nova,$0,Free,,,,,,,,,,,,,,
 publicnode-sepolia-public-recent-state,!provider:publicnode-public-recent-state,"[""[Website](https://arbitrum-one-rpc.publicnode.com)""]",Free,Recent State,sepolia,$0,Free,,,,,,,,,,,,,,
 quicknode-one-pay-as-you-go-recent-state,!provider:quicknode-pay-as-you-go-recent-state,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Recent State,one,$49,$20 / 1M CUs,,,,,,,,,,,,,,
 quicknode-one-enterprise-recent-state,!provider:quicknode-enterprise-recent-state,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Recent State,one,Custom,Custom,,,,,,,,,,,,,,
@@ -197,6 +201,135 @@ subquery-one-public-full-archive,!provider:subquery-public-full-archive,"[""[Web
 subquery-one-pay-as-you-go-full-archive,!provider:subquery-pay-as-you-go-full-archive,"[""[Website](https://app.subquery.network/explorer/project/0x23/overview)"",""[Docs](https://subquery.network/doc/subquery_network/node_operators/introduction.html)""]",Pay-as-you-go,Archive,one,$0,Usage Based,,,,,,,,,,,,,,
 tatum-one-free-recent-state,!provider:tatum-free-recent-state,"[""[Website](https://tatum.io/chain/arbitrum-one)"",""[Docs](https://docs.tatum.io/reference/rpc-arbitrum)""]",Free,Recent State,one,$0,Free,,,,,,,,,,,,,,
 tatum-one-pay-as-you-go-recent-state,!provider:tatum-pay-as-you-go-recent-state,"[""[Buy](https://tatum.io/pricing)"",""[Docs](https://docs.tatum.io/reference/rpc-arbitrum)""]",Pay-as-you-go,Recent State,one,$25,Free,,,,,,,,,,,,,,
+"""
+
+header = "slug,provider,actionButtons,plan,nodeType,chain,accessPrice,queryPrice,verifiedUptime,verifiedLatency,verifiedBlocksBehindAvg,uptimeSla,bandwidthSla,blocksBehindSla,starred,trial,availableApis,limitations,securityImprovements,monitoringAndAnalytics,regions,address"
+header_cols = header.split(',')
+
+def get_region(slug):
+    if "publicnode" in slug:
+        return '["Global"]'
+    if "quicknode" in slug:
+        return '["Global"]'
+    if "rpcfast" in slug:
+        if "enterprise" in slug:
+            return '["US","EU","Asia"]'
+        return '["Global"]'
+    if "subquery" in slug:
+        return '["Global"]'
+    if "tatum" in slug:
+        return '["Global"]'
+    return '["Global"]'
+
+csv_reader = csv.reader(io.StringIO(input_data))
+output_lines = [header]
+
+for row in csv_reader:
+    if not row: continue
+    
+    # Ensure row has enough columns or truncate
+    # We expect 22 columns.
+    # Current row length might be 23 or different.
+    
+    # If empty fields at end are too many, trim them.
+    # We want to fill index 20.
+    
+    current_len = len(row)
+    
+    # Fill up to 22 columns with empty strings if needed
+    if current_len < 22:
+        row.extend([''] * (22 - current_len))
+    elif current_len > 22:
+        row = row[:22]
+        
+    # Set region at index 20
+    slug = row[0]
+    region_val = get_region(slug)
+    row[20] = region_val
+    
+    # Ensure index 21 is empty string (address)
+    row[21] = ""
+    
+    # Quote the region value properly?
+    # The get_region returns a string that looks like a JSON array.
+    # When writing to CSV, if we simply put '["Global"]', the csv writer will handle quotes if needed.
+    # However, the user wants strict formatting.
+    # Let's use csv.writer to handle it.
+    
+    pass 
+
+# Use csv writer to format output
+output = io.StringIO()
+writer = csv.writer(output, quoting=csv.QUOTE_MINIMAL)
+writer.writerow(header_cols)
+
+csv_reader = csv.reader(io.StringIO(input_data))
+for row in csv_reader:
+    if not row: continue
+    if len(row) < 22:
+        row.extend([''] * (22 - len(row)))
+    elif len(row) > 22:
+        row = row[:22]
+    
+    slug = row[0]
+    row[20] = get_region(slug)
+    row[21] = ""
+    writer.writerow(row)
+
+print(output.getvalue())
+
+
+
+```
+
+```text
+slug,provider,actionButtons,plan,nodeType,chain,accessPrice,queryPrice,verifiedUptime,verifiedLatency,verifiedBlocksBehindAvg,uptimeSla,bandwidthSla,blocksBehindSla,starred,trial,availableApis,limitations,securityImprovements,monitoringAndAnalytics,regions,address
+publicnode-nova-public-recent-state,!provider:publicnode-public-recent-state,"[""[Website](https://arbitrum-nova-rpc.publicnode.com)""]",Free,Recent State,nova,$0,Free,,,,,,,,,,,,,"[""Global""]",
+publicnode-sepolia-public-recent-state,!provider:publicnode-public-recent-state,"[""[Website](https://arbitrum-one-rpc.publicnode.com)""]",Free,Recent State,sepolia,$0,Free,,,,,,,,,,,,,"[""Global""]",
+quicknode-one-pay-as-you-go-recent-state,!provider:quicknode-pay-as-you-go-recent-state,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Recent State,one,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-one-enterprise-recent-state,!provider:quicknode-enterprise-recent-state,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Recent State,one,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+quicknode-nova-pay-as-you-go-recent-state,!provider:quicknode-pay-as-you-go-recent-state,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Recent State,nova,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-nova-enterprise-recent-state,!provider:quicknode-enterprise-recent-state,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Recent State,nova,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+quicknode-sepolia-pay-as-you-go-recent-state,!provider:quicknode-pay-as-you-go-recent-state,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Recent State,sepolia,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-sepolia-enterprise-recent-state,!provider:quicknode-enterprise-recent-state,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Recent State,sepolia,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+quicknode-one-pay-as-you-go-full-archive,!provider:quicknode-pay-as-you-go-full-archive,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Archive,one,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-one-enterprise-full-archive,!provider:quicknode-enterprise-full-archive,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Archive,one,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+quicknode-nova-pay-as-you-go-full-archive,!provider:quicknode-pay-as-you-go-full-archive,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Archive,nova,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-nova-enterprise-full-archive,!provider:quicknode-enterprise-full-archive,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Archive,nova,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+quicknode-sepolia-pay-as-you-go-full-archive,!provider:quicknode-pay-as-you-go-full-archive,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Archive,sepolia,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-sepolia-enterprise-full-archive,!provider:quicknode-enterprise-full-archive,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Archive,sepolia,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+rpcfast-one-free-recent-state,!provider:rpcfast-free-recent-state,"[""[Website](https://rpcfast.com/dedicated-arbitrum-nodes)"",""[Docs](https://docs.rpcfast.com)"",""[Contact](https://docs.rpcfast.com/contacts-and-support/contacts)""]",Free,Recent State,one,$0,Free,,,,,,,,,,,,,"[""Global""]",
+rpcfast-one-enterprise-full-archive,!provider:rpcfast-enterprise-full-archive,"[""[Website](https://rpcfast.com/dedicated-arbitrum-nodes)"",""[Docs](https://docs.rpcfast.com)"",""[Contact](https://docs.rpcfast.com/contacts-and-support/contacts)""]",Enterprise,Archive,one,Custom,Custom,,,,,,,,,,,,,"[""US"",""EU"",""Asia""]",
+subquery-one-public-full-archive,!provider:subquery-public-full-archive,"[""[Website](https://app.subquery.network/explorer/project/0x23/overview)"",""[Docs](https://subquery.network/doc/subquery_network/node_operators/introduction.html)""]",Free,Archive,one,$0,Free,,,,,,,,,,,,,"[""Global""]",
+subquery-one-pay-as-you-go-full-archive,!provider:subquery-pay-as-you-go-full-archive,"[""[Website](https://app.subquery.network/explorer/project/0x23/overview)"",""[Docs](https://subquery.network/doc/subquery_network/node_operators/introduction.html)""]",Pay-as-you-go,Archive,one,$0,Usage Based,,,,,,,,,,,,,"[""Global""]",
+tatum-one-free-recent-state,!provider:tatum-free-recent-state,"[""[Website](https://tatum.io/chain/arbitrum-one)"",""[Docs](https://docs.tatum.io/reference/rpc-arbitrum)""]",Free,Recent State,one,$0,Free,,,,,,,,,,,,,"[""Global""]",
+tatum-one-pay-as-you-go-recent-state,!provider:tatum-pay-as-you-go-recent-state,"[""[Buy](https://tatum.io/pricing)"",""[Docs](https://docs.tatum.io/reference/rpc-arbitrum)""]",Pay-as-you-go,Recent State,one,$25,Free,,,,,,,,,,,,,"[""Global""]",
+
+
+
+```
+
+slug,provider,actionButtons,plan,nodeType,chain,accessPrice,queryPrice,verifiedUptime,verifiedLatency,verifiedBlocksBehindAvg,uptimeSla,bandwidthSla,blocksBehindSla,starred,trial,availableApis,limitations,securityImprovements,monitoringAndAnalytics,regions,address
+publicnode-nova-public-recent-state,!provider:publicnode-public-recent-state,"[""[Website](https://arbitrum-nova-rpc.publicnode.com)""]",Free,Recent State,nova,$0,Free,,,,,,,,,,,,,"[""Global""]",
+publicnode-sepolia-public-recent-state,!provider:publicnode-public-recent-state,"[""[Website](https://arbitrum-one-rpc.publicnode.com)""]",Free,Recent State,sepolia,$0,Free,,,,,,,,,,,,,"[""Global""]",
+quicknode-one-pay-as-you-go-recent-state,!provider:quicknode-pay-as-you-go-recent-state,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Recent State,one,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-one-enterprise-recent-state,!provider:quicknode-enterprise-recent-state,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Recent State,one,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+quicknode-nova-pay-as-you-go-recent-state,!provider:quicknode-pay-as-you-go-recent-state,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Recent State,nova,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-nova-enterprise-recent-state,!provider:quicknode-enterprise-recent-state,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Recent State,nova,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+quicknode-sepolia-pay-as-you-go-recent-state,!provider:quicknode-pay-as-you-go-recent-state,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Recent State,sepolia,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-sepolia-enterprise-recent-state,!provider:quicknode-enterprise-recent-state,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Recent State,sepolia,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+quicknode-one-pay-as-you-go-full-archive,!provider:quicknode-pay-as-you-go-full-archive,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Archive,one,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-one-enterprise-full-archive,!provider:quicknode-enterprise-full-archive,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Archive,one,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+quicknode-nova-pay-as-you-go-full-archive,!provider:quicknode-pay-as-you-go-full-archive,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Archive,nova,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-nova-enterprise-full-archive,!provider:quicknode-enterprise-full-archive,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Archive,nova,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+quicknode-sepolia-pay-as-you-go-full-archive,!provider:quicknode-pay-as-you-go-full-archive,"[""[Buy](https://www.quicknode.com/pricing)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Pay-as-you-go,Archive,sepolia,$49,$20 / 1M CUs,,,,,,,,,,,,,"[""Global""]",
+quicknode-sepolia-enterprise-full-archive,!provider:quicknode-enterprise-full-archive,"[""[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)"",""[Docs](https://www.quicknode.com/docs/arbitrum)""]",Enterprise,Archive,sepolia,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
+rpcfast-one-free-recent-state,!provider:rpcfast-free-recent-state,"[""[Website](https://rpcfast.com/dedicated-arbitrum-nodes)"",""[Docs](https://docs.rpcfast.com)"",""[Contact](https://docs.rpcfast.com/contacts-and-support/contacts)""]",Free,Recent State,one,$0,Free,,,,,,,,,,,,,"[""Global""]",
+rpcfast-one-enterprise-full-archive,!provider:rpcfast-enterprise-full-archive,"[""[Website](https://rpcfast.com/dedicated-arbitrum-nodes)"",""[Docs](https://docs.rpcfast.com)"",""[Contact](https://docs.rpcfast.com/contacts-and-support/contacts)""]",Enterprise,Archive,one,Custom,Custom,,,,,,,,,,,,,"[""US"",""EU"",""Asia""]",
+subquery-one-public-full-archive,!provider:subquery-public-full-archive,"[""[Website](https://app.subquery.network/explorer/project/0x23/overview)"",""[Docs](https://subquery.network/doc/subquery_network/node_operators/introduction.html)""]",Free,Archive,one,$0,Free,,,,,,,,,,,,,"[""Global""]",
+subquery-one-pay-as-you-go-full-archive,!provider:subquery-pay-as-you-go-full-archive,"[""[Website](https://app.subquery.network/explorer/project/0x23/overview)"",""[Docs](https://subquery.network/doc/subquery_network/node_operators/introduction.html)""]",Pay-as-you-go,Archive,one,$0,Usage Based,,,,,,,,,,,,,"[""Global""]",
+tatum-one-free-recent-state,!provider:tatum-free-recent-state,"[""[Website](https://tatum.io/chain/arbitrum-one)"",""[Docs](https://docs.tatum.io/reference/rpc-arbitrum)""]",Free,Recent State,one,$0,Free,,,,,,,,,,,,,"[""Global""]",
+tatum-one-pay-as-you-go-recent-state,!provider:tatum-pay-as-you-go-recent-state,"[""[Buy](https://tatum.io/pricing)"",""[Docs](https://docs.tatum.io/reference/rpc-arbitrum)""]",Pay-as-you-go,Recent State,one,$25,Free,,,,,,,,,,,,,"[""Global""]",
 tatum-one-enterprise-recent-state,!provider:tatum-enterprise-recent-state,"[""[Contact](https://tatum.io/get-in-touch)"",""[Docs](https://docs.tatum.io/reference/rpc-arbitrum)""]",Enterprise,Recent State,one,Custom,Custom,,,,,,,,,,,,,"[""Global""]",
 tatum-nova-free-recent-state,!provider:tatum-free-recent-state,"[""[Website](https://tatum.io/chain/arbitrum-nova)"",""[Docs](https://docs.tatum.io/reference/rpc-arbitrum-nova)""]",Free,Recent State,nova,$0,Free,,,,,,,,,,,,,"[""Global""]",
 tatum-nova-pay-as-you-go-recent-state,!provider:tatum-pay-as-you-go-recent-state,"[""[Buy](https://tatum.io/pricing)"",""[Docs](https://docs.tatum.io/reference/rpc-arbitrum-nova)""]",Pay-as-you-go,Recent State,nova,$25,Free,,,,,,,,,,,,,"[""Global""]",
