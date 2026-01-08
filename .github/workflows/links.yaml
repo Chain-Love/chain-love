@@ -29,7 +29,7 @@ jobs:
           docker run --rm \
             --network none \
             -v "${{ runner.temp }}/lychee-output:/output" \
-            ghcr.io/lycheeverse/lychee \
+            lycheeverse/lychee:0.22 \
             --output /output/out.md \
             --extensions csv \
             --accept 200,204,400,401,403,405,429 \
