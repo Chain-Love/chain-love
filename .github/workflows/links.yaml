@@ -25,6 +25,9 @@ jobs:
       - name: Run link checker and check file
         id: check-links
         run: |
+          # Prepare writable output directory
+          mkdir -p "${{ runner.temp }}/lychee-output"
+          chmod 777 "${{ runner.temp }}/lychee-output"
           # Run link checker
           docker run --rm \
             -v "${{ runner.temp }}/lychee-output:/output" \
