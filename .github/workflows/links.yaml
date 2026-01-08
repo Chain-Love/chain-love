@@ -27,7 +27,6 @@ jobs:
         run: |
           # Run link checker
           docker run --rm \
-            --network none \
             -v "${{ runner.temp }}/lychee-output:/output" \
             lycheeverse/lychee:latest-alpine \
             --output /output/out.md \
