@@ -58,16 +58,23 @@ jobs:
         run: |
           unzip "${{ runner.temp }}/lychee-output/artifact.zip" \
             -d "${{ runner.temp }}/lychee-output"
+      
+      - name: Read PR number (if present)
+        id: pr
+        run: |
+          if [ -f "${{ runner.temp }}/lychee-output/pr-number.txt" ]; then
+            echo "number=$(cat ${{ runner.temp }}/lychee-output/pr-number.txt)" >> $GITHUB_OUTPUT
+          fi
 
       - name: Comment on PR
-        if: github.event.workflow_run.pull_requests[0] != null
+        if: steps.pr.outputs.number != ''
         uses: peter-evans/create-or-update-comment@v4
         with:
-          issue-number: ${{ github.event.workflow_run.pull_requests[0].number }}
+          issue-number: ${{ steps.pr.outputs.number }}
           body-path: ${{ runner.temp }}/lychee-output/out.md
 
       - name: Create Issue
-        if: github.event.workflow_run.pull_requests[0] == null
+        if: steps.pr.outputs.number == ''
         uses: peter-evans/create-issue-from-file@v5
         with:
           title: Link Checker Report
