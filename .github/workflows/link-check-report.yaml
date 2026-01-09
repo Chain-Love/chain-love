@@ -15,12 +15,49 @@ jobs:
       issues: write
 
     steps:
-      - name: Download Lychee output
-        uses: actions/download-artifact@v4
+      - name: Download Lychee artifact (reliable)
+        uses: actions/github-script@v7
         with:
-          name: lychee-output
-          run-id: ${{ github.event.workflow_run.id }}
-          path: ${{ runner.temp }}/lychee-output
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const { owner, repo } = context.repo;
+            const runId = context.payload.workflow_run.id;
+
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner,
+              repo,
+              run_id: runId,
+            });
+
+            const artifact = artifacts.data.artifacts.find(
+              a => a.name === 'lychee-output'
+            );
+
+            if (!artifact) {
+              core.setFailed('Artifact lychee-output not found');
+              return;
+            }
+
+            const download = await github.rest.actions.downloadArtifact({
+              owner,
+              repo,
+              artifact_id: artifact.id,
+              archive_format: 'zip',
+            });
+
+            const outDir = `${process.env.RUNNER_TEMP}/lychee-output`;
+            fs.mkdirSync(outDir, { recursive: true });
+            fs.writeFileSync(
+              path.join(outDir, 'artifact.zip'),
+              Buffer.from(download.data)
+            );
+      
+      - name: Unzip artifact
+        run: |
+          unzip "${{ runner.temp }}/lychee-output/artifact.zip" \
+            -d "${{ runner.temp }}/lychee-output"
 
       - name: Comment on PR
         if: github.event.workflow_run.pull_requests[0] != null
