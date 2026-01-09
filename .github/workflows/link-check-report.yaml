@@ -71,12 +71,12 @@ jobs:
         uses: peter-evans/create-or-update-comment@v4
         with:
           issue-number: ${{ steps.pr.outputs.number }}
-          body-path: ${{ runner.temp }}/lychee-output/out.md
+          body-path: ${{ runner.temp }}/lychee-output/lychee/out.md
 
       - name: Create Issue
         if: steps.pr.outputs.number == ''
         uses: peter-evans/create-issue-from-file@v5
         with:
           title: Link Checker Report
-          content-filepath: ${{ runner.temp }}/lychee-output/out.md
+          content-filepath: ${{ runner.temp }}/lychee-output/lychee/out.md
           labels: report, automated issue
