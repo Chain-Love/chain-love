@@ -793,7 +793,7 @@
             "address": null
         },
         {
-            "slug": "getblock-testnet-dedicated-recent-state",
+            "slug": "getblock-mainnet-dedicated-recent-state",
             "provider": "GetBlock",
             "actionButtons": [
                 "[Website](https://getblock.io/nodes/somnia/)",
@@ -801,7 +801,7 @@
             ],
             "plan": "Dedicated",
             "nodeType": "Recent-State",
-            "chain": "testnet",
+            "chain": "mainnet",
             "accessPrice": "Up to $1K",
             "queryPrice": "Custom",
             "verifiedUptime": null,
@@ -1129,155 +1129,6 @@
             "additionalFeatures": [
                 "Fast setup templates",
                 "Open-source"
-            ]
-        },
-        {
-            "slug": "goldsky-testnet-free",
-            "provider": "Goldsky",
-            "actionButtons": [
-                "[Website](https://goldsky.com/chains/somnia)",
-                "[Docs](https://docs.goldsky.com/subgraphs/introduction)"
-            ],
-            "chain": "testnet",
-            "address": null,
-            "technology": "The Graph",
-            "plan": "Free",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "20 RPC/10s",
-                "100K entities stored",
-                "3 custom subgraphs"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Subgraph logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Real-time Mirror Pipelines",
-                "Email support",
-                "Subgraphs",
-                "Webhooks"
-            ]
-        },
-        {
-            "slug": "goldsky-testnet-pay-as-you-go",
-            "provider": "Goldsky",
-            "actionButtons": [
-                "[Buy](https://goldsky.com/pricing)",
-                "[Docs](https://docs.goldsky.com/subgraphs/introduction)"
-            ],
-            "chain": "testnet",
-            "address": null,
-            "technology": "The Graph",
-            "plan": "Pay-as-you-go",
-            "accessPrice": "$37/mo",
-            "queryPrice": "$40/1M entities stored",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "50 RPC/10s",
-                "Unlimited subgraphs"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Subgraph logs",
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Real-time Mirror Pipelines",
-                "Email support",
-                "Custom indexing",
-                "Subgraphs",
-                "Webhooks"
-            ]
-        },
-        {
-            "slug": "goldsky-testnet-enterprise",
-            "provider": "Goldsky",
-            "actionButtons": [
-                "[Contact](https://goldsky.com/pricing)",
-                "[Docs](https://docs.goldsky.com/subgraphs/introduction)"
-            ],
-            "chain": "testnet",
-            "address": null,
-            "technology": "The Graph",
-            "plan": "Enterprise",
-            "accessPrice": "$37/mo",
-            "queryPrice": "$10/1M entities stored",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "1K+ RPC/10s",
-                "Unlimited subgraphs"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Dedicated infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Subgraph logs",
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Real-time Mirror Pipelines",
-                "Slack and Email support",
-                "Managed onboarding",
-                "White-label endpoints",
-                "Customized caching",
-                "4 hours SLA",
-                "Subgraphs",
-                "Webhooks"
             ]
         },
         {
@@ -1687,6 +1538,82 @@
             ],
             "auditsPerformed": null,
             "starred": true
+        },
+        {
+            "slug": "api3-mainnet",
+            "provider": "API3",
+            "actionButtons": [
+                "[Website](https://market.api3.org/somnia)"
+            ],
+            "chain": "mainnet",
+            "technology": "Push & Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "api3-testnet",
+            "provider": "API3",
+            "actionButtons": [
+                "[Website](https://market.api3.org/somnia-testnet)"
+            ],
+            "chain": "testnet",
+            "technology": "Push & Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ],
+            "starred": false
         }
     ],
     "explorer": [
@@ -1776,7 +1703,7 @@
             "slug": "somnia-testnet-faucet",
             "provider": "Somnia Network",
             "actionButtons": [
-                "[Get tokens](https://testnet.somnia.network/)"
+                "[Faucet](https://testnet.somnia.network/)"
             ],
             "chain": "testnet",
             "requiresLogin": false,
@@ -1789,26 +1716,28 @@
             "additionalNotes": null
         },
         {
-            "slug": "somnia-thirdweb-faucet",
-            "provider": "Thirdweb",
+            "slug": "thirdweb-faucet",
+            "provider": "ThirdWeb",
             "actionButtons": [
-                "[Get tokens](https://thirdweb.com/somnia-shannon-testnet)"
+                "[Faucet](https://thirdweb.com/somnia-shannon-testnet)"
             ],
             "chain": "testnet",
             "requiresLogin": false,
             "hasCaptcha": true,
-            "price": "$0",
+            "price": "$5/$99/$499/$1499",
             "starred": false,
             "requiredMainnetBalance": null,
-            "dripLimitAmount": null,
-            "dripLimitPeriod": null,
-            "additionalNotes": null
+            "dripLimitAmount": "0.05 ETH",
+            "dripLimitPeriod": "24h",
+            "additionalNotes": [
+                "Available only on paid plans"
+            ]
         },
         {
-            "slug": "somnia-google-cloud-faucet",
+            "slug": "google-cloud-faucet",
             "provider": "Google Cloud",
             "actionButtons": [
-                "[Get tokens](https://cloud.google.com/application/web3/faucet/somnia/shannon)"
+                "[Faucet](https://cloud.google.com/application/web3/faucet/somnia/shannon)"
             ],
             "chain": "testnet",
             "requiresLogin": false,
@@ -1816,9 +1745,47 @@
             "price": "$0",
             "starred": false,
             "requiredMainnetBalance": null,
-            "dripLimitAmount": null,
+            "dripLimitAmount": "1 STT",
             "dripLimitPeriod": null,
             "additionalNotes": null
+        },
+        {
+            "slug": "stakely-faucet-mainnet",
+            "provider": "Stakely",
+            "actionButtons": [
+                "[Faucet](https://stakely.io/faucet/somnia-somi)"
+            ],
+            "chain": "mainnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "price": "$0",
+            "starred": false,
+            "requiredMainnetBalance": null,
+            "dripLimitAmount": "0.001 SOMI",
+            "dripLimitPeriod": null,
+            "additionalNotes": [
+                "Requires to make the tweet in X about requesting tokens",
+                "Need to have low or zero mainnet balance for asking mainnet tokens"
+            ]
+        },
+        {
+            "slug": "stakely-faucet-testnet",
+            "provider": "Stakely",
+            "actionButtons": [
+                "[Faucet](https://stakely.io/faucet/somnia-testnet-stt)"
+            ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "price": "$0",
+            "starred": false,
+            "requiredMainnetBalance": null,
+            "dripLimitAmount": "0.001 STT",
+            "dripLimitPeriod": null,
+            "additionalNotes": [
+                "Requires to make the tweet in X about requesting tokens",
+                "Need to have low or zero mainnet balance for asking mainnet tokens"
+            ]
         }
     ],
     "analytic": [
@@ -1843,6 +1810,71 @@
                 "Visualizations"
             ],
             "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
+            "starred": false
+        },
+        {
+            "slug": "defillama-mainnet",
+            "provider": "DeFiLlama",
+            "actionButtons": [
+                "[Dashboard](https://defillama.com/chain/somnia)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "DeFi TVL",
+                "DEX & Perps Volume",
+                "Bridged Assets",
+                "Active Addresses",
+                "Stablecoin Supply"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0/$49/$300/mo (monthly plan), $0 (2 months free)/$40.83/mo ($490/year)/$250/mo (3K/year) (yearly plan)",
+            "starred": false
+        },
+        {
+            "slug": "messari-mainnet",
+            "provider": "Messari",
+            "actionButtons": [
+                "[Dashboard](https://messari.io/project/somnia)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Network Metrics",
+                "TVL & Market Data",
+                "On‑chain Usage Metrics"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Research Reports",
+                "API Access",
+                "Dashboard"
+            ],
+            "price": "$0 (7-day free trial)/$29.99/mo/4K/year",
+            "starred": false
+        },
+        {
+            "slug": "nansen-mainnet",
+            "provider": "Nansen",
+            "actionButtons": [
+                "[Dashboard](https://app.nansen.ai/macro/blockchains?chain=somnia)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Exchange Flows",
+                "Token Distribution",
+                "DeFi Activity",
+                "NFT Analytics",
+                "Wallet Labels"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Smart Money API",
+                "Profiler API",
+                "API Keys"
+            ],
+            "price": "$0/$69/mo (monthly plan), $0/$49/mo (yearly plan)",
             "starred": false
         }
     ],
