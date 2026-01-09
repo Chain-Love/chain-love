@@ -25,11 +25,13 @@ jobs:
       - name: Run link checker and check file
         id: check-links
         run: |
+          # Prepare writable output directory
+          mkdir -p "${{ runner.temp }}/lychee-output"
+          chmod 777 "${{ runner.temp }}/lychee-output"
           # Run link checker
           docker run --rm \
-            --network none \
             -v "${{ runner.temp }}/lychee-output:/output" \
-            ghcr.io/lycheeverse/lychee \
+            lycheeverse/lychee:latest-alpine \
             --output /output/out.md \
             --extensions csv \
             --accept 200,204,400,401,403,405,429 \
