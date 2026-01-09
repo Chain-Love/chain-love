@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
+      issues: write
 
     steps:
       - name: Download Lychee output
@@ -21,16 +22,14 @@ jobs:
           path: ${{ runner.temp }}/lychee-output
 
       - name: Comment on PR
-        if: >
-          github.event_name == 'workflow_run' &&
-          github.event.workflow_run.conclusion == 'success'
+        if: github.event.workflow_run.pull_requests[0] != null
         uses: peter-evans/create-or-update-comment@v4
         with:
           issue-number: ${{ github.event.workflow_run.pull_requests[0].number }}
           body-path: ${{ runner.temp }}/lychee-output/out.md
-      
-      - name: Create Issue From File
-        if: github.event_name == 'workflow_dispatch'
+
+      - name: Create Issue
+        if: github.event.workflow_run.pull_requests[0] == null
         uses: peter-evans/create-issue-from-file@v5
         with:
           title: Link Checker Report
