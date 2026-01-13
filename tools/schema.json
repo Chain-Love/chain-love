@@ -5,8 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "rpc": { "type": "array", "items": { "$ref": "#/$defs/rpc" } },
-    "indexing": { "type": "array", "items": { "$ref": "#/$defs/indexing" } },
+    "api": { "type": "array", "items": { "$ref": "#/$defs/api" } },
     "explorer": { "type": "array", "items": { "$ref": "#/$defs/explorer" } },
     "oracle": { "type": "array", "items": { "$ref": "#/$defs/oracle" } },
     "bridge": { "type": "array", "items": { "$ref": "#/$defs/bridge" } },
@@ -17,14 +16,15 @@
     "columns": { "$ref": "#/$defs/columns" }
   },
   "$defs": {
-    "rpc": {
+    "api": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "plan": { "type": "string" },
-        "nodeType": { "type": "string" },
+        "planName": { "type": ["string", "null"] },
+        "planType": { "type": "string" },
+        "apiType": { "type": "string" },
         "chain": { "type": "string" },
         "address": { "type": ["string", "null"] },
         "accessPrice": { "type": ["string", "null"] },
@@ -57,106 +57,42 @@
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
-        }
-      },
-      "required": [
-        "slug",
-        "provider",
-        "plan",
-        "nodeType",
-        "chain",
-        "address",
-        "accessPrice",
-        "queryPrice",
-        "uptimeSla",
-        "bandwidthSla",
-        "blocksBehindSla",
-        "starred",
-        "trial",
-        "availableApis",
-        "limitations",
-        "securityImprovements",
-        "monitoringAndAnalytics",
-        "regions",
-        "verifiedUptime",
-        "verifiedLatency",
-        "verifiedBlocksBehindAvg",
-        "actionButtons"
-      ]
-    },
-
-    "indexing": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "chain": { "type": "string" },
-        "address": { "type": ["string", "null"] },
-        "technology": { "type": "string" },
-        "plan": { "type": "string" },
-        "trial": { "type": "boolean" },
-        "accessPrice": { "type": ["string", "null"] },
-        "queryPrice": { "type": ["string", "null"] },
-        "uptimeSla": { "type": ["string", "null"] },
-        "bandwidthSla": { "type": ["string", "null"] },
-        "blocksBehindSla": { "type": ["string", "null"] },
+        },
         "supportSla": { "type": ["string", "null"] },
-        "starred": { "type": "boolean" },
-        "availableApis": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
-        },
-        "limitations": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
-        },
-        "securityImprovements": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
-        },
-        "monitoringAndAnalytics": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
-        },
-        "regions": { "type": ["array", "null"], "items": { "type": "string" } },
+        "technology": { "type": "string" },
         "additionalFeatures": {
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
-        "verifiedUptime": { "type": ["string", "null"] },
-        "verifiedLatency": { "type": ["string", "null"] },
-        "verifiedBlocksBehindAvg": { "type": ["string", "null"] },
-        "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
-        }
+        "historicalData": { "type": "string" }
       },
       "required": [
         "slug",
         "provider",
+        "planType",
+        "apiType",
         "chain",
         "address",
-        "technology",
-        "plan",
-        "trial",
         "accessPrice",
         "queryPrice",
         "uptimeSla",
         "bandwidthSla",
         "blocksBehindSla",
-        "supportSla",
         "starred",
+        "trial",
         "availableApis",
         "limitations",
         "securityImprovements",
         "monitoringAndAnalytics",
         "regions",
-        "additionalFeatures",
         "verifiedUptime",
         "verifiedLatency",
         "verifiedBlocksBehindAvg",
-        "actionButtons"
+        "actionButtons",
+        "supportSla",
+        "technology",
+        "additionalFeatures",
+        "historicalData"
       ]
     },
 
@@ -356,7 +292,9 @@
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
-        }
+        },
+        "planName": { "type": ["string", "null"] },
+        "planType": { "type": "string" }
       },
       "required": [
         "slug",
@@ -366,7 +304,8 @@
         "tag",
         "description",
         "starred",
-        "actionButtons"
+        "actionButtons",
+        "planType"
       ]
     },
 
@@ -430,7 +369,9 @@
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
-        }
+        },
+        "planName": { "type": ["string", "null"] },
+        "planType": { "type": "string" }
       },
       "required": [
         "slug",
@@ -441,7 +382,8 @@
         "availableApis",
         "price",
         "starred",
-        "actionButtons"
+        "actionButtons",
+        "planType"
       ]
     },
 
@@ -510,8 +452,7 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "rpc": { "type": "array", "items": { "type": "string" } },
-        "indexing": { "type": "array", "items": { "type": "string" } },
+        "api": { "type": "array", "items": { "type": "string" } },
         "oracle": { "type": "array", "items": { "type": "string" } },
         "bridge": { "type": "array", "items": { "type": "string" } },
         "explorer": { "type": "array", "items": { "type": "string" } },

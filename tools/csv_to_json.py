@@ -325,8 +325,7 @@ def main():
         # - Provider-specific data is located at: "providers/<category>.csv"
         # - Category names match both the filename (without extension) and the dictionary key in the result
         categories = [
-            "rpc",
-            "indexing",
+            "api",
             "oracle",
             "bridge",
             "explorer",
