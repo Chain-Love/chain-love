@@ -1,22 +1,6 @@
 {
     "faucet": [
         {
-            "slug": "sui-faucet",
-            "provider": "Sui",
-            "actionButtons": [
-                "[Faucet](https://faucet.sui.io/?network=testnet)"
-            ],
-            "chain": "testnet",
-            "requiresLogin": false,
-            "hasCaptcha": true,
-            "requiredMainnetBalance": null,
-            "price": "$0",
-            "dripLimitAmount": "1 SUI",
-            "dripLimitPeriod": null,
-            "additionalNotes": null,
-            "starred": false
-        },
-        {
             "slug": "blockbolt-sui-faucet",
             "provider": "Blockbolt",
             "actionButtons": [
@@ -29,6 +13,22 @@
             "price": "$0",
             "dripLimitAmount": "1 SUI",
             "dripLimitPeriod": "24h",
+            "additionalNotes": null,
+            "starred": false
+        },
+        {
+            "slug": "circle-faucet-usdc",
+            "provider": "Circle",
+            "actionButtons": [
+                "[Faucet](https://faucet.circle.com/)"
+            ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "dripLimitAmount": "1 USDC",
+            "dripLimitPeriod": "1h",
             "additionalNotes": null,
             "starred": false
         },
@@ -52,18 +52,18 @@
             "starred": false
         },
         {
-            "slug": "circle-faucet-usdc",
-            "provider": "Circle",
+            "slug": "sui-faucet",
+            "provider": "Sui",
             "actionButtons": [
-                "[Faucet](https://faucet.circle.com/)"
+                "[Faucet](https://faucet.sui.io/?network=testnet)"
             ],
             "chain": "testnet",
             "requiresLogin": false,
-            "hasCaptcha": false,
+            "hasCaptcha": true,
             "requiredMainnetBalance": null,
             "price": "$0",
-            "dripLimitAmount": "1 USDC",
-            "dripLimitPeriod": "1h",
+            "dripLimitAmount": "1 SUI",
+            "dripLimitPeriod": null,
             "additionalNotes": null,
             "starred": false
         }
