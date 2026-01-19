@@ -96,6 +96,17 @@ def main() -> None:
         print(f"Ensuring latest tools are fetched from {SOURCE_REF}")
         run(["git", "fetch", "--quiet", REMOTE, SOURCE_BRANCH])
 
+        # Verify the ref exists after fetch
+        try:
+            subprocess.run(
+                ["git", "rev-parse", "--verify", SOURCE_REF],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                check=True,
+            )
+        except subprocess.CalledProcessError:
+            die(f"Remote ref {SOURCE_REF} does not exist after fetch")
+        
         print(f"Overlaying tools from '{SOURCE_REF}'")
         for path in COPY_FROM_BRANCH:
             clean = path.rstrip("/")
