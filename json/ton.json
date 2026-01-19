@@ -1,0 +1,72 @@
+{
+    "faucet": [
+        {
+            "slug": "chainstack-faucet",
+            "provider": "Chainstack",
+            "actionButtons": [
+                "[Faucet](https://faucet.chainstack.com/ton-testnet-faucet)"
+            ],
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": "0.08 ETH",
+            "price": "$0",
+            "starred": false,
+            "additionalNotes": [
+                "Requires Chaistack API key"
+            ],
+            "dripLimitAmount": "up to 1 TON",
+            "dripLimitPeriod": "24h"
+        },
+        {
+            "slug": "ghost-faucet",
+            "provider": "GHOST",
+            "actionButtons": [
+                "[Faucet](https://ghostchain.io/faucet/ton-testnet/)"
+            ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "starred": false,
+            "additionalNotes": null,
+            "dripLimitAmount": "0.01 TON",
+            "dripLimitPeriod": null
+        },
+        {
+            "slug": "ton-testnet-faucet",
+            "provider": "TON",
+            "actionButtons": [
+                "[Faucet](https://www.findmini.app/testgiver_ton_bot/)"
+            ],
+            "chain": "testnet",
+            "requiresLogin": false,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "starred": false,
+            "additionalNotes": [
+                "Telegram bot"
+            ],
+            "dripLimitAmount": "2 TON",
+            "dripLimitPeriod": "1h"
+        }
+    ],
+    "columns": {
+        "faucet": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "requiresLogin",
+            "hasCaptcha",
+            "requiredMainnetBalance",
+            "price",
+            "starred",
+            "additionalNotes",
+            "dripLimitAmount",
+            "dripLimitPeriod"
+        ]
+    }
+}
