@@ -3,7 +3,7 @@ repos:
     hooks:
       - id: project-checks
         name: Data validation
-        entry: git-hooks/pre-commit.sh
+        entry: git-hooks/pre-commit.py
         language: system
         pass_filenames: false
         always_run: true

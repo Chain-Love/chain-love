@@ -28,16 +28,42 @@ Each **network folder** contains CSVs grouped by service type.
 
 ### Pre-commit Hook
 
-Install `python3` and `pipx` on your system:
+Install `python3`:
+
+- macOS: `brew install python3`
+- Linux: Most distributions already include Python 3. If not, run `sudo apt-get install python3` (or use your distro’s package manager).
+- Windows: Download and install [Python 3](https://www.python.org/downloads/). During installation, check “Add Python to PATH”.
+
+Verify `python3` is installed:
 
 ```bash
-sudo apt-get install python3 python3-pip python3-venv pipx
+python3 --version
 ```
 
-Run `ensurepath`:
+Install `pipx`:
+
+- macOS:
+```bash
+brew install pipx
+pipx ensurepath
+```
+- Linux:
+```bash
+sudo apt-get install pipx
+pipx ensurepath
+```
+- Windows:
+```powershell
+python -m pip install --user pipx
+python -m pipx ensurepath
+```
+
+Restart your terminal after this step.
+
+Verify `pipx` is installed:
 
 ```bash
-pipx ensurepath
+pipx --version
 ```
 
 Install `pre-commit`:
@@ -46,11 +72,19 @@ Install `pre-commit`:
 pipx install pre-commit
 ```
 
-Install the hook:
+Verify `pre-commit` is installed:
+
+```bash
+pre-commit --version
+```
+
+Install the hook by running the following command in the root of the repository:
 
 ```bash
 pre-commit install
 ```
+
+Now data validation scripts will run before each commit.
 
 ## Reporting Issues
 
