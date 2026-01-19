@@ -83,7 +83,6 @@ def strip_depth(path: str) -> int:
 
 def main() -> None:
     ensure_tool_exists("git")
-    ensure_tool_exists("python3")
 
     print("Ensuring latest tools are fetched")
     run(["git", "fetch", "--quiet", REMOTE, SOURCE_BRANCH])
@@ -93,6 +92,9 @@ def main() -> None:
 
         print("Creating temporary project copy")
         git_archive("HEAD", None, tmp_root)
+
+        print(f"Ensuring latest tools are fetched from {SOURCE_REF}")
+        run(["git", "fetch", "--quiet", REMOTE, SOURCE_BRANCH])
 
         print(f"Overlaying tools from '{SOURCE_REF}'")
         for path in COPY_FROM_BRANCH:
