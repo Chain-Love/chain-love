@@ -23,24 +23,24 @@ Each **network folder** contains CSVs grouped by service type.
 1. **Fork & branch**: Fork the repo and create a descriptive branch (e.g. `add-ankr-provider`).
 2. **Choose what to edit**: Pick the right CSV (e.g. `rpc.csv` in the correct network).
 3. **Follow the rules**: Check the [Style Guide](https://github.com/Chain-Love/chain-love/wiki/Style-Guide) and [Column Definitions](https://github.com/Chain-Love/chain-love/wiki) for formatting and examples, then edit your entry.
-4. **Validate & commit**: Make sure the CSV is correct, then commit and push. You can use the [pre-commit hook](#pre-commit-hook) to validate your changes locally.
+4. **Validate & commit**: Make sure the CSV is correct, then commit and push. You may use the [pre-commit hook](#pre-commit-hook) to validate your changes locally.
 5. **Open a PR**: Describe your changes, link related issues. Maintainers will review and merge.
 
-### Pre-commit Hook
+### Pre-commit Hook (optional)
 
-Install `python3`:
+1. Install `python3`:
 
 - macOS: `brew install python3`
 - Linux: Most distributions already include Python 3. If not, run `sudo apt-get install python3` (or use your distro’s package manager).
 - Windows: Download and install [Python 3](https://www.python.org/downloads/). During installation, check “Add Python to PATH”.
 
-Verify `python3` is installed:
+2. Verify `python3` is installed:
 
 ```bash
 python3 --version
 ```
 
-Install `pipx`:
+3. Install `pipx`:
 
 - macOS:
 ```bash
@@ -58,27 +58,29 @@ python -m pip install --user pipx
 python -m pipx ensurepath
 ```
 
-Restart your terminal after this step.
+4. Restart your terminal after this step.
 
-Verify `pipx` is installed:
+5. Verify `pipx` is installed:
 
 ```bash
 pipx --version
 ```
 
-Install `pre-commit`:
+6. Install `pre-commit`:
 
 ```bash
 pipx install pre-commit
 ```
 
-Verify `pre-commit` is installed:
+7. Restart your terminal after this step.
+
+8. Verify `pre-commit` is installed:
 
 ```bash
 pre-commit --version
 ```
 
-Install the hook by running the following command in the root of the repository:
+9. Install the hook by running the following command in the root of the repository:
 
 ```bash
 pre-commit install
