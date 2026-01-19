@@ -1,0 +1,10 @@
+repos:
+  - repo: local
+    hooks:
+      - id: project-checks
+        name: Data validation
+        entry: git-hooks/pre-commit.sh
+        language: system
+        pass_filenames: false
+        always_run: true
+        verbose: true

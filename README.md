@@ -23,8 +23,34 @@ Each **network folder** contains CSVs grouped by service type.
 1. **Fork & branch**: Fork the repo and create a descriptive branch (e.g. `add-ankr-provider`).
 2. **Choose what to edit**: Pick the right CSV (e.g. `rpc.csv` in the correct network).
 3. **Follow the rules**: Check the [Style Guide](https://github.com/Chain-Love/chain-love/wiki/Style-Guide) and [Column Definitions](https://github.com/Chain-Love/chain-love/wiki) for formatting and examples, then edit your entry.
-4. **Validate & commit**: Make sure the CSV is correct, then commit and push.
+4. **Validate & commit**: Make sure the CSV is correct, then commit and push. You can use the [pre-commit hook](#pre-commit-hook) to validate your changes locally.
 5. **Open a PR**: Describe your changes, link related issues. Maintainers will review and merge.
+
+### Pre-commit Hook
+
+Install `python3` and `pipx` on your system:
+
+```bash
+sudo apt-get install python3 python3-pip python3-venv pipx
+```
+
+Run `ensurepath`:
+
+```bash
+pipx ensurepath
+```
+
+Install `pre-commit`:
+
+```bash
+pipx install pre-commit
+```
+
+Install the hook:
+
+```bash
+pre-commit install
+```
 
 ## Reporting Issues
 
