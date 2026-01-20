@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import io
 import shutil
 import subprocess
 import sys
+import tarfile
 import tempfile
+import urllib.request
 from pathlib import Path
 from typing import Iterable
 
@@ -12,12 +15,12 @@ from typing import Iterable
 # Configuration
 # ──────────────────────────────────────
 
-REMOTE = "origin"
-SOURCE_BRANCH = "json-tools"
-SOURCE_REF = f"{REMOTE}/{SOURCE_BRANCH}"
+UPSTREAM_REPO = "Chain-Love/chain-love"
+UPSTREAM_REF = "json-tools"
+UPSTREAM_URL = f"https://github.com/{UPSTREAM_REPO}/archive/{UPSTREAM_REF}.tar.gz"
 
-# Paths copied from SOURCE_REF into project root
-COPY_FROM_BRANCH = [
+# Paths copied from upstream repo into project root
+COPY_FROM_UPSTREAM = [
     "tools/",
 ]
 
@@ -75,17 +78,40 @@ def ensure_tool_exists(name: str) -> None:
     if shutil.which(name) is None:
         die(f"{name} not found in PATH")
 
+def download_and_extract(url: str, dest: Path, subpath: str) -> None:
+    """
+    Download a GitHub tarball and extract only `subpath`
+    into `dest`, stripping the repo root prefix.
+    """
+    print(f"- downloading {url} ({subpath})")
 
-def strip_depth(path: str) -> int:
-    # "tools/" -> 1, "a/b/" -> 2
-    return len(Path(path.rstrip("/")).parts)
+    with urllib.request.urlopen(url) as resp:
+        data = resp.read()
+
+    with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tar:
+        members = tar.getmembers()
+        if not members:
+            die("Downloaded archive is empty")
+
+        root = members[0].name.split("/")[0]
+        prefix = f"{root}/{subpath.rstrip('/')}/"
+
+        selected = [
+            m for m in members
+            if m.name.startswith(prefix)
+        ]
+
+        if not selected:
+            die(f"Path '{subpath}' not found in upstream archive")
+
+        for m in selected:
+            m.name = m.name[len(prefix):]  # strip leading dirs
+            if m.name:
+                tar.extract(m, dest)
 
 
 def main() -> None:
     ensure_tool_exists("git")
-
-    print("Ensuring latest tools are fetched")
-    run(["git", "fetch", "--quiet", REMOTE, SOURCE_BRANCH])
 
     with tempfile.TemporaryDirectory(prefix="precommit-root-") as tmp:
         tmp_root = Path(tmp)
@@ -93,37 +119,9 @@ def main() -> None:
         print("Creating temporary project copy")
         git_archive("HEAD", None, tmp_root)
 
-        print(f"Ensuring latest tools are fetched from {SOURCE_REF}")
-        run(["git", "fetch", "--quiet", REMOTE, SOURCE_BRANCH])
-
-        # Verify the ref exists after fetch
-        try:
-            subprocess.run(
-                ["git", "rev-parse", "--verify", SOURCE_REF],
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-                check=True,
-            )
-        except subprocess.CalledProcessError:
-            die(f"Remote ref {SOURCE_REF} does not exist after fetch")
-        
-        print(f"Overlaying tools from '{SOURCE_REF}'")
-        for path in COPY_FROM_BRANCH:
-            clean = path.rstrip("/")
-            depth = strip_depth(path)
-
-            # Validate path exists in source ref
-            try:
-                subprocess.run(
-                    ["git", "show", f"{SOURCE_REF}:{clean}"],
-                    stdout=subprocess.DEVNULL,
-                    stderr=subprocess.DEVNULL,
-                    check=True,
-                )
-            except subprocess.CalledProcessError:
-                die(f"'{path}' not found in {SOURCE_REF}")
-
-            git_archive(SOURCE_REF, path, tmp_root, strip_components=depth)
+        print(f"Overlaying tools from GitHub ({UPSTREAM_REPO}@{UPSTREAM_REF})")
+        for path in COPY_FROM_UPSTREAM:
+            download_and_extract(UPSTREAM_URL, tmp_root, path)
 
         python = sys.executable
 
