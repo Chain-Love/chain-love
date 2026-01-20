@@ -1,24 +1,14 @@
-slug,provider,actionButtons,toolType,tag,price,planType,planName,description,starred
-blueprint,Blueprint,"[""[GitHub](https://github.com/ton-org/blueprint)""]",Development Framework,"[""Smart Contract Framework"",""Tact"",""FunC"",""Testing""]",$0,Free,Free plan,"The official development environment for writing, testing, and deploying smart contracts on TON. Similar to Hardhat but for the TVM",TRUE
-tact-lang,Tact,"[""[Website](https://tact-lang.org/)"",""[Docs](https://docs.tact-lang.org/)""]",Programming Language,"[""Smart Contracts"",""Language"",""High-Level""]",$0,Free,Free plan,"A new, high-level programming language for TON smart contracts that is strongly typed and designed to be familiar to TypeScript/Rust developers",TRUE
-func-lang,FunC,"[""[Docs](https://docs.ton.org/develop/func/overview)""]",Programming Language,"[""Smart Contracts"",""Language"",""Low-Level""]",$0,Free,Free plan,"The lower-level, C-like programming language used to write raw smart contracts for the TON Virtual Machine (TVM)",FALSE
-ton-connect-sdk,TonConnect SDK,"[""[Website](https://ton-connect.github.io/sdk/)""]",Wallet Connection Protocol,"[""Wallet Connect"",""Frontend"",""Authentication""]",$0,Free,Free plan,"The standard protocol and SDK for connecting TON wallets to decentralized applications (dApps), replacing standard WalletConnect in the TON ecosystem",TRUE
-tonapi-sdk,TonAPI,"[""[Website](https://tonapi.io/)""]",Indexer and Data API,"[""API"",""Indexer"",""Events""]",Custom,Freemium,Free plan,"A powerful indexer and API service by Tonkeeper that allows developers to fetch account states, transaction history, and NFT data without running a node",TRUE
-toncenter,TonCenter,"[""[Website](https://toncenter.com/)""]",HTTP API Gateway,"[""RPC"",""API"",""HTTP""]",$0,Free,Free plan,"The primary HTTP API gateway for interacting with the TON blockchain, offering a reliable entry point for sending messages and querying state",FALSE
-ton-sandbox,Ton Sandbox,"[""[GitHub](https://github.com/ton-org/sandbox)""]",Testing Environment,"[""Local Blockchain"",""Testing"",""Debug""]",$0,Free,Free plan,"A tool that allows developers to run a local instance of the TON blockchain for rapid smart contract testing and debugging",FALSE
-intellij-ton,IntelliJ TON Plugin,"[""[Marketplace](https://plugins.jetbrains.com/plugin/18541-ton)""]",IDE Plugin,"[""IDE"",""Syntax Highlighting"",""FunC"",""Tact""]",$0,Free,Free plan,"The official IntelliJ/IDEA plugin providing syntax highlighting, code completion, and tool integration for FunC and Tact development",FALSE
-niftykit,NiftyKit,"[""[Website](https://niftykit.com/)""]",No-Code NFT Tool,"[""NFT"",""No-Code"",""Minting""]",Custom,Paid,Premium plan,"A no-code solution that specifically supports TON for creating, managing, and minting NFT collections without writing smart contracts",FALSE
-orbs-ton-access,Orbs TON Access,"[""[Website](https://www.orbs.com/ton-access/)""]",Decentralized RPC,"[""Infrastructure"",""RPC"",""Decentralized""]",$0,Free,Free plan,"A decentralized infrastructure layer that provides reliable, unrestricted RPC access to the TON network via a network of guardian nodes",TRUE
-reown,!provider:reown,,,,,,,,
-particle,!provider:particle,,,,,,,,
-moralis-enterprise,!provider:moralis-enterprise,,,,,,,,
-moralis-free,!provider:moralis-free,,,,,,,,
-tatum-sdk-free,!provider:tatum-free-recent-state,,,,,,,,
-tatum-sdk-pay-as-you-go,!provider:tatum-sdk-pay-as-you-go,,,,,,,,
-dynamic-enterprise,!provider:dynamic-enterprise,,,,,,,,
-dynamic-free,!provider:dynamic-free,,,,,,,,
-quicknode-sdk-free,!provider:quicknode-pay-as-you-go-recent-state,,,,,,,,
-quicknode-sdk-pay-as-you-go,!provider:quicknode-sdk-pay-as-you-go,,,,,,,,
-web3auth-free,!provider:web3auth-free,,,,,,,,
-privy,!provider:privy,,,,,,,,
-venly-enterprise,!provider:venly-enterprise,,,,,,,,
+slug,provider,actionButtons,planName,planType,historicalData,apiType,technology,accessPrice,queryPrice,verifiedUptime,verifiedLatency,verifiedBlocksBehindAvg,uptimeSla,bandwidthSla,blocksBehindSla,supportSla,starred,trial,availableApis,limitations,securityImprovements,monitoringAndAnalytics,regions,additionalFeatures,address
+toncenter-free,TonCenter,"[""[Website](https://toncenter.com/)"",""[Docs](https://toncenter.com/api/v2/)""]",Free,Free,Pruned,HTTP API,TON HTTP API,$0,$0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,TRUE,FALSE,"[""getTransactions"",""getAddressBalance"",""runGetMethod""]","[""1 req/sec""]","[""Basic DDoS Protection""]","[""None""]","[""Global""]","[""Official community endpoint""]",
+toncenter-paid,TonCenter,"[""[Website](https://t.me/tonapibot)""]",API Key,Pay-as-you-go,Archive,HTTP API,TON HTTP API,Donation Based,Custom,NULL,NULL,NULL,99.90%,NULL,NULL,NULL,TRUE,FALSE,"[""getTransactions"",""getAddressBalance"",""runGetMethod""]","[""10+ req/sec (Scales with donation)""]","[""API Key Authentication""]","[""None""]","[""Global""]","[""Prioritized traffic""]",
+tonapi-free,TonAPI (Tonkeeper),"[""[Website](https://tonapi.io/)"",""[Docs](https://tonapi.io/login)""]",Free,Free,Indexed Data,Indexer API,TON Indexer,$0,$0,NULL,NULL,NULL,99.90%,NULL,NULL,,TRUE,FALSE,"[""SSE (Events)"",""NFT API"",""Jetton API"",""Traces""]","[""1 req/sec""]","[""OAuth"",""DDoS Protection""]","[""Dashboard""]","[""Global""]","[""Webhooks"",""Streaming API""]",
+tonapi-pro,TonAPI (Tonkeeper),"[""[Website](https://tonapi.io/)"",""[Docs](https://tonapi.io/pricing)""]",Pro,Tiered,Indexed Data,Indexer API,TON Indexer,$18/mo,$0,NULL,NULL,NULL,99.90%,NULL,NULL,NULL,TRUE,FALSE,"[""SSE (Events)"",""NFT API"",""Jetton API"",""Traces""]","[""15 req/sec""]","[""OAuth"",""DDoS Protection""]","[""Detailed Usage Analytics""]","[""Global""]","[""Webhooks"",""Streaming API""]",
+orbs-ton-access,Orbs,"[""[Website](https://www.orbs.com/ton-access/)"",""[GitHub](https://github.com/orbs-network/ton-access)""]",Public,Free,Pruned,RPC,Decentralized HTTP API,$0,$0,NULL,NULL,NULL,99.00%,NULL,NULL,NULL,TRUE,FALSE,"[""runGetMethod"",""sendBoc""]","[""Browser-only (CORS restricted)""]","[""Decentralized Guardian Nodes""]","[""Network Health Dashboard""]","[""Global""]","[""Decentralized infrastructure"",""Censorship resistant""]",
+dton-graphql,dTon,"[""[Website](https://dton.io/)"",""[Docs](https://dton.io/graphql)""]",Public,Free,Indexed Data,Indexer API,GraphQL,$0,$0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,TRUE,FALSE,"[""GraphQL Queries"",""Transactions"",""Messages""]","[""Complex query cost limits""]","[""None""]","[""None""]","[""Global""]","[""Deep history search"",""Complex filtering""]",
+getblock-dedicated-ton,!provider:getblock-dedicated-recent-state,,,,,,,,,,,,,,,,,,,,,,
+getblock-free-ton,!provider:getblock-free-recent-state,,,,,,,,,,,,,,,,,,,,,,
+chainstack-growth-ton,!provider:chainstack-pay-as-you-go-recent-state,,,,,,,,,,,,,,,,,,,,,,
+nownodes-free-ton,!provider:nownodes-free-recent-state,,,,,,,,,,,,,,,,,,,,,,
+quicknode-pay-as-you-go-ton,!provider:quicknode-pay-as-you-go-recent-state,,,,,,,,,,,,,,,,,,,,,,
+tatum-free-ton,!provider:tatum-free-recent-state,,,,,,,,,,,,,,,,,,,,,,
+lavanetwork-public-ton,!provider:lavanetwork-public-recent-state,,,,,,,,,,,,,,,,,,,,,,
