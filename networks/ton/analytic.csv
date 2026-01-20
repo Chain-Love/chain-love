@@ -1,15 +1,15 @@
-slug,provider,actionButtons,dataSources,hasDashboard,availableApis,price,planName,planType,starred
-redoubt,Redoubt (re:doubt),"[""[Dashboard](https://redoubt.online/)"",""[Docs](https://docs.redoubt.online/)"",""[Telegram](https://t.me/redoubt_news)""]","[""Jetton Transfers"",""NFT Sales"",""DEX Volumes"",""Wallet Profiling"",""Risk Analysis""]",TRUE,"[""SQL API"",""REST API"",""WebSocket""]",Custom,Beta,Free,"TRUE"
-tonstat,TonStat,"[""[Dashboard](https://www.tonstat.com/)""]","[""Network Growth"",""Validators"",""Active Accounts"",""Transaction Count"",""Staking""]",TRUE,"[""Public API""]",$0,Free,Free,"TRUE"
-dyor-io,DYOR.io,"[""[Dashboard](https://dyor.io/)""]","[""Jetton Prices"",""Liquidity Pools"",""Scam Detection"",""Holder Distribution"",""Rug Pull Checks""]",TRUE,"[""API (Premium)""]",Free / Premium,Freemium,Tiered,"FALSE"
-geckoterminal,GeckoTerminal,"[""[Dashboard](https://www.geckoterminal.com/ton/pools)""]","[""DEX Trading Pairs"",""OHLCV Charts"",""Liquidity"",""Recent Trades""]",TRUE,"[""Public API""]",$0,Free,Free,"FALSE"
-bitquery,Bitquery,"[""[Dashboard](https://explorer.bitquery.io/ton)"",""[Docs](https://docs.bitquery.io/docs/category/ton/)""]","[""DEX Trades"",""Token Transfers"",""Smart Contract Calls"",""Cross-chain Trace""]",TRUE,"[""GraphQL API"",""Streaming API""]","$0 (Dev) / Custom",Developer,Tiered,"FALSE"
-tonviewer-analytics,TonViewer,"[""[Dashboard](https://tonviewer.com/analytics)""]","[""Top Jettons"",""Top NFTs"",""Whale Tracking"",""Bridges""]",TRUE,"[""TonAPI""]",$0,Free,Free,"FALSE"
-arkham,!provider:arkham,,,,,,,,
-dappradar,!provider:dappradar,,,,,,,,
-defillama,!provider:defillama,,,,,,,,
-dexscreener,!provider:dexscreener,,,,,,,,
-dune,!provider:dune,,,,,,,,
-messari,!provider:messari,,,,,,,,
-nansen,!provider:nansen,,,,,,,,
-tokenterminal,!provider:tokenterminal,,,,,,,,
+slug,provider,actionButtons,chain,dataSources,hasDashboard,availableApis,price,planName,planType,starred
+redoubt,Redoubt,"[""[Dashboard](https://redoubt.online/)"",""[Docs](https://docs.redoubt.online/)"",""[Telegram](https://t.me/redoubt_news)""]",TON,"[""Jetton Transfers"",""NFT Sales"",""DEX Volumes"",""Wallet Profiling"",""Risk Analysis""]",TRUE,"[""SQL API"",""REST API"",""WebSocket""]",Custom,Beta,Free,TRUE
+tonstat,TonStat,"[""[Dashboard](https://www.tonstat.com/)""]",TON,"[""Network Growth"",""Validators"",""Active Accounts"",""Transaction Count"",""Staking""]",TRUE,"[""Public API""]",$0,Free,Free,TRUE
+dyor-io,DYOR.io,"[""[Dashboard](https://dyor.io/)""]",TON,"[""Jetton Prices"",""Liquidity Pools"",""Scam Detection"",""Holder Distribution"",""Rug Pull Checks""]",TRUE,"[""API (Premium)""]",Free / Premium,Freemium,Tiered,FALSE
+geckoterminal,GeckoTerminal,"[""[Dashboard](https://www.geckoterminal.com/ton/pools)""]","Multi-chain (TON, EVM, Solana)","[""DEX Trading Pairs"",""OHLCV Charts"",""Liquidity"",""Recent Trades""]",TRUE,"[""Public API""]",$0,Free,Free,FALSE
+bitquery,Bitquery,"[""[Dashboard](https://explorer.bitquery.io/ton)"",""[Docs](https://docs.bitquery.io/docs/category/ton/)""]","Multi-chain (TON, BTC, EVM)","[""DEX Trades"",""Token Transfers"",""Smart Contract Calls"",""Cross-chain Trace""]",TRUE,"[""GraphQL API"",""Streaming API""]","$0 (Dev) / Custom",Developer,Tiered,FALSE
+tonviewer-analytics,TonViewer,"[""[Dashboard](https://tonviewer.com/analytics)""]",TON,"[""Top Jettons"",""Top NFTs"",""Whale Tracking"",""Bridges""]",TRUE,"[""TonAPI""]",$0,Free,Free,FALSE
+arkham,!provider:arkham,,"Multi-chain (TON, EVM, BTC)",,,,,,,
+dappradar,!provider:dappradar,,"Multi-chain (TON, EVM)",,,,,,,
+defillama,!provider:defillama,,"Multi-chain (TON, EVM, Solana)",,,,,,,
+dexscreener,!provider:dexscreener,,"Multi-chain (TON, EVM, Solana)",,,,,,,
+dune,!provider:dune,,"Multi-chain (TON, EVM)",,,,,,,
+messari,!provider:messari,,"Multi-chain (TON, EVM)",,,,,,,
+nansen,!provider:nansen,,"Multi-chain (TON, EVM)",,,,,,,
+tokenterminal,!provider:tokenterminal,,"Multi-chain (TON, EVM)",,,,,,,
