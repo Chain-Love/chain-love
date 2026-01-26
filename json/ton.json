@@ -1,4 +1,220 @@
 {
+    "oracle": [
+        {
+            "slug": "redstone-mainnet",
+            "provider": "RedStone",
+            "actionButtons": [
+                "[Docs](https://docs.ton.org/ecosystem/oracles/redstone)"
+            ],
+            "chain": "mainnet",
+            "technology": "Modular Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Delivery Monitoring"
+            ],
+            "additionalFeatures": [
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "Custom External Data"
+            ],
+            "decentralizationModel": "Hybrid",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
+            ]
+        },
+        {
+            "slug": "redstone-testnet",
+            "provider": "RedStone",
+            "actionButtons": [
+                "[Docs](https://docs.ton.org/ecosystem/oracles/redstone)"
+            ],
+            "chain": "testnet",
+            "technology": "Modular Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Delivery Monitoring"
+            ],
+            "additionalFeatures": [
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "Custom External Data"
+            ],
+            "decentralizationModel": "Hybrid",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
+            ]
+        },
+        {
+            "slug": "pyth-mainnet",
+            "provider": "Pyth Network",
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/ton)"
+            ],
+            "chain": "mainnet",
+            "technology": "Pull Oracle",
+            "starred": false,
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ]
+        },
+        {
+            "slug": "pyth-testnet",
+            "provider": "Pyth Network",
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/ton)"
+            ],
+            "chain": "testnet",
+            "technology": "Pull Oracle",
+            "starred": false,
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ]
+        },
+        {
+            "slug": "orbs-mainnet",
+            "provider": "Orbs",
+            "actionButtons": [
+                "[Website](https://docs.orbs.network/v3/community-projects/ton-access)"
+            ],
+            "chain": "mainnet",
+            "technology": "Layer 3 Infrastructure",
+            "starred": true,
+            "availableApis": [
+                "RPC",
+                "Randomness"
+            ],
+            "monitoringAndAnalytics": [
+                "Validator status"
+            ],
+            "additionalFeatures": [
+                "Decentralized RPC",
+                "V3 Randomness"
+            ],
+            "dataTypes": [
+                "Infrastructure",
+                "Randomness"
+            ],
+            "decentralizationModel": "Proof-of-Stake",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "PoS Validators (Guardians)",
+            "sdk": [
+                "TypeScript"
+            ],
+            "auditsPerformed": [
+                "Internal",
+                "External Audits"
+            ]
+        },
+        {
+            "slug": "orbs-testnet",
+            "provider": "Orbs",
+            "actionButtons": [
+                "[Website](https://docs.orbs.network/v3/community-projects/ton-access)"
+            ],
+            "chain": "testnet",
+            "technology": "Layer 3 Infrastructure",
+            "starred": true,
+            "availableApis": [
+                "RPC",
+                "Randomness"
+            ],
+            "monitoringAndAnalytics": [
+                "Validator status"
+            ],
+            "additionalFeatures": [
+                "Decentralized RPC",
+                "V3 Randomness"
+            ],
+            "dataTypes": [
+                "Infrastructure",
+                "Randomness"
+            ],
+            "decentralizationModel": "Proof-of-Stake",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "PoS Validators (Guardians)",
+            "sdk": [
+                "TypeScript"
+            ],
+            "auditsPerformed": [
+                "Internal",
+                "External Audits"
+            ]
+        }
+    ],
     "bridge": [
         {
             "slug": "ton-bridge",
@@ -2205,6 +2421,23 @@
         }
     ],
     "columns": {
+        "oracle": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "starred",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "dataTypes",
+            "decentralizationModel",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "sdk",
+            "auditsPerformed"
+        ],
         "bridge": [
             "slug",
             "provider",
