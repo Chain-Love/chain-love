@@ -1411,6 +1411,263 @@
             "dripLimitPeriod": "1h"
         }
     ],
+    "analytic": [
+        {
+            "slug": "tonstat",
+            "provider": "TonStat",
+            "actionButtons": [
+                "[Dashboard](https://www.tonstat.com/)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Network Growth",
+                "Validators",
+                "Active Accounts",
+                "Transaction Count",
+                "Staking"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Public API"
+            ],
+            "price": "$0",
+            "planName": "Free",
+            "planType": "Free",
+            "starred": true
+        },
+        {
+            "slug": "dyor-io",
+            "provider": "DYOR.io",
+            "actionButtons": [
+                "[Dashboard](https://dyor.io/token/ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Jetton Prices",
+                "Liquidity Pools",
+                "Scam Detection",
+                "Holder Distribution",
+                "Rug Pull Checks"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "API (Premium)"
+            ],
+            "price": "Free / Premium",
+            "planName": "Freemium",
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "geckoterminal",
+            "provider": "GeckoTerminal",
+            "actionButtons": [
+                "[Dashboard](https://www.geckoterminal.com/ton/pools)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "DEX Trading Pairs",
+                "OHLCV Charts",
+                "Liquidity",
+                "Recent Trades"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Public API"
+            ],
+            "price": "$0",
+            "planName": "Free",
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "tonviewer-analytics",
+            "provider": "TonViewer",
+            "actionButtons": [
+                "[Dashboard](https://tonviewer.com/)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Top Jettons",
+                "Top NFTs",
+                "Whale Tracking",
+                "Bridges"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "TonAPI"
+            ],
+            "price": "$0",
+            "planName": "Free",
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "dappradar",
+            "provider": "DappRadar",
+            "actionButtons": [
+                "[Dashboard](https://dappradar.com/chain/ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Unique active wallets",
+                "Txs volume",
+                "Dapps number",
+                "Dapps volume",
+                "NFTs stats"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API",
+                "No historical data on free API"
+            ],
+            "price": "api for $0/$9.99/$199/$499 for 5/5/30/50 RPS and 100/2.5K/100K/1M RPM",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "defillama",
+            "provider": "DeFiLlama",
+            "actionButtons": [
+                "[Dashboard](https://defillama.com/chain/ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "DeFi TVL",
+                "DEX & Perps Volume",
+                "Bridged Assets",
+                "Active Addresses",
+                "Stablecoin Supply"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0/$49/$300/mo (monthly plan), $0 (2 months free)/$40.83/mo ($490/year)/$250/mo (3K/year) (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "dexscreener",
+            "provider": "DexScreener",
+            "actionButtons": [
+                "[Dashboard](https://dexscreener.com/ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "DEX Trading Pairs",
+                "Token Prices",
+                "Volume",
+                "Liquidity",
+                "Swaps"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "dune",
+            "provider": "Dune",
+            "actionButtons": [
+                "[Dashboard](https://dune.com/blockchains/ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Transactions",
+                "Gas Usage",
+                "Bridge Activity",
+                "Active Users",
+                "Token Transfers",
+                "Smart Contract Activity"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "SQL Queries",
+                "Visualizations"
+            ],
+            "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "messari",
+            "provider": "Messari",
+            "actionButtons": [
+                "[Dashboard](https://messari.io/project/the-open-network)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Network Metrics",
+                "TVL & Market Data",
+                "On‑chain Usage Metrics"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Research Reports",
+                "API Access",
+                "Dashboard"
+            ],
+            "price": "$0/$4000/year",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "nansen",
+            "provider": "Nansen",
+            "actionButtons": [
+                "[Dashboard](https://app.nansen.ai/macro/overview?chain=ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Exchange Flows",
+                "Token Distribution",
+                "DeFi Activity",
+                "NFT Analytics",
+                "Wallet Labels"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Smart Money API",
+                "Profiler API",
+                "API Keys"
+            ],
+            "price": "$0/$69/mo (monthly plan), $0/$49/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "tokenterminal",
+            "provider": "token terminal",
+            "actionButtons": [
+                "[Dashboard](https://tokenterminal.com/explorer/projects/the-open-network)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Active wallets",
+                "Active projects",
+                "Revenue",
+                "Fees"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "JSON-RPC with 60 RPS"
+            ],
+            "price": "$0/$350/mo (monthly plan), $0/$292/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        }
+    ],
     "wallet": [
         {
             "slug": "binance-wallet",
@@ -2490,6 +2747,19 @@
             "additionalNotes",
             "dripLimitAmount",
             "dripLimitPeriod"
+        ],
+        "analytic": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "dataSources",
+            "hasDashboard",
+            "availableApis",
+            "price",
+            "planName",
+            "planType",
+            "starred"
         ],
         "wallet": [
             "slug",
