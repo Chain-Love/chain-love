@@ -19,6 +19,38 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 1
+      
+      - name: Materialize PR additions only
+        if: github.event_name == 'pull_request'
+        run: |
+          python3 - <<'PY'
+          import os, subprocess
+          from pathlib import Path
+          from collections import defaultdict
+      
+          base = os.environ["GITHUB_BASE_REF"]
+          subprocess.run(["git","fetch","origin",base], check=True)
+      
+          diff = subprocess.check_output(
+              ["git","diff","--unified=0",f"origin/{base}...HEAD"],
+              text=True
+          )
+      
+          files, cur = defaultdict(list), None
+          for l in diff.splitlines():
+              if l.startswith("+++ b/"): cur = l[6:]
+              elif cur and l.startswith("+") and not l.startswith("+++"):
+                  files[cur].append(l[1:])
+      
+          for p in Path(".").iterdir():
+              if p.name != ".git":
+                  subprocess.run(["rm","-rf",str(p)])
+      
+          for f, lines in files.items():
+              if lines:
+                  Path(f).parent.mkdir(parents=True, exist_ok=True)
+                  Path(f).write_text("\n".join(lines) + "\n")
+          PY
 
       - name: Run Lychee on CSV files
         uses: lycheeverse/lychee-action@v2
