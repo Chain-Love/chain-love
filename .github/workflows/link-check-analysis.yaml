@@ -32,7 +32,7 @@ jobs:
           subprocess.run(["git","fetch","origin",base], check=True)
       
           diff = subprocess.check_output(
-              ["git","diff","--unified=0",f"origin/{base}...HEAD"],
+              ["git","diff","--unified=0",f"origin/{base}..HEAD"],
               text=True
           )
       
