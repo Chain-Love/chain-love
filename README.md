@@ -1,4 +1,4 @@
-# Chain.Love Infrastructure Database
+# Chain.Love Web3 Database
 
 This repository documents blockchain service providers - RPCs, wallets, explorers, analytics, bridges, dev tools, faucets, oracles, indexing services, etc. - in a structured way.
 
