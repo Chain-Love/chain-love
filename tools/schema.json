@@ -13,6 +13,7 @@
     "faucet": { "type": "array", "items": { "$ref": "#/$defs/faucet" } },
     "analytic": { "type": "array", "items": { "$ref": "#/$defs/analytic" } },
     "wallet": { "type": "array", "items": { "$ref": "#/$defs/wallet" } },
+    "sdk": { "type": "array", "items": { "$ref": "#/$defs/sdk" } },
     "columns": { "$ref": "#/$defs/columns" }
   },
   "$defs": {
@@ -474,7 +475,7 @@
         "latestKnownVersion": { "type": ["string", "null"] },
         "latestKnownReleaseDate": { "type": ["string", "null"] },
         "maintainer": { "type": ["string", "null"] },
-        "licence": { "type": ["string", "null"] }
+        "license": { "type": ["string", "null"] }
       },
       "required": [
         "slug",
@@ -492,7 +493,7 @@
         "latestKnownVersion",
         "latestKnownReleaseDate",
         "maintainer",
-        "licence"
+        "license"
       ]
     },
 
@@ -507,7 +508,8 @@
         "faucet": { "type": "array", "items": { "type": "string" } },
         "analytic": { "type": "array", "items": { "type": "string" } },
         "wallet": { "type": "array", "items": { "type": "string" } },
-        "services": { "type": "array", "items": { "type": "string" } }
+        "services": { "type": "array", "items": { "type": "string" } },
+        "sdk": { "type": "array", "items": { "type": "string" } }
       }
     }
   }
