@@ -9,10 +9,11 @@
     "explorer": { "type": "array", "items": { "$ref": "#/$defs/explorer" } },
     "oracle": { "type": "array", "items": { "$ref": "#/$defs/oracle" } },
     "bridge": { "type": "array", "items": { "$ref": "#/$defs/bridge" } },
-    "devTool": { "type": "array", "items": { "$ref": "#/$defs/devTool" } },
+    "services": { "type": "array", "items": { "$ref": "#/$defs/services" } },
     "faucet": { "type": "array", "items": { "$ref": "#/$defs/faucet" } },
     "analytic": { "type": "array", "items": { "$ref": "#/$defs/analytic" } },
     "wallet": { "type": "array", "items": { "$ref": "#/$defs/wallet" } },
+    "sdk": { "type": "array", "items": { "$ref": "#/$defs/sdk" } },
     "columns": { "$ref": "#/$defs/columns" }
   },
   "$defs": {
@@ -277,8 +278,8 @@
       ]
     },
 
-    "devTool": {
-      "title": "DevTool",
+    "services": {
+      "title": "Services",
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -448,6 +449,54 @@
       ]
     },
 
+    "sdk": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "toolType": { "type": "string" },
+        "programmingLanguage": { "type": "string" },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "planName": { "type": ["string", "null"] },
+        "planType": { "type": "string" },
+        "price": { "type": ["string", "null"] },
+        "trial": { "type": "boolean" },
+        "starred": { "type": "boolean" },
+        "dependencies": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "latestKnownVersion": { "type": ["string", "null"] },
+        "latestKnownReleaseDate": { "type": ["string", "null"] },
+        "maintainer": { "type": ["string", "null"] },
+        "license": { "type": ["string", "null"] }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "toolType",
+        "programmingLanguage",
+        "tag",
+        "description",
+        "planType",
+        "price",
+        "trial",
+        "starred",
+        "dependencies",
+        "latestKnownVersion",
+        "latestKnownReleaseDate",
+        "maintainer",
+        "license"
+      ]
+    },
+
     "columns": {
       "type": "object",
       "additionalProperties": false,
@@ -459,7 +508,8 @@
         "faucet": { "type": "array", "items": { "type": "string" } },
         "analytic": { "type": "array", "items": { "type": "string" } },
         "wallet": { "type": "array", "items": { "type": "string" } },
-        "devTool": { "type": "array", "items": { "type": "string" } }
+        "services": { "type": "array", "items": { "type": "string" } },
+        "sdk": { "type": "array", "items": { "type": "string" } }
       }
     }
   }

@@ -332,7 +332,8 @@ def main():
             "faucet",
             "analytic",
             "wallet",
-            "devTool",
+            "services",
+            "sdk",
         ]
         for category in categories:
             result = process_category(
