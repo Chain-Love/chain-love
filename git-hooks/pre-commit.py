@@ -43,36 +43,22 @@ def run(cmd: Iterable[str], *, cwd: Path | None = None) -> None:
     print("-", " ".join(cmd))
     subprocess.run(cmd, cwd=cwd, check=True)
 
-
-def git_archive(ref: str, path: str | None, dest: Path, strip_components: int = 0) -> None:
+def checkout_index_tree(dest: Path) -> None:
     """
-    Archive `path` (or whole tree if None) from `ref` into `dest`,
-    stripping `strip_components` leading path elements.
+    Populate dest with the complete Git index tree
+    (exactly what the repo will look like after commit).
     """
-    archive_cmd = ["git", "archive", ref]
-    if path:
-        archive_cmd.append(path)
+    print("Checking out full index tree")
 
-    extract_cmd = [
-        "tar",
-        "-x",
-        "-C",
-        str(dest),
-    ]
-    if strip_components:
-        extract_cmd.append(f"--strip-components={strip_components}")
-
-    archive = subprocess.Popen(archive_cmd, stdout=subprocess.PIPE)
-    try:
-        subprocess.run(
-            extract_cmd,
-            stdin=archive.stdout,
-            check=True,
-        )
-    finally:
-        archive.stdout and archive.stdout.close()
-        archive.wait()
-
+    run(
+        [
+            "git",
+            "checkout-index",
+            "-a",        # all files
+            "-f",        # overwrite
+            f"--prefix={dest}/",
+        ]
+    )
 
 def ensure_tool_exists(name: str) -> None:
     if shutil.which(name) is None:
@@ -112,12 +98,13 @@ def download_and_extract(url: str, dest: Path, subpath: str) -> None:
 
 def main() -> None:
     ensure_tool_exists("git")
+    ensure_tool_exists("tar")
 
     with tempfile.TemporaryDirectory(prefix="precommit-root-") as tmp:
         tmp_root = Path(tmp)
 
-        print("Creating temporary project copy")
-        git_archive("HEAD", None, tmp_root)
+        print("Creating workspace from post-commit state")
+        checkout_index_tree(tmp_root)
 
         print(f"Overlaying tools from GitHub ({UPSTREAM_REPO}@{UPSTREAM_REF})")
         for path in COPY_FROM_UPSTREAM:
