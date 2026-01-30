@@ -16,7 +16,7 @@ from typing import Iterable
 # ──────────────────────────────────────
 
 UPSTREAM_REPO = "Chain-Love/chain-love"
-UPSTREAM_REF = "json-tools"
+UPSTREAM_REF = "pluralize-tools"
 UPSTREAM_URL = f"https://github.com/{UPSTREAM_REPO}/archive/{UPSTREAM_REF}.tar.gz"
 
 # Paths copied from upstream repo into project root

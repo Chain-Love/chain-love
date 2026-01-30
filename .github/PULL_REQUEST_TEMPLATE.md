@@ -6,13 +6,13 @@
 - [ ] Add data rows
 - [ ] Update data rows
 - [ ] Remove data rows
-- [ ] Schema change (requires linked DBIP)
+- [ ] Schema change <!-- (requires linked DBIP below) -->
 - [ ] Documentation/metadata only
 
 
 ## Scope
 - Networks affected: <!-- (e.g., ethereum, polygon, arbitrum; or global) -->
-- Categories affected: <!-- (e.g., api, wallet, explorer, indexing, bridge, analytic, services, sdk, oracle, faucet, etc.) -->
+- Categories affected: <!-- (e.g., apis, wallets, explorers, bridges, analytics, services, sdks, oracles, faucets, etc.) -->
 
 - Additional notes, additional context / screenshots: 
 
