@@ -5,19 +5,19 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "api": { "type": "array", "items": { "$ref": "#/$defs/api" } },
-    "explorer": { "type": "array", "items": { "$ref": "#/$defs/explorer" } },
-    "oracle": { "type": "array", "items": { "$ref": "#/$defs/oracle" } },
-    "bridge": { "type": "array", "items": { "$ref": "#/$defs/bridge" } },
+    "apis": { "type": "array", "items": { "$ref": "#/$defs/api" } },
+    "explorers": { "type": "array", "items": { "$ref": "#/$defs/explorer" } },
+    "oracles": { "type": "array", "items": { "$ref": "#/$defs/oracle" } },
+    "bridges": { "type": "array", "items": { "$ref": "#/$defs/bridge" } },
     "services": { "type": "array", "items": { "$ref": "#/$defs/services" } },
-    "faucet": { "type": "array", "items": { "$ref": "#/$defs/faucet" } },
-    "analytic": { "type": "array", "items": { "$ref": "#/$defs/analytic" } },
-    "wallet": { "type": "array", "items": { "$ref": "#/$defs/wallet" } },
-    "sdk": { "type": "array", "items": { "$ref": "#/$defs/sdk" } },
+    "faucets": { "type": "array", "items": { "$ref": "#/$defs/faucet" } },
+    "analytics": { "type": "array", "items": { "$ref": "#/$defs/analytic" } },
+    "wallets": { "type": "array", "items": { "$ref": "#/$defs/wallet" } },
+    "sdks": { "type": "array", "items": { "$ref": "#/$defs/sdk" } },
     "columns": { "$ref": "#/$defs/columns" }
   },
   "$defs": {
-    "api": {
+    "apis": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -97,7 +97,7 @@
       ]
     },
 
-    "explorer": {
+    "explorers": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -149,7 +149,7 @@
       ]
     },
 
-    "oracle": {
+    "oracles": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -206,7 +206,7 @@
       ]
     },
 
-    "bridge": {
+    "bridges": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -310,7 +310,7 @@
       ]
     },
 
-    "faucet": {
+    "faucets": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -349,7 +349,7 @@
       ]
     },
 
-    "analytic": {
+    "analytics": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -388,7 +388,7 @@
       ]
     },
 
-    "wallet": {
+    "wallets": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -449,7 +449,7 @@
       ]
     },
 
-    "sdk": {
+    "sdks": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -501,15 +501,15 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "api": { "type": "array", "items": { "type": "string" } },
-        "oracle": { "type": "array", "items": { "type": "string" } },
-        "bridge": { "type": "array", "items": { "type": "string" } },
-        "explorer": { "type": "array", "items": { "type": "string" } },
-        "faucet": { "type": "array", "items": { "type": "string" } },
-        "analytic": { "type": "array", "items": { "type": "string" } },
-        "wallet": { "type": "array", "items": { "type": "string" } },
+        "apis": { "type": "array", "items": { "type": "string" } },
+        "oracles": { "type": "array", "items": { "type": "string" } },
+        "bridges": { "type": "array", "items": { "type": "string" } },
+        "explorers": { "type": "array", "items": { "type": "string" } },
+        "faucets": { "type": "array", "items": { "type": "string" } },
+        "analytics": { "type": "array", "items": { "type": "string" } },
+        "wallets": { "type": "array", "items": { "type": "string" } },
         "services": { "type": "array", "items": { "type": "string" } },
-        "sdk": { "type": "array", "items": { "type": "string" } }
+        "sdks": { "type": "array", "items": { "type": "string" } }
       }
     }
   }
