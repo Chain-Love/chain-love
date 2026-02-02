@@ -325,15 +325,15 @@ def main():
         # - Provider-specific data is located at: "providers/<category>.csv"
         # - Category names match both the filename (without extension) and the dictionary key in the result
         categories = [
-            "apis",
-            "oracles",
-            "bridges",
-            "explorers",
-            "faucets",
-            "analytics",
-            "wallets",
+            "api",
+            "oracle",
+            "bridge",
+            "explorer",
+            "faucet",
+            "analytic",
+            "wallet",
             "services",
-            "sdks",
+            "sdk",
         ]
         for category in categories:
             result = process_category(
