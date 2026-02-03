@@ -5517,6 +5517,81 @@
             "address": null
         }
     ],
+    "services": [
+        {
+            "slug": "4everland-free",
+            "provider": "4everland",
+            "actionButtons": [
+                "[Website](https://www.4everland.org/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Storage",
+                "IPFS",
+                "Decentralized"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
+            "starred": false
+        },
+        {
+            "slug": "4everland-pay-as-you-go",
+            "provider": "4everland",
+            "actionButtons": [
+                "[Docs](https://docs.4everland.org/get-started/billing-and-pricing/pricing-model)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Storage",
+                "IPFS",
+                "Decentralized"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Pay-As-You-Go",
+            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
+            "starred": false
+        },
+        {
+            "slug": "aa-bundler",
+            "provider": "AA Bundler",
+            "actionButtons": [
+                "[Website](https://github.com/Vid201/aa-bundler/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Account Abstraction",
+                "ERC-4337",
+                "Bundler",
+                "Web3 developer tools",
+                "Smart contract wallets"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "It is a specialized node that collects, validates, and bundles pseudo-transaction objects called UserOperations from an alternative mempool into a single transaction that is then submitted to an on-chain EntryPoint contract",
+            "starred": false
+        },
+        {
+            "slug": "aarc",
+            "provider": "Aarc",
+            "actionButtons": [
+                "[Website](https://www.aarc.xyz/)",
+                "[Docs](https://docs.aarc.xyz/concepts/fees/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "One-click deposits"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "It offers a modular, omnichain network and infrastructure for Web3 applications, focusing on simplifying user onboarding and managing multi-chain deposits.",
+            "starred": false
+        }
+    ],
     "columns": {
         "apis": [
             "slug",
@@ -5546,6 +5621,18 @@
             "regions",
             "additionalFeatures",
             "address"
+        ],
+        "services": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "toolType",
+            "tag",
+            "price",
+            "planName",
+            "planType",
+            "description",
+            "starred"
         ]
     }
 }
