@@ -1556,13 +1556,101 @@
             "address": null
         },
         {
-            "slug": "nownodes-mainnet-free",
+            "slug": "nownodes-mainnet-dedicated-recent-state",
             "provider": "Nownodes",
             "actionButtons": [
-                "[Website](https://nownodes.io/)",
-                "[Docs](https://nownodes.gitbook.io/documentation)"
+                "[Contact](https://account.nownodes.io/auth/login)",
+                "[Docs](https://nownodes.io/nodes/flare)"
             ],
             "planName": null,
+            "planType": "Dedicated",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "up to €400",
+            "queryPrice": "no overlimit charges",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "Unlimited reqs/mo, no API keys - access via personal credentials"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "nownodes-mainnet-enterprise-recent-state",
+            "provider": "Nownodes",
+            "actionButtons": [
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.io/nodes/flare)"
+            ],
+            "planName": "Enterprise",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "€500 (monthly plan), €5500 (yearly plan)",
+            "queryPrice": "€5/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "100M req/mo, up to 100 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "nownodes-mainnet-free-recent-state",
+            "provider": "Nownodes",
+            "actionButtons": [
+                "[Website](https://nownodes.io/flare-flr)",
+                "[Docs](https://nownodes.io/nodes/flare)"
+            ],
+            "planName": "Free",
             "planType": "Free",
             "historicalData": "Pruned",
             "apiType": "RPC",
@@ -1601,19 +1689,19 @@
             "address": null
         },
         {
-            "slug": "nownodes-mainnet-pay-as-you-go",
+            "slug": "nownodes-mainnet-pro-recent-state",
             "provider": "Nownodes",
             "actionButtons": [
                 "[Buy](https://nownodes.io/pricing)",
-                "[Docs](https://nownodes.gitbook.io/documentation)"
+                "[Docs](https://nownodes.io/nodes/flare)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
+            "planName": "Pro",
+            "planType": "Tiered",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "chain": "mainnet",
-            "accessPrice": "€20/€200 (monthly plan), €220/€2200 (yearly plan)",
+            "accessPrice": "€20 (monthly plan), €220 (yearly plan)",
             "queryPrice": "€50/€10/1M extra requests",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -1634,6 +1722,94 @@
             "securityImprovements": [
                 "Domain name protection",
                 "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "nownodes-mainnet-business-recent-state",
+            "provider": "Nownodes",
+            "actionButtons": [
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.io/nodes/flare)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
+            "queryPrice": "€50/€10/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "1M/30M reqs/mo",
+                "up to 3/up to 25 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "nownodes-mainnet-custom-recent-state",
+            "provider": "Nownodes",
+            "actionButtons": [
+                "[Contact](https://account.nownodes.io/auth/login)",
+                "[Docs](https://nownodes.io/nodes/flare)"
+            ],
+            "planName": "Custom",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "€5/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "100M req/mo, up to 100 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
             ],
             "monitoringAndAnalytics": [
                 "per-key analytics"

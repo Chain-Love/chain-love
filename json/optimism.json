@@ -4924,11 +4924,11 @@
             "address": null
         },
         {
-            "slug": "nownodes-op-mainnet-dedicated-recent-state",
+            "slug": "nownodes-mainnet-dedicated-recent-state",
             "provider": "Nownodes",
             "actionButtons": [
                 "[Contact](https://account.nownodes.io/auth/login)",
-                "[Docs](https://nownodes.gitbook.io/documentation)"
+                "[Docs](https://nownodes.io/nodes/optimism)"
             ],
             "planName": null,
             "planType": "Dedicated",
@@ -4968,13 +4968,57 @@
             "address": null
         },
         {
-            "slug": "nownodes-op-mainnet-free-recent-state",
+            "slug": "nownodes-mainnet-enterprise-recent-state",
             "provider": "Nownodes",
             "actionButtons": [
-                "[Website](https://nownodes.io/)",
-                "[Docs](https://nownodes.gitbook.io/documentation)"
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.io/nodes/optimism)"
             ],
-            "planName": null,
+            "planName": "Enterprise",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "€500 (monthly plan), €5500 (yearly plan)",
+            "queryPrice": "€5/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "100M req/mo, up to 100 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "nownodes-mainnet-free-recent-state",
+            "provider": "Nownodes",
+            "actionButtons": [
+                "[Website](https://nownodes.io/nodes/optimism-op)",
+                "[Docs](https://nownodes.io/nodes/optimism)"
+            ],
+            "planName": "Free",
             "planType": "Free",
             "historicalData": "Pruned",
             "apiType": "RPC",
@@ -5013,19 +5057,19 @@
             "address": null
         },
         {
-            "slug": "nownodes-op-mainnet-pay-as-you-go-recent-state",
+            "slug": "nownodes-mainnet-pro-recent-state",
             "provider": "Nownodes",
             "actionButtons": [
                 "[Buy](https://nownodes.io/pricing)",
-                "[Docs](https://nownodes.gitbook.io/documentation)"
+                "[Docs](https://nownodes.io/nodes/optimism)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
+            "planName": "Pro",
+            "planType": "Tiered",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "chain": "mainnet",
-            "accessPrice": "€20/€200 (monthly plan), €220/€2200 (yearly plan)",
+            "accessPrice": "€20 (monthly plan), €220 (yearly plan)",
             "queryPrice": "€50/€10/1M extra requests",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -5046,6 +5090,94 @@
             "securityImprovements": [
                 "Domain name protection",
                 "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "nownodes-mainnet-business-recent-state",
+            "provider": "Nownodes",
+            "actionButtons": [
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.io/nodes/optimism)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
+            "queryPrice": "€50/€10/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "1M/30M reqs/mo",
+                "up to 3/up to 25 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "nownodes-mainnet-custom-recent-state",
+            "provider": "Nownodes",
+            "actionButtons": [
+                "[Contact](https://account.nownodes.io/auth/login)",
+                "[Docs](https://nownodes.io/nodes/optimism)"
+            ],
+            "planName": "Custom",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "€5/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "100M req/mo, up to 100 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
             ],
             "monitoringAndAnalytics": [
                 "per-key analytics"

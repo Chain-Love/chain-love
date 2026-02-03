@@ -1869,11 +1869,11 @@
             "slug": "nownodes-mainnet-enterprise",
             "provider": "Nownodes",
             "actionButtons": [
-                "[Contact](https://nownodes.io/pricing)",
+                "[Buy](https://nownodes.io/pricing)",
                 "[Docs](https://nownodes.gitbook.io/fil-filecoin/)"
             ],
-            "planName": null,
-            "planType": "Enterprise",
+            "planName": "Enterprise",
+            "planType": "Tiered",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
@@ -1916,7 +1916,7 @@
                 "[Website](https://nownodes.io/nodes/filecoin-fil)",
                 "[Docs](https://nownodes.gitbook.io/fil-filecoin/)"
             ],
-            "planName": null,
+            "planName": "Free",
             "planType": "Free",
             "historicalData": "Pruned",
             "apiType": "RPC",
@@ -1955,19 +1955,19 @@
             "address": null
         },
         {
-            "slug": "nownodes-mainnet-pay-as-you-go",
+            "slug": "nownodes-mainnet-pro",
             "provider": "Nownodes",
             "actionButtons": [
                 "[Buy](https://nownodes.io/pricing)",
                 "[Docs](https://nownodes.gitbook.io/fil-filecoin/)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
+            "planName": "Pro",
+            "planType": "Tiered",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "chain": "mainnet",
-            "accessPrice": "€20/€200 (monthly plan), €220/€2200 (yearly plan)",
+            "accessPrice": "€20 (monthly plan), €220 (yearly plan)",
             "queryPrice": "€50/€10/1M extra requests",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -1988,6 +1988,94 @@
             "securityImprovements": [
                 "Domain name protection",
                 "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "nownodes-mainnet-business",
+            "provider": "Nownodes",
+            "actionButtons": [
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.gitbook.io/fil-filecoin/)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
+            "queryPrice": "€50/€10/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "1M/30M reqs/mo",
+                "up to 3/up to 25 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "nownodes-mainnet-custom",
+            "provider": "Nownodes",
+            "actionButtons": [
+                "[Contact](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.gitbook.io/fil-filecoin/)"
+            ],
+            "planName": "Custom",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "€5/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "100M req/mo, up to 100 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
             ],
             "monitoringAndAnalytics": [
                 "per-key analytics"
