@@ -2803,7 +2803,7 @@
             "address": null
         },
         {
-            "slug": "onfinality-astar-dedicated-archive",
+            "slug": "onfinality-astar-dedicated-full-archive",
             "provider": "OnFinality",
             "actionButtons": [
                 "[Contact](https://onfinality.io/en/pricing)",
@@ -2947,7 +2947,7 @@
             "address": null
         },
         {
-            "slug": "onfinality-astar-enterprise",
+            "slug": "onfinality-astar-enterprise-full-archive",
             "provider": "OnFinality",
             "actionButtons": [
                 "[Contact](https://onfinality.io/en/pricing)",
@@ -2998,21 +2998,174 @@
             "address": null
         },
         {
-            "slug": "onfinality-astar-enterprise-indexer",
+            "slug": "onfinality-astar-developer-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Website](https://onfinality.io/en)",
+                "[Docs](https://documentation.onfinality.io/support/)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "astar",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "400K API daily limit",
+                "40 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-astar-growth-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "astar",
+            "accessPrice": "$49",
+            "queryPrice": "$6/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-astar-accelerate-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "astar",
+            "accessPrice": "$249",
+            "queryPrice": "$3.75/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-astar-partner-plan-indexer",
             "provider": "OnFinality",
             "actionButtons": [
                 "[Contact](https://indexing.onfinality.io/pricing)",
                 "[Docs](https://documentation.onfinality.io/support/pricing)"
             ],
-            "planName": null,
+            "planName": "Partner Plan",
             "planType": "Enterprise",
             "historicalData": "Archive",
             "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
+            "technology": "Custom",
             "chain": "astar",
             "accessPrice": "Custom",
-            "queryPrice": "Custom pricing & SLAs",
-            "verifiedUptime": null,
+            "queryPrice": "Custom",
+            "verifiedUptime": "Custom pricing & SLAs",
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
@@ -3049,19 +3202,19 @@
             "address": null
         },
         {
-            "slug": "onfinality-astar-free-indexer",
+            "slug": "onfinality-astar-free-plan-indexer",
             "provider": "OnFinality",
             "actionButtons": [
                 "[Website](https://onfinality.io/en/networks/astar)",
                 "[Docs](https://documentation.onfinality.io/support/)"
             ],
-            "planName": null,
+            "planName": "Free Plan",
             "planType": "Free",
             "historicalData": "Archive",
             "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
+            "technology": "Custom",
             "chain": "astar",
-            "accessPrice": "$0",
+            "accessPrice": "Custom",
             "queryPrice": "$0",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -3098,71 +3251,20 @@
             "address": null
         },
         {
-            "slug": "onfinality-astar-pay-as-you-go",
-            "provider": "OnFinality",
-            "actionButtons": [
-                "[Buy](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/)"
-            ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "astar",
-            "accessPrice": "$49/$249",
-            "queryPrice": "$3.75/$6/1M extra units",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Network native APIs",
-                "Trace API"
-            ],
-            "limitations": [
-                "20M/100M API response units",
-                "200/500 response units/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Requests count monitoring",
-                "Response time monitoring",
-                "Geographical monitoring",
-                "Per method monitoring"
-            ],
-            "regions": [
-                "N.Virginia",
-                "Ireland",
-                "Tokyo",
-                "Frankfurt"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
-            "slug": "onfinality-astar-pay-as-you-go-indexer",
+            "slug": "onfinality-astar-standard-plan-indexer",
             "provider": "OnFinality",
             "actionButtons": [
                 "[Buy](https://indexing.onfinality.io/pricing)",
                 "[Docs](https://documentation.onfinality.io/support/pricing)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
+            "planName": "Standard Plan",
+            "planType": "Tiered",
             "historicalData": "Archive",
             "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
+            "technology": "Custom",
             "chain": "astar",
-            "accessPrice": "$0.08/deployment hour",
-            "queryPrice": "$35/additional 1M stored entities/mo, $0.07/each additional CU/deployment hour",
+            "accessPrice": "Custom",
+            "queryPrice": "$3.5 per additional 100K stored entities per month, $1 per additional 100K stored entities per month after 10M stored entities",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -3197,204 +3299,6 @@
                 "Telegram support",
                 "Support site"
             ],
-            "address": null
-        },
-        {
-            "slug": "onfinality-shiden-dedicated-archive",
-            "provider": "OnFinality",
-            "actionButtons": [
-                "[Contact](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/)"
-            ],
-            "planName": null,
-            "planType": "Dedicated",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "shiden",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Network native APIs",
-                "Trace API"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Requests count monitoring",
-                "Response time monitoring",
-                "Geographical monitoring",
-                "Per method monitoring"
-            ],
-            "regions": [
-                "N.Virginia",
-                "Ireland",
-                "Tokyo",
-                "Frankfurt"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
-            "slug": "onfinality-shiden-dedicated-collator",
-            "provider": "OnFinality",
-            "actionButtons": [
-                "[Contact](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/)"
-            ],
-            "planName": null,
-            "planType": "Dedicated",
-            "historicalData": "Pruned",
-            "apiType": "Collator Node",
-            "technology": "Custom",
-            "chain": "shiden",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Network native APIs",
-                "Trace API"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Requests count monitoring",
-                "Response time monitoring",
-                "Geographical monitoring",
-                "Per method monitoring"
-            ],
-            "regions": [
-                "N.Virginia",
-                "Ireland",
-                "Tokyo",
-                "Frankfurt"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
-            "slug": "onfinality-shiden-enterprise",
-            "provider": "OnFinality",
-            "actionButtons": [
-                "[Contact](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/)"
-            ],
-            "planName": null,
-            "planType": "Enterprise",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "shiden",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Network native APIs",
-                "Trace API"
-            ],
-            "limitations": [
-                "Unlimited response units",
-                "Custom limits"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Requests count monitoring",
-                "Response time monitoring",
-                "Geographical monitoring",
-                "Per method monitoring"
-            ],
-            "regions": [
-                "N.Virginia",
-                "Ireland",
-                "Tokyo",
-                "Frankfurt"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
-            "slug": "onfinality-shiden-pay-as-you-go",
-            "provider": "OnFinality",
-            "actionButtons": [
-                "[Buy](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/)"
-            ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "shiden",
-            "accessPrice": "$49/$249",
-            "queryPrice": "$3.75/$6/1M extra units",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Network native APIs",
-                "Trace API"
-            ],
-            "limitations": [
-                "20M/100M API response units",
-                "200/500 response units/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Requests count monitoring",
-                "Response time monitoring",
-                "Geographical monitoring",
-                "Per method monitoring"
-            ],
-            "regions": [
-                "N.Virginia",
-                "Ireland",
-                "Tokyo",
-                "Frankfurt"
-            ],
-            "additionalFeatures": null,
             "address": null
         },
         {

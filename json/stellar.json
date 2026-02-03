@@ -2003,20 +2003,20 @@
             "address": null
         },
         {
-            "slug": "onfinality-mainnet-enterprise-indexer",
+            "slug": "onfinality-mainnet-enterprise-full-archive",
             "provider": "OnFinality",
             "actionButtons": [
-                "[Contact](https://indexing.onfinality.io/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/pricing)"
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/stellar)"
             ],
             "planName": null,
             "planType": "Enterprise",
             "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
             "chain": "mainnet",
             "accessPrice": "Custom",
-            "queryPrice": "Custom pricing & SLAs",
+            "queryPrice": "Custom",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -2027,44 +2027,44 @@
             "starred": false,
             "trial": false,
             "availableApis": [
-                "GraphQL"
+                "Network native APIs",
+                "Trace API"
             ],
             "limitations": [
-                "Custom limits",
-                "Unlimited active projects and storage",
-                "Unlimited deployment hours each month"
+                "Unlimited response units",
+                "Custom limits"
             ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
             ],
             "regions": [
-                "Global"
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
             ],
-            "additionalFeatures": [
-                "Support site",
-                "Priority support",
-                "Slack support",
-                "Telegram support"
-            ],
+            "additionalFeatures": null,
             "address": null
         },
         {
-            "slug": "onfinality-mainnet-free-indexer",
+            "slug": "onfinality-mainnet-developer-full-archive",
             "provider": "OnFinality",
             "actionButtons": [
                 "[Website](https://onfinality.io/en/networks/stellar)",
-                "[Docs](https://documentation.onfinality.io/support/publishing-your-subgraph-project)"
+                "[Docs](https://onfinality.io/en/networks/stellar)"
             ],
             "planName": null,
             "planType": "Free",
             "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
             "chain": "mainnet",
             "accessPrice": "$0",
             "queryPrice": "$0",
@@ -2078,45 +2078,47 @@
             "starred": false,
             "trial": false,
             "availableApis": [
-                "GraphQL"
+                "Network native APIs",
+                "Trace API"
             ],
             "limitations": [
-                "2 active projects",
-                "Up to 500K stored entities",
-                "Up to 1K free deployment hours each month"
+                "400K API daily limit",
+                "40 response units/sec"
             ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
             ],
             "regions": [
-                "Global"
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
             ],
-            "additionalFeatures": [
-                "Node Usage costs included in price",
-                "Support site"
-            ],
+            "additionalFeatures": null,
             "address": null
         },
         {
-            "slug": "onfinality-mainnet-pay-as-you-go-indexer",
+            "slug": "onfinality-mainnet-growth-full-archive",
             "provider": "OnFinality",
             "actionButtons": [
-                "[Buy](https://indexing.onfinality.io/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/pricing)"
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/stellar)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
+            "planName": "Growth",
+            "planType": "Tiered",
             "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
             "chain": "mainnet",
-            "accessPrice": "$0.08/deployment hour",
-            "queryPrice": "$35/additional 1M stored entities/mo, $0.07/each additional CU/deployment hour",
+            "accessPrice": "$49",
+            "queryPrice": "$6/million extra units",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -2127,30 +2129,81 @@
             "starred": false,
             "trial": false,
             "availableApis": [
-                "GraphQL"
+                "Network native APIs",
+                "Trace API"
             ],
             "limitations": [
-                "First 500K stored entities are free",
-                "$1/additional 100K stored entities/mo after 10M stored entities",
-                "Unlimited active projects and storage",
-                "Unlimited deployment hours each month"
+                "20M/100M API response units",
+                "200/500 response units/sec"
             ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
             ],
             "regions": [
-                "Global"
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
             ],
-            "additionalFeatures": [
-                "Node and API Usage costs included in price",
-                "Telegram support",
-                "Support site"
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-mainnet-accelerate-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/stellar)"
             ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "$249",
+            "queryPrice": "$3.75/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
             "address": null
         },
         {

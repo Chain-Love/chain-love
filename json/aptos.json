@@ -5403,7 +5403,7 @@
             "address": null
         },
         {
-            "slug": "onfinality-mainnet-free-full-archive",
+            "slug": "onfinality-mainnet-developer-full-archive",
             "provider": "OnFinality",
             "actionButtons": [
                 "[Website](https://onfinality.io/en/networks/aptos)",
@@ -5454,20 +5454,71 @@
             "address": null
         },
         {
-            "slug": "onfinality-mainnet-pay-as-you-go-full-archive",
+            "slug": "onfinality-mainnet-growth-full-archive",
             "provider": "OnFinality",
             "actionButtons": [
                 "[Buy](https://onfinality.io/en/pricing)",
                 "[Docs](https://documentation.onfinality.io/support/aptos)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
+            "planName": "Growth",
+            "planType": "Tiered",
             "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "chain": "mainnet",
-            "accessPrice": "$49/$249",
-            "queryPrice": "$3.75/$6/1M extra units",
+            "accessPrice": "$49",
+            "queryPrice": "$6/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-mainnet-accelerate-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/aptos)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "$249",
+            "queryPrice": "$3.75/million extra units",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,

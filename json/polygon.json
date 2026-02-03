@@ -4323,21 +4323,783 @@
             "address": null
         },
         {
-            "slug": "onfinality-amoy-enterprise-indexer",
+            "slug": "onfinality-dedicated-full-archive",
             "provider": "OnFinality",
             "actionButtons": [
-                "[Contact](https://indexing.onfinality.io/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/pricing)"
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/arbitrum)"
+            ],
+            "planName": null,
+            "planType": "Dedicated",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-mainnet-enterprise-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
             ],
             "planName": null,
             "planType": "Enterprise",
             "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "Unlimited response units",
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-mainnet-developer-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Website](https://onfinality.io/en/networks/polygon)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "400K API daily limit",
+                "40 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-mainnet-growth-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "$49",
+            "queryPrice": "$6/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-mainnet-accelerate-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "$249",
+            "queryPrice": "$3.75/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-amoy-enterprise-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": null,
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
             "chain": "amoy",
             "accessPrice": "Custom",
-            "queryPrice": "Custom pricing & SLAs",
+            "queryPrice": "Custom",
             "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "Unlimited response units",
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-amoy-developer-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Website](https://onfinality.io/en/networks/polygon)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "amoy",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "400K API daily limit",
+                "40 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-amoy-growth-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "amoy",
+            "accessPrice": "$49",
+            "queryPrice": "$6/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-amoy-accelerate-full-archive",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "amoy",
+            "accessPrice": "$249",
+            "queryPrice": "$3.75/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-mainnet-enterprise-trace",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": null,
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "Trace Node",
+            "technology": "Custom",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "Unlimited response units",
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-mainnet-growth-trace",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "Trace Node",
+            "technology": "Custom",
+            "chain": "mainnet",
+            "accessPrice": "$49",
+            "queryPrice": "$6/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-mainnet-accelerate-trace",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "Trace Node",
+            "technology": "Custom",
+            "chain": "mainnet",
+            "accessPrice": "$249",
+            "queryPrice": "$3.75/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-amoy-enterprise-trace",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": null,
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "Trace Node",
+            "technology": "Custom",
+            "chain": "amoy",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "Unlimited response units",
+                "Custom limits"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-amoy-growth-trace",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "Trace Node",
+            "technology": "Custom",
+            "chain": "amoy",
+            "accessPrice": "$49",
+            "queryPrice": "$6/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-amoy-accelerate-trace",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/polygon)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "Trace Node",
+            "technology": "Custom",
+            "chain": "amoy",
+            "accessPrice": "$249",
+            "queryPrice": "$3.75/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "onfinality-mainnet-partner-plan-indexer",
+            "provider": "OnFinality",
+            "actionButtons": [
+                "[Contact](https://indexing.onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/polygon)"
+            ],
+            "planName": "Partner Plan",
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": "Custom pricing & SLAs",
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
@@ -4374,19 +5136,19 @@
             "address": null
         },
         {
-            "slug": "onfinality-amoy-free-indexer",
+            "slug": "onfinality-mainnet-free-plan-indexer",
             "provider": "OnFinality",
             "actionButtons": [
-                "[Website](https://onfinality.io/en/networks/polygon-amoy)",
+                "[Website](https://onfinality.io/en/networks/polygon)",
                 "[Docs](https://documentation.onfinality.io/support/polygon)"
             ],
-            "planName": null,
+            "planName": "Free Plan",
             "planType": "Free",
             "historicalData": "Archive",
             "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
-            "chain": "amoy",
-            "accessPrice": "$0",
+            "technology": "Custom",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
             "queryPrice": "$0",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -4423,20 +5185,20 @@
             "address": null
         },
         {
-            "slug": "onfinality-amoy-pay-as-you-go-indexer",
+            "slug": "onfinality-mainnet-standard-plan-indexer",
             "provider": "OnFinality",
             "actionButtons": [
-                "[Buy](https://indexing.onfinality.io/pricing)",
+                "[Buy](https://indexing.onfinality.io/en/pricing)",
                 "[Docs](https://documentation.onfinality.io/support/pricing)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
+            "planName": "Standard Plan",
+            "planType": "Tiered",
             "historicalData": "Archive",
             "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
-            "chain": "amoy",
-            "accessPrice": "$0.08/deployment hour",
-            "queryPrice": "$35/additional 1M stored entities/mo, $0.07/each additional CU/deployment hour",
+            "technology": "Custom",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "$3.5 per additional 100K stored entities per month, $1 per additional 100K stored entities per month after 10M stored entities",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -4474,21 +5236,21 @@
             "address": null
         },
         {
-            "slug": "onfinality-mainnet-enterprise-indexer",
+            "slug": "onfinality-amoy-partner-plan-indexer",
             "provider": "OnFinality",
             "actionButtons": [
-                "[Contact](https://indexing.onfinality.io/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/pricing)"
+                "[Contact](https://indexing.onfinality.io/login)",
+                "[Docs](https://documentation.onfinality.io/support/polygon)"
             ],
-            "planName": null,
+            "planName": "Partner Plan",
             "planType": "Enterprise",
             "historicalData": "Archive",
             "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
-            "chain": "mainnet",
+            "technology": "Custom",
+            "chain": "amoy",
             "accessPrice": "Custom",
-            "queryPrice": "Custom pricing & SLAs",
-            "verifiedUptime": null,
+            "queryPrice": "Custom",
+            "verifiedUptime": "Custom pricing & SLAs",
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
             "uptimeSla": null,
@@ -4525,19 +5287,19 @@
             "address": null
         },
         {
-            "slug": "onfinality-mainnet-free-indexer",
+            "slug": "onfinality-amoy-free-plan-indexer",
             "provider": "OnFinality",
             "actionButtons": [
                 "[Website](https://onfinality.io/en/networks/polygon)",
                 "[Docs](https://documentation.onfinality.io/support/polygon)"
             ],
-            "planName": null,
+            "planName": "Free Plan",
             "planType": "Free",
             "historicalData": "Archive",
             "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
-            "chain": "mainnet",
-            "accessPrice": "$0",
+            "technology": "Custom",
+            "chain": "amoy",
+            "accessPrice": "Custom",
             "queryPrice": "$0",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -4574,20 +5336,20 @@
             "address": null
         },
         {
-            "slug": "onfinality-mainnet-pay-as-you-go-indexer",
+            "slug": "onfinality-amoy-standard-plan-indexer",
             "provider": "OnFinality",
             "actionButtons": [
-                "[Buy](https://indexing.onfinality.io/pricing)",
+                "[Buy](https://indexing.onfinality.io/en/pricing)",
                 "[Docs](https://documentation.onfinality.io/support/pricing)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
+            "planName": "Standard Plan",
+            "planType": "Tiered",
             "historicalData": "Archive",
             "apiType": "Indexed Data",
-            "technology": "The Graph, Custom",
-            "chain": "mainnet",
-            "accessPrice": "$0.08/deployment hour",
-            "queryPrice": "$35/additional 1M stored entities/mo, $0.07/each additional CU/deployment hour",
+            "technology": "Custom",
+            "chain": "amoy",
+            "accessPrice": "Custom",
+            "queryPrice": "$3.5 per additional 100K stored entities per month, $1 per additional 100K stored entities per month after 10M stored entities",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
