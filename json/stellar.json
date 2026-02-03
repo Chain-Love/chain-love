@@ -2213,7 +2213,7 @@
                 "[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)",
                 "[Docs](https://www.quicknode.com/docs/stellar)"
             ],
-            "planName": null,
+            "planName": "Enterprise",
             "planType": "Enterprise",
             "historicalData": "Pruned",
             "apiType": "RPC",
@@ -2234,56 +2234,9 @@
                 "horizon"
             ],
             "limitations": [
-                "Custom limits",
-                "Unlimited endpoints"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving"
-            ],
-            "monitoringAndAnalytics": [
-                "Advanced analytics",
-                "Console API (Prometheus/Grafana)",
-                "Custom alerting & engineering support"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
-            "slug": "quicknode-mainnet-pay-as-you-go-recent-state",
-            "provider": "Quicknode",
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/stellar)"
-            ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "$49/$249/$499/$999/mo (monthly plan), $42/$212/$424$/$849/mo (yearly plan)",
-            "queryPrice": "$0.62/$0.55/$0.53/$0.5 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "horizon"
-            ],
-            "limitations": [
-                "80M/450M/950M/2B API credits",
-                "10/20/50 endpoints",
-                "50/125/250/500 reqs/sec"
+                "Custom",
+                "Unlimited endpoints",
+                "Custom"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -2300,7 +2253,10 @@
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
             "address": null
         },
         {
@@ -2310,7 +2266,7 @@
                 "[Contact](https://www.quicknode.com/contact-us?inquiry_topic=Enterprise%20Plan%20Upgrade)",
                 "[Docs](https://www.quicknode.com/docs/stellar)"
             ],
-            "planName": null,
+            "planName": "Enterprise",
             "planType": "Enterprise",
             "historicalData": "Pruned",
             "apiType": "RPC",
@@ -2331,56 +2287,9 @@
                 "horizon"
             ],
             "limitations": [
-                "Custom limits",
-                "Unlimited endpoints"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving"
-            ],
-            "monitoringAndAnalytics": [
-                "Advanced analytics",
-                "Console API (Prometheus/Grafana)",
-                "Custom alerting & engineering support"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
-            "slug": "quicknode-testnet-pay-as-you-go-recent-state",
-            "provider": "Quicknode",
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/stellar)"
-            ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "testnet",
-            "accessPrice": "$49/$249/$499/$999/mo (monthly plan), $42/$212/$424$/$849/mo (yearly plan)",
-            "queryPrice": "$0.62/$0.55/$0.53/$0.5 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "horizon"
-            ],
-            "limitations": [
-                "80M/450M/950M/2B API credits",
-                "10/20/50 endpoints",
-                "50/125/250/500 reqs/sec"
+                "Custom",
+                "Unlimited endpoints",
+                "Custom"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -2397,7 +2306,10 @@
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
             "address": null
         },
         {
@@ -3813,9 +3725,9 @@
             "slug": "backpack",
             "provider": "Backpack",
             "actionButtons": [
-                "[Website](https://backpack.exchange/)"
+                "[Website](https://backpack.app/)"
             ],
-            "openSource": false,
+            "openSource": true,
             "supportedPlatforms": [
                 "Browser Extension",
                 "iOS",
@@ -3826,23 +3738,24 @@
             "msig": false,
             "hardware": true,
             "keyExport": true,
-            "native": false,
+            "native": true,
             "evm": true,
             "tendermint": false,
             "tokensSupport": [
                 "ERC-20",
-                "SPL",
-                "ERC-721"
+                "ERC-721",
+                "SPL"
             ],
-            "staking": true,
+            "staking": false,
             "price": "$0",
             "support": [
                 "email",
+                "x",
                 "discord",
-                "chatbot"
+                "telegram"
             ],
             "audit": [
-                "not availale"
+                "[Hacken](https://hacken.io/audits/backpack/)"
             ],
             "languages": [
                 "EN"
@@ -5257,7 +5170,9 @@
                 "email",
                 "helpdesk"
             ],
-            "audit": null,
+            "audit": [
+                "[CertiK](https://www.certik.com/projects/trust-wallet)"
+            ],
             "languages": [
                 "EN",
                 "ES",
