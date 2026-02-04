@@ -360,7 +360,10 @@ def main():
 
             # Incorporate offchain data
             for offchain_category_name in offchain_categories.keys():
-                result[offchain_category_name] = offchain_categories[offchain_category_name]
+                if offchain_category_name in result:
+                    result[offchain_category_name].extend(offchain_categories[offchain_category_name])
+                else:
+                    result[offchain_category_name] = offchain_categories[offchain_category_name]
 
         result, errors = normalize(result)
         if len(errors) > 0:
