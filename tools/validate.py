@@ -219,6 +219,13 @@ def main():
         print("Offending value:", json.dumps(value, ensure_ascii=False))
         print("Schema path   :", "/".join(map(str, err.absolute_schema_path)))
         print("---")
+    
+    for category in providers_data.keys():
+        errors = rules.validate(providers_data[category])
+        for err in errors:
+            had_errors = True
+            print(f"Error validating providers/{category}: {err}")
+            print("---")
 
     if had_errors:
         exit(1)
