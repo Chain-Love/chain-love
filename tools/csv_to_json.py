@@ -306,11 +306,32 @@ def get_column_order(
 
     return column_order
 
+def load_categories_from_folder(folder) -> dict:
+    if not os.path.exists(folder):
+        print(f"No '{folder}' directory found")
+        return {}
+
+    data = {}
+    for category_file_name in os.listdir(folder):
+        if not category_file_name.endswith(".csv"):
+            continue
+        category_name = category_file_name[:-4]
+        data[category_name] = load_csv_to_dict_list(f"offchain/{category_file_name}")
+
+    result, errors = normalize(data)
+    if len(errors) > 0:
+        print(f"Errors normalizing CSV data from 'offchain':")
+        for err in errors:
+            print(err)
+        exit(1)
+    return result
 
 def main():
     if not os.path.exists("networks"):
         print("No 'networks' directory found")
         return
+    
+    offchain_categories = load_categories_from_folder("offchain")
 
     for network_name in os.listdir("networks"):
         network_dir_full_path = os.path.join("networks", network_name)
@@ -324,24 +345,25 @@ def main():
         # - Network-specific data is located at: os.path.join(network_dir_full_path, "<category>.csv")
         # - Provider-specific data is located at: "providers/<category>.csv"
         # - Category names match both the filename (without extension) and the dictionary key in the result
-        categories = [
-            "apis",
-            "oracles",
-            "bridges",
-            "explorers",
-            "faucets",
-            "analytics",
-            "wallets",
-            "services",
-            "sdks",
-        ]
-        for category in categories:
+        for category_file_name in os.listdir(network_dir_full_path):
+            category_file_full_path = os.path.join(network_dir_full_path, category_file_name)
+            # Skip non-files
+            if not os.path.isfile(category_file_full_path):
+                continue
+            category = category_file_name.split(".")[0]
             result = process_category(
                 data_by_category=result,
                 property_name=category,
-                network_data_file_path=os.path.join(network_dir_full_path, f"{category}.csv"),
+                network_data_file_path=category_file_full_path,
                 provider_data_file_path=f"providers/{category}.csv",
             )
+
+        # Incorporate offchain data
+        for offchain_category_name in offchain_categories.keys():
+            if offchain_category_name in result:
+                result[offchain_category_name].extend(offchain_categories[offchain_category_name])
+            else:
+                result[offchain_category_name] = offchain_categories[offchain_category_name]
 
         result, errors = normalize(result)
         if len(errors) > 0:
