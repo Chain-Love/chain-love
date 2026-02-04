@@ -306,7 +306,6 @@ def get_column_order(
 
     return column_order
 
-
 def main():
     if not os.path.exists("networks"):
         print("No 'networks' directory found")
@@ -324,22 +323,16 @@ def main():
         # - Network-specific data is located at: os.path.join(network_dir_full_path, "<category>.csv")
         # - Provider-specific data is located at: "providers/<category>.csv"
         # - Category names match both the filename (without extension) and the dictionary key in the result
-        categories = [
-            "apis",
-            "oracles",
-            "bridges",
-            "explorers",
-            "faucets",
-            "analytics",
-            "wallets",
-            "services",
-            "sdks",
-        ]
-        for category in categories:
+        for category_file in os.listdir(network_dir_full_path):
+            category_file_full_path = os.path.join(network_dir_full_path, category_file)
+            # Skip non-files
+            if not os.path.isfile(category_file_full_path):
+                continue
+            category = category_file.split(".")[0]
             result = process_category(
                 data_by_category=result,
                 property_name=category,
-                network_data_file_path=os.path.join(network_dir_full_path, f"{category}.csv"),
+                network_data_file_path=category_file_full_path,
                 provider_data_file_path=f"providers/{category}.csv",
             )
 
