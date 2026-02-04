@@ -358,12 +358,12 @@ def main():
                 provider_data_file_path=f"providers/{category}.csv",
             )
 
-            # Incorporate offchain data
-            for offchain_category_name in offchain_categories.keys():
-                if offchain_category_name in result:
-                    result[offchain_category_name].extend(offchain_categories[offchain_category_name])
-                else:
-                    result[offchain_category_name] = offchain_categories[offchain_category_name]
+        # Incorporate offchain data
+        for offchain_category_name in offchain_categories.keys():
+            if offchain_category_name in result:
+                result[offchain_category_name].extend(offchain_categories[offchain_category_name])
+            else:
+                result[offchain_category_name] = offchain_categories[offchain_category_name]
 
         result, errors = normalize(result)
         if len(errors) > 0:
