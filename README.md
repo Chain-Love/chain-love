@@ -9,14 +9,21 @@ The goal is to build a **clean, comparable dataset** that developers and researc
 ```
 ├── networks/
 │   ├── arbitrum/
-│   │   ├── rpc.csv
-│   │   ├── explorer.csv
-│   │   ├── wallet.csv
+│   │   ├── apis.csv
+│   │   ├── explorers.csv
+│   │   ├── wallets.csv
 │   │   └── ...
 │   ├── ... (other networks, each with their own service tables)
+├── providers/
+│   ├── apis.csv
+│   ├── explorers.csv
+│   ├── wallets.csv
+│   └── ...
 ```
 
 Each **network folder** contains CSVs grouped by service type.
+Each row in a network CSV is an **offer**: a provider listing for a specific category.
+Some offers are stored as **provider references**: the `provider` field contains `!provider:<slug>`, pointing to the canonical entry in `providers/`, and only network-specific fields are present in the offer row.
 
 ## How to Contribute
 
