@@ -3,6 +3,12 @@ name: Update SDKs metadata
 
 on:
   workflow_dispatch:
+    inputs:
+      blockchain:
+        description: "Blockchain to update (use 'all' to update every json/*.json)"
+        required: true
+        default: "all"
+        type: string
 
 permissions:
   contents: write
@@ -30,25 +36,50 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install requests
 
-      - name: Compose blockchain list from json/*.json
+      - name: Resolve blockchain list (input or all)
         id: chains
         shell: bash
+        env:
+          INPUT_BLOCKCHAIN: ${{ inputs.blockchain }}
         run: |
           set -euo pipefail
           shopt -s nullglob
 
-          files=(json/*.json)
-          if [[ "${#files[@]}" -eq 0 ]]; then
-            echo "::error::No files found under json/*.json"
+          input="${INPUT_BLOCKCHAIN}"
+          input="${input,,}"   # lowercase
+
+          if [[ -z "$input" ]]; then
+            echo "::error::Input 'blockchain' is required."
             exit 1
           fi
 
-          for f in "${files[@]}"; do
-            bn="$(basename "$f")"
-            echo "${bn%.json}"
-          done | sort -u > /tmp/blockchains.txt
+          if [[ "$input" == "all" ]]; then
+            files=(json/*.json)
+            if [[ "${#files[@]}" -eq 0 ]]; then
+              echo "::error::No files found under json/*.json"
+              exit 1
+            fi
 
-          echo "Blockchains discovered:"
+            for f in "${files[@]}"; do
+              bn="$(basename "$f")"
+              echo "${bn%.json}"
+            done | sort -u > /tmp/blockchains.txt
+          else
+            target="json/${input}.json"
+            if [[ ! -f "$target" ]]; then
+              echo "::error::Requested blockchain '$input' not found. Expected file: $target"
+              echo "Available blockchains:"
+              for f in json/*.json; do
+                [[ -e "$f" ]] || continue
+                bn="$(basename "$f")"
+                echo " - ${bn%.json}"
+              done
+              exit 1
+            fi
+            printf '%s\n' "$input" > /tmp/blockchains.txt
+          fi
+
+          echo "Blockchains to update:"
           cat /tmp/blockchains.txt
 
           {
@@ -103,5 +134,5 @@ jobs:
               --base "$BASE_BRANCH" \
               --head "$HEAD_BRANCH" \
               --title "Update SDK metadata (automated)" \
-              --body "Automated update of SDK metadata under \`json/\`.\n\nRun: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+              --body "Automated update of SDK metadata under \`json/\`.\n\nInput blockchain: \`${{ inputs.blockchain }}\`\n\nRun: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           fi
