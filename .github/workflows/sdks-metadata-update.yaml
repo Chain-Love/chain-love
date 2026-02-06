@@ -1,0 +1,107 @@
+---
+name: Update SDKs metadata
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pip + requests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install requests
+
+      - name: Compose blockchain list from json/*.json
+        id: chains
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+
+          files=(json/*.json)
+          if [[ "${#files[@]}" -eq 0 ]]; then
+            echo "::error::No files found under json/*.json"
+            exit 1
+          fi
+
+          for f in "${files[@]}"; do
+            bn="$(basename "$f")"
+            echo "${bn%.json}"
+          done | sort -u > /tmp/blockchains.txt
+
+          echo "Blockchains discovered:"
+          cat /tmp/blockchains.txt
+
+          {
+            echo "list<<EOF"
+            cat /tmp/blockchains.txt
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Run update scripts per blockchain
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r blockchain; do
+            [[ -z "$blockchain" ]] && continue
+            echo "=== Updating: $blockchain ==="
+
+            python scripts/update_sdks_metadata_github.py --blockchain "$blockchain"
+            python scripts/update_sdks_metadata_npm.py --blockchain "$blockchain"
+            python scripts/update_sdks_metadata_gitlab.py --blockchain "$blockchain" --fallback-to-tags
+          done <<< "${{ steps.chains.outputs.list }}"
+
+      - name: Commit changes and create PR
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "No changes detected; skipping PR creation."
+            exit 0
+          fi
+
+          BASE_BRANCH="$GITHUB_REF_NAME"
+          HEAD_BRANCH="sdk-metadata-update-${GITHUB_RUN_ID}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git switch -c "$HEAD_BRANCH"
+          git add json/
+          git commit -m "Update SDK metadata"
+          git push --set-upstream origin "$HEAD_BRANCH"
+
+          # If a PR already exists for this head branch, don't create a duplicate.
+          if gh pr view "$HEAD_BRANCH" --json url >/dev/null 2>&1; then
+            echo "PR already exists for head branch: $HEAD_BRANCH"
+            gh pr view "$HEAD_BRANCH" --json url -q .url
+          else
+            gh pr create \
+              --base "$BASE_BRANCH" \
+              --head "$HEAD_BRANCH" \
+              --title "Update SDK metadata (automated)" \
+              --body "Automated update of SDK metadata under \`json/\`.\n\nRun: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          fi
