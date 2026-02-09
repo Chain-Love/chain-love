@@ -4,7 +4,7 @@
   "title": "Toolbox Network Data",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion"]
+  "required": ["schemaVersion"],
   "properties": {
     "schemaVersion": { "type": "string", "const": "1.0.0", "description": "Schema version of this document" },
     "apis": { "type": "array", "items": { "$ref": "#/$defs/apis" } },
