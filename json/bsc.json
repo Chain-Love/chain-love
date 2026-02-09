@@ -5517,7 +5517,1549 @@
             "address": null
         }
     ],
+    "bridges": [
+        {
+            "slug": "across-mainnet-bridge",
+            "provider": "Across",
+            "actionButtons": [
+                "[Bridge](https://app.across.to/bridge-and-swap)",
+                "[Docs](https://docs.across.to/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Fast bridging",
+                "Single liquidity pool"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + small protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured via UMA oracle + relayers",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "SDK",
+                "Web UI"
+            ],
+            "supportedChains": [
+                "hyperevm",
+                "arbitrum one",
+                "bnb chain",
+                "base",
+                "blast",
+                "ethereum",
+                "ink",
+                "lens",
+                "linea",
+                "lisk",
+                "mode",
+                "optimism",
+                "polygon",
+                "redstone",
+                "scroll",
+                "solana",
+                "soneium",
+                "unichain",
+                "world chain",
+                "zora",
+                "zksync era"
+            ]
+        },
+        {
+            "slug": "allbridge-core-mainnet-bridge",
+            "provider": "Allbridge Core",
+            "actionButtons": [
+                "[Bridge](https://core.allbridge.io/)",
+                "[Docs](https://docs-core.allbridge.io/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Stablecoin Bridge via Native Liquidity",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Stablecoin Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "No wrapping",
+                "Native liquidity pools",
+                "CEX-to-chain deposits"
+            ],
+            "assetTypes": [
+                "Stablecoins",
+                "ERC-20"
+            ],
+            "price": "Gas Fee + protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Native stablecoin pools, messaging-agnostic",
+            "auditsPerformed": [
+                "Independent audits (per DefiLlama)"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ],
+            "supportedChains": [
+                "arbitrum",
+                "avalanche",
+                "base",
+                "bnb chain",
+                "celo",
+                "ethereum",
+                "linea",
+                "optimism",
+                "polygon",
+                "sonic",
+                "solana",
+                "stellar",
+                "sui",
+                "tron",
+                "unichain"
+            ]
+        },
+        {
+            "slug": "asterizm-mainnet-bridge",
+            "provider": "Asterizm",
+            "actionButtons": [
+                "[Bridge](https://asterizm.io/)",
+                "[Docs](https://docs.asterizm.io/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Messaging"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Composable messaging",
+                "Intent‑based"
+            ],
+            "assetTypes": [
+                "ETH",
+                "USDC"
+            ],
+            "price": "Gas Fee + relayer fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured by validators and messaging relayers",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "polygon",
+                "fantom",
+                "bnb smart chain",
+                "optimism",
+                "arbitrum",
+                "avalanche",
+                "celo",
+                "boba",
+                "aurora",
+                "venidium",
+                "bahamut",
+                "base",
+                "linea",
+                "mantle",
+                "gnosis",
+                "everscale",
+                "venom",
+                "xdc",
+                "ton",
+                "solana",
+                "lemonchain",
+                "torus",
+                "areon",
+                "units",
+                "redbelley",
+                "supra"
+            ]
+        },
+        {
+            "slug": "axelar-mainnet-bridge",
+            "provider": "Axelar",
+            "actionButtons": [
+                "[Bridge](https://www.axelar.network/)",
+                "[Docs](https://docs.axelar.dev/)"
+            ],
+            "chain": "mainnet",
+            "technology": "General Message Passing",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord",
+                "Telegram",
+                "X"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Yes (Axelarscan)"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain Messaging"
+            ],
+            "assetTypes": [
+                "wFIL",
+                "wETH",
+                "wBTC",
+                "USDC",
+                "USDT"
+            ],
+            "price": "[Gas Fee](https://support.edge.app/hc/en-us/articles/36422794159387-Axelar-AXL-Network-Fees)",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Proof-of-stake permissionless validator set controls Axelar security protocols",
+            "auditsPerformed": [
+                "[GitHub](https://github.com/axelarnetwork/audits)"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript SDK"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bitcoin",
+                "solana",
+                "arbitrum",
+                "optimism",
+                "base",
+                "bnb chain",
+                "osmosis",
+                "agoric",
+                "akash",
+                "archway",
+                "assetmantle",
+                "avalanche",
+                "axelar",
+                "babylon",
+                "berachain",
+                "bitcanna",
+                "bitsong",
+                "blast",
+                "carbon",
+                "celestia",
+                "celo",
+                "chain4energy",
+                "cheqd",
+                "chihuahua",
+                "comdex",
+                "coreum",
+                "cosmos",
+                "crescent",
+                "dchain",
+                "decentr",
+                "desmos",
+                "dydx",
+                "dymension",
+                "elys",
+                "evmos",
+                "fantom",
+                "fetch",
+                "filecoin",
+                "flippando",
+                "fraxtal",
+                "gnosis",
+                "gravity bridge",
+                "humans.ai",
+                "hyperevm",
+                "immutable",
+                "impact hub",
+                "injective",
+                "irisnet",
+                "jackal",
+                "juno",
+                "kava evm",
+                "kava ibc",
+                "ki",
+                "kujira",
+                "kyve",
+                "lava",
+                "likecoin",
+                "linea",
+                "lum network",
+                "mantle",
+                "mars hub",
+                "migaloo",
+                "moonbeam",
+                "neutron",
+                "ngmi chain",
+                "nibiru",
+                "noble",
+                "nolus",
+                "omniflix",
+                "peaq",
+                "persistence",
+                "polygon",
+                "quicksilver",
+                "regen",
+                "saga mainnet",
+                "saga evm",
+                "scroll",
+                "secret",
+                "sei",
+                "sentinel",
+                "sommelier",
+                "soneium",
+                "sonic",
+                "soundmoney",
+                "stargaze",
+                "stellar",
+                "stride",
+                "sui",
+                "teritory",
+                "terra",
+                "terra classic",
+                "umee",
+                "xion",
+                "xrpl",
+                "xrpl evm"
+            ]
+        },
+        {
+            "slug": "celer-mainnet-bridge",
+            "provider": "Celer",
+            "actionButtons": [
+                "[Bridge](https://cbridge.celer.network)",
+                "[Docs](https://cbridge-docs.celer.network/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Lock & Mint + Message Passing",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Contact us form"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "SDK",
+                "WebSocket"
+            ],
+            "monitoringAndAnalytics": [
+                "Transaction Monitoring",
+                "[CelerScan](https://celerscan.com/)"
+            ],
+            "additionalFeatures": [
+                "Decentralized cross‑chain transfers"
+            ],
+            "assetTypes": [
+                "wFIL",
+                "wETH",
+                "wBTC",
+                "USDC",
+                "USDT"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
+            "auditsPerformed": [
+                "January 2023, by CertiK",
+                "January 2023, by PeckShield",
+                "January 2023, by SlowMist"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Node.JS"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "polygon",
+                "bnb chain",
+                "avalanche",
+                "arbitrum",
+                "optimism",
+                "base",
+                "linea",
+                "astar",
+                "shiden",
+                "fantom",
+                "unichain",
+                "zksync era",
+                "arbitrum nova",
+                "aptos",
+                "flow evm",
+                "metis",
+                "oasis emerald",
+                "evmos",
+                "aurora",
+                "moonbeam",
+                "moonriver",
+                "boba",
+                "gnosis",
+                "aura mainnet",
+                "bitcoin",
+                "blast",
+                "conflux",
+                "filecoin",
+                "flow cadence",
+                "gravity alpha mainnet",
+                "injective",
+                "kava evm co-chain",
+                "klaytn",
+                "manta pacific mainnet",
+                "milkomeda c1",
+                "oasis sapphire",
+                "oasis hub-layer",
+                "platon",
+                "redbelly",
+                "sx",
+                "scroll",
+                "sui mainnet",
+                "x layer",
+                "opbnb"
+            ]
+        },
+        {
+            "slug": "chainlink-mainnet-bridge",
+            "provider": "Chainlink Bridge",
+            "actionButtons": [
+                "[Bridge](https://chain.link/cross-chain)"
+            ],
+            "chain": "mainnet",
+            "technology": "Oracle‑Powered Asset & Messaging Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Messaging",
+                "Token Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Based on Chainlink CCIP",
+                "Enterprise‑grade relayer architecture"
+            ],
+            "assetTypes": [
+                "ERC‑20",
+                "Stablecoins",
+                "NFT"
+            ],
+            "price": "Gas Fee + relayer fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Security by Chainlink decentralized oracle network",
+            "auditsPerformed": [
+                "Multiple audits"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "arbitrum",
+                "avalanche",
+                "base",
+                "optimism",
+                "linea",
+                "mantle",
+                "bnb chain",
+                "polygon",
+                "aptos",
+                "solana",
+                "celo",
+                "blast",
+                "gnosis",
+                "metis",
+                "astar",
+                "mode"
+            ]
+        },
+        {
+            "slug": "stargate-mainnet-bridge",
+            "provider": "Stargate Finance",
+            "actionButtons": [
+                "[Bridge](https://stargate.finance/)",
+                "[Docs](https://stargateprotocol.gitbook.io/stargate/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Omnichain Liquidity Layer",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Pooled Liquidity Transfers",
+                "OFT Cross-chain Transfers"
+            ],
+            "additionalFeatures": [
+                "Unified Liquidity Pools",
+                "Low-Fee (0.06%)",
+                "OFT Support"
+            ],
+            "assetTypes": [
+                "ETH",
+                "USDC",
+                "USDT",
+                "ERC‑20",
+                "OFT"
+            ],
+            "price": "Gas Fee, Protocol Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Decentralized pools secured by LayerZero consensus",
+            "auditsPerformed": [
+                "Audit(s) by DeFi teams"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ],
+            "supportedChains": [
+                "base",
+                "plasma",
+                "arbitrum",
+                "optimism",
+                "linea",
+                "ethereum",
+                "unichain",
+                "soneium",
+                "hyperliquid",
+                "solana",
+                "og",
+                "abstract",
+                "ape",
+                "abstract",
+                "aptos",
+                "near",
+                "avalanche",
+                "berachain",
+                "blast",
+                "bnb chain",
+                "bob",
+                "botanix",
+                "celo",
+                "core",
+                "corn",
+                "cronos",
+                "cyber",
+                "degen",
+                "edu",
+                "ethereal",
+                "etherlink",
+                "fantom",
+                "flare",
+                "flow",
+                "fraxtal",
+                "fuse",
+                "glue",
+                "gnosis",
+                "goat",
+                "gravity",
+                "hedera",
+                "hemi",
+                "hyperevm",
+                "ink",
+                "iota",
+                "kaia",
+                "katana",
+                "kava",
+                "lightlink",
+                "lisk",
+                "manta",
+                "mantle",
+                "metis",
+                "mode",
+                "moonbeam",
+                "moon",
+                "morph",
+                "nibiru",
+                "opbnb",
+                "peaq",
+                "plume",
+                "polygon",
+                "zkevm",
+                "rari",
+                "rootstock",
+                "sanko",
+                "scroll",
+                "sei",
+                "somnia",
+                "sonic",
+                "soph",
+                "story",
+                "sui",
+                "superposition",
+                "swell",
+                "tac",
+                "taiko",
+                "telosevm",
+                "ton",
+                "tron",
+                "vana",
+                "viction",
+                "worldchain",
+                "x layer",
+                "xdc",
+                "xpla",
+                "zircuit",
+                "zksync",
+                "zkverify",
+                "zora"
+            ]
+        },
+        {
+            "slug": "symbiosis-mainnet-bridge",
+            "provider": "Symbiosis",
+            "actionButtons": [
+                "[Bridge](https://app.symbiosis.finance/)",
+                "[Docs](https://docs.symbiosis.finance/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain AMM Swap Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Swap",
+                "Bridge"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Aggregated liquidity across networks"
+            ],
+            "assetTypes": [
+                "ETH",
+                "USDC",
+                "ARB"
+            ],
+            "price": "Gas Fee + protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Security via canonical chains",
+            "auditsPerformed": [
+                "Trail of Bits"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI",
+                "SDK"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bitcoin",
+                "solana",
+                "tron",
+                "bnb chain",
+                "arbitrum one",
+                "base",
+                "abstract",
+                "apechain",
+                "arbitrum nova",
+                "avalanche",
+                "b² network",
+                "bahamut",
+                "berachain",
+                "blast",
+                "boba eth",
+                "core",
+                "cronos",
+                "cronos zkevm",
+                "fraxtal",
+                "gnosis",
+                "gravity",
+                "hyperevm",
+                "katana",
+                "kava",
+                "linea",
+                "manta",
+                "mantle",
+                "merlin",
+                "metis",
+                "mode",
+                "morph",
+                "opbnb",
+                "optimism",
+                "plasma",
+                "polygon",
+                "polygon zkevm",
+                "rootstock",
+                "scroll",
+                "sei v2",
+                "solana",
+                "soneium",
+                "sonic",
+                "symbiosis",
+                "taiko",
+                "telos",
+                "ton",
+                "unichain",
+                "zetachain",
+                "zklink",
+                "zksync era"
+            ]
+        },
+        {
+            "slug": "defiway-mainnet-bridge",
+            "provider": "Defiway.Bridge",
+            "actionButtons": [
+                "[Bridge](https://defiway.com/bridge/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Transfer",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": false,
+            "support": [
+                "Website Form",
+                "Email"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Stablecoin Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Fast transaction speeds"
+            ],
+            "assetTypes": [
+                "Stablecoins"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Multisig validation, liquidity pools",
+            "auditsPerformed": [
+                "Audited by Certik"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "arbitrum",
+                "base",
+                "solana",
+                "linea",
+                "optimism",
+                "plasma",
+                "polygon",
+                "ton",
+                "bnb chain",
+                "bitcoin",
+                "tron",
+                "scroll"
+            ]
+        }
+    ],
+    "explorers": [
+        {
+            "slug": "bscscan-mainnet-explorer",
+            "provider": "Etherscan",
+            "actionButtons": [
+                "[Explore](https://bscscan.com)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Tokens",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "Network Metrics"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "oklink-mainnet-explorer",
+            "provider": "OKLink",
+            "actionButtons": [
+                "[Explore](https://www.oklink.com/bsc)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts",
+                "Accounts",
+                "Token transfers",
+                "Address Activity"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "Smart Contract Verification",
+                "Address Labels",
+                "Address Monitoring",
+                "APIs",
+                "Network Overview",
+                "Price Charts",
+                "Amoy Contract Verification"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API",
+                "GraphQL",
+                "RPC API"
+            ],
+            "sdk": [
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "tokenview-mainnet-explorer",
+            "provider": "TokenView",
+            "actionButtons": [
+                "[Explore](https://bsc.tokenview.io/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Tokens",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token/NFT Explorer",
+                "RPC Service"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free"
+        }
+    ],
+    "faucets": [
+        {
+            "slug": "quicknode-bsc-testnet-faucet",
+            "provider": "QuickNode",
+            "actionButtons": [
+                "[Faucet](https://faucet.quicknode.com/drip)"
+            ],
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": "0.001 ETH",
+            "price": "$0",
+            "starred": false,
+            "additionalNotes": [
+                "Requires transaction history"
+            ],
+            "dripLimitAmount": null,
+            "dripLimitPeriod": "12h"
+        },
+        {
+            "slug": "chainlink-bsc-testnet-faucet",
+            "provider": "Chainlink",
+            "actionButtons": [
+                "[Faucet](https://faucets.chain.link/)"
+            ],
+            "chain": "testnet",
+            "requiresLogin": true,
+            "hasCaptcha": false,
+            "requiredMainnetBalance": "1 LINK",
+            "price": "$0",
+            "starred": false,
+            "additionalNotes": [
+                "One request for native tokens at time"
+            ],
+            "dripLimitAmount": "0.5 ETH",
+            "dripLimitPeriod": "2h"
+        }
+    ],
+    "wallets": [
+        {
+            "slug": "metamask-mainnet-wallet",
+            "provider": "Metamask",
+            "actionButtons": [
+                "[Website](https://metamask.io/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Web",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "October 2024 by ConsenSys Diligence"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "RU",
+                "ZH",
+                "JA"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "trust-wallet-mainnet-wallet",
+            "provider": "Trust Wallet",
+            "actionButtons": [
+                "[Website](https://trustwallet.com/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "[CertiK](https://www.certik.com/projects/trust-wallet)"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "ZH",
+                "JA"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "binance-wallet-mainnet-wallet",
+            "provider": "Binance Wallet",
+            "actionButtons": [
+                "[Website](https://www.binance.com/en/binancewallet)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20",
+                "ERC-404",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "24/7 live chat"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO",
+                "UR",
+                "HR",
+                "MY",
+                "SI",
+                "LO",
+                "DA",
+                "HU",
+                "RO",
+                "FIL"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "okx-wallet-mainnet-wallet",
+            "provider": "OKX Wallet",
+            "actionButtons": [
+                "[Website](https://web3.okx.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Web",
+                "Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ZH"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "math-wallet-mainnet-wallet",
+            "provider": "Math Wallet",
+            "actionButtons": [
+                "[Website](https://www.mathwallet.org/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "x",
+                "telegram"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO"
+            ],
+            "starred": false
+        }
+    ],
     "services": [
+        {
+            "slug": "tenderly",
+            "provider": "Tenderly",
+            "actionButtons": [
+                "[Website](https://tenderly.co/)",
+                "[Docs](https://docs.tenderly.co/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Debugging",
+                "Monitoring",
+                "Simulation"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "Comprehensive development platform offering advanced smart contract debugging transaction simulation and monitoring services",
+            "starred": false
+        },
+        {
+            "slug": "tenderly-sandbox",
+            "provider": "Tenderly",
+            "actionButtons": [
+                "[Docs](https://docs.tenderly.co/tenderly-sandbox)"
+            ],
+            "toolType": "IDE",
+            "tag": [
+                "Smart Contract Development",
+                "Solidity IDE",
+                "In-browser Editor",
+                "Transaction Debugging"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "It is a browser-based integrated development environment (IDE) for smart contracts that allows developers to write, test and debug Solidity code instantly without any local setup",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-aa",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Docs](https://portal.thirdweb.com/engine/v2/features/account-abstraction)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "SDK"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "Comprehensive solution for smart accounts with paymaster and sponsored transactions",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-pay",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Docs](https://portal.thirdweb.com/pay)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "SDK"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "Fiat and cross-chain crypto payments with gas fee abstraction",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-enterprise",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Contact](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-growth",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "price": "$99/mo",
+            "planName": "Growth",
+            "planType": "Tiered",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-pro",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "price": "$1499/mo",
+            "planName": "Pro",
+            "planType": "Tiered",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-scale",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "price": "$499/mo",
+            "planName": "Scale",
+            "planType": "Tiered",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-starter",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "price": "$5/mo",
+            "planName": "Starter",
+            "planType": "Tiered",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "starred": false
+        },
+        {
+            "slug": "thread-db",
+            "provider": "Thread DB",
+            "actionButtons": [
+                "[Docs](https://docs.textile.io/threads/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database",
+                "P2P database"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "It is a multi-party,decentralized database solution built on IPFS and Libp2p that provides an alternative architecture for data on the web",
+            "starred": false
+        },
+        {
+            "slug": "thx-network",
+            "provider": "THX Network",
+            "actionButtons": [
+                "[Docs](https://docs.thx.network/campaign-managers/getting-started)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Retention",
+                "Rewards",
+                "Community"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "It offers simplified APIs and a robust infrastructure designed to help Web2 companies and developers quickly build and integrate Web3 services, such as embedding ERC20 and ERC721 tokens into their existing applications",
+            "starred": false
+        },
+        {
+            "slug": "toolblox-starter",
+            "provider": "Toolblox",
+            "actionButtons": [
+                "[Buy](https://www.toolblox.net/Pricing)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Software development kit",
+                "API development",
+                "Programming utility",
+                "Coding tools"
+            ],
+            "price": "$19/mo",
+            "planName": "Starter",
+            "planType": "Tiered",
+            "description": "No-code platform for building, deploying and managing smart contracts and decentralized applications on various blockchain networks",
+            "starred": false
+        },
+        {
+            "slug": "toolblox-free",
+            "provider": "Toolblox",
+            "actionButtons": [
+                "[Website](https://www.toolblox.net/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Software development kit",
+                "API development",
+                "Programming utility",
+                "Coding tools"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "No-code platform for building, deploying and managing smart contracts and decentralized applications on various blockchain networks",
+            "starred": false
+        },
+        {
+            "slug": "toolblox-consultations",
+            "provider": "Toolblox",
+            "actionButtons": [
+                "[Contact](https://www.toolblox.net/CustomSolution?a=)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Software development kit",
+                "API development",
+                "Programming utility",
+                "Coding tools"
+            ],
+            "price": "Custom",
+            "planName": "Consultations",
+            "planType": "Enterprise",
+            "description": "No-code platform for building, deploying and managing smart contracts and decentralized applications on various blockchain networks",
+            "starred": false
+        },
+        {
+            "slug": "toolblox-lifetime",
+            "provider": "Toolblox",
+            "actionButtons": [
+                "[Buy](https://www.toolblox.net/Pricing)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Software development kit",
+                "API development",
+                "Programming utility",
+                "Coding tools"
+            ],
+            "price": "$180",
+            "planName": "Lifetime",
+            "planType": "Tiered",
+            "description": "No-code platform for building, deploying and managing smart contracts and decentralized applications on various blockchain networks",
+            "starred": false
+        },
+        {
+            "slug": "toolblox-professional",
+            "provider": "Toolblox",
+            "actionButtons": [
+                "[Buy](https://www.toolblox.net/Pricing)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Software development kit",
+                "API development",
+                "Programming utility",
+                "Coding tools"
+            ],
+            "price": "$42/mo",
+            "planName": "Professional",
+            "planType": "Tiered",
+            "description": "No-code platform for building, deploying and managing smart contracts and decentralized applications on various blockchain networks",
+            "starred": false
+        },
+        {
+            "slug": "triangle",
+            "provider": "Triangle",
+            "actionButtons": [
+                "[Website](https://www.triangleplatform.com/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Web3 Developer tools",
+                "Wallet Infrastructure API",
+                "Blockchain API",
+                "Embed Web3 Experiences"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "It is a Web3 wallet infrastructure APIs and dedicated blockchain nodes for developers, aiming to simplify blockchain technology integration into applications",
+            "starred": false
+        },
+        {
+            "slug": "type-chain",
+            "provider": "TypeChain",
+            "actionButtons": [
+                "[Website](https://github.com/dethcrypto/TypeChain)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "TypeScript",
+                "Smart Contracts",
+                "Code Generation",
+                "Type Safety",
+                "dApp Development"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "It provides TypeScript bindings for Ethereum smart contracts, generating a type-safe API for interacting with them in decentralized applications",
+            "starred": false
+        },
         {
             "slug": "stackup-enterprise",
             "provider": "Stackup",
@@ -6199,6 +7741,81 @@
             "regions",
             "additionalFeatures",
             "address"
+        ],
+        "bridges": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "txSpeedSla",
+            "throughputSla",
+            "openSource",
+            "support",
+            "starred",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "assetTypes",
+            "price",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "auditsPerformed",
+            "decentralizationModel",
+            "sdk",
+            "supportedChains"
+        ],
+        "explorers": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "starred",
+            "availableApis",
+            "sdk",
+            "searchCapabilities",
+            "smartContractsVerifications",
+            "fullHistory",
+            "pricing"
+        ],
+        "faucets": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "requiresLogin",
+            "hasCaptcha",
+            "requiredMainnetBalance",
+            "price",
+            "starred",
+            "additionalNotes",
+            "dripLimitAmount",
+            "dripLimitPeriod"
+        ],
+        "wallets": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "openSource",
+            "supportedPlatforms",
+            "custodial",
+            "mfa",
+            "msig",
+            "hardware",
+            "keyExport",
+            "native",
+            "evm",
+            "tendermint",
+            "tokensSupport",
+            "staking",
+            "price",
+            "support",
+            "audit",
+            "languages",
+            "starred"
         ],
         "services": [
             "slug",

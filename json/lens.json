@@ -4742,7 +4742,7 @@
                 "helpdesk"
             ],
             "audit": [
-                "[ConsenSys Diligence](https://consensys.io/diligence/audits/)"
+                "October 2024 by ConsenSys Diligence"
             ],
             "languages": [
                 "EN",
@@ -5495,7 +5495,7 @@
             ],
             "price": "Custom",
             "planName": null,
-            "planType": "TBD",
+            "planType": "Enterprise",
             "description": "Comprehensive development platform offering advanced smart contract debugging transaction simulation and monitoring services",
             "starred": false
         },
@@ -5511,8 +5511,24 @@
             ],
             "price": "Custom",
             "planName": null,
-            "planType": "TBD",
+            "planType": "Enterprise",
             "description": "Comprehensive solution for smart accounts with paymaster and sponsored transactions",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-pay",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Docs](https://portal.thirdweb.com/pay)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "SDK"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "Fiat and cross-chain crypto payments with gas fee abstraction",
             "starred": false
         },
         {
@@ -5530,30 +5546,14 @@
                 "Payments",
                 "RPC"
             ],
-            "price": "$1499/mo",
+            "price": "Custom",
             "planName": null,
-            "planType": "TBD",
+            "planType": "Enterprise",
             "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
             "starred": false
         },
         {
-            "slug": "thirdweb-pay",
-            "provider": "Thirdweb",
-            "actionButtons": [
-                "[Docs](https://portal.thirdweb.com/pay)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "SDK"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "TBD",
-            "description": "Fiat and cross-chain crypto payments with gas fee abstraction",
-            "starred": false
-        },
-        {
-            "slug": "thirdweb-pay-as-you-go",
+            "slug": "thirdweb-growth",
             "provider": "Thirdweb",
             "actionButtons": [
                 "[Buy](https://thirdweb.com/pricing)",
@@ -5567,9 +5567,72 @@
                 "Payments",
                 "RPC"
             ],
-            "price": "$5/$99/$499/mo",
-            "planName": null,
-            "planType": "TBD",
+            "price": "$99/mo",
+            "planName": "Growth",
+            "planType": "Tiered",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-pro",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "price": "$1499/mo",
+            "planName": "Pro",
+            "planType": "Tiered",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-scale",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "price": "$499/mo",
+            "planName": "Scale",
+            "planType": "Tiered",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-starter",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "price": "$5/mo",
+            "planName": "Starter",
+            "planType": "Tiered",
             "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
             "starred": false
         }
@@ -5756,18 +5819,18 @@
             "license": "TBD"
         },
         {
-            "slug": "zksync-elastic",
-            "provider": "ZKsync Elastic Chain",
+            "slug": "zksync-sdk",
+            "provider": "Zksync",
             "actionButtons": [
                 "[Docs](https://docs.zksync.io/zksync-network/sdk)"
             ],
             "toolType": "SDK",
-            "programmingLanguage": "TBD",
+            "programmingLanguage": "JavaScript",
             "tag": [
                 "SDK"
             ],
             "description": "Trustless asset transfers and fast cross-chain interactions between ZKsync chains",
-            "planType": "TBD",
+            "planType": "Free",
             "planName": null,
             "price": "$0",
             "trial": false,
