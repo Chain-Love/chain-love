@@ -1,4 +1,3169 @@
 {
+    "oracles": [
+        {
+            "slug": "redstone-mainnet",
+            "provider": "RedStone",
+            "actionButtons": [
+                "[Docs](https://docs.ton.org/ecosystem/oracles/redstone)"
+            ],
+            "chain": "mainnet",
+            "technology": "Modular Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Delivery Monitoring"
+            ],
+            "additionalFeatures": [
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "Custom External Data"
+            ],
+            "decentralizationModel": "Hybrid",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
+            ]
+        },
+        {
+            "slug": "redstone-testnet",
+            "provider": "RedStone",
+            "actionButtons": [
+                "[Docs](https://docs.ton.org/ecosystem/oracles/redstone)"
+            ],
+            "chain": "testnet",
+            "technology": "Modular Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Delivery Monitoring"
+            ],
+            "additionalFeatures": [
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "Custom External Data"
+            ],
+            "decentralizationModel": "Hybrid",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
+            ]
+        },
+        {
+            "slug": "pyth-mainnet",
+            "provider": "Pyth Network",
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/ton)"
+            ],
+            "chain": "mainnet",
+            "technology": "Pull Oracle",
+            "starred": false,
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ]
+        },
+        {
+            "slug": "pyth-testnet",
+            "provider": "Pyth Network",
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/ton)"
+            ],
+            "chain": "testnet",
+            "technology": "Pull Oracle",
+            "starred": false,
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ]
+        },
+        {
+            "slug": "orbs-mainnet",
+            "provider": "Orbs",
+            "actionButtons": [
+                "[Website](https://docs.orbs.network/v3/community-projects/ton-access)"
+            ],
+            "chain": "mainnet",
+            "technology": "Layer 3 Infrastructure",
+            "starred": true,
+            "availableApis": [
+                "RPC",
+                "Randomness"
+            ],
+            "monitoringAndAnalytics": [
+                "Validator status"
+            ],
+            "additionalFeatures": [
+                "Decentralized RPC",
+                "V3 Randomness"
+            ],
+            "dataTypes": [
+                "Infrastructure",
+                "Randomness"
+            ],
+            "decentralizationModel": "Proof-of-Stake",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "PoS Validators (Guardians)",
+            "sdk": [
+                "TypeScript"
+            ],
+            "auditsPerformed": [
+                "Internal",
+                "External Audits"
+            ]
+        },
+        {
+            "slug": "orbs-testnet",
+            "provider": "Orbs",
+            "actionButtons": [
+                "[Website](https://docs.orbs.network/v3/community-projects/ton-access)"
+            ],
+            "chain": "testnet",
+            "technology": "Layer 3 Infrastructure",
+            "starred": true,
+            "availableApis": [
+                "RPC",
+                "Randomness"
+            ],
+            "monitoringAndAnalytics": [
+                "Validator status"
+            ],
+            "additionalFeatures": [
+                "Decentralized RPC",
+                "V3 Randomness"
+            ],
+            "dataTypes": [
+                "Infrastructure",
+                "Randomness"
+            ],
+            "decentralizationModel": "Proof-of-Stake",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "PoS Validators (Guardians)",
+            "sdk": [
+                "TypeScript"
+            ],
+            "auditsPerformed": [
+                "Internal",
+                "External Audits"
+            ]
+        }
+    ],
+    "sdks": [
+        {
+            "slug": "blueprint-func",
+            "provider": "Blueprint",
+            "actionButtons": [
+                "[Website](https://github.com/ton-org/blueprint)"
+            ],
+            "toolType": "Framework",
+            "programmingLanguage": "FunC",
+            "tag": [
+                "Smart Contract Framework",
+                "Tact",
+                "FunC",
+                "Testing"
+            ],
+            "description": "The official development environment for writing, testing, and deploying smart contracts on TON. Similar to Hardhat but for the TVM",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "blueprint-tact",
+            "provider": "Blueprint",
+            "actionButtons": [
+                "[Website](https://github.com/ton-org/blueprint)"
+            ],
+            "toolType": "Framework",
+            "programmingLanguage": "Tact",
+            "tag": [
+                "Smart Contract Framework",
+                "Tact",
+                "FunC",
+                "Testing"
+            ],
+            "description": "The official development environment for writing, testing, and deploying smart contracts on TON. Similar to Hardhat but for the TVM",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "blueprint-tolk",
+            "provider": "Blueprint",
+            "actionButtons": [
+                "[Website](https://github.com/ton-org/blueprint)"
+            ],
+            "toolType": "Framework",
+            "programmingLanguage": "Tolk",
+            "tag": [
+                "Smart Contract Framework",
+                "Tact",
+                "FunC",
+                "Testing"
+            ],
+            "description": "The official development environment for writing, testing, and deploying smart contracts on TON. Similar to Hardhat but for the TVM",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "fift-lang",
+            "provider": "Fift",
+            "actionButtons": [
+                "[Docs](https://blog.ton.org/introduction-to-fift)"
+            ],
+            "toolType": "Programming language",
+            "programmingLanguage": "Fift",
+            "tag": [
+                "Smart Contracts",
+                "Language",
+                "Low-Level",
+                "TVM"
+            ],
+            "description": "A low-level stack-based programming language for the TON Virtual Machine (TVM), primarily used for tooling, scripts, and advanced contract development",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "func-lang",
+            "provider": "FunC",
+            "actionButtons": [
+                "[Docs](https://docs.ton.org/develop/func/overview)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "FunC",
+            "tag": [
+                "Smart Contracts",
+                "Language",
+                "Low-Level"
+            ],
+            "description": "The lower-level, C-like programming language used to write raw smart contracts for the TON Virtual Machine (TVM)",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "quicknode-sdk-enterprise",
+            "provider": "Quicknode SDK",
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/quicknode-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "QuickNode SDK",
+                "Web3 development",
+                "Blockchain API",
+                "Node provider"
+            ],
+            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure",
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "quicknode-sdk-accelerate",
+            "provider": "Quicknode SDK",
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/quicknode-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "QuickNode SDK",
+                "Web3 development",
+                "Blockchain API",
+                "Node provider"
+            ],
+            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure",
+            "planType": "Tiered",
+            "planName": "Accelerate",
+            "price": "$249/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "quicknode-sdk-build",
+            "provider": "Quicknode SDK",
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/quicknode-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "QuickNode SDK",
+                "Web3 development",
+                "Blockchain API",
+                "Node provider"
+            ],
+            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure",
+            "planType": "Tiered",
+            "planName": "Build",
+            "price": "$49/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "quicknode-sdk-business",
+            "provider": "Quicknode SDK",
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/quicknode-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "QuickNode SDK",
+                "Web3 development",
+                "Blockchain API",
+                "Node provider"
+            ],
+            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure",
+            "planType": "Tiered",
+            "planName": "Business",
+            "price": "$999/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "quicknode-sdk-scale",
+            "provider": "Quicknode SDK",
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/quicknode-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "QuickNode SDK",
+                "Web3 development",
+                "Blockchain API",
+                "Node provider"
+            ],
+            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure",
+            "planType": "Tiered",
+            "planName": "Scale",
+            "price": "$499/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tact-lang",
+            "provider": "Tact",
+            "actionButtons": [
+                "[Website](https://tact-lang.org/)",
+                "[Docs](https://docs.tact-lang.org/)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "Tact",
+            "tag": [
+                "Smart Contracts",
+                "Language",
+                "High-Level"
+            ],
+            "description": "A new, high-level programming language for TON smart contracts that is strongly typed and designed to be familiar to TypeScript/Rust developers",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "ton-connect-sdk",
+            "provider": "TonConnect SDK",
+            "actionButtons": [
+                "[Website](https://ton-connect.github.io/sdk/)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "TypeScript",
+            "tag": [
+                "Wallet Connect",
+                "Frontend",
+                "Authentication"
+            ],
+            "description": "The standard protocol and SDK for connecting TON wallets to decentralized applications (dApps), replacing standard WalletConnect in the TON ecosystem",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        }
+    ],
+    "analytics": [
+        {
+            "slug": "tonstat",
+            "provider": "TonStat",
+            "actionButtons": [
+                "[Dashboard](https://www.tonstat.com/)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Network Growth",
+                "Validators",
+                "Active Accounts",
+                "Transaction Count",
+                "Staking"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Public API"
+            ],
+            "price": "$0",
+            "planName": "Free",
+            "planType": "Free",
+            "starred": true
+        },
+        {
+            "slug": "dyor-io",
+            "provider": "DYOR.io",
+            "actionButtons": [
+                "[Dashboard](https://dyor.io/token/ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Jetton Prices",
+                "Liquidity Pools",
+                "Scam Detection",
+                "Holder Distribution",
+                "Rug Pull Checks"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "API (Premium)"
+            ],
+            "price": "Free / Premium",
+            "planName": "Freemium",
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "geckoterminal",
+            "provider": "GeckoTerminal",
+            "actionButtons": [
+                "[Dashboard](https://www.geckoterminal.com/ton/pools)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "DEX Trading Pairs",
+                "OHLCV Charts",
+                "Liquidity",
+                "Recent Trades"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Public API"
+            ],
+            "price": "$0",
+            "planName": "Free",
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "tonviewer-analytics",
+            "provider": "TonViewer",
+            "actionButtons": [
+                "[Dashboard](https://tonviewer.com/)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Top Jettons",
+                "Top NFTs",
+                "Whale Tracking",
+                "Bridges"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "TonAPI"
+            ],
+            "price": "$0",
+            "planName": "Free",
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "dappradar",
+            "provider": "DappRadar",
+            "actionButtons": [
+                "[Dashboard](https://dappradar.com/chain/ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Unique active wallets",
+                "Txs volume",
+                "Dapps number",
+                "Dapps volume",
+                "NFTs stats"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API",
+                "No historical data on free API"
+            ],
+            "price": "api for $0/$9.99/$199/$499 for 5/5/30/50 RPS and 100/2.5K/100K/1M RPM",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "defillama",
+            "provider": "DeFiLlama",
+            "actionButtons": [
+                "[Dashboard](https://defillama.com/chain/ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "DeFi TVL",
+                "DEX & Perps Volume",
+                "Bridged Assets",
+                "Active Addresses",
+                "Stablecoin Supply"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0/$49/$300/mo (monthly plan), $0 (2 months free)/$40.83/mo ($490/year)/$250/mo (3K/year) (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "dexscreener",
+            "provider": "DexScreener",
+            "actionButtons": [
+                "[Dashboard](https://dexscreener.com/ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "DEX Trading Pairs",
+                "Token Prices",
+                "Volume",
+                "Liquidity",
+                "Swaps"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "dune",
+            "provider": "Dune",
+            "actionButtons": [
+                "[Dashboard](https://dune.com/blockchains/ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Transactions",
+                "Gas Usage",
+                "Bridge Activity",
+                "Active Users",
+                "Token Transfers",
+                "Smart Contract Activity"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "SQL Queries",
+                "Visualizations"
+            ],
+            "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "messari",
+            "provider": "Messari",
+            "actionButtons": [
+                "[Dashboard](https://messari.io/project/the-open-network)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Network Metrics",
+                "TVL & Market Data",
+                "On‑chain Usage Metrics"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Research Reports",
+                "API Access",
+                "Dashboard"
+            ],
+            "price": "$0/$4000/year",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "nansen",
+            "provider": "Nansen",
+            "actionButtons": [
+                "[Dashboard](https://app.nansen.ai/macro/overview?chain=ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Exchange Flows",
+                "Token Distribution",
+                "DeFi Activity",
+                "NFT Analytics",
+                "Wallet Labels"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Smart Money API",
+                "Profiler API",
+                "API Keys"
+            ],
+            "price": "$0/$69/mo (monthly plan), $0/$49/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "tokenterminal",
+            "provider": "token terminal",
+            "actionButtons": [
+                "[Dashboard](https://tokenterminal.com/explorer/projects/the-open-network)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Active wallets",
+                "Active projects",
+                "Revenue",
+                "Fees"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "JSON-RPC with 60 RPS"
+            ],
+            "price": "$0/$350/mo (monthly plan), $0/$292/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        }
+    ],
+    "bridges": [
+        {
+            "slug": "ton-bridge",
+            "provider": "TON",
+            "actionButtons": [
+                "[Bridge](https://bridge-v3.ton.org/)"
+            ],
+            "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "technology": "Cross‑chain Bridge",
+            "openSource": false,
+            "support": [
+                "Telegram"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Bridge API"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Decentralized oracle-based validation",
+                "Inbound and outbound transfers"
+            ],
+            "assetTypes": [
+                "Stablecoins",
+                "ERC-20",
+                "DAI",
+                "Toncoin"
+            ],
+            "price": "1-5 TON + Gas fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Decentralized oracles, slashing penalties, time locks and challenges",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript",
+                "JavaScript"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "ton",
+                "bnb chain"
+            ]
+        },
+        {
+            "slug": "asterizm",
+            "provider": "Asterizm",
+            "actionButtons": [
+                "[Bridge](https://asterizm.io/)",
+                "[Docs](https://docs.asterizm.io/)"
+            ],
+            "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "technology": "Cross‑chain Messaging",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Messaging"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Composable messaging",
+                "Intent‑based"
+            ],
+            "assetTypes": [
+                "ETH",
+                "USDC"
+            ],
+            "price": "Gas Fee + relayer fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured by validators and messaging relayers",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "polygon",
+                "fantom",
+                "bnb smart chain",
+                "optimism",
+                "arbitrum",
+                "avalanche",
+                "celo",
+                "boba",
+                "aurora",
+                "venidium",
+                "bahamut",
+                "base",
+                "linea",
+                "mantle",
+                "gnosis",
+                "everscale",
+                "venom",
+                "xdc",
+                "ton",
+                "solana",
+                "lemonchain",
+                "torus",
+                "areon",
+                "units",
+                "redbelley",
+                "supra"
+            ]
+        },
+        {
+            "slug": "chainspot",
+            "provider": "Chainspot",
+            "actionButtons": [
+                "[Bridge](https://app.chainspot.io/)",
+                "[Docs](https://docs.chainspot.io/)"
+            ],
+            "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "technology": "Bridge Aggregator",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Bridge Aggregation"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Multi‑bridge routing",
+                "Cross‑chain explorer"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Depends on selected route",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Inherits security from underlying bridges",
+            "auditsPerformed": null,
+            "decentralizationModel": "Aggregator",
+            "sdk": [
+                "Web UI"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "polygon",
+                "bnb chain",
+                "arbitrum one",
+                "avalanche",
+                "fantom",
+                "telos",
+                "boba",
+                "optimism",
+                "harmony",
+                "moonriver",
+                "moonbeam",
+                "okxchain",
+                "aurora",
+                "evmos",
+                "fuse",
+                "cronos",
+                "gnosis",
+                "celo",
+                "venom testnet",
+                "base",
+                "linea",
+                "polygon zkevm",
+                "scroll",
+                "mantle",
+                "zksync",
+                "boba beam",
+                "kava",
+                "wanchain",
+                "tron",
+                "rootstock",
+                "fraxtal",
+                "bsquared(b2)",
+                "zklink",
+                "bahamut",
+                "mint",
+                "bevm",
+                "bob",
+                "bitlayer",
+                "blast",
+                "mode",
+                "taiko",
+                "ton"
+            ]
+        },
+        {
+            "slug": "layerswap",
+            "provider": "Layerswap",
+            "actionButtons": [
+                "[Bridge](https://layerswap.io/app)",
+                "[Docs](https://docs.layerswap.io/introduction)"
+            ],
+            "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "technology": "Cross‑chain Swaps",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Exchange <> L2 bridging"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + small service fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Bridging secured through centralized custody & partners",
+            "auditsPerformed": null,
+            "decentralizationModel": "Partially Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
+            "supportedChains": [
+                "abstract",
+                "ancient8",
+                "arbitrum one",
+                "arbitrum nova",
+                "avalanche",
+                "base",
+                "berachain",
+                "bitcoin",
+                "blast",
+                "bob",
+                "bnb chain",
+                "celo",
+                "eclipse",
+                "ethereum",
+                "fuel ignition",
+                "fuse",
+                "gnosis",
+                "gravity",
+                "hyperevm",
+                "hashkey chain",
+                "immutablex",
+                "immutable zkevm",
+                "ink",
+                "kaia",
+                "katana",
+                "linea",
+                "lisk",
+                "lightlink",
+                "loopring",
+                "manta pacific",
+                "mantle",
+                "matchain",
+                "mint",
+                "mode",
+                "morph",
+                "nahmii",
+                "optimism",
+                "opbnb",
+                "polygon",
+                "polygon zkevm",
+                "plasma",
+                "paradex",
+                "ronin",
+                "rari",
+                "redstone",
+                "sei",
+                "solana",
+                "shape",
+                "soneium",
+                "sonic",
+                "soon",
+                "sophon",
+                "starknet",
+                "scroll",
+                "superposition",
+                "superseed",
+                "taiko",
+                "ton",
+                "unichain",
+                "world chain",
+                "xai",
+                "x layer",
+                "xai",
+                "zero",
+                "zircuit",
+                "zetachain",
+                "zksync lite",
+                "zksync era",
+                "zora"
+            ]
+        },
+        {
+            "slug": "orbiter",
+            "provider": "Orbiter Finance",
+            "actionButtons": [
+                "[Bridge](https://orbiter.finance)",
+                "[Docs](https://docs.orbiter.finance)"
+            ],
+            "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "technology": "Cross‑chain Messaging",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Low cost",
+                "Instant confirmation"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Peer-to-peer intents & liquidity providers",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
+            "supportedChains": [
+                "arbitrum",
+                "bnb chain",
+                "base",
+                "blast",
+                "ethereum",
+                "ink",
+                "linea",
+                "lisk",
+                "mode",
+                "optimism",
+                "polygon",
+                "redstone",
+                "scroll",
+                "solana",
+                "soneium",
+                "unichain",
+                "world chain",
+                "zora",
+                "zksyncera",
+                "eni",
+                "x layer",
+                "sui",
+                "celo",
+                "juchain",
+                "bob",
+                "story",
+                "manta",
+                "arbitrum nova",
+                "ape chain",
+                "zetachain",
+                "hemi",
+                "mint",
+                "hashkey",
+                "superseed",
+                "gravity",
+                "zero",
+                "rootstock",
+                "corn",
+                "superposition",
+                "zk fair",
+                "morph",
+                "nero",
+                "conflux",
+                "hpp",
+                "hyperliquid",
+                "paradex",
+                "merlin",
+                "katana",
+                "berachain",
+                "immutable x",
+                "plume",
+                "sophon",
+                "opbnb",
+                "kaia",
+                "tron",
+                "fuel",
+                "sonic",
+                "cyber",
+                "bitlayer",
+                "zircuit",
+                "starknet",
+                "fraxtal",
+                "avalanche",
+                "eclipse",
+                "core",
+                "ton",
+                "bevm",
+                "zklink nova",
+                "b² network",
+                "mantle",
+                "zksync lite",
+                "ronin",
+                "sonic svm",
+                "polygon zkevm",
+                "abstract",
+                "movement",
+                "sui",
+                "taiko"
+            ]
+        },
+        {
+            "slug": "rubic",
+            "provider": "Rubic",
+            "actionButtons": [
+                "[Bridge](https://rubic.exchange)",
+                "[Docs](https://docs.rubic.finance/)"
+            ],
+            "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "technology": "Bridge Aggregator",
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Bridge API",
+                "Swap API"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "15k+ tokens",
+                "100+ chains supported"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Depends on underlying bridge",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Security inherited from selected bridge",
+            "auditsPerformed": null,
+            "decentralizationModel": null,
+            "sdk": [
+                "JS SDK",
+                "Web UI"
+            ],
+            "supportedChains": [
+                "polygon",
+                "bnb chain",
+                "tron",
+                "unichain",
+                "bitcoin",
+                "solana",
+                "base",
+                "arbitrum",
+                "ethereum",
+                "linea",
+                "optimism",
+                "zksync era",
+                "ton",
+                "avalanche",
+                "berachain",
+                "blast",
+                "scroll",
+                "morph",
+                "fraxtal",
+                "soneium",
+                "mode",
+                "mantle",
+                "metis",
+                "manta pacific",
+                "fantom",
+                "zkevm",
+                "pulsechain",
+                "taiko",
+                "hemi",
+                "filecoin",
+                "x layer",
+                "bahamut",
+                "dash",
+                "monero",
+                "cardano",
+                "cosmos",
+                "litecoin",
+                "xrp ledger",
+                "aptos",
+                "polkadot",
+                "stellar",
+                "near",
+                "zilliqa",
+                "tezos",
+                "xdc",
+                "kava cosmos",
+                "neo",
+                "gnosis",
+                "flare"
+            ]
+        },
+        {
+            "slug": "stargate",
+            "provider": "Stargate Finance",
+            "actionButtons": [
+                "[Bridge](https://stargate.finance/)",
+                "[Docs](https://stargateprotocol.gitbook.io/stargate/)"
+            ],
+            "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "technology": "Omnichain Liquidity Layer",
+            "openSource": true,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Pooled Liquidity Transfers",
+                "OFT Cross-chain Transfers"
+            ],
+            "additionalFeatures": [
+                "Unified Liquidity Pools",
+                "Low-Fee (0.06%)",
+                "OFT Support"
+            ],
+            "assetTypes": [
+                "ETH",
+                "USDC",
+                "USDT",
+                "ERC‑20",
+                "OFT"
+            ],
+            "price": "Gas Fee, Protocol Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Decentralized pools secured by LayerZero consensus",
+            "auditsPerformed": [
+                "Audit(s) by DeFi teams"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ],
+            "supportedChains": [
+                "base",
+                "plasma",
+                "arbitrum",
+                "optimism",
+                "linea",
+                "ethereum",
+                "unichain",
+                "soneium",
+                "hyperliquid",
+                "solana",
+                "og",
+                "abstract",
+                "ape",
+                "abstract",
+                "aptos",
+                "near",
+                "avalanche",
+                "berachain",
+                "blast",
+                "bnb chain",
+                "bob",
+                "botanix",
+                "celo",
+                "core",
+                "corn",
+                "cronos",
+                "cyber",
+                "degen",
+                "edu",
+                "ethereal",
+                "etherlink",
+                "fantom",
+                "flare",
+                "flow",
+                "fraxtal",
+                "fuse",
+                "glue",
+                "gnosis",
+                "goat",
+                "gravity",
+                "hedera",
+                "hemi",
+                "hyperevm",
+                "ink",
+                "iota",
+                "kaia",
+                "katana",
+                "kava",
+                "lightlink",
+                "lisk",
+                "manta",
+                "mantle",
+                "metis",
+                "mode",
+                "moonbeam",
+                "moon",
+                "morph",
+                "nibiru",
+                "opbnb",
+                "peaq",
+                "plume",
+                "polygon",
+                "zkevm",
+                "rari",
+                "rootstock",
+                "sanko",
+                "scroll",
+                "sei",
+                "somnia",
+                "sonic",
+                "soph",
+                "story",
+                "sui",
+                "superposition",
+                "swell",
+                "tac",
+                "taiko",
+                "telosevm",
+                "ton",
+                "tron",
+                "vana",
+                "viction",
+                "worldchain",
+                "x layer",
+                "xdc",
+                "xpla",
+                "zircuit",
+                "zksync",
+                "zkverify",
+                "zora"
+            ]
+        },
+        {
+            "slug": "symbiosis",
+            "provider": "Stargate Finance",
+            "actionButtons": [
+                "[Bridge](https://stargate.finance/)",
+                "[Docs](https://stargateprotocol.gitbook.io/stargate/)"
+            ],
+            "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "technology": "Omnichain Liquidity Layer",
+            "openSource": true,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Pooled Liquidity Transfers",
+                "OFT Cross-chain Transfers"
+            ],
+            "additionalFeatures": [
+                "Unified Liquidity Pools",
+                "Low-Fee (0.06%)",
+                "OFT Support"
+            ],
+            "assetTypes": [
+                "ETH",
+                "USDC",
+                "USDT",
+                "ERC‑20",
+                "OFT"
+            ],
+            "price": "Gas Fee, Protocol Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Decentralized pools secured by LayerZero consensus",
+            "auditsPerformed": [
+                "Audit(s) by DeFi teams"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ],
+            "supportedChains": [
+                "base",
+                "plasma",
+                "arbitrum",
+                "optimism",
+                "linea",
+                "ethereum",
+                "unichain",
+                "soneium",
+                "hyperliquid",
+                "solana",
+                "og",
+                "abstract",
+                "ape",
+                "abstract",
+                "aptos",
+                "near",
+                "avalanche",
+                "berachain",
+                "blast",
+                "bnb chain",
+                "bob",
+                "botanix",
+                "celo",
+                "core",
+                "corn",
+                "cronos",
+                "cyber",
+                "degen",
+                "edu",
+                "ethereal",
+                "etherlink",
+                "fantom",
+                "flare",
+                "flow",
+                "fraxtal",
+                "fuse",
+                "glue",
+                "gnosis",
+                "goat",
+                "gravity",
+                "hedera",
+                "hemi",
+                "hyperevm",
+                "ink",
+                "iota",
+                "kaia",
+                "katana",
+                "kava",
+                "lightlink",
+                "lisk",
+                "manta",
+                "mantle",
+                "metis",
+                "mode",
+                "moonbeam",
+                "moon",
+                "morph",
+                "nibiru",
+                "opbnb",
+                "peaq",
+                "plume",
+                "polygon",
+                "zkevm",
+                "rari",
+                "rootstock",
+                "sanko",
+                "scroll",
+                "sei",
+                "somnia",
+                "sonic",
+                "soph",
+                "story",
+                "sui",
+                "superposition",
+                "swell",
+                "tac",
+                "taiko",
+                "telosevm",
+                "ton",
+                "tron",
+                "vana",
+                "viction",
+                "worldchain",
+                "x layer",
+                "xdc",
+                "xpla",
+                "zircuit",
+                "zksync",
+                "zkverify",
+                "zora"
+            ]
+        },
+        {
+            "slug": "defiway-bridge",
+            "provider": "Defiway.Bridge",
+            "actionButtons": [
+                "[Bridge](https://defiway.com/bridge/)"
+            ],
+            "chain": "mainnet",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "technology": "Cross‑chain Transfer",
+            "openSource": false,
+            "support": [
+                "Website Form",
+                "Email"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Stablecoin Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Fast transaction speeds"
+            ],
+            "assetTypes": [
+                "Stablecoins"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Multisig validation, liquidity pools",
+            "auditsPerformed": [
+                "Audited by Certik"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "arbitrum",
+                "base",
+                "solana",
+                "linea",
+                "optimism",
+                "plasma",
+                "polygon",
+                "ton",
+                "bnb chain",
+                "bitcoin",
+                "tron",
+                "scroll"
+            ]
+        }
+    ],
+    "services": [
+        {
+            "slug": "dynamic-enterprise",
+            "provider": "Dynamic",
+            "actionButtons": [
+                "[Contact](https://calendly.com/nmendoza-fireblocks/dynamic?month=2026-01)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Software Development Tools",
+                "Application Development Tools",
+                "Platform as a Service",
+                "Integrated Development Environment"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "It provides a suite of developer tools, primarily an SDK, to help integrate Web3 authentication, user management and non-custodial wallet infrastructure into applications",
+            "starred": false
+        },
+        {
+            "slug": "dynamic-launch",
+            "provider": "Dynamic",
+            "actionButtons": [
+                "[Website](https://www.dynamic.xyz/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Software Development Tools",
+                "Application Development Tools",
+                "Platform as a Service",
+                "Integrated Development Environment"
+            ],
+            "price": "$0",
+            "planName": "Launch",
+            "planType": "Free",
+            "description": "It provides a suite of developer tools, primarily an SDK, to help integrate Web3 authentication, user management and non-custodial wallet infrastructure into applications",
+            "starred": false
+        },
+        {
+            "slug": "dynamic-growth",
+            "provider": "Dynamic",
+            "actionButtons": [
+                "[Buy](https://www.dynamic.xyz/pricing)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Software Development Tools",
+                "Application Development Tools",
+                "Platform as a Service",
+                "Integrated Development Environment"
+            ],
+            "price": "$249/mo",
+            "planName": "Growth",
+            "planType": "Tiered",
+            "description": "It provides a suite of developer tools, primarily an SDK, to help integrate Web3 authentication, user management and non-custodial wallet infrastructure into applications",
+            "starred": false
+        },
+        {
+            "slug": "jetbrains-intellij-ton",
+            "provider": "IntelliJ TON Plugin",
+            "actionButtons": [
+                "[Website](https://plugins.jetbrains.com/plugin/23382-ton)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "IDE",
+                "Syntax Highlighting",
+                "FunC",
+                "Tact"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "The official IntelliJ/IDEA plugin providing syntax highlighting, code completion, and tool integration for FunC and Tact development",
+            "starred": false
+        },
+        {
+            "slug": "orbs-ton-access",
+            "provider": "Orbs TON Access",
+            "actionButtons": [
+                "[Docs](https://docs.orbs.network/v3)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Infrastructure",
+                "Decentralized"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "A decentralized infrastructure layer that provides reliable, unrestricted  access to the TON network via a network of guardian nodes",
+            "starred": false
+        },
+        {
+            "slug": "toncli",
+            "provider": "TON CLI",
+            "actionButtons": [
+                "[Website](https://github.com/disintar/toncli)"
+            ],
+            "toolType": "CLI",
+            "tag": [
+                "Smart Contracts",
+                "FunC",
+                "CLI",
+                "Deployment"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "A command-line interface for compiling, testing, and deploying FunC smart contracts on the TON blockchain, commonly used in low-level TON development workflows",
+            "starred": false
+        },
+        {
+            "slug": "ton-lite-client",
+            "provider": "TON Lite Client",
+            "actionButtons": [
+                "[Website](https://github.com/ton-core/ton-lite-client)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Node",
+                "Infrastructure",
+                "Lite Client"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "The official lightweight client for interacting directly with the TON blockchain, forming the underlying protocol used by most TON RPC and API providers",
+            "starred": false
+        },
+        {
+            "slug": "ton-sandbox",
+            "provider": "Ton Sandbox",
+            "actionButtons": [
+                "[Website](https://github.com/ton-org/sandbox)"
+            ],
+            "toolType": "Testing and debugging",
+            "tag": [
+                "Local Blockchain",
+                "Testing",
+                "Debug"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "A tool that allows developers to run a local instance of the TON blockchain for rapid smart contract testing and debugging",
+            "starred": false
+        }
+    ],
+    "wallets": [
+        {
+            "slug": "binance-wallet",
+            "provider": "Binance Wallet",
+            "actionButtons": [
+                "[Website](https://www.binance.com/en/binancewallet)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20",
+                "ERC-404",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "24/7 live chat"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO",
+                "UR",
+                "HR",
+                "MY",
+                "SI",
+                "LO",
+                "DA",
+                "HU",
+                "RO",
+                "FIL"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "bybit-wallet",
+            "provider": "Bybit Wallet",
+            "actionButtons": [
+                "[Website](https://www.bybit.com/en/help-center/topic-list/web-3)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "24/7 live chat",
+                "x",
+                "discord",
+                "telegram"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO",
+                "UR",
+                "HR",
+                "MY"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "c98wallet",
+            "provider": "C98wallet",
+            "actionButtons": [
+                "[Website](https://coin98.com/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "SPL",
+                "PRC-20",
+                "VRC-25"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "x",
+                "discord"
+            ],
+            "audit": [
+                "audit with code"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "JA",
+                "PT",
+                "KO",
+                "ZH",
+                "ES",
+                "TR",
+                "ID",
+                "RU",
+                "TH",
+                "VI"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "coin-wallet",
+            "provider": "Coin Wallet",
+            "actionButtons": [
+                "[Website](https://coin.space/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "ARC-20",
+                "TRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "regular internal security audit"
+            ],
+            "languages": [
+                "EN",
+                "PL",
+                "FR",
+                "DE",
+                "IT",
+                "DA",
+                "NL",
+                "RU",
+                "TL",
+                "ZH",
+                "AR",
+                "HI",
+                "UR",
+                "KO",
+                "ES",
+                "CS",
+                "FI",
+                "EL",
+                "TR",
+                "PT",
+                "PT-BR",
+                "RO",
+                "JA",
+                "SR",
+                "HU",
+                "SV",
+                "NO",
+                "FA",
+                "UK",
+                "TH",
+                "AF",
+                "MS",
+                "ID",
+                "LV"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "exodus",
+            "provider": "Exodus",
+            "actionButtons": [
+                "[Website](https://www.exodus.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "TRC-20",
+                "SPL",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[x](@ExodusAssist)",
+                "helpdesk",
+                "email"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ES"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "gate",
+            "provider": "Gate",
+            "actionButtons": [
+                "[Website](https://www.gate.com/web3)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Web",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "telegram",
+                "discord"
+            ],
+            "audit": [
+                "January 2024 by Hacken"
+            ],
+            "languages": [
+                "EN",
+                "ZH"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "gem-wallet",
+            "provider": "Gem Wallet",
+            "actionButtons": [
+                "[Website](https://gemwallet.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "chat on website"
+            ],
+            "audit": [
+                "open to anyone"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "guarda",
+            "provider": "Guarda",
+            "actionButtons": [
+                "[Website](https://guarda.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "BEP-2",
+                "BEP-20",
+                "TRC-10",
+                "TRC-20",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[email](support@guarda.com)",
+                "telegram",
+                "x",
+                "youtube"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "RU"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "ledger",
+            "provider": "Ledger SAS",
+            "actionButtons": [
+                "[Website](https://www.ledger.com/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "Paid",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "Regular audits by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "JA"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "math-wallet",
+            "provider": "Math Wallet",
+            "actionButtons": [
+                "[Website](https://www.mathwallet.org/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "x",
+                "telegram"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "okxwallet",
+            "provider": "OKX Wallet",
+            "actionButtons": [
+                "[Website](https://web3.okx.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Web",
+                "Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ZH"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "onekey",
+            "provider": "OneKey",
+            "actionButtons": [
+                "[Website](https://onekey.so/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "EIP-721",
+                "EIP-1155",
+                "SPL",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[email](hi@onekey.so)",
+                "support website",
+                "x",
+                "github"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "FR",
+                "PT",
+                "PT-Br",
+                "RU",
+                "DE",
+                "ES",
+                "IT",
+                "ID",
+                "ZH",
+                "KO",
+                "UA",
+                "VI",
+                "HI",
+                "JA"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "safepal",
+            "provider": "SafePal",
+            "actionButtons": [
+                "[Website](https://www.safepal.com/en/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Hardware"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "Paid",
+            "support": [
+                "email",
+                "telegram",
+                "discord"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ZH",
+                "JA"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "tangem",
+            "provider": "Tangem Wallet",
+            "actionButtons": [
+                "[Website](https://tangem.com/en/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Hardware",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "DE"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "tokenpocket",
+            "provider": "TokenPocket",
+            "actionButtons": [
+                "[Website](https://www.tokenpocket.pro/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "telegram",
+                "discord"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ZH",
+                "JA"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "trustwallet",
+            "provider": "Trust Wallet",
+            "actionButtons": [
+                "[Website](https://trustwallet.com/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "[CertiK](https://www.certik.com/projects/trust-wallet)"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "ZH",
+                "JA"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "tonkeeper",
+            "provider": "Tonkeeper",
+            "actionButtons": [
+                "[Website](https://tonkeeper.com/)",
+                "[Telegram](https://t.me/tonkeeper)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Browser Extension",
+                "Desktop"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "Jettons",
+                "NFT",
+                "TEP-74",
+                "TEP-62"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "telegram",
+                "email"
+            ],
+            "audit": [
+                "Certik"
+            ],
+            "languages": [
+                "EN",
+                "RU",
+                "ZH",
+                "ES",
+                "ID",
+                "UK"
+            ],
+            "starred": true
+        },
+        {
+            "slug": "mytonwallet",
+            "provider": "MyTonWallet",
+            "actionButtons": [
+                "[Website](https://mytonwallet.io/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "Jettons",
+                "NFT"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "telegram",
+                "email"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "RU",
+                "ZH",
+                "ES",
+                "ID"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "tonhub",
+            "provider": "Tonhub",
+            "actionButtons": [
+                "[Website](https://tonhub.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "Jettons",
+                "NFT"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "telegram",
+                "email"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "RU"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "wallet-telegram",
+            "provider": "Wallet (Telegram)",
+            "actionButtons": [
+                "[Website](https://wallet.tg/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Desktop"
+            ],
+            "custodial": true,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "Jettons",
+                "NFT",
+                "USDT-TON"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "telegram",
+                "chatbot"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "RU",
+                "UA",
+                "Multilingual"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "openmask",
+            "provider": "OpenMask",
+            "actionButtons": [
+                "[Website](https://www.openmask.app/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "Jettons",
+                "NFT"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "telegram",
+                "email"
+            ],
+            "audit": null,
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "cypherock-x1",
+            "provider": "Cypherock X1",
+            "actionButtons": [
+                "[Website](https://www.cypherock.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Hardware"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "foxwallet",
+            "provider": "FoxWallet",
+            "actionButtons": [
+                "[Website](https://foxwallet.com/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "discord"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        }
+    ],
+    "explorers": [
+        {
+            "slug": "arkham",
+            "provider": "Arkham",
+            "actionButtons": [
+                "[Explore](https://intel.arkm.com/explorer/entity/ton)",
+                "[Docs](https://codex.arkm.com/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Tokens",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Entity Labeling",
+                "Relationship Graphs",
+                "De-anonymization",
+                "Portfolio Tracking"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": [
+                "Python",
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Entity",
+                "Transaction Hash",
+                "Token"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Partially paid",
+            "starred": false
+        },
+        {
+            "slug": "blockchair",
+            "provider": "Blockchair",
+            "actionButtons": [
+                "[Explore](https://blockchair.com/ton)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Tokens",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain Search",
+                "PDF Reports"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": [
+                "Python",
+                "Node.js"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "oklink",
+            "provider": "OKLink",
+            "actionButtons": [
+                "[Explore](https://www.oklink.com/ton)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts",
+                "Accounts",
+                "Token transfers",
+                "Address Activity"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "Smart Contract Verification",
+                "Address Labels",
+                "Address Monitoring",
+                "APIs",
+                "Network Overview",
+                "Price Charts",
+                "Amoy Contract Verification"
+            ],
+            "availableApis": [
+                "REST API",
+                "GraphQL",
+                "RPC API"
+            ],
+            "sdk": [
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "okx",
+            "provider": "OKX",
+            "actionButtons": [
+                "[Explore](https://web3.okx.com/explorer/ton)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "Smart Contract Verification",
+                "Label System"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "tonviewer-mainnet",
+            "provider": "Brave Ltd.",
+            "actionButtons": [
+                "[Explore](https://tonviewer.com/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Addresses",
+                "Transactions",
+                "Blocks",
+                "Smart Contracts"
+            ],
+            "additionalFeatures": [
+                "Trace Visualization",
+                "Analysis tools beyond basic transaction",
+                "Block browsing"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction",
+                "Block"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "tonviewer-testnet",
+            "provider": "Brave Ltd.",
+            "actionButtons": [
+                "[Explore](https://testnet.tonviewer.com./)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Addresses",
+                "Transactions",
+                "Blocks",
+                "Smart Contracts"
+            ],
+            "additionalFeatures": [
+                "Trace Visualization",
+                "Analysis tools beyond basic transaction",
+                "Block browsing"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction",
+                "Block"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "tonscan-mainnet",
+            "provider": "Bakkenbaeck, Bastion Digital",
+            "actionButtons": [
+                "[Explore](https://tonscan.org/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Addresses",
+                "Transactions",
+                "Blocks",
+                "Validators",
+                "Accounts"
+            ],
+            "additionalFeatures": [
+                "Interactive Graphs",
+                "Address Labeling",
+                "Custom Indexer"
+            ],
+            "availableApis": [
+                "REST API",
+                "JSON-RPC"
+            ],
+            "sdk": [
+                "Python",
+                "TON Kotlin"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction",
+                "Block",
+                "Domain"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "tonscan-testnet",
+            "provider": "Bakkenbaeck, Bastion Digital",
+            "actionButtons": [
+                "[Explore](https://testnet.tonscan.org./)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Addresses",
+                "Transactions",
+                "Blocks",
+                "Validators",
+                "Accounts"
+            ],
+            "additionalFeatures": [
+                "Interactive Graphs",
+                "Address Labeling",
+                "Custom Indexer"
+            ],
+            "availableApis": [
+                "REST API",
+                "JSON-RPC"
+            ],
+            "sdk": [
+                "Python",
+                "TON Kotlin"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction",
+                "Block",
+                "Domain"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        }
+    ],
     "apis": [
         {
             "slug": "quicknode-mainnet-build-recent-state",
@@ -2725,1364 +5890,6 @@
             "address": null
         }
     ],
-    "oracles": [
-        {
-            "slug": "redstone-mainnet",
-            "provider": "RedStone",
-            "actionButtons": [
-                "[Docs](https://docs.ton.org/ecosystem/oracles/redstone)"
-            ],
-            "chain": "mainnet",
-            "technology": "Modular Oracle",
-            "starred": false,
-            "availableApis": [
-                "Price Feeds",
-                "Custom Data"
-            ],
-            "monitoringAndAnalytics": [
-                "Custom Delivery Monitoring"
-            ],
-            "additionalFeatures": [
-                "Data Packaging",
-                "Gas-efficient delivery",
-                "Smart contract plugins"
-            ],
-            "dataTypes": [
-                "Token Prices",
-                "Custom External Data"
-            ],
-            "decentralizationModel": "Hybrid",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
-            "sdk": [
-                "JavaScript",
-                "Solidity"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits",
-                "Audit by PeckShield, 2023"
-            ]
-        },
-        {
-            "slug": "redstone-testnet",
-            "provider": "RedStone",
-            "actionButtons": [
-                "[Docs](https://docs.ton.org/ecosystem/oracles/redstone)"
-            ],
-            "chain": "testnet",
-            "technology": "Modular Oracle",
-            "starred": false,
-            "availableApis": [
-                "Price Feeds",
-                "Custom Data"
-            ],
-            "monitoringAndAnalytics": [
-                "Custom Delivery Monitoring"
-            ],
-            "additionalFeatures": [
-                "Data Packaging",
-                "Gas-efficient delivery",
-                "Smart contract plugins"
-            ],
-            "dataTypes": [
-                "Token Prices",
-                "Custom External Data"
-            ],
-            "decentralizationModel": "Hybrid",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
-            "sdk": [
-                "JavaScript",
-                "Solidity"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits",
-                "Audit by PeckShield, 2023"
-            ]
-        },
-        {
-            "slug": "pyth-mainnet",
-            "provider": "Pyth Network",
-            "actionButtons": [
-                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/ton)"
-            ],
-            "chain": "mainnet",
-            "technology": "Pull Oracle",
-            "starred": false,
-            "availableApis": [
-                "Asset Price Feeds (incl. ARB/USD)"
-            ],
-            "monitoringAndAnalytics": [
-                "Real time price feeds"
-            ],
-            "additionalFeatures": [
-                "Cross‑chain via Wormhole"
-            ],
-            "dataTypes": [
-                "Asset Prices",
-                "FX",
-                "Metals"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
-            "sdk": [
-                "Solidity",
-                "Python SDK"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits (2023)",
-                "Certik (2022)"
-            ]
-        },
-        {
-            "slug": "pyth-testnet",
-            "provider": "Pyth Network",
-            "actionButtons": [
-                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/ton)"
-            ],
-            "chain": "testnet",
-            "technology": "Pull Oracle",
-            "starred": false,
-            "availableApis": [
-                "Asset Price Feeds (incl. ARB/USD)"
-            ],
-            "monitoringAndAnalytics": [
-                "Real time price feeds"
-            ],
-            "additionalFeatures": [
-                "Cross‑chain via Wormhole"
-            ],
-            "dataTypes": [
-                "Asset Prices",
-                "FX",
-                "Metals"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
-            "sdk": [
-                "Solidity",
-                "Python SDK"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits (2023)",
-                "Certik (2022)"
-            ]
-        },
-        {
-            "slug": "orbs-mainnet",
-            "provider": "Orbs",
-            "actionButtons": [
-                "[Website](https://docs.orbs.network/v3/community-projects/ton-access)"
-            ],
-            "chain": "mainnet",
-            "technology": "Layer 3 Infrastructure",
-            "starred": true,
-            "availableApis": [
-                "RPC",
-                "Randomness"
-            ],
-            "monitoringAndAnalytics": [
-                "Validator status"
-            ],
-            "additionalFeatures": [
-                "Decentralized RPC",
-                "V3 Randomness"
-            ],
-            "dataTypes": [
-                "Infrastructure",
-                "Randomness"
-            ],
-            "decentralizationModel": "Proof-of-Stake",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "PoS Validators (Guardians)",
-            "sdk": [
-                "TypeScript"
-            ],
-            "auditsPerformed": [
-                "Internal",
-                "External Audits"
-            ]
-        },
-        {
-            "slug": "orbs-testnet",
-            "provider": "Orbs",
-            "actionButtons": [
-                "[Website](https://docs.orbs.network/v3/community-projects/ton-access)"
-            ],
-            "chain": "testnet",
-            "technology": "Layer 3 Infrastructure",
-            "starred": true,
-            "availableApis": [
-                "RPC",
-                "Randomness"
-            ],
-            "monitoringAndAnalytics": [
-                "Validator status"
-            ],
-            "additionalFeatures": [
-                "Decentralized RPC",
-                "V3 Randomness"
-            ],
-            "dataTypes": [
-                "Infrastructure",
-                "Randomness"
-            ],
-            "decentralizationModel": "Proof-of-Stake",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "PoS Validators (Guardians)",
-            "sdk": [
-                "TypeScript"
-            ],
-            "auditsPerformed": [
-                "Internal",
-                "External Audits"
-            ]
-        }
-    ],
-    "bridges": [
-        {
-            "slug": "ton-bridge",
-            "provider": "TON",
-            "actionButtons": [
-                "[Bridge](https://bridge-v3.ton.org/)"
-            ],
-            "chain": "mainnet",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "technology": "Cross‑chain Bridge",
-            "openSource": false,
-            "support": [
-                "Telegram"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Bridge API"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Decentralized oracle-based validation",
-                "Inbound and outbound transfers"
-            ],
-            "assetTypes": [
-                "Stablecoins",
-                "ERC-20",
-                "DAI",
-                "Toncoin"
-            ],
-            "price": "1-5 TON + Gas fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Decentralized oracles, slashing penalties, time locks and challenges",
-            "auditsPerformed": null,
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "TypeScript",
-                "JavaScript"
-            ],
-            "supportedChains": [
-                "ethereum",
-                "ton",
-                "bnb chain"
-            ]
-        },
-        {
-            "slug": "asterizm",
-            "provider": "Asterizm",
-            "actionButtons": [
-                "[Bridge](https://asterizm.io/)",
-                "[Docs](https://docs.asterizm.io/)"
-            ],
-            "chain": "mainnet",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "technology": "Cross‑chain Messaging",
-            "openSource": true,
-            "support": [
-                "Discord"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Cross‑chain Messaging"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Composable messaging",
-                "Intent‑based"
-            ],
-            "assetTypes": [
-                "ETH",
-                "USDC"
-            ],
-            "price": "Gas Fee + relayer fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Secured by validators and messaging relayers",
-            "auditsPerformed": null,
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "Web UI"
-            ],
-            "supportedChains": [
-                "ethereum",
-                "polygon",
-                "fantom",
-                "bnb smart chain",
-                "optimism",
-                "arbitrum",
-                "avalanche",
-                "celo",
-                "boba",
-                "aurora",
-                "venidium",
-                "bahamut",
-                "base",
-                "linea",
-                "mantle",
-                "gnosis",
-                "everscale",
-                "venom",
-                "xdc",
-                "ton",
-                "solana",
-                "lemonchain",
-                "torus",
-                "areon",
-                "units",
-                "redbelley",
-                "supra"
-            ]
-        },
-        {
-            "slug": "chainspot",
-            "provider": "Chainspot",
-            "actionButtons": [
-                "[Bridge](https://app.chainspot.io/)",
-                "[Docs](https://docs.chainspot.io/)"
-            ],
-            "chain": "mainnet",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "technology": "Bridge Aggregator",
-            "openSource": true,
-            "support": [
-                "Discord"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Bridge Aggregation"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Multi‑bridge routing",
-                "Cross‑chain explorer"
-            ],
-            "assetTypes": [
-                "ETH",
-                "ERC‑20"
-            ],
-            "price": "Depends on selected route",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Inherits security from underlying bridges",
-            "auditsPerformed": null,
-            "decentralizationModel": "Aggregator",
-            "sdk": [
-                "Web UI"
-            ],
-            "supportedChains": [
-                "ethereum",
-                "polygon",
-                "bnb chain",
-                "arbitrum one",
-                "avalanche",
-                "fantom",
-                "telos",
-                "boba",
-                "optimism",
-                "harmony",
-                "moonriver",
-                "moonbeam",
-                "okxchain",
-                "aurora",
-                "evmos",
-                "fuse",
-                "cronos",
-                "gnosis",
-                "celo",
-                "venom testnet",
-                "base",
-                "linea",
-                "polygon zkevm",
-                "scroll",
-                "mantle",
-                "zksync",
-                "boba beam",
-                "kava",
-                "wanchain",
-                "tron",
-                "rootstock",
-                "fraxtal",
-                "bsquared(b2)",
-                "zklink",
-                "bahamut",
-                "mint",
-                "bevm",
-                "bob",
-                "bitlayer",
-                "blast",
-                "mode",
-                "taiko",
-                "ton"
-            ]
-        },
-        {
-            "slug": "layerswap",
-            "provider": "Layerswap",
-            "actionButtons": [
-                "[Bridge](https://layerswap.io/app)",
-                "[Docs](https://docs.layerswap.io/introduction)"
-            ],
-            "chain": "mainnet",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "technology": "Cross‑chain Swaps",
-            "openSource": true,
-            "support": [
-                "Discord"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Asset Transfer"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Exchange <> L2 bridging"
-            ],
-            "assetTypes": [
-                "ETH",
-                "ERC‑20"
-            ],
-            "price": "Gas Fee + small service fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Bridging secured through centralized custody & partners",
-            "auditsPerformed": null,
-            "decentralizationModel": "Partially Decentralized",
-            "sdk": [
-                "Web UI"
-            ],
-            "supportedChains": [
-                "abstract",
-                "ancient8",
-                "arbitrum one",
-                "arbitrum nova",
-                "avalanche",
-                "base",
-                "berachain",
-                "bitcoin",
-                "blast",
-                "bob",
-                "bnb chain",
-                "celo",
-                "eclipse",
-                "ethereum",
-                "fuel ignition",
-                "fuse",
-                "gnosis",
-                "gravity",
-                "hyperevm",
-                "hashkey chain",
-                "immutablex",
-                "immutable zkevm",
-                "ink",
-                "kaia",
-                "katana",
-                "linea",
-                "lisk",
-                "lightlink",
-                "loopring",
-                "manta pacific",
-                "mantle",
-                "matchain",
-                "mint",
-                "mode",
-                "morph",
-                "nahmii",
-                "optimism",
-                "opbnb",
-                "polygon",
-                "polygon zkevm",
-                "plasma",
-                "paradex",
-                "ronin",
-                "rari",
-                "redstone",
-                "sei",
-                "solana",
-                "shape",
-                "soneium",
-                "sonic",
-                "soon",
-                "sophon",
-                "starknet",
-                "scroll",
-                "superposition",
-                "superseed",
-                "taiko",
-                "ton",
-                "unichain",
-                "world chain",
-                "xai",
-                "x layer",
-                "xai",
-                "zero",
-                "zircuit",
-                "zetachain",
-                "zksync lite",
-                "zksync era",
-                "zora"
-            ]
-        },
-        {
-            "slug": "orbiter",
-            "provider": "Orbiter Finance",
-            "actionButtons": [
-                "[Bridge](https://orbiter.finance)",
-                "[Docs](https://docs.orbiter.finance)"
-            ],
-            "chain": "mainnet",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "technology": "Cross‑chain Messaging",
-            "openSource": true,
-            "support": [
-                "Discord"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Asset Transfer"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Low cost",
-                "Instant confirmation"
-            ],
-            "assetTypes": [
-                "ETH",
-                "ERC‑20"
-            ],
-            "price": "Gas Fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Peer-to-peer intents & liquidity providers",
-            "auditsPerformed": null,
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "Web UI"
-            ],
-            "supportedChains": [
-                "arbitrum",
-                "bnb chain",
-                "base",
-                "blast",
-                "ethereum",
-                "ink",
-                "linea",
-                "lisk",
-                "mode",
-                "optimism",
-                "polygon",
-                "redstone",
-                "scroll",
-                "solana",
-                "soneium",
-                "unichain",
-                "world chain",
-                "zora",
-                "zksyncera",
-                "eni",
-                "x layer",
-                "sui",
-                "celo",
-                "juchain",
-                "bob",
-                "story",
-                "manta",
-                "arbitrum nova",
-                "ape chain",
-                "zetachain",
-                "hemi",
-                "mint",
-                "hashkey",
-                "superseed",
-                "gravity",
-                "zero",
-                "rootstock",
-                "corn",
-                "superposition",
-                "zk fair",
-                "morph",
-                "nero",
-                "conflux",
-                "hpp",
-                "hyperliquid",
-                "paradex",
-                "merlin",
-                "katana",
-                "berachain",
-                "immutable x",
-                "plume",
-                "sophon",
-                "opbnb",
-                "kaia",
-                "tron",
-                "fuel",
-                "sonic",
-                "cyber",
-                "bitlayer",
-                "zircuit",
-                "starknet",
-                "fraxtal",
-                "avalanche",
-                "eclipse",
-                "core",
-                "ton",
-                "bevm",
-                "zklink nova",
-                "b² network",
-                "mantle",
-                "zksync lite",
-                "ronin",
-                "sonic svm",
-                "polygon zkevm",
-                "abstract",
-                "movement",
-                "sui",
-                "taiko"
-            ]
-        },
-        {
-            "slug": "rubic",
-            "provider": "Rubic",
-            "actionButtons": [
-                "[Bridge](https://rubic.exchange)",
-                "[Docs](https://docs.rubic.finance/)"
-            ],
-            "chain": "mainnet",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "technology": "Bridge Aggregator",
-            "openSource": true,
-            "support": [
-                "Discord"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Bridge API",
-                "Swap API"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "15k+ tokens",
-                "100+ chains supported"
-            ],
-            "assetTypes": [
-                "ETH",
-                "ERC‑20"
-            ],
-            "price": "Depends on underlying bridge",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Security inherited from selected bridge",
-            "auditsPerformed": null,
-            "decentralizationModel": null,
-            "sdk": [
-                "JS SDK",
-                "Web UI"
-            ],
-            "supportedChains": [
-                "polygon",
-                "bnb chain",
-                "tron",
-                "unichain",
-                "bitcoin",
-                "solana",
-                "base",
-                "arbitrum",
-                "ethereum",
-                "linea",
-                "optimism",
-                "zksync era",
-                "ton",
-                "avalanche",
-                "berachain",
-                "blast",
-                "scroll",
-                "morph",
-                "fraxtal",
-                "soneium",
-                "mode",
-                "mantle",
-                "metis",
-                "manta pacific",
-                "fantom",
-                "zkevm",
-                "pulsechain",
-                "taiko",
-                "hemi",
-                "filecoin",
-                "x layer",
-                "bahamut",
-                "dash",
-                "monero",
-                "cardano",
-                "cosmos",
-                "litecoin",
-                "xrp ledger",
-                "aptos",
-                "polkadot",
-                "stellar",
-                "near",
-                "zilliqa",
-                "tezos",
-                "xdc",
-                "kava cosmos",
-                "neo",
-                "gnosis",
-                "flare"
-            ]
-        },
-        {
-            "slug": "stargate",
-            "provider": "Stargate Finance",
-            "actionButtons": [
-                "[Bridge](https://stargate.finance/)",
-                "[Docs](https://stargateprotocol.gitbook.io/stargate/)"
-            ],
-            "chain": "mainnet",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "technology": "Omnichain Liquidity Layer",
-            "openSource": true,
-            "support": [
-                "Discord",
-                "Email"
-            ],
-            "starred": false,
-            "availableApis": [
-                "REST API",
-                "GraphQL"
-            ],
-            "monitoringAndAnalytics": [
-                "Pooled Liquidity Transfers",
-                "OFT Cross-chain Transfers"
-            ],
-            "additionalFeatures": [
-                "Unified Liquidity Pools",
-                "Low-Fee (0.06%)",
-                "OFT Support"
-            ],
-            "assetTypes": [
-                "ETH",
-                "USDC",
-                "USDT",
-                "ERC‑20",
-                "OFT"
-            ],
-            "price": "Gas Fee, Protocol Fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Decentralized pools secured by LayerZero consensus",
-            "auditsPerformed": [
-                "Audit(s) by DeFi teams"
-            ],
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "TypeScript"
-            ],
-            "supportedChains": [
-                "base",
-                "plasma",
-                "arbitrum",
-                "optimism",
-                "linea",
-                "ethereum",
-                "unichain",
-                "soneium",
-                "hyperliquid",
-                "solana",
-                "og",
-                "abstract",
-                "ape",
-                "abstract",
-                "aptos",
-                "near",
-                "avalanche",
-                "berachain",
-                "blast",
-                "bnb chain",
-                "bob",
-                "botanix",
-                "celo",
-                "core",
-                "corn",
-                "cronos",
-                "cyber",
-                "degen",
-                "edu",
-                "ethereal",
-                "etherlink",
-                "fantom",
-                "flare",
-                "flow",
-                "fraxtal",
-                "fuse",
-                "glue",
-                "gnosis",
-                "goat",
-                "gravity",
-                "hedera",
-                "hemi",
-                "hyperevm",
-                "ink",
-                "iota",
-                "kaia",
-                "katana",
-                "kava",
-                "lightlink",
-                "lisk",
-                "manta",
-                "mantle",
-                "metis",
-                "mode",
-                "moonbeam",
-                "moon",
-                "morph",
-                "nibiru",
-                "opbnb",
-                "peaq",
-                "plume",
-                "polygon",
-                "zkevm",
-                "rari",
-                "rootstock",
-                "sanko",
-                "scroll",
-                "sei",
-                "somnia",
-                "sonic",
-                "soph",
-                "story",
-                "sui",
-                "superposition",
-                "swell",
-                "tac",
-                "taiko",
-                "telosevm",
-                "ton",
-                "tron",
-                "vana",
-                "viction",
-                "worldchain",
-                "x layer",
-                "xdc",
-                "xpla",
-                "zircuit",
-                "zksync",
-                "zkverify",
-                "zora"
-            ]
-        },
-        {
-            "slug": "symbiosis",
-            "provider": "Stargate Finance",
-            "actionButtons": [
-                "[Bridge](https://stargate.finance/)",
-                "[Docs](https://stargateprotocol.gitbook.io/stargate/)"
-            ],
-            "chain": "mainnet",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "technology": "Omnichain Liquidity Layer",
-            "openSource": true,
-            "support": [
-                "Discord",
-                "Email"
-            ],
-            "starred": false,
-            "availableApis": [
-                "REST API",
-                "GraphQL"
-            ],
-            "monitoringAndAnalytics": [
-                "Pooled Liquidity Transfers",
-                "OFT Cross-chain Transfers"
-            ],
-            "additionalFeatures": [
-                "Unified Liquidity Pools",
-                "Low-Fee (0.06%)",
-                "OFT Support"
-            ],
-            "assetTypes": [
-                "ETH",
-                "USDC",
-                "USDT",
-                "ERC‑20",
-                "OFT"
-            ],
-            "price": "Gas Fee, Protocol Fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Decentralized pools secured by LayerZero consensus",
-            "auditsPerformed": [
-                "Audit(s) by DeFi teams"
-            ],
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "TypeScript"
-            ],
-            "supportedChains": [
-                "base",
-                "plasma",
-                "arbitrum",
-                "optimism",
-                "linea",
-                "ethereum",
-                "unichain",
-                "soneium",
-                "hyperliquid",
-                "solana",
-                "og",
-                "abstract",
-                "ape",
-                "abstract",
-                "aptos",
-                "near",
-                "avalanche",
-                "berachain",
-                "blast",
-                "bnb chain",
-                "bob",
-                "botanix",
-                "celo",
-                "core",
-                "corn",
-                "cronos",
-                "cyber",
-                "degen",
-                "edu",
-                "ethereal",
-                "etherlink",
-                "fantom",
-                "flare",
-                "flow",
-                "fraxtal",
-                "fuse",
-                "glue",
-                "gnosis",
-                "goat",
-                "gravity",
-                "hedera",
-                "hemi",
-                "hyperevm",
-                "ink",
-                "iota",
-                "kaia",
-                "katana",
-                "kava",
-                "lightlink",
-                "lisk",
-                "manta",
-                "mantle",
-                "metis",
-                "mode",
-                "moonbeam",
-                "moon",
-                "morph",
-                "nibiru",
-                "opbnb",
-                "peaq",
-                "plume",
-                "polygon",
-                "zkevm",
-                "rari",
-                "rootstock",
-                "sanko",
-                "scroll",
-                "sei",
-                "somnia",
-                "sonic",
-                "soph",
-                "story",
-                "sui",
-                "superposition",
-                "swell",
-                "tac",
-                "taiko",
-                "telosevm",
-                "ton",
-                "tron",
-                "vana",
-                "viction",
-                "worldchain",
-                "x layer",
-                "xdc",
-                "xpla",
-                "zircuit",
-                "zksync",
-                "zkverify",
-                "zora"
-            ]
-        },
-        {
-            "slug": "defiway-bridge",
-            "provider": "Defiway.Bridge",
-            "actionButtons": [
-                "[Bridge](https://defiway.com/bridge/)"
-            ],
-            "chain": "mainnet",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "technology": "Cross‑chain Transfer",
-            "openSource": false,
-            "support": [
-                "Website Form",
-                "Email"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Stablecoin Transfer"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Fast transaction speeds"
-            ],
-            "assetTypes": [
-                "Stablecoins"
-            ],
-            "price": "Gas Fee",
-            "economicalSecurity": false,
-            "economicalSecurityNote": "Multisig validation, liquidity pools",
-            "auditsPerformed": [
-                "Audited by Certik"
-            ],
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "Web UI"
-            ],
-            "supportedChains": [
-                "ethereum",
-                "arbitrum",
-                "base",
-                "solana",
-                "linea",
-                "optimism",
-                "plasma",
-                "polygon",
-                "ton",
-                "bnb chain",
-                "bitcoin",
-                "tron",
-                "scroll"
-            ]
-        }
-    ],
-    "explorers": [
-        {
-            "slug": "arkham",
-            "provider": "Arkham",
-            "actionButtons": [
-                "[Explore](https://intel.arkm.com/explorer/entity/ton)",
-                "[Docs](https://codex.arkm.com/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Tokens",
-                "Contracts"
-            ],
-            "additionalFeatures": [
-                "Entity Labeling",
-                "Relationship Graphs",
-                "De-anonymization",
-                "Portfolio Tracking"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": [
-                "Python",
-                "TypeScript"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Entity",
-                "Transaction Hash",
-                "Token"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Partially paid",
-            "starred": false
-        },
-        {
-            "slug": "blockchair",
-            "provider": "Blockchair",
-            "actionButtons": [
-                "[Explore](https://blockchair.com/ton)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Tokens",
-                "Contracts"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain Search",
-                "PDF Reports"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": [
-                "Python",
-                "Node.js"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
-        },
-        {
-            "slug": "oklink",
-            "provider": "OKLink",
-            "actionButtons": [
-                "[Explore](https://www.oklink.com/ton)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Transactions",
-                "Blocks",
-                "Tokens",
-                "Gas",
-                "Contracts",
-                "Accounts",
-                "Token transfers",
-                "Address Activity"
-            ],
-            "additionalFeatures": [
-                "Token Tracker",
-                "Smart Contract Verification",
-                "Address Labels",
-                "Address Monitoring",
-                "APIs",
-                "Network Overview",
-                "Price Charts",
-                "Amoy Contract Verification"
-            ],
-            "availableApis": [
-                "REST API",
-                "GraphQL",
-                "RPC API"
-            ],
-            "sdk": [
-                "TypeScript"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block",
-                "Token"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
-        },
-        {
-            "slug": "okx",
-            "provider": "OKX",
-            "actionButtons": [
-                "[Explore](https://web3.okx.com/explorer/ton)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Transactions",
-                "Blocks",
-                "Tokens",
-                "Gas",
-                "Contracts"
-            ],
-            "additionalFeatures": [
-                "Token Tracker",
-                "Smart Contract Verification",
-                "Label System"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block",
-                "Token"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
-        },
-        {
-            "slug": "tonviewer-mainnet",
-            "provider": "Brave Ltd.",
-            "actionButtons": [
-                "[Explore](https://tonviewer.com/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Addresses",
-                "Transactions",
-                "Blocks",
-                "Smart Contracts"
-            ],
-            "additionalFeatures": [
-                "Trace Visualization",
-                "Analysis tools beyond basic transaction",
-                "Block browsing"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Address",
-                "Transaction",
-                "Block"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
-        },
-        {
-            "slug": "tonviewer-testnet",
-            "provider": "Brave Ltd.",
-            "actionButtons": [
-                "[Explore](https://testnet.tonviewer.com./)"
-            ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Addresses",
-                "Transactions",
-                "Blocks",
-                "Smart Contracts"
-            ],
-            "additionalFeatures": [
-                "Trace Visualization",
-                "Analysis tools beyond basic transaction",
-                "Block browsing"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Address",
-                "Transaction",
-                "Block"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
-        },
-        {
-            "slug": "tonscan-mainnet",
-            "provider": "Bakkenbaeck, Bastion Digital",
-            "actionButtons": [
-                "[Explore](https://tonscan.org/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Addresses",
-                "Transactions",
-                "Blocks",
-                "Validators",
-                "Accounts"
-            ],
-            "additionalFeatures": [
-                "Interactive Graphs",
-                "Address Labeling",
-                "Custom Indexer"
-            ],
-            "availableApis": [
-                "REST API",
-                "JSON-RPC"
-            ],
-            "sdk": [
-                "Python",
-                "TON Kotlin"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction",
-                "Block",
-                "Domain"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
-        },
-        {
-            "slug": "tonscan-testnet",
-            "provider": "Bakkenbaeck, Bastion Digital",
-            "actionButtons": [
-                "[Explore](https://testnet.tonscan.org./)"
-            ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Addresses",
-                "Transactions",
-                "Blocks",
-                "Validators",
-                "Accounts"
-            ],
-            "additionalFeatures": [
-                "Interactive Graphs",
-                "Address Labeling",
-                "Custom Indexer"
-            ],
-            "availableApis": [
-                "REST API",
-                "JSON-RPC"
-            ],
-            "sdk": [
-                "Python",
-                "TON Kotlin"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction",
-                "Block",
-                "Domain"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
-        }
-    ],
     "faucets": [
         {
             "slug": "chainstack-faucet",
@@ -4137,1543 +5944,129 @@
             "dripLimitPeriod": "1h"
         }
     ],
-    "analytics": [
-        {
-            "slug": "tonstat",
-            "provider": "TonStat",
-            "actionButtons": [
-                "[Dashboard](https://www.tonstat.com/)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Network Growth",
-                "Validators",
-                "Active Accounts",
-                "Transaction Count",
-                "Staking"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Public API"
-            ],
-            "price": "$0",
-            "planName": "Free",
-            "planType": "Free",
-            "starred": true
-        },
-        {
-            "slug": "dyor-io",
-            "provider": "DYOR.io",
-            "actionButtons": [
-                "[Dashboard](https://dyor.io/token/ton)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Jetton Prices",
-                "Liquidity Pools",
-                "Scam Detection",
-                "Holder Distribution",
-                "Rug Pull Checks"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "API (Premium)"
-            ],
-            "price": "Free / Premium",
-            "planName": "Freemium",
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "geckoterminal",
-            "provider": "GeckoTerminal",
-            "actionButtons": [
-                "[Dashboard](https://www.geckoterminal.com/ton/pools)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "DEX Trading Pairs",
-                "OHLCV Charts",
-                "Liquidity",
-                "Recent Trades"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Public API"
-            ],
-            "price": "$0",
-            "planName": "Free",
-            "planType": "Free",
-            "starred": false
-        },
-        {
-            "slug": "tonviewer-analytics",
-            "provider": "TonViewer",
-            "actionButtons": [
-                "[Dashboard](https://tonviewer.com/)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Top Jettons",
-                "Top NFTs",
-                "Whale Tracking",
-                "Bridges"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "TonAPI"
-            ],
-            "price": "$0",
-            "planName": "Free",
-            "planType": "Free",
-            "starred": false
-        },
-        {
-            "slug": "dappradar",
-            "provider": "DappRadar",
-            "actionButtons": [
-                "[Dashboard](https://dappradar.com/chain/ton)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Unique active wallets",
-                "Txs volume",
-                "Dapps number",
-                "Dapps volume",
-                "NFTs stats"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "REST API",
-                "No historical data on free API"
-            ],
-            "price": "api for $0/$9.99/$199/$499 for 5/5/30/50 RPS and 100/2.5K/100K/1M RPM",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "defillama",
-            "provider": "DeFiLlama",
-            "actionButtons": [
-                "[Dashboard](https://defillama.com/chain/ton)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "DeFi TVL",
-                "DEX & Perps Volume",
-                "Bridged Assets",
-                "Active Addresses",
-                "Stablecoin Supply"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "REST API"
-            ],
-            "price": "$0/$49/$300/mo (monthly plan), $0 (2 months free)/$40.83/mo ($490/year)/$250/mo (3K/year) (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "dexscreener",
-            "provider": "DexScreener",
-            "actionButtons": [
-                "[Dashboard](https://dexscreener.com/ton)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "DEX Trading Pairs",
-                "Token Prices",
-                "Volume",
-                "Liquidity",
-                "Swaps"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "REST API"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "starred": false
-        },
-        {
-            "slug": "dune",
-            "provider": "Dune",
-            "actionButtons": [
-                "[Dashboard](https://dune.com/blockchains/ton)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Transactions",
-                "Gas Usage",
-                "Bridge Activity",
-                "Active Users",
-                "Token Transfers",
-                "Smart Contract Activity"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "SQL Queries",
-                "Visualizations"
-            ],
-            "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "messari",
-            "provider": "Messari",
-            "actionButtons": [
-                "[Dashboard](https://messari.io/project/the-open-network)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Network Metrics",
-                "TVL & Market Data",
-                "On‑chain Usage Metrics"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Research Reports",
-                "API Access",
-                "Dashboard"
-            ],
-            "price": "$0/$4000/year",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "nansen",
-            "provider": "Nansen",
-            "actionButtons": [
-                "[Dashboard](https://app.nansen.ai/macro/overview?chain=ton)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Exchange Flows",
-                "Token Distribution",
-                "DeFi Activity",
-                "NFT Analytics",
-                "Wallet Labels"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Smart Money API",
-                "Profiler API",
-                "API Keys"
-            ],
-            "price": "$0/$69/mo (monthly plan), $0/$49/mo (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "tokenterminal",
-            "provider": "token terminal",
-            "actionButtons": [
-                "[Dashboard](https://tokenterminal.com/explorer/projects/the-open-network)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Active wallets",
-                "Active projects",
-                "Revenue",
-                "Fees"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "JSON-RPC with 60 RPS"
-            ],
-            "price": "$0/$350/mo (monthly plan), $0/$292/mo (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        }
-    ],
-    "wallets": [
-        {
-            "slug": "binance-wallet",
-            "provider": "Binance Wallet",
-            "actionButtons": [
-                "[Website](https://www.binance.com/en/binancewallet)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-2",
-                "BEP-20",
-                "ERC-721",
-                "SPL",
-                "TRC-20",
-                "TRC-10",
-                "BRC-20",
-                "ERC-404",
-                "ERC-1155"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "24/7 live chat"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN",
-                "FR",
-                "ES",
-                "DE",
-                "ZH",
-                "NL",
-                "IT",
-                "PL",
-                "PT",
-                "JA",
-                "IT",
-                "ID",
-                "HI",
-                "NL",
-                "CS",
-                "CA",
-                "BG",
-                "AR",
-                "VI",
-                "TR",
-                "RU",
-                "FA",
-                "KO",
-                "SV",
-                "HA",
-                "YO",
-                "UR",
-                "HR",
-                "MY",
-                "SI",
-                "LO",
-                "DA",
-                "HU",
-                "RO",
-                "FIL"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "bybit-wallet",
-            "provider": "Bybit Wallet",
-            "actionButtons": [
-                "[Website](https://www.bybit.com/en/help-center/topic-list/web-3)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-2",
-                "BEP-20",
-                "ERC-721",
-                "SPL",
-                "TRC-20",
-                "TRC-10",
-                "BRC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email",
-                "24/7 live chat",
-                "x",
-                "discord",
-                "telegram"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN",
-                "FR",
-                "ES",
-                "DE",
-                "ZH",
-                "NL",
-                "IT",
-                "PL",
-                "PT",
-                "JA",
-                "IT",
-                "ID",
-                "HI",
-                "NL",
-                "CS",
-                "CA",
-                "BG",
-                "AR",
-                "VI",
-                "TR",
-                "RU",
-                "FA",
-                "KO",
-                "SV",
-                "HA",
-                "YO",
-                "UR",
-                "HR",
-                "MY"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "c98wallet",
-            "provider": "C98wallet",
-            "actionButtons": [
-                "[Website](https://coin98.com/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20",
-                "SPL",
-                "PRC-20",
-                "VRC-25"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "x",
-                "discord"
-            ],
-            "audit": [
-                "audit with code"
-            ],
-            "languages": [
-                "EN",
-                "FR",
-                "JA",
-                "PT",
-                "KO",
-                "ZH",
-                "ES",
-                "TR",
-                "ID",
-                "RU",
-                "TH",
-                "VI"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "coin-wallet",
-            "provider": "Coin Wallet",
-            "actionButtons": [
-                "[Website](https://coin.space/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20",
-                "ARC-20",
-                "TRC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email"
-            ],
-            "audit": [
-                "regular internal security audit"
-            ],
-            "languages": [
-                "EN",
-                "PL",
-                "FR",
-                "DE",
-                "IT",
-                "DA",
-                "NL",
-                "RU",
-                "TL",
-                "ZH",
-                "AR",
-                "HI",
-                "UR",
-                "KO",
-                "ES",
-                "CS",
-                "FI",
-                "EL",
-                "TR",
-                "PT",
-                "PT-BR",
-                "RO",
-                "JA",
-                "SR",
-                "HU",
-                "SV",
-                "NO",
-                "FA",
-                "UK",
-                "TH",
-                "AF",
-                "MS",
-                "ID",
-                "LV"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "exodus",
-            "provider": "Exodus",
-            "actionButtons": [
-                "[Website](https://www.exodus.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Desktop",
-                "iOS",
-                "Android",
-                "Web"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20",
-                "TRC-20",
-                "SPL",
-                "Algorand Standard Assets (ASA)"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "[x](@ExodusAssist)",
-                "helpdesk",
-                "email"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "ES"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "gate",
-            "provider": "Gate",
-            "actionButtons": [
-                "[Website](https://www.gate.com/web3)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Web",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email",
-                "telegram",
-                "discord"
-            ],
-            "audit": [
-                "January 2024 by Hacken"
-            ],
-            "languages": [
-                "EN",
-                "ZH"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "gem-wallet",
-            "provider": "Gem Wallet",
-            "actionButtons": [
-                "[Website](https://gemwallet.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": false,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "chat on website"
-            ],
-            "audit": [
-                "open to anyone"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "guarda",
-            "provider": "Guarda",
-            "actionButtons": [
-                "[Website](https://guarda.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Desktop",
-                "iOS",
-                "Android",
-                "Web"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": false,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "BEP-2",
-                "BEP-20",
-                "TRC-10",
-                "TRC-20",
-                "Algorand Standard Assets (ASA)"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "[email](support@guarda.com)",
-                "telegram",
-                "x",
-                "youtube"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "RU"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "ledger",
-            "provider": "Ledger SAS",
-            "actionButtons": [
-                "[Website](https://www.ledger.com/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Desktop",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
-            ],
-            "staking": true,
-            "price": "Paid",
-            "support": [
-                "email",
-                "helpdesk"
-            ],
-            "audit": [
-                "Regular audits by third parties"
-            ],
-            "languages": [
-                "EN",
-                "FR",
-                "ES",
-                "DE",
-                "ZH",
-                "JA"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "math-wallet",
-            "provider": "Math Wallet",
-            "actionButtons": [
-                "[Website](https://www.mathwallet.org/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-2",
-                "BEP-20",
-                "ERC-721",
-                "SPL",
-                "TRC-20",
-                "TRC-10",
-                "BRC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email",
-                "x",
-                "telegram"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN",
-                "FR",
-                "ES",
-                "DE",
-                "ZH",
-                "NL",
-                "IT",
-                "PL",
-                "PT",
-                "JA",
-                "IT",
-                "ID",
-                "HI",
-                "NL",
-                "CS",
-                "CA",
-                "BG",
-                "AR",
-                "VI",
-                "TR",
-                "RU",
-                "FA",
-                "KO",
-                "SV",
-                "HA",
-                "YO"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "okxwallet",
-            "provider": "OKX Wallet",
-            "actionButtons": [
-                "[Website](https://web3.okx.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Web",
-                "Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
-            ],
-            "staking": false,
-            "price": "$0",
-            "support": [
-                "email",
-                "helpdesk"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "ZH"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "onekey",
-            "provider": "OneKey",
-            "actionButtons": [
-                "[Website](https://onekey.so/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Desktop",
-                "iOS",
-                "Android",
-                "Web"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": true,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "EIP-721",
-                "EIP-1155",
-                "SPL",
-                "Algorand Standard Assets (ASA)"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "[email](hi@onekey.so)",
-                "support website",
-                "x",
-                "github"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "FR",
-                "PT",
-                "PT-Br",
-                "RU",
-                "DE",
-                "ES",
-                "IT",
-                "ID",
-                "ZH",
-                "KO",
-                "UA",
-                "VI",
-                "HI",
-                "JA"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "safepal",
-            "provider": "SafePal",
-            "actionButtons": [
-                "[Website](https://www.safepal.com/en/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "iOS",
-                "Android",
-                "Hardware"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
-            ],
-            "staking": true,
-            "price": "Paid",
-            "support": [
-                "email",
-                "telegram",
-                "discord"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "ZH",
-                "JA"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "tangem",
-            "provider": "Tangem Wallet",
-            "actionButtons": [
-                "[Website](https://tangem.com/en/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Hardware",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
-            ],
-            "staking": false,
-            "price": "Paid",
-            "support": [
-                "email",
-                "helpdesk"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "DE"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "tokenpocket",
-            "provider": "TokenPocket",
-            "actionButtons": [
-                "[Website](https://www.tokenpocket.pro/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email",
-                "telegram",
-                "discord"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "ZH",
-                "JA"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "trustwallet",
-            "provider": "Trust Wallet",
-            "actionButtons": [
-                "[Website](https://trustwallet.com/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "iOS",
-                "Android",
-                "Web"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email",
-                "helpdesk"
-            ],
-            "audit": [
-                "[CertiK](https://www.certik.com/projects/trust-wallet)"
-            ],
-            "languages": [
-                "EN",
-                "ES",
-                "FR",
-                "ZH",
-                "JA"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "tonkeeper",
-            "provider": "Tonkeeper",
-            "actionButtons": [
-                "[Website](https://tonkeeper.com/)",
-                "[Telegram](https://t.me/tonkeeper)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "iOS",
-                "Android",
-                "Browser Extension",
-                "Desktop"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": true,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "Jettons",
-                "NFT",
-                "TEP-74",
-                "TEP-62"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "telegram",
-                "email"
-            ],
-            "audit": [
-                "Certik"
-            ],
-            "languages": [
-                "EN",
-                "RU",
-                "ZH",
-                "ES",
-                "ID",
-                "UK"
-            ],
-            "starred": true
-        },
-        {
-            "slug": "mytonwallet",
-            "provider": "MyTonWallet",
-            "actionButtons": [
-                "[Website](https://mytonwallet.io/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android",
-                "Web"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "Jettons",
-                "NFT"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "telegram",
-                "email"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "RU",
-                "ZH",
-                "ES",
-                "ID"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "tonhub",
-            "provider": "Tonhub",
-            "actionButtons": [
-                "[Website](https://tonhub.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "Jettons",
-                "NFT"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "telegram",
-                "email"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "RU"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "wallet-telegram",
-            "provider": "Wallet (Telegram)",
-            "actionButtons": [
-                "[Website](https://wallet.tg/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "iOS",
-                "Android",
-                "Desktop"
-            ],
-            "custodial": true,
-            "mfa": true,
-            "msig": false,
-            "hardware": false,
-            "keyExport": false,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "Jettons",
-                "NFT",
-                "USDT-TON"
-            ],
-            "staking": false,
-            "price": "$0",
-            "support": [
-                "telegram",
-                "chatbot"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "RU",
-                "UA",
-                "Multilingual"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "openmask",
-            "provider": "OpenMask",
-            "actionButtons": [
-                "[Website](https://www.openmask.app/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "Jettons",
-                "NFT"
-            ],
-            "staking": false,
-            "price": "$0",
-            "support": [
-                "telegram",
-                "email"
-            ],
-            "audit": null,
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "cypherock-x1",
-            "provider": "Cypherock X1",
-            "actionButtons": [
-                "[Website](https://www.cypherock.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Hardware"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20"
-            ],
-            "staking": false,
-            "price": "Paid",
-            "support": [
-                "email"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "foxwallet",
-            "provider": "FoxWallet",
-            "actionButtons": [
-                "[Website](https://foxwallet.com/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20"
-            ],
-            "staking": false,
-            "price": "$0",
-            "support": [
-                "email",
-                "discord"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        }
-    ],
-    "services": [
-        {
-            "slug": "dynamic-enterprise",
-            "provider": "Dynamic",
-            "actionButtons": [
-                "[Contact](https://calendly.com/nmendoza-fireblocks/dynamic?month=2026-01)"
-            ],
-            "toolType": "Development platform",
-            "tag": [
-                "Software Development Tools",
-                "Application Development Tools",
-                "Platform as a Service",
-                "Integrated Development Environment"
-            ],
-            "price": "Custom",
-            "planName": null,
-            "planType": "Enterprise",
-            "description": "It provides a suite of developer tools, primarily an SDK, to help integrate Web3 authentication, user management and non-custodial wallet infrastructure into applications",
-            "starred": false
-        },
-        {
-            "slug": "dynamic-launch",
-            "provider": "Dynamic",
-            "actionButtons": [
-                "[Website](https://www.dynamic.xyz/)"
-            ],
-            "toolType": "Development platform",
-            "tag": [
-                "Software Development Tools",
-                "Application Development Tools",
-                "Platform as a Service",
-                "Integrated Development Environment"
-            ],
-            "price": "$0",
-            "planName": "Launch",
-            "planType": "Free",
-            "description": "It provides a suite of developer tools, primarily an SDK, to help integrate Web3 authentication, user management and non-custodial wallet infrastructure into applications",
-            "starred": false
-        },
-        {
-            "slug": "dynamic-growth",
-            "provider": "Dynamic",
-            "actionButtons": [
-                "[Buy](https://www.dynamic.xyz/pricing)"
-            ],
-            "toolType": "Development platform",
-            "tag": [
-                "Software Development Tools",
-                "Application Development Tools",
-                "Platform as a Service",
-                "Integrated Development Environment"
-            ],
-            "price": "$249/mo",
-            "planName": "Growth",
-            "planType": "Tiered",
-            "description": "It provides a suite of developer tools, primarily an SDK, to help integrate Web3 authentication, user management and non-custodial wallet infrastructure into applications",
-            "starred": false
-        }
-    ],
-    "sdks": [
-        {
-            "slug": "quicknode-sdk-enterprise",
-            "provider": "Quicknode SDK",
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/quicknode-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "QuickNode SDK",
-                "Web3 development",
-                "Blockchain API",
-                "Node provider"
-            ],
-            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure",
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "quicknode-sdk-accelerate",
-            "provider": "Quicknode SDK",
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/quicknode-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "QuickNode SDK",
-                "Web3 development",
-                "Blockchain API",
-                "Node provider"
-            ],
-            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure",
-            "planType": "Tiered",
-            "planName": "Accelerate",
-            "price": "$249/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "quicknode-sdk-build",
-            "provider": "Quicknode SDK",
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/quicknode-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "QuickNode SDK",
-                "Web3 development",
-                "Blockchain API",
-                "Node provider"
-            ],
-            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure",
-            "planType": "Tiered",
-            "planName": "Build",
-            "price": "$49/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "quicknode-sdk-business",
-            "provider": "Quicknode SDK",
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/quicknode-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "QuickNode SDK",
-                "Web3 development",
-                "Blockchain API",
-                "Node provider"
-            ],
-            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure",
-            "planType": "Tiered",
-            "planName": "Business",
-            "price": "$999/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "quicknode-sdk-scale",
-            "provider": "Quicknode SDK",
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/quicknode-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "QuickNode SDK",
-                "Web3 development",
-                "Blockchain API",
-                "Node provider"
-            ],
-            "description": "It is an open-source software development kit designed to help developers build decentralized applications (dApps) by abstracting complex blockchain interactions and providing an interface to QuickNode's infrastructure",
-            "planType": "Tiered",
-            "planName": "Scale",
-            "price": "$499/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        }
-    ],
     "columns": {
+        "oracles": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "starred",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "dataTypes",
+            "decentralizationModel",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "sdk",
+            "auditsPerformed"
+        ],
+        "sdks": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "toolType",
+            "programmingLanguage",
+            "tag",
+            "description",
+            "planType",
+            "planName",
+            "price",
+            "trial",
+            "starred",
+            "dependencies",
+            "latestKnownVersion",
+            "latestKnownReleaseDate",
+            "maintainer",
+            "license"
+        ],
+        "analytics": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "dataSources",
+            "hasDashboard",
+            "availableApis",
+            "price",
+            "planName",
+            "planType",
+            "starred"
+        ],
+        "bridges": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "txSpeedSla",
+            "throughputSla",
+            "technology",
+            "openSource",
+            "support",
+            "starred",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "assetTypes",
+            "price",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "auditsPerformed",
+            "decentralizationModel",
+            "sdk",
+            "supportedChains"
+        ],
+        "services": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "toolType",
+            "tag",
+            "price",
+            "planName",
+            "planType",
+            "description",
+            "starred"
+        ],
+        "wallets": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "openSource",
+            "supportedPlatforms",
+            "custodial",
+            "mfa",
+            "msig",
+            "hardware",
+            "keyExport",
+            "native",
+            "evm",
+            "tendermint",
+            "tokensSupport",
+            "staking",
+            "price",
+            "support",
+            "audit",
+            "languages",
+            "starred"
+        ],
+        "explorers": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "availableApis",
+            "sdk",
+            "searchCapabilities",
+            "smartContractsVerifications",
+            "fullHistory",
+            "pricing",
+            "starred"
+        ],
         "apis": [
             "slug",
             "provider",
@@ -5703,62 +6096,6 @@
             "additionalFeatures",
             "address"
         ],
-        "oracles": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "technology",
-            "starred",
-            "availableApis",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
-            "dataTypes",
-            "decentralizationModel",
-            "economicalSecurity",
-            "economicalSecurityNote",
-            "sdk",
-            "auditsPerformed"
-        ],
-        "bridges": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "txSpeedSla",
-            "throughputSla",
-            "technology",
-            "openSource",
-            "support",
-            "starred",
-            "availableApis",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
-            "assetTypes",
-            "price",
-            "economicalSecurity",
-            "economicalSecurityNote",
-            "auditsPerformed",
-            "decentralizationModel",
-            "sdk",
-            "supportedChains"
-        ],
-        "explorers": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "technology",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
-            "availableApis",
-            "sdk",
-            "searchCapabilities",
-            "smartContractsVerifications",
-            "fullHistory",
-            "pricing",
-            "starred"
-        ],
         "faucets": [
             "slug",
             "provider",
@@ -5772,72 +6109,6 @@
             "additionalNotes",
             "dripLimitAmount",
             "dripLimitPeriod"
-        ],
-        "analytics": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "dataSources",
-            "hasDashboard",
-            "availableApis",
-            "price",
-            "planName",
-            "planType",
-            "starred"
-        ],
-        "wallets": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "openSource",
-            "supportedPlatforms",
-            "custodial",
-            "mfa",
-            "msig",
-            "hardware",
-            "keyExport",
-            "native",
-            "evm",
-            "tendermint",
-            "tokensSupport",
-            "staking",
-            "price",
-            "support",
-            "audit",
-            "languages",
-            "starred"
-        ],
-        "services": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "tag",
-            "price",
-            "planName",
-            "planType",
-            "description",
-            "starred"
-        ],
-        "sdks": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "programmingLanguage",
-            "tag",
-            "description",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "starred",
-            "dependencies",
-            "latestKnownVersion",
-            "latestKnownReleaseDate",
-            "maintainer",
-            "license"
         ]
     }
 }

@@ -1,4 +1,2046 @@
 {
+    "oracles": [
+        {
+            "slug": "goracle-mainnet",
+            "provider": "Gora",
+            "actionButtons": [
+                "[Docs](https://github.com/GoraNetwork)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "dataTypes": [
+                "Financial data",
+                "Sports stats",
+                "Supply chain milestones",
+                "Healthcare metrics"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Node runners secured by token delegation and governance on Algorand blockchain",
+            "sdk": [
+                "TypeScript",
+                "Python",
+                "JavaScript",
+                "CSS",
+                "Cairo"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "monitoringAndAnalytics": [
+                "Decentralized node monitoring",
+                "Ecosystem rewards"
+            ],
+            "additionalFeatures": [
+                "Industry-specific fully customizable oracle solution",
+                "multiple industry templates"
+            ],
+            "auditsPerformed": null,
+            "starred": false
+        },
+        {
+            "slug": "tellor-mainnet",
+            "provider": "Tellor",
+            "actionButtons": [
+                "[Docs](https://docs.tellor.io/tellor/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "dataTypes": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Staking requirement, dispute mechanism",
+            "sdk": [
+                "TypeScript",
+                "JavaScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Dashboard",
+                "Uptime Monitoring",
+                "Node Stats"
+            ],
+            "additionalFeatures": [
+                "Enshrined feeds",
+                "Custom data types"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits",
+                "CertiK",
+                "Zellic"
+            ],
+            "starred": false
+        }
+    ],
+    "sdks": [
+        {
+            "slug": "algorand-sdk",
+            "provider": "Algorand",
+            "actionButtons": [
+                "[Docs](https://dev.algorand.co/reference/sdk/sdk-list/)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "Go",
+                "Java",
+                "Python",
+                "JavaScript",
+                "TypeScript"
+            ],
+            "description": "Official SDKs like TypeScript, Python, JavaScript, Java and Go are used for building, testing, and debugging applications on Algorand",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tatum-sdk-business",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
+            ],
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Enterprise",
+            "planName": "Business",
+            "price": "Custom",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tatum-sdk-free",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
+            ],
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tatum-sdk-pro",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
+            ],
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Tiered",
+            "planName": "Pro",
+            "price": "$99/$139/$179/mo per 10M/15M/20M credits/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tatum-sdk-scale",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
+            ],
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Tiered",
+            "planName": "Scale",
+            "price": "$349/$649/mo per 40M/80M credits/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tatum-sdk-starter",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
+            ],
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Tiered",
+            "planName": "Starter",
+            "price": "$49/$79/mo per 4M/7M credits/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        }
+    ],
+    "analytics": [
+        {
+            "slug": "algorand-metrics-dashboard-mainnet",
+            "provider": "Algorand",
+            "actionButtons": [
+                "[Dashboard](https://algorand.co/metrics)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Transactions",
+                "Network Metrics",
+                "Active Addresses",
+                "Block Data",
+                "Performance Metrics"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Real-time Metrics API",
+                "Network Status API"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "allo-mainnet",
+            "provider": "Allo",
+            "actionButtons": [
+                "[Dashboard](https://metrics.allo.info/)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Transactions",
+                "Assets",
+                "Apps",
+                "Blocks",
+                "Accounts",
+                "NFDomains",
+                "TEAL Contracts"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "TEAL Inspector API",
+                "Account API",
+                "Asset API"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "coinexams-mainnet",
+            "provider": "CoinExams",
+            "actionButtons": [
+                "[Dashboard](https://coinexams.com/utility/algorand)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Crypto Utility Metrics",
+                "Network Functionality",
+                "Token Utility Evaluation",
+                "Fees"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Utility Scores API"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "cryptoquant-mainnet",
+            "provider": "CryptoQuant",
+            "actionButtons": [
+                "[Dashboard](https://cryptoquant.com/asset/algo/summary)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Exchange Reserves",
+                "Network Transactions",
+                "Derivatives Data",
+                "Staking Data",
+                "Market Price/Volume"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0/$39/$109/mo (monthly plan), $0/$29/$99/$799/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "cryptoslam-mainnet",
+            "provider": "Cryptoslam",
+            "actionButtons": [
+                "[Dashboard](https://www.cryptoslam.io/blockchains/algorand)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "NFT Sales Data",
+                "Transaction Volume",
+                "Number of NFT Owners",
+                "Upcoming Drops"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "NFT Sales Data API"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "dappradar-mainnet",
+            "provider": "DappRadar",
+            "actionButtons": [
+                "[Dashboard](https://dappradar.com/chain/algorand)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Unique active wallets",
+                "Txs volume",
+                "Dapps number",
+                "Dapps volume",
+                "NFTs stats"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API",
+                "No historical data on free API"
+            ],
+            "price": "api for $0/$9.99/$199/$499 for 5/5/30/50 RPS and 100/2.5K/100K/1M RPM",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "defillama-mainnet",
+            "provider": "DeFiLlama",
+            "actionButtons": [
+                "[Dashboard](https://defillama.com/chain/Algorand)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "DeFi TVL",
+                "DEX & Perps Volume",
+                "Bridged Assets",
+                "Active Addresses",
+                "Stablecoin Supply"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0/$49/$300/mo (monthly plan), $0 (2 months free)/$40.83/mo ($490/year)/$250/mo (3K/year) (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "messari-mainnet",
+            "provider": "Messari",
+            "actionButtons": [
+                "[Dashboard](https://messari.io/project/algorand)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Network Metrics",
+                "TVL & Market Data",
+                "On‑chain Usage Metrics"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Research Reports",
+                "API Access",
+                "Dashboard"
+            ],
+            "price": "$0/$4000/year",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "nansen-mainnet",
+            "provider": "Nansen",
+            "actionButtons": [
+                "[Dashboard](https://app.nansen.ai/token-god-mode?tokenAddress=ALGO&chain=hyperliquid&tab=transactions)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Exchange Flows",
+                "Token Distribution",
+                "DeFi Activity",
+                "NFT Analytics",
+                "Wallet Labels"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Smart Money API",
+                "Profiler API",
+                "API Keys"
+            ],
+            "price": "$0/$69/mo (monthly plan), $0/$49/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "pera-mainnet",
+            "provider": "Pera",
+            "actionButtons": [
+                "[Dashboard](https://explorer.perawallet.app/)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Transactions",
+                "Assets",
+                "NFT",
+                "Blocks",
+                "Network Activity"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Search API",
+                "NFT API",
+                "Asset API"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "pera-testnet",
+            "provider": "Pera",
+            "actionButtons": [
+                "[Dashboard](https://testnet.explorer.perawallet.app/)"
+            ],
+            "chain": "testnet",
+            "dataSources": [
+                "Transactions",
+                "Assets",
+                "NFT",
+                "Blocks",
+                "Network Activity"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Search API",
+                "NFT API",
+                "Asset API"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "vestige-mainnet",
+            "provider": "Vestige",
+            "actionButtons": [
+                "[Dashboard](https://vestige.fi/asset/0)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Assets",
+                "Tokens",
+                "DEX Liquidity Pools",
+                "Historical Price & Volume"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "DeFi Analytics API"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "starred": false
+        }
+    ],
+    "bridges": [
+        {
+            "slug": "messina",
+            "provider": "MessinaOne Bridge",
+            "actionButtons": [
+                "[Bridge](https://messina.one/bridge)",
+                "[Docs](https://messinaone.gitbook.io/messina/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Bridge via Wormhole",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "base",
+                "algorand",
+                "arbitrum",
+                "optimism",
+                "aptos",
+                "polygon",
+                "avalanche"
+            ],
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Wormhole integration",
+                "Liquidity pools"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited by Certik & Kudelski",
+            "auditsPerformed": [
+                "Certik",
+                "Kudelski Security"
+            ],
+            "decentralizationModel": "Partially Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "allbridge",
+            "provider": "Allbridge Core",
+            "actionButtons": [
+                "[Bridge](https://core.allbridge.io/)",
+                "[Docs](https://docs-core.allbridge.io/sdk/guides/algorand)"
+            ],
+            "chain": "mainnet",
+            "technology": "Stablecoin Bridge via Native Liquidity",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "arbitrum",
+                "avalanche",
+                "base",
+                "bnb chain",
+                "celo",
+                "ethereum",
+                "linea",
+                "optimism",
+                "polygon",
+                "sonic",
+                "solana",
+                "stellar",
+                "sui",
+                "tron",
+                "unichain"
+            ],
+            "availableApis": [
+                "Stablecoin Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "No wrapping",
+                "Native liquidity pools",
+                "CEX-to-chain deposits"
+            ],
+            "assetTypes": [
+                "Stablecoins",
+                "ERC-20"
+            ],
+            "price": "Gas Fee + protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Native stablecoin pools, messaging-agnostic",
+            "auditsPerformed": [
+                "Independent audits (per DefiLlama)"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ],
+            "starred": false
+        }
+    ],
+    "services": [
+        {
+            "slug": "algokit-cli",
+            "provider": "AlgoKit",
+            "actionButtons": [
+                "[Docs](https://dev.algorand.co/algokit/algokit-intro/)"
+            ],
+            "toolType": "CLI",
+            "tag": [
+                "Bootstrap",
+                "Compile",
+                "Completions",
+                "Deploy",
+                "Dispenser",
+                "Doctor",
+                "Explore",
+                "Generate",
+                "Goal",
+                "Init",
+                "LocalNet",
+                "Project",
+                "Task"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "A comprehensive CLI and toolkit for building, testing, deploying, and debugging Algorand apps",
+            "starred": false
+        },
+        {
+            "slug": "algokit-localnet",
+            "provider": "AlgoKit",
+            "actionButtons": [
+                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#algokit-localnet)"
+            ],
+            "toolType": "Network Simulator",
+            "tag": [
+                "Local sandboxed network",
+                "Ephemeral environment",
+                "Docker-based",
+                "KMD enabled",
+                "Named LocalNet instances",
+                "Configuration management",
+                "Offline usage",
+                "Developer-focused features"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "Runs a local sandboxed Algorand network for offline development and testing using Docker images.",
+            "starred": false
+        },
+        {
+            "slug": "algokit-utils",
+            "provider": "AlgoKit",
+            "actionButtons": [
+                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#algokit-utils)"
+            ],
+            "toolType": "Utility Library",
+            "tag": [
+                "Python",
+                "TypeScript",
+                "Client management",
+                "Account management",
+                "Algo amount handling",
+                "Transaction management",
+                "App management",
+                "App deployment",
+                "ARC-0032 Application Spec client",
+                "Algo transfers",
+                "Automated testing",
+                "Indexer searching"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "Utility functions in TypeScript and Python to interact with Algorand blockchain easily and safely.",
+            "starred": false
+        },
+        {
+            "slug": "avm-debugger",
+            "provider": "AlgoKit",
+            "actionButtons": [
+                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#avm-debugger)"
+            ],
+            "toolType": "Smart Contract Debugger",
+            "tag": [
+                "Debug trace files",
+                "TEAL source map tags",
+                "Debugging configuration tags"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "VS Code extension to debug Algorand TEAL smart contracts interactively.",
+            "starred": false
+        },
+        {
+            "slug": "client-generator",
+            "provider": "AlgoKit",
+            "actionButtons": [
+                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#client-generator)"
+            ],
+            "toolType": "Code Generator",
+            "tag": [
+                "Python",
+                "TypeScript"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "Generates type-safe smart contract clients from ARC-0032 specifications for easy contract interaction",
+            "starred": false
+        },
+        {
+            "slug": "ipfs",
+            "provider": "IPFS",
+            "actionButtons": [
+                "[Docs](https://docs.ipfs.io/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Go",
+                "JavaScript",
+                "Storage"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "Distributed file storage protocol commonly used by Polygon dApps",
+            "starred": false
+        },
+        {
+            "slug": "mosaia-enterprise",
+            "provider": "Mosaia",
+            "actionButtons": [
+                "[Contact](https://calendly.com/cyril-mosaia)"
+            ],
+            "toolType": "AI",
+            "tag": [
+                "Building and deploying AI agents and teams"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
+            "starred": false
+        },
+        {
+            "slug": "mosaia-explorer",
+            "provider": "Mosaia",
+            "actionButtons": [
+                "[Buy](https://www.mosaia.io/pricing)"
+            ],
+            "toolType": "AI",
+            "tag": [
+                "Building and deploying AI agents and teams"
+            ],
+            "price": "$19/mo",
+            "planName": "Explorer",
+            "planType": "Tiered",
+            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
+            "starred": false
+        },
+        {
+            "slug": "mosaia-pro",
+            "provider": "Mosaia",
+            "actionButtons": [
+                "[Buy](https://www.mosaia.io/pricing)"
+            ],
+            "toolType": "AI",
+            "tag": [
+                "Building and deploying AI agents and teams"
+            ],
+            "price": "$349/mo",
+            "planName": "Pro",
+            "planType": "Tiered",
+            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
+            "starred": false
+        },
+        {
+            "slug": "portal-enterprise",
+            "provider": "Portal",
+            "actionButtons": [
+                "[Contact](https://www.portalhq.io/get-started)",
+                "[Docs](https://docs.portalhq.io/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
+            "starred": false
+        },
+        {
+            "slug": "portal-developer",
+            "provider": "Portal",
+            "actionButtons": [
+                "[Website](https://www.portalhq.io/)",
+                "[Docs](https://docs.portalhq.io/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "price": "$0",
+            "planName": "Developer",
+            "planType": "Free",
+            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
+            "starred": false
+        },
+        {
+            "slug": "portal-startup",
+            "provider": "Portal",
+            "actionButtons": [
+                "[Buy](https://www.portalhq.io/pricing)",
+                "[Docs](https://docs.portalhq.io/)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "price": "$499",
+            "planName": "Start-Up",
+            "planType": "Tiered",
+            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
+            "starred": false
+        },
+        {
+            "slug": "privy",
+            "provider": "Privy",
+            "actionButtons": [
+                "[Docs](https://docs.privy.io/welcome)"
+            ],
+            "toolType": "Development platform",
+            "tag": [
+                "Authentication",
+                "Wallet"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "description": "Securely spin up whitelabel wallets, sign transactions and integrate onchain infrastructure-all through one simple API",
+            "starred": false
+        },
+        {
+            "slug": "ziion-linux-distro",
+            "provider": "Ziion Linux distro",
+            "actionButtons": [
+                "[Website](https://www.ziion.org/)"
+            ],
+            "toolType": "Security and compliance",
+            "tag": [
+                "Security Testing",
+                "Vulnerability Assessment",
+                "Cybersecurity",
+                "Virtual Machine"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "Functions as a specialized, pre-configured provider of developer and security tools for the blockchain and Web3 ecosystem",
+            "starred": false
+        }
+    ],
+    "wallets": [
+        {
+            "slug": "atomic-wallet",
+            "provider": "Atomic Wallet",
+            "actionButtons": [
+                "[Website](https://atomicwallet.io)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "TRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "x",
+                "telegram"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "clave-wallet",
+            "provider": "Clave Wallet",
+            "actionButtons": [
+                "[Website](https://www.getclave.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155",
+                "BEP-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "coin-wallet",
+            "provider": "Coin Wallet",
+            "actionButtons": [
+                "[Website](https://coin.space/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "ARC-20",
+                "TRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "regular internal security audit"
+            ],
+            "languages": [
+                "EN",
+                "PL",
+                "FR",
+                "DE",
+                "IT",
+                "DA",
+                "NL",
+                "RU",
+                "TL",
+                "ZH",
+                "AR",
+                "HI",
+                "UR",
+                "KO",
+                "ES",
+                "CS",
+                "FI",
+                "EL",
+                "TR",
+                "PT",
+                "PT-BR",
+                "RO",
+                "JA",
+                "SR",
+                "HU",
+                "SV",
+                "NO",
+                "FA",
+                "UK",
+                "TH",
+                "AF",
+                "MS",
+                "ID",
+                "LV"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "coinomi-wallet",
+            "provider": "Coinomi Wallet",
+            "actionButtons": [
+                "[Website](https://www.coinomi.com/en/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "discord",
+                "telegram"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO",
+                "UR",
+                "HR",
+                "MY"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "cwallet",
+            "provider": "Cwallet",
+            "actionButtons": [
+                "[Website](https://cwallet.com/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "24/7 live chat",
+                "x",
+                "discord",
+                "telegram",
+                "webform"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN",
+                "24 Others"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "dapp-pocket",
+            "provider": "Dapp Pocket",
+            "actionButtons": [
+                "[Website](https://www.dapppocket.io/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "defly",
+            "provider": "Defly",
+            "actionButtons": [
+                "[Website](https://defly.app/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ALGO",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "twitter",
+                "telegram",
+                "website",
+                "discord",
+                "[email](support@defly.app)"
+            ],
+            "audit": [
+                "Kudelski security (June 2022)"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "ellipal-titan",
+            "provider": "ELLIPAL",
+            "actionButtons": [
+                "[Website](https://www.ellipal.com/products/ellipal-titan-mini)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$99",
+            "support": [
+                "[website](https://www.ellipal.com/pages/contact-us)"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "De",
+                "ZH"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "exodus",
+            "provider": "Exodus",
+            "actionButtons": [
+                "[Website](https://www.exodus.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "TRC-20",
+                "SPL",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[x](@ExodusAssist)",
+                "helpdesk",
+                "email"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ES"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "gem-wallet",
+            "provider": "Gem Wallet",
+            "actionButtons": [
+                "[Website](https://gemwallet.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "chat on website"
+            ],
+            "audit": [
+                "open to anyone"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "guarda",
+            "provider": "Guarda",
+            "actionButtons": [
+                "[Website](https://guarda.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "BEP-2",
+                "BEP-20",
+                "TRC-10",
+                "TRC-20",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[email](support@guarda.com)",
+                "telegram",
+                "x",
+                "youtube"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "RU"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "kryptogo-wallet",
+            "provider": "Kryptogo Wallet",
+            "actionButtons": [
+                "[Website](https://www.kryptogo.com/products/wallet)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email",
+                "telegram",
+                "discord",
+                "x"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "ledger",
+            "provider": "Ledger SAS",
+            "actionButtons": [
+                "[Website](https://www.ledger.com/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$79(Nano S Plus)/$70-$150(Nano X)/$249(Flex)/$399(Stax)",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "Regular audits by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "JA"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "lute",
+            "provider": "Lute",
+            "actionButtons": [
+                "[Website](https://lute.app/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Web",
+                " Chrome"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": true,
+            "hardware": true,
+            "keyExport": false,
+            "native": false,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ARC-60"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "[telegram](Lute.algo Wallet - Official & Support)",
+                "website",
+                "twitter"
+            ],
+            "audit": null,
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "myrkle",
+            "provider": "Myrkle",
+            "actionButtons": [
+                "[Website](https://www.myrkle.app/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Desktop Browser"
+            ],
+            "custodial": true,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "x"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "nufi-wallet",
+            "provider": "Nufi Wallet",
+            "actionButtons": [
+                "[Website](https://nu.fi/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "audit internally",
+                "third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "onekey",
+            "provider": "OneKey",
+            "actionButtons": [
+                "[Website](https://onekey.so/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "EIP-721",
+                "EIP-1155",
+                "SPL",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "[email](hi@onekey.so)",
+                "support website",
+                "x",
+                "github"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "FR",
+                "PT",
+                "PT-Br",
+                "RU",
+                "DE",
+                "ES",
+                "IT",
+                "ID",
+                "ZH",
+                "KO",
+                "UA",
+                "VI",
+                "HI",
+                "JA"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "pera",
+            "provider": "Pera",
+            "actionButtons": [
+                "[Website](https://perawallet.app/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Web",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ALGO",
+                "Algorand Standard Assets (ASA)"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "helpdesk",
+                "telegram",
+                "github",
+                "reddit",
+                "discord",
+                "[chat support widget](perawallet.app/contact-us/)"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "ID"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "ronin-wallet",
+            "provider": "Ronin Wallet",
+            "actionButtons": [
+                "[Website](https://wallet.roninchain.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": true,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "RRC-20",
+                "RRC-721"
+            ],
+            "staking": true,
+            "price": "Gas fee",
+            "support": [
+                "email",
+                "discord",
+                "chatbot",
+                "x"
+            ],
+            "audit": [
+                "Third-party audits"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "saakuru-wallet",
+            "provider": "Saakuru Wallet",
+            "actionButtons": [
+                "[Website](https://www.saakuru.com/app)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": false,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "ID",
+                "TL",
+                "VI",
+                "ZH",
+                "JA",
+                "TH",
+                "DE"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "trustwallet",
+            "provider": "Trust Wallet",
+            "actionButtons": [
+                "[Website](https://trustwallet.com/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "[CertiK](https://www.certik.com/projects/trust-wallet)"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "ZH",
+                "JA"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "walletverse",
+            "provider": "Wallet Verse",
+            "actionButtons": [
+                "[Website](https://walletverse.io/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": false,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "telegram",
+                "discord",
+                "x",
+                "youtube"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false
+        }
+    ],
+    "explorers": [
+        {
+            "slug": "allo-mainnet",
+            "provider": "Allo",
+            "actionButtons": [
+                "[Explorer](https://allo.info/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Transactions",
+                "Assets",
+                "Accounts",
+                "Apps",
+                "Projects",
+                "Blocks",
+                "NFDomains"
+            ],
+            "additionalFeatures": [
+                "TEAL inspector",
+                "Group transaction summary",
+                "Filters",
+                "Pera verified badges",
+                "NFT rarity info",
+                "Token prices",
+                "AlloAlerts notifications"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Search",
+                "Filter",
+                "Label Cloud"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "bitquery-mainnet",
+            "provider": "Bitquery",
+            "actionButtons": [
+                "[Explorer](https://explorer.bitquery.io/eos/address/algorand)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Addresses",
+                "Transactions",
+                "On-chain metrics"
+            ],
+            "additionalFeatures": [
+                "Multi-chain support",
+                "Widgets"
+            ],
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Search",
+                "Filter"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "pera-mainnet",
+            "provider": "Pera",
+            "actionButtons": [
+                "[Explorer](https://explorer.perawallet.app/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "NFTs",
+                "ASAs",
+                "Apps"
+            ],
+            "additionalFeatures": [
+                "Verified ASAs database",
+                "Dynamic ASA price graphs",
+                "NFT transaction history",
+                "Opt-in for NFTs/ASAs"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Search",
+                "Filter",
+                "Dashboard stats"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "pera-testnet",
+            "provider": "Pera",
+            "actionButtons": [
+                "[Explorer](https://explorer.perawallet.app/)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "NFTs",
+                "ASAs",
+                "Apps"
+            ],
+            "additionalFeatures": [
+                "Verified ASAs database",
+                "Dynamic ASA price graphs",
+                "NFT transaction history",
+                "Opt-in for NFTs/ASAs"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Search",
+                "Filter",
+                "Dashboard stats"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        }
+    ],
     "apis": [
         {
             "slug": "algorand-mainnet-indexer",
@@ -4248,339 +6290,6 @@
             "address": null
         }
     ],
-    "oracles": [
-        {
-            "slug": "goracle-mainnet",
-            "provider": "Gora",
-            "actionButtons": [
-                "[Docs](https://github.com/GoraNetwork)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "dataTypes": [
-                "Financial data",
-                "Sports stats",
-                "Supply chain milestones",
-                "Healthcare metrics"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Node runners secured by token delegation and governance on Algorand blockchain",
-            "sdk": [
-                "TypeScript",
-                "Python",
-                "JavaScript",
-                "CSS",
-                "Cairo"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "monitoringAndAnalytics": [
-                "Decentralized node monitoring",
-                "Ecosystem rewards"
-            ],
-            "additionalFeatures": [
-                "Industry-specific fully customizable oracle solution",
-                "multiple industry templates"
-            ],
-            "auditsPerformed": null,
-            "starred": false
-        },
-        {
-            "slug": "tellor-mainnet",
-            "provider": "Tellor",
-            "actionButtons": [
-                "[Docs](https://docs.tellor.io/tellor/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "dataTypes": [
-                "Price Feeds",
-                "Custom Data"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Staking requirement, dispute mechanism",
-            "sdk": [
-                "TypeScript",
-                "JavaScript",
-                "Solidity"
-            ],
-            "availableApis": [
-                "REST API",
-                "GraphQL"
-            ],
-            "monitoringAndAnalytics": [
-                "Dashboard",
-                "Uptime Monitoring",
-                "Node Stats"
-            ],
-            "additionalFeatures": [
-                "Enshrined feeds",
-                "Custom data types"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits",
-                "CertiK",
-                "Zellic"
-            ],
-            "starred": false
-        }
-    ],
-    "bridges": [
-        {
-            "slug": "messina",
-            "provider": "MessinaOne Bridge",
-            "actionButtons": [
-                "[Bridge](https://messina.one/bridge)",
-                "[Docs](https://messinaone.gitbook.io/messina/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Cross‑chain Bridge via Wormhole",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "openSource": true,
-            "support": [
-                "Discord"
-            ],
-            "supportedChains": [
-                "ethereum",
-                "bnb chain",
-                "base",
-                "algorand",
-                "arbitrum",
-                "optimism",
-                "aptos",
-                "polygon",
-                "avalanche"
-            ],
-            "availableApis": [
-                "Asset Transfer"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Wormhole integration",
-                "Liquidity pools"
-            ],
-            "assetTypes": [
-                "ETH",
-                "ERC‑20"
-            ],
-            "price": "Gas Fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Audited by Certik & Kudelski",
-            "auditsPerformed": [
-                "Certik",
-                "Kudelski Security"
-            ],
-            "decentralizationModel": "Partially Decentralized",
-            "sdk": [
-                "Web UI"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "allbridge",
-            "provider": "Allbridge Core",
-            "actionButtons": [
-                "[Bridge](https://core.allbridge.io/)",
-                "[Docs](https://docs-core.allbridge.io/sdk/guides/algorand)"
-            ],
-            "chain": "mainnet",
-            "technology": "Stablecoin Bridge via Native Liquidity",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "openSource": true,
-            "support": [
-                "Discord"
-            ],
-            "supportedChains": [
-                "arbitrum",
-                "avalanche",
-                "base",
-                "bnb chain",
-                "celo",
-                "ethereum",
-                "linea",
-                "optimism",
-                "polygon",
-                "sonic",
-                "solana",
-                "stellar",
-                "sui",
-                "tron",
-                "unichain"
-            ],
-            "availableApis": [
-                "Stablecoin Transfer"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "No wrapping",
-                "Native liquidity pools",
-                "CEX-to-chain deposits"
-            ],
-            "assetTypes": [
-                "Stablecoins",
-                "ERC-20"
-            ],
-            "price": "Gas Fee + protocol fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Native stablecoin pools, messaging-agnostic",
-            "auditsPerformed": [
-                "Independent audits (per DefiLlama)"
-            ],
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "TypeScript"
-            ],
-            "starred": false
-        }
-    ],
-    "explorers": [
-        {
-            "slug": "allo-mainnet",
-            "provider": "Allo",
-            "actionButtons": [
-                "[Explorer](https://allo.info/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Transactions",
-                "Assets",
-                "Accounts",
-                "Apps",
-                "Projects",
-                "Blocks",
-                "NFDomains"
-            ],
-            "additionalFeatures": [
-                "TEAL inspector",
-                "Group transaction summary",
-                "Filters",
-                "Pera verified badges",
-                "NFT rarity info",
-                "Token prices",
-                "AlloAlerts notifications"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Search",
-                "Filter",
-                "Label Cloud"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
-        },
-        {
-            "slug": "bitquery-mainnet",
-            "provider": "Bitquery",
-            "actionButtons": [
-                "[Explorer](https://explorer.bitquery.io/eos/address/algorand)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Addresses",
-                "Transactions",
-                "On-chain metrics"
-            ],
-            "additionalFeatures": [
-                "Multi-chain support",
-                "Widgets"
-            ],
-            "availableApis": [
-                "REST API",
-                "GraphQL"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Search",
-                "Filter"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
-        },
-        {
-            "slug": "pera-mainnet",
-            "provider": "Pera",
-            "actionButtons": [
-                "[Explorer](https://explorer.perawallet.app/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "NFTs",
-                "ASAs",
-                "Apps"
-            ],
-            "additionalFeatures": [
-                "Verified ASAs database",
-                "Dynamic ASA price graphs",
-                "NFT transaction history",
-                "Opt-in for NFTs/ASAs"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Search",
-                "Filter",
-                "Dashboard stats"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
-        },
-        {
-            "slug": "pera-testnet",
-            "provider": "Pera",
-            "actionButtons": [
-                "[Explorer](https://explorer.perawallet.app/)"
-            ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "NFTs",
-                "ASAs",
-                "Apps"
-            ],
-            "additionalFeatures": [
-                "Verified ASAs database",
-                "Dynamic ASA price graphs",
-                "NFT transaction history",
-                "Opt-in for NFTs/ASAs"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Search",
-                "Filter",
-                "Dashboard stats"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
-        }
-    ],
     "faucets": [
         {
             "slug": "algorand-testnet-dispenser-additional-algo",
@@ -4637,1716 +6346,129 @@
             "starred": false
         }
     ],
-    "analytics": [
-        {
-            "slug": "algorand-metrics-dashboard-mainnet",
-            "provider": "Algorand",
-            "actionButtons": [
-                "[Dashboard](https://algorand.co/metrics)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Transactions",
-                "Network Metrics",
-                "Active Addresses",
-                "Block Data",
-                "Performance Metrics"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Real-time Metrics API",
-                "Network Status API"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "starred": false
-        },
-        {
-            "slug": "allo-mainnet",
-            "provider": "Allo",
-            "actionButtons": [
-                "[Dashboard](https://metrics.allo.info/)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Transactions",
-                "Assets",
-                "Apps",
-                "Blocks",
-                "Accounts",
-                "NFDomains",
-                "TEAL Contracts"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "TEAL Inspector API",
-                "Account API",
-                "Asset API"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "starred": false
-        },
-        {
-            "slug": "coinexams-mainnet",
-            "provider": "CoinExams",
-            "actionButtons": [
-                "[Dashboard](https://coinexams.com/utility/algorand)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Crypto Utility Metrics",
-                "Network Functionality",
-                "Token Utility Evaluation",
-                "Fees"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Utility Scores API"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "starred": false
-        },
-        {
-            "slug": "cryptoquant-mainnet",
-            "provider": "CryptoQuant",
-            "actionButtons": [
-                "[Dashboard](https://cryptoquant.com/asset/algo/summary)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Exchange Reserves",
-                "Network Transactions",
-                "Derivatives Data",
-                "Staking Data",
-                "Market Price/Volume"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "REST API"
-            ],
-            "price": "$0/$39/$109/mo (monthly plan), $0/$29/$99/$799/mo (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "cryptoslam-mainnet",
-            "provider": "Cryptoslam",
-            "actionButtons": [
-                "[Dashboard](https://www.cryptoslam.io/blockchains/algorand)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "NFT Sales Data",
-                "Transaction Volume",
-                "Number of NFT Owners",
-                "Upcoming Drops"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "NFT Sales Data API"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "starred": false
-        },
-        {
-            "slug": "dappradar-mainnet",
-            "provider": "DappRadar",
-            "actionButtons": [
-                "[Dashboard](https://dappradar.com/chain/algorand)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Unique active wallets",
-                "Txs volume",
-                "Dapps number",
-                "Dapps volume",
-                "NFTs stats"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "REST API",
-                "No historical data on free API"
-            ],
-            "price": "api for $0/$9.99/$199/$499 for 5/5/30/50 RPS and 100/2.5K/100K/1M RPM",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "defillama-mainnet",
-            "provider": "DeFiLlama",
-            "actionButtons": [
-                "[Dashboard](https://defillama.com/chain/Algorand)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "DeFi TVL",
-                "DEX & Perps Volume",
-                "Bridged Assets",
-                "Active Addresses",
-                "Stablecoin Supply"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "REST API"
-            ],
-            "price": "$0/$49/$300/mo (monthly plan), $0 (2 months free)/$40.83/mo ($490/year)/$250/mo (3K/year) (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "messari-mainnet",
-            "provider": "Messari",
-            "actionButtons": [
-                "[Dashboard](https://messari.io/project/algorand)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Network Metrics",
-                "TVL & Market Data",
-                "On‑chain Usage Metrics"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Research Reports",
-                "API Access",
-                "Dashboard"
-            ],
-            "price": "$0/$4000/year",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "nansen-mainnet",
-            "provider": "Nansen",
-            "actionButtons": [
-                "[Dashboard](https://app.nansen.ai/token-god-mode?tokenAddress=ALGO&chain=hyperliquid&tab=transactions)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Exchange Flows",
-                "Token Distribution",
-                "DeFi Activity",
-                "NFT Analytics",
-                "Wallet Labels"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Smart Money API",
-                "Profiler API",
-                "API Keys"
-            ],
-            "price": "$0/$69/mo (monthly plan), $0/$49/mo (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "pera-mainnet",
-            "provider": "Pera",
-            "actionButtons": [
-                "[Dashboard](https://explorer.perawallet.app/)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Transactions",
-                "Assets",
-                "NFT",
-                "Blocks",
-                "Network Activity"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Search API",
-                "NFT API",
-                "Asset API"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "starred": false
-        },
-        {
-            "slug": "pera-testnet",
-            "provider": "Pera",
-            "actionButtons": [
-                "[Dashboard](https://testnet.explorer.perawallet.app/)"
-            ],
-            "chain": "testnet",
-            "dataSources": [
-                "Transactions",
-                "Assets",
-                "NFT",
-                "Blocks",
-                "Network Activity"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Search API",
-                "NFT API",
-                "Asset API"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "starred": false
-        },
-        {
-            "slug": "vestige-mainnet",
-            "provider": "Vestige",
-            "actionButtons": [
-                "[Dashboard](https://vestige.fi/asset/0)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Assets",
-                "Tokens",
-                "DEX Liquidity Pools",
-                "Historical Price & Volume"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "DeFi Analytics API"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "starred": false
-        }
-    ],
-    "wallets": [
-        {
-            "slug": "atomic-wallet",
-            "provider": "Atomic Wallet",
-            "actionButtons": [
-                "[Website](https://atomicwallet.io)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-2",
-                "TRC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email",
-                "x",
-                "telegram"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "clave-wallet",
-            "provider": "Clave Wallet",
-            "actionButtons": [
-                "[Website](https://www.getclave.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155",
-                "BEP-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "coin-wallet",
-            "provider": "Coin Wallet",
-            "actionButtons": [
-                "[Website](https://coin.space/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20",
-                "ARC-20",
-                "TRC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email"
-            ],
-            "audit": [
-                "regular internal security audit"
-            ],
-            "languages": [
-                "EN",
-                "PL",
-                "FR",
-                "DE",
-                "IT",
-                "DA",
-                "NL",
-                "RU",
-                "TL",
-                "ZH",
-                "AR",
-                "HI",
-                "UR",
-                "KO",
-                "ES",
-                "CS",
-                "FI",
-                "EL",
-                "TR",
-                "PT",
-                "PT-BR",
-                "RO",
-                "JA",
-                "SR",
-                "HU",
-                "SV",
-                "NO",
-                "FA",
-                "UK",
-                "TH",
-                "AF",
-                "MS",
-                "ID",
-                "LV"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "coinomi-wallet",
-            "provider": "Coinomi Wallet",
-            "actionButtons": [
-                "[Website](https://www.coinomi.com/en/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-2",
-                "BEP-20",
-                "ERC-721",
-                "SPL",
-                "TRC-20",
-                "TRC-10",
-                "BRC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email",
-                "discord",
-                "telegram"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN",
-                "FR",
-                "ES",
-                "DE",
-                "ZH",
-                "NL",
-                "IT",
-                "PL",
-                "PT",
-                "JA",
-                "IT",
-                "ID",
-                "HI",
-                "NL",
-                "CS",
-                "CA",
-                "BG",
-                "AR",
-                "VI",
-                "TR",
-                "RU",
-                "FA",
-                "KO",
-                "SV",
-                "HA",
-                "YO",
-                "UR",
-                "HR",
-                "MY"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "cwallet",
-            "provider": "Cwallet",
-            "actionButtons": [
-                "[Website](https://cwallet.com/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-2",
-                "BEP-20",
-                "ERC-721",
-                "SPL",
-                "TRC-20",
-                "TRC-10",
-                "BRC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email",
-                "24/7 live chat",
-                "x",
-                "discord",
-                "telegram",
-                "webform"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN",
-                "24 Others"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "dapp-pocket",
-            "provider": "Dapp Pocket",
-            "actionButtons": [
-                "[Website](https://www.dapppocket.io/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email"
-            ],
-            "audit": [
-                "not availale"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "defly",
-            "provider": "Defly",
-            "actionButtons": [
-                "[Website](https://defly.app/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": true,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "ALGO",
-                "Algorand Standard Assets (ASA)"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "twitter",
-                "telegram",
-                "website",
-                "discord",
-                "[email](support@defly.app)"
-            ],
-            "audit": [
-                "Kudelski security (June 2022)"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "ellipal-titan",
-            "provider": "ELLIPAL",
-            "actionButtons": [
-                "[Website](https://www.ellipal.com/products/ellipal-titan-mini)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": false,
-            "native": false,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "Algorand Standard Assets (ASA)"
-            ],
-            "staking": true,
-            "price": "$99",
-            "support": [
-                "[website](https://www.ellipal.com/pages/contact-us)"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "ES",
-                "FR",
-                "De",
-                "ZH"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "exodus",
-            "provider": "Exodus",
-            "actionButtons": [
-                "[Website](https://www.exodus.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Desktop",
-                "iOS",
-                "Android",
-                "Web"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20",
-                "TRC-20",
-                "SPL",
-                "Algorand Standard Assets (ASA)"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "[x](@ExodusAssist)",
-                "helpdesk",
-                "email"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "ES"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "gem-wallet",
-            "provider": "Gem Wallet",
-            "actionButtons": [
-                "[Website](https://gemwallet.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": false,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "chat on website"
-            ],
-            "audit": [
-                "open to anyone"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "guarda",
-            "provider": "Guarda",
-            "actionButtons": [
-                "[Website](https://guarda.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Desktop",
-                "iOS",
-                "Android",
-                "Web"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": false,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "BEP-2",
-                "BEP-20",
-                "TRC-10",
-                "TRC-20",
-                "Algorand Standard Assets (ASA)"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "[email](support@guarda.com)",
-                "telegram",
-                "x",
-                "youtube"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "RU"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "kryptogo-wallet",
-            "provider": "Kryptogo Wallet",
-            "actionButtons": [
-                "[Website](https://www.kryptogo.com/products/wallet)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": false,
-            "keyExport": false,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-2",
-                "BEP-20",
-                "ERC-721",
-                "SPL",
-                "TRC-20"
-            ],
-            "staking": false,
-            "price": "Paid",
-            "support": [
-                "email",
-                "telegram",
-                "discord",
-                "x"
-            ],
-            "audit": [
-                "not availale"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "ledger",
-            "provider": "Ledger SAS",
-            "actionButtons": [
-                "[Website](https://www.ledger.com/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Desktop",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
-            ],
-            "staking": true,
-            "price": "$79(Nano S Plus)/$70-$150(Nano X)/$249(Flex)/$399(Stax)",
-            "support": [
-                "email",
-                "helpdesk"
-            ],
-            "audit": [
-                "Regular audits by third parties"
-            ],
-            "languages": [
-                "EN",
-                "FR",
-                "ES",
-                "DE",
-                "ZH",
-                "JA"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "lute",
-            "provider": "Lute",
-            "actionButtons": [
-                "[Website](https://lute.app/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Web",
-                " Chrome"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": true,
-            "hardware": true,
-            "keyExport": false,
-            "native": false,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "ARC-60"
-            ],
-            "staking": false,
-            "price": "$0",
-            "support": [
-                "[telegram](Lute.algo Wallet - Official & Support)",
-                "website",
-                "twitter"
-            ],
-            "audit": null,
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "myrkle",
-            "provider": "Myrkle",
-            "actionButtons": [
-                "[Website](https://www.myrkle.app/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Desktop Browser"
-            ],
-            "custodial": true,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": false,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
-            ],
-            "staking": false,
-            "price": "$0",
-            "support": [
-                "x"
-            ],
-            "audit": [
-                "not availale"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "nufi-wallet",
-            "provider": "Nufi Wallet",
-            "actionButtons": [
-                "[Website](https://nu.fi/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": false,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-2",
-                "BEP-20",
-                "ERC-721",
-                "SPL",
-                "TRC-20",
-                "TRC-10",
-                "BRC-20"
-            ],
-            "staking": false,
-            "price": "Paid",
-            "support": [
-                "email"
-            ],
-            "audit": [
-                "audit internally",
-                "third parties"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "onekey",
-            "provider": "OneKey",
-            "actionButtons": [
-                "[Website](https://onekey.so/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Desktop",
-                "iOS",
-                "Android",
-                "Web"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": true,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "EIP-721",
-                "EIP-1155",
-                "SPL",
-                "Algorand Standard Assets (ASA)"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "[email](hi@onekey.so)",
-                "support website",
-                "x",
-                "github"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "FR",
-                "PT",
-                "PT-Br",
-                "RU",
-                "DE",
-                "ES",
-                "IT",
-                "ID",
-                "ZH",
-                "KO",
-                "UA",
-                "VI",
-                "HI",
-                "JA"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "pera",
-            "provider": "Pera",
-            "actionButtons": [
-                "[Website](https://perawallet.app/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Web",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "ALGO",
-                "Algorand Standard Assets (ASA)"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "helpdesk",
-                "telegram",
-                "github",
-                "reddit",
-                "discord",
-                "[chat support widget](perawallet.app/contact-us/)"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "ID"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "ronin-wallet",
-            "provider": "Ronin Wallet",
-            "actionButtons": [
-                "[Website](https://wallet.roninchain.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": true,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "RRC-20",
-                "RRC-721"
-            ],
-            "staking": true,
-            "price": "Gas fee",
-            "support": [
-                "email",
-                "discord",
-                "chatbot",
-                "x"
-            ],
-            "audit": [
-                "Third-party audits"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "saakuru-wallet",
-            "provider": "Saakuru Wallet",
-            "actionButtons": [
-                "[Website](https://www.saakuru.com/app)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": false,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-2",
-                "BEP-20",
-                "ERC-721",
-                "SPL",
-                "TRC-20",
-                "TRC-10",
-                "BRC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email"
-            ],
-            "audit": [
-                "not availale"
-            ],
-            "languages": [
-                "EN",
-                "ES",
-                "FR",
-                "ID",
-                "TL",
-                "VI",
-                "ZH",
-                "JA",
-                "TH",
-                "DE"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "trustwallet",
-            "provider": "Trust Wallet",
-            "actionButtons": [
-                "[Website](https://trustwallet.com/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "iOS",
-                "Android",
-                "Web"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email",
-                "helpdesk"
-            ],
-            "audit": [
-                "[CertiK](https://www.certik.com/projects/trust-wallet)"
-            ],
-            "languages": [
-                "EN",
-                "ES",
-                "FR",
-                "ZH",
-                "JA"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "walletverse",
-            "provider": "Wallet Verse",
-            "actionButtons": [
-                "[Website](https://walletverse.io/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": true,
-            "keyExport": false,
-            "native": false,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-2",
-                "BEP-20",
-                "ERC-721",
-                "SPL",
-                "TRC-20",
-                "TRC-10",
-                "BRC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email",
-                "telegram",
-                "discord",
-                "x",
-                "youtube"
-            ],
-            "audit": [
-                "not availale"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false
-        }
-    ],
-    "services": [
-        {
-            "slug": "algokit-cli",
-            "provider": "AlgoKit",
-            "actionButtons": [
-                "[Docs](https://dev.algorand.co/algokit/algokit-intro/)"
-            ],
-            "toolType": "CLI",
-            "tag": [
-                "Bootstrap",
-                "Compile",
-                "Completions",
-                "Deploy",
-                "Dispenser",
-                "Doctor",
-                "Explore",
-                "Generate",
-                "Goal",
-                "Init",
-                "LocalNet",
-                "Project",
-                "Task"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "A comprehensive CLI and toolkit for building, testing, deploying, and debugging Algorand apps",
-            "starred": false
-        },
-        {
-            "slug": "algokit-localnet",
-            "provider": "AlgoKit",
-            "actionButtons": [
-                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#algokit-localnet)"
-            ],
-            "toolType": "Network Simulator",
-            "tag": [
-                "Local sandboxed network",
-                "Ephemeral environment",
-                "Docker-based",
-                "KMD enabled",
-                "Named LocalNet instances",
-                "Configuration management",
-                "Offline usage",
-                "Developer-focused features"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "Runs a local sandboxed Algorand network for offline development and testing using Docker images.",
-            "starred": false
-        },
-        {
-            "slug": "algokit-utils",
-            "provider": "AlgoKit",
-            "actionButtons": [
-                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#algokit-utils)"
-            ],
-            "toolType": "Utility Library",
-            "tag": [
-                "Python",
-                "TypeScript",
-                "Client management",
-                "Account management",
-                "Algo amount handling",
-                "Transaction management",
-                "App management",
-                "App deployment",
-                "ARC-0032 Application Spec client",
-                "Algo transfers",
-                "Automated testing",
-                "Indexer searching"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "Utility functions in TypeScript and Python to interact with Algorand blockchain easily and safely.",
-            "starred": false
-        },
-        {
-            "slug": "avm-debugger",
-            "provider": "AlgoKit",
-            "actionButtons": [
-                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#avm-debugger)"
-            ],
-            "toolType": "Smart Contract Debugger",
-            "tag": [
-                "Debug trace files",
-                "TEAL source map tags",
-                "Debugging configuration tags"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "VS Code extension to debug Algorand TEAL smart contracts interactively.",
-            "starred": false
-        },
-        {
-            "slug": "client-generator",
-            "provider": "AlgoKit",
-            "actionButtons": [
-                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#client-generator)"
-            ],
-            "toolType": "Code Generator",
-            "tag": [
-                "Python",
-                "TypeScript"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "Generates type-safe smart contract clients from ARC-0032 specifications for easy contract interaction",
-            "starred": false
-        },
-        {
-            "slug": "ipfs",
-            "provider": "IPFS",
-            "actionButtons": [
-                "[Docs](https://docs.ipfs.io/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Go",
-                "JavaScript",
-                "Storage"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "Distributed file storage protocol commonly used by Polygon dApps",
-            "starred": false
-        },
-        {
-            "slug": "mosaia-enterprise",
-            "provider": "Mosaia",
-            "actionButtons": [
-                "[Contact](https://calendly.com/cyril-mosaia)"
-            ],
-            "toolType": "AI",
-            "tag": [
-                "Building and deploying AI agents and teams"
-            ],
-            "price": "Custom",
-            "planName": null,
-            "planType": "Enterprise",
-            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
-            "starred": false
-        },
-        {
-            "slug": "mosaia-explorer",
-            "provider": "Mosaia",
-            "actionButtons": [
-                "[Buy](https://www.mosaia.io/pricing)"
-            ],
-            "toolType": "AI",
-            "tag": [
-                "Building and deploying AI agents and teams"
-            ],
-            "price": "$19/mo",
-            "planName": "Explorer",
-            "planType": "Tiered",
-            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
-            "starred": false
-        },
-        {
-            "slug": "mosaia-pro",
-            "provider": "Mosaia",
-            "actionButtons": [
-                "[Buy](https://www.mosaia.io/pricing)"
-            ],
-            "toolType": "AI",
-            "tag": [
-                "Building and deploying AI agents and teams"
-            ],
-            "price": "$349/mo",
-            "planName": "Pro",
-            "planType": "Tiered",
-            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
-            "starred": false
-        },
-        {
-            "slug": "portal-enterprise",
-            "provider": "Portal",
-            "actionButtons": [
-                "[Contact](https://www.portalhq.io/get-started)",
-                "[Docs](https://docs.portalhq.io/)"
-            ],
-            "toolType": "Development platform",
-            "tag": [
-                "Web",
-                "Developer Portal"
-            ],
-            "price": "Custom",
-            "planName": null,
-            "planType": "Enterprise",
-            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
-            "starred": false
-        },
-        {
-            "slug": "portal-developer",
-            "provider": "Portal",
-            "actionButtons": [
-                "[Website](https://www.portalhq.io/)",
-                "[Docs](https://docs.portalhq.io/)"
-            ],
-            "toolType": "Development platform",
-            "tag": [
-                "Web",
-                "Developer Portal"
-            ],
-            "price": "$0",
-            "planName": "Developer",
-            "planType": "Free",
-            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
-            "starred": false
-        },
-        {
-            "slug": "portal-startup",
-            "provider": "Portal",
-            "actionButtons": [
-                "[Buy](https://www.portalhq.io/pricing)",
-                "[Docs](https://docs.portalhq.io/)"
-            ],
-            "toolType": "Development platform",
-            "tag": [
-                "Web",
-                "Developer Portal"
-            ],
-            "price": "$499",
-            "planName": "Start-Up",
-            "planType": "Tiered",
-            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
-            "starred": false
-        },
-        {
-            "slug": "privy",
-            "provider": "Privy",
-            "actionButtons": [
-                "[Docs](https://docs.privy.io/welcome)"
-            ],
-            "toolType": "Development platform",
-            "tag": [
-                "Authentication",
-                "Wallet"
-            ],
-            "price": "Custom",
-            "planName": null,
-            "planType": "Enterprise",
-            "description": "Securely spin up whitelabel wallets, sign transactions and integrate onchain infrastructure-all through one simple API",
-            "starred": false
-        },
-        {
-            "slug": "ziion-linux-distro",
-            "provider": "Ziion Linux distro",
-            "actionButtons": [
-                "[Website](https://www.ziion.org/)"
-            ],
-            "toolType": "Security and compliance",
-            "tag": [
-                "Security Testing",
-                "Vulnerability Assessment",
-                "Cybersecurity",
-                "Virtual Machine"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "Functions as a specialized, pre-configured provider of developer and security tools for the blockchain and Web3 ecosystem",
-            "starred": false
-        }
-    ],
-    "sdks": [
-        {
-            "slug": "algorand-sdk",
-            "provider": "Algorand",
-            "actionButtons": [
-                "[Docs](https://dev.algorand.co/reference/sdk/sdk-list/)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "Go",
-                "Java",
-                "Python",
-                "JavaScript",
-                "TypeScript"
-            ],
-            "description": "Official SDKs like TypeScript, Python, JavaScript, Java and Go are used for building, testing, and debugging applications on Algorand",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-business",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Enterprise",
-            "planName": "Business",
-            "price": "Custom",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-free",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-pro",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Tiered",
-            "planName": "Pro",
-            "price": "$99/$139/$179/mo per 10M/15M/20M credits/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-scale",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Tiered",
-            "planName": "Scale",
-            "price": "$349/$649/mo per 40M/80M credits/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-starter",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Tiered",
-            "planName": "Starter",
-            "price": "$49/$79/mo per 4M/7M credits/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        }
-    ],
     "columns": {
+        "oracles": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "dataTypes",
+            "decentralizationModel",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "sdk",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "auditsPerformed",
+            "starred"
+        ],
+        "sdks": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "toolType",
+            "programmingLanguage",
+            "tag",
+            "description",
+            "planType",
+            "planName",
+            "price",
+            "trial",
+            "starred",
+            "dependencies",
+            "latestKnownVersion",
+            "latestKnownReleaseDate",
+            "maintainer",
+            "license"
+        ],
+        "analytics": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "dataSources",
+            "hasDashboard",
+            "availableApis",
+            "price",
+            "planName",
+            "planType",
+            "starred"
+        ],
+        "bridges": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "txSpeedSla",
+            "throughputSla",
+            "openSource",
+            "support",
+            "supportedChains",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "assetTypes",
+            "price",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "auditsPerformed",
+            "decentralizationModel",
+            "sdk",
+            "starred"
+        ],
+        "services": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "toolType",
+            "tag",
+            "price",
+            "planName",
+            "planType",
+            "description",
+            "starred"
+        ],
+        "wallets": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "openSource",
+            "supportedPlatforms",
+            "custodial",
+            "mfa",
+            "msig",
+            "hardware",
+            "keyExport",
+            "native",
+            "evm",
+            "tendermint",
+            "tokensSupport",
+            "staking",
+            "price",
+            "support",
+            "audit",
+            "languages",
+            "starred"
+        ],
+        "explorers": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "availableApis",
+            "sdk",
+            "searchCapabilities",
+            "smartContractsVerifications",
+            "fullHistory",
+            "pricing",
+            "starred"
+        ],
         "apis": [
             "slug",
             "provider",
@@ -6376,62 +6498,6 @@
             "additionalFeatures",
             "address"
         ],
-        "oracles": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "technology",
-            "dataTypes",
-            "decentralizationModel",
-            "economicalSecurity",
-            "economicalSecurityNote",
-            "sdk",
-            "availableApis",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
-            "auditsPerformed",
-            "starred"
-        ],
-        "bridges": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "technology",
-            "txSpeedSla",
-            "throughputSla",
-            "openSource",
-            "support",
-            "supportedChains",
-            "availableApis",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
-            "assetTypes",
-            "price",
-            "economicalSecurity",
-            "economicalSecurityNote",
-            "auditsPerformed",
-            "decentralizationModel",
-            "sdk",
-            "starred"
-        ],
-        "explorers": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "technology",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
-            "availableApis",
-            "sdk",
-            "searchCapabilities",
-            "smartContractsVerifications",
-            "fullHistory",
-            "pricing",
-            "starred"
-        ],
         "faucets": [
             "slug",
             "provider",
@@ -6445,72 +6511,6 @@
             "dripLimitPeriod",
             "additionalNotes",
             "starred"
-        ],
-        "analytics": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "dataSources",
-            "hasDashboard",
-            "availableApis",
-            "price",
-            "planName",
-            "planType",
-            "starred"
-        ],
-        "wallets": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "openSource",
-            "supportedPlatforms",
-            "custodial",
-            "mfa",
-            "msig",
-            "hardware",
-            "keyExport",
-            "native",
-            "evm",
-            "tendermint",
-            "tokensSupport",
-            "staking",
-            "price",
-            "support",
-            "audit",
-            "languages",
-            "starred"
-        ],
-        "services": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "tag",
-            "price",
-            "planName",
-            "planType",
-            "description",
-            "starred"
-        ],
-        "sdks": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "programmingLanguage",
-            "tag",
-            "description",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "starred",
-            "dependencies",
-            "latestKnownVersion",
-            "latestKnownReleaseDate",
-            "maintainer",
-            "license"
         ]
     }
 }
