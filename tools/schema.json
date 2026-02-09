@@ -16,6 +16,8 @@
     "wallets": { "type": "array", "items": { "$ref": "#/$defs/wallets" } },
     "sdks": { "type": "array", "items": { "$ref": "#/$defs/sdks" } },
     "ramps": { "type": "array", "items": { "$ref": "#/$defs/ramps" } },
+    "platforms": { "type": "array", "items": { "$ref": "#/$defs/platforms" } },
+    "security": { "type": "array", "items": { "$ref": "#/$defs/security" } },
     "columns": { "$ref": "#/$defs/columns" }
   },
   "$defs": {
@@ -560,6 +562,93 @@
         "deliveryType"
       ]
     },
+    "platforms": {
+      "title": "Platforms",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "toolType": { "type": "string" },
+        "description": { "type": ["string", "null"] },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "planType": { "type": "string" },
+        "planName": { "type": ["string", "null"] },
+        "price": { "type": ["string"] },
+        "trial": { "type": ["boolean"] },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "executionEnvironment": { "type": ["string", "null"] }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "toolType",
+        "description",
+        "tag",
+        "planType",
+        "planName",
+        "price",
+        "trial",
+        "availableApis",
+        "executionEnvironment"
+      ]
+    },
+    "security": {
+      "title": "Security",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "planType": { "type": "string" },
+        "planName": { "type": ["string", "null"] },
+        "price": { "type": ["string"] },
+        "trial": { "type": ["boolean"] },
+        "starred": { "type": "boolean" },
+        "toolType": { "type": ["string"] },
+        "deliveryType": { "type": ["string"] },
+        "executionEnvironment": { "type": ["string", "null"] },
+        "coverage": {
+          "type": ["array"],
+          "items": { "type": "string" }
+        },
+        "compliance": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "tag",
+        "description",
+        "planType",
+        "planName",
+        "price",
+        "trial",
+        "starred",
+        "toolType",
+        "deliveryType",
+        "executionEnvironment",
+        "coverage",
+        "compliance"
+      ]
+    },
     "columns": {
       "type": "object",
       "additionalProperties": false,
@@ -574,7 +663,9 @@
         "services": { "type": "array", "items": { "type": "string" } },
         "ramps": { "type": "array", "items": { "type": "string" } },
         "storages": { "type": "array", "items": { "type": "string" } },
-        "sdks": { "type": "array", "items": { "type": "string" } }
+        "sdks": { "type": "array", "items": { "type": "string" } },
+        "platforms": { "type": "array", "items": { "type": "string" } },
+        "security": { "type": "array", "items": { "type": "string" } }
       }
     }
   }
