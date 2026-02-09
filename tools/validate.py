@@ -132,6 +132,16 @@ def path_to_json_pointer(path_deque):
     return "#" + "".join("/" + str(p) for p in parts)
 
 def check_schema_validation(schema_validator, data) -> bool:
+    """
+    Validate data against a JSON schema.
+
+    Args:
+        schema_validator (Draft7Validator): Validator for the JSON schema.
+        data (dict): Data to be validated.
+
+    Returns:
+        bool: True if data is valid, False otherwise.
+    """
     errors = sorted(schema_validator.iter_errors(data), key=lambda e: list(e.absolute_path))
     for err in errors:
         pointer = path_to_json_pointer(err.absolute_path)
@@ -148,6 +158,16 @@ def check_schema_validation(schema_validator, data) -> bool:
     return len(errors) == 0
 
 def check_rules_validation(rules_validator, data) -> bool:
+    """
+    Validate a given set of data against a set of rules.
+
+    Args:
+        rules_validator: A RulesValidator object
+        data: A dictionary containing the data to validate
+
+    Returns:
+        bool: True if all rules pass, False otherwise
+    """
     had_errors = False
     for category in data.keys():
         if category == "columns":
@@ -157,7 +177,7 @@ def check_rules_validation(rules_validator, data) -> bool:
             had_errors = True
             print(f"Error validating {category}: {err}")
             print("---")
-    return had_errors
+    return not had_errors
 
 def check_validation(data, schema_validator, rules_validator) -> bool:
     return check_schema_validation(schema_validator, data) and check_rules_validation(rules_validator, data)
