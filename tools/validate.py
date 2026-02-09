@@ -131,6 +131,64 @@ def path_to_json_pointer(path_deque):
     # Build pointer like "#/person/emails/1"
     return "#" + "".join("/" + str(p) for p in parts)
 
+def check_schema_validation(schema_validator, data) -> bool:
+    errors = sorted(schema_validator.iter_errors(data), key=lambda e: list(e.absolute_path))
+    for err in errors:
+        pointer = path_to_json_pointer(err.absolute_path)
+        try:
+            value = resolve_pointer(data, "/" + "/".join(map(str, err.absolute_path)))
+        except Exception:
+            value = None
+        print("Error message :", err.message)
+        print("JSON Pointer  :", pointer)
+        print("Offending value:", json.dumps(value, ensure_ascii=False))
+        print("Schema path   :", "/".join(map(str, err.absolute_schema_path)))
+        print("---")
+
+    return len(errors) == 0
+
+def check_rules_validation(rules_validator, data) -> bool:
+    had_errors = False
+    for category in data.keys():
+        if category == "columns":
+            continue
+        errors = rules_validator.validate(data[category])
+        for err in errors:
+            had_errors = True
+            print(f"Error validating {category}: {err}")
+            print("---")
+    return had_errors
+
+def check_validation(data, schema_validator, rules_validator) -> bool:
+    return check_schema_validation(schema_validator, data) and check_rules_validation(rules_validator, data)
+
+def load_csv_folder(folder) -> dict:
+    data = {}
+    for category_file_name in os.listdir(folder):
+        if not category_file_name.endswith(".csv"):
+            continue
+        category_name = category_file_name[:-4]
+        data[category_name] = load_csv_to_dict_list(f"{folder}/{category_file_name}")
+    
+    data, errors = normalize(data)
+    if len(errors) > 0:
+        print(f"Errors normalizing CSV data from '{folder}':")
+        for err in errors:
+            print(err)
+        exit(1)
+
+    return data
+
+def make_providers_schema(network_schema) -> dict:
+    providers_schema = copy.deepcopy(network_schema)
+    for definition in providers_schema['$defs'].keys():
+        if definition == "columns":
+            continue
+        if "chain" in providers_schema['$defs'][definition]['required']:
+            index = providers_schema['$defs'][definition]['required'].index("chain")
+            del providers_schema['$defs'][definition]['required'][index]
+    return providers_schema
+
 def main():
     had_errors = False
 
@@ -145,6 +203,7 @@ def main():
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
 
+    # Validate networks
     validator = Draft7Validator(schema)
     for network_spec in os.listdir("json"):
         print(f"Validating {network_spec}...")
@@ -152,80 +211,15 @@ def main():
         with open(f"json/{network_spec}", "r") as f:
             data = json.load(f)
         
-        # Validate data against schema
-        errors = sorted(validator.iter_errors(data), key=lambda e: list(e.absolute_path))
-        for err in errors:
+        if not check_validation(data=data, schema_validator=validator, rules_validator=rules):
             had_errors = True
-            pointer = path_to_json_pointer(err.absolute_path)
-            try:
-                value = resolve_pointer(data, "/" + "/".join(map(str, err.absolute_path)))
-            except Exception:
-                # sometimes the error concerns parent structure (e.g., missing required key)
-                value = None
-            print("Error message :", err.message)
-            print("JSON Pointer  :", pointer)
-            print("Offending value:", json.dumps(value, ensure_ascii=False))
-            print("Schema path   :", "/".join(map(str, err.absolute_schema_path)))
-            print("---")
-        
-        # Validate data against rules
-        for category in data.keys():
-            if category == "columns":
-                continue
-            errors = rules.validate(data[category])
-            for err in errors:
-                had_errors = True
-                print(f"Error validating {category}: {err}")
-                print("---")
 
-    # Create providers data
-    providers_data = {}
-    for category in os.listdir("providers"):
-        if not category.endswith(".csv"):
-            continue
-        category_name = category[:-4]
-        providers_data[category_name] = load_csv_to_dict_list(f"providers/{category}")
-
-    # Normalize providers data
-    providers_data, errors = normalize(providers_data)
-    if len(errors) > 0:
-        print(f"Errors while normalizing providers JSON:")
-        for error in errors:
-            print(error)
-        exit(1)
-    
-    # Override provider schema so the chain field is not required
-    provider_schema = copy.deepcopy(schema)
-    for definition in provider_schema['$defs'].keys():
-        if definition == "columns":
-            continue
-        if "chain" in provider_schema['$defs'][definition]['required']:
-            index = provider_schema['$defs'][definition]['required'].index("chain")
-            del provider_schema['$defs'][definition]['required'][index]
-    provider_validator = Draft7Validator(provider_schema)
-
-    # Validate providers data against schema
-    errors = sorted(provider_validator.iter_errors(providers_data), key=lambda e: list(e.absolute_path))
-    for err in errors:
+    # Validate providers
+    providers_data = load_csv_folder("providers")
+    providers_schema = make_providers_schema(network_schema=schema)
+    providers_validator = Draft7Validator(providers_schema)
+    if not check_validation(data=providers_data, schema_validator=providers_validator, rules_validator=rules):
         had_errors = True
-        pointer = path_to_json_pointer(err.absolute_path)
-        try:
-            value = resolve_pointer(providers_data, "/" + "/".join(map(str, err.absolute_path)))
-        except Exception:
-            # sometimes the error concerns parent structure (e.g., missing required key)
-            value = None
-        print("Error message :", err.message)
-        print("JSON Pointer  :", pointer)
-        print("Offending value:", json.dumps(value, ensure_ascii=False))
-        print("Schema path   :", "/".join(map(str, err.absolute_schema_path)))
-        print("---")
-    
-    for category in providers_data.keys():
-        errors = rules.validate(providers_data[category])
-        for err in errors:
-            had_errors = True
-            print(f"Error validating providers/{category}: {err}")
-            print("---")
 
     if had_errors:
         exit(1)
