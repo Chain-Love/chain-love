@@ -10,6 +10,7 @@
     "oracles": { "type": "array", "items": { "$ref": "#/$defs/oracles" } },
     "bridges": { "type": "array", "items": { "$ref": "#/$defs/bridges" } },
     "services": { "type": "array", "items": { "$ref": "#/$defs/services" } },
+    "storages": { "type": "array", "items": { "$ref": "#/$defs/storages" } },
     "faucets": { "type": "array", "items": { "$ref": "#/$defs/faucets" } },
     "analytics": { "type": "array", "items": { "$ref": "#/$defs/analytics" } },
     "wallets": { "type": "array", "items": { "$ref": "#/$defs/wallets" } },
@@ -310,6 +311,38 @@
       ]
     },
 
+    "storages": {
+      "title": "Storages",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "toolType": { "type": "string" },
+        "price": { "type": ["string", "null"] },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "planName": { "type": ["string", "null"] },
+        "planType": { "type": "string" }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "toolType",
+        "price",
+        "tag",
+        "description",
+        "starred",
+        "actionButtons",
+        "planType"
+      ]
+    },
+
     "faucets": {
       "type": "object",
       "additionalProperties": false,
@@ -509,6 +542,7 @@
         "analytics": { "type": "array", "items": { "type": "string" } },
         "wallets": { "type": "array", "items": { "type": "string" } },
         "services": { "type": "array", "items": { "type": "string" } },
+        "storages": { "type": "array", "items": { "type": "string" } },
         "sdks": { "type": "array", "items": { "type": "string" } }
       }
     }
