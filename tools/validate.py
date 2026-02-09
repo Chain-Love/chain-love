@@ -92,7 +92,7 @@ def has_unclosed_markdown(s: str) -> bool:
 
     if len(s) == 0:
         return False
-    
+
     # Pairs that must be closed: **, *, _, `, [ ]( )
     # Check bold/italic/code
     if s.count("**") % 2 != 0:
@@ -103,23 +103,23 @@ def has_unclosed_markdown(s: str) -> bool:
         return True
     if s.count("`") % 2 != 0:
         return True
-    
+
     # Check link brackets [text](url)
     # Must have same count of [ and ] and ( and )
     if s.count("[") != s.count("]"):
         return True
     if s.count("(") != s.count(")"):
         return True
-    
+
     return False
 
 def is_markdown_link(s: str) -> bool:
     if type(s) != str:
         return False
-    
+
     if len(s) == 0:
         return False
-    
+
     pattern = r"(?:\[(?P<text>.*?)\])\((?P<link>.*?)\)"
     return re.match(pattern, s) is not None
 
@@ -151,7 +151,7 @@ def main():
         data = None
         with open(f"json/{network_spec}", "r") as f:
             data = json.load(f)
-        
+
         # Validate data against schema
         errors = sorted(validator.iter_errors(data), key=lambda e: list(e.absolute_path))
         for err in errors:
@@ -167,12 +167,14 @@ def main():
             print("Offending value:", json.dumps(value, ensure_ascii=False))
             print("Schema path   :", "/".join(map(str, err.absolute_schema_path)))
             print("---")
-        
+
         # Validate data against rules
-        for category in data.keys():
+        for category, value in data.items():
             if category == "columns":
                 continue
-            errors = rules.validate(data[category])
+            if not isinstance(value, list):
+                continue
+            errors = rules.validate(value)
             for err in errors:
                 had_errors = True
                 print(f"Error validating {category}: {err}")
@@ -193,7 +195,7 @@ def main():
         for error in errors:
             print(error)
         exit(1)
-    
+
     # Override provider schema so the chain field is not required
     provider_schema = copy.deepcopy(schema)
     for definition in provider_schema['$defs'].keys():
@@ -219,9 +221,11 @@ def main():
         print("Offending value:", json.dumps(value, ensure_ascii=False))
         print("Schema path   :", "/".join(map(str, err.absolute_schema_path)))
         print("---")
-    
-    for category in providers_data.keys():
-        errors = rules.validate(providers_data[category])
+
+    for category, value in providers_data.items():
+        if not isinstance(value, list):
+            continue
+        errors = rules.validate(value)
         for err in errors:
             had_errors = True
             print(f"Error validating providers/{category}: {err}")

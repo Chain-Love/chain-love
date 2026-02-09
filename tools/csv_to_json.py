@@ -6,6 +6,13 @@ import unicodedata
 
 PROVIDER_REF_PREFIX = "!provider:"
 
+SDK_TBD_FIELDS = (
+    "latestKnownVersion",
+    "latestKnownReleaseDate",
+    "maintainer",
+    "license",
+)
+
 def col_letter(idx: int) -> str:
     """Convert 0-based index to Excel column letters."""
     result = ""
@@ -183,7 +190,7 @@ def load_csv_to_dict_list(file_path: str) -> list[dict] | None:
     # Validate non-unicode characters
     validate_utf8_with_position(file_path)
     scan_for_unexpected_unicode(file_path)
-    
+
     with open(file_path, "r", newline="") as file:
         reader = csv.reader(file)
 
@@ -307,10 +314,42 @@ def get_column_order(
     return column_order
 
 
+# read version from schema.json
+def get_schema_version(schema_path: str = "schema.json", fallback: str = "1.0.0") -> str:
+    """
+    Returns properties.schemaVersion.const from schema.json.
+    If schema.json is missing/invalid or const is absent, returns fallback.
+    """
+    try:
+        with open(schema_path, "r", encoding="utf-8") as f:
+            schema = json.load(f)
+        v = schema.get("properties", {}).get("schemaVersion", {}).get("const")
+        return v if isinstance(v, str) and v else fallback
+    except Exception:
+        return fallback
+
+def ensure_sdks_tbd_fields(result: dict):
+    sdks = result.get("sdks")
+    if not isinstance(sdks, list):
+        return
+
+    for item in sdks:
+        if not isinstance(item, dict):
+            continue
+        for k in SDK_TBD_FIELDS:
+            if k not in item:
+                item[k] = "TBD"
+                continue
+            v = item.get(k)
+            if v is None or (isinstance(v, str) and v.strip() == ""):
+                item[k] = "TBD"
+
 def main():
     if not os.path.exists("networks"):
         print("No 'networks' directory found")
         return
+
+    schema_version = get_schema_version("schema.json", fallback="1.0.0")
 
     for network_name in os.listdir("networks"):
         network_dir_full_path = os.path.join("networks", network_name)
@@ -350,7 +389,12 @@ def main():
                 print(error)
             exit(1)
 
+        ensure_sdks_tbd_fields(result)
+
         result["columns"] = get_column_order(result)
+        # set from schema.json const
+        result["schemaVersion"] = schema_version
+
 
         os.makedirs("json", exist_ok=True)
         with open(f"json/{network_name}.json", "w+") as f:
