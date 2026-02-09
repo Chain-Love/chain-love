@@ -14,6 +14,7 @@
     "analytics": { "type": "array", "items": { "$ref": "#/$defs/analytics" } },
     "wallets": { "type": "array", "items": { "$ref": "#/$defs/wallets" } },
     "sdks": { "type": "array", "items": { "$ref": "#/$defs/sdks" } },
+    "ramps": { "type": "array", "items": { "$ref": "#/$defs/ramps" } },
     "columns": { "$ref": "#/$defs/columns" }
   },
   "$defs": {
@@ -496,7 +497,36 @@
         "license"
       ]
     },
-
+    "ramps": {
+      "title": "Ramps",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "kycLevel": { "type": "string" },
+        "paymentMethods": { "type": ["array"], "items": { "type": "string" } },
+        "bannedCountries": { "type": ["array", "null"], "items": { "type": "string" } },
+        "aggregator": { "type": "boolean" },
+        "auditsPerformed": { "type": ["array", "null"], "items": { "type": "string" } },
+        "deliveryType": { "type": ["string"] }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "kycLevel",
+        "paymentMethods",
+        "bannedCountries",
+        "aggregator",
+        "auditsPerformed",
+        "deliveryType"
+      ]
+    },
     "columns": {
       "type": "object",
       "additionalProperties": false,
@@ -509,7 +539,8 @@
         "analytics": { "type": "array", "items": { "type": "string" } },
         "wallets": { "type": "array", "items": { "type": "string" } },
         "services": { "type": "array", "items": { "type": "string" } },
-        "sdks": { "type": "array", "items": { "type": "string" } }
+        "sdks": { "type": "array", "items": { "type": "string" } },
+        "ramps": { "type": "array", "items": { "type": "string" } }
       }
     }
   }
