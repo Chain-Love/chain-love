@@ -6071,147 +6071,6 @@
             "address": null
         },
         {
-            "slug": "chainbase-mainnet-enterprise-custom",
-            "provider": "ChainBase",
-            "actionButtons": [
-                "[Contact](https://platform.chainbase.com/contact)",
-                "[Docs](https://docs.chainbase.com/platform/datasets/overview#non-evm)"
-            ],
-            "planName": null,
-            "planType": "Custom",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": true,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Data Consistency"
-            ],
-            "monitoringAndAnalytics": [
-                "Advanced analytics",
-                "Custom monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
-            "slug": "chainbase-mainnet-free-custom",
-            "provider": "ChainBase",
-            "actionButtons": [
-                "[Website](https://platform.chainbase.com/chainNetwork/Aptos)",
-                "[Docs](https://docs.chainbase.com/platform/datasets/overview#non-evm)"
-            ],
-            "planName": null,
-            "planType": "Custom",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": true,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "2 reqs/sec",
-                "3 projects"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Data Consistency"
-            ],
-            "monitoringAndAnalytics": [
-                "Basic monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
-            "slug": "chainbase-mainnet-pay-as-you-go-custom",
-            "provider": "ChainBase",
-            "actionButtons": [
-                "[Buy](https://platform.chainbase.com/pricing)",
-                "[Docs](https://docs.chainbase.com/platform/datasets/overview#non-evm)"
-            ],
-            "planName": null,
-            "planType": "Custom",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "$99",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": true,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "10 reqs/sec",
-                "15 projects"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Data Consistency"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Support portal"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
             "slug": "chainbase-testnet-enterprise-custom",
             "provider": "ChainBase",
             "actionButtons": [
@@ -6219,7 +6078,7 @@
                 "[Docs](https://docs.chainbase.com/platform/datasets/overview#non-evm)"
             ],
             "planName": null,
-            "planType": "Custom",
+            "planType": "Enterprise",
             "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
@@ -6236,24 +6095,38 @@
             "starred": true,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "x402 Integration",
+                "Call Chainbase API",
+                "Web3 API",
+                "Basic API",
+                "NFT API",
+                "Token API",
+                "Balance API",
+                "Domain API",
+                "SQL API"
             ],
-            "limitations": null,
+            "limitations": [
+                "custom limits"
+            ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Data Consistency"
+                "Decentralized Architecture",
+                "Auditing Practices",
+                "Compliance Standards",
+                "Partnerships with Security Tools"
             ],
             "monitoringAndAnalytics": [
-                "Advanced analytics",
-                "Custom monitoring"
+                "Community support",
+                "Chat and Email",
+                "Phone",
+                "24/7 VIP support"
             ],
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "Dual-chain design with Cosmos for coordination and EigenLayer for Ethereum security",
+                "AI and multi-chain interoperability"
+            ],
             "address": null
         },
         {
@@ -6264,7 +6137,7 @@
                 "[Docs](https://docs.chainbase.com/platform/datasets/overview#non-evm)"
             ],
             "planName": null,
-            "planType": "Custom",
+            "planType": "Free",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
@@ -6281,37 +6154,47 @@
             "starred": true,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "x402 Integration",
+                "Call Chainbase API",
+                "Web3 API",
+                "Basic API",
+                "NFT API",
+                "Token API",
+                "Balance API",
+                "Domain API",
+                "SQL API"
             ],
             "limitations": [
                 "2 reqs/sec",
                 "3 projects"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Data Consistency"
+                "Decentralized Architecture",
+                "Auditing Practices",
+                "Compliance Standards",
+                "Partnerships with Security Tools"
             ],
             "monitoringAndAnalytics": [
-                "Basic monitoring"
+                "Community support"
             ],
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "Dual-chain design with Cosmos for coordination and EigenLayer for Ethereum security",
+                "AI and multi-chain interoperability"
+            ],
             "address": null
         },
         {
-            "slug": "chainbase-testnet-pay-as-you-go-custom",
+            "slug": "chainbase-testnet-developer-custom",
             "provider": "ChainBase",
             "actionButtons": [
                 "[Buy](https://platform.chainbase.com/pricing)",
                 "[Docs](https://docs.chainbase.com/platform/datasets/overview#non-evm)"
             ],
-            "planName": null,
-            "planType": "Custom",
+            "planName": "Developer",
+            "planType": "Tiered",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
@@ -6328,28 +6211,37 @@
             "starred": true,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net"
+                "x402 Integration",
+                "Call Chainbase API",
+                "Web3 API",
+                "Basic API",
+                "NFT API",
+                "Token API",
+                "Balance API",
+                "Domain API",
+                "SQL API"
             ],
             "limitations": [
                 "10 reqs/sec",
                 "15 projects"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Data Consistency"
+                "Decentralized Architecture",
+                "Auditing Practices",
+                "Compliance Standards",
+                "Partnerships with Security Tools"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Support portal"
+                "Community support",
+                "Chat and Email"
             ],
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "Dual-chain design with Cosmos for coordination and EigenLayer for Ethereum security",
+                "AI and multi-chain interoperability"
+            ],
             "address": null
         },
         {
