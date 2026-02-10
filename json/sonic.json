@@ -6934,51 +6934,6 @@
             "address": null
         },
         {
-            "slug": "drpc-mainnet-free-recent-state",
-            "provider": "dRPC",
-            "actionButtons": [
-                "[Website](https://drpc.org/chainlist/sonic-mainnet-rpc)",
-                "[Docs](https://drpc.org/docs/sonic-api)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "100 req/s, free 210M CUs/mo"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
             "slug": "drpc-mainnet-pay-as-you-go-full-archive",
             "provider": "dRPC",
             "actionButtons": [
@@ -7033,24 +6988,24 @@
             "address": null
         },
         {
-            "slug": "drpc-mainnet-pay-as-you-go-recent-state",
+            "slug": "drpc-mainnet-public-full-archive",
             "provider": "dRPC",
             "actionButtons": [
-                "[Buy](https://drpc.org/pricing)",
+                "[Access](https://sonic.drpc.org)",
                 "[Docs](https://drpc.org/docs/sonic-api)"
             ],
             "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Pruned",
+            "planType": "Public",
+            "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "chain": "mainnet",
             "accessPrice": "$0",
-            "queryPrice": "$6/1M requests",
+            "queryPrice": "$0",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
@@ -7061,25 +7016,13 @@
                 "web3",
                 "net",
                 "debug",
-                "trace"
+                "tracing"
             ],
             "limitations": [
-                "5K req/s, 20M CUs"
+                "Limited (unknown limits)"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Method Limiting",
-                "Error tracing",
-                "Contract addresses protection"
-            ],
-            "monitoringAndAnalytics": [
-                "per-method analytics",
-                "latency",
-                "CU analytics"
-            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
             ],
@@ -7198,57 +7141,12 @@
             "slug": "drpc-testnet-free-full-archive",
             "provider": "dRPC",
             "actionButtons": [
-                "[Website](https://drpc.org/chainlist/sonic-blaze-testnet-rpc)",
+                "[Website](https://drpc.org/chainlist/sonic-testnet-rpc)",
                 "[Docs](https://drpc.org/docs/sonic-api)"
             ],
             "planName": null,
             "planType": "Free",
             "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "testnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "100 req/s, free 210M CUs/mo"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
-            "slug": "drpc-testnet-free-recent-state",
-            "provider": "dRPC",
-            "actionButtons": [
-                "[Website](https://drpc.org/chainlist/sonic-blaze-testnet-rpc)",
-                "[Docs](https://drpc.org/docs/sonic-api)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "chain": "testnet",
@@ -7339,24 +7237,24 @@
             "address": null
         },
         {
-            "slug": "drpc-testnet-pay-as-you-go-recent-state",
+            "slug": "drpc-testnet-public-full-archive",
             "provider": "dRPC",
             "actionButtons": [
-                "[Buy](https://drpc.org/pricing)",
+                "[Access](https://sonic-testnet-v2.drpc.org)",
                 "[Docs](https://drpc.org/docs/sonic-api)"
             ],
             "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Pruned",
+            "planType": "Public",
+            "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "chain": "testnet",
             "accessPrice": "$0",
-            "queryPrice": "$6/1M requests",
+            "queryPrice": "$0",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
@@ -7367,25 +7265,13 @@
                 "web3",
                 "net",
                 "debug",
-                "trace"
+                "tracing"
             ],
             "limitations": [
-                "5K req/s, 20M CUs"
+                "Limited (unknown limits)"
             ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Method Limiting",
-                "Error tracing",
-                "Contract addresses protection"
-            ],
-            "monitoringAndAnalytics": [
-                "per-method analytics",
-                "latency",
-                "CU analytics"
-            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
             ],

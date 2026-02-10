@@ -3918,7 +3918,7 @@
             "provider": "dRPC",
             "actionButtons": [
                 "[Contact](https://drpc.org/pricing)",
-                "[Website](https://drpc.org/chainlist/filecoin-mainnet-rpc)",
+                "[Website](https://drpc.org/chainlist/filecoin-calibration-testnet-rpc)",
                 "[Docs](https://drpc.org/docs)"
             ],
             "planName": null,
@@ -3965,7 +3965,103 @@
             "address": null
         },
         {
-            "slug": "drpc-calibnet-pay-as-you-go-recent-state",
+            "slug": "drpc-calibnet-enterprise-full-archive",
+            "provider": "dRPC",
+            "actionButtons": [
+                "[Contact](https://drpc.org/pricing)",
+                "[Website](https://drpc.org/chainlist/filecoin-calibration-testnet-rpc)",
+                "[Docs](https://drpc.org/docs)"
+            ],
+            "planName": null,
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "calibnet",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "Unlimited RPS, up to 300M reqs/mo"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
+            ],
+            "monitoringAndAnalytics": [
+                "per-method analytics",
+                "latency",
+                "CU analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "drpc-calibnet-free-full-archive",
+            "provider": "dRPC",
+            "actionButtons": [
+                "[Website](https://drpc.org/chainlist/filecoin-calibration-testnet-rpc)",
+                "[Docs](https://drpc.org/docs)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "calibnet",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "100 req/s, free 210M CUs/mo"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "drpc-calibnet-pay-as-you-go-full-archive",
             "provider": "dRPC",
             "actionButtons": [
                 "[Buy](https://drpc.org/pricing)",
@@ -3974,7 +4070,7 @@
             ],
             "planName": null,
             "planType": "Pay-as-you-go",
-            "historicalData": "Pruned",
+            "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "chain": "calibnet",
@@ -4009,6 +4105,48 @@
                 "latency",
                 "CU analytics"
             ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "drpc-calibnet-public-full-archive",
+            "provider": "dRPC",
+            "actionButtons": [
+                "[Access](https://filecoin-calibration.drpc.org)",
+                "[Docs](https://drpc.org/docs/arbitrum-api)"
+            ],
+            "planName": null,
+            "planType": "Public",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "tracing"
+            ],
+            "limitations": [
+                "Limited (unknown limits)"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
             ],
@@ -4067,6 +4205,102 @@
             "address": null
         },
         {
+            "slug": "drpc-mainnet-enterprise-full-archive",
+            "provider": "dRPC",
+            "actionButtons": [
+                "[Contact](https://drpc.org/pricing)",
+                "[Website](https://drpc.org/chainlist/filecoin-mainnet-rpc)",
+                "[Docs](https://drpc.org/docs)"
+            ],
+            "planName": null,
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "Unlimited RPS, up to 300M reqs/mo"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
+            ],
+            "monitoringAndAnalytics": [
+                "per-method analytics",
+                "latency",
+                "CU analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "drpc-mainnet-free-full-archive",
+            "provider": "dRPC",
+            "actionButtons": [
+                "[Website](https://drpc.org/chainlist/filecoin-mainnet-rpc)",
+                "[Docs](https://drpc.org/docs)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "100 req/s, free 210M CUs/mo"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
             "slug": "drpc-mainnet-pay-as-you-go-recent-state",
             "provider": "dRPC",
             "actionButtons": [
@@ -4111,6 +4345,46 @@
                 "latency",
                 "CU analytics"
             ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null
+        },
+        {
+            "slug": "drpc-mainnet-public-recent-state",
+            "provider": "dRPC",
+            "actionButtons": [
+                "[Access](https://filecoin.drpc.org)",
+                "[Docs](https://drpc.org/docs)"
+            ],
+            "planName": null,
+            "planType": "Public",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "Limited (unknown limits)"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
             ],

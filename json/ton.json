@@ -4919,65 +4919,20 @@
             "address": null
         },
         {
-            "slug": "drpc-mainnet-free-recent-state",
+            "slug": "drpc-mainnet-enterprise-full-archive",
             "provider": "dRPC",
             "actionButtons": [
-                "[Website](https://drpc.org/chainlist/ton-mainnet-rpc)",
+                "[Contact](https://drpc.org/pricing)",
                 "[Docs](https://drpc.org/docs/ton-api)"
             ],
             "planName": null,
-            "planType": "Free",
-            "historicalData": "Pruned",
+            "planType": "Enterprise",
+            "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "100 req/s, free 210M CUs/mo"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
-            "slug": "drpc-mainnet-pay-as-you-go-recent-state",
-            "provider": "dRPC",
-            "actionButtons": [
-                "[Buy](https://drpc.org/pricing)",
-                "[Docs](https://drpc.org/docs/ton-api)"
-            ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$6/1M requests",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -4995,7 +4950,7 @@
                 "trace"
             ],
             "limitations": [
-                "5K req/s, 20M CUs"
+                "Unlimited RPS, up to 300M reqs/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -5072,51 +5027,6 @@
             "address": null
         },
         {
-            "slug": "drpc-mainnet-free-full-archive",
-            "provider": "dRPC",
-            "actionButtons": [
-                "[Website](https://drpc.org/chainlist/ton-mainnet-rpc)",
-                "[Docs](https://drpc.org/docs/ton-api)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "100 req/s, free 210M CUs/mo"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
             "slug": "drpc-mainnet-pay-as-you-go-full-archive",
             "provider": "dRPC",
             "actionButtons": [
@@ -5149,60 +5059,6 @@
             ],
             "limitations": [
                 "5K req/s, 20M CUs"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Method Limiting",
-                "Error tracing",
-                "Contract addresses protection"
-            ],
-            "monitoringAndAnalytics": [
-                "per-method analytics",
-                "latency",
-                "CU analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null
-        },
-        {
-            "slug": "drpc-mainnet-enterprise-full-archive",
-            "provider": "dRPC",
-            "actionButtons": [
-                "[Contact](https://drpc.org/pricing)",
-                "[Docs](https://drpc.org/docs/ton-api)"
-            ],
-            "planName": null,
-            "planType": "Enterprise",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "Unlimited RPS, up to 300M reqs/mo"
             ],
             "securityImprovements": [
                 "DDoS Protection",
