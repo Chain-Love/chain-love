@@ -2805,6 +2805,271 @@
             "starred": false
         }
     ],
+    "ramps": [
+        {
+            "slug": "transak",
+            "provider": "Transak",
+            "actionButtons": [
+                "[Website](https://transak.com/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "bank_transfer",
+                "apple_pay",
+                "google_pay",
+                "pix"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "moonpay",
+            "provider": "MoonPay",
+            "actionButtons": [
+                "[Website](https://www.moonpay.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay",
+                "paypal"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CN",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU",
+                "BY",
+                "VE"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "PCI_DSS",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "ramp-network",
+            "provider": "Ramp Network",
+            "actionButtons": [
+                "[Website](https://ramp.network/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "apple_pay",
+                "google_pay",
+                "revolut_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "YE"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II",
+                "PCI_DSS"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "onramper",
+            "provider": "Onramper",
+            "actionButtons": [
+                "[Website](https://onramper.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "SOC2_TYPE_I"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "stripe-crypto",
+            "provider": "Stripe",
+            "actionButtons": [
+                "[Website](https://stripe.com/crypto)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "ach"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "SOC2_TYPE_II",
+                "PCI_DSS"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "banxa",
+            "provider": "Banxa",
+            "actionButtons": [
+                "[Website](https://banxa.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "mercuryo",
+            "provider": "Mercuryo",
+            "actionButtons": [
+                "[Website](https://mercuryo.io/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "apple_pay",
+                "google_pay",
+                "sepa"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "ISO27001"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "sardine",
+            "provider": "Sardine",
+            "actionButtons": [
+                "[Website](https://www.sardine.ai/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "ach",
+                "instant_ach",
+                "credit_card",
+                "debit_card"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "meld",
+            "provider": "Meld",
+            "actionButtons": [
+                "[Website](https://www.meld.io/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        }
+    ],
     "bridges": [
         {
             "slug": "across-mainnet",
@@ -6916,24 +7181,6 @@
             "starred": false
         },
         {
-            "slug": "ipfs",
-            "provider": "IPFS",
-            "actionButtons": [
-                "[Docs](https://docs.ipfs.io/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Go",
-                "JavaScript",
-                "Storage"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "Distributed file storage protocol commonly used by Polygon dApps",
-            "starred": false
-        },
-        {
             "slug": "jeb-decompiler",
             "provider": "PNF Software",
             "actionButtons": [
@@ -7467,22 +7714,6 @@
             "planName": "Pro",
             "planType": "Tiered",
             "description": "Open-source wallet infrastructure for rapid integration of wallet functions, intuitive onboarding, and flexible user journeys for any application or ecosystem",
-            "starred": false
-        },
-        {
-            "slug": "orbit-db",
-            "provider": "Orbit DB",
-            "actionButtons": [
-                "[Website](https://orbitdb.org/)"
-            ],
-            "toolType": "Database",
-            "tag": [
-                "Decentralized database"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
             "starred": false
         },
         {
@@ -8329,23 +8560,6 @@
             "planName": "Starter",
             "planType": "Tiered",
             "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-            "starred": false
-        },
-        {
-            "slug": "thread-db",
-            "provider": "Thread DB",
-            "actionButtons": [
-                "[Docs](https://docs.textile.io/threads/)"
-            ],
-            "toolType": "Database",
-            "tag": [
-                "Decentralized database",
-                "P2P database"
-            ],
-            "price": "Custom",
-            "planName": null,
-            "planType": "Enterprise",
-            "description": "It is a multi-party,decentralized database solution built on IPFS and Libp2p that provides an alternative architecture for data on the web",
             "starred": false
         },
         {
@@ -20147,6 +20361,77 @@
             "starred": false
         }
     ],
+    "storages": [
+        {
+            "slug": "orbit-db",
+            "provider": "Orbit DB",
+            "actionButtons": [
+                "[Website](https://orbitdb.org/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database"
+            ],
+            "price": "$0",
+            "planType": "Free",
+            "planName": null,
+            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
+            "starred": false
+        },
+        {
+            "slug": "ipfs",
+            "provider": "IPFS",
+            "actionButtons": [
+                "[Docs](https://docs.ipfs.io/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Go",
+                "JavaScript",
+                "Storage"
+            ],
+            "price": "$0",
+            "planType": "Free",
+            "planName": null,
+            "description": "Distributed file storage protocol commonly used by Polygon dApps",
+            "starred": false
+        },
+        {
+            "slug": "tableland-db",
+            "provider": "Tableland",
+            "actionButtons": [
+                "[Website](https://tableland.xyz/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database",
+                "SQL database",
+                "SQLite"
+            ],
+            "price": "Custom",
+            "planType": "TBD",
+            "planName": null,
+            "description": "It allows developers to store, manage, and query structured data for decentralized applications using familiar SQL statements, with access control and ownership tied to the blockchain",
+            "starred": false
+        },
+        {
+            "slug": "thread-db",
+            "provider": "Thread DB",
+            "actionButtons": [
+                "[Docs](https://docs.textile.io/threads/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database",
+                "P2P database"
+            ],
+            "price": "Custom",
+            "planType": "TBD",
+            "planName": null,
+            "description": "It is a multi-party,decentralized database solution built on IPFS and Libp2p that provides an alternative architecture for data on the web",
+            "starred": false
+        }
+    ],
     "columns": {
         "oracles": [
             "slug",
@@ -20196,6 +20481,17 @@
             "planName",
             "planType",
             "starred"
+        ],
+        "ramps": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "kycLevel",
+            "paymentMethods",
+            "bannedCountries",
+            "aggregator",
+            "auditsPerformed",
+            "deliveryType"
         ],
         "bridges": [
             "slug",
@@ -20311,6 +20607,18 @@
             "dripLimitAmount",
             "dripLimitPeriod",
             "additionalNotes",
+            "starred"
+        ],
+        "storages": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "toolType",
+            "tag",
+            "price",
+            "planType",
+            "planName",
+            "description",
             "starred"
         ]
     }
