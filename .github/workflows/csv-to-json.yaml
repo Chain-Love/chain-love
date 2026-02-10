@@ -33,7 +33,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Copy csv_to_json.py script from tools folder
-        run: cp json-tools/tools/csv_to_json.py .
+        run: |
+          cp json-tools/tools/csv_to_json.py .
+          cp json-tools/tools/update_sdks_metadata_*.py .
 
       - name: Configure Git
         run: |
@@ -58,7 +60,11 @@ jobs:
           python-version: '3.x'
 
       - name: Run CSV to JSON
-        run: python3 csv_to_json.py
+        run: |
+          python3 csv_to_json.py
+          python3 update_sdks_metadata_github.py --jsonfile all
+          python3 update_sdks_metadata_npm.py --jsonfile all
+          python3 update_sdks_metadata_gitlab.py --jsonfile all --fallback-to-tags
 
       - name: Commit and push
         run: |
