@@ -230,7 +230,6 @@ def main():
         data = None
         with open(f"json/{network_spec}", "r") as f:
             data = json.load(f)
-
         if not check_validation(data=data, schema_validator=validator, rules_validator=rules):
             had_errors = True
 
