@@ -364,24 +364,15 @@ def ensure_sdks_tbd_fields(result: dict):
                 item[k] = "TBD"
 
 def load_meta():
-    categories = load_csv_to_dict_list("meta/categories.csv")
-    columns = load_csv_to_dict_list("meta/columns.csv")
+    with open("meta/categories.json", "r", encoding="utf-8") as f:
+        categories = json.load(f)
 
-    if categories is None or columns is None:
-        print("Meta files missing (meta/categories.csv, meta/columns.csv)")
-        exit(1)
-
-    categories, errors1 = normalize({"categories": categories})
-    columns, errors2 = normalize({"columns": columns})
-
-    if errors1 or errors2:
-        for e in errors1 + errors2:
-            print(e)
-        exit(1)
+    with open("meta/columns.json", "r", encoding="utf-8") as f:
+        columns = json.load(f)
 
     return {
-        "categories": {c["key"]: c for c in categories["categories"]},
-        "columns": {c["key"]: c for c in columns["columns"]},
+        "categories": categories,
+        "columns": columns,
     }
 
 

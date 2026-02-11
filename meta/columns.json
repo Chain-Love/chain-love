@@ -1,0 +1,822 @@
+{
+  "slug": {
+    "key": "slug",
+    "label": "Slug",
+    "icon": null,
+    "description": null,
+    "filter": null,
+    "sorting": null,
+    "pinning": null,
+    "cellType": null
+  },
+  "starred": {
+    "key": "starred",
+    "label": "Starred",
+    "icon": null,
+    "description": null,
+    "filter": null,
+    "sorting": null,
+    "pinning": null,
+    "cellType": null
+  },
+  "provider": {
+    "key": "provider",
+    "label": "Provider",
+    "icon": "lucide:Unplug",
+    "description": "Service provider (company/organization).",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": "left",
+    "cellType": "provider"
+  },
+  "actionButtons": {
+    "key": "actionButtons",
+    "label": "Actions",
+    "icon": "lucide:Navigation",
+    "description": "External links/actions.",
+    "filter": null,
+    "sorting": null,
+    "pinning": "left",
+    "cellType": "actionButtons"
+  },
+  "limitations": {
+    "key": "limitations",
+    "label": "Limitations",
+    "icon": "lucide:ShieldAlert",
+    "description": "Provider limitations.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "address": {
+    "key": "address",
+    "label": "Address",
+    "icon": "lucide:SquareUserRound",
+    "description": "Address/account identifier.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": "address"
+  },
+  "chain": {
+    "key": "chain",
+    "label": "Chain",
+    "icon": "lucide:Link",
+    "description": "Network/chain.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": "chain"
+  },
+  "apiType": {
+    "key": "apiType",
+    "label": "API Type",
+    "icon": "settings.svg||lucide:SlidersHorizontal",
+    "description": "Type of API.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "planType": {
+    "key": "planType",
+    "label": "Plan",
+    "icon": "plan.svg||lucide:ClipboardList",
+    "description": "Plan type.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": "planType"
+  },
+  "planName": {
+    "key": "planName",
+    "label": "Plan Name",
+    "icon": "plan.svg||lucide:BookMarked",
+    "description": "Plan name.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "technology": {
+    "key": "technology",
+    "label": "Technology",
+    "icon": "lucide:Cpu",
+    "description": "Underlying technology.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "regions": {
+    "key": "regions",
+    "label": "Regions",
+    "icon": "regions.svg||lucide:Globe",
+    "description": "Available regions.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "historicalData": {
+    "key": "historicalData",
+    "label": "Historical Data",
+    "icon": "lucide:Database",
+    "description": "Historical data availability.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "accessPrice": {
+    "key": "accessPrice",
+    "label": "Access Price",
+    "icon": "access-price.svg||lucide:BadgeDollarSign",
+    "description": "Subscription/base fee.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "numericRange"
+  },
+  "trial": {
+    "key": "trial",
+    "label": "Trial",
+    "icon": "trial.svg||lucide:Clock",
+    "description": "Trial availability.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "queryPrice": {
+    "key": "queryPrice",
+    "label": "Query Price",
+    "icon": "lucide:ReceiptCent",
+    "description": "Price per API call.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "numericRange"
+  },
+  "supportSla": {
+    "key": "supportSla",
+    "label": "Support SLA",
+    "icon": "lucide:CalendarClock",
+    "description": "Support SLA.",
+    "filter": "select",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "uptimeSla": {
+    "key": "uptimeSla",
+    "label": "Uptime SLA",
+    "icon": "lucide:Activity",
+    "description": "Guaranteed uptime SLA.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "slaNumeric"
+  },
+  "verifiedUptime": {
+    "key": "verifiedUptime",
+    "label": "Verified Uptime",
+    "icon": "lucide:AlarmClockCheck",
+    "description": "Measured uptime.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "verifiedUptime"
+  },
+  "bandwidthSla": {
+    "key": "bandwidthSla",
+    "label": "Bandwidth SLA",
+    "icon": "lucide:SquareActivity",
+    "description": "Guaranteed bandwidth.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "slaNumeric"
+  },
+  "blocksBehindSla": {
+    "key": "blocksBehindSla",
+    "label": "Blocks Behind SLA",
+    "icon": "lucide:DatabaseZap",
+    "description": "Max blocks behind latest.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "slaNumeric"
+  },
+  "verifiedBlocksBehindAvg": {
+    "key": "verifiedBlocksBehindAvg",
+    "label": "Verified Blocks Behind Avg.",
+    "icon": "lucide:ChartBarBig",
+    "description": "Measured blocks behind average.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "verifiedBlocksBehindAvg"
+  },
+  "verifiedLatency": {
+    "key": "verifiedLatency",
+    "label": "Verified Latency",
+    "icon": "lucide:Gauge",
+    "description": "Measured latency.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "verifiedLatency"
+  },
+  "availableApis": {
+    "key": "availableApis",
+    "label": "Available APIs",
+    "icon": "lucide:Webhook",
+    "description": "Supported APIs.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "securityImprovements": {
+    "key": "securityImprovements",
+    "label": "Security Improvements",
+    "icon": "lucide:Shield",
+    "description": "Security improvements list.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "monitoringAndAnalytics": {
+    "key": "monitoringAndAnalytics",
+    "label": "Monitoring & Analytics",
+    "icon": "lucide:ChartNoAxesCombined",
+    "description": "Monitoring and analytics capabilities.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "additionalFeatures": {
+    "key": "additionalFeatures",
+    "label": "Additional Features",
+    "icon": "lucide:Lightbulb",
+    "description": "Additional features list.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "sdk": {
+    "key": "sdk",
+    "label": "SDK",
+    "icon": "lucide:Layers",
+    "description": "Supported SDKs.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "searchCapabilities": {
+    "key": "searchCapabilities",
+    "label": "Search Capabilities",
+    "icon": "lucide:ScanSearch",
+    "description": "Search capabilities.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "smartContractsVerifications": {
+    "key": "smartContractsVerifications",
+    "label": "Smart Contracts Verifications",
+    "icon": "lucide:ShieldCheck",
+    "description": "Supports contract verification.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "fullHistory": {
+    "key": "fullHistory",
+    "label": "Full History",
+    "icon": "lucide:History",
+    "description": "Stores full chain history.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "pricing": {
+    "key": "pricing",
+    "label": "Pricing",
+    "icon": "lucide:BadgeDollarSign",
+    "description": "Pricing model/notes.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "dataTypes": {
+    "key": "dataTypes",
+    "label": "Data Types",
+    "icon": "lucide:Database",
+    "description": "Supported data types.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "decentralizationModel": {
+    "key": "decentralizationModel",
+    "label": "Decentralization",
+    "icon": "lucide:Shapes",
+    "description": "Decentralization model.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "economicalSecurity": {
+    "key": "economicalSecurity",
+    "label": "Economical Security",
+    "icon": "lucide:ShieldHalf",
+    "description": "Provides economic security guarantees.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "economicalSecurityNote": {
+    "key": "economicalSecurityNote",
+    "label": "Economical Security Note",
+    "icon": "lucide:ShieldEllipsis",
+    "description": "Notes about economic security.",
+    "filter": "select",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "auditsPerformed": {
+    "key": "auditsPerformed",
+    "label": "Audits Performed",
+    "icon": "lucide:BookLock",
+    "description": "List of audits.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "openSource": {
+    "key": "openSource",
+    "label": "Open Source",
+    "icon": "lucide:Code",
+    "description": "Open source availability.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "support": {
+    "key": "support",
+    "label": "Support",
+    "icon": "lucide:Handshake",
+    "description": "Support channels.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "supportedChains": {
+    "key": "supportedChains",
+    "label": "Supported Chains",
+    "icon": "lucide:Ratio",
+    "description": "Supported chains list.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "price": {
+    "key": "price",
+    "label": "Price",
+    "icon": "lucide:BadgeDollarSign",
+    "description": "Price/cost.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "numericRange"
+  },
+  "assetTypes": {
+    "key": "assetTypes",
+    "label": "Asset Types",
+    "icon": "lucide:SlidersVertical",
+    "description": "Supported asset types.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "txSpeedSla": {
+    "key": "txSpeedSla",
+    "label": "TX Speed SLA",
+    "icon": "lucide:Gauge",
+    "description": "Transaction speed SLA.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "throughputSla": {
+    "key": "throughputSla",
+    "label": "Throughput SLA",
+    "icon": "lucide:Activity",
+    "description": "Guaranteed throughput SLA.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "tag": {
+    "key": "tag",
+    "label": "Tags",
+    "icon": "lucide:Tags",
+    "description": "Tags list.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "tagsPopover"
+  },
+  "toolType": {
+    "key": "toolType",
+    "label": "Tool Type",
+    "icon": "lucide:Wrench",
+    "description": "Tool type.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "description": {
+    "key": "description",
+    "label": "Description",
+    "icon": "lucide:MessageSquareText",
+    "description": "Description text.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": "description"
+  },
+  "programmingLanguage": {
+    "key": "programmingLanguage",
+    "label": "Programming Language",
+    "icon": "lucide:Code",
+    "description": "Primary programming language.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "dependencies": {
+    "key": "dependencies",
+    "label": "Dependencies",
+    "icon": "lucide:Package",
+    "description": "Dependencies list.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "tagsPopover"
+  },
+  "latestKnownVersion": {
+    "key": "latestKnownVersion",
+    "label": "Latest Version",
+    "icon": "lucide:Tag",
+    "description": "Latest known version.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "latestKnownReleaseDate": {
+    "key": "latestKnownReleaseDate",
+    "label": "Release Date",
+    "icon": "lucide:Calendar",
+    "description": "Latest known release date.",
+    "filter": "searchableMultiSelect",
+    "sorting": "date",
+    "pinning": null,
+    "cellType": null
+  },
+  "maintainer": {
+    "key": "maintainer",
+    "label": "Maintainer",
+    "icon": "lucide:User",
+    "description": "Maintainer info.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "license": {
+    "key": "license",
+    "label": "License",
+    "icon": "lucide:FileText",
+    "description": "License.",
+    "filter": "select",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "requiresLogin": {
+    "key": "requiresLogin",
+    "label": "Requires Login",
+    "icon": "lucide:LogIn",
+    "description": "Requires authentication.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "hasCaptcha": {
+    "key": "hasCaptcha",
+    "label": "Has Captcha",
+    "icon": "lucide:Fingerprint",
+    "description": "Uses captcha.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "requiredMainnetBalance": {
+    "key": "requiredMainnetBalance",
+    "label": "Required Mainnet Balance",
+    "icon": "lucide:SquareAsterisk",
+    "description": "Mainnet balance requirement.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "dripLimitAmount": {
+    "key": "dripLimitAmount",
+    "label": "Drip Limit Amount",
+    "icon": "lucide:Droplet",
+    "description": "Drip limit amount.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "dripLimitPeriod": {
+    "key": "dripLimitPeriod",
+    "label": "Drip Limit Period",
+    "icon": "lucide:Clock",
+    "description": "Drip limit period.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "additionalNotes": {
+    "key": "additionalNotes",
+    "label": "Additional Notes",
+    "icon": "lucide:Lightbulb",
+    "description": "Notes.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "hasDashboard": {
+    "key": "hasDashboard",
+    "label": "Dashboard",
+    "icon": "lucide:LayoutDashboard",
+    "description": "Has dashboard.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "dataSources": {
+    "key": "dataSources",
+    "label": "Data Sources",
+    "icon": "lucide:Database",
+    "description": "Supported data sources.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "supportedPlatforms": {
+    "key": "supportedPlatforms",
+    "label": "Supported Platforms",
+    "icon": "lucide:Airplay",
+    "description": "Supported platforms.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "custodial": {
+    "key": "custodial",
+    "label": "Custodial",
+    "icon": "lucide:FolderKey",
+    "description": "Custodial wallet.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "mfa": {
+    "key": "mfa",
+    "label": "MFA",
+    "icon": "lucide:Key",
+    "description": "Supports MFA.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "msig": {
+    "key": "msig",
+    "label": "MSIG",
+    "icon": "lucide:ScanQrCode",
+    "description": "Supports multisig.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "hardware": {
+    "key": "hardware",
+    "label": "Hardware",
+    "icon": "lucide:Inbox",
+    "description": "Supports hardware wallets.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "keyExport": {
+    "key": "keyExport",
+    "label": "Key Export",
+    "icon": "lucide:FolderOutput",
+    "description": "Supports key export.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "native": {
+    "key": "native",
+    "label": "Native",
+    "icon": "lucide:Waypoints",
+    "description": "Native wallet.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "evm": {
+    "key": "evm",
+    "label": "EVM",
+    "icon": "lucide:Zap",
+    "description": "EVM support.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "tendermint": {
+    "key": "tendermint",
+    "label": "Tendermint",
+    "icon": "lucide:DatabaseZap",
+    "description": "Tendermint support.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "tokensSupport": {
+    "key": "tokensSupport",
+    "label": "Tokens Support",
+    "icon": "lucide:Coins",
+    "description": "Supported token standards.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "staking": {
+    "key": "staking",
+    "label": "Staking",
+    "icon": "lucide:ChartBarStacked",
+    "description": "Supports staking.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "audit": {
+    "key": "audit",
+    "label": "Audit Info",
+    "icon": "lucide:AudioWaveform",
+    "description": "Audit reports/sources.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "languages": {
+    "key": "languages",
+    "label": "Languages",
+    "icon": "lucide:Earth",
+    "description": "Supported UI languages.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "aggregator": {
+    "key": "aggregator",
+    "label": "Aggregator",
+    "icon": "lucide:Layers",
+    "description": "Indicates whether the provider aggregates multiple sources.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null
+  },
+  "bannedCountries": {
+    "key": "bannedCountries",
+    "label": "Banned Countries",
+    "icon": "lucide:GlobeLock",
+    "description": "Countries where service is restricted.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "compliance": {
+    "key": "compliance",
+    "label": "Compliance",
+    "icon": "lucide:BadgeCheck",
+    "description": "Compliance certifications or regimes.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "coverage": {
+    "key": "coverage",
+    "label": "Coverage",
+    "icon": "lucide:Map",
+    "description": "Geographic or service coverage.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  },
+  "deliveryType": {
+    "key": "deliveryType",
+    "label": "Delivery Type",
+    "icon": "lucide:Truck",
+    "description": "Delivery or fulfillment type.",
+    "filter": "select",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "executionEnvironment": {
+    "key": "executionEnvironment",
+    "label": "Execution Environment",
+    "icon": "lucide:Cpu",
+    "description": "Runtime or execution environment.",
+    "filter": "select",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "kycLevel": {
+    "key": "kycLevel",
+    "label": "KYC Level",
+    "icon": "lucide:UserCheck",
+    "description": "Required KYC level.",
+    "filter": "select",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
+  },
+  "paymentMethods": {
+    "key": "paymentMethods",
+    "label": "Payment Methods",
+    "icon": "lucide:CreditCard",
+    "description": "Supported payment methods.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover"
+  }
+}
