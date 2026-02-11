@@ -23,7 +23,7 @@ jobs:
           for file in json/*.json; do
             filename=$(basename "$file")
             schema_version=$(jq -r '.shcemaVersion // "1.0.0"' "$file")
-            new_name="schema-${schema_version}-${filename}.json"
+            new_name="schema-${schema_version}-${filename}"
             cp "$file" "release-assets/$new_name"
           done
 
