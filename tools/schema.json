@@ -1,10 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.com/schemas/infrastructure.json",
+  "$id": "https://chain.love/schemas/infrastructure/1.0.0",
   "title": "Toolbox Network Data",
   "type": "object",
   "additionalProperties": false,
   "properties": {
+    "schemaVersion": { "type": "string", "const": "1.0.0", "description": "Schema version of this document" },
     "apis": { "type": "array", "items": { "$ref": "#/$defs/apis" } },
     "explorers": { "type": "array", "items": { "$ref": "#/$defs/explorers" } },
     "oracles": { "type": "array", "items": { "$ref": "#/$defs/oracles" } },

@@ -1,7 +1,7 @@
 import os
 import re
 import json
-from jsonschema import Draft7Validator
+from jsonschema import Draft202012Validator
 from jsonpointer import resolve_pointer
 from csv_to_json import load_csv_to_dict_list, normalize
 import copy
@@ -92,7 +92,7 @@ def has_unclosed_markdown(s: str) -> bool:
 
     if len(s) == 0:
         return False
-    
+
     # Pairs that must be closed: **, *, _, `, [ ]( )
     # Check bold/italic/code
     if s.count("**") % 2 != 0:
@@ -103,23 +103,23 @@ def has_unclosed_markdown(s: str) -> bool:
         return True
     if s.count("`") % 2 != 0:
         return True
-    
+
     # Check link brackets [text](url)
     # Must have same count of [ and ] and ( and )
     if s.count("[") != s.count("]"):
         return True
     if s.count("(") != s.count(")"):
         return True
-    
+
     return False
 
 def is_markdown_link(s: str) -> bool:
     if type(s) != str:
         return False
-    
+
     if len(s) == 0:
         return False
-    
+
     pattern = r"(?:\[(?P<text>.*?)\])\((?P<link>.*?)\)"
     return re.match(pattern, s) is not None
 
@@ -136,7 +136,7 @@ def check_schema_validation(schema_validator, data) -> bool:
     Validate data against a JSON schema.
 
     Args:
-        schema_validator (Draft7Validator): Validator for the JSON schema.
+        schema_validator (Draft202012Validator): Validator for the JSON schema.
         data (dict): Data to be validated.
 
     Returns:
@@ -170,7 +170,7 @@ def check_rules_validation(rules_validator, data) -> bool:
     """
     had_errors = False
     for category in data.keys():
-        if category == "columns":
+        if category in ("columns", "schemaVersion"):
             continue
         errors = rules_validator.validate(data[category])
         for err in errors:
@@ -189,7 +189,7 @@ def load_csv_folder(folder) -> dict:
             continue
         category_name = category_file_name[:-4]
         data[category_name] = load_csv_to_dict_list(f"{folder}/{category_file_name}")
-    
+
     data, errors = normalize(data)
     if len(errors) > 0:
         print(f"Errors normalizing CSV data from '{folder}':")
@@ -224,20 +224,19 @@ def main():
     rules.add_rule(rule_slug_kebab_case)
 
     # Validate networks
-    validator = Draft7Validator(schema)
+    validator = Draft202012Validator(schema)
     for network_spec in os.listdir("json"):
         print(f"Validating {network_spec}...")
         data = None
         with open(f"json/{network_spec}", "r") as f:
             data = json.load(f)
-        
         if not check_validation(data=data, schema_validator=validator, rules_validator=rules):
             had_errors = True
 
     # Validate providers
     providers_data = load_csv_folder("providers")
     providers_schema = make_providers_schema(network_schema=schema)
-    providers_validator = Draft7Validator(providers_schema)
+    providers_validator = Draft202012Validator(providers_schema)
     if not check_validation(data=providers_data, schema_validator=providers_validator, rules_validator=rules):
         had_errors = True
 
