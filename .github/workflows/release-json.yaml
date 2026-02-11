@@ -1,0 +1,37 @@
+name: Release JSONs
+
+on:
+  push:
+    branches:
+      - json
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare release assets
+        id: prep
+        run: |
+          mkdir -p release-assets
+          for file in json/*.json; do
+            filename=$(basename "$file")
+            schema_version=$(jq -r '.shcemaVersion // "1.0.0"' "$file")
+            new_name="schema-${schema_version}-${filename}"
+            cp "$file" "release-assets/$new_name"
+          done
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="json-release-${GITHUB_SHA::7}"
+          gh release create "$tag" release-assets/* \
+            --title "JSON (${GITHUB_SHA::7})" \
+            --notes "Automated release from json branch"
