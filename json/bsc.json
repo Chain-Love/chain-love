@@ -1437,7 +1437,7 @@
     ],
     "bridges": [
         {
-            "slug": "across-mainnet-bridge",
+            "slug": "across",
             "provider": "Across",
             "actionButtons": [
                 "[Bridge](https://app.across.to/bridge-and-swap)",
@@ -1450,28 +1450,6 @@
             "openSource": true,
             "support": [
                 "Discord"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Asset Transfer"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Fast bridging",
-                "Single liquidity pool"
-            ],
-            "assetTypes": [
-                "ETH",
-                "ERC‑20"
-            ],
-            "price": "Gas Fee + small protocol fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Secured via UMA oracle + relayers",
-            "auditsPerformed": null,
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "SDK",
-                "Web UI"
             ],
             "supportedChains": [
                 "hyperevm",
@@ -1495,10 +1473,32 @@
                 "world chain",
                 "zora",
                 "zksync era"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Fast bridging",
+                "Single liquidity pool"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + small protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured via UMA oracle + relayers",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "SDK",
+                "Web UI"
             ]
         },
         {
-            "slug": "allbridge-core-mainnet-bridge",
+            "slug": "allbridge-core",
             "provider": "Allbridge Core",
             "actionButtons": [
                 "[Bridge](https://core.allbridge.io/)",
@@ -1511,6 +1511,23 @@
             "openSource": true,
             "support": [
                 "Discord"
+            ],
+            "supportedChains": [
+                "arbitrum",
+                "avalanche",
+                "base",
+                "bnb chain",
+                "celo",
+                "ethereum",
+                "linea",
+                "optimism",
+                "polygon",
+                "sonic",
+                "solana",
+                "stellar",
+                "sui",
+                "tron",
+                "unichain"
             ],
             "starred": false,
             "availableApis": [
@@ -1535,27 +1552,10 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
-            ],
-            "supportedChains": [
-                "arbitrum",
-                "avalanche",
-                "base",
-                "bnb chain",
-                "celo",
-                "ethereum",
-                "linea",
-                "optimism",
-                "polygon",
-                "sonic",
-                "solana",
-                "stellar",
-                "sui",
-                "tron",
-                "unichain"
             ]
         },
         {
-            "slug": "asterizm-mainnet-bridge",
+            "slug": "asterizm",
             "provider": "Asterizm",
             "actionButtons": [
                 "[Bridge](https://asterizm.io/)",
@@ -1568,27 +1568,6 @@
             "openSource": true,
             "support": [
                 "Discord"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Cross‑chain Messaging"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Composable messaging",
-                "Intent‑based"
-            ],
-            "assetTypes": [
-                "ETH",
-                "USDC"
-            ],
-            "price": "Gas Fee + relayer fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Secured by validators and messaging relayers",
-            "auditsPerformed": null,
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "Web UI"
             ],
             "supportedChains": [
                 "ethereum",
@@ -1618,10 +1597,31 @@
                 "units",
                 "redbelley",
                 "supra"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Messaging"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Composable messaging",
+                "Intent‑based"
+            ],
+            "assetTypes": [
+                "ETH",
+                "USDC"
+            ],
+            "price": "Gas Fee + relayer fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured by validators and messaging relayers",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
             ]
         },
         {
-            "slug": "axelar-mainnet-bridge",
+            "slug": "axelar",
             "provider": "Axelar",
             "actionButtons": [
                 "[Bridge](https://www.axelar.network/)",
@@ -1636,34 +1636,6 @@
                 "Discord",
                 "Telegram",
                 "X"
-            ],
-            "starred": false,
-            "availableApis": [
-                "REST",
-                "GraphQL"
-            ],
-            "monitoringAndAnalytics": [
-                "Yes (Axelarscan)"
-            ],
-            "additionalFeatures": [
-                "Cross‑chain Messaging"
-            ],
-            "assetTypes": [
-                "wFIL",
-                "wETH",
-                "wBTC",
-                "USDC",
-                "USDT"
-            ],
-            "price": "[Gas Fee](https://support.edge.app/hc/en-us/articles/36422794159387-Axelar-AXL-Network-Fees)",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Proof-of-stake permissionless validator set controls Axelar security protocols",
-            "auditsPerformed": [
-                "[GitHub](https://github.com/axelarnetwork/audits)"
-            ],
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "TypeScript SDK"
             ],
             "supportedChains": [
                 "ethereum",
@@ -1762,10 +1734,38 @@
                 "xion",
                 "xrpl",
                 "xrpl evm"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Yes (Axelarscan)"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain Messaging"
+            ],
+            "assetTypes": [
+                "wFIL",
+                "wETH",
+                "wBTC",
+                "USDC",
+                "USDT"
+            ],
+            "price": "[Gas Fee](https://support.edge.app/hc/en-us/articles/36422794159387-Axelar-AXL-Network-Fees)",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Proof-of-stake permissionless validator set controls Axelar security protocols",
+            "auditsPerformed": [
+                "[GitHub](https://github.com/axelarnetwork/audits)"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript SDK"
             ]
         },
         {
-            "slug": "celer-mainnet-bridge",
+            "slug": "celer",
             "provider": "Celer",
             "actionButtons": [
                 "[Bridge](https://cbridge.celer.network)",
@@ -1778,38 +1778,6 @@
             "openSource": true,
             "support": [
                 "Contact us form"
-            ],
-            "starred": false,
-            "availableApis": [
-                "REST",
-                "SDK",
-                "WebSocket"
-            ],
-            "monitoringAndAnalytics": [
-                "Transaction Monitoring",
-                "[CelerScan](https://celerscan.com/)"
-            ],
-            "additionalFeatures": [
-                "Decentralized cross‑chain transfers"
-            ],
-            "assetTypes": [
-                "wFIL",
-                "wETH",
-                "wBTC",
-                "USDC",
-                "USDT"
-            ],
-            "price": "Gas Fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
-            "auditsPerformed": [
-                "January 2023, by CertiK",
-                "January 2023, by PeckShield",
-                "January 2023, by SlowMist"
-            ],
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "Node.JS"
             ],
             "supportedChains": [
                 "ethereum",
@@ -1857,10 +1825,42 @@
                 "sui mainnet",
                 "x layer",
                 "opbnb"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "SDK",
+                "WebSocket"
+            ],
+            "monitoringAndAnalytics": [
+                "Transaction Monitoring",
+                "[CelerScan](https://celerscan.com/)"
+            ],
+            "additionalFeatures": [
+                "Decentralized cross‑chain transfers"
+            ],
+            "assetTypes": [
+                "wFIL",
+                "wETH",
+                "wBTC",
+                "USDC",
+                "USDT"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "[Optimistic-rollup + two-phase commit confirm pattern for cross-chain messages](https://cbridge-docs.celer.network/introduction/cbridge-security)",
+            "auditsPerformed": [
+                "January 2023, by CertiK",
+                "January 2023, by PeckShield",
+                "January 2023, by SlowMist"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Node.JS"
             ]
         },
         {
-            "slug": "chainlink-mainnet-bridge",
+            "slug": "chainlink-bridge",
             "provider": "Chainlink Bridge",
             "actionButtons": [
                 "[Bridge](https://chain.link/cross-chain)"
@@ -1872,6 +1872,25 @@
             "openSource": true,
             "support": [
                 "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "arbitrum",
+                "avalanche",
+                "base",
+                "optimism",
+                "linea",
+                "mantle",
+                "bnb chain",
+                "polygon",
+                "aptos",
+                "solana",
+                "celo",
+                "blast",
+                "gnosis",
+                "metis",
+                "astar",
+                "mode"
             ],
             "starred": false,
             "availableApis": [
@@ -1897,6 +1916,22 @@
             "decentralizationModel": "Decentralized",
             "sdk": [
                 "TypeScript"
+            ]
+        },
+        {
+            "slug": "chainport",
+            "provider": "ChainPort",
+            "actionButtons": [
+                "[Bridge](https://app.chainport.io/)",
+                "[Docs](https://docs.chainport.io/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
             ],
             "supportedChains": [
                 "ethereum",
@@ -1905,21 +1940,2321 @@
                 "base",
                 "optimism",
                 "linea",
-                "mantle",
+                "cardano",
                 "bnb chain",
                 "polygon",
-                "aptos",
-                "solana",
-                "celo",
-                "blast",
-                "gnosis",
-                "metis",
-                "astar",
-                "mode"
+                "fantom",
+                "dogechain",
+                "telos",
+                "moonriver",
+                "aurora",
+                "conflux",
+                "opbnb",
+                "humanode",
+                "step",
+                "stratis",
+                "rootstock",
+                "iota evm",
+                "chillz",
+                "neurochainai",
+                "iron fish",
+                "argochain",
+                "boba"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Fast transfer",
+                "Low fee (0.3%)"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + 0.3% fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Smart contract custody with optional insurance",
+            "auditsPerformed": null,
+            "decentralizationModel": "Partially Decentralized",
+            "sdk": [
+                "Web UI"
             ]
         },
         {
-            "slug": "stargate-mainnet-bridge",
+            "slug": "chainspot",
+            "provider": "Chainspot",
+            "actionButtons": [
+                "[Bridge](https://app.chainspot.io/)",
+                "[Docs](https://docs.chainspot.io/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Bridge Aggregator",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "polygon",
+                "bnb chain",
+                "arbitrum one",
+                "avalanche",
+                "fantom",
+                "telos",
+                "boba",
+                "optimism",
+                "harmony",
+                "moonriver",
+                "moonbeam",
+                "okxchain",
+                "aurora",
+                "evmos",
+                "fuse",
+                "cronos",
+                "gnosis",
+                "celo",
+                "venom testnet",
+                "base",
+                "linea",
+                "polygon zkevm",
+                "scroll",
+                "mantle",
+                "zksync",
+                "boba beam",
+                "kava",
+                "wanchain",
+                "tron",
+                "rootstock",
+                "fraxtal",
+                "bsquared(b2)",
+                "zklink",
+                "bahamut",
+                "mint",
+                "bevm",
+                "bob",
+                "bitlayer",
+                "blast",
+                "mode",
+                "taiko",
+                "ton"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Bridge Aggregation"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Multi‑bridge routing",
+                "Cross‑chain explorer"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Depends on selected route",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Inherits security from underlying bridges",
+            "auditsPerformed": null,
+            "decentralizationModel": "Aggregator",
+            "sdk": [
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "connext",
+            "provider": "Connext",
+            "actionButtons": [
+                "[Bridge](https://www.connext.network/)",
+                "[Docs](https://docs.connext.network/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "gnosis",
+                "metis",
+                "arbitrum",
+                "optimism",
+                "base",
+                "linea",
+                "mode"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Transfers",
+                "Liquidity Provision"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Low fee intent-layer bridging",
+                "xERC‑20 tokens"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + small protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Security inherits from canonical settlement networks",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript SDK",
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "crosscurve",
+            "provider": "CrossCurve",
+            "actionButtons": [
+                "[Bridge](https://app.crosscurve.fi/)",
+                "[Docs](https://docs.crosscurve.fi)"
+            ],
+            "chain": "mainnet",
+            "technology": "NFT & Token Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "gnosis",
+                "metis",
+                "arbitrum",
+                "optimism",
+                "base",
+                "linea",
+                "mode",
+                "celo",
+                "cronos",
+                "fraxtal",
+                "ink",
+                "manta",
+                "polygon",
+                "taiko",
+                "xdc",
+                "avalanche",
+                "blast",
+                "corn",
+                "kava",
+                "mantle",
+                "morph",
+                "sonic",
+                "tron",
+                "unichain",
+                "core",
+                "fantom",
+                "hyperliquid",
+                "tac",
+                "unit-zero"
+            ],
+            "starred": false,
+            "availableApis": [
+                "NFT Transfer",
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "NFT badge bridge",
+                "EYWA integration"
+            ],
+            "assetTypes": [
+                "ERC‑20",
+                "ERC‑721"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Modular design with relayer fallback",
+            "auditsPerformed": null,
+            "decentralizationModel": "Modular",
+            "sdk": [
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "debridge",
+            "provider": "deBridge",
+            "actionButtons": [
+                "[Bridge](https://app.debridge.com/)",
+                "[Docs](https://docs.debridge.com/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "polygon",
+                "arbitrum",
+                "avalanche",
+                "solana",
+                "linea",
+                "optimism",
+                "base",
+                "tron",
+                "hyperevm",
+                "gnosis",
+                "sonic",
+                "plasma",
+                "abstract",
+                "berachain",
+                "story",
+                "neon",
+                "flow",
+                "bob",
+                "mantle",
+                "sophon",
+                "sei"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer",
+                "Rate Guarantee"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Deep liquidity",
+                "Guaranteed rates"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + small protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Economic security via settlement networks",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI",
+                "SDK"
+            ]
+        },
+        {
+            "slug": "defiway-bridge",
+            "provider": "Defiway.Bridge",
+            "actionButtons": [
+                "[Bridge](https://defiway.com/bridge/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Transfer",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": false,
+            "support": [
+                "Website Form",
+                "Email"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "arbitrum",
+                "base",
+                "solana",
+                "linea",
+                "optimism",
+                "plasma",
+                "polygon",
+                "ton",
+                "bnb chain",
+                "bitcoin",
+                "tron",
+                "scroll"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Stablecoin Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Fast transaction speeds"
+            ],
+            "assetTypes": [
+                "Stablecoins"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Multisig validation, liquidity pools",
+            "auditsPerformed": [
+                "Audited by Certik"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "garden",
+            "provider": "Garden",
+            "actionButtons": [
+                "[Bridge](https://app.garden.finance)",
+                "[Docs](https://docs.garden.finance/)"
+            ],
+            "chain": "mainnet",
+            "technology": "BTC‑to‑ETH Swap Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "arbitrum",
+                "base",
+                "berachain",
+                "bitcoin",
+                "bnb chain",
+                "botanix",
+                "core",
+                "corn",
+                "hyperevm",
+                "solana",
+                "starknet",
+                "sui",
+                "unichain"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Swap"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "BTC → ETH swap in ~10 min"
+            ],
+            "assetTypes": [
+                "BTC",
+                "ETH"
+            ],
+            "price": "Swap fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Relayer‑based swap execution",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "hashport",
+            "provider": "Hashport",
+            "actionButtons": [
+                "[Bridge](https://app.hashport.network/)",
+                "[Docs](https://docs.hashport.network/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Asset Transfer",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "arbitrum",
+                "avalanche",
+                "cronos",
+                "bnb chain",
+                "polygon",
+                "base",
+                "fantom",
+                "optimism",
+                "moonbeam",
+                "aurora"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Secure Hedera-to-EVM bridging"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Multi-signature validators + Hedera consensus",
+            "auditsPerformed": null,
+            "decentralizationModel": "Partially Decentralized",
+            "sdk": [
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "hyperlane",
+            "provider": "Hyperlane",
+            "actionButtons": [
+                "[Bridge](https://www.hyperlane.xyz/)",
+                "[Docs](https://docs.hyperlane.xyz/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "abstract",
+                "ancient8",
+                "apechain",
+                "aleph zero",
+                "arbitrum",
+                "artela",
+                "arthera",
+                "avalanche",
+                "astar",
+                "astar zkevm",
+                "aurora",
+                "base",
+                "berachain",
+                "bitlayer",
+                "blast",
+                "bob",
+                "boba",
+                "bnb chain",
+                "birdlayer",
+                "bittensor",
+                "bnb chain",
+                "b3",
+                "camp",
+                "celo",
+                "cheesechain",
+                "chillz",
+                "citrea",
+                "coin98",
+                "conflux",
+                "coredao",
+                "corn",
+                "cyber",
+                "degen chain",
+                "dogechain",
+                "eclipse",
+                "endurance",
+                "ethereum",
+                "ebi",
+                "everclear",
+                "evmos",
+                "fantom",
+                "form",
+                "fraxtal",
+                "flame",
+                "flare",
+                "flow",
+                "forma",
+                "fuel",
+                "fuse",
+                "gnosis",
+                "gravity",
+                "hyperevm",
+                "harmony",
+                "hemi",
+                "henez",
+                "immutable",
+                "inevm",
+                "injective",
+                "ink",
+                "karak",
+                "kroma",
+                "kyros",
+                "linea",
+                "lisk",
+                "lumia",
+                "layeredge",
+                "logx",
+                "lukso",
+                "manta",
+                "manta pacific",
+                "mantle",
+                "matchain",
+                "metal",
+                "metis",
+                "merlin",
+                "mint",
+                "mode",
+                "miracleplay",
+                "mitosis",
+                "molten",
+                "moonbeam",
+                "morph",
+                "neutron",
+                "noble",
+                "nero",
+                "optimism",
+                "oort",
+                "orderly",
+                "osmosis",
+                "polygon",
+                "polygon cdk",
+                "polynomial",
+                "prom",
+                "proof of play",
+                "ronin",
+                "rari",
+                "re.al",
+                "redstone",
+                "rootstock",
+                "sei",
+                "solana",
+                "sanko",
+                "soneium",
+                "sonic",
+                "sonic svm",
+                "soon",
+                "sophon",
+                "starknet",
+                "stride",
+                "scroll",
+                "shibarium",
+                "snapchain",
+                "story",
+                "superposition",
+                "swell chain",
+                "superseed",
+                "trump chain",
+                "telos",
+                "treasure",
+                "taiko",
+                "tangle",
+                "unichain",
+                "viction",
+                "vana",
+                "x layer",
+                "xai",
+                "zero network",
+                "zircuit",
+                "zetachain",
+                "zklink",
+                "zora"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Messaging",
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Modular Interchain Security",
+                "Warp Routes (Bridging)"
+            ],
+            "assetTypes": [
+                "ERC‑20"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Economic security via modular ISMs and validator staking",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript CLI"
+            ]
+        },
+        {
+            "slug": "interport",
+            "provider": "Interport Finance",
+            "actionButtons": [
+                "[Bridge](https://app.interport.fi)",
+                "[Docs](https://docs.interport.fi)"
+            ],
+            "chain": "mainnet",
+            "technology": "Meta‑DEX Cross‑chain Swap Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "solana",
+                "arbitrum",
+                "bnb chain",
+                "blast",
+                "zksync",
+                "base",
+                "scroll",
+                "optimism",
+                "linea",
+                "manta pacific",
+                "polygon",
+                "opbnb",
+                "avalanche",
+                "eon",
+                "fantom",
+                "sui",
+                "aptos",
+                "kava",
+                "metis",
+                "mantle",
+                "sei",
+                "aurora",
+                "corel",
+                "berachain",
+                "inkl",
+                "kaia",
+                "iota",
+                "taiko",
+                "rari",
+                "flare",
+                "gravity",
+                "lightlink",
+                "plume",
+                "abstract",
+                "flow",
+                "gnosis",
+                "astar",
+                "celo",
+                "sonic",
+                "soneium",
+                "mind",
+                "hemi",
+                "rootstock",
+                "hyperevm",
+                "world chain",
+                "codex",
+                "unichain",
+                "botanix",
+                "tac",
+                "bitlayer",
+                "hedera",
+                "mode",
+                "ronin",
+                "shibarium",
+                "wemix",
+                "zircuit",
+                "b²",
+                "bob",
+                "xdc",
+                "plasma",
+                "og",
+                "corn",
+                "katana",
+                "hashkey"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Swap",
+                "Single‑chain DEX routing"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Meta-Dex aggregation",
+                "Bridge-free routing"
+            ],
+            "assetTypes": [
+                "ERC‑20",
+                "Stablecoins"
+            ],
+            "price": "Swap fees",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Aggregates cross-chain messaging",
+            "auditsPerformed": [
+                "Audits available"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "jumper",
+            "provider": "Jumper.Exchange",
+            "actionButtons": [
+                "[Bridge](https://jumper.exchange/)",
+                "[Docs](https://jumper.exchange/learn)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Swaps",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "arbitrum",
+                "solana",
+                "polygon",
+                "gnosis",
+                "blast",
+                "base",
+                "linea",
+                "optimism",
+                "avalanche",
+                "scroll",
+                "zksync",
+                "polygon zkevm",
+                "fantom",
+                "moonriver",
+                "moonbeam",
+                "fuse",
+                "boba",
+                "mode",
+                "metis",
+                "lisk",
+                "unichain",
+                "aurora",
+                "sei",
+                "hyperliquid",
+                "immutable zkevm",
+                "flare",
+                "sonic",
+                "vana",
+                "gravity",
+                "taiko",
+                "soneium",
+                "swellchain",
+                "bitcoin",
+                "ronin",
+                "opbnb",
+                "corn",
+                "lens",
+                "cronos",
+                "fraxtal",
+                "abstract",
+                "rootstock",
+                "apechain",
+                "celo",
+                "etherlink",
+                "world chain",
+                "xdc",
+                "mantle",
+                "sophon",
+                "superposition",
+                "ink",
+                "bob",
+                "katana",
+                "berachain",
+                "kaia",
+                "sui",
+                "plasma",
+                "plume",
+                "hyperevm"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer",
+                "Swap"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Simple swap + bridge"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + swap fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Security via smart contracts",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI",
+                "API"
+            ]
+        },
+        {
+            "slug": "layerswap",
+            "provider": "Layerswap",
+            "actionButtons": [
+                "[Bridge](https://layerswap.io/app)",
+                "[Docs](https://docs.layerswap.io/introduction)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Swaps",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "abstract",
+                "ancient8",
+                "arbitrum one",
+                "arbitrum nova",
+                "avalanche",
+                "base",
+                "berachain",
+                "bitcoin",
+                "blast",
+                "bob",
+                "bnb chain",
+                "celo",
+                "eclipse",
+                "ethereum",
+                "fuel ignition",
+                "fuse",
+                "gnosis",
+                "gravity",
+                "hyperevm",
+                "hashkey chain",
+                "immutablex",
+                "immutable zkevm",
+                "ink",
+                "kaia",
+                "katana",
+                "linea",
+                "lisk",
+                "lightlink",
+                "loopring",
+                "manta pacific",
+                "mantle",
+                "matchain",
+                "mint",
+                "mode",
+                "morph",
+                "nahmii",
+                "optimism",
+                "opbnb",
+                "polygon",
+                "polygon zkevm",
+                "plasma",
+                "paradex",
+                "ronin",
+                "rari",
+                "redstone",
+                "sei",
+                "solana",
+                "shape",
+                "soneium",
+                "sonic",
+                "soon",
+                "sophon",
+                "starknet",
+                "scroll",
+                "superposition",
+                "superseed",
+                "taiko",
+                "ton",
+                "unichain",
+                "world chain",
+                "xai",
+                "x layer",
+                "xai",
+                "zero",
+                "zircuit",
+                "zetachain",
+                "zksync lite",
+                "zksync era",
+                "zora"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Exchange <> L2 bridging"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + small service fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Bridging secured through centralized custody & partners",
+            "auditsPerformed": null,
+            "decentralizationModel": "Partially Decentralized",
+            "sdk": [
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "layerzero",
+            "provider": "LayerZero Labs",
+            "actionButtons": [
+                "[Bridge](https://layerzero.bridge.harmony.one/one)",
+                "[Docs](https://docs.layerzero.network/v2)"
+            ],
+            "chain": "mainnet",
+            "technology": "Omnichain Messaging & OFT",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "base",
+                "linea",
+                "arbitrum",
+                "harmony"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Blockscout",
+                "Custom Dashboards"
+            ],
+            "additionalFeatures": [
+                "Omnichain Fungible Token",
+                "Unified Liquidity Pools",
+                "Cross‑chain Governance"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20 OFT"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Configurable DVN consensus across chains",
+            "auditsPerformed": [
+                "Ackee Blockchain Protocol Audit (Mar 2022)",
+                "ChainSecurity OFT/OApp Audit",
+                "Zellic Core Audit"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "lifi",
+            "provider": "LI.FI",
+            "actionButtons": [
+                "[Bridge](https://li.fi/)",
+                "[Docs](https://docs.li.fi/introduction/introduction)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross-chain Bridge Aggregator",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": false,
+            "support": [
+                "Discord",
+                "Twitter",
+                "Email"
+            ],
+            "supportedChains": null,
+            "starred": false,
+            "availableApis": [
+                "LI.FI API"
+            ],
+            "monitoringAndAnalytics": [
+                "Analytics Dashboard"
+            ],
+            "additionalFeatures": [
+                "Aggregates multiple bridges & DEXs"
+            ],
+            "assetTypes": [
+                "ERC-20",
+                "ERC-721"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator nodes, Aggregated security from multiple bridges",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "JavaScript SDK"
+            ]
+        },
+        {
+            "slug": "mayan",
+            "provider": "Mayan Finance",
+            "actionButtons": [
+                "[Bridge](https://swap.mayan.finance/)",
+                "[Docs](https://docs.mayan.finance)"
+            ],
+            "chain": "mainnet",
+            "technology": "Intent-based Cross-chain Swap Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "base",
+                "linea",
+                "arbitrum",
+                "optimism",
+                "sui",
+                "unichain",
+                "hyperevm",
+                "solana",
+                "polygon",
+                "avalanche"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross-chain Swap"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Built on Wormhole Token Bridge",
+                "One-click auction swaps"
+            ],
+            "assetTypes": [
+                "ERC-20",
+                "Stablecoins"
+            ],
+            "price": "Wormhole gas + swap fee (~0.1%)",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Wormhole primitives + swap auction logic",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "meson",
+            "provider": "Meson",
+            "actionButtons": [
+                "[Bridge](https://meson.fi/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Stablecoin Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ancient8",
+                "arbitrum",
+                "avalanche",
+                "base",
+                "berachain",
+                "bitlayer",
+                "blast",
+                "bob",
+                "bnb chain",
+                "b² network",
+                "celo",
+                "cronos",
+                "ethereum",
+                "gnosis",
+                "hashkey chain",
+                "hemi",
+                "kava",
+                "linea",
+                "manta",
+                "mantle",
+                "merlin",
+                "metis",
+                "mode",
+                "moonbeam",
+                "morph",
+                "opbnb",
+                "optimism",
+                "plume",
+                "polygon",
+                "polygon zkevm",
+                "scroll",
+                "sei",
+                "skale europa",
+                "skale nebula",
+                "skale calypso",
+                "solana",
+                "soneium",
+                "starknet",
+                "taiko",
+                "tron",
+                "zetachain",
+                "zircuit",
+                "zksync era",
+                "meme core",
+                "exsat",
+                "zklink nova",
+                "x layer",
+                "conflux espace",
+                "sonic",
+                "aurora",
+                "kroma",
+                "aptos",
+                "sui",
+                "zkfair",
+                "map protocol",
+                "core",
+                "inevm",
+                "bouncebit",
+                "bevm",
+                "ailayer",
+                "iotex",
+                "ckb",
+                "duckchain",
+                "neo x",
+                "corn",
+                "taker",
+                "thundercore",
+                "rootstock",
+                "hyperevm",
+                "plasma"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Stablecoin Swaps"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "USDT/USDC optimization",
+                "Fast settlement"
+            ],
+            "assetTypes": [
+                "USDT",
+                "USDC"
+            ],
+            "price": "Low Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured via cryptographic proofs and liquidity partners",
+            "auditsPerformed": [
+                "Trail of Bits"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "messina",
+            "provider": "MessinaOne Bridge",
+            "actionButtons": [
+                "[Bridge](https://messina.one/bridge)",
+                "[Docs](https://messinaone.gitbook.io/messina/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Bridge via Wormhole",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "base",
+                "algorand",
+                "arbitrum",
+                "optimism",
+                "aptos",
+                "polygon",
+                "avalanche"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Wormhole integration",
+                "Liquidity pools"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited by Certik & Kudelski",
+            "auditsPerformed": [
+                "Certik",
+                "Kudelski Security"
+            ],
+            "decentralizationModel": "Partially Decentralized",
+            "sdk": [
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "okutrade",
+            "provider": "Oku Trade",
+            "actionButtons": [
+                "[Bridge](https://oku.trade)",
+                "[Docs](https://docs.oku.trade/home/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Bridge & Swap Meta‑Aggregator",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "base",
+                "zksync era",
+                "arbitrum",
+                "optimism",
+                "taiko",
+                "polygon",
+                "avalanche",
+                "sei",
+                "scroll",
+                "rootstock",
+                "filecoin",
+                "boba",
+                "telos",
+                "lightlink",
+                "saga evm",
+                "hemi",
+                "xdc",
+                "unichain",
+                "sonic",
+                "redbelly",
+                "lens",
+                "world chain",
+                "matchain",
+                "goat",
+                "mantle",
+                "nibiru",
+                "plasma",
+                "celo",
+                "etherlink",
+                "linea",
+                "bob",
+                "corn",
+                "gnosis"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Swap",
+                "Bridge Aggregation"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "DeFi aggregator across 18 EVM chains",
+                "Uniswap v3 trading frontend"
+            ],
+            "assetTypes": [
+                "ERC‑20",
+                "Stablecoins"
+            ],
+            "price": "Gas Fee + bridge/DEX fees",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Aggregates best bridge/swap rates, non‑custodial routing",
+            "auditsPerformed": [
+                "Uniswap Foundation funded, no exploit"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "orbiter",
+            "provider": "Orbiter Finance",
+            "actionButtons": [
+                "[Bridge](https://orbiter.finance)",
+                "[Docs](https://docs.orbiter.finance)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "arbitrum",
+                "bnb chain",
+                "base",
+                "blast",
+                "ethereum",
+                "ink",
+                "linea",
+                "lisk",
+                "mode",
+                "optimism",
+                "polygon",
+                "redstone",
+                "scroll",
+                "solana",
+                "soneium",
+                "unichain",
+                "world chain",
+                "zora",
+                "zksyncera",
+                "eni",
+                "x layer",
+                "sui",
+                "celo",
+                "juchain",
+                "bob",
+                "story",
+                "manta",
+                "arbitrum nova",
+                "ape chain",
+                "zetachain",
+                "hemi",
+                "mint",
+                "hashkey",
+                "superseed",
+                "gravity",
+                "zero",
+                "rootstock",
+                "corn",
+                "superposition",
+                "zk fair",
+                "morph",
+                "nero",
+                "conflux",
+                "hpp",
+                "hyperliquid",
+                "paradex",
+                "merlin",
+                "katana",
+                "berachain",
+                "immutable x",
+                "plume",
+                "sophon",
+                "opbnb",
+                "kaia",
+                "tron",
+                "fuel",
+                "sonic",
+                "cyber",
+                "bitlayer",
+                "zircuit",
+                "starknet",
+                "fraxtal",
+                "avalanche",
+                "eclipse",
+                "core",
+                "ton",
+                "bevm",
+                "zklink nova",
+                "b² network",
+                "mantle",
+                "zksync lite",
+                "ronin",
+                "sonic svm",
+                "polygon zkevm",
+                "abstract",
+                "movement",
+                "sui",
+                "taiko"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Low cost",
+                "Instant confirmation"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Peer-to-peer intents & liquidity providers",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "owlto",
+            "provider": "Owlto Finance",
+            "actionButtons": [
+                "[Bridge](https://owlto.finance)",
+                "[Docs](https://docs.owlto.finance)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑rollup Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "eclipse",
+                "soneium",
+                "katana",
+                "unichain",
+                "ink",
+                "abstract",
+                "base",
+                "arbitrum",
+                "ethereum",
+                "linea",
+                "optimism",
+                "alienx",
+                "arbitrum nova",
+                "avalanche",
+                "berachain",
+                "blast",
+                "bnb chain",
+                "bob",
+                "core",
+                "cyber",
+                "duckchain",
+                "gnosis",
+                "gravity",
+                "hashkey",
+                "hemi",
+                "lens",
+                "lisk",
+                "manta",
+                "mantle",
+                "matchain",
+                "metis",
+                "mint",
+                "mode",
+                "morph",
+                "opbnb",
+                "over",
+                "polygon",
+                "polygon zkevm",
+                "rari",
+                "redstone",
+                "scroll",
+                "shape",
+                "solana",
+                "story",
+                "swan",
+                "taiko",
+                "u2u solaris",
+                "worldchain",
+                "x layer",
+                "zeta",
+                "zksync era",
+                "zero",
+                "zircuit",
+                "zora"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Fast confirmation",
+                "Low fees"
+            ],
+            "assetTypes": [
+                "ETH",
+                "USDC",
+                "USDT"
+            ],
+            "price": "Gas Fee + protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Relayer-based verification with ZK/optimistic fallback",
+            "auditsPerformed": null,
+            "decentralizationModel": "Partially Decentralized",
+            "sdk": [
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "pancakeswap-bridge",
+            "provider": "PancakeSwap Bridge",
+            "actionButtons": [
+                "[Bridge](https://bridge.pancakeswap.finance/)",
+                "[Docs](https://docs.pancakeswap.finance/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Bridge Aggregator",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord",
+                "Telegram"
+            ],
+            "supportedChains": [
+                "bnb chain",
+                "ethereum",
+                "arbitrum",
+                "base",
+                "aptos",
+                "solana",
+                "zksync era",
+                "linea",
+                "opbnb",
+                "monad"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Bridge API",
+                "Swap API"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Native DEX integration",
+                "Cross-chain Swaps"
+            ],
+            "assetTypes": [
+                "ERC-20",
+                "BEP-20"
+            ],
+            "price": "Gas Fee + 0.25% trading fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured by underlying bridge protocols (LayerZero/Axelar)",
+            "auditsPerformed": [
+                "BlockSec",
+                "PeckShield"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "PancakeSwap SDK"
+            ]
+        },
+        {
+            "slug": "polyhedra",
+            "provider": "Polyhedra Network",
+            "actionButtons": [
+                "[Bridge](https://expchain.polyhedra.network/bridge)",
+                "[Docs](https://docs.polyhedra.network/expchain/bridge/)"
+            ],
+            "chain": "testnet",
+            "technology": "zk‑Bridge with Zero‑Knowledge State Proofs",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum testnet",
+                "expchain testnet",
+                "bnb chain testnet"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Token & NFT Transfer",
+                "Cross‑chain Messaging"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "zk proofs for trustless state verification",
+                "Supports 20+ L1/L2s"
+            ],
+            "assetTypes": [
+                "ERC‑20",
+                "NFT"
+            ],
+            "price": "Gas Fee + ZK fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "ZK proofs validate full state without trust assumptions",
+            "auditsPerformed": [
+                "Platform audits reported"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "rango",
+            "provider": "Rango Exchange",
+            "actionButtons": [
+                "[Bridge](https://rango.exchange/)",
+                "[Docs](https://docs.rango.exchange/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross-chain Bridge & Swap",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": false,
+            "support": [
+                "Discord",
+                "Telegram",
+                "Email"
+            ],
+            "supportedChains": null,
+            "starred": false,
+            "availableApis": [
+                "Rango API"
+            ],
+            "monitoringAndAnalytics": [
+                "Analytics",
+                "Explorer"
+            ],
+            "additionalFeatures": [
+                "Aggregated multi-chain bridges and DEXs"
+            ],
+            "assetTypes": [
+                "ERC-20",
+                "ERC-721"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator network, Aggregated security from multiple bridges",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "JavaScript SDK"
+            ]
+        },
+        {
+            "slug": "relay",
+            "provider": "Relay",
+            "actionButtons": [
+                "[Bridge](https://relay.link/bridge?showLandingPanel=1)",
+                "[Docs](https://docs.relay.link/what-is-relay)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross-chain Bridge & Swap",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": false,
+            "support": [
+                "Email"
+            ],
+            "supportedChains": null,
+            "starred": false,
+            "availableApis": [
+                "Relay API",
+                "Core API",
+                "Utilities API"
+            ],
+            "monitoringAndAnalytics": [
+                "Analytics Dashboard",
+                "Bridge Status API"
+            ],
+            "additionalFeatures": [
+                "Payments-grade reliability",
+                "Core use cases",
+                "Extended Functionality"
+            ],
+            "assetTypes": [
+                "ERC-20",
+                "USDT",
+                "BNB",
+                "SOL",
+                "ETH"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Relayer-based approach",
+            "auditsPerformed": null,
+            "decentralizationModel": "Hybrid",
+            "sdk": [
+                "Relay SDK"
+            ]
+        },
+        {
+            "slug": "rhinofi",
+            "provider": "RhinoFi",
+            "actionButtons": [
+                "[Bridge](https://app.rhino.fi/bridge)",
+                "[Docs](https://docs.rhino.fi/get-started/introduction)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross-chain Stablecoin Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "arbitrum",
+                "ethereum",
+                "polygon",
+                "optimism",
+                "bnb chain",
+                "avalanche",
+                "base",
+                "celo",
+                "gnosis",
+                "ink",
+                "kaia",
+                "katana",
+                "linea",
+                "mantle",
+                "opbnb",
+                "plasma",
+                "plume",
+                "scroll",
+                "sonic",
+                "taiko",
+                "unichain",
+                "zircuit",
+                "zksync era"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Stablecoin Bridge API"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Smart deposit API from CEXes",
+                "Cross-chain liquidity flows"
+            ],
+            "assetTypes": [
+                "Stablecoins"
+            ],
+            "price": "Gas Fee + liquidity fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Liquidity-outpost pools, smart deposit routing",
+            "auditsPerformed": [
+                "Independent audits reported"
+            ],
+            "decentralizationModel": "Partially Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "routerprotocol",
+            "provider": "Router Protocol",
+            "actionButtons": [
+                "[Bridge](https://routernitro.com/swap)",
+                "[Docs](https://docs.routerprotocol.com/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Chain Abstraction",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "arbitrum one",
+                "ethereum",
+                "polygon",
+                "optimism",
+                "bnb chain",
+                "avalanche",
+                "base",
+                "berachain",
+                "bitcoin",
+                "hyperliquid",
+                "linea",
+                "mantle",
+                "router chain",
+                "solana",
+                "sonic",
+                "sui",
+                "tron",
+                "unichain",
+                "world chain"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Liquidity Aggregation"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Multi‑chain routing"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Security via settlement chains",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "SDK",
+                "Web UI?"
+            ]
+        },
+        {
+            "slug": "rubic",
+            "provider": "Rubic",
+            "actionButtons": [
+                "[Bridge](https://rubic.exchange)",
+                "[Docs](https://docs.rubic.finance/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Bridge Aggregator",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "polygon",
+                "bnb chain",
+                "tron",
+                "unichain",
+                "bitcoin",
+                "solana",
+                "base",
+                "arbitrum",
+                "ethereum",
+                "linea",
+                "optimism",
+                "zksync era",
+                "ton",
+                "avalanche",
+                "berachain",
+                "blast",
+                "scroll",
+                "morph",
+                "fraxtal",
+                "soneium",
+                "mode",
+                "mantle",
+                "metis",
+                "manta pacific",
+                "fantom",
+                "zkevm",
+                "pulsechain",
+                "taiko",
+                "hemi",
+                "filecoin",
+                "x layer",
+                "bahamut",
+                "dash",
+                "monero",
+                "cardano",
+                "cosmos",
+                "litecoin",
+                "xrp ledger",
+                "aptos",
+                "polkadot",
+                "stellar",
+                "near",
+                "zilliqa",
+                "tezos",
+                "xdc",
+                "kava cosmos",
+                "neo",
+                "gnosis",
+                "flare"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Bridge API",
+                "Swap API"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "15k+ tokens",
+                "100+ chains supported"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Depends on underlying bridge",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Security inherited from selected bridge",
+            "auditsPerformed": null,
+            "decentralizationModel": null,
+            "sdk": [
+                "JS SDK",
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "safeswap",
+            "provider": "SafeSwap",
+            "actionButtons": [
+                "[Bridge](https://app.safeswap.io/)",
+                "[Docs](https://docs.safeswap.io/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Atomic Swap Native Token Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "arbitrum",
+                "ethereum",
+                "bnb chain",
+                "optimism",
+                "base",
+                "polygon",
+                "avalanche",
+                "vechain",
+                "rollux"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Token Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Atomic swaps peer-to-peer",
+                "No wrapped tokens"
+            ],
+            "assetTypes": [
+                "Native EVM tokens"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Atomic swap locks/unlocks between user wallets, no liquidity pools",
+            "auditsPerformed": [
+                "Audit referenced on GitHub"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "smolrefuel",
+            "provider": "SmolRefuel",
+            "actionButtons": [
+                "[Bridge](https://smolrefuel.com)",
+                "[Docs](https://docs.smolrefuel.com)"
+            ],
+            "chain": "mainnet",
+            "technology": "Gas Refuel Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "og",
+                "abstract",
+                "adventure layer",
+                "ailayer",
+                "apechain",
+                "aptos",
+                "arbitrum nova",
+                "arbitrum one",
+                "astar",
+                "aurora",
+                "avalanche",
+                "b² network",
+                "base",
+                "beam",
+                "berachain",
+                "bevm",
+                "bitlayer",
+                "blast",
+                "bob",
+                "boba",
+                "botanix",
+                "bnb chain",
+                "callisto",
+                "camp",
+                "celo",
+                "civitia",
+                "coredao",
+                "corn",
+                "cronos",
+                "cronoszkevm",
+                "cyber",
+                "debank",
+                "degen",
+                "derive",
+                "dogechain",
+                "dymension",
+                "echelon",
+                "eclipse",
+                "embr",
+                "endurance",
+                "ethereum",
+                "etherlink",
+                "ethw",
+                "evmos",
+                "exsat",
+                "flame",
+                "flare",
+                "flow evm",
+                "fluence",
+                "forma",
+                "fraxtal",
+                "fuse",
+                "gatelayer",
+                "gnosis",
+                "goat",
+                "gravity",
+                "ham",
+                "harmony",
+                "hashkey",
+                "hemi",
+                "hyperliquid",
+                "hyperliquid evm",
+                "immutable zkevm",
+                "initia",
+                "injective",
+                "ink",
+                "katana",
+                "kava",
+                "klaytn",
+                "lens",
+                "linea",
+                "lisk",
+                "lukso",
+                "manta",
+                "mantle",
+                "matchain",
+                "merlin",
+                "metal",
+                "metis",
+                "mezo",
+                "milkyway",
+                "mint",
+                "mode",
+                "moonbeam",
+                "moonriver",
+                "morph",
+                "neon evm",
+                "nibiru",
+                "numbers",
+                "oasys",
+                "opbnb",
+                "optimism",
+                "optopia",
+                "peaq",
+                "plasma",
+                "plume",
+                "polygon",
+                "polygon zkevm",
+                "polynomial",
+                "prom",
+                "pulsechain",
+                "rari",
+                "ronin",
+                "rootstock",
+                "saakuru",
+                "sanko",
+                "satoshivm",
+                "scroll",
+                "sei",
+                "shaper",
+                "silicon",
+                "skate",
+                "solana",
+                "somnia",
+                "soneium",
+                "sonic",
+                "sophon",
+                "story",
+                "sui",
+                "superposition",
+                "superseed",
+                "swan",
+                "swell",
+                "syndicate frame",
+                "taiko",
+                "telos",
+                "thundercore",
+                "tron",
+                "unichain",
+                "unit0",
+                "vana",
+                "viction",
+                "vizing",
+                "wemix",
+                "world chain",
+                "x layer",
+                "xai",
+                "xdc",
+                "xrp",
+                "xrpl evm",
+                "zero",
+                "zeta",
+                "zircuit",
+                "zkcandy",
+                "zkfair",
+                "zklink nova",
+                "zksync era",
+                "zora"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Gas Token Swap"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Gas refueling across 80+ chains",
+                "Swap any token to gas without pre-funding"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee swap model",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Non-custodial, gas-only utility",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "squid",
+            "provider": "Squid",
+            "actionButtons": [
+                "[Bridge](https://app.squidrouter.com/)",
+                "[Docs](https://docs.squidrouter.com)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Swaps (via Axelar GMP)",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bitcoin",
+                "solana",
+                "arbitrum",
+                "optimism",
+                "base",
+                "bnb chain",
+                "osmosis",
+                "agoric",
+                "akash",
+                "archway",
+                "assetmantle",
+                "avalanche",
+                "axelar",
+                "babylon",
+                "berachain",
+                "bitcanna",
+                "bitsong",
+                "blast",
+                "carbon",
+                "celestia",
+                "celo",
+                "chain4energy",
+                "cheqd",
+                "chihuahua",
+                "comdex",
+                "coreum",
+                "cosmos",
+                "crescent",
+                "dchain",
+                "decentr",
+                "desmos",
+                "dydx",
+                "dymension",
+                "elys",
+                "evmos",
+                "fantom",
+                "fetch",
+                "filecoin",
+                "flippando",
+                "fraxtal",
+                "gnosis",
+                "gravity bridge",
+                "humans.ai",
+                "hyperevm",
+                "immutable",
+                "impact hub",
+                "injective",
+                "irisnet",
+                "jackal",
+                "juno",
+                "kava evm",
+                "kava ibc",
+                "ki",
+                "kujira",
+                "kyve",
+                "lava",
+                "likecoin",
+                "linea",
+                "lum network",
+                "mantle",
+                "mars hub",
+                "migaloo",
+                "moonbeam",
+                "neutron",
+                "ngmi chain",
+                "nibiru",
+                "noble",
+                "nolus",
+                "omniflix",
+                "peaq",
+                "persistence",
+                "polygon",
+                "quicksilver",
+                "regen",
+                "saga mainnet",
+                "saga evm",
+                "scroll",
+                "secret",
+                "sei",
+                "sentinel",
+                "sommelier",
+                "soneium",
+                "sonic",
+                "soundmoney",
+                "stargaze",
+                "stellar",
+                "stride",
+                "sui",
+                "teritory",
+                "terra",
+                "terra classic",
+                "umee",
+                "xion",
+                "xrpl",
+                "xrpl evm"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Swaps",
+                "Messaging"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Composable Cross‑chain Contracts"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + relayer fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured via Axelar network",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript SDK",
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "stargate",
             "provider": "Stargate Finance",
             "actionButtons": [
                 "[Bridge](https://stargate.finance/)",
@@ -1933,37 +4268,6 @@
             "support": [
                 "Discord",
                 "Email"
-            ],
-            "starred": false,
-            "availableApis": [
-                "REST API",
-                "GraphQL"
-            ],
-            "monitoringAndAnalytics": [
-                "Pooled Liquidity Transfers",
-                "OFT Cross-chain Transfers"
-            ],
-            "additionalFeatures": [
-                "Unified Liquidity Pools",
-                "Low-Fee (0.06%)",
-                "OFT Support"
-            ],
-            "assetTypes": [
-                "ETH",
-                "USDC",
-                "USDT",
-                "ERC‑20",
-                "OFT"
-            ],
-            "price": "Gas Fee, Protocol Fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Decentralized pools secured by LayerZero consensus",
-            "auditsPerformed": [
-                "Audit(s) by DeFi teams"
-            ],
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "TypeScript"
             ],
             "supportedChains": [
                 "base",
@@ -2056,10 +4360,115 @@
                 "zksync",
                 "zkverify",
                 "zora"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Pooled Liquidity Transfers",
+                "OFT Cross-chain Transfers"
+            ],
+            "additionalFeatures": [
+                "Unified Liquidity Pools",
+                "Low-Fee (0.06%)",
+                "OFT Support"
+            ],
+            "assetTypes": [
+                "ETH",
+                "USDC",
+                "USDT",
+                "ERC‑20",
+                "OFT"
+            ],
+            "price": "Gas Fee, Protocol Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Decentralized pools secured by LayerZero consensus",
+            "auditsPerformed": [
+                "Audit(s) by DeFi teams"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
             ]
         },
         {
-            "slug": "symbiosis-mainnet-bridge",
+            "slug": "superbridge",
+            "provider": "Superbridge",
+            "actionButtons": [
+                "[Bridge](https://superbridge.app/)",
+                "[Docs](https://docs.superbridge.app/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Messaging",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "base",
+                "bnb chain",
+                "arbitrum one",
+                "unichain",
+                "optimism",
+                "soneium",
+                "linea",
+                "world chain",
+                "ink",
+                "celo",
+                "swellchain",
+                "superseed",
+                "bob",
+                "mode",
+                "zora",
+                "lisk",
+                "redstone",
+                "hashkey",
+                "ethernity",
+                "mint",
+                "swan",
+                "orderly",
+                "shape",
+                "derive",
+                "settlus",
+                "cyber",
+                "arena z",
+                "polynomial",
+                "lumio",
+                "funki",
+                "automata",
+                "ancient8",
+                "metal l2"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Native USDC via CCTP",
+                "Easy Mode withdrawals"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Economic security via OP‑Stack / Nitro and CCTP for USDC",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI",
+                "SDK CLI?"
+            ]
+        },
+        {
+            "slug": "symbiosis",
             "provider": "Symbiosis",
             "actionButtons": [
                 "[Bridge](https://app.symbiosis.finance/)",
@@ -2072,31 +4481,6 @@
             "openSource": true,
             "support": [
                 "Discord"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Cross‑chain Swap",
-                "Bridge"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Aggregated liquidity across networks"
-            ],
-            "assetTypes": [
-                "ETH",
-                "USDC",
-                "ARB"
-            ],
-            "price": "Gas Fee + protocol fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Security via canonical chains",
-            "auditsPerformed": [
-                "Trail of Bits"
-            ],
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "Web UI",
-                "SDK"
             ],
             "supportedChains": [
                 "ethereum",
@@ -2150,58 +4534,520 @@
                 "zetachain",
                 "zklink",
                 "zksync era"
-            ]
-        },
-        {
-            "slug": "defiway-mainnet-bridge",
-            "provider": "Defiway.Bridge",
-            "actionButtons": [
-                "[Bridge](https://defiway.com/bridge/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Cross‑chain Transfer",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "openSource": false,
-            "support": [
-                "Website Form",
-                "Email"
             ],
             "starred": false,
             "availableApis": [
-                "Stablecoin Transfer"
+                "Cross‑chain Swap",
+                "Bridge"
             ],
             "monitoringAndAnalytics": null,
             "additionalFeatures": [
-                "Fast transaction speeds"
+                "Aggregated liquidity across networks"
             ],
             "assetTypes": [
-                "Stablecoins"
+                "ETH",
+                "USDC",
+                "ARB"
             ],
-            "price": "Gas Fee",
-            "economicalSecurity": false,
-            "economicalSecurityNote": "Multisig validation, liquidity pools",
+            "price": "Gas Fee + protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Security via canonical chains",
             "auditsPerformed": [
-                "Audited by Certik"
+                "Trail of Bits"
             ],
             "decentralizationModel": "Decentralized",
             "sdk": [
-                "Web UI"
+                "Web UI",
+                "SDK"
+            ]
+        },
+        {
+            "slug": "synapse",
+            "provider": "Synapse Protocol",
+            "actionButtons": [
+                "[Bridge](https://synapseprotocol.com/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross-chain Asset & Messaging Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
             ],
             "supportedChains": [
                 "ethereum",
                 "arbitrum",
-                "base",
-                "solana",
-                "linea",
-                "optimism",
-                "plasma",
                 "polygon",
-                "ton",
+                "avalanche",
+                "hyberevm",
+                "optimism",
+                "berachain",
+                "unichain",
+                "world chain",
+                "base",
+                "blast",
                 "bnb chain",
+                "linea",
+                "scroll",
+                "dfk chain",
+                "canto",
+                "fantom",
+                "klaytn",
+                "aurora",
+                "boba",
+                "cronos",
+                "harmony",
+                "metis",
+                "dogechain",
+                "moonbeam",
+                "moonriver",
+                "hyperliquid"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer",
+                "Cross-chain Contract Calls"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Generalized Messaging",
+                "Token Swap"
+            ],
+            "assetTypes": [
+                "ERC-20",
+                "Stablecoins"
+            ],
+            "price": "Gas Fee + Bridge Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Liquidity pools with smart contract messaging",
+            "auditsPerformed": [
+                "Security Audits Available"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "ton-bridge",
+            "provider": "TON",
+            "actionButtons": [
+                "[Bridge](https://bridge-v3.ton.org/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross‑chain Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": false,
+            "support": [
+                "Telegram"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "ton",
+                "bnb chain"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Bridge API"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Decentralized oracle-based validation",
+                "Inbound and outbound transfers"
+            ],
+            "assetTypes": [
+                "Stablecoins",
+                "ERC-20",
+                "DAI",
+                "Toncoin"
+            ],
+            "price": "1-5 TON + Gas fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Decentralized oracles, slashing penalties, time locks and challenges",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript",
+                "JavaScript"
+            ]
+        },
+        {
+            "slug": "transporter",
+            "provider": "Transporter",
+            "actionButtons": [
+                "[Bridge](https://app.transporter.io/?tab=token)"
+            ],
+            "chain": "mainnet",
+            "technology": "CCIP Cross-Chain Communication & Asset Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
                 "bitcoin",
+                "solana",
+                "arbitrum one",
+                "avalanche",
+                "base",
+                "berachain",
+                "blast",
+                "bnb chain",
+                "bob",
+                "celo",
+                "gnosis",
+                "hashkey",
+                "linea",
+                "mantle",
+                "metis",
+                "mind network",
+                "mode",
+                "optimism",
+                "polygon",
+                "ronin",
+                "scroll",
+                "sei",
+                "soneium",
+                "sonic",
+                "unichain",
+                "wemix",
+                "worldcoin",
+                "zircuit",
+                "zksync era"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Token Transfer",
+                "Cross-chain Messaging"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Powered by Chainlink CCIP",
+                "Enterprise-grade cross-chain integration"
+            ],
+            "assetTypes": [
+                "ERC‑20",
+                "Stablecoins",
+                "NFT"
+            ],
+            "price": "Gas Fee + relayer fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Security via Chainlink decentralized oracle network",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "umbria",
+            "provider": "Umbria Network",
+            "actionButtons": [
+                "[Bridge](https://bridge.umbria.network/bridge/)",
+                "[Docs](https://bridge.umbria.network/docs/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Intent-based Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "polygon",
+                "avalanche",
+                "base",
+                "arbitrum",
+                "optimism",
+                "zksync",
+                "gnosis",
+                "fantom"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Fast bridging",
+                "Low fees"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee + service fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Relayer-based intent execution",
+            "auditsPerformed": null,
+            "decentralizationModel": "Partially Decentralized",
+            "sdk": [
+                "Web UI"
+            ]
+        },
+        {
+            "slug": "universalx",
+            "provider": "UniversalX",
+            "actionButtons": [
+                "[Site](https://universalx.app)",
+                "[Docs](https://universalx.app)"
+            ],
+            "chain": "mainnet",
+            "technology": "Chain‑agnostic Trading Platform (no classical bridge)",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": false,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "arbitrum",
+                "polygon",
+                "avalanche",
+                "bnb chain",
+                "optimism",
+                "solana",
+                "base"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Cross‑chain Swap",
+                "Token Purchase"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Unified balance across chains",
+                "Pay gas with any token"
+            ],
+            "assetTypes": [
+                "USDT",
+                "USDC",
+                "ERC‑20"
+            ],
+            "price": "Swap/Trade fees",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Chain abstraction, no bridge needed",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "wanchain",
+            "provider": "Wanchain",
+            "actionButtons": [
+                "[Bridge](https://bridge.wanchain.org/AssetBridge)",
+                "[Docs](https://docs.wanchain.org/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Asset Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Telegram",
+                "Email",
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "polygon",
+                "avalanche",
+                "astar",
+                "sonic",
+                "unichain",
+                "world chain",
+                "wanchain",
+                "bitcoin",
+                "arbitrum",
+                "base",
+                "bitrock",
+                "blast",
+                "cardano",
+                "celo",
+                "dogecoin",
+                "energi",
+                "fantom",
+                "kava",
+                "linea",
+                "litecoin",
+                "metis",
+                "moonbeam",
+                "moonriver",
+                "noble",
+                "okt chain",
+                "optimism",
+                "odyssey",
+                "plyr",
+                "polkadot",
+                "polygon zkevm",
+                "shido",
+                "solana",
+                "songbird",
+                "sui",
+                "telos",
                 "tron",
-                "scroll"
+                "vechain",
+                "vinuchain",
+                "x layer",
+                "xdc",
+                "xrp ledger",
+                "edexa",
+                "f(x) core",
+                "zksync era"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": [
+                "Bridge Monitoring"
+            ],
+            "additionalFeatures": [
+                "Cross-chain asset bridging",
+                "WAN token discounts"
+            ],
+            "assetTypes": [
+                "ERC-20: USDT"
+            ],
+            "price": "10.2%, min. 0.2 USD, has discounts up to 80% based on WAN token holdings",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured via Wanchain validators and smart contracts",
+            "auditsPerformed": [
+                "Regular audits"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Node.JS SDK"
+            ]
+        },
+        {
+            "slug": "wormhole",
+            "provider": "Wormhole",
+            "actionButtons": [
+                "[Bridge](https://portalbridge.com/)",
+                "[Docs](https://wormhole.com/docs/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Generic Messaging & Asset Bridge",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "arbitrum",
+                "polygon",
+                "avalanche",
+                "sui",
+                "optimism",
+                "solana",
+                "base",
+                "hyperevm",
+                "bnb chain",
+                "unichain",
+                "celo",
+                "moonbeam",
+                "kaia",
+                "scroll",
+                "berachain",
+                "mezo",
+                "aptos",
+                "world chain",
+                "ink",
+                "linea",
+                "sonic",
+                "seievm",
+                "plume",
+                "xrpl evm",
+                "creditcoin"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer",
+                "Cross-chain Messaging"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Guardian network of validators",
+                "VAA attestations"
+            ],
+            "assetTypes": [
+                "ERC-20",
+                "OFT",
+                "NFT"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Independent guardian set across ~30 chains",
+            "auditsPerformed": [
+                "Audits + bug bounty"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
+            ]
+        },
+        {
+            "slug": "zkbridge",
+            "provider": "zkBridge",
+            "actionButtons": [
+                "[Bridge](https://zkbridge.com/token)",
+                "[Docs](https://docs.zkbridge.com/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Omnichain Messaging & OFT",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord",
+                "Email"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "polygon",
+                "linea",
+                "base",
+                "bnb chain",
+                "opbnb",
+                "arbitrum one",
+                "optimism"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Dashboards"
+            ],
+            "additionalFeatures": [
+                "Zero-Knowledge Verification"
+            ],
+            "assetTypes": [
+                "FLR",
+                "SGB",
+                "ERC-20"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "ZK-proof based security",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
             ]
         }
     ],
@@ -11081,6 +13927,7 @@
             "throughputSla",
             "openSource",
             "support",
+            "supportedChains",
             "starred",
             "availableApis",
             "monitoringAndAnalytics",
@@ -11091,8 +13938,7 @@
             "economicalSecurityNote",
             "auditsPerformed",
             "decentralizationModel",
-            "sdk",
-            "supportedChains"
+            "sdk"
         ],
         "services": [
             "slug",
