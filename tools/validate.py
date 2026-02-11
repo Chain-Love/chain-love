@@ -123,6 +123,51 @@ def is_markdown_link(s: str) -> bool:
     pattern = r"(?:\[(?P<text>.*?)\])\((?P<link>.*?)\)"
     return re.match(pattern, s) is not None
 
+def _data_categories(data):
+    return {k for k in data.keys() if k not in ("columns", "meta")}
+
+
+def rule_meta_categories_consistent(data):
+    errors = []
+
+    meta_categories = data.get("meta", {}).get("categories", {})
+    data_categories = _data_categories(data)
+
+    for cat in data_categories:
+        if cat not in meta_categories:
+            errors.append(
+                f"Meta error: category '{cat}' exists in data but missing in meta.categories"
+            )
+
+    for key, meta in meta_categories.items():
+        if meta.get("key") != key:
+            errors.append(
+                f"Meta error: meta.categories['{key}'].key = '{meta.get('key')}', expected '{key}'"
+            )
+
+    return errors
+
+def rule_meta_columns_consistent(data):
+    errors = []
+
+    meta_columns = data.get("meta", {}).get("columns", {})
+    columns_by_category = data.get("columns", {})
+
+    for category, cols in columns_by_category.items():
+        for col in cols:
+            if col not in meta_columns:
+                errors.append(
+                    f"Meta error: column '{col}' used in columns.{category} but missing in meta.columns"
+                )
+
+    for key, meta in meta_columns.items():
+        if meta.get("key") != key:
+            errors.append(
+                f"Meta error: meta.columns['{key}'].key = '{meta.get('key')}', expected '{key}'"
+            )
+
+    return errors
+
 def path_to_json_pointer(path_deque):
     """Convert error.absolute_path (deque) to a JSON Pointer string"""
     parts = list(path_deque)
@@ -170,13 +215,25 @@ def check_rules_validation(rules_validator, data) -> bool:
     """
     had_errors = False
     for category in data.keys():
-        if category in ("columns", "schemaVersion"):
+        if category in ("columns", "schemaVersion", "meta"):
             continue
         errors = rules_validator.validate(data[category])
         for err in errors:
             had_errors = True
             print(f"Error validating {category}: {err}")
             print("---")
+
+    # root-level meta rules
+    meta_errors = []
+    if "meta" in data:
+        meta_errors.extend(rule_meta_categories_consistent(data))
+        meta_errors.extend(rule_meta_columns_consistent(data))
+
+    for err in meta_errors:
+        had_errors = True
+        print(err)
+        print("---")
+
     return not had_errors
 
 def check_validation(data, schema_validator, rules_validator) -> bool:

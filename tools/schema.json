@@ -5,7 +5,11 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "schemaVersion": { "type": "string", "const": "1.0.0", "description": "Schema version of this document" },
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0",
+      "description": "Schema version of this document"
+    },
     "apis": { "type": "array", "items": { "$ref": "#/$defs/apis" } },
     "explorers": { "type": "array", "items": { "$ref": "#/$defs/explorers" } },
     "oracles": { "type": "array", "items": { "$ref": "#/$defs/oracles" } },
@@ -19,7 +23,8 @@
     "ramps": { "type": "array", "items": { "$ref": "#/$defs/ramps" } },
     "platforms": { "type": "array", "items": { "$ref": "#/$defs/platforms" } },
     "security": { "type": "array", "items": { "$ref": "#/$defs/security" } },
-    "columns": { "$ref": "#/$defs/columns" }
+    "columns": { "$ref": "#/$defs/columns" },
+    "meta": { "$ref": "#/$defs/meta" }
   },
   "$defs": {
     "apis": {
@@ -546,9 +551,15 @@
         },
         "kycLevel": { "type": "string" },
         "paymentMethods": { "type": ["array"], "items": { "type": "string" } },
-        "bannedCountries": { "type": ["array", "null"], "items": { "type": "string" } },
+        "bannedCountries": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
         "aggregator": { "type": "boolean" },
-        "auditsPerformed": { "type": ["array", "null"], "items": { "type": "string" } },
+        "auditsPerformed": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
         "deliveryType": { "type": ["string"] }
       },
       "required": [
@@ -667,6 +678,52 @@
         "sdks": { "type": "array", "items": { "type": "string" } },
         "platforms": { "type": "array", "items": { "type": "string" } },
         "security": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["categories", "columns"],
+      "properties": {
+        "categories": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/categoryMeta"
+          }
+        },
+        "columns": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/columnMeta"
+          }
+        }
+      }
+    },
+    "categoryMeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "label"],
+      "properties": {
+        "key": { "type": "string" },
+        "label": { "type": "string" },
+        "icon": { "type": ["string", "null"] },
+        "description": { "type": ["string", "null"] }
+      }
+    },
+    "columnMeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "label"],
+      "properties": {
+        "key": { "type": "string" },
+        "label": { "type": "string" },
+        "icon": { "type": ["string", "null"] },
+        "description": { "type": ["string", "null"] },
+
+        "filter": { "type": ["string", "null"] },
+        "sorting": { "type": ["string", "null"] },
+        "pinning": { "type": ["string", "null"] },
+        "cellType": { "type": ["string", "null"] }
       }
     }
   }

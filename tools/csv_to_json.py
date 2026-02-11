@@ -363,6 +363,28 @@ def ensure_sdks_tbd_fields(result: dict):
             if v is None or (isinstance(v, str) and v.strip() == ""):
                 item[k] = "TBD"
 
+def load_meta():
+    categories = load_csv_to_dict_list("meta/categories.csv")
+    columns = load_csv_to_dict_list("meta/columns.csv")
+
+    if categories is None or columns is None:
+        print("Meta files missing (meta/categories.csv, meta/columns.csv)")
+        exit(1)
+
+    categories, errors1 = normalize({"categories": categories})
+    columns, errors2 = normalize({"columns": columns})
+
+    if errors1 or errors2:
+        for e in errors1 + errors2:
+            print(e)
+        exit(1)
+
+    return {
+        "categories": {c["key"]: c for c in categories["categories"]},
+        "columns": {c["key"]: c for c in columns["columns"]},
+    }
+
+
 def main():
     if not os.path.exists("networks"):
         print("No 'networks' directory found")
@@ -371,6 +393,7 @@ def main():
     offchain_categories = load_categories_from_folder("offchain")
 
     schema_version = get_schema_version("schema.json", fallback="1.0.0")
+    meta = load_meta()
 
     for network_name in os.listdir("networks"):
         network_dir_full_path = os.path.join("networks", network_name)
@@ -416,6 +439,7 @@ def main():
         result["columns"] = get_column_order(result)
         # set from schema.json const
         result["schemaVersion"] = schema_version
+        result["meta"] = meta
 
 
         os.makedirs("json", exist_ok=True)
