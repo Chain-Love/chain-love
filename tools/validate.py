@@ -124,7 +124,7 @@ def is_markdown_link(s: str) -> bool:
     return re.match(pattern, s) is not None
 
 def _data_categories(data):
-    return {k for k in data.keys() if k not in ("columns", "meta")}
+    return {k for k in data.keys() if k not in ("columns", "meta", "schemaVersion")}
 
 
 def rule_meta_categories_consistent(data):
