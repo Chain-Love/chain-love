@@ -12,7 +12,6 @@ Store provider logo files in this folder.
 ## How it connects to data
 
 - `references/providers/providers.csv` uses `logoPath` as filename only (no directory prefix).
-- Visualization layer should prepend a fixed prefix: `references/providers/images/`.
 - Set `logoPath` to `<slug>.png`.
 
 ## Recommended image format

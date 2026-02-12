@@ -15,11 +15,12 @@ Use references for data you want to define once and reuse across many listings.
 - `name`: provider display name.
 - `logoPath`: logo filename only (for example `alchemy.png`).
 - `description`: short provider summary.
+- link fields:
+  - `website`, `docs`: full URL format (for example `https://example.com`).
+  - `x`, `github`, `discord`, `telegram`, `linkedin`: store value after domain only.
+    - Example: `https://github.com/Chain-Love/chain-love` -> `Chain-Love/chain-love`.
 
-Provider logo assets are stored in:
+Link style difference:
 
-- `references/providers/images/`
-
-Visualization should resolve logo file as:
-
-`references/providers/images/` + `logoPath`
+- `references/providers/providers.csv`: plain URLs in dedicated link columns.
+- `references/offers/*.csv`: Markdown links (commonly inside `actionButtons`).

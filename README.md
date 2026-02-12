@@ -22,7 +22,8 @@ Conceptual structure used in contribution docs:
 references/
   providers/
     providers.csv    # provider identities
-    images/          # local provider logos referenced by providers.csv/logoPath
+    images/          # local provider logos in jpg/png
+    csv/logoPath
   offers/            # offers of the providers
 listings/
   specific-networks/<chain>/  # per-chain listing instances

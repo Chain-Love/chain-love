@@ -31,6 +31,9 @@ Repository paths:
 - Listings should place canonical references in the `offer` column using `!offer:<slug>`.
 - `references/providers/providers.csv` uses `logoPath` as filename only (example: `alchemy.png`).
 - Consumers should prepend the static prefix `references/providers/images/` during visualization.
+- `references/providers/providers.csv` keeps link fields without Markdown wrappers.
+- In `references/providers/providers.csv`, `website` and `docs` use full URLs, while `x`, `github`, `discord`, `telegram`, and `linkedin` store only the value after domain.
+- Offer CSV link entries (for example in `actionButtons`) use Markdown link format.
 
 ## Data contribution rules
 

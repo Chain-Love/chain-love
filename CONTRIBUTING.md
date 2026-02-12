@@ -29,27 +29,6 @@ Before editing data, read the Style Guide:
 | Add/update an offer on one chain | `listings/specific-networks/<network>/<category>.csv` |
 | Add/update entries for every chain | `listings/all-networks/<category>.csv` |
 
-## How to populate `references/providers/providers.csv`
-
-Required baseline fields:
-
-- `slug`: unique provider id (stable, lowercase kebab-case recommended).
-- `name`: provider display name.
-- `description`: concise provider description.
-- `logoPath`: logo filename only, format `<slug>.png`.
-
-Optional enrichment fields:
-
-- `website`, `docs`, `x`, `github`, `discord`, `telegram`, `linkedin`, `supportEmail`.
-- `tag` for custom grouping/search tags.
-
-Logo guidance:
-
-- Put logo files into `references/providers/images/`.
-- Keep filename aligned with provider slug.
-- Visualization should prepend `references/providers/images/` to `logoPath`.
-- See `references/providers/images/README.md` for image recommendations.
-
 ## How references work
 
 - Category CSV files use separate columns: `provider` and `offer`.
@@ -58,6 +37,14 @@ Logo guidance:
 - During JSON generation, referenced fields are hydrated from `references/offers/<category>.csv`.
 - Values in the listing row override hydrated values where provided.
 - Rows from `listings/all-networks` are appended to every network output.
+
+## Link formatting convention
+
+- In `references/offers/*.csv` (for example `actionButtons`), keep Markdown link style (for example `[Website](https://example.com)`).
+- In `references/providers/providers.csv`, keep plain links only (no Markdown wrappers).
+- Use full URLs for `website` and `docs`.
+- For platform columns with known domains (`x`, `github`, `discord`, `telegram`, `linkedin`), store only the part after the domain.
+  - Example: `https://github.com/Chain-Love/chain-love` -> `Chain-Love/chain-love`
 
 ## Contribution workflow
 
