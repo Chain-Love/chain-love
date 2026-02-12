@@ -1,1047 +1,4 @@
 {
-    "oracles": [
-        {
-            "slug": "band-mainnet",
-            "provider": "Band Protocol",
-            "actionButtons": [
-                "[XLM/USD](https://mainnet-feeds.bandprotocol.com/signal/CS:XLM-USD)",
-                "[Docs](https://docs.bandchain.org/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Cross-chain Oracle",
-            "starred": false,
-            "availableApis": [
-                "Oracle Scripts",
-                "IBC Feeds"
-            ],
-            "monitoringAndAnalytics": [
-                "Validator Performance"
-            ],
-            "additionalFeatures": [
-                "IBC compatibility",
-                "Flexible scripting"
-            ],
-            "dataTypes": [
-                "Token Prices",
-                "ASTR",
-                "ATOM",
-                "AVAX",
-                "BNB",
-                "BUSD",
-                "DAI",
-                "DOT",
-                "ETH",
-                "FTM",
-                "MATIC",
-                "SOL",
-                "USDC",
-                "USDT",
-                "WBTC"
-            ],
-            "decentralizationModel": "Delegated Proof-of-Stake",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Cosmos-based staking model",
-            "sdk": [
-                "CosmJS",
-                "Solidity"
-            ],
-            "auditsPerformed": [
-                "CertiK"
-            ]
-        },
-        {
-            "slug": "dia-mainnet",
-            "provider": "DIA",
-            "actionButtons": [
-                "[XLM/USD](https://www.diadata.org/app/price/asset/Stellar/0x0000000000000000000000000000000000000000/)",
-                "[Docs](https://www.diadata.org/docs/data-products-and-tools/token-price-feeds#data-sources/)"
-            ],
-            "chain": "mainnet",
-            "technology": "DIA",
-            "starred": false,
-            "availableApis": [
-                "REST",
-                "GraphQL"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Price Feeds"
-            ],
-            "additionalFeatures": [
-                "Cross-chain compatibility",
-                "Customizable data feeds",
-                "Customizable data feeds",
-                "Advanced architecture using Layer 2 rollup"
-            ],
-            "dataTypes": [
-                "BTC",
-                "DIA",
-                "USDC"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": false,
-            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
-            "sdk": [
-                "Solidity",
-                "Vyper"
-            ],
-            "auditsPerformed": [
-                "April 2025, by MixBytes",
-                "May 2022, by Chainsulting"
-            ]
-        },
-        {
-            "slug": "lightecho-mainnet",
-            "provider": "LightEcho",
-            "actionButtons": [
-                "[XLM/USDC](https://lightecho.io/?from_asset=XLM&to_asset=USDC)"
-            ],
-            "chain": "mainnet",
-            "technology": "Soroban Smart Contract Oracle",
-            "starred": true,
-            "availableApis": [
-                "Price Feed",
-                "Event Triggers"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Price Feeds",
-                "StellarExpert"
-            ],
-            "additionalFeatures": [
-                "Emerging Market Data",
-                "Volatility Feeds",
-                "Free Access"
-            ],
-            "dataTypes": [
-                "Cryptocurrency Prices",
-                "Volatility Data"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Secured by Stellar SCP and decentralized data sources",
-            "sdk": [
-                "Python",
-                "JavaScript"
-            ],
-            "auditsPerformed": [
-                "Audit by Runtime Verification, 2023"
-            ]
-        },
-        {
-            "slug": "lightecho-testnet",
-            "provider": "LightEcho",
-            "actionButtons": [
-                "[XLM/USDC](https://lightecho.io/?from_asset=XLM&to_asset=USDC)"
-            ],
-            "chain": "testnet",
-            "technology": "Soroban Smart Contract Oracle",
-            "starred": false,
-            "availableApis": [
-                "Price Feed",
-                "Event Triggers"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Price Feeds",
-                "StellarExpert"
-            ],
-            "additionalFeatures": [
-                "Emerging Market Data",
-                "Volatility Feeds",
-                "Free Access"
-            ],
-            "dataTypes": [
-                "Cryptocurrency Prices",
-                "Volatility Data"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Secured by Stellar SCP and decentralized data sources",
-            "sdk": [
-                "Python",
-                "JavaScript"
-            ],
-            "auditsPerformed": [
-                "Audit by Runtime Verification, 2023"
-            ]
-        },
-        {
-            "slug": "reflector-mainnet",
-            "provider": "Reflector",
-            "actionButtons": [
-                "[Docs](https://reflector.network/docs)"
-            ],
-            "chain": "mainnet",
-            "technology": "Consensus-based Oracle",
-            "starred": false,
-            "availableApis": [
-                "Price Feed",
-                "Custom Triggers"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Price Feeds",
-                "StellarExpert"
-            ],
-            "additionalFeatures": [
-                "Custom Triggers",
-                "On-chain/Off-chain Data"
-            ],
-            "dataTypes": [
-                "Cryptocurrency Prices",
-                "Exchange Rates"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Secured by trusted Stellar ecosystem nodes",
-            "sdk": [
-                "JavaScript"
-            ],
-            "auditsPerformed": [
-                "Audit by Quantstamp, 2023"
-            ]
-        },
-        {
-            "slug": "reflector-testnet",
-            "provider": "Reflector",
-            "actionButtons": [
-                "[Docs](https://reflector.network/docs)"
-            ],
-            "chain": "testnet",
-            "technology": "Consensus-based Oracle",
-            "starred": false,
-            "availableApis": [
-                "Price Feed",
-                "Custom Triggers"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Price Feeds",
-                "StellarExpert"
-            ],
-            "additionalFeatures": [
-                "Custom Triggers",
-                "On-chain/Off-chain Data"
-            ],
-            "dataTypes": [
-                "Cryptocurrency Prices",
-                "Exchange Rates"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Secured by trusted Stellar ecosystem nodes",
-            "sdk": [
-                "JavaScript"
-            ],
-            "auditsPerformed": [
-                "Audit by Quantstamp, 2023"
-            ]
-        }
-    ],
-    "sdks": [
-        {
-            "slug": "anyalt",
-            "provider": "AnyAlt",
-            "actionButtons": [
-                "[Website](https://www.anyalt.finance/)",
-                "[Docs](https://docs.anyalt.finance/sdk/overview)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "Cross-chain functionality",
-                "SDKs",
-                "APIs"
-            ],
-            "description": "Provides developers with an SDK and a pre-built widget to integrate cross-chain and last-mile transactions, including fiat-to-crypto on-ramps, into blockchain protocols and web3 projects",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "rubic-sdk",
-            "provider": "Rubic-SDK",
-            "actionButtons": [
-                "[Docs](https://docs.rubic.finance/integrate-sdk/sdk-overview)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "Web3 developer tools",
-                "Cross-chain swap API",
-                "Blockchain interoperability",
-                "DEX aggregator SDK",
-                "Crypto swap widget"
-            ],
-            "description": "It offers a SDK, a customizable widget and an API to allow other decentralized applications, wallets or websites to integrate its cross-chain swap functionality directly into their own platforms",
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "stellar-sdk-csharp",
-            "provider": "Stellar",
-            "actionButtons": [
-                "[Docs](https://github.com/Beans-BV/dotnet-stellar-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "C#",
-            "tag": [
-                "Horizon"
-            ],
-            "description": ".NET SDK for interacting with Horizon, community-maintained",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "14.0.1",
-            "latestKnownReleaseDate": "2025-09-09",
-            "maintainer": "Beans-BV",
-            "license": "Apache-2.0"
-        },
-        {
-            "slug": "stellar-sdk-flutter",
-            "provider": "Stellar",
-            "actionButtons": [
-                "[Docs](https://github.com/Soneso/stellar_flutter_sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "Flutter",
-                "Horizon",
-                "Soroban"
-            ],
-            "description": "Open-source SDK for Flutter, supports Horizon and Soroban, community-maintained",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "3.0.1",
-            "latestKnownReleaseDate": "2026-02-03",
-            "maintainer": "Soneso",
-            "license": "MIT"
-        },
-        {
-            "slug": "stellar-sdk-go",
-            "provider": "Stellar",
-            "actionButtons": [
-                "[Docs](https://github.com/stellar/go)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "Go",
-            "tag": [
-                "Horizon",
-                "Soroban"
-            ],
-            "description": "Go SDK for building transactions, accounts, and Soroban contracts",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "stellar",
-            "license": "Apache-2.0"
-        },
-        {
-            "slug": "stellar-sdk-ios-mac",
-            "provider": "Stellar",
-            "actionButtons": [
-                "[Docs](https://github.com/Soneso/stellar-ios-mac-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "iOS",
-                "macOS",
-                "Horizon",
-                "Soroban"
-            ],
-            "description": "Open-source SDK for iOS/macOS, supports Horizon and Soroban, community-maintained",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "3.4.3",
-            "latestKnownReleaseDate": "2026-02-10",
-            "maintainer": "Soneso",
-            "license": "Apache-2.0"
-        },
-        {
-            "slug": "stellar-sdk-java",
-            "provider": "Stellar",
-            "actionButtons": [
-                "[Docs](https://github.com/lightsail-network/java-stellar-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "Java",
-            "tag": [
-                "Horizon",
-                "Soroban"
-            ],
-            "description": "Java SDK for building transactions, accounts, and Soroban contracts",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "2.2.2",
-            "latestKnownReleaseDate": "2026-02-03",
-            "maintainer": "lightsail-network",
-            "license": "Apache-2.0"
-        },
-        {
-            "slug": "stellar-sdk-js",
-            "provider": "Stellar",
-            "actionButtons": [
-                "[Docs](https://github.com/stellar/js-stellar-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Horizon",
-                "Soroban"
-            ],
-            "description": "JavaScript SDK for building transactions, accounts, and Soroban contracts",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "v14.5.0",
-            "latestKnownReleaseDate": "2026-01-26",
-            "maintainer": "stellar",
-            "license": "Apache-2.0"
-        },
-        {
-            "slug": "stellar-sdk-py",
-            "provider": "Stellar",
-            "actionButtons": [
-                "[Docs](https://github.com/StellarCN/py-stellar-base)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "Python",
-            "tag": [
-                "Horizon",
-                "Soroban"
-            ],
-            "description": "Python SDK for building transactions, accounts, and Soroban contracts",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "13.2.1",
-            "latestKnownReleaseDate": "2026-01-21",
-            "maintainer": "StellarCN",
-            "license": "Apache-2.0"
-        },
-        {
-            "slug": "stellar-sdk-ruby",
-            "provider": "Stellar",
-            "actionButtons": [
-                "[Docs](https://github.com/astroband/ruby-stellar-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "Ruby",
-                "Horizon"
-            ],
-            "description": "Ruby SDK for building transactions and connecting to Horizon, community-maintained",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "v0.32.0",
-            "latestKnownReleaseDate": "2022-05-17",
-            "maintainer": "astroband",
-            "license": "TBD"
-        },
-        {
-            "slug": "stellar-sdk-rust",
-            "provider": "Stellar",
-            "actionButtons": [
-                "[Docs](https://github.com/stellar/rs-soroban-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "Rust",
-            "tag": [
-                "Soroban"
-            ],
-            "description": "Rust SDK for developing and deploying Soroban smart contracts",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "v25.1.0",
-            "latestKnownReleaseDate": "2026-02-06",
-            "maintainer": "stellar",
-            "license": "Apache-2.0"
-        },
-        {
-            "slug": "tatum-sdk-business",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Enterprise",
-            "planName": "Business",
-            "price": "Custom",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-free",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-pro",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Tiered",
-            "planName": "Pro",
-            "price": "$99/$139/$179/mo per 10M/15M/20M credits/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-scale",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Tiered",
-            "planName": "Scale",
-            "price": "$349/$649/mo per 40M/80M credits/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-starter",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Tiered",
-            "planName": "Starter",
-            "price": "$49/$79/mo per 4M/7M credits/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        }
-    ],
-    "platforms": [
-        {
-            "slug": "4everland-free",
-            "provider": "4everland",
-            "actionButtons": [
-                "[Website](https://www.4everland.org/)"
-            ],
-            "toolType": "Hosting",
-            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
-            "tag": [
-                "Storage",
-                "IPFS",
-                "Decentralized"
-            ],
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "4everland-pay-as-you-go",
-            "provider": "4everland",
-            "actionButtons": [
-                "[Docs](https://docs.4everland.org/get-started/billing-and-pricing/pricing-model)"
-            ],
-            "toolType": "Hosting",
-            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
-            "tag": [
-                "Storage",
-                "IPFS",
-                "Decentralized"
-            ],
-            "planType": "Pay-As-You-Go",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "portal-enterprise",
-            "provider": "Portal",
-            "actionButtons": [
-                "[Contact](https://www.portalhq.io/get-started)",
-                "[Docs](https://docs.portalhq.io/)"
-            ],
-            "toolType": "Finances",
-            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
-            "tag": [
-                "Web",
-                "Developer Portal"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "portal-developer",
-            "provider": "Portal",
-            "actionButtons": [
-                "[Website](https://www.portalhq.io/)",
-                "[Docs](https://docs.portalhq.io/)"
-            ],
-            "toolType": "TBD",
-            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
-            "tag": [
-                "Web",
-                "Developer Portal"
-            ],
-            "planType": "Free",
-            "planName": "Developer",
-            "price": "$0",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "portal-startup",
-            "provider": "Portal",
-            "actionButtons": [
-                "[Buy](https://www.portalhq.io/pricing)",
-                "[Docs](https://docs.portalhq.io/)"
-            ],
-            "toolType": "TBD",
-            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
-            "tag": [
-                "Web",
-                "Developer Portal"
-            ],
-            "planType": "Tiered",
-            "planName": "Start-Up",
-            "price": "$499",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "privy",
-            "provider": "Privy",
-            "actionButtons": [
-                "[Docs](https://docs.privy.io/welcome)"
-            ],
-            "toolType": "Auth",
-            "description": "Securely spin up whitelabel wallets, sign transactions and integrate onchain infrastructure-all through one simple API",
-            "tag": [
-                "Authentication",
-                "Wallet"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "reclaim-protocol",
-            "provider": "Reclaim Protocol",
-            "actionButtons": [
-                "[Website](https://docs.reclaimprotocol.org/)"
-            ],
-            "toolType": "All in one",
-            "description": "It provides developers with SDKs and tools to integrate user identity, activity and reputation data from websites into applications using privacy-preserving zero-knowledge proofs.",
-            "tag": [
-                "Zero-knowledge proofs",
-                "Data verification",
-                "Identity verification",
-                "Private data"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        }
-    ],
-    "security": [
-        {
-            "slug": "failsafe",
-            "provider": "FailSafe",
-            "actionButtons": [
-                "[Website](https://getfailsafe.com/)"
-            ],
-            "tag": [
-                "AI Security",
-                "Penetration Testing",
-                "Real-Time Threat Detection",
-                "Security Audits"
-            ],
-            "description": "It focused on security and compliance for the blockchain, Web3 and AI industries",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "toolType": "TBD",
-            "deliveryType": "TBD",
-            "executionEnvironment": null,
-            "coverage": [
-                "TBD"
-            ],
-            "compliance": null
-        },
-        {
-            "slug": "ziion-linux-distro",
-            "provider": "Ziion Linux distro",
-            "actionButtons": [
-                "[Website](https://www.ziion.org/)"
-            ],
-            "tag": [
-                "Security Testing",
-                "Vulnerability Assessment",
-                "Cybersecurity",
-                "Virtual Machine"
-            ],
-            "description": "Functions as a specialized, pre-configured provider of developer and security tools for the blockchain and Web3 ecosystem",
-            "planType": "TBD",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "toolType": "TBD",
-            "deliveryType": "TBD",
-            "executionEnvironment": null,
-            "coverage": [
-                "TBD"
-            ],
-            "compliance": null
-        }
-    ],
-    "ramps": [
-        {
-            "slug": "transak",
-            "provider": "Transak",
-            "actionButtons": [
-                "[Website](https://transak.com/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "bank_transfer",
-                "apple_pay",
-                "google_pay",
-                "pix"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "moonpay",
-            "provider": "MoonPay",
-            "actionButtons": [
-                "[Website](https://www.moonpay.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay",
-                "paypal"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CN",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU",
-                "BY",
-                "VE"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "PCI_DSS",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "ramp-network",
-            "provider": "Ramp Network",
-            "actionButtons": [
-                "[Website](https://ramp.network/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "apple_pay",
-                "google_pay",
-                "revolut_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "YE"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "SOC2_TYPE_II",
-                "PCI_DSS"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "onramper",
-            "provider": "Onramper",
-            "actionButtons": [
-                "[Website](https://onramper.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": true,
-            "auditsPerformed": [
-                "SOC2_TYPE_I"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "stripe-crypto",
-            "provider": "Stripe",
-            "actionButtons": [
-                "[Website](https://stripe.com/crypto)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "ach"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "SOC2_TYPE_II",
-                "PCI_DSS"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "banxa",
-            "provider": "Banxa",
-            "actionButtons": [
-                "[Website](https://banxa.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "mercuryo",
-            "provider": "Mercuryo",
-            "actionButtons": [
-                "[Website](https://mercuryo.io/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "apple_pay",
-                "google_pay",
-                "sepa"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "PCI_DSS",
-                "ISO27001"
-            ],
-            "deliveryType": "TBD"
-        }
-    ],
     "bridges": [
         {
             "slug": "allbridge-mainnet",
@@ -1405,6 +362,60 @@
             "planType": "Free",
             "description": "Web tool for testing transactions, accounts, and Soroban contracts",
             "starred": false
+        }
+    ],
+    "security": [
+        {
+            "slug": "failsafe",
+            "provider": "FailSafe",
+            "actionButtons": [
+                "[Website](https://getfailsafe.com/)"
+            ],
+            "tag": [
+                "AI Security",
+                "Penetration Testing",
+                "Real-Time Threat Detection",
+                "Security Audits"
+            ],
+            "description": "It focused on security and compliance for the blockchain, Web3 and AI industries",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "toolType": "TBD",
+            "deliveryType": "TBD",
+            "executionEnvironment": null,
+            "coverage": [
+                "TBD"
+            ],
+            "compliance": null
+        },
+        {
+            "slug": "ziion-linux-distro",
+            "provider": "Ziion Linux distro",
+            "actionButtons": [
+                "[Website](https://www.ziion.org/)"
+            ],
+            "tag": [
+                "Security Testing",
+                "Vulnerability Assessment",
+                "Cybersecurity",
+                "Virtual Machine"
+            ],
+            "description": "Functions as a specialized, pre-configured provider of developer and security tools for the blockchain and Web3 ecosystem",
+            "planType": "TBD",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "toolType": "TBD",
+            "deliveryType": "TBD",
+            "executionEnvironment": null,
+            "coverage": [
+                "TBD"
+            ],
+            "compliance": null
         }
     ],
     "wallets": [
@@ -3103,302 +2114,548 @@
             "starred": false
         }
     ],
-    "explorers": [
+    "sdks": [
         {
-            "slug": "blockchair-mainnet",
-            "provider": "Blockchair",
+            "slug": "anyalt",
+            "provider": "AnyAlt",
             "actionButtons": [
-                "[Explore](https://blockchair.com/stellar)",
-                "[Docs](https://blockchair.com/about)"
+                "[Website](https://www.anyalt.finance/)",
+                "[Docs](https://docs.anyalt.finance/sdk/overview)"
             ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Tokens",
-                "Contracts"
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "Cross-chain functionality",
+                "SDKs",
+                "APIs"
             ],
-            "additionalFeatures": [
-                "Multi-Chain Search",
-                "PDF Reports"
-            ],
+            "description": "Provides developers with an SDK and a pre-built widget to integrate cross-chain and last-mile transactions, including fiat-to-crypto on-ramps, into blockchain protocols and web3 projects",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
             "starred": false,
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": [
-                "Python",
-                "Node.js"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Free"
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
         },
         {
-            "slug": "blockchair-testnet",
-            "provider": "Blockchair",
+            "slug": "rubic-sdk",
+            "provider": "Rubic-SDK",
             "actionButtons": [
-                "[Explore](https://blockchair.com/stellar)",
-                "[Docs](https://blockchair.com/about)"
+                "[Docs](https://docs.rubic.finance/integrate-sdk/sdk-overview)"
             ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Tokens",
-                "Contracts"
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "Web3 developer tools",
+                "Cross-chain swap API",
+                "Blockchain interoperability",
+                "DEX aggregator SDK",
+                "Crypto swap widget"
             ],
-            "additionalFeatures": [
-                "Multi-Chain Search",
-                "PDF Reports"
-            ],
+            "description": "It offers a SDK, a customizable widget and an API to allow other decentralized applications, wallets or websites to integrate its cross-chain swap functionality directly into their own platforms",
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
             "starred": false,
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": [
-                "Python",
-                "Node.js"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Free"
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
         },
         {
-            "slug": "steexp-mainnet",
-            "provider": "Steexp",
+            "slug": "stellar-sdk-csharp",
+            "provider": "Stellar",
             "actionButtons": [
-                "[Explore](https://steexp.com/)",
-                "[Docs](https://steexp.com/)"
+                "[Docs](https://github.com/Beans-BV/dotnet-stellar-sdk)"
             ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Ledgers",
-                "Assets",
-                "Contracts"
+            "toolType": "SDK",
+            "programmingLanguage": "C#",
+            "tag": [
+                "Horizon"
             ],
-            "additionalFeatures": [
-                "Asset Analytics",
-                "Network Metrics"
-            ],
-            "starred": true,
-            "availableApis": [
-                "REST"
-            ],
-            "sdk": [
-                "JavaScript"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Ledger",
-                "Asset"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free"
+            "description": ".NET SDK for interacting with Horizon, community-maintained",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "14.0.1",
+            "latestKnownReleaseDate": "2025-09-09",
+            "maintainer": "Beans-BV",
+            "license": "Apache-2.0"
         },
         {
-            "slug": "steexp-testnet",
-            "provider": "Steexp",
+            "slug": "stellar-sdk-flutter",
+            "provider": "Stellar",
             "actionButtons": [
-                "[Explore](https://steexp.com/)",
-                "[Docs](https://steexp.com/)"
+                "[Docs](https://github.com/Soneso/stellar_flutter_sdk)"
             ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Ledgers",
-                "Assets",
-                "Contracts"
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "Flutter",
+                "Horizon",
+                "Soroban"
             ],
-            "additionalFeatures": [
-                "Asset Analytics",
-                "Network Metrics"
-            ],
-            "starred": true,
-            "availableApis": [
-                "REST"
-            ],
-            "sdk": [
-                "JavaScript"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Ledger",
-                "Asset"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free"
+            "description": "Open-source SDK for Flutter, supports Horizon and Soroban, community-maintained",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "3.0.1",
+            "latestKnownReleaseDate": "2026-02-03",
+            "maintainer": "Soneso",
+            "license": "MIT"
         },
         {
-            "slug": "stellarchain-mainnet",
-            "provider": "StellarChain",
+            "slug": "stellar-sdk-go",
+            "provider": "Stellar",
             "actionButtons": [
-                "[Explore](https://stellarchain.io/)",
-                "[Docs](https://stellarchain.io/)"
+                "[Docs](https://github.com/stellar/go)"
             ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Ledgers",
-                "Assets",
-                "Contracts"
+            "toolType": "SDK",
+            "programmingLanguage": "Go",
+            "tag": [
+                "Horizon",
+                "Soroban"
             ],
-            "additionalFeatures": [
-                "Price Charts",
-                "Exchange Rates"
-            ],
-            "starred": true,
-            "availableApis": [
-                "REST"
-            ],
-            "sdk": [
-                "JavaScript"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Ledger",
-                "Asset"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free"
+            "description": "Go SDK for building transactions, accounts, and Soroban contracts",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "stellar",
+            "license": "Apache-2.0"
         },
         {
-            "slug": "stellarchain-testnet",
-            "provider": "StellarChain",
+            "slug": "stellar-sdk-ios-mac",
+            "provider": "Stellar",
             "actionButtons": [
-                "[Explore](https://stellarchain.io/)",
-                "[Docs](https://stellarchain.io/)"
+                "[Docs](https://github.com/Soneso/stellar-ios-mac-sdk)"
             ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Ledgers",
-                "Assets",
-                "Contracts"
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "iOS",
+                "macOS",
+                "Horizon",
+                "Soroban"
             ],
-            "additionalFeatures": [
-                "Price Charts",
-                "Exchange Rates"
-            ],
-            "starred": true,
-            "availableApis": [
-                "REST"
-            ],
-            "sdk": [
-                "JavaScript"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Ledger",
-                "Asset"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free"
+            "description": "Open-source SDK for iOS/macOS, supports Horizon and Soroban, community-maintained",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "3.4.3",
+            "latestKnownReleaseDate": "2026-02-10",
+            "maintainer": "Soneso",
+            "license": "Apache-2.0"
         },
         {
-            "slug": "stellarexpert-mainnet",
-            "provider": "StellarExpert",
+            "slug": "stellar-sdk-java",
+            "provider": "Stellar",
             "actionButtons": [
-                "[Explore](https://stellar.expert/)",
-                "[Docs](https://stellar.expert/openapi.html)"
+                "[Docs](https://github.com/lightsail-network/java-stellar-sdk)"
             ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Ledgers",
-                "Assets",
-                "Contracts"
+            "toolType": "SDK",
+            "programmingLanguage": "Java",
+            "tag": [
+                "Horizon",
+                "Soroban"
             ],
-            "additionalFeatures": [
-                "Asset Analytics",
-                "Network Metrics"
-            ],
-            "starred": true,
-            "availableApis": [
-                "REST",
-                "GraphQL"
-            ],
-            "sdk": [
-                "JavaScript"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Ledger",
-                "Asset"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free"
+            "description": "Java SDK for building transactions, accounts, and Soroban contracts",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "2.2.2",
+            "latestKnownReleaseDate": "2026-02-03",
+            "maintainer": "lightsail-network",
+            "license": "Apache-2.0"
         },
         {
-            "slug": "stellarexpert-testnet",
-            "provider": "StellarExpert",
+            "slug": "stellar-sdk-js",
+            "provider": "Stellar",
             "actionButtons": [
-                "[Explore](https://stellar.expert/)",
-                "[Docs](https://stellar.expert/openapi.html)"
+                "[Docs](https://github.com/stellar/js-stellar-sdk)"
             ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Ledgers",
-                "Assets",
-                "Contracts"
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Horizon",
+                "Soroban"
             ],
-            "additionalFeatures": [
-                "Asset Analytics",
-                "Network Metrics"
+            "description": "JavaScript SDK for building transactions, accounts, and Soroban contracts",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "v14.5.0",
+            "latestKnownReleaseDate": "2026-01-26",
+            "maintainer": "stellar",
+            "license": "Apache-2.0"
+        },
+        {
+            "slug": "stellar-sdk-py",
+            "provider": "Stellar",
+            "actionButtons": [
+                "[Docs](https://github.com/StellarCN/py-stellar-base)"
             ],
-            "starred": true,
-            "availableApis": [
-                "REST",
-                "GraphQL"
+            "toolType": "SDK",
+            "programmingLanguage": "Python",
+            "tag": [
+                "Horizon",
+                "Soroban"
             ],
-            "sdk": [
-                "JavaScript"
+            "description": "Python SDK for building transactions, accounts, and Soroban contracts",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "13.2.1",
+            "latestKnownReleaseDate": "2026-01-21",
+            "maintainer": "StellarCN",
+            "license": "Apache-2.0"
+        },
+        {
+            "slug": "stellar-sdk-ruby",
+            "provider": "Stellar",
+            "actionButtons": [
+                "[Docs](https://github.com/astroband/ruby-stellar-sdk)"
             ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Ledger",
-                "Asset"
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "Ruby",
+                "Horizon"
             ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free"
+            "description": "Ruby SDK for building transactions and connecting to Horizon, community-maintained",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "v0.32.0",
+            "latestKnownReleaseDate": "2022-05-17",
+            "maintainer": "astroband",
+            "license": "TBD"
+        },
+        {
+            "slug": "stellar-sdk-rust",
+            "provider": "Stellar",
+            "actionButtons": [
+                "[Docs](https://github.com/stellar/rs-soroban-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "Rust",
+            "tag": [
+                "Soroban"
+            ],
+            "description": "Rust SDK for developing and deploying Soroban smart contracts",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "v25.1.0",
+            "latestKnownReleaseDate": "2026-02-06",
+            "maintainer": "stellar",
+            "license": "Apache-2.0"
+        },
+        {
+            "slug": "tatum-sdk-business",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
+            ],
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Enterprise",
+            "planName": "Business",
+            "price": "Custom",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tatum-sdk-free",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
+            ],
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tatum-sdk-pro",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
+            ],
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Tiered",
+            "planName": "Pro",
+            "price": "$99/$139/$179/mo per 10M/15M/20M credits/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tatum-sdk-scale",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
+            ],
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Tiered",
+            "planName": "Scale",
+            "price": "$349/$649/mo per 40M/80M credits/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tatum-sdk-starter",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
+            ],
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Tiered",
+            "planName": "Starter",
+            "price": "$49/$79/mo per 4M/7M credits/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        }
+    ],
+    "platforms": [
+        {
+            "slug": "4everland-free",
+            "provider": "4everland",
+            "actionButtons": [
+                "[Website](https://www.4everland.org/)"
+            ],
+            "toolType": "Hosting",
+            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
+            "tag": [
+                "Storage",
+                "IPFS",
+                "Decentralized"
+            ],
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "4everland-pay-as-you-go",
+            "provider": "4everland",
+            "actionButtons": [
+                "[Docs](https://docs.4everland.org/get-started/billing-and-pricing/pricing-model)"
+            ],
+            "toolType": "Hosting",
+            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
+            "tag": [
+                "Storage",
+                "IPFS",
+                "Decentralized"
+            ],
+            "planType": "Pay-As-You-Go",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "portal-enterprise",
+            "provider": "Portal",
+            "actionButtons": [
+                "[Contact](https://www.portalhq.io/get-started)",
+                "[Docs](https://docs.portalhq.io/)"
+            ],
+            "toolType": "Finances",
+            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "portal-developer",
+            "provider": "Portal",
+            "actionButtons": [
+                "[Website](https://www.portalhq.io/)",
+                "[Docs](https://docs.portalhq.io/)"
+            ],
+            "toolType": "TBD",
+            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "planType": "Free",
+            "planName": "Developer",
+            "price": "$0",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "portal-startup",
+            "provider": "Portal",
+            "actionButtons": [
+                "[Buy](https://www.portalhq.io/pricing)",
+                "[Docs](https://docs.portalhq.io/)"
+            ],
+            "toolType": "TBD",
+            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "planType": "Tiered",
+            "planName": "Start-Up",
+            "price": "$499",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "privy",
+            "provider": "Privy",
+            "actionButtons": [
+                "[Docs](https://docs.privy.io/welcome)"
+            ],
+            "toolType": "Auth",
+            "description": "Securely spin up whitelabel wallets, sign transactions and integrate onchain infrastructure-all through one simple API",
+            "tag": [
+                "Authentication",
+                "Wallet"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "reclaim-protocol",
+            "provider": "Reclaim Protocol",
+            "actionButtons": [
+                "[Website](https://docs.reclaimprotocol.org/)"
+            ],
+            "toolType": "All in one",
+            "description": "It provides developers with SDKs and tools to integrate user identity, activity and reputation data from websites into applications using privacy-preserving zero-knowledge proofs.",
+            "tag": [
+                "Zero-knowledge proofs",
+                "Data verification",
+                "Identity verification",
+                "Private data"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
         }
     ],
     "apis": [
@@ -6327,6 +5584,749 @@
             "address": null
         }
     ],
+    "ramps": [
+        {
+            "slug": "transak",
+            "provider": "Transak",
+            "actionButtons": [
+                "[Website](https://transak.com/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "bank_transfer",
+                "apple_pay",
+                "google_pay",
+                "pix"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "moonpay",
+            "provider": "MoonPay",
+            "actionButtons": [
+                "[Website](https://www.moonpay.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay",
+                "paypal"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CN",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU",
+                "BY",
+                "VE"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "PCI_DSS",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "ramp-network",
+            "provider": "Ramp Network",
+            "actionButtons": [
+                "[Website](https://ramp.network/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "apple_pay",
+                "google_pay",
+                "revolut_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "YE"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II",
+                "PCI_DSS"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "onramper",
+            "provider": "Onramper",
+            "actionButtons": [
+                "[Website](https://onramper.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "SOC2_TYPE_I"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "stripe-crypto",
+            "provider": "Stripe",
+            "actionButtons": [
+                "[Website](https://stripe.com/crypto)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "ach"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "SOC2_TYPE_II",
+                "PCI_DSS"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "banxa",
+            "provider": "Banxa",
+            "actionButtons": [
+                "[Website](https://banxa.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "mercuryo",
+            "provider": "Mercuryo",
+            "actionButtons": [
+                "[Website](https://mercuryo.io/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "apple_pay",
+                "google_pay",
+                "sepa"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "ISO27001"
+            ],
+            "deliveryType": "TBD"
+        }
+    ],
+    "oracles": [
+        {
+            "slug": "band-mainnet",
+            "provider": "Band Protocol",
+            "actionButtons": [
+                "[XLM/USD](https://mainnet-feeds.bandprotocol.com/signal/CS:XLM-USD)",
+                "[Docs](https://docs.bandchain.org/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross-chain Oracle",
+            "starred": false,
+            "availableApis": [
+                "Oracle Scripts",
+                "IBC Feeds"
+            ],
+            "monitoringAndAnalytics": [
+                "Validator Performance"
+            ],
+            "additionalFeatures": [
+                "IBC compatibility",
+                "Flexible scripting"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "ASTR",
+                "ATOM",
+                "AVAX",
+                "BNB",
+                "BUSD",
+                "DAI",
+                "DOT",
+                "ETH",
+                "FTM",
+                "MATIC",
+                "SOL",
+                "USDC",
+                "USDT",
+                "WBTC"
+            ],
+            "decentralizationModel": "Delegated Proof-of-Stake",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Cosmos-based staking model",
+            "sdk": [
+                "CosmJS",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "CertiK"
+            ]
+        },
+        {
+            "slug": "dia-mainnet",
+            "provider": "DIA",
+            "actionButtons": [
+                "[XLM/USD](https://www.diadata.org/app/price/asset/Stellar/0x0000000000000000000000000000000000000000/)",
+                "[Docs](https://www.diadata.org/docs/data-products-and-tools/token-price-feeds#data-sources/)"
+            ],
+            "chain": "mainnet",
+            "technology": "DIA",
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds"
+            ],
+            "additionalFeatures": [
+                "Cross-chain compatibility",
+                "Customizable data feeds",
+                "Customizable data feeds",
+                "Advanced architecture using Layer 2 rollup"
+            ],
+            "dataTypes": [
+                "BTC",
+                "DIA",
+                "USDC"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
+            "sdk": [
+                "Solidity",
+                "Vyper"
+            ],
+            "auditsPerformed": [
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
+            ]
+        },
+        {
+            "slug": "lightecho-mainnet",
+            "provider": "LightEcho",
+            "actionButtons": [
+                "[XLM/USDC](https://lightecho.io/?from_asset=XLM&to_asset=USDC)"
+            ],
+            "chain": "mainnet",
+            "technology": "Soroban Smart Contract Oracle",
+            "starred": true,
+            "availableApis": [
+                "Price Feed",
+                "Event Triggers"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds",
+                "StellarExpert"
+            ],
+            "additionalFeatures": [
+                "Emerging Market Data",
+                "Volatility Feeds",
+                "Free Access"
+            ],
+            "dataTypes": [
+                "Cryptocurrency Prices",
+                "Volatility Data"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured by Stellar SCP and decentralized data sources",
+            "sdk": [
+                "Python",
+                "JavaScript"
+            ],
+            "auditsPerformed": [
+                "Audit by Runtime Verification, 2023"
+            ]
+        },
+        {
+            "slug": "lightecho-testnet",
+            "provider": "LightEcho",
+            "actionButtons": [
+                "[XLM/USDC](https://lightecho.io/?from_asset=XLM&to_asset=USDC)"
+            ],
+            "chain": "testnet",
+            "technology": "Soroban Smart Contract Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "Event Triggers"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds",
+                "StellarExpert"
+            ],
+            "additionalFeatures": [
+                "Emerging Market Data",
+                "Volatility Feeds",
+                "Free Access"
+            ],
+            "dataTypes": [
+                "Cryptocurrency Prices",
+                "Volatility Data"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured by Stellar SCP and decentralized data sources",
+            "sdk": [
+                "Python",
+                "JavaScript"
+            ],
+            "auditsPerformed": [
+                "Audit by Runtime Verification, 2023"
+            ]
+        },
+        {
+            "slug": "reflector-mainnet",
+            "provider": "Reflector",
+            "actionButtons": [
+                "[Docs](https://reflector.network/docs)"
+            ],
+            "chain": "mainnet",
+            "technology": "Consensus-based Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "Custom Triggers"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds",
+                "StellarExpert"
+            ],
+            "additionalFeatures": [
+                "Custom Triggers",
+                "On-chain/Off-chain Data"
+            ],
+            "dataTypes": [
+                "Cryptocurrency Prices",
+                "Exchange Rates"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured by trusted Stellar ecosystem nodes",
+            "sdk": [
+                "JavaScript"
+            ],
+            "auditsPerformed": [
+                "Audit by Quantstamp, 2023"
+            ]
+        },
+        {
+            "slug": "reflector-testnet",
+            "provider": "Reflector",
+            "actionButtons": [
+                "[Docs](https://reflector.network/docs)"
+            ],
+            "chain": "testnet",
+            "technology": "Consensus-based Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "Custom Triggers"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds",
+                "StellarExpert"
+            ],
+            "additionalFeatures": [
+                "Custom Triggers",
+                "On-chain/Off-chain Data"
+            ],
+            "dataTypes": [
+                "Cryptocurrency Prices",
+                "Exchange Rates"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Secured by trusted Stellar ecosystem nodes",
+            "sdk": [
+                "JavaScript"
+            ],
+            "auditsPerformed": [
+                "Audit by Quantstamp, 2023"
+            ]
+        }
+    ],
+    "explorers": [
+        {
+            "slug": "blockchair-mainnet",
+            "provider": "Blockchair",
+            "actionButtons": [
+                "[Explore](https://blockchair.com/stellar)",
+                "[Docs](https://blockchair.com/about)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Tokens",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain Search",
+                "PDF Reports"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": [
+                "Python",
+                "Node.js"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "blockchair-testnet",
+            "provider": "Blockchair",
+            "actionButtons": [
+                "[Explore](https://blockchair.com/stellar)",
+                "[Docs](https://blockchair.com/about)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Tokens",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain Search",
+                "PDF Reports"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": [
+                "Python",
+                "Node.js"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "steexp-mainnet",
+            "provider": "Steexp",
+            "actionButtons": [
+                "[Explore](https://steexp.com/)",
+                "[Docs](https://steexp.com/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Ledgers",
+                "Assets",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Asset Analytics",
+                "Network Metrics"
+            ],
+            "starred": true,
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": [
+                "JavaScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Ledger",
+                "Asset"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "steexp-testnet",
+            "provider": "Steexp",
+            "actionButtons": [
+                "[Explore](https://steexp.com/)",
+                "[Docs](https://steexp.com/)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Ledgers",
+                "Assets",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Asset Analytics",
+                "Network Metrics"
+            ],
+            "starred": true,
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": [
+                "JavaScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Ledger",
+                "Asset"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "stellarchain-mainnet",
+            "provider": "StellarChain",
+            "actionButtons": [
+                "[Explore](https://stellarchain.io/)",
+                "[Docs](https://stellarchain.io/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Ledgers",
+                "Assets",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Price Charts",
+                "Exchange Rates"
+            ],
+            "starred": true,
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": [
+                "JavaScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Ledger",
+                "Asset"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "stellarchain-testnet",
+            "provider": "StellarChain",
+            "actionButtons": [
+                "[Explore](https://stellarchain.io/)",
+                "[Docs](https://stellarchain.io/)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Ledgers",
+                "Assets",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Price Charts",
+                "Exchange Rates"
+            ],
+            "starred": true,
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": [
+                "JavaScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Ledger",
+                "Asset"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "stellarexpert-mainnet",
+            "provider": "StellarExpert",
+            "actionButtons": [
+                "[Explore](https://stellar.expert/)",
+                "[Docs](https://stellar.expert/openapi.html)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Ledgers",
+                "Assets",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Asset Analytics",
+                "Network Metrics"
+            ],
+            "starred": true,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "sdk": [
+                "JavaScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Ledger",
+                "Asset"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "stellarexpert-testnet",
+            "provider": "StellarExpert",
+            "actionButtons": [
+                "[Explore](https://stellar.expert/)",
+                "[Docs](https://stellar.expert/openapi.html)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Ledgers",
+                "Assets",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Asset Analytics",
+                "Network Metrics"
+            ],
+            "starred": true,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "sdk": [
+                "JavaScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Ledger",
+                "Asset"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        }
+    ],
     "faucets": [
         {
             "slug": "circle-usdc-testnet",
@@ -6465,84 +6465,6 @@
         }
     ],
     "columns": {
-        "oracles": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "technology",
-            "starred",
-            "availableApis",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
-            "dataTypes",
-            "decentralizationModel",
-            "economicalSecurity",
-            "economicalSecurityNote",
-            "sdk",
-            "auditsPerformed"
-        ],
-        "sdks": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "programmingLanguage",
-            "tag",
-            "description",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "starred",
-            "dependencies",
-            "latestKnownVersion",
-            "latestKnownReleaseDate",
-            "maintainer",
-            "license"
-        ],
-        "platforms": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "description",
-            "tag",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "availableApis",
-            "executionEnvironment"
-        ],
-        "security": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "tag",
-            "description",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "starred",
-            "toolType",
-            "deliveryType",
-            "executionEnvironment",
-            "coverage",
-            "compliance"
-        ],
-        "ramps": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "kycLevel",
-            "paymentMethods",
-            "bannedCountries",
-            "aggregator",
-            "auditsPerformed",
-            "deliveryType"
-        ],
         "bridges": [
             "slug",
             "provider",
@@ -6578,6 +6500,23 @@
             "description",
             "starred"
         ],
+        "security": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "tag",
+            "description",
+            "planType",
+            "planName",
+            "price",
+            "trial",
+            "starred",
+            "toolType",
+            "deliveryType",
+            "executionEnvironment",
+            "coverage",
+            "compliance"
+        ],
         "wallets": [
             "slug",
             "provider",
@@ -6600,21 +6539,38 @@
             "languages",
             "starred"
         ],
-        "explorers": [
+        "sdks": [
             "slug",
             "provider",
             "actionButtons",
-            "chain",
-            "technology",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
+            "toolType",
+            "programmingLanguage",
+            "tag",
+            "description",
+            "planType",
+            "planName",
+            "price",
+            "trial",
             "starred",
+            "dependencies",
+            "latestKnownVersion",
+            "latestKnownReleaseDate",
+            "maintainer",
+            "license"
+        ],
+        "platforms": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "toolType",
+            "description",
+            "tag",
+            "planType",
+            "planName",
+            "price",
+            "trial",
             "availableApis",
-            "sdk",
-            "searchCapabilities",
-            "smartContractsVerifications",
-            "fullHistory",
-            "pricing"
+            "executionEnvironment"
         ],
         "apis": [
             "slug",
@@ -6644,6 +6600,50 @@
             "regions",
             "additionalFeatures",
             "address"
+        ],
+        "ramps": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "kycLevel",
+            "paymentMethods",
+            "bannedCountries",
+            "aggregator",
+            "auditsPerformed",
+            "deliveryType"
+        ],
+        "oracles": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "starred",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "dataTypes",
+            "decentralizationModel",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "sdk",
+            "auditsPerformed"
+        ],
+        "explorers": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "starred",
+            "availableApis",
+            "sdk",
+            "searchCapabilities",
+            "smartContractsVerifications",
+            "fullHistory",
+            "pricing"
         ],
         "faucets": [
             "slug",

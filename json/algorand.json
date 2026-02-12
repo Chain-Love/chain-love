@@ -1,241 +1,275 @@
 {
-    "oracles": [
+    "bridges": [
         {
-            "slug": "goracle-mainnet",
-            "provider": "Gora",
+            "slug": "messina",
+            "provider": "MessinaOne Bridge",
             "actionButtons": [
-                "[Docs](https://github.com/GoraNetwork)"
+                "[Bridge](https://messina.one/bridge)",
+                "[Docs](https://messinaone.gitbook.io/messina/)"
             ],
             "chain": "mainnet",
-            "technology": "Custom",
-            "dataTypes": [
-                "Financial data",
-                "Sports stats",
-                "Supply chain milestones",
-                "Healthcare metrics"
+            "technology": "Cross‑chain Bridge via Wormhole",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
             ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Node runners secured by token delegation and governance on Algorand blockchain",
-            "sdk": [
-                "TypeScript",
-                "Python",
-                "JavaScript",
-                "CSS",
-                "Cairo"
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "base",
+                "algorand",
+                "arbitrum",
+                "optimism",
+                "aptos",
+                "polygon",
+                "avalanche"
             ],
             "availableApis": [
-                "REST API"
+                "Asset Transfer"
             ],
-            "monitoringAndAnalytics": [
-                "Decentralized node monitoring",
-                "Ecosystem rewards"
-            ],
+            "monitoringAndAnalytics": null,
             "additionalFeatures": [
-                "Industry-specific fully customizable oracle solution",
-                "multiple industry templates"
+                "Wormhole integration",
+                "Liquidity pools"
             ],
-            "auditsPerformed": null,
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited by Certik & Kudelski",
+            "auditsPerformed": [
+                "Certik",
+                "Kudelski Security"
+            ],
+            "decentralizationModel": "Partially Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
             "starred": false
         },
         {
-            "slug": "tellor-mainnet",
-            "provider": "Tellor",
+            "slug": "allbridge",
+            "provider": "Allbridge Core",
             "actionButtons": [
-                "[Docs](https://docs.tellor.io/tellor/)"
+                "[Bridge](https://core.allbridge.io/)",
+                "[Docs](https://docs-core.allbridge.io/sdk/guides/algorand)"
             ],
             "chain": "mainnet",
-            "technology": "Custom",
-            "dataTypes": [
-                "Price Feeds",
-                "Custom Data"
+            "technology": "Stablecoin Bridge via Native Liquidity",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
             ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Staking requirement, dispute mechanism",
-            "sdk": [
-                "TypeScript",
-                "JavaScript",
-                "Solidity"
+            "supportedChains": [
+                "arbitrum",
+                "avalanche",
+                "base",
+                "bnb chain",
+                "celo",
+                "ethereum",
+                "linea",
+                "optimism",
+                "polygon",
+                "sonic",
+                "solana",
+                "stellar",
+                "sui",
+                "tron",
+                "unichain"
             ],
             "availableApis": [
-                "REST API",
-                "GraphQL"
+                "Stablecoin Transfer"
             ],
-            "monitoringAndAnalytics": [
-                "Dashboard",
-                "Uptime Monitoring",
-                "Node Stats"
-            ],
+            "monitoringAndAnalytics": null,
             "additionalFeatures": [
-                "Enshrined feeds",
-                "Custom data types"
+                "No wrapping",
+                "Native liquidity pools",
+                "CEX-to-chain deposits"
             ],
+            "assetTypes": [
+                "Stablecoins",
+                "ERC-20"
+            ],
+            "price": "Gas Fee + protocol fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Native stablecoin pools, messaging-agnostic",
             "auditsPerformed": [
-                "Trail of Bits",
-                "CertiK",
-                "Zellic"
+                "Independent audits (per DefiLlama)"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript"
             ],
             "starred": false
         }
     ],
-    "sdks": [
+    "services": [
         {
-            "slug": "algorand-sdk",
-            "provider": "Algorand",
+            "slug": "algokit-cli",
+            "provider": "AlgoKit",
             "actionButtons": [
-                "[Docs](https://dev.algorand.co/reference/sdk/sdk-list/)"
+                "[Docs](https://dev.algorand.co/algokit/algokit-intro/)"
             ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
+            "toolType": "CLI",
             "tag": [
-                "Go",
-                "Java",
+                "Bootstrap",
+                "Compile",
+                "Completions",
+                "Deploy",
+                "Dispenser",
+                "Doctor",
+                "Explore",
+                "Generate",
+                "Goal",
+                "Init",
+                "LocalNet",
+                "Project",
+                "Task"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "A comprehensive CLI and toolkit for building, testing, deploying, and debugging Algorand apps",
+            "starred": false
+        },
+        {
+            "slug": "algokit-localnet",
+            "provider": "AlgoKit",
+            "actionButtons": [
+                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#algokit-localnet)"
+            ],
+            "toolType": "Network Simulator",
+            "tag": [
+                "Local sandboxed network",
+                "Ephemeral environment",
+                "Docker-based",
+                "KMD enabled",
+                "Named LocalNet instances",
+                "Configuration management",
+                "Offline usage",
+                "Developer-focused features"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "Runs a local sandboxed Algorand network for offline development and testing using Docker images.",
+            "starred": false
+        },
+        {
+            "slug": "algokit-utils",
+            "provider": "AlgoKit",
+            "actionButtons": [
+                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#algokit-utils)"
+            ],
+            "toolType": "Utility Library",
+            "tag": [
                 "Python",
-                "JavaScript",
+                "TypeScript",
+                "Client management",
+                "Account management",
+                "Algo amount handling",
+                "Transaction management",
+                "App management",
+                "App deployment",
+                "ARC-0032 Application Spec client",
+                "Algo transfers",
+                "Automated testing",
+                "Indexer searching"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "Utility functions in TypeScript and Python to interact with Algorand blockchain easily and safely.",
+            "starred": false
+        },
+        {
+            "slug": "avm-debugger",
+            "provider": "AlgoKit",
+            "actionButtons": [
+                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#avm-debugger)"
+            ],
+            "toolType": "Smart Contract Debugger",
+            "tag": [
+                "Debug trace files",
+                "TEAL source map tags",
+                "Debugging configuration tags"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "VS Code extension to debug Algorand TEAL smart contracts interactively.",
+            "starred": false
+        },
+        {
+            "slug": "client-generator",
+            "provider": "AlgoKit",
+            "actionButtons": [
+                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#client-generator)"
+            ],
+            "toolType": "Code Generator",
+            "tag": [
+                "Python",
                 "TypeScript"
             ],
-            "description": "Official SDKs like TypeScript, Python, JavaScript, Java and Go are used for building, testing, and debugging applications on Algorand",
-            "planType": "Free",
-            "planName": null,
             "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
+            "planName": null,
+            "planType": "Free",
+            "description": "Generates type-safe smart contract clients from ARC-0032 specifications for easy contract interaction",
+            "starred": false
         },
         {
-            "slug": "tatum-sdk-business",
-            "provider": "Tatum",
+            "slug": "mosaia-enterprise",
+            "provider": "Mosaia",
             "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+                "[Contact](https://calendly.com/cyril-mosaia)"
             ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
+            "toolType": "AI",
             "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
+                "Building and deploying AI agents and teams"
             ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Enterprise",
-            "planName": "Business",
             "price": "Custom",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-free",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Free",
             "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
+            "planType": "Enterprise",
+            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
+            "starred": false
         },
         {
-            "slug": "tatum-sdk-pro",
-            "provider": "Tatum",
+            "slug": "mosaia-explorer",
+            "provider": "Mosaia",
             "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
+                "[Buy](https://www.mosaia.io/pricing)"
             ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
+            "toolType": "AI",
             "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
+                "Building and deploying AI agents and teams"
             ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "price": "$19/mo",
+            "planName": "Explorer",
             "planType": "Tiered",
+            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
+            "starred": false
+        },
+        {
+            "slug": "mosaia-pro",
+            "provider": "Mosaia",
+            "actionButtons": [
+                "[Buy](https://www.mosaia.io/pricing)"
+            ],
+            "toolType": "AI",
+            "tag": [
+                "Building and deploying AI agents and teams"
+            ],
+            "price": "$349/mo",
             "planName": "Pro",
-            "price": "$99/$139/$179/mo per 10M/15M/20M credits/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-scale",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
             "planType": "Tiered",
-            "planName": "Scale",
-            "price": "$349/$649/mo per 40M/80M credits/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "tatum-sdk-starter",
-            "provider": "Tatum",
-            "actionButtons": [
-                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Web3 development",
-                "Blockchain infrastructure",
-                "SDKs",
-                "Multi-chain support"
-            ],
-            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
-            "planType": "Tiered",
-            "planName": "Starter",
-            "price": "$49/$79/mo per 4M/7M credits/mo",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
+            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
+            "starred": false
         }
     ],
     "analytics": [
@@ -525,87 +559,6 @@
             "starred": false
         }
     ],
-    "platforms": [
-        {
-            "slug": "portal-enterprise",
-            "provider": "Portal",
-            "actionButtons": [
-                "[Contact](https://www.portalhq.io/get-started)",
-                "[Docs](https://docs.portalhq.io/)"
-            ],
-            "toolType": "Finances",
-            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
-            "tag": [
-                "Web",
-                "Developer Portal"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "portal-developer",
-            "provider": "Portal",
-            "actionButtons": [
-                "[Website](https://www.portalhq.io/)",
-                "[Docs](https://docs.portalhq.io/)"
-            ],
-            "toolType": "TBD",
-            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
-            "tag": [
-                "Web",
-                "Developer Portal"
-            ],
-            "planType": "Free",
-            "planName": "Developer",
-            "price": "$0",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "portal-startup",
-            "provider": "Portal",
-            "actionButtons": [
-                "[Buy](https://www.portalhq.io/pricing)",
-                "[Docs](https://docs.portalhq.io/)"
-            ],
-            "toolType": "TBD",
-            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
-            "tag": [
-                "Web",
-                "Developer Portal"
-            ],
-            "planType": "Tiered",
-            "planName": "Start-Up",
-            "price": "$499",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "privy",
-            "provider": "Privy",
-            "actionButtons": [
-                "[Docs](https://docs.privy.io/welcome)"
-            ],
-            "toolType": "Auth",
-            "description": "Securely spin up whitelabel wallets, sign transactions and integrate onchain infrastructure-all through one simple API",
-            "tag": [
-                "Authentication",
-                "Wallet"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        }
-    ],
     "security": [
         {
             "slug": "ziion-linux-distro",
@@ -632,491 +585,6 @@
                 "TBD"
             ],
             "compliance": null
-        }
-    ],
-    "ramps": [
-        {
-            "slug": "transak",
-            "provider": "Transak",
-            "actionButtons": [
-                "[Website](https://transak.com/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "bank_transfer",
-                "apple_pay",
-                "google_pay",
-                "pix"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "moonpay",
-            "provider": "MoonPay",
-            "actionButtons": [
-                "[Website](https://www.moonpay.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay",
-                "paypal"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CN",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU",
-                "BY",
-                "VE"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "PCI_DSS",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "ramp-network",
-            "provider": "Ramp Network",
-            "actionButtons": [
-                "[Website](https://ramp.network/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "apple_pay",
-                "google_pay",
-                "revolut_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "YE"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "SOC2_TYPE_II",
-                "PCI_DSS"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "onramper",
-            "provider": "Onramper",
-            "actionButtons": [
-                "[Website](https://onramper.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": true,
-            "auditsPerformed": [
-                "SOC2_TYPE_I"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "banxa",
-            "provider": "Banxa",
-            "actionButtons": [
-                "[Website](https://banxa.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "mercuryo",
-            "provider": "Mercuryo",
-            "actionButtons": [
-                "[Website](https://mercuryo.io/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "apple_pay",
-                "google_pay",
-                "sepa"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "PCI_DSS",
-                "ISO27001"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "meld",
-            "provider": "Meld",
-            "actionButtons": [
-                "[Website](https://www.meld.io/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": true,
-            "auditsPerformed": [
-                "PCI_DSS",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        }
-    ],
-    "bridges": [
-        {
-            "slug": "messina",
-            "provider": "MessinaOne Bridge",
-            "actionButtons": [
-                "[Bridge](https://messina.one/bridge)",
-                "[Docs](https://messinaone.gitbook.io/messina/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Cross‑chain Bridge via Wormhole",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "openSource": true,
-            "support": [
-                "Discord"
-            ],
-            "supportedChains": [
-                "ethereum",
-                "bnb chain",
-                "base",
-                "algorand",
-                "arbitrum",
-                "optimism",
-                "aptos",
-                "polygon",
-                "avalanche"
-            ],
-            "availableApis": [
-                "Asset Transfer"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Wormhole integration",
-                "Liquidity pools"
-            ],
-            "assetTypes": [
-                "ETH",
-                "ERC‑20"
-            ],
-            "price": "Gas Fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Audited by Certik & Kudelski",
-            "auditsPerformed": [
-                "Certik",
-                "Kudelski Security"
-            ],
-            "decentralizationModel": "Partially Decentralized",
-            "sdk": [
-                "Web UI"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "allbridge",
-            "provider": "Allbridge Core",
-            "actionButtons": [
-                "[Bridge](https://core.allbridge.io/)",
-                "[Docs](https://docs-core.allbridge.io/sdk/guides/algorand)"
-            ],
-            "chain": "mainnet",
-            "technology": "Stablecoin Bridge via Native Liquidity",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "openSource": true,
-            "support": [
-                "Discord"
-            ],
-            "supportedChains": [
-                "arbitrum",
-                "avalanche",
-                "base",
-                "bnb chain",
-                "celo",
-                "ethereum",
-                "linea",
-                "optimism",
-                "polygon",
-                "sonic",
-                "solana",
-                "stellar",
-                "sui",
-                "tron",
-                "unichain"
-            ],
-            "availableApis": [
-                "Stablecoin Transfer"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "No wrapping",
-                "Native liquidity pools",
-                "CEX-to-chain deposits"
-            ],
-            "assetTypes": [
-                "Stablecoins",
-                "ERC-20"
-            ],
-            "price": "Gas Fee + protocol fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Native stablecoin pools, messaging-agnostic",
-            "auditsPerformed": [
-                "Independent audits (per DefiLlama)"
-            ],
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "TypeScript"
-            ],
-            "starred": false
-        }
-    ],
-    "services": [
-        {
-            "slug": "algokit-cli",
-            "provider": "AlgoKit",
-            "actionButtons": [
-                "[Docs](https://dev.algorand.co/algokit/algokit-intro/)"
-            ],
-            "toolType": "CLI",
-            "tag": [
-                "Bootstrap",
-                "Compile",
-                "Completions",
-                "Deploy",
-                "Dispenser",
-                "Doctor",
-                "Explore",
-                "Generate",
-                "Goal",
-                "Init",
-                "LocalNet",
-                "Project",
-                "Task"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "A comprehensive CLI and toolkit for building, testing, deploying, and debugging Algorand apps",
-            "starred": false
-        },
-        {
-            "slug": "algokit-localnet",
-            "provider": "AlgoKit",
-            "actionButtons": [
-                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#algokit-localnet)"
-            ],
-            "toolType": "Network Simulator",
-            "tag": [
-                "Local sandboxed network",
-                "Ephemeral environment",
-                "Docker-based",
-                "KMD enabled",
-                "Named LocalNet instances",
-                "Configuration management",
-                "Offline usage",
-                "Developer-focused features"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "Runs a local sandboxed Algorand network for offline development and testing using Docker images.",
-            "starred": false
-        },
-        {
-            "slug": "algokit-utils",
-            "provider": "AlgoKit",
-            "actionButtons": [
-                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#algokit-utils)"
-            ],
-            "toolType": "Utility Library",
-            "tag": [
-                "Python",
-                "TypeScript",
-                "Client management",
-                "Account management",
-                "Algo amount handling",
-                "Transaction management",
-                "App management",
-                "App deployment",
-                "ARC-0032 Application Spec client",
-                "Algo transfers",
-                "Automated testing",
-                "Indexer searching"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "Utility functions in TypeScript and Python to interact with Algorand blockchain easily and safely.",
-            "starred": false
-        },
-        {
-            "slug": "avm-debugger",
-            "provider": "AlgoKit",
-            "actionButtons": [
-                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#avm-debugger)"
-            ],
-            "toolType": "Smart Contract Debugger",
-            "tag": [
-                "Debug trace files",
-                "TEAL source map tags",
-                "Debugging configuration tags"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "VS Code extension to debug Algorand TEAL smart contracts interactively.",
-            "starred": false
-        },
-        {
-            "slug": "client-generator",
-            "provider": "AlgoKit",
-            "actionButtons": [
-                "[Docs](https://dev.algorand.co/algokit/algokit-intro/#client-generator)"
-            ],
-            "toolType": "Code Generator",
-            "tag": [
-                "Python",
-                "TypeScript"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "Generates type-safe smart contract clients from ARC-0032 specifications for easy contract interaction",
-            "starred": false
-        },
-        {
-            "slug": "mosaia-enterprise",
-            "provider": "Mosaia",
-            "actionButtons": [
-                "[Contact](https://calendly.com/cyril-mosaia)"
-            ],
-            "toolType": "AI",
-            "tag": [
-                "Building and deploying AI agents and teams"
-            ],
-            "price": "Custom",
-            "planName": null,
-            "planType": "Enterprise",
-            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
-            "starred": false
-        },
-        {
-            "slug": "mosaia-explorer",
-            "provider": "Mosaia",
-            "actionButtons": [
-                "[Buy](https://www.mosaia.io/pricing)"
-            ],
-            "toolType": "AI",
-            "tag": [
-                "Building and deploying AI agents and teams"
-            ],
-            "price": "$19/mo",
-            "planName": "Explorer",
-            "planType": "Tiered",
-            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
-            "starred": false
-        },
-        {
-            "slug": "mosaia-pro",
-            "provider": "Mosaia",
-            "actionButtons": [
-                "[Buy](https://www.mosaia.io/pricing)"
-            ],
-            "toolType": "AI",
-            "tag": [
-                "Building and deploying AI agents and teams"
-            ],
-            "price": "$349/mo",
-            "planName": "Pro",
-            "planType": "Tiered",
-            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
-            "starred": false
         }
     ],
     "wallets": [
@@ -2075,147 +1543,244 @@
             "starred": false
         }
     ],
-    "explorers": [
+    "sdks": [
         {
-            "slug": "allo-mainnet",
-            "provider": "Allo",
+            "slug": "algorand-sdk",
+            "provider": "Algorand",
             "actionButtons": [
-                "[Explorer](https://allo.info/)"
+                "[Docs](https://dev.algorand.co/reference/sdk/sdk-list/)"
             ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Transactions",
-                "Assets",
-                "Accounts",
-                "Apps",
-                "Projects",
-                "Blocks",
-                "NFDomains"
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "Go",
+                "Java",
+                "Python",
+                "JavaScript",
+                "TypeScript"
             ],
-            "additionalFeatures": [
-                "TEAL inspector",
-                "Group transaction summary",
-                "Filters",
-                "Pera verified badges",
-                "NFT rarity info",
-                "Token prices",
-                "AlloAlerts notifications"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Search",
-                "Filter",
-                "Label Cloud"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
+            "description": "Official SDKs like TypeScript, Python, JavaScript, Java and Go are used for building, testing, and debugging applications on Algorand",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
         },
         {
-            "slug": "bitquery-mainnet",
-            "provider": "Bitquery",
+            "slug": "tatum-sdk-business",
+            "provider": "Tatum",
             "actionButtons": [
-                "[Explorer](https://explorer.bitquery.io/eos/address/algorand)"
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
             ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Addresses",
-                "Transactions",
-                "On-chain metrics"
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
             ],
-            "additionalFeatures": [
-                "Multi-chain support",
-                "Widgets"
-            ],
-            "availableApis": [
-                "REST API",
-                "GraphQL"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Search",
-                "Filter"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Enterprise",
+            "planName": "Business",
+            "price": "Custom",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
         },
         {
-            "slug": "pera-mainnet",
-            "provider": "Pera",
+            "slug": "tatum-sdk-free",
+            "provider": "Tatum",
             "actionButtons": [
-                "[Explorer](https://explorer.perawallet.app/)"
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
             ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "NFTs",
-                "ASAs",
-                "Apps"
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
             ],
-            "additionalFeatures": [
-                "Verified ASAs database",
-                "Dynamic ASA price graphs",
-                "NFT transaction history",
-                "Opt-in for NFTs/ASAs"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Search",
-                "Filter",
-                "Dashboard stats"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
         },
         {
-            "slug": "pera-testnet",
-            "provider": "Pera",
+            "slug": "tatum-sdk-pro",
+            "provider": "Tatum",
             "actionButtons": [
-                "[Explorer](https://explorer.perawallet.app/)"
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
             ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "NFTs",
-                "ASAs",
-                "Apps"
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
             ],
-            "additionalFeatures": [
-                "Verified ASAs database",
-                "Dynamic ASA price graphs",
-                "NFT transaction history",
-                "Opt-in for NFTs/ASAs"
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Tiered",
+            "planName": "Pro",
+            "price": "$99/$139/$179/mo per 10M/15M/20M credits/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tatum-sdk-scale",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
             ],
-            "availableApis": [
-                "REST API"
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
             ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Search",
-                "Filter",
-                "Dashboard stats"
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Tiered",
+            "planName": "Scale",
+            "price": "$349/$649/mo per 40M/80M credits/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "tatum-sdk-starter",
+            "provider": "Tatum",
+            "actionButtons": [
+                "[Docs](https://docs.tatum.io/docs/javascript-sdk)"
             ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Web3 development",
+                "Blockchain infrastructure",
+                "SDKs",
+                "Multi-chain support"
+            ],
+            "description": "Blockchain development platform offering a unified framework, SDKs and API to simplify building Web3 applications without extensive prior blockchain experience",
+            "planType": "Tiered",
+            "planName": "Starter",
+            "price": "$49/$79/mo per 4M/7M credits/mo",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        }
+    ],
+    "platforms": [
+        {
+            "slug": "portal-enterprise",
+            "provider": "Portal",
+            "actionButtons": [
+                "[Contact](https://www.portalhq.io/get-started)",
+                "[Docs](https://docs.portalhq.io/)"
+            ],
+            "toolType": "Finances",
+            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "portal-developer",
+            "provider": "Portal",
+            "actionButtons": [
+                "[Website](https://www.portalhq.io/)",
+                "[Docs](https://docs.portalhq.io/)"
+            ],
+            "toolType": "TBD",
+            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "planType": "Free",
+            "planName": "Developer",
+            "price": "$0",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "portal-startup",
+            "provider": "Portal",
+            "actionButtons": [
+                "[Buy](https://www.portalhq.io/pricing)",
+                "[Docs](https://docs.portalhq.io/)"
+            ],
+            "toolType": "TBD",
+            "description": "Main developer portal with docs, faucet, explorer hub and access to Amoy testnet, RPC endpoints",
+            "tag": [
+                "Web",
+                "Developer Portal"
+            ],
+            "planType": "Tiered",
+            "planName": "Start-Up",
+            "price": "$499",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "privy",
+            "provider": "Privy",
+            "actionButtons": [
+                "[Docs](https://docs.privy.io/welcome)"
+            ],
+            "toolType": "Auth",
+            "description": "Securely spin up whitelabel wallets, sign transactions and integrate onchain infrastructure-all through one simple API",
+            "tag": [
+                "Authentication",
+                "Wallet"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
         }
     ],
     "apis": [
@@ -6467,6 +6032,441 @@
             "address": null
         }
     ],
+    "ramps": [
+        {
+            "slug": "transak",
+            "provider": "Transak",
+            "actionButtons": [
+                "[Website](https://transak.com/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "bank_transfer",
+                "apple_pay",
+                "google_pay",
+                "pix"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "moonpay",
+            "provider": "MoonPay",
+            "actionButtons": [
+                "[Website](https://www.moonpay.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay",
+                "paypal"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CN",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU",
+                "BY",
+                "VE"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "PCI_DSS",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "ramp-network",
+            "provider": "Ramp Network",
+            "actionButtons": [
+                "[Website](https://ramp.network/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "apple_pay",
+                "google_pay",
+                "revolut_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "YE"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II",
+                "PCI_DSS"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "onramper",
+            "provider": "Onramper",
+            "actionButtons": [
+                "[Website](https://onramper.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "SOC2_TYPE_I"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "banxa",
+            "provider": "Banxa",
+            "actionButtons": [
+                "[Website](https://banxa.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "mercuryo",
+            "provider": "Mercuryo",
+            "actionButtons": [
+                "[Website](https://mercuryo.io/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "apple_pay",
+                "google_pay",
+                "sepa"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "ISO27001"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "meld",
+            "provider": "Meld",
+            "actionButtons": [
+                "[Website](https://www.meld.io/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        }
+    ],
+    "oracles": [
+        {
+            "slug": "goracle-mainnet",
+            "provider": "Gora",
+            "actionButtons": [
+                "[Docs](https://github.com/GoraNetwork)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "dataTypes": [
+                "Financial data",
+                "Sports stats",
+                "Supply chain milestones",
+                "Healthcare metrics"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Node runners secured by token delegation and governance on Algorand blockchain",
+            "sdk": [
+                "TypeScript",
+                "Python",
+                "JavaScript",
+                "CSS",
+                "Cairo"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "monitoringAndAnalytics": [
+                "Decentralized node monitoring",
+                "Ecosystem rewards"
+            ],
+            "additionalFeatures": [
+                "Industry-specific fully customizable oracle solution",
+                "multiple industry templates"
+            ],
+            "auditsPerformed": null,
+            "starred": false
+        },
+        {
+            "slug": "tellor-mainnet",
+            "provider": "Tellor",
+            "actionButtons": [
+                "[Docs](https://docs.tellor.io/tellor/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "dataTypes": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Staking requirement, dispute mechanism",
+            "sdk": [
+                "TypeScript",
+                "JavaScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Dashboard",
+                "Uptime Monitoring",
+                "Node Stats"
+            ],
+            "additionalFeatures": [
+                "Enshrined feeds",
+                "Custom data types"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits",
+                "CertiK",
+                "Zellic"
+            ],
+            "starred": false
+        }
+    ],
+    "explorers": [
+        {
+            "slug": "allo-mainnet",
+            "provider": "Allo",
+            "actionButtons": [
+                "[Explorer](https://allo.info/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Transactions",
+                "Assets",
+                "Accounts",
+                "Apps",
+                "Projects",
+                "Blocks",
+                "NFDomains"
+            ],
+            "additionalFeatures": [
+                "TEAL inspector",
+                "Group transaction summary",
+                "Filters",
+                "Pera verified badges",
+                "NFT rarity info",
+                "Token prices",
+                "AlloAlerts notifications"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Search",
+                "Filter",
+                "Label Cloud"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "bitquery-mainnet",
+            "provider": "Bitquery",
+            "actionButtons": [
+                "[Explorer](https://explorer.bitquery.io/eos/address/algorand)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Addresses",
+                "Transactions",
+                "On-chain metrics"
+            ],
+            "additionalFeatures": [
+                "Multi-chain support",
+                "Widgets"
+            ],
+            "availableApis": [
+                "REST API",
+                "GraphQL"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Search",
+                "Filter"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "pera-mainnet",
+            "provider": "Pera",
+            "actionButtons": [
+                "[Explorer](https://explorer.perawallet.app/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "NFTs",
+                "ASAs",
+                "Apps"
+            ],
+            "additionalFeatures": [
+                "Verified ASAs database",
+                "Dynamic ASA price graphs",
+                "NFT transaction history",
+                "Opt-in for NFTs/ASAs"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Search",
+                "Filter",
+                "Dashboard stats"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "pera-testnet",
+            "provider": "Pera",
+            "actionButtons": [
+                "[Explorer](https://explorer.perawallet.app/)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "NFTs",
+                "ASAs",
+                "Apps"
+            ],
+            "additionalFeatures": [
+                "Verified ASAs database",
+                "Dynamic ASA price graphs",
+                "NFT transaction history",
+                "Opt-in for NFTs/ASAs"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Search",
+                "Filter",
+                "Dashboard stats"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        }
+    ],
     "faucets": [
         {
             "slug": "algorand-testnet-dispenser-algo",
@@ -6577,97 +6577,6 @@
         }
     ],
     "columns": {
-        "oracles": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "technology",
-            "dataTypes",
-            "decentralizationModel",
-            "economicalSecurity",
-            "economicalSecurityNote",
-            "sdk",
-            "availableApis",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
-            "auditsPerformed",
-            "starred"
-        ],
-        "sdks": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "programmingLanguage",
-            "tag",
-            "description",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "starred",
-            "dependencies",
-            "latestKnownVersion",
-            "latestKnownReleaseDate",
-            "maintainer",
-            "license"
-        ],
-        "analytics": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "dataSources",
-            "hasDashboard",
-            "availableApis",
-            "price",
-            "planName",
-            "planType",
-            "starred"
-        ],
-        "platforms": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "description",
-            "tag",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "availableApis",
-            "executionEnvironment"
-        ],
-        "security": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "tag",
-            "description",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "starred",
-            "toolType",
-            "deliveryType",
-            "executionEnvironment",
-            "coverage",
-            "compliance"
-        ],
-        "ramps": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "kycLevel",
-            "paymentMethods",
-            "bannedCountries",
-            "aggregator",
-            "auditsPerformed",
-            "deliveryType"
-        ],
         "bridges": [
             "slug",
             "provider",
@@ -6703,6 +6612,36 @@
             "description",
             "starred"
         ],
+        "analytics": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "dataSources",
+            "hasDashboard",
+            "availableApis",
+            "price",
+            "planName",
+            "planType",
+            "starred"
+        ],
+        "security": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "tag",
+            "description",
+            "planType",
+            "planName",
+            "price",
+            "trial",
+            "starred",
+            "toolType",
+            "deliveryType",
+            "executionEnvironment",
+            "coverage",
+            "compliance"
+        ],
         "wallets": [
             "slug",
             "provider",
@@ -6725,21 +6664,38 @@
             "languages",
             "starred"
         ],
-        "explorers": [
+        "sdks": [
             "slug",
             "provider",
             "actionButtons",
-            "chain",
-            "technology",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
+            "toolType",
+            "programmingLanguage",
+            "tag",
+            "description",
+            "planType",
+            "planName",
+            "price",
+            "trial",
+            "starred",
+            "dependencies",
+            "latestKnownVersion",
+            "latestKnownReleaseDate",
+            "maintainer",
+            "license"
+        ],
+        "platforms": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "toolType",
+            "description",
+            "tag",
+            "planType",
+            "planName",
+            "price",
+            "trial",
             "availableApis",
-            "sdk",
-            "searchCapabilities",
-            "smartContractsVerifications",
-            "fullHistory",
-            "pricing",
-            "starred"
+            "executionEnvironment"
         ],
         "apis": [
             "slug",
@@ -6769,6 +6725,50 @@
             "regions",
             "additionalFeatures",
             "address"
+        ],
+        "ramps": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "kycLevel",
+            "paymentMethods",
+            "bannedCountries",
+            "aggregator",
+            "auditsPerformed",
+            "deliveryType"
+        ],
+        "oracles": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "dataTypes",
+            "decentralizationModel",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "sdk",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "auditsPerformed",
+            "starred"
+        ],
+        "explorers": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "availableApis",
+            "sdk",
+            "searchCapabilities",
+            "smartContractsVerifications",
+            "fullHistory",
+            "pricing",
+            "starred"
         ],
         "faucets": [
             "slug",

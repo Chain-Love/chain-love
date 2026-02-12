@@ -1,990 +1,4 @@
 {
-    "oracles": [
-        {
-            "slug": "api3-mainnet",
-            "provider": "API3",
-            "actionButtons": [
-                "[Website](https://market.api3.org/sonic)"
-            ],
-            "chain": "mainnet",
-            "technology": "Push & Pull Oracle",
-            "dataTypes": [
-                "Asset Prices",
-                "Randomness"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "First‑party dAPI model",
-            "sdk": [
-                "TypeScript",
-                "Solidity"
-            ],
-            "availableApis": [
-                "Price Feeds",
-                "QRNG",
-                "Airnode",
-                "dAPIs"
-            ],
-            "monitoringAndAnalytics": [
-                "Feed health dashboard"
-            ],
-            "additionalFeatures": [
-                "Quantum RNG"
-            ],
-            "auditsPerformed": [
-                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
-                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
-                "Internal audit of Airnode and first‑party infrastructure (2023)"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "api3-testnet",
-            "provider": "API3",
-            "actionButtons": [
-                "[Website](https://market.api3.org/sonic-testnet)"
-            ],
-            "chain": "testnet",
-            "technology": "Push & Pull Oracle",
-            "dataTypes": [
-                "Asset Prices",
-                "Randomness"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "First‑party dAPI model",
-            "sdk": [
-                "TypeScript",
-                "Solidity"
-            ],
-            "availableApis": [
-                "Price Feeds",
-                "QRNG",
-                "Airnode",
-                "dAPIs"
-            ],
-            "monitoringAndAnalytics": [
-                "Feed health dashboard"
-            ],
-            "additionalFeatures": [
-                "Quantum RNG"
-            ],
-            "auditsPerformed": [
-                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
-                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
-                "Internal audit of Airnode and first‑party infrastructure (2023)"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "band-mainnet",
-            "provider": "Band Protocol",
-            "actionButtons": [
-                "[Docs](https://docs.bandchain.org/develop/supported-blockchains/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Cross-chain Oracle",
-            "dataTypes": [
-                "Token Prices",
-                "ASTR",
-                "ATOM",
-                "AVAX",
-                "BNB",
-                "BUSD",
-                "DAI",
-                "DOT",
-                "ETH",
-                "FTM",
-                "MATIC",
-                "SOL",
-                "USDC",
-                "USDT",
-                "WBTC"
-            ],
-            "decentralizationModel": "Delegated Proof-of-Stake",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Cosmos-based staking model",
-            "sdk": [
-                "CosmJS",
-                "Solidity"
-            ],
-            "availableApis": [
-                "Oracle Scripts",
-                "IBC Feeds"
-            ],
-            "monitoringAndAnalytics": [
-                "Validator Performance"
-            ],
-            "additionalFeatures": [
-                "IBC compatibility",
-                "Flexible scripting"
-            ],
-            "auditsPerformed": [
-                "CertiK"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "band-testnet",
-            "provider": "Band Protocol",
-            "actionButtons": [
-                "[Docs](https://docs.bandchain.org/develop/supported-blockchains/)"
-            ],
-            "chain": "testnet",
-            "technology": "Cross-chain Oracle",
-            "dataTypes": [
-                "Token Prices",
-                "ASTR",
-                "ATOM",
-                "AVAX",
-                "BNB",
-                "BUSD",
-                "DAI",
-                "DOT",
-                "ETH",
-                "FTM",
-                "MATIC",
-                "SOL",
-                "USDC",
-                "USDT",
-                "WBTC"
-            ],
-            "decentralizationModel": "Delegated Proof-of-Stake",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Cosmos-based staking model",
-            "sdk": [
-                "CosmJS",
-                "Solidity"
-            ],
-            "availableApis": [
-                "Oracle Scripts",
-                "IBC Feeds"
-            ],
-            "monitoringAndAnalytics": [
-                "Validator Performance"
-            ],
-            "additionalFeatures": [
-                "IBC compatibility",
-                "Flexible scripting"
-            ],
-            "auditsPerformed": [
-                "CertiK"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "chainlink-mainnet",
-            "provider": "Chainlink",
-            "actionButtons": [
-                "[Docs](https://docs.chain.link/ccip/directory/mainnet/chain/sonic-mainnet)"
-            ],
-            "chain": "mainnet",
-            "technology": "Decentralized Oracle",
-            "dataTypes": [
-                "Asset Prices",
-                "Randomness"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Audited network, high TVL",
-            "sdk": [
-                "TypeScript",
-                "Solidity"
-            ],
-            "availableApis": [
-                "Price Feed",
-                "VRF",
-                "Proof of Reserve"
-            ],
-            "monitoringAndAnalytics": [
-                "Node performance metrics"
-            ],
-            "additionalFeatures": [
-                "Economic Aggregation",
-                "Cross-chain support"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits (Jul 2024)",
-                "OpenZeppelin (Sep 2024)",
-                "ChainSecurity (Mar 2024)",
-                "Code4rena (Nov 2024)",
-                "Quantstamp",
-                "SigmaPrime"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "chainlink-testnet",
-            "provider": "Chainlink",
-            "actionButtons": [
-                "[Docs](https://docs.chain.link/ccip/directory/testnet/chain/sonic-testnet-blaze)"
-            ],
-            "chain": "testnet",
-            "technology": "Decentralized Oracle",
-            "dataTypes": [
-                "Asset Prices",
-                "Randomness"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Audited network, high TVL",
-            "sdk": [
-                "TypeScript",
-                "Solidity"
-            ],
-            "availableApis": [
-                "Price Feed",
-                "VRF",
-                "Proof of Reserve"
-            ],
-            "monitoringAndAnalytics": [
-                "Node performance metrics"
-            ],
-            "additionalFeatures": [
-                "Economic Aggregation",
-                "Cross-chain support"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits (Jul 2024)",
-                "OpenZeppelin (Sep 2024)",
-                "ChainSecurity (Mar 2024)",
-                "Code4rena (Nov 2024)",
-                "Quantstamp",
-                "SigmaPrime"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "dia-mainnet",
-            "provider": "DIA",
-            "actionButtons": [
-                "[Docs](https://www.diadata.org/docs/guides/chain-specific-guide/sonic#additional-details)"
-            ],
-            "chain": "mainnet",
-            "technology": "DIA",
-            "dataTypes": [
-                "BTC",
-                "DIA",
-                "USDC"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": false,
-            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
-            "sdk": [
-                "Solidity",
-                "Vyper"
-            ],
-            "availableApis": [
-                "REST",
-                "GraphQL"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Price Feeds"
-            ],
-            "additionalFeatures": [
-                "Cross-chain compatibility",
-                "Customizable data feeds",
-                "Customizable data feeds",
-                "Advanced architecture using Layer 2 rollup"
-            ],
-            "auditsPerformed": [
-                "April 2025, by MixBytes",
-                "May 2022, by Chainsulting"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "pyth-mainnet",
-            "provider": "Pyth Network",
-            "actionButtons": [
-                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/evm#mainnets)"
-            ],
-            "chain": "mainnet",
-            "technology": "Pull Oracle",
-            "dataTypes": [
-                "Asset Prices",
-                "FX",
-                "Metals"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
-            "sdk": [
-                "Solidity",
-                "Python SDK"
-            ],
-            "availableApis": [
-                "Asset Price Feeds (incl. ARB/USD)"
-            ],
-            "monitoringAndAnalytics": [
-                "Real time price feeds"
-            ],
-            "additionalFeatures": [
-                "Cross‑chain via Wormhole"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits (2023)",
-                "Certik (2022)"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "pyth-testnet",
-            "provider": "Pyth Network",
-            "actionButtons": [
-                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/evm#testnets)"
-            ],
-            "chain": "testnet",
-            "technology": "Pull Oracle",
-            "dataTypes": [
-                "Asset Prices",
-                "FX",
-                "Metals"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
-            "sdk": [
-                "Solidity",
-                "Python SDK"
-            ],
-            "availableApis": [
-                "Asset Price Feeds (incl. ARB/USD)"
-            ],
-            "monitoringAndAnalytics": [
-                "Real time price feeds"
-            ],
-            "additionalFeatures": [
-                "Cross‑chain via Wormhole"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits (2023)",
-                "Certik (2022)"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "supra-mainnet",
-            "provider": "Supra",
-            "actionButtons": [
-                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle/networks)"
-            ],
-            "chain": "mainnet",
-            "technology": "Decentralized Oracle",
-            "dataTypes": [
-                "Price Feeds",
-                "Randomness"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Validator node network with cryptographic proofs",
-            "sdk": [
-                "TypeScript"
-            ],
-            "availableApis": [
-                "Price Feed",
-                "VRF",
-                "REST"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Dashboard"
-            ],
-            "additionalFeatures": [
-                "High-speed oracle data with low-latency feeds"
-            ],
-            "auditsPerformed": [
-                "Audited by Halborn Security (2023)"
-            ],
-            "starred": false
-        },
-        {
-            "slug": "supra-testnet",
-            "provider": "Supra",
-            "actionButtons": [
-                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle/networks)"
-            ],
-            "chain": "testnet",
-            "technology": "Decentralized Oracle",
-            "dataTypes": [
-                "Price Feeds",
-                "Randomness"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Validator node network with cryptographic proofs",
-            "sdk": [
-                "TypeScript"
-            ],
-            "availableApis": [
-                "Price Feed",
-                "VRF",
-                "REST"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Dashboard"
-            ],
-            "additionalFeatures": [
-                "High-speed oracle data with low-latency feeds"
-            ],
-            "auditsPerformed": [
-                "Audited by Halborn Security (2023)"
-            ],
-            "starred": false
-        }
-    ],
-    "sdks": [
-        {
-            "slug": "ethers-js",
-            "provider": "Ethers.js",
-            "actionButtons": [
-                "[Website](https://docs.ethers.org/v6/)"
-            ],
-            "toolType": "Library",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Library",
-                "dApp development"
-            ],
-            "description": "It is a comprehensive JavaScript and TypeScript toolkit that provides developers with a robust and simple way to interact with the Ethereum blockchain and its broader ecosystem",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "foundry",
-            "provider": "Foundry",
-            "actionButtons": [
-                "[Docs](https://book.getfoundry.sh/)"
-            ],
-            "toolType": "Framework",
-            "programmingLanguage": "Rust",
-            "tag": [
-                "Framework"
-            ],
-            "description": "Solidity-native smart contract development toolkit written in Rust offering blazing-fast compilation and testing",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "fuzzlib",
-            "provider": "Fuzzlib",
-            "actionButtons": [
-                "[Website](https://github.com/perimetersec/fuzzlib)"
-            ],
-            "toolType": "Library",
-            "programmingLanguage": "Solidity",
-            "tag": [
-                "Fuzz Testing",
-                "Software Testing",
-                "Security Testing",
-                "Vulnerability Research"
-            ],
-            "description": "It helps Web3 developers enhance the security and stability of their smart contracts by streamlining the fuzzing process",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "v1.1.0",
-            "latestKnownReleaseDate": "2026-01-15",
-            "maintainer": "perimetersec",
-            "license": "GPL-3.0"
-        },
-        {
-            "slug": "hardhat",
-            "provider": "Hardhat",
-            "actionButtons": [
-                "[Docs](https://hardhat.org/docs)"
-            ],
-            "toolType": "Framework",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "Framework"
-            ],
-            "description": "Versatile Ethereum development framework simplifying smart contract building testing and deployment",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "web3-js",
-            "provider": "Web3.js",
-            "actionButtons": [
-                "[Docs](https://web3js.readthedocs.io/)"
-            ],
-            "toolType": "Library",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "JavaScript",
-                "Library"
-            ],
-            "description": "JavaScript/TypeScript library that provides an API to interact with Ethereum nodes i.e send transactions query blockchain",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "web3-py",
-            "provider": "Web3.py",
-            "actionButtons": [
-                "[Docs](https://web3py.readthedocs.io/)"
-            ],
-            "toolType": "Library",
-            "programmingLanguage": "Python",
-            "tag": [
-                "Web3.py"
-            ],
-            "description": "It allows Python developers to build decentralized applications without needing to work directly with the underlying, complex JSON-RPC protocols",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        }
-    ],
-    "analytics": [
-        {
-            "slug": "arkham-mainnet",
-            "provider": "Arkham",
-            "actionButtons": [
-                "[Dashboard](https://intel.arkm.com/explorer/entity/fantom)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Transactions",
-                "Active Users",
-                "Contracts",
-                "DApp Interactions"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "REST API",
-                "WebSocket API",
-                "Arkham Exchange API"
-            ],
-            "price": "Custom",
-            "planName": null,
-            "planType": "Enterprise",
-            "starred": false
-        },
-        {
-            "slug": "cryptoquant-mainnet",
-            "provider": "CryptoQuant",
-            "actionButtons": [
-                "[Dashboard](https://cryptoquant.com/asset/s/summary)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Exchange Reserves",
-                "Network Transactions",
-                "Derivatives Data",
-                "Staking Data",
-                "Market Price/Volume"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "REST API"
-            ],
-            "price": "$0/$39/$109/mo (monthly plan), $0/$29/$99/$799/mo (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "defillama-mainnet",
-            "provider": "DeFiLlama",
-            "actionButtons": [
-                "[Dashboard](https://defillama.com/chain/sonic)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "DeFi TVL",
-                "DEX & Perps Volume",
-                "Bridged Assets",
-                "Active Addresses",
-                "Stablecoin Supply"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "REST API"
-            ],
-            "price": "$0/$49/$300/mo (monthly plan), $0 (2 months free)/$40.83/mo ($490/year)/$250/mo (3K/year) (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "dexscreener-mainnet",
-            "provider": "DexScreener",
-            "actionButtons": [
-                "[Dashboard](https://dexscreener.com/sonic)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "DEX Trading Pairs",
-                "Token Prices",
-                "Volume",
-                "Liquidity",
-                "Swaps"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "REST API"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "starred": false
-        },
-        {
-            "slug": "dune-mainnet",
-            "provider": "Dune",
-            "actionButtons": [
-                "[Dashboard](https://dune.com/blockchains/sonic)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Transactions",
-                "Gas Usage",
-                "Bridge Activity",
-                "Active Users",
-                "Token Transfers",
-                "Smart Contract Activity"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "SQL Queries",
-                "Visualizations"
-            ],
-            "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "messari-mainnet",
-            "provider": "Messari",
-            "actionButtons": [
-                "[Dashboard](https://messari.io/project/sonic-labs)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Network Metrics",
-                "TVL & Market Data",
-                "On‑chain Usage Metrics"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Research Reports",
-                "API Access",
-                "Dashboard"
-            ],
-            "price": "$0/$4000/year",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "nansen-mainnet",
-            "provider": "Nansen",
-            "actionButtons": [
-                "[Dashboard](https://app.nansen.ai/macro/overview?chain=sonic)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Exchange Flows",
-                "Token Distribution",
-                "DeFi Activity",
-                "NFT Analytics",
-                "Wallet Labels"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Smart Money API",
-                "Profiler API",
-                "API Keys"
-            ],
-            "price": "$0/$69/mo (monthly plan), $0/$49/mo (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        },
-        {
-            "slug": "tokenterminal-mainnet",
-            "provider": "token terminal",
-            "actionButtons": [
-                "[Dashboard](https://tokenterminal.com/explorer/projects/sonic)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Active wallets",
-                "Active projects",
-                "Revenue",
-                "Fees"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "JSON-RPC with 60 RPS"
-            ],
-            "price": "$0/$350/mo (monthly plan), $0/$292/mo (yearly plan)",
-            "planName": null,
-            "planType": "Tiered",
-            "starred": false
-        }
-    ],
-    "platforms": [
-        {
-            "slug": "cookbook-dev",
-            "provider": "Cookbook.dev",
-            "actionButtons": [
-                "[Website](https://www.cookbook.dev)"
-            ],
-            "toolType": "Hosting",
-            "description": "It offers an open-source smart contract registry and an AI-powered ecosystem to help developers research, build and deploy smart contracts quickly and efficiently",
-            "tag": [
-                "Smart Contracts",
-                "Registry",
-                "Solidity"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "enso",
-            "provider": "Enso",
-            "actionButtons": [
-                "[Website](https://www.enso.finance/)"
-            ],
-            "toolType": "No code",
-            "description": "It is described as a blockchain development framework and shared execution network designed to simplify the creation of cross-chain applications by providing developers with tools like reusable Actions and Shortcuts",
-            "tag": [
-                "Data analysis",
-                "Visual programming",
-                "Web3/blockchain development"
-            ],
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "mimic",
-            "provider": "Mimic",
-            "actionButtons": [
-                "[Website](https://mimic.fi/)"
-            ],
-            "toolType": "Automation",
-            "description": "It provides a decentralized automation protocol and developer tools for building and scaling on-chain logic and decentralized finance operations without requiring complex smart contracts",
-            "tag": [
-                "Blockchain automation",
-                "Decentralized finance",
-                "Smart contracts",
-                "Cross-chain operations"
-            ],
-            "planType": "Enterprise",
-            "planName": "Enterprise",
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "swing",
-            "provider": "Swing",
-            "actionButtons": [
-                "[Website](https://swing.xyz)"
-            ],
-            "toolType": "TBD",
-            "description": "It simplifies Web3 development by allowing other applications like dApps, wallets, exchanges to easily integrate cross-chain functionality",
-            "tag": [
-                "Cross-chain",
-                "API",
-                "SDK"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "thirdweb-enterprise",
-            "provider": "Thirdweb",
-            "actionButtons": [
-                "[Contact](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
-            "toolType": "All in one",
-            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-            "tag": [
-                "Smart Contracts",
-                "No-code",
-                "Account Abstraction",
-                "Payments",
-                "RPC"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "thirdweb-growth",
-            "provider": "Thirdweb",
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
-            "toolType": "TBD",
-            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-            "tag": [
-                "Smart Contracts",
-                "No-code",
-                "Account Abstraction",
-                "Payments",
-                "RPC"
-            ],
-            "planType": "Tiered",
-            "planName": "Growth",
-            "price": "$99/mo",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "thirdweb-pro",
-            "provider": "Thirdweb",
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
-            "toolType": "TBD",
-            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-            "tag": [
-                "Smart Contracts",
-                "No-code",
-                "Account Abstraction",
-                "Payments",
-                "RPC"
-            ],
-            "planType": "Tiered",
-            "planName": "Pro",
-            "price": "$1499/mo",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "thirdweb-scale",
-            "provider": "Thirdweb",
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
-            "toolType": "TBD",
-            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-            "tag": [
-                "Smart Contracts",
-                "No-code",
-                "Account Abstraction",
-                "Payments",
-                "RPC"
-            ],
-            "planType": "Tiered",
-            "planName": "Scale",
-            "price": "$499/mo",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "thirdweb-starter",
-            "provider": "Thirdweb",
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
-            "toolType": "TBD",
-            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-            "tag": [
-                "Smart Contracts",
-                "No-code",
-                "Account Abstraction",
-                "Payments",
-                "RPC"
-            ],
-            "planType": "Tiered",
-            "planName": "Starter",
-            "price": "$5/mo",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "vialabs",
-            "provider": "VIA Labs",
-            "actionButtons": [
-                "[Docs](https://developer.vialabs.io/)"
-            ],
-            "toolType": "All in one",
-            "description": "It offers APIs and smart contract modules",
-            "tag": [
-                "Interoperability",
-                "Omnichain",
-                "Infrastructure"
-            ],
-            "planType": "Free",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        }
-    ],
     "bridges": [
         {
             "slug": "allbridge-core",
@@ -2854,6 +1868,196 @@
             "starred": false
         }
     ],
+    "analytics": [
+        {
+            "slug": "arkham-mainnet",
+            "provider": "Arkham",
+            "actionButtons": [
+                "[Dashboard](https://intel.arkm.com/explorer/entity/fantom)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Transactions",
+                "Active Users",
+                "Contracts",
+                "DApp Interactions"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API",
+                "WebSocket API",
+                "Arkham Exchange API"
+            ],
+            "price": "Custom",
+            "planName": null,
+            "planType": "Enterprise",
+            "starred": false
+        },
+        {
+            "slug": "cryptoquant-mainnet",
+            "provider": "CryptoQuant",
+            "actionButtons": [
+                "[Dashboard](https://cryptoquant.com/asset/s/summary)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Exchange Reserves",
+                "Network Transactions",
+                "Derivatives Data",
+                "Staking Data",
+                "Market Price/Volume"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0/$39/$109/mo (monthly plan), $0/$29/$99/$799/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "defillama-mainnet",
+            "provider": "DeFiLlama",
+            "actionButtons": [
+                "[Dashboard](https://defillama.com/chain/sonic)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "DeFi TVL",
+                "DEX & Perps Volume",
+                "Bridged Assets",
+                "Active Addresses",
+                "Stablecoin Supply"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0/$49/$300/mo (monthly plan), $0 (2 months free)/$40.83/mo ($490/year)/$250/mo (3K/year) (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "dexscreener-mainnet",
+            "provider": "DexScreener",
+            "actionButtons": [
+                "[Dashboard](https://dexscreener.com/sonic)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "DEX Trading Pairs",
+                "Token Prices",
+                "Volume",
+                "Liquidity",
+                "Swaps"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "starred": false
+        },
+        {
+            "slug": "dune-mainnet",
+            "provider": "Dune",
+            "actionButtons": [
+                "[Dashboard](https://dune.com/blockchains/sonic)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Transactions",
+                "Gas Usage",
+                "Bridge Activity",
+                "Active Users",
+                "Token Transfers",
+                "Smart Contract Activity"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "SQL Queries",
+                "Visualizations"
+            ],
+            "price": "$0/$75/$399/mo (monthly plan), $0/$65/$349/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "messari-mainnet",
+            "provider": "Messari",
+            "actionButtons": [
+                "[Dashboard](https://messari.io/project/sonic-labs)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Network Metrics",
+                "TVL & Market Data",
+                "On‑chain Usage Metrics"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Research Reports",
+                "API Access",
+                "Dashboard"
+            ],
+            "price": "$0/$4000/year",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "nansen-mainnet",
+            "provider": "Nansen",
+            "actionButtons": [
+                "[Dashboard](https://app.nansen.ai/macro/overview?chain=sonic)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Exchange Flows",
+                "Token Distribution",
+                "DeFi Activity",
+                "NFT Analytics",
+                "Wallet Labels"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Smart Money API",
+                "Profiler API",
+                "API Keys"
+            ],
+            "price": "$0/$69/mo (monthly plan), $0/$49/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        },
+        {
+            "slug": "tokenterminal-mainnet",
+            "provider": "token terminal",
+            "actionButtons": [
+                "[Dashboard](https://tokenterminal.com/explorer/projects/sonic)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Active wallets",
+                "Active projects",
+                "Revenue",
+                "Fees"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "JSON-RPC with 60 RPS"
+            ],
+            "price": "$0/$350/mo (monthly plan), $0/$292/mo (yearly plan)",
+            "planName": null,
+            "planType": "Tiered",
+            "starred": false
+        }
+    ],
     "wallets": [
         {
             "slug": "1inch",
@@ -4278,132 +3482,367 @@
             "starred": false
         }
     ],
-    "explorers": [
+    "sdks": [
         {
-            "slug": "sonic-explorer-mainnet",
-            "provider": "Sonic",
+            "slug": "ethers-js",
+            "provider": "Ethers.js",
             "actionButtons": [
-                "[Explore](https://explorer.soniclabs.com/)"
+                "[Website](https://docs.ethers.org/v6/)"
             ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Transaction Details",
-                "Network Statistics",
-                "Token Transfers",
-                "Blocks",
-                "Accounts"
+            "toolType": "Library",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Library",
+                "dApp development"
             ],
-            "additionalFeatures": [
-                "Smart Contract Inspection",
-                "Sub-Second Finality",
-                "Full EVM Compatibility"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": [
-                "JavaScript",
-                "Python",
-                "TypeScript"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block",
-                "Token"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
+            "description": "It is a comprehensive JavaScript and TypeScript toolkit that provides developers with a robust and simple way to interact with the Ethereum blockchain and its broader ecosystem",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
         },
         {
-            "slug": "sonicscan-mainnet",
-            "provider": "Sonic",
+            "slug": "foundry",
+            "provider": "Foundry",
             "actionButtons": [
-                "[Explore](https://sonicscan.org/)"
+                "[Docs](https://book.getfoundry.sh/)"
             ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Transactions",
-                "Address Activity",
-                "Token Transfers",
-                "Blocks",
-                "Contracts"
+            "toolType": "Framework",
+            "programmingLanguage": "Rust",
+            "tag": [
+                "Framework"
             ],
-            "additionalFeatures": [
-                "Smart Contract Code Reader",
-                "API Services",
-                "Transaction Validation",
-                "Token and Address Lookup",
-                "No Wallet Services"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": [
-                "JavaScript",
-                "Python",
-                "TypeScript",
-                "Solidity"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block",
-                "Token",
-                "Domain Name"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
+            "description": "Solidity-native smart contract development toolkit written in Rust offering blazing-fast compilation and testing",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
         },
         {
-            "slug": "sonicscan-testnet",
-            "provider": "Sonic",
+            "slug": "fuzzlib",
+            "provider": "Fuzzlib",
             "actionButtons": [
-                "[Explore](https://testnet.sonicscan.org/)"
+                "[Website](https://github.com/perimetersec/fuzzlib)"
             ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Transactions",
-                "Address Activity",
-                "Token Transfers",
-                "Blocks",
-                "Contracts"
+            "toolType": "Library",
+            "programmingLanguage": "Solidity",
+            "tag": [
+                "Fuzz Testing",
+                "Software Testing",
+                "Security Testing",
+                "Vulnerability Research"
             ],
-            "additionalFeatures": [
-                "Smart Contract Code Reader",
-                "API Services",
-                "Transaction Validation",
-                "Token and Address Lookup",
-                "No Wallet Services"
+            "description": "It helps Web3 developers enhance the security and stability of their smart contracts by streamlining the fuzzing process",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "v1.1.0",
+            "latestKnownReleaseDate": "2026-01-15",
+            "maintainer": "perimetersec",
+            "license": "GPL-3.0"
+        },
+        {
+            "slug": "hardhat",
+            "provider": "Hardhat",
+            "actionButtons": [
+                "[Docs](https://hardhat.org/docs)"
             ],
-            "availableApis": [
-                "REST API"
+            "toolType": "Framework",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "Framework"
             ],
-            "sdk": [
+            "description": "Versatile Ethereum development framework simplifying smart contract building testing and deployment",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "web3-js",
+            "provider": "Web3.js",
+            "actionButtons": [
+                "[Docs](https://web3js.readthedocs.io/)"
+            ],
+            "toolType": "Library",
+            "programmingLanguage": "JavaScript",
+            "tag": [
                 "JavaScript",
-                "Python",
-                "TypeScript",
+                "Library"
+            ],
+            "description": "JavaScript/TypeScript library that provides an API to interact with Ethereum nodes i.e send transactions query blockchain",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "web3-py",
+            "provider": "Web3.py",
+            "actionButtons": [
+                "[Docs](https://web3py.readthedocs.io/)"
+            ],
+            "toolType": "Library",
+            "programmingLanguage": "Python",
+            "tag": [
+                "Web3.py"
+            ],
+            "description": "It allows Python developers to build decentralized applications without needing to work directly with the underlying, complex JSON-RPC protocols",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        }
+    ],
+    "platforms": [
+        {
+            "slug": "cookbook-dev",
+            "provider": "Cookbook.dev",
+            "actionButtons": [
+                "[Website](https://www.cookbook.dev)"
+            ],
+            "toolType": "Hosting",
+            "description": "It offers an open-source smart contract registry and an AI-powered ecosystem to help developers research, build and deploy smart contracts quickly and efficiently",
+            "tag": [
+                "Smart Contracts",
+                "Registry",
                 "Solidity"
             ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block",
-                "Token",
-                "Domain Name"
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "enso",
+            "provider": "Enso",
+            "actionButtons": [
+                "[Website](https://www.enso.finance/)"
             ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false
+            "toolType": "No code",
+            "description": "It is described as a blockchain development framework and shared execution network designed to simplify the creation of cross-chain applications by providing developers with tools like reusable Actions and Shortcuts",
+            "tag": [
+                "Data analysis",
+                "Visual programming",
+                "Web3/blockchain development"
+            ],
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "mimic",
+            "provider": "Mimic",
+            "actionButtons": [
+                "[Website](https://mimic.fi/)"
+            ],
+            "toolType": "Automation",
+            "description": "It provides a decentralized automation protocol and developer tools for building and scaling on-chain logic and decentralized finance operations without requiring complex smart contracts",
+            "tag": [
+                "Blockchain automation",
+                "Decentralized finance",
+                "Smart contracts",
+                "Cross-chain operations"
+            ],
+            "planType": "Enterprise",
+            "planName": "Enterprise",
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "swing",
+            "provider": "Swing",
+            "actionButtons": [
+                "[Website](https://swing.xyz)"
+            ],
+            "toolType": "TBD",
+            "description": "It simplifies Web3 development by allowing other applications like dApps, wallets, exchanges to easily integrate cross-chain functionality",
+            "tag": [
+                "Cross-chain",
+                "API",
+                "SDK"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "thirdweb-enterprise",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Contact](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "All in one",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "thirdweb-growth",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "TBD",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "planType": "Tiered",
+            "planName": "Growth",
+            "price": "$99/mo",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "thirdweb-pro",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "TBD",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "planType": "Tiered",
+            "planName": "Pro",
+            "price": "$1499/mo",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "thirdweb-scale",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "TBD",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "planType": "Tiered",
+            "planName": "Scale",
+            "price": "$499/mo",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "thirdweb-starter",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "TBD",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "planType": "Tiered",
+            "planName": "Starter",
+            "price": "$5/mo",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "vialabs",
+            "provider": "VIA Labs",
+            "actionButtons": [
+                "[Docs](https://developer.vialabs.io/)"
+            ],
+            "toolType": "All in one",
+            "description": "It offers APIs and smart contract modules",
+            "tag": [
+                "Interoperability",
+                "Omnichain",
+                "Infrastructure"
+            ],
+            "planType": "Free",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
         }
     ],
     "apis": [
@@ -11918,6 +11357,567 @@
             "address": null
         }
     ],
+    "oracles": [
+        {
+            "slug": "api3-mainnet",
+            "provider": "API3",
+            "actionButtons": [
+                "[Website](https://market.api3.org/sonic)"
+            ],
+            "chain": "mainnet",
+            "technology": "Push & Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "api3-testnet",
+            "provider": "API3",
+            "actionButtons": [
+                "[Website](https://market.api3.org/sonic-testnet)"
+            ],
+            "chain": "testnet",
+            "technology": "Push & Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "band-mainnet",
+            "provider": "Band Protocol",
+            "actionButtons": [
+                "[Docs](https://docs.bandchain.org/develop/supported-blockchains/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross-chain Oracle",
+            "dataTypes": [
+                "Token Prices",
+                "ASTR",
+                "ATOM",
+                "AVAX",
+                "BNB",
+                "BUSD",
+                "DAI",
+                "DOT",
+                "ETH",
+                "FTM",
+                "MATIC",
+                "SOL",
+                "USDC",
+                "USDT",
+                "WBTC"
+            ],
+            "decentralizationModel": "Delegated Proof-of-Stake",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Cosmos-based staking model",
+            "sdk": [
+                "CosmJS",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Oracle Scripts",
+                "IBC Feeds"
+            ],
+            "monitoringAndAnalytics": [
+                "Validator Performance"
+            ],
+            "additionalFeatures": [
+                "IBC compatibility",
+                "Flexible scripting"
+            ],
+            "auditsPerformed": [
+                "CertiK"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "band-testnet",
+            "provider": "Band Protocol",
+            "actionButtons": [
+                "[Docs](https://docs.bandchain.org/develop/supported-blockchains/)"
+            ],
+            "chain": "testnet",
+            "technology": "Cross-chain Oracle",
+            "dataTypes": [
+                "Token Prices",
+                "ASTR",
+                "ATOM",
+                "AVAX",
+                "BNB",
+                "BUSD",
+                "DAI",
+                "DOT",
+                "ETH",
+                "FTM",
+                "MATIC",
+                "SOL",
+                "USDC",
+                "USDT",
+                "WBTC"
+            ],
+            "decentralizationModel": "Delegated Proof-of-Stake",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Cosmos-based staking model",
+            "sdk": [
+                "CosmJS",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Oracle Scripts",
+                "IBC Feeds"
+            ],
+            "monitoringAndAnalytics": [
+                "Validator Performance"
+            ],
+            "additionalFeatures": [
+                "IBC compatibility",
+                "Flexible scripting"
+            ],
+            "auditsPerformed": [
+                "CertiK"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "chainlink-mainnet",
+            "provider": "Chainlink",
+            "actionButtons": [
+                "[Docs](https://docs.chain.link/ccip/directory/mainnet/chain/sonic-mainnet)"
+            ],
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "chainlink-testnet",
+            "provider": "Chainlink",
+            "actionButtons": [
+                "[Docs](https://docs.chain.link/ccip/directory/testnet/chain/sonic-testnet-blaze)"
+            ],
+            "chain": "testnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "dia-mainnet",
+            "provider": "DIA",
+            "actionButtons": [
+                "[Docs](https://www.diadata.org/docs/guides/chain-specific-guide/sonic#additional-details)"
+            ],
+            "chain": "mainnet",
+            "technology": "DIA",
+            "dataTypes": [
+                "BTC",
+                "DIA",
+                "USDC"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
+            "sdk": [
+                "Solidity",
+                "Vyper"
+            ],
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds"
+            ],
+            "additionalFeatures": [
+                "Cross-chain compatibility",
+                "Customizable data feeds",
+                "Customizable data feeds",
+                "Advanced architecture using Layer 2 rollup"
+            ],
+            "auditsPerformed": [
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "pyth-mainnet",
+            "provider": "Pyth Network",
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/evm#mainnets)"
+            ],
+            "chain": "mainnet",
+            "technology": "Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "pyth-testnet",
+            "provider": "Pyth Network",
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/evm#testnets)"
+            ],
+            "chain": "testnet",
+            "technology": "Pull Oracle",
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "supra-mainnet",
+            "provider": "Supra",
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle/networks)"
+            ],
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ],
+            "starred": false
+        },
+        {
+            "slug": "supra-testnet",
+            "provider": "Supra",
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle/networks)"
+            ],
+            "chain": "testnet",
+            "technology": "Decentralized Oracle",
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ],
+            "starred": false
+        }
+    ],
+    "explorers": [
+        {
+            "slug": "sonic-explorer-mainnet",
+            "provider": "Sonic",
+            "actionButtons": [
+                "[Explore](https://explorer.soniclabs.com/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Transaction Details",
+                "Network Statistics",
+                "Token Transfers",
+                "Blocks",
+                "Accounts"
+            ],
+            "additionalFeatures": [
+                "Smart Contract Inspection",
+                "Sub-Second Finality",
+                "Full EVM Compatibility"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": [
+                "JavaScript",
+                "Python",
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "sonicscan-mainnet",
+            "provider": "Sonic",
+            "actionButtons": [
+                "[Explore](https://sonicscan.org/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Transactions",
+                "Address Activity",
+                "Token Transfers",
+                "Blocks",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Smart Contract Code Reader",
+                "API Services",
+                "Transaction Validation",
+                "Token and Address Lookup",
+                "No Wallet Services"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": [
+                "JavaScript",
+                "Python",
+                "TypeScript",
+                "Solidity"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token",
+                "Domain Name"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        },
+        {
+            "slug": "sonicscan-testnet",
+            "provider": "Sonic",
+            "actionButtons": [
+                "[Explore](https://testnet.sonicscan.org/)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Transactions",
+                "Address Activity",
+                "Token Transfers",
+                "Blocks",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Smart Contract Code Reader",
+                "API Services",
+                "Transaction Validation",
+                "Token and Address Lookup",
+                "No Wallet Services"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": [
+                "JavaScript",
+                "Python",
+                "TypeScript",
+                "Solidity"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token",
+                "Domain Name"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false
+        }
+    ],
     "faucets": [
         {
             "slug": "chainlink-faucet-link",
@@ -12045,69 +12045,6 @@
         }
     ],
     "columns": {
-        "oracles": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "technology",
-            "dataTypes",
-            "decentralizationModel",
-            "economicalSecurity",
-            "economicalSecurityNote",
-            "sdk",
-            "availableApis",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
-            "auditsPerformed",
-            "starred"
-        ],
-        "sdks": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "programmingLanguage",
-            "tag",
-            "description",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "starred",
-            "dependencies",
-            "latestKnownVersion",
-            "latestKnownReleaseDate",
-            "maintainer",
-            "license"
-        ],
-        "analytics": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "dataSources",
-            "hasDashboard",
-            "availableApis",
-            "price",
-            "planName",
-            "planType",
-            "starred"
-        ],
-        "platforms": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "description",
-            "tag",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "availableApis",
-            "executionEnvironment"
-        ],
         "bridges": [
             "slug",
             "provider",
@@ -12143,6 +12080,19 @@
             "description",
             "starred"
         ],
+        "analytics": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "dataSources",
+            "hasDashboard",
+            "availableApis",
+            "price",
+            "planName",
+            "planType",
+            "starred"
+        ],
         "wallets": [
             "slug",
             "provider",
@@ -12165,21 +12115,38 @@
             "languages",
             "starred"
         ],
-        "explorers": [
+        "sdks": [
             "slug",
             "provider",
             "actionButtons",
-            "chain",
-            "technology",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
+            "toolType",
+            "programmingLanguage",
+            "tag",
+            "description",
+            "planType",
+            "planName",
+            "price",
+            "trial",
+            "starred",
+            "dependencies",
+            "latestKnownVersion",
+            "latestKnownReleaseDate",
+            "maintainer",
+            "license"
+        ],
+        "platforms": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "toolType",
+            "description",
+            "tag",
+            "planType",
+            "planName",
+            "price",
+            "trial",
             "availableApis",
-            "sdk",
-            "searchCapabilities",
-            "smartContractsVerifications",
-            "fullHistory",
-            "pricing",
-            "starred"
+            "executionEnvironment"
         ],
         "apis": [
             "slug",
@@ -12209,6 +12176,39 @@
             "regions",
             "additionalFeatures",
             "address"
+        ],
+        "oracles": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "dataTypes",
+            "decentralizationModel",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "sdk",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "auditsPerformed",
+            "starred"
+        ],
+        "explorers": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "availableApis",
+            "sdk",
+            "searchCapabilities",
+            "smartContractsVerifications",
+            "fullHistory",
+            "pricing",
+            "starred"
         ],
         "faucets": [
             "slug",

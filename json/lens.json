@@ -1,946 +1,4 @@
 {
-    "oracles": [
-        {
-            "slug": "chainlink-mainnet",
-            "provider": "Chainlink",
-            "actionButtons": [
-                "[Docs](https://lens.xyz/docs/chain/tools/oracles/chainlink)"
-            ],
-            "chain": "mainnet",
-            "technology": "Decentralized Oracle",
-            "starred": false,
-            "availableApis": [
-                "Price Feed",
-                "VRF",
-                "Proof of Reserve"
-            ],
-            "monitoringAndAnalytics": [
-                "Node performance metrics"
-            ],
-            "additionalFeatures": [
-                "Economic Aggregation",
-                "Cross-chain support"
-            ],
-            "dataTypes": [
-                "Asset Prices",
-                "Randomness"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Audited network, high TVL",
-            "sdk": [
-                "TypeScript",
-                "Solidity"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits (Jul 2024)",
-                "OpenZeppelin (Sep 2024)",
-                "ChainSecurity (Mar 2024)",
-                "Code4rena (Nov 2024)",
-                "Quantstamp",
-                "SigmaPrime"
-            ]
-        },
-        {
-            "slug": "chainlink-testnet",
-            "provider": "Chainlink",
-            "actionButtons": [
-                "[Docs](https://lens.xyz/docs/chain/tools/oracles/chainlink)"
-            ],
-            "chain": "testnet",
-            "technology": "Decentralized Oracle",
-            "starred": false,
-            "availableApis": [
-                "Price Feed",
-                "VRF",
-                "Proof of Reserve"
-            ],
-            "monitoringAndAnalytics": [
-                "Node performance metrics"
-            ],
-            "additionalFeatures": [
-                "Economic Aggregation",
-                "Cross-chain support"
-            ],
-            "dataTypes": [
-                "Asset Prices",
-                "Randomness"
-            ],
-            "decentralizationModel": "Decentralized",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Audited network, high TVL",
-            "sdk": [
-                "TypeScript",
-                "Solidity"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits (Jul 2024)",
-                "OpenZeppelin (Sep 2024)",
-                "ChainSecurity (Mar 2024)",
-                "Code4rena (Nov 2024)",
-                "Quantstamp",
-                "SigmaPrime"
-            ]
-        },
-        {
-            "slug": "redstone-mainnet",
-            "provider": "RedStone",
-            "actionButtons": [
-                "[Docs](https://lens.xyz/docs/chain/tools/oracles/redstone)"
-            ],
-            "chain": "mainnet",
-            "technology": "Modular Oracle",
-            "starred": false,
-            "availableApis": [
-                "Price Feeds",
-                "Custom Data"
-            ],
-            "monitoringAndAnalytics": [
-                "Custom Delivery Monitoring"
-            ],
-            "additionalFeatures": [
-                "Data Packaging",
-                "Gas-efficient delivery",
-                "Smart contract plugins"
-            ],
-            "dataTypes": [
-                "Token Prices",
-                "Custom External Data"
-            ],
-            "decentralizationModel": "Hybrid",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
-            "sdk": [
-                "JavaScript",
-                "Solidity"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits",
-                "Audit by PeckShield, 2023"
-            ]
-        },
-        {
-            "slug": "redstone-testnet",
-            "provider": "RedStone",
-            "actionButtons": [
-                "[Docs](https://lens.xyz/docs/chain/tools/oracles/redstone)"
-            ],
-            "chain": "testnet",
-            "technology": "Modular Oracle",
-            "starred": false,
-            "availableApis": [
-                "Price Feeds",
-                "Custom Data"
-            ],
-            "monitoringAndAnalytics": [
-                "Custom Delivery Monitoring"
-            ],
-            "additionalFeatures": [
-                "Data Packaging",
-                "Gas-efficient delivery",
-                "Smart contract plugins"
-            ],
-            "dataTypes": [
-                "Token Prices",
-                "Custom External Data"
-            ],
-            "decentralizationModel": "Hybrid",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
-            "sdk": [
-                "JavaScript",
-                "Solidity"
-            ],
-            "auditsPerformed": [
-                "Trail of Bits",
-                "Audit by PeckShield, 2023"
-            ]
-        }
-    ],
-    "sdks": [
-        {
-            "slug": "alchemy-sdk-enterprise",
-            "provider": "Alchemy SDK",
-            "actionButtons": [
-                "[Contact](https://www.alchemy.com/contact-sales)",
-                "[Docs](https://www.alchemy.com/docs)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "Web3 development",
-                "Blockchain developer tools",
-                "Ethereum development",
-                "dApp development"
-            ],
-            "description": "It is a powerful JavaScript/TypeScript library that serves as the core of Alchemy's comprehensive web3 development platform, allowing developers to easily connect their decentralized applications to various blockchains and leverage enhanced developer tools and infrastructure",
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "alchemy-sdk-free",
-            "provider": "Alchemy SDK",
-            "actionButtons": [
-                "[Docs](https://www.alchemy.com/docs)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "Web3 development",
-                "Blockchain developer tools",
-                "Ethereum development",
-                "dApp development"
-            ],
-            "description": "It is a powerful JavaScript/TypeScript library that serves as the core of Alchemy's comprehensive web3 development platform, allowing developers to easily connect their decentralized applications to various blockchains and leverage enhanced developer tools and infrastructure",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "alchemy-sdk-pay-as-you-go",
-            "provider": "Alchemy SDK",
-            "actionButtons": [
-                "[Buy](https://www.alchemy.com/pricing)",
-                "[Docs](https://www.alchemy.com/docs)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "Web3 development",
-                "Blockchain developer tools",
-                "Ethereum development",
-                "dApp development"
-            ],
-            "description": "It is a powerful JavaScript/TypeScript library that serves as the core of Alchemy's comprehensive web3 development platform, allowing developers to easily connect their decentralized applications to various blockchains and leverage enhanced developer tools and infrastructure",
-            "planType": "Pay-as-you-go",
-            "planName": null,
-            "price": "$5/$45/$215/$415/$815/$2K per 11M/100M/500M/1B/2B/5B CUs",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "connectkit",
-            "provider": "ConnectKit",
-            "actionButtons": [
-                "[Website](https://family.co/docs/connectkit)"
-            ],
-            "toolType": "Library",
-            "programmingLanguage": "TypeScript",
-            "tag": [
-                "Wallet Connect",
-                "Web3 wallet",
-                "React Component Library"
-            ],
-            "description": "React component library for Web3 frontend developers that simplifies the process of connecting a user's cryptocurrency wallet to a decentralized application",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "foundry",
-            "provider": "Foundry",
-            "actionButtons": [
-                "[Docs](https://book.getfoundry.sh/)"
-            ],
-            "toolType": "Framework",
-            "programmingLanguage": "Rust",
-            "tag": [
-                "Framework"
-            ],
-            "description": "Solidity-native smart contract development toolkit written in Rust offering blazing-fast compilation and testing",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        },
-        {
-            "slug": "huffmate",
-            "provider": "Huffmate",
-            "actionButtons": [
-                "[Website](https://github.com/huff-language/huffmate)"
-            ],
-            "toolType": "Library",
-            "programmingLanguage": "Huff",
-            "tag": [
-                "Huff-language",
-                "Smart-contracts",
-                "Solidity-tools"
-            ],
-            "description": "It provides a library of hyper-optimized Huff smart contracts intended as resources for learning and implementation, rather than a compiler or debugger",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "v1.1",
-            "latestKnownReleaseDate": "2023-02-21",
-            "maintainer": "huff-language",
-            "license": "MIT"
-        },
-        {
-            "slug": "lens-sdk",
-            "provider": "Lens",
-            "actionButtons": [
-                "[Website](https://github.com/lens-protocol/lens-sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "TBD",
-            "tag": [
-                "Decentralized Social Graph",
-                "Social Network",
-                "dApp Development",
-                "Developer Tools",
-                "Social Features"
-            ],
-            "description": "It offers developers the infrastructure and tools required to build decentralized social media applications on the Lens Protocol, a decentralized social graph on the Polygon blockchain",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "lens-protocol",
-            "license": "MIT"
-        },
-        {
-            "slug": "zksync-sdk",
-            "provider": "Zksync",
-            "actionButtons": [
-                "[Docs](https://docs.zksync.io/zksync-network/sdk)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "JavaScript",
-            "tag": [
-                "SDK"
-            ],
-            "description": "Trustless asset transfers and fast cross-chain interactions between ZKsync chains",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "TBD",
-            "license": "TBD"
-        }
-    ],
-    "platforms": [
-        {
-            "slug": "4everland-free",
-            "provider": "4everland",
-            "actionButtons": [
-                "[Website](https://www.4everland.org/)"
-            ],
-            "toolType": "Hosting",
-            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
-            "tag": [
-                "Storage",
-                "IPFS",
-                "Decentralized"
-            ],
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "4everland-pay-as-you-go",
-            "provider": "4everland",
-            "actionButtons": [
-                "[Docs](https://docs.4everland.org/get-started/billing-and-pricing/pricing-model)"
-            ],
-            "toolType": "Hosting",
-            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
-            "tag": [
-                "Storage",
-                "IPFS",
-                "Decentralized"
-            ],
-            "planType": "Pay-As-You-Go",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "apeworx",
-            "provider": "ApeWorx",
-            "actionButtons": [
-                "[Docs](https://docs.apeworx.io/)"
-            ],
-            "toolType": "Hosting",
-            "description": "It provides a suite of Python-based, modular tools for Web3 developers to build, test, and deploy smart contracts and automated applications across various blockchain networks",
-            "tag": [
-                "Web3",
-                "CLI",
-                "Smart Contracts"
-            ],
-            "planType": "Custom",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "pimlico",
-            "provider": "Pimlico",
-            "actionButtons": [
-                "[Website](https://www.pimlico.io/)"
-            ],
-            "toolType": "Auth",
-            "description": "Infrastructure platform for building smart accounts with bundlers, verifying paymasters, and ERC-20 paymasters for gas sponsorship and enhanced transaction flows",
-            "tag": [
-                "Smart Accounts",
-                "Bundlers",
-                "Paymasters",
-                "ERC-4337"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "privy",
-            "provider": "Privy",
-            "actionButtons": [
-                "[Docs](https://docs.privy.io/welcome)"
-            ],
-            "toolType": "Auth",
-            "description": "Securely spin up whitelabel wallets, sign transactions and integrate onchain infrastructure-all through one simple API",
-            "tag": [
-                "Authentication",
-                "Wallet"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "reclaim-protocol",
-            "provider": "Reclaim Protocol",
-            "actionButtons": [
-                "[Website](https://docs.reclaimprotocol.org/)"
-            ],
-            "toolType": "All in one",
-            "description": "It provides developers with SDKs and tools to integrate user identity, activity and reputation data from websites into applications using privacy-preserving zero-knowledge proofs.",
-            "tag": [
-                "Zero-knowledge proofs",
-                "Data verification",
-                "Identity verification",
-                "Private data"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "tenderly",
-            "provider": "Tenderly",
-            "actionButtons": [
-                "[Website](https://tenderly.co/)",
-                "[Docs](https://docs.tenderly.co/)"
-            ],
-            "toolType": "Debug",
-            "description": "Comprehensive development platform offering advanced smart contract debugging transaction simulation and monitoring services",
-            "tag": [
-                "Debugging",
-                "Monitoring",
-                "Simulation"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "thirdweb-enterprise",
-            "provider": "Thirdweb",
-            "actionButtons": [
-                "[Contact](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
-            "toolType": "All in one",
-            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-            "tag": [
-                "Smart Contracts",
-                "No-code",
-                "Account Abstraction",
-                "Payments",
-                "RPC"
-            ],
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "thirdweb-growth",
-            "provider": "Thirdweb",
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
-            "toolType": "TBD",
-            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-            "tag": [
-                "Smart Contracts",
-                "No-code",
-                "Account Abstraction",
-                "Payments",
-                "RPC"
-            ],
-            "planType": "Tiered",
-            "planName": "Growth",
-            "price": "$99/mo",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "thirdweb-pro",
-            "provider": "Thirdweb",
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
-            "toolType": "TBD",
-            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-            "tag": [
-                "Smart Contracts",
-                "No-code",
-                "Account Abstraction",
-                "Payments",
-                "RPC"
-            ],
-            "planType": "Tiered",
-            "planName": "Pro",
-            "price": "$1499/mo",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "thirdweb-scale",
-            "provider": "Thirdweb",
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
-            "toolType": "TBD",
-            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-            "tag": [
-                "Smart Contracts",
-                "No-code",
-                "Account Abstraction",
-                "Payments",
-                "RPC"
-            ],
-            "planType": "Tiered",
-            "planName": "Scale",
-            "price": "$499/mo",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
-            "slug": "thirdweb-starter",
-            "provider": "Thirdweb",
-            "actionButtons": [
-                "[Buy](https://thirdweb.com/pricing)",
-                "[Docs](https://portal.thirdweb.com/)"
-            ],
-            "toolType": "TBD",
-            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-            "tag": [
-                "Smart Contracts",
-                "No-code",
-                "Account Abstraction",
-                "Payments",
-                "RPC"
-            ],
-            "planType": "Tiered",
-            "planName": "Starter",
-            "price": "$5/mo",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        }
-    ],
-    "security": [
-        {
-            "slug": "polyzoa",
-            "provider": "Polyzoa",
-            "actionButtons": [
-                "[Website](https://www.polyzoa.xyz/)"
-            ],
-            "tag": [
-                "Anti-scam solutions",
-                "Threat Detection",
-                "Phishing Protection",
-                "Web3 Security"
-            ],
-            "description": "Developer tool provider in the Web3 space that offers an anti-scam security layer for blockchain infrastructure",
-            "planType": "TBD",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "toolType": "TBD",
-            "deliveryType": "TBD",
-            "executionEnvironment": null,
-            "coverage": [
-                "TBD"
-            ],
-            "compliance": null
-        },
-        {
-            "slug": "safe",
-            "provider": "Safe",
-            "actionButtons": [
-                "[Website](https://safe.global/)",
-                "[Docs](https://docs.safe.global/home/what-is-safe)"
-            ],
-            "tag": [
-                "Modular Smart Accounts",
-                "Account Abstraction",
-                "SDK",
-                "API"
-            ],
-            "description": "Modular smart account infrastructure with a full account abstraction stack via Safe{Core} Account Abstraction SDK, API, and Protocol",
-            "planType": "TBD",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "starred": false,
-            "toolType": "TBD",
-            "deliveryType": "TBD",
-            "executionEnvironment": null,
-            "coverage": [
-                "TBD"
-            ],
-            "compliance": null
-        }
-    ],
-    "ramps": [
-        {
-            "slug": "transak",
-            "provider": "Transak",
-            "actionButtons": [
-                "[Website](https://transak.com/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "bank_transfer",
-                "apple_pay",
-                "google_pay",
-                "pix"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "moonpay",
-            "provider": "MoonPay",
-            "actionButtons": [
-                "[Website](https://www.moonpay.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay",
-                "paypal"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CN",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU",
-                "BY",
-                "VE"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "PCI_DSS",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "ramp-network",
-            "provider": "Ramp Network",
-            "actionButtons": [
-                "[Website](https://ramp.network/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "apple_pay",
-                "google_pay",
-                "revolut_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "YE"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "SOC2_TYPE_II",
-                "PCI_DSS"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "onramper",
-            "provider": "Onramper",
-            "actionButtons": [
-                "[Website](https://onramper.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": true,
-            "auditsPerformed": [
-                "SOC2_TYPE_I"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "stripe-crypto",
-            "provider": "Stripe",
-            "actionButtons": [
-                "[Website](https://stripe.com/crypto)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "ach"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "SOC2_TYPE_II",
-                "PCI_DSS"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "banxa",
-            "provider": "Banxa",
-            "actionButtons": [
-                "[Website](https://banxa.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "mercuryo",
-            "provider": "Mercuryo",
-            "actionButtons": [
-                "[Website](https://mercuryo.io/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "apple_pay",
-                "google_pay",
-                "sepa"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "PCI_DSS",
-                "ISO27001"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "sardine",
-            "provider": "Sardine",
-            "actionButtons": [
-                "[Website](https://www.sardine.ai/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "ach",
-                "instant_ach",
-                "credit_card",
-                "debit_card"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        },
-        {
-            "slug": "meld",
-            "provider": "Meld",
-            "actionButtons": [
-                "[Website](https://www.meld.io/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": true,
-            "auditsPerformed": [
-                "PCI_DSS",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD"
-        }
-    ],
     "bridges": [
         {
             "slug": "across-mainnet",
@@ -1561,6 +619,61 @@
             "planType": "Enterprise",
             "description": "Fiat and cross-chain crypto payments with gas fee abstraction",
             "starred": false
+        }
+    ],
+    "security": [
+        {
+            "slug": "polyzoa",
+            "provider": "Polyzoa",
+            "actionButtons": [
+                "[Website](https://www.polyzoa.xyz/)"
+            ],
+            "tag": [
+                "Anti-scam solutions",
+                "Threat Detection",
+                "Phishing Protection",
+                "Web3 Security"
+            ],
+            "description": "Developer tool provider in the Web3 space that offers an anti-scam security layer for blockchain infrastructure",
+            "planType": "TBD",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "toolType": "TBD",
+            "deliveryType": "TBD",
+            "executionEnvironment": null,
+            "coverage": [
+                "TBD"
+            ],
+            "compliance": null
+        },
+        {
+            "slug": "safe",
+            "provider": "Safe",
+            "actionButtons": [
+                "[Website](https://safe.global/)",
+                "[Docs](https://docs.safe.global/home/what-is-safe)"
+            ],
+            "tag": [
+                "Modular Smart Accounts",
+                "Account Abstraction",
+                "SDK",
+                "API"
+            ],
+            "description": "Modular smart account infrastructure with a full account abstraction stack via Safe{Core} Account Abstraction SDK, API, and Protocol",
+            "planType": "TBD",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "starred": false,
+            "toolType": "TBD",
+            "deliveryType": "TBD",
+            "executionEnvironment": null,
+            "coverage": [
+                "TBD"
+            ],
+            "compliance": null
         }
     ],
     "wallets": [
@@ -2366,162 +1479,468 @@
             "starred": false
         }
     ],
-    "explorers": [
+    "sdks": [
         {
-            "slug": "lens-explorer-mainnet",
-            "provider": "Lens Network",
+            "slug": "alchemy-sdk-enterprise",
+            "provider": "Alchemy SDK",
             "actionButtons": [
-                "[Explore](https://explorer.lens.xyz/)",
-                "[Docs](https://lens.xyz/docs/chain/overview)"
+                "[Contact](https://www.alchemy.com/contact-sales)",
+                "[Docs](https://www.alchemy.com/docs)"
             ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Blocks",
-                "Tokens",
-                "Gas",
-                "Contracts"
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "Web3 development",
+                "Blockchain developer tools",
+                "Ethereum development",
+                "dApp development"
             ],
-            "additionalFeatures": [
-                "Token Tracker",
-                "NFT Tracking",
-                "Network Metrics"
-            ],
-            "starred": true,
-            "availableApis": [
-                "REST"
-            ],
-            "sdk": [
-                "TypeScript"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block",
-                "Token"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free"
-        },
-        {
-            "slug": "lens-explorer-testnet",
-            "provider": "Lens Network",
-            "actionButtons": [
-                "[Explore](https://explorer.testnet.lens.xyz/)",
-                "[Docs](https://lens.xyz/docs/chain/overview)"
-            ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Blocks",
-                "Tokens",
-                "Gas",
-                "Contracts"
-            ],
-            "additionalFeatures": [
-                "Token Tracker",
-                "NFT Tracking",
-                "Network Metrics"
-            ],
+            "description": "It is a powerful JavaScript/TypeScript library that serves as the core of Alchemy's comprehensive web3 development platform, allowing developers to easily connect their decentralized applications to various blockchains and leverage enhanced developer tools and infrastructure",
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
             "starred": false,
-            "availableApis": [
-                "REST"
-            ],
-            "sdk": [
-                "TypeScript"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block",
-                "Token"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free"
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
         },
         {
-            "slug": "lenscan-mainnet",
-            "provider": "Lenscan",
+            "slug": "alchemy-sdk-free",
+            "provider": "Alchemy SDK",
             "actionButtons": [
-                "[Explore](https://lenscan.io/)",
-                "[Docs](https://lens.xyz/docs/chain/overview)"
+                "[Docs](https://www.alchemy.com/docs)"
             ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Blocks",
-                "Tokens",
-                "Gas",
-                "Contracts"
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "Web3 development",
+                "Blockchain developer tools",
+                "Ethereum development",
+                "dApp development"
             ],
-            "additionalFeatures": [
-                "Token Tracker",
-                "NFT Tracking",
-                "Network Metrics"
-            ],
-            "starred": true,
-            "availableApis": [
-                "REST"
-            ],
-            "sdk": [
-                "TypeScript"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block",
-                "Token"
-            ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free"
-        },
-        {
-            "slug": "lenscan-testnet",
-            "provider": "Lenscan",
-            "actionButtons": [
-                "[Explore](https://testnet.lenscan.io/)",
-                "[Docs](https://lens.xyz/docs/chain/overview)"
-            ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Blocks",
-                "Tokens",
-                "Gas",
-                "Contracts"
-            ],
-            "additionalFeatures": [
-                "Token Tracker",
-                "NFT Tracking",
-                "Network Metrics"
-            ],
+            "description": "It is a powerful JavaScript/TypeScript library that serves as the core of Alchemy's comprehensive web3 development platform, allowing developers to easily connect their decentralized applications to various blockchains and leverage enhanced developer tools and infrastructure",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
             "starred": false,
-            "availableApis": [
-                "REST"
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "alchemy-sdk-pay-as-you-go",
+            "provider": "Alchemy SDK",
+            "actionButtons": [
+                "[Buy](https://www.alchemy.com/pricing)",
+                "[Docs](https://www.alchemy.com/docs)"
             ],
-            "sdk": [
-                "TypeScript"
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "Web3 development",
+                "Blockchain developer tools",
+                "Ethereum development",
+                "dApp development"
             ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block",
-                "Token"
+            "description": "It is a powerful JavaScript/TypeScript library that serves as the core of Alchemy's comprehensive web3 development platform, allowing developers to easily connect their decentralized applications to various blockchains and leverage enhanced developer tools and infrastructure",
+            "planType": "Pay-as-you-go",
+            "planName": null,
+            "price": "$5/$45/$215/$415/$815/$2K per 11M/100M/500M/1B/2B/5B CUs",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "connectkit",
+            "provider": "ConnectKit",
+            "actionButtons": [
+                "[Website](https://family.co/docs/connectkit)"
             ],
-            "smartContractsVerifications": true,
-            "fullHistory": true,
-            "pricing": "Free"
+            "toolType": "Library",
+            "programmingLanguage": "TypeScript",
+            "tag": [
+                "Wallet Connect",
+                "Web3 wallet",
+                "React Component Library"
+            ],
+            "description": "React component library for Web3 frontend developers that simplifies the process of connecting a user's cryptocurrency wallet to a decentralized application",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "foundry",
+            "provider": "Foundry",
+            "actionButtons": [
+                "[Docs](https://book.getfoundry.sh/)"
+            ],
+            "toolType": "Framework",
+            "programmingLanguage": "Rust",
+            "tag": [
+                "Framework"
+            ],
+            "description": "Solidity-native smart contract development toolkit written in Rust offering blazing-fast compilation and testing",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        },
+        {
+            "slug": "huffmate",
+            "provider": "Huffmate",
+            "actionButtons": [
+                "[Website](https://github.com/huff-language/huffmate)"
+            ],
+            "toolType": "Library",
+            "programmingLanguage": "Huff",
+            "tag": [
+                "Huff-language",
+                "Smart-contracts",
+                "Solidity-tools"
+            ],
+            "description": "It provides a library of hyper-optimized Huff smart contracts intended as resources for learning and implementation, rather than a compiler or debugger",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "v1.1",
+            "latestKnownReleaseDate": "2023-02-21",
+            "maintainer": "huff-language",
+            "license": "MIT"
+        },
+        {
+            "slug": "lens-sdk",
+            "provider": "Lens",
+            "actionButtons": [
+                "[Website](https://github.com/lens-protocol/lens-sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "TBD",
+            "tag": [
+                "Decentralized Social Graph",
+                "Social Network",
+                "dApp Development",
+                "Developer Tools",
+                "Social Features"
+            ],
+            "description": "It offers developers the infrastructure and tools required to build decentralized social media applications on the Lens Protocol, a decentralized social graph on the Polygon blockchain",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "lens-protocol",
+            "license": "MIT"
+        },
+        {
+            "slug": "zksync-sdk",
+            "provider": "Zksync",
+            "actionButtons": [
+                "[Docs](https://docs.zksync.io/zksync-network/sdk)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "JavaScript",
+            "tag": [
+                "SDK"
+            ],
+            "description": "Trustless asset transfers and fast cross-chain interactions between ZKsync chains",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "TBD",
+            "license": "TBD"
+        }
+    ],
+    "platforms": [
+        {
+            "slug": "4everland-free",
+            "provider": "4everland",
+            "actionButtons": [
+                "[Website](https://www.4everland.org/)"
+            ],
+            "toolType": "Hosting",
+            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
+            "tag": [
+                "Storage",
+                "IPFS",
+                "Decentralized"
+            ],
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "4everland-pay-as-you-go",
+            "provider": "4everland",
+            "actionButtons": [
+                "[Docs](https://docs.4everland.org/get-started/billing-and-pricing/pricing-model)"
+            ],
+            "toolType": "Hosting",
+            "description": "It provides developers with a suite of tools and infrastructure to build, deploy, and host decentralized applications",
+            "tag": [
+                "Storage",
+                "IPFS",
+                "Decentralized"
+            ],
+            "planType": "Pay-As-You-Go",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "apeworx",
+            "provider": "ApeWorx",
+            "actionButtons": [
+                "[Docs](https://docs.apeworx.io/)"
+            ],
+            "toolType": "Hosting",
+            "description": "It provides a suite of Python-based, modular tools for Web3 developers to build, test, and deploy smart contracts and automated applications across various blockchain networks",
+            "tag": [
+                "Web3",
+                "CLI",
+                "Smart Contracts"
+            ],
+            "planType": "Custom",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "pimlico",
+            "provider": "Pimlico",
+            "actionButtons": [
+                "[Website](https://www.pimlico.io/)"
+            ],
+            "toolType": "Auth",
+            "description": "Infrastructure platform for building smart accounts with bundlers, verifying paymasters, and ERC-20 paymasters for gas sponsorship and enhanced transaction flows",
+            "tag": [
+                "Smart Accounts",
+                "Bundlers",
+                "Paymasters",
+                "ERC-4337"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "privy",
+            "provider": "Privy",
+            "actionButtons": [
+                "[Docs](https://docs.privy.io/welcome)"
+            ],
+            "toolType": "Auth",
+            "description": "Securely spin up whitelabel wallets, sign transactions and integrate onchain infrastructure-all through one simple API",
+            "tag": [
+                "Authentication",
+                "Wallet"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "reclaim-protocol",
+            "provider": "Reclaim Protocol",
+            "actionButtons": [
+                "[Website](https://docs.reclaimprotocol.org/)"
+            ],
+            "toolType": "All in one",
+            "description": "It provides developers with SDKs and tools to integrate user identity, activity and reputation data from websites into applications using privacy-preserving zero-knowledge proofs.",
+            "tag": [
+                "Zero-knowledge proofs",
+                "Data verification",
+                "Identity verification",
+                "Private data"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "tenderly",
+            "provider": "Tenderly",
+            "actionButtons": [
+                "[Website](https://tenderly.co/)",
+                "[Docs](https://docs.tenderly.co/)"
+            ],
+            "toolType": "Debug",
+            "description": "Comprehensive development platform offering advanced smart contract debugging transaction simulation and monitoring services",
+            "tag": [
+                "Debugging",
+                "Monitoring",
+                "Simulation"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "thirdweb-enterprise",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Contact](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "All in one",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "thirdweb-growth",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "TBD",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "planType": "Tiered",
+            "planName": "Growth",
+            "price": "$99/mo",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "thirdweb-pro",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "TBD",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "planType": "Tiered",
+            "planName": "Pro",
+            "price": "$1499/mo",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "thirdweb-scale",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "TBD",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "planType": "Tiered",
+            "planName": "Scale",
+            "price": "$499/mo",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "thirdweb-starter",
+            "provider": "Thirdweb",
+            "actionButtons": [
+                "[Buy](https://thirdweb.com/pricing)",
+                "[Docs](https://portal.thirdweb.com/)"
+            ],
+            "toolType": "TBD",
+            "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+            "tag": [
+                "Smart Contracts",
+                "No-code",
+                "Account Abstraction",
+                "Payments",
+                "RPC"
+            ],
+            "planType": "Tiered",
+            "planName": "Starter",
+            "price": "$5/mo",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
         }
     ],
     "apis": [
@@ -6554,6 +5973,587 @@
             "address": null
         }
     ],
+    "ramps": [
+        {
+            "slug": "transak",
+            "provider": "Transak",
+            "actionButtons": [
+                "[Website](https://transak.com/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "bank_transfer",
+                "apple_pay",
+                "google_pay",
+                "pix"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "moonpay",
+            "provider": "MoonPay",
+            "actionButtons": [
+                "[Website](https://www.moonpay.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay",
+                "paypal"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CN",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU",
+                "BY",
+                "VE"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "PCI_DSS",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "ramp-network",
+            "provider": "Ramp Network",
+            "actionButtons": [
+                "[Website](https://ramp.network/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "apple_pay",
+                "google_pay",
+                "revolut_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "YE"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II",
+                "PCI_DSS"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "onramper",
+            "provider": "Onramper",
+            "actionButtons": [
+                "[Website](https://onramper.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "SOC2_TYPE_I"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "stripe-crypto",
+            "provider": "Stripe",
+            "actionButtons": [
+                "[Website](https://stripe.com/crypto)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "ach"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "SOC2_TYPE_II",
+                "PCI_DSS"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "banxa",
+            "provider": "Banxa",
+            "actionButtons": [
+                "[Website](https://banxa.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "mercuryo",
+            "provider": "Mercuryo",
+            "actionButtons": [
+                "[Website](https://mercuryo.io/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "apple_pay",
+                "google_pay",
+                "sepa"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "ISO27001"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "sardine",
+            "provider": "Sardine",
+            "actionButtons": [
+                "[Website](https://www.sardine.ai/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "ach",
+                "instant_ach",
+                "credit_card",
+                "debit_card"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        },
+        {
+            "slug": "meld",
+            "provider": "Meld",
+            "actionButtons": [
+                "[Website](https://www.meld.io/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD"
+        }
+    ],
+    "oracles": [
+        {
+            "slug": "chainlink-mainnet",
+            "provider": "Chainlink",
+            "actionButtons": [
+                "[Docs](https://lens.xyz/docs/chain/tools/oracles/chainlink)"
+            ],
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ]
+        },
+        {
+            "slug": "chainlink-testnet",
+            "provider": "Chainlink",
+            "actionButtons": [
+                "[Docs](https://lens.xyz/docs/chain/tools/oracles/chainlink)"
+            ],
+            "chain": "testnet",
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ]
+        },
+        {
+            "slug": "redstone-mainnet",
+            "provider": "RedStone",
+            "actionButtons": [
+                "[Docs](https://lens.xyz/docs/chain/tools/oracles/redstone)"
+            ],
+            "chain": "mainnet",
+            "technology": "Modular Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Delivery Monitoring"
+            ],
+            "additionalFeatures": [
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "Custom External Data"
+            ],
+            "decentralizationModel": "Hybrid",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
+            ]
+        },
+        {
+            "slug": "redstone-testnet",
+            "provider": "RedStone",
+            "actionButtons": [
+                "[Docs](https://lens.xyz/docs/chain/tools/oracles/redstone)"
+            ],
+            "chain": "testnet",
+            "technology": "Modular Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Delivery Monitoring"
+            ],
+            "additionalFeatures": [
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "Custom External Data"
+            ],
+            "decentralizationModel": "Hybrid",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
+            ]
+        }
+    ],
+    "explorers": [
+        {
+            "slug": "lens-explorer-mainnet",
+            "provider": "Lens Network",
+            "actionButtons": [
+                "[Explore](https://explorer.lens.xyz/)",
+                "[Docs](https://lens.xyz/docs/chain/overview)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "NFT Tracking",
+                "Network Metrics"
+            ],
+            "starred": true,
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": [
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "lens-explorer-testnet",
+            "provider": "Lens Network",
+            "actionButtons": [
+                "[Explore](https://explorer.testnet.lens.xyz/)",
+                "[Docs](https://lens.xyz/docs/chain/overview)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "NFT Tracking",
+                "Network Metrics"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": [
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "lenscan-mainnet",
+            "provider": "Lenscan",
+            "actionButtons": [
+                "[Explore](https://lenscan.io/)",
+                "[Docs](https://lens.xyz/docs/chain/overview)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "NFT Tracking",
+                "Network Metrics"
+            ],
+            "starred": true,
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": [
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        },
+        {
+            "slug": "lenscan-testnet",
+            "provider": "Lenscan",
+            "actionButtons": [
+                "[Explore](https://testnet.lenscan.io/)",
+                "[Docs](https://lens.xyz/docs/chain/overview)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Blocks",
+                "Tokens",
+                "Gas",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token Tracker",
+                "NFT Tracking",
+                "Network Metrics"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST"
+            ],
+            "sdk": [
+                "TypeScript"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block",
+                "Token"
+            ],
+            "smartContractsVerifications": true,
+            "fullHistory": true,
+            "pricing": "Free"
+        }
+    ],
     "faucets": [
         {
             "slug": "alchemy-testnet-faucet",
@@ -6676,84 +6676,6 @@
         }
     ],
     "columns": {
-        "oracles": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "chain",
-            "technology",
-            "starred",
-            "availableApis",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
-            "dataTypes",
-            "decentralizationModel",
-            "economicalSecurity",
-            "economicalSecurityNote",
-            "sdk",
-            "auditsPerformed"
-        ],
-        "sdks": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "programmingLanguage",
-            "tag",
-            "description",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "starred",
-            "dependencies",
-            "latestKnownVersion",
-            "latestKnownReleaseDate",
-            "maintainer",
-            "license"
-        ],
-        "platforms": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "toolType",
-            "description",
-            "tag",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "availableApis",
-            "executionEnvironment"
-        ],
-        "security": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "tag",
-            "description",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "starred",
-            "toolType",
-            "deliveryType",
-            "executionEnvironment",
-            "coverage",
-            "compliance"
-        ],
-        "ramps": [
-            "slug",
-            "provider",
-            "actionButtons",
-            "kycLevel",
-            "paymentMethods",
-            "bannedCountries",
-            "aggregator",
-            "auditsPerformed",
-            "deliveryType"
-        ],
         "bridges": [
             "slug",
             "provider",
@@ -6789,6 +6711,23 @@
             "description",
             "starred"
         ],
+        "security": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "tag",
+            "description",
+            "planType",
+            "planName",
+            "price",
+            "trial",
+            "starred",
+            "toolType",
+            "deliveryType",
+            "executionEnvironment",
+            "coverage",
+            "compliance"
+        ],
         "wallets": [
             "slug",
             "provider",
@@ -6811,21 +6750,38 @@
             "languages",
             "starred"
         ],
-        "explorers": [
+        "sdks": [
             "slug",
             "provider",
             "actionButtons",
-            "chain",
-            "technology",
-            "monitoringAndAnalytics",
-            "additionalFeatures",
+            "toolType",
+            "programmingLanguage",
+            "tag",
+            "description",
+            "planType",
+            "planName",
+            "price",
+            "trial",
             "starred",
+            "dependencies",
+            "latestKnownVersion",
+            "latestKnownReleaseDate",
+            "maintainer",
+            "license"
+        ],
+        "platforms": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "toolType",
+            "description",
+            "tag",
+            "planType",
+            "planName",
+            "price",
+            "trial",
             "availableApis",
-            "sdk",
-            "searchCapabilities",
-            "smartContractsVerifications",
-            "fullHistory",
-            "pricing"
+            "executionEnvironment"
         ],
         "apis": [
             "slug",
@@ -6855,6 +6811,50 @@
             "regions",
             "additionalFeatures",
             "address"
+        ],
+        "ramps": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "kycLevel",
+            "paymentMethods",
+            "bannedCountries",
+            "aggregator",
+            "auditsPerformed",
+            "deliveryType"
+        ],
+        "oracles": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "starred",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "dataTypes",
+            "decentralizationModel",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "sdk",
+            "auditsPerformed"
+        ],
+        "explorers": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "starred",
+            "availableApis",
+            "sdk",
+            "searchCapabilities",
+            "smartContractsVerifications",
+            "fullHistory",
+            "pricing"
         ],
         "faucets": [
             "slug",
