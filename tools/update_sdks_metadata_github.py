@@ -114,19 +114,22 @@ class Http:
         self.timeout = timeout
         self.session = requests.Session()
 
-    def get_json(self, url: str, headers: Optional[Dict[str, str]] = None) -> Tuple[int, Optional[object]]:
+    def get_json(
+        self, url: str, headers: Optional[Dict[str, str]] = None
+    ) -> Tuple[int, Optional[object], Dict[str, str]]:
         r = self.session.get(url, headers=headers or {}, timeout=self.timeout)
         if r.status_code == 204:
-            return r.status_code, None
+            return r.status_code, None, r.headers
         try:
-            return r.status_code, r.json()
+            return r.status_code, r.json(), r.headers
         except Exception:
-            return r.status_code, None
+            return r.status_code, None, r.headers
 
 
 class GitHub:
     def __init__(self, token: Optional[str], http: Http):
         self.http = http
+        self._rate_limit_warned = False
         self.headers = {
             "Accept": "application/vnd.github+json",
             "User-Agent": "sdks-metadata-updater",
@@ -134,19 +137,45 @@ class GitHub:
         if token:
             self.headers["Authorization"] = f"Bearer {token}"
 
+    def _warn_if_rate_limited(self, status: int, headers: Dict[str, str]) -> None:
+        if (
+            status == 403
+            and headers.get("X-RateLimit-Remaining") == "0"
+            and not self._rate_limit_warned
+        ):
+            reset = headers.get("X-RateLimit-Reset")
+            if reset and reset.isdigit():
+                ts = datetime.fromtimestamp(int(reset), tz=timezone.utc)
+                print(
+                    f"WARN: GitHub API rate limit exceeded, resets at {ts.isoformat()}",
+                    file=sys.stderr,
+                )
+            else:
+                print(
+                    "WARN: GitHub API rate limit exceeded",
+                    file=sys.stderr,
+                )
+            self._rate_limit_warned = True
+
     def repo(self, full: str) -> Optional[dict]:
-        st, js = self.http.get_json(f"https://api.github.com/repos/{full}", headers=self.headers)
+        st, js, hdrs = self.http.get_json(
+            f"https://api.github.com/repos/{full}", headers=self.headers
+        )
+        self._warn_if_rate_limited(st, hdrs)
         return js if st == 200 and isinstance(js, dict) else None
 
     def releases(self, full: str, per_page: int = 100) -> List[dict]:
-        st, js = self.http.get_json(
+        st, js, hdrs = self.http.get_json(
             f"https://api.github.com/repos/{full}/releases?per_page={per_page}",
             headers=self.headers,
         )
+        self._warn_if_rate_limited(st, hdrs)
         if st == 200 and isinstance(js, list):
             return [x for x in js if isinstance(x, dict)]
         return []
 
+# ---- GitHub metadata cache ----
+_repo_meta_cache: Dict[str, Dict[str, str]] = {}
 
 def pick_latest_stable_release(releases: List[dict]) -> Optional[dict]:
     for r in releases:
@@ -159,10 +188,14 @@ def pick_latest_stable_release(releases: List[dict]) -> Optional[dict]:
 
 
 def compute_from_github(gh: GitHub, full: str) -> Dict[str, str]:
+    if full in _repo_meta_cache:
+        return _repo_meta_cache[full]
+
     out: Dict[str, str] = {}
 
     repo = gh.repo(full)
     if not repo:
+        _repo_meta_cache[full] = out
         return out
 
     owner = repo.get("owner") or {}
@@ -180,6 +213,7 @@ def compute_from_github(gh: GitHub, full: str) -> Dict[str, str]:
 
     rel = pick_latest_stable_release(gh.releases(full))
     if not rel:
+        _repo_meta_cache[full] = out
         return out
 
     tag = rel.get("tag_name")
@@ -192,6 +226,7 @@ def compute_from_github(gh: GitHub, full: str) -> Dict[str, str]:
     if dt:
         out["latestKnownReleaseDate"] = iso_date(dt)
 
+    _repo_meta_cache[full] = out
     return out
 
 
@@ -205,6 +240,7 @@ def main() -> int:
         help='JSON file name without .json, or "all" to process all files',
     )
     ap.add_argument("--json-dir", default="json", help="Directory containing blockchain JSON files")
+    ap.add_argument("--verbose", action="store_true")
     args = ap.parse_args()
 
     if args.jsonfile == "all":
@@ -287,7 +323,6 @@ def main() -> int:
         print(f"SDKs updated: {total_updated}")
 
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
