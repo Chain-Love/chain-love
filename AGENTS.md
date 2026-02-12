@@ -20,7 +20,7 @@ Use this conceptual graph when reasoning about data:
 
 Repository paths:
 
-- `references/providers.csv`: provider entities.
+- `references/providers/providers.csv`: provider entities.
 - `references/offers`: canonical offer templates.
 - `listings/specific-networks/<network>`: chain-specific listing instances.
 - `listings/all-networks`: listing instances merged into every chain output.
@@ -29,6 +29,8 @@ Repository paths:
 
 - Category CSVs use separate `provider` and `offer` columns.
 - Listings should place canonical references in the `offer` column using `!offer:<slug>`.
+- `references/providers/providers.csv` uses `logoPath` as filename only (example: `alchemy.png`).
+- Consumers should prepend the static prefix `references/providers/images/` during visualization.
 
 ## Data contribution rules
 

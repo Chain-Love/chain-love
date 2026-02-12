@@ -14,7 +14,7 @@ Before editing data, read the Style Guide:
 
 `provider -> offer -> listing`
 
-- `references/providers.csv`: provider identity metadata.
+- `references/providers/providers.csv`: provider identity metadata.
 - `references/offers`: canonical offer templates.
 - `listings/specific-networks/<network>`: listings for one network.
 - `listings/all-networks`: listings merged into every network output.
@@ -23,10 +23,32 @@ Before editing data, read the Style Guide:
 
 | Goal | Edit here |
 |---|---|
-| Add/update provider profile metadata | `references/providers.csv` |
+| Add/update provider profile metadata | `references/providers/providers.csv` |
+| Add/update provider logo files | `references/providers/images/` |
 | Add/update reusable offer (product/plan) | `references/offers/<category>.csv` |
 | Add/update an offer on one chain | `listings/specific-networks/<network>/<category>.csv` |
 | Add/update entries for every chain | `listings/all-networks/<category>.csv` |
+
+## How to populate `references/providers/providers.csv`
+
+Required baseline fields:
+
+- `slug`: unique provider id (stable, lowercase kebab-case recommended).
+- `name`: provider display name.
+- `description`: concise provider description.
+- `logoPath`: logo filename only, format `<slug>.png`.
+
+Optional enrichment fields:
+
+- `website`, `docs`, `x`, `github`, `discord`, `telegram`, `linkedin`, `supportEmail`.
+- `tag` for custom grouping/search tags.
+
+Logo guidance:
+
+- Put logo files into `references/providers/images/`.
+- Keep filename aligned with provider slug.
+- Visualization should prepend `references/providers/images/` to `logoPath`.
+- See `references/providers/images/README.md` for image recommendations.
 
 ## How references work
 
