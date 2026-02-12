@@ -65,6 +65,8 @@ jobs:
           pip install requests
 
       - name: Run CSV to JSON
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 csv_to_json.py
           python3 update_sdks_metadata_github.py --jsonfile all
