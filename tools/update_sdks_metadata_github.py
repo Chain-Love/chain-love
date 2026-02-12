@@ -240,7 +240,6 @@ def main() -> int:
         help='JSON file name without .json, or "all" to process all files',
     )
     ap.add_argument("--json-dir", default="json", help="Directory containing blockchain JSON files")
-    ap.add_argument("--verbose", action="store_true")
     args = ap.parse_args()
 
     if args.jsonfile == "all":
