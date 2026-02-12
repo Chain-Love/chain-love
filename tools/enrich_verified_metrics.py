@@ -75,7 +75,7 @@ def fetch_verified_providers(network: str, token: str) -> Optional[List[Dict[str
       - []  if the API returned 200 OK with an empty list
     """
     hostname = _network_to_hostname(network)
-    url = f"https://{hostname}/api/verified-providers"
+    url = f"https://{hostname}/external-api/toolbox/api/verified-providers"
     headers = {"Authorization": f"Bearer {token}"}
     try:
         resp = requests.get(url, headers=headers, timeout=10)
