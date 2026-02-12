@@ -15,11 +15,27 @@ GRAPH_API_KEY_ENV = "GRAPH_API_KEY"
 VERIFIED_CATEGORIES = ["apis"]
 BPS_DENOMINATOR = 10000
 
-SCHEMA_PATH = os.path.join(os.path.dirname(__file__), "schema.json")
+BASE_DIR = os.path.dirname(__file__)
+SCHEMA_PATH = os.path.join(BASE_DIR, "schema.json")
 with open(SCHEMA_PATH, "r", encoding="utf-8") as f:
     NETWORK_SCHEMA = json.load(f)
 
 SCHEMA_VALIDATOR = Draft202012Validator(NETWORK_SCHEMA)
+
+
+def _load_validator(path: str) -> Draft202012Validator:
+    with open(path, "r", encoding="utf-8") as f:
+        schema = json.load(f)
+    return Draft202012Validator(schema)
+
+
+VALIDATION_DIR = os.path.join(BASE_DIR, "validation")
+VERIFIED_PROVIDERS_VALIDATOR = _load_validator(
+    os.path.join(VALIDATION_DIR, "verified_providers.schema.json")
+)
+SLA_RESPONSE_VALIDATOR = _load_validator(
+    os.path.join(VALIDATION_DIR, "sla_response.schema.json")
+)
 
 _SUBDOMAIN_OVERRIDES: Dict[str, str] = {
     "ethereum": "eth",
@@ -52,7 +68,7 @@ def save_json_file(path: str, data: Dict[str, Any]) -> None:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 
-def fetch_verified_providers(network: str, token: str) -> Optional[List[Dict[str, Any]]]:
+def fetch_verified_providers(network: str, token: str) -> Optional[List[Dict[str, str]]]:
     """
     Returns a list of { slug, serviceId } for the given network, or:
       - None if the API call failed
@@ -74,25 +90,16 @@ def fetch_verified_providers(network: str, token: str) -> Optional[List[Dict[str
         print(f"[{network}] WARNING: invalid JSON from verified-providers: {e}")
         return None
 
-    if isinstance(data, list):
-        providers = data
-    else:
-        providers = data.get("providers", [])
-
-    if not isinstance(providers, list):
-        print(f"[{network}] WARNING: verified-providers response has unexpected shape")
+    errors = list(VERIFIED_PROVIDERS_VALIDATOR.iter_errors(data))
+    if errors:
+        print(f"[{network}] WARNING: verified-providers response schema mismatch")
+        first = errors[0]
+        print("  message:", first.message)
+        print("  path   :", list(first.absolute_path))
         return None
 
-    normalized: List[Dict[str, Any]] = []
-    for entry in providers:
-        if not isinstance(entry, dict):
-            continue
-        slug = entry.get("slug")
-        service_id = entry.get("serviceId")
-        if isinstance(slug, str) and isinstance(service_id, str) and slug and service_id:
-            normalized.append({"slug": slug, "serviceId": service_id})
-
-    return normalized
+    providers: List[Dict[str, str]] = data
+    return providers
 
 
 def fetch_sla_metrics_for_network(
@@ -149,38 +156,25 @@ def fetch_sla_metrics_for_network(
         print(f"[{network}] WARNING: invalid JSON from SLA subgraph: {e}")
         return None
 
-    if "errors" in payload:
+    if "errors" in payload:       
         print(f"[{network}] WARNING: SLA subgraph returned errors: {payload['errors']}")
         return None
 
-    data = payload.get("data") or {}
-    metrics_list = data.get("serviceHealthMetrics") or []
-
-    if not isinstance(metrics_list, list):
-        print(f"[{network}] WARNING: SLA subgraph response has unexpected shape")
+    errors = list(SLA_RESPONSE_VALIDATOR.iter_errors(payload))
+    if errors:
+        print(f"[{network}] WARNING: SLA subgraph response schema mismatch")
+        first = errors[0]
+        print("  message:", first.message)
+        print("  path   :", list(first.absolute_path))
         return None
 
-    def _to_int(value: Any) -> int:
-        try:
-            return int(value)
-        except (TypeError, ValueError):
-            return 0
-
+ 
     def _has_activity(m: Dict[str, Any]) -> bool:
-        total_proofs_num = _to_int(m.get("totalProofs"))
-        consensus_exec_num = _to_int(m.get("consensusExecutions"))
-        return total_proofs_num > 0 or consensus_exec_num > 0
+        return int(m["totalProofs"]) > 0 or int(m["consensusExecutions"]) > 0
 
-    active_metrics = filter(
-        lambda m: isinstance(m, dict) and _has_activity(m),
-        metrics_list,
-    )
+    active_metrics = filter(_has_activity, metrics_list)
 
-    metrics_by_id: Dict[str, Any] = {}
-    for m in active_metrics:
-        sid = m.get("id")
-        if isinstance(sid, str) and sid:
-            metrics_by_id[sid] = m
+    metrics_by_id: Dict[str, Any] = {m["id"]: m for m in active_metrics}
 
     return metrics_by_id
 
