@@ -1,108 +1,40 @@
 # Chain.Love Web3 Database
 
-This repository documents blockchain service providers - RPCs, wallets, explorers, analytics, bridges, dev tools, faucets, oracles, indexing services, etc. - in a structured way.
+This repository documents blockchain service providers - wallets, explorers, analytics, bridges, dev tools, sdks, faucets, apis, oracles, indexing services, etc. - in a structured way.
 
 The goal is to build a **clean, comparable dataset** that developers and researchers can rely on.
 
-## Repository Structure
+## Data model (how to think about this repo)
+
+Use this relationship graph:
+
+`provider -> offer -> listing`
+
+- **Provider**: identity metadata (name, logo, links, description).
+- **Offer**: a category-specific product/plan sold by a provider.
+- **Listing**: where an offer is available (for one network or all networks).
+
+## Repository structure
+
+Conceptual structure used in contribution docs:
 
 ```
-├── networks/
-│   ├── arbitrum/
-│   │   ├── apis.csv
-│   │   ├── explorers.csv
-│   │   ├── wallets.csv
-│   │   └── ...
-│   ├── ... (other networks, each with their own service tables)
-├── providers/
-│   ├── apis.csv
-│   ├── explorers.csv
-│   ├── wallets.csv
-│   └── ...
+references/
+  providers.csv      # provider identities
+  offers/            # offers of the providers
+listings/
+  specific-networks/<chain>/  # per-chain listing instances
+  all-networks/      # listing instances merged into every chain
 ```
 
-Each **network folder** contains CSVs grouped by service type.
-Each row in a network CSV is an **offer**: a provider listing for a specific category.
-Some offers are stored as **provider references**: the `provider` field contains `!provider:<slug>`, pointing to the canonical entry in `providers/`, and only network-specific fields are present in the offer row.
+## How to Consume
+
+### Visualize data
+Go to https://chain.love and select the network you would like to explore. Take a look also at [our AI](https://chatgpt.com/g/g-68bf52c0b60c8191a56c6f98959b97ec-chain-love) that is based on this open-source database!
+
+### Programmatically
+Go to [Releases](releases) to fetch latest JSONs we produce.
 
 ## How to Contribute
 
-1. **Fork & branch**: Fork the repo and create a descriptive branch (e.g. `add-ankr-provider`).
-2. **Choose what to edit**: Pick the right CSV (e.g. `rpc.csv` in the correct network).
-3. **Follow the rules**: Check the [Style Guide](https://github.com/Chain-Love/chain-love/wiki/Style-Guide) and [Column Definitions](https://github.com/Chain-Love/chain-love/wiki) for formatting and examples, then edit your entry.
-4. **Validate & commit**: Make sure the CSV is correct, then commit and push. You may use the [pre-commit hook](#pre-commit-hook) to validate your changes locally.
-5. **Open a PR**: Describe your changes, link related issues. Maintainers will review and merge.
-
-### Pre-commit Hook (optional)
-
-1. Install `python3`:
-
-- macOS: `brew install python3`
-- Linux: Most distributions already include Python 3. If not, run `sudo apt-get install python3` (or use your distro’s package manager).
-- Windows: Download and install [Python 3](https://www.python.org/downloads/). During installation, check “Add Python to PATH”.
-
-2. Verify `python3` is installed:
-
-```bash
-python3 --version
-```
-
-3. Install `pipx`:
-
-- macOS:
-```bash
-brew install pipx
-pipx ensurepath
-```
-- Linux:
-```bash
-sudo apt-get install pipx
-pipx ensurepath
-```
-- Windows:
-```powershell
-python -m pip install --user pipx
-python -m pipx ensurepath
-```
-
-4. Restart your terminal after this step.
-
-5. Verify `pipx` is installed:
-
-```bash
-pipx --version
-```
-
-6. Install `pre-commit`:
-
-```bash
-pipx install pre-commit
-```
-
-7. Restart your terminal after this step.
-
-8. Verify `pre-commit` is installed:
-
-```bash
-pre-commit --version
-```
-
-9. Install the hook by running the following command in the root of the repository:
-
-```bash
-pre-commit install
-```
-
-Now data validation scripts will run before each commit.
-
-## Reporting Issues
-
-Use [GitHub Issues](https://github.com/Chain-Love/chain-love/issues).
-
-Supported issue types:
-
-* **Bug Report**: Fix broken database structure or Chain.Love website issue.
-* **DB Improvement Proposal (DBIP)**: Suggest changes to the data model (categories, tables, or columns).
-* **Blank Issue**: For everything else.
-
-
+See [CONTRIBUTING](CONTRIBUTING.md).
