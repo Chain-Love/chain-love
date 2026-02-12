@@ -242,7 +242,6 @@ def main() -> int:
     ap.add_argument("--jsonfile", required=True)
     ap.add_argument("--json-dir", default="json")
     ap.add_argument("--fallback-to-tags", action="store_true")
-    ap.add_argument("--verbose", action="store_true")
     args = ap.parse_args()
 
     paths = (
