@@ -4,6 +4,8 @@ from copy import deepcopy
 from typing import Any, Dict, List, Optional
 
 import requests
+from jsonschema import Draft202012Validator
+from validate import check_schema_validation
 
 
 VERIFIED_API_TOKEN_ENV = "VERIFIED_API_TOKEN"
@@ -12,6 +14,21 @@ GRAPH_API_KEY_ENV = "GRAPH_API_KEY"
 
 VERIFIED_CATEGORIES = ["apis"]
 BPS_DENOMINATOR = 10000
+
+SCHEMA_PATH = os.path.join(os.path.dirname(__file__), "schema.json")
+with open(SCHEMA_PATH, "r", encoding="utf-8") as f:
+    NETWORK_SCHEMA = json.load(f)
+
+SCHEMA_VALIDATOR = Draft202012Validator(NETWORK_SCHEMA)
+
+_SUBDOMAIN_OVERRIDES: Dict[str, str] = {
+    "ethereum": "eth",
+}
+
+
+def _network_to_hostname(network: str) -> str:
+    subdomain = _SUBDOMAIN_OVERRIDES.get(network, network)
+    return f"{subdomain}.chain.love"
 
 
 class EnrichmentConfigError(RuntimeError):
@@ -41,7 +58,8 @@ def fetch_verified_providers(network: str, token: str) -> Optional[List[Dict[str
       - None if the API call failed
       - []  if the API returned 200 OK with an empty list
     """
-    url = f"https://{network}.chain.love/toolbox/api/verified-providers"
+    hostname = _network_to_hostname(network)
+    url = f"https://{hostname}/api/verified-providers"
     headers = {"Authorization": f"Bearer {token}"}
     try:
         resp = requests.get(url, headers=headers, timeout=10)
@@ -91,12 +109,7 @@ def fetch_sla_metrics_for_network(
     if not service_ids:
         return {}
 
-    seen = set()
-    unique_ids: List[str] = []
-    for sid in service_ids:
-        if sid not in seen:
-            seen.add(sid)
-            unique_ids.append(sid)
+    unique_ids: List[str] = list(set(service_ids))
 
     query = """
     query ($serviceIds: [String!]!) {
@@ -147,24 +160,24 @@ def fetch_sla_metrics_for_network(
         print(f"[{network}] WARNING: SLA subgraph response has unexpected shape")
         return None
 
+    def _to_int(value: Any) -> int:
+        try:
+            return int(value)
+        except (TypeError, ValueError):
+            return 0
+
+    def _has_activity(m: Dict[str, Any]) -> bool:
+        total_proofs_num = _to_int(m.get("totalProofs"))
+        consensus_exec_num = _to_int(m.get("consensusExecutions"))
+        return total_proofs_num > 0 or consensus_exec_num > 0
+
+    active_metrics = filter(
+        lambda m: isinstance(m, dict) and _has_activity(m),
+        metrics_list,
+    )
+
     metrics_by_id: Dict[str, Any] = {}
-    for m in metrics_list:
-        if not isinstance(m, dict):
-            continue
-        total_proofs = m.get("totalProofs") or 0
-        consensus_exec = m.get("consensusExecutions") or 0
-        try:
-            total_proofs_num = int(total_proofs)
-        except (TypeError, ValueError):
-            total_proofs_num = 0
-        try:
-            consensus_exec_num = int(consensus_exec)
-        except (TypeError, ValueError):
-            consensus_exec_num = 0
-
-        if total_proofs_num <= 0 and consensus_exec_num <= 0:
-            continue
-
+    for m in active_metrics:
         sid = m.get("id")
         if isinstance(sid, str) and sid:
             metrics_by_id[sid] = m
@@ -172,62 +185,36 @@ def fetch_sla_metrics_for_network(
     return metrics_by_id
 
 
-def normalize_metrics(metric: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Approximate port of the UI's normalizeMetrics logic.
-    """
-    def _to_int(value: Any) -> int:
-        try:
-            return int(value)
-        except (TypeError, ValueError):
-            return 0
+def normalize_metrics(metric: dict) -> dict:
+    total_proofs = int(metric["totalProofs"])
+    downtime_count = int(metric["downtimeCount"])
+    latency_count = int(metric["latencyCount"])
+    consensus_exec = int(metric["consensusExecutions"])
+    violations = int(metric["violations"])
 
-    total_proofs = _to_int(metric.get("totalProofs"))
-    downtime_count = _to_int(metric.get("downtimeCount"))
-    latency_count = _to_int(metric.get("latencyCount"))
-    consensus_exec = _to_int(metric.get("consensusExecutions"))
-    violations = _to_int(metric.get("violations"))
-
-    proof_downtime_bps = 0
+    proofs_bps = 0
     if total_proofs > 0:
-        total_events = downtime_count + latency_count
-        if total_events < 0:
-            total_events = 0
-        proof_downtime_bps = (total_events * BPS_DENOMINATOR) // total_proofs
+        total_count = downtime_count + latency_count
+        proofs_bps = (total_count * BPS_DENOMINATOR) // total_proofs
 
-    consensus_downtime_bps = 0
+    consensus_bps = 0
     if consensus_exec > 0:
-        consensus_downtime_bps = (violations * BPS_DENOMINATOR) // consensus_exec
+        consensus_bps = (violations * BPS_DENOMINATOR) // consensus_exec
 
-    if proof_downtime_bps and consensus_downtime_bps:
-        downtime_bps = int((proof_downtime_bps + consensus_downtime_bps) / 2)
-    elif proof_downtime_bps:
-        downtime_bps = proof_downtime_bps
+    if total_proofs > 0 and consensus_exec > 0:
+        downtime_bps = (proofs_bps + consensus_bps) // 2
+    elif consensus_exec == 0:
+        downtime_bps = proofs_bps
     else:
-        downtime_bps = consensus_downtime_bps
+        downtime_bps = consensus_bps
 
-    downtime_bps = max(0, min(BPS_DENOMINATOR, downtime_bps))
     verified_uptime = BPS_DENOMINATOR - downtime_bps
 
-    block_latency_avg = metric.get("blockLatencyAvg")
-    time_latency_avg = metric.get("timeLatencyAvg")
-
-    latency_value: Optional[str] = None
-    if time_latency_avg is not None:
-        latency_value = str(time_latency_avg)
-    elif latency_count > 0 and block_latency_avg is not None:
-        latency_value = str(block_latency_avg)
-
-    blocks_behind_avg: Optional[str] = None
-    if block_latency_avg is not None:
-        blocks_behind_avg = str(block_latency_avg)
-
     return {
-        "verifiedUptime": verified_uptime,
-        "verifiedLatency": latency_value,
-        "verifiedBlocksBehindAvg": blocks_behind_avg,
+        "verifiedUptime": str(verified_uptime),
+        "verifiedLatency": str(metric["timeLatencyAvg"]),
+        "verifiedBlocksBehindAvg": str(metric["blockLatencyAvg"]),
     }
-
 
 def enrich_network_data(
     network: str,
@@ -248,70 +235,35 @@ def enrich_network_data(
     """
     enriched = deepcopy(original_data)
 
-    if len(verified_providers) == 0:
-        apis = enriched.get("apis")
-        if isinstance(apis, list):
-            for item in apis:
-                if isinstance(item, dict):
-                    item["verifiedUptime"] = None
-                    item["verifiedLatency"] = None
-                    item["verifiedBlocksBehindAvg"] = None
+    if not verified_providers:
+        for category in VERIFIED_CATEGORIES:
+            for item in enriched.get(category, []):
+                item["verifiedUptime"] = None
+                item["verifiedLatency"] = None
+                item["verifiedBlocksBehindAvg"] = None
         return enriched
 
-    # Non-empty verified_providers but SLA failed -> keep everything as-is.
     if sla_metrics_by_id is None:
         return enriched
 
-    # Build join maps
-    slug_to_service_id: Dict[str, str] = {}
-    current_verified_slugs = set()
-    for entry in verified_providers:
-        slug = entry.get("slug")
-        service_id = entry.get("serviceId")
-        if isinstance(slug, str) and isinstance(service_id, str) and slug and service_id:
-            slug_to_service_id[slug] = service_id
-            current_verified_slugs.add(slug)
+    slug_to_service_id: Dict[str, str] = {p["slug"]: p["serviceId"] for p in verified_providers}
 
     for category in VERIFIED_CATEGORIES:
-        items = enriched.get(category)
-        if not isinstance(items, list):
-            continue
+        for item in enriched.get(category, []):
+            slug = item["slug"]
 
-        for item in items:
-            if not isinstance(item, dict):
-                continue
-
-            slug = item.get("slug")
-            if not isinstance(slug, str) or not slug:
-                # No join key – leave verified fields as-is.
-                continue
-
-            # Currently verified provider?
             service_id = slug_to_service_id.get(slug)
-            if service_id:
-                metric = sla_metrics_by_id.get(service_id)
-                if metric is None:
-                    # SLA subgraph had no record for this serviceId despite 200 OK.
-                    # Treat as "no data yet" and preserve existing verified fields.
-                    continue
-
-                normalized = normalize_metrics(metric)
-                item["verifiedUptime"] = normalized["verifiedUptime"]
-                # Ensure latency-related fields are stored as strings.
-                item["verifiedLatency"] = (
-                    None if normalized["verifiedLatency"] is None else str(normalized["verifiedLatency"])
-                )
-                item["verifiedBlocksBehindAvg"] = (
-                    None
-                    if normalized["verifiedBlocksBehindAvg"] is None
-                    else str(normalized["verifiedBlocksBehindAvg"])
-                )
+            if not service_id:
+                item["verifiedUptime"] = None
+                item["verifiedLatency"] = None
+                item["verifiedBlocksBehindAvg"] = None
                 continue
 
-            # Not in current verified set -> provider no longer verified.
-            item["verifiedUptime"] = None
-            item["verifiedLatency"] = None
-            item["verifiedBlocksBehindAvg"] = None
+            metric = sla_metrics_by_id.get(service_id)
+            if metric is None:
+                continue
+
+            item.update(normalize_metrics(metric))
 
     return enriched
 
@@ -340,13 +292,17 @@ def process_all_networks() -> None:
             print(f"[{network}] WARNING: failed to read JSON file: {e}")
             continue
 
+        if not check_schema_validation(schema_validator=SCHEMA_VALIDATOR, data=original_data):
+            print(f"[{network}] ERROR: original data does not conform to schema, skipping enrichment")
+            continue
+
         providers = fetch_verified_providers(network, verified_api_token)
         if providers is None:
             continue
 
         sla_metrics_by_id: Optional[Dict[str, Any]] = None
         if len(providers) > 0:
-            service_ids = [p["serviceId"] for p in providers if isinstance(p.get("serviceId"), str)]
+            service_ids = [p["serviceId"] for p in providers]
             sla_metrics_by_id = fetch_sla_metrics_for_network(
                 network=network,
                 service_ids=service_ids,
@@ -360,6 +316,10 @@ def process_all_networks() -> None:
             verified_providers=providers,
             sla_metrics_by_id=sla_metrics_by_id,
         )
+
+        if not check_schema_validation(schema_validator=SCHEMA_VALIDATOR, data=enriched_data):
+            print(f"[{network}] ERROR: enriched data does not conform to schema, skipping write")
+            continue
 
         if enriched_data != original_data:
             try:
