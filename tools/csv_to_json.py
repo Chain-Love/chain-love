@@ -363,6 +363,19 @@ def ensure_sdks_tbd_fields(result: dict):
             if v is None or (isinstance(v, str) and v.strip() == ""):
                 item[k] = "TBD"
 
+def load_meta():
+    with open("meta/categories.json", "r", encoding="utf-8") as f:
+        categories = json.load(f)
+
+    with open("meta/columns.json", "r", encoding="utf-8") as f:
+        columns = json.load(f)
+
+    return {
+        "categories": categories,
+        "columns": columns,
+    }
+
+
 def main():
     if not os.path.exists("networks"):
         print("No 'networks' directory found")
@@ -371,6 +384,7 @@ def main():
     offchain_categories = load_categories_from_folder("offchain")
 
     schema_version = get_schema_version("schema.json", fallback="1.0.0")
+    meta = load_meta()
 
     for network_name in os.listdir("networks"):
         network_dir_full_path = os.path.join("networks", network_name)
@@ -416,6 +430,7 @@ def main():
         result["columns"] = get_column_order(result)
         # set from schema.json const
         result["schemaVersion"] = schema_version
+        result["meta"] = meta
 
 
         os.makedirs("json", exist_ok=True)
