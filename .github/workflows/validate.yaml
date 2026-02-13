@@ -36,6 +36,7 @@ jobs:
           cp json-tools/tools/csv_to_json.py .
           cp json-tools/tools/validate.py .
           cp json-tools/tools/schema.json .
+          cp -r json-tools/meta .
           ls -l
       
       - name: Run scripts inside network-disabled container
