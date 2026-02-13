@@ -36,6 +36,7 @@ jobs:
         run: |
           cp json-tools/tools/csv_to_json.py .
           cp json-tools/tools/update_sdks_metadata_*.py .
+          cp -r json-tools/meta .
 
       - name: Configure Git
         run: |
