@@ -21,7 +21,8 @@ UPSTREAM_URL = f"https://github.com/{UPSTREAM_REPO}/archive/{UPSTREAM_REF}.tar.g
 
 # Paths copied from upstream repo into project root
 COPY_FROM_UPSTREAM = [
-    "tools/",
+    "tools/*",
+    "meta",
 ]
 
 # Scripts expected to end up in project root
@@ -71,6 +72,9 @@ def download_and_extract(url: str, dest: Path, subpath: str) -> None:
     """
     print(f"- downloading {url} ({subpath})")
 
+    flatten = subpath.endswith("/*")
+    subpath = subpath.rstrip("/*").rstrip("/")
+
     with urllib.request.urlopen(url) as resp:
         data = resp.read()
 
@@ -80,20 +84,36 @@ def download_and_extract(url: str, dest: Path, subpath: str) -> None:
             die("Downloaded archive is empty")
 
         root = members[0].name.split("/")[0]
-        prefix = f"{root}/{subpath.rstrip('/')}/"
+        full_prefix = f"{root}/{subpath}/"
 
         selected = [
             m for m in members
-            if m.name.startswith(prefix)
+            if m.name.startswith(full_prefix)
         ]
 
         if not selected:
             die(f"Path '{subpath}' not found in upstream archive")
 
         for m in selected:
-            m.name = m.name[len(prefix):]  # strip leading dirs
-            if m.name:
-                tar.extract(m, dest)
+            if flatten:
+                # strip root/subpath/
+                strip_prefix = full_prefix
+            else:
+                # strip only root/
+                strip_prefix = f"{root}/"
+
+            relative_name = m.name[len(strip_prefix):]
+            if not relative_name:
+                continue
+
+            target_path = dest / relative_name
+            target_path.parent.mkdir(parents=True, exist_ok=True)
+
+            if m.isdir():
+                target_path.mkdir(parents=True, exist_ok=True)
+            else:
+                with tar.extractfile(m) as src, open(target_path, "wb") as out:
+                    shutil.copyfileobj(src, out)
 
 
 def main() -> None:
