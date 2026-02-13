@@ -36,6 +36,7 @@ jobs:
         run: |
           cp json-tools/tools/csv_to_json.py .
           cp json-tools/tools/update_sdks_metadata_*.py .
+          cp -r json-tools/meta .
 
       - name: Configure Git
         run: |
@@ -65,6 +66,8 @@ jobs:
           pip install requests
 
       - name: Run CSV to JSON
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 csv_to_json.py
           python3 update_sdks_metadata_github.py --jsonfile all
