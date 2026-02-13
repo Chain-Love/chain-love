@@ -413,8 +413,17 @@ def main():
 
         # Incorporate offchain data
         for offchain_category_name in offchain_categories.keys():
+            # If offchain category name already exists in the result (e.g. apis), we need to merge
             if offchain_category_name in result:
-                result[offchain_category_name].extend(offchain_categories[offchain_category_name])
+                # If chain is relevant for category name, we need to add one entry per chain
+                if "chain" in result[offchain_category_name][0]:
+                    for chain in set([item["chain"] for item in result[offchain_category_name]]):
+                        result[offchain_category_name].extend(
+                            [item | {"chain": chain} for item in offchain_categories[offchain_category_name]]
+                        )
+                # Otherwise just add as is
+                else :
+                    result[offchain_category_name].extend(offchain_categories[offchain_category_name])
             else:
                 result[offchain_category_name] = offchain_categories[offchain_category_name]
 
