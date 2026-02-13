@@ -156,11 +156,16 @@ def fetch_sla_metrics_for_network(
         print(f"[{network}] WARNING: invalid JSON from SLA subgraph: {e}")
         return None
 
-    if "errors" in payload:       
+    if "errors" in payload:
         print(f"[{network}] WARNING: SLA subgraph returned errors: {payload['errors']}")
         return None
 
-    errors = list(SLA_RESPONSE_VALIDATOR.iter_errors(payload))
+    data = payload.get("data")
+    if data is None:
+        print(f"[{network}] WARNING: SLA subgraph response missing 'data'")
+        return None
+
+    errors = list(SLA_RESPONSE_VALIDATOR.iter_errors(data))
     if errors:
         print(f"[{network}] WARNING: SLA subgraph response schema mismatch")
         first = errors[0]
@@ -168,14 +173,13 @@ def fetch_sla_metrics_for_network(
         print("  path   :", list(first.absolute_path))
         return None
 
- 
+    metrics_list = data["serviceHealthMetrics"]
+
     def _has_activity(m: Dict[str, Any]) -> bool:
         return int(m["totalProofs"]) > 0 or int(m["consensusExecutions"]) > 0
 
     active_metrics = filter(_has_activity, metrics_list)
-
     metrics_by_id: Dict[str, Any] = {m["id"]: m for m in active_metrics}
-
     return metrics_by_id
 
 
