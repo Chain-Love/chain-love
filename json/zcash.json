@@ -1,4 +1,120 @@
 {
+    "bridges": [
+        {
+            "slug": "thorswap-mainnet",
+            "provider": "SwapKit",
+            "actionButtons": [
+                "[Website](https://app.thorswap.finance/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Cross-chain, Native Swap, DeFi",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "SwapKit API"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Streaming & Boosted Swaps",
+                "DEX Aggregation",
+                "Approval-less Swaps"
+            ],
+            "assetTypes": [
+                "ETH",
+                "BTC",
+                "LTC",
+                "DOGE"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Decentralized cross-chain exchange (DEX) aggregator",
+            "auditsPerformed": null,
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "TypeScript",
+                "JavaScript"
+            ],
+            "supportedChains": null
+        }
+    ],
+    "services": [
+        {
+            "slug": "2miners",
+            "provider": "2Miners",
+            "actionButtons": [
+                "[Website](https://2miners.com/zec-mining-pool)"
+            ],
+            "toolType": "Finance",
+            "tag": [
+                "PoW",
+                "Mining",
+                "Payouts"
+            ],
+            "price": "1% Fee",
+            "planType": "Pay-as-you-go",
+            "planName": null,
+            "description": "User-friendly Zcash mining pool with regular payouts and robust monitoring tools",
+            "starred": false
+        },
+        {
+            "slug": "flexa",
+            "provider": "Flexa",
+            "actionButtons": [
+                "[Website](https://flexa.network/)"
+            ],
+            "toolType": "Finance",
+            "tag": [
+                "Merchant",
+                "Real-world",
+                "Payments"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Digital payment network enabling instant, fraud-proof payments at major retailers",
+            "starred": false
+        },
+        {
+            "slug": "nowpayments",
+            "provider": "NowPayments",
+            "actionButtons": [
+                "[Website](https://nowpayments.io/supported-coins/zcash-payments)"
+            ],
+            "toolType": "Finance",
+            "tag": [
+                "API",
+                "Non-custodial",
+                "Payments"
+            ],
+            "price": "0.5% Fee",
+            "planType": "Pay-as-you-go",
+            "planName": null,
+            "description": "Non-custodial crypto payment gateway for e-commerce and donations.",
+            "starred": false
+        },
+        {
+            "slug": "bitgo",
+            "provider": "BitGo",
+            "actionButtons": [
+                "[Website](https://www.bitgo.com/)"
+            ],
+            "toolType": "Finance",
+            "tag": [
+                "Institutional-grade custody solution",
+                "Security"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Institutional-grade digital asset infrastructure company that provides secure custody, wallet, trading, staking and settlement services for cryptocurrencies",
+            "starred": false
+        }
+    ],
     "wallets": [
         {
             "slug": "atomic-wallet",
@@ -1095,6 +1211,41 @@
         }
     ],
     "columns": {
+        "bridges": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "txSpeedSla",
+            "throughputSla",
+            "openSource",
+            "support",
+            "starred",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "assetTypes",
+            "price",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "auditsPerformed",
+            "decentralizationModel",
+            "sdk",
+            "supportedChains"
+        ],
+        "services": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "toolType",
+            "tag",
+            "price",
+            "planType",
+            "planName",
+            "description",
+            "starred"
+        ],
         "wallets": [
             "slug",
             "provider",
