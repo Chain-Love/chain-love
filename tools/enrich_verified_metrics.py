@@ -7,7 +7,6 @@ import requests
 from jsonschema import Draft202012Validator
 from validate import check_schema_validation
 
-
 VERIFIED_API_TOKEN_ENV = "VERIFIED_API_TOKEN"
 SLA_MONITORING_SUBGRAPH_URL_ENV = "SLA_MONITORING_SUBGRAPH_URL"
 GRAPH_API_KEY_ENV = "GRAPH_API_KEY"
@@ -54,7 +53,9 @@ class EnrichmentConfigError(RuntimeError):
 def _get_env(name: str) -> str:
     value = os.environ.get(name)
     if not value:
-        raise EnrichmentConfigError(f"Environment variable {name} is required but not set or empty")
+        raise EnrichmentConfigError(
+            f"Environment variable {name} is required but not set or empty"
+        )
     return value
 
 
@@ -71,12 +72,13 @@ def save_json_file(path: str, data: Dict[str, Any]) -> None:
 def fetch_verified_providers(network: str, token: str) -> Optional[List[Dict[str, str]]]:
     """
     Returns a list of { slug, serviceId } for the given network, or:
-      - None if the API call failed
+      - None if the API call failed / invalid JSON / schema mismatch
       - []  if the API returned 200 OK with an empty list
     """
     hostname = _network_to_hostname(network)
     url = f"https://{hostname}/external-api/toolbox/api/verified-providers"
     headers = {"Authorization": f"Bearer {token}"}
+
     try:
         resp = requests.get(url, headers=headers, timeout=10)
         resp.raise_for_status()
@@ -99,6 +101,10 @@ def fetch_verified_providers(network: str, token: str) -> Optional[List[Dict[str
         return None
 
     providers: List[Dict[str, str]] = data
+
+    for p in providers:
+        p["serviceId"] = p["serviceId"].strip()
+
     return providers
 
 
@@ -184,35 +190,40 @@ def fetch_sla_metrics_for_network(
 
 
 def normalize_metrics(metric: dict) -> dict:
-    total_proofs = int(metric["totalProofs"])
-    downtime_count = int(metric["downtimeCount"])
-    latency_count = int(metric["latencyCount"])
-    consensus_exec = int(metric["consensusExecutions"])
-    violations = int(metric["violations"])
+    def uint256(x: object) -> int:
+        v = int(x)
+        if v < 0:
+            raise ValueError(f"uint256 must be >= 0, got {v}")
+        return v
+    
+    total_proofs = uint256(metric["totalProofs"])
+    downtime_count = uint256(metric["downtimeCount"])
+    latency_count = uint256(metric["latencyCount"])
+    consensus_exec = uint256(metric["consensusExecutions"])
+    violations = uint256(metric["violations"])
 
-    proofs_bps = 0
-    if total_proofs > 0:
+    def get_proof_downtime():
         total_count = downtime_count + latency_count
-        proofs_bps = (total_count * BPS_DENOMINATOR) // total_proofs
+        return (total_count * BPS_DENOMINATOR) // total_proofs
 
-    consensus_bps = 0
-    if consensus_exec > 0:
-        consensus_bps = (violations * BPS_DENOMINATOR) // consensus_exec
+    def get_consensus_downtime():
+        return (violations * BPS_DENOMINATOR) // consensus_exec
 
-    if total_proofs > 0 and consensus_exec > 0:
-        downtime_bps = (proofs_bps + consensus_bps) // 2
-    elif consensus_exec == 0:
-        downtime_bps = proofs_bps
+    if consensus_exec and total_proofs:
+        downtime = (get_proof_downtime() + get_consensus_downtime()) // 2
+    elif not consensus_exec:
+        downtime = get_proof_downtime()
     else:
-        downtime_bps = consensus_bps
+        downtime = get_consensus_downtime()
 
-    verified_uptime = BPS_DENOMINATOR - downtime_bps
+    verified_uptime = BPS_DENOMINATOR - downtime
 
     return {
         "verifiedUptime": str(verified_uptime),
         "verifiedLatency": str(metric["timeLatencyAvg"]),
         "verifiedBlocksBehindAvg": str(metric["blockLatencyAvg"]),
     }
+
 
 def enrich_network_data(
     network: str,
@@ -233,7 +244,7 @@ def enrich_network_data(
     """
     enriched = deepcopy(original_data)
 
-    if not verified_providers:
+    if verified_providers == []:
         for category in VERIFIED_CATEGORIES:
             for item in enriched.get(category, []):
                 item["verifiedUptime"] = None
@@ -337,4 +348,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
