@@ -1,43 +1,34 @@
-name: "CSV to JSON"
+name: "Verified metrics refresh"
 
 on:
+  schedule:
+    - cron: "*/30 * * * *"
   workflow_dispatch:
-  push:
-    branches:
-      - main
+
+concurrency:
+  group: verified-metrics-refresh
+  cancel-in-progress: false
+
 env:
-  SOURCE_BRANCH: main
   TARGET_BRANCH: json
   VERIFIED_API_TOKEN: ${{ secrets.VERIFIED_API_TOKEN }}
   SLA_MONITORING_SUBGRAPH_URL: ${{ secrets.SLA_MONITORING_SUBGRAPH_URL }}
   GRAPH_API_KEY: ${{ secrets.GRAPH_API_KEY }}
 
 jobs:
-  convert:
+  refresh:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source branch
+      - name: Checkout json branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.SOURCE_BRANCH }}
+          ref: ${{ env.TARGET_BRANCH }}
           fetch-depth: 0
 
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Switch to target branch or create/merge from source
-        run: |
-          git fetch origin
-          if git ls-remote --exit-code --heads origin ${{ env.TARGET_BRANCH }}; then
-            echo "Target branch exists, checking out and merging from source"
-            git checkout ${{ env.TARGET_BRANCH }}
-            git merge origin/${{ env.SOURCE_BRANCH }} --no-edit
-          else
-            echo "Target branch does not exist, creating from source branch"
-            git checkout -b ${{ env.TARGET_BRANCH }} origin/${{ env.SOURCE_BRANCH }}
-          fi
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -49,11 +40,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Run CSV to JSON
-        run: python3 csv_to_json.py
-
       - name: Enrich verified metrics
-        run: python3 enrich_verified_metrics.py
+        run: python3 tools/enrich_verified_metrics.py
 
       - name: Commit and push
         run: |
@@ -61,6 +49,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update processed file"
+            git commit -m "Refresh verified metrics"
             git push origin ${{ env.TARGET_BRANCH }}
           fi
+
