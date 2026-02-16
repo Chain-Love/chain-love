@@ -13620,6 +13620,525 @@
             "deliveryType": "TBD"
         }
     ],
+    "oracles": [
+        {
+            "slug": "api3-mainnet",
+            "provider": "API3",
+            "actionButtons": [
+                "[Website](https://market.api3.org/bsc)"
+            ],
+            "chain": "mainnet",
+            "technology": "Push & Pull Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ]
+        },
+        {
+            "slug": "api3-testnet",
+            "provider": "API3",
+            "actionButtons": [
+                "[Website](https://market.api3.org/bsc-testnet)"
+            ],
+            "chain": "testnet",
+            "technology": "Push & Pull Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ]
+        },
+        {
+            "slug": "binance-oracle",
+            "provider": "Binance",
+            "actionButtons": [
+                "[Website](https://oracle.binance.com/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Feed Adapter API",
+                "Feed Registry API"
+            ],
+            "monitoringAndAnalytics": [
+                "24/7 monitoring",
+                "Reliability-focused analytics"
+            ],
+            "additionalFeatures": [
+                "Verifiable Random Function (VRF) for provably fair randomness"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Tamper-proof, real-time off-chain data feeds",
+            "sdk": [
+                "Python",
+                "Node.js",
+                "JavaScript"
+            ],
+            "auditsPerformed": [
+                "Certik (2022)"
+            ]
+        },
+        {
+            "slug": "chainlink-mainnet",
+            "provider": "Chainlink",
+            "actionButtons": [
+                "[Docs](https://docs.chain.link/ccip/directory/mainnet/chain/bsc-mainnet)"
+            ],
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ]
+        },
+        {
+            "slug": "chainlink-testnet",
+            "provider": "Chainlink",
+            "actionButtons": [
+                "[Docs](https://docs.chain.link/ccip/directory/testnet/chain/bsc-testnet)"
+            ],
+            "chain": "testnet",
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ]
+        },
+        {
+            "slug": "dia-mainnet",
+            "provider": "DIA",
+            "actionButtons": [
+                "[Docs](https://www.diadata.org/docs/guides/chain-specific-guide/bnb-chain)"
+            ],
+            "chain": "mainnet",
+            "technology": "DIA",
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds"
+            ],
+            "additionalFeatures": [
+                "Cross-chain compatibility",
+                "Customizable data feeds",
+                "Customizable data feeds",
+                "Advanced architecture using Layer 2 rollup"
+            ],
+            "dataTypes": [
+                "BTC",
+                "DIA",
+                "USDC"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
+            "sdk": [
+                "Solidity",
+                "Vyper"
+            ],
+            "auditsPerformed": [
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
+            ]
+        },
+        {
+            "slug": "orochi-mainnet",
+            "provider": "Orochi Network",
+            "actionButtons": [
+                "[Docs](https://docs.orochi.network/Orocle/mainnet)"
+            ],
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "VRF"
+            ],
+            "monitoringAndAnalytics": [
+                "Monitoring dashboard",
+                "Oracle feeds explorer"
+            ],
+            "additionalFeatures": [
+                "ECVRF-based randomness",
+                "Batching & flexible submission",
+                "Validity proofs for all oracle data"
+            ],
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Cryptographic validity proofs (Orocle) + ECVRF proofs (Orand); no staking/slashing model",
+            "sdk": [
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "None Public"
+            ]
+        },
+        {
+            "slug": "orochi-testnet",
+            "provider": "Orochi Network",
+            "actionButtons": [
+                "[Docs](https://docs.orochi.network/Orocle/testnet)"
+            ],
+            "chain": "testnet",
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "VRF"
+            ],
+            "monitoringAndAnalytics": [
+                "Monitoring dashboard",
+                "Oracle feeds explorer"
+            ],
+            "additionalFeatures": [
+                "ECVRF-based randomness",
+                "Batching & flexible submission",
+                "Validity proofs for all oracle data"
+            ],
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Cryptographic validity proofs (Orocle) + ECVRF proofs (Orand); no staking/slashing model",
+            "sdk": [
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "None Public"
+            ]
+        },
+        {
+            "slug": "pyth-mainnet",
+            "provider": "Pyth Network",
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/evm#mainnets)"
+            ],
+            "chain": "mainnet",
+            "technology": "Pull Oracle",
+            "starred": false,
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ]
+        },
+        {
+            "slug": "pyth-testnet",
+            "provider": "Pyth Network",
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/evm#testnets)"
+            ],
+            "chain": "testnet",
+            "technology": "Pull Oracle",
+            "starred": false,
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ]
+        },
+        {
+            "slug": "redstone-mainnet",
+            "provider": "RedStone",
+            "actionButtons": [
+                "[Website](https://app.redstone.finance/app/feeds/?networks=56&page=1&sortBy=popularity&sortDesc=false&perPage=32)"
+            ],
+            "chain": "mainnet",
+            "technology": "Modular Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Delivery Monitoring"
+            ],
+            "additionalFeatures": [
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "Custom External Data"
+            ],
+            "decentralizationModel": "Hybrid",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
+            ]
+        },
+        {
+            "slug": "redstone-testnet",
+            "provider": "RedStone",
+            "actionButtons": [
+                "[Website](https://app.redstone.finance/app/feeds/?page=1&sortBy=popularity&sortDesc=false&perPage=32&networks=97)"
+            ],
+            "chain": "testnet",
+            "technology": "Modular Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Delivery Monitoring"
+            ],
+            "additionalFeatures": [
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "Custom External Data"
+            ],
+            "decentralizationModel": "Hybrid",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
+            ]
+        },
+        {
+            "slug": "supra-mainnet",
+            "provider": "Supra",
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle/networks)"
+            ],
+            "chain": "mainnet",
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ]
+        },
+        {
+            "slug": "supra-testnet",
+            "provider": "Supra",
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle/networks)"
+            ],
+            "chain": "testnet",
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ]
+        }
+    ],
     "explorers": [
         {
             "slug": "arkham",
@@ -14320,6 +14839,23 @@
             "aggregator",
             "auditsPerformed",
             "deliveryType"
+        ],
+        "oracles": [
+            "slug",
+            "provider",
+            "actionButtons",
+            "chain",
+            "technology",
+            "starred",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "dataTypes",
+            "decentralizationModel",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "sdk",
+            "auditsPerformed"
         ],
         "explorers": [
             "slug",
