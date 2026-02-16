@@ -190,17 +190,17 @@ def fetch_sla_metrics_for_network(
 
 
 def normalize_metrics(metric: dict) -> dict:
-    def uint256(x: object) -> int:
+    def parse_uint(x: object) -> int:
         v = int(x)
         if v < 0:
-            raise ValueError(f"uint256 must be >= 0, got {v}")
+            raise ValueError(f"value must be >= 0, got {v}")
         return v
     
-    total_proofs = uint256(metric["totalProofs"])
-    downtime_count = uint256(metric["downtimeCount"])
-    latency_count = uint256(metric["latencyCount"])
-    consensus_exec = uint256(metric["consensusExecutions"])
-    violations = uint256(metric["violations"])
+    total_proofs = parse_uint(metric["totalProofs"])
+    downtime_count = parse_uint(metric["downtimeCount"])
+    latency_count = parse_uint(metric["latencyCount"])
+    consensus_exec = parse_uint(metric["consensusExecutions"])
+    violations = parse_uint(metric["violations"])
 
     def get_proof_downtime():
         total_count = downtime_count + latency_count
