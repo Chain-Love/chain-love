@@ -7,10 +7,6 @@ import requests
 from jsonschema import Draft202012Validator
 from validate import check_schema_validation  # source of truth
 
-VERIFIED_API_TOKEN_ENV = "VERIFIED_API_TOKEN"
-SLA_MONITORING_SUBGRAPH_URL_ENV = "SLA_MONITORING_SUBGRAPH_URL"
-GRAPH_API_KEY_ENV = "GRAPH_API_KEY"
-
 VERIFIED_CATEGORIES = ["apis"]
 BPS_DENOMINATOR = 10000
 
@@ -278,9 +274,9 @@ def enrich_network_data(
 
 
 def process_all_networks() -> None:
-    verified_api_token = _get_env(VERIFIED_API_TOKEN_ENV)
-    subgraph_url = _get_env(SLA_MONITORING_SUBGRAPH_URL_ENV)
-    graph_api_key = _get_env(GRAPH_API_KEY_ENV)
+    verified_api_token = _get_env(VERIFIED_API_TOKEN)
+    subgraph_url = _get_env(SLA_MONITORING_SUBGRAPH_URL)
+    graph_api_key = _get_env(GRAPH_API_KEY)
 
     if not os.path.isdir("json"):
         print("No 'json' directory found, nothing to enrich")
