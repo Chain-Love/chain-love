@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Optional
 
 import requests
 from jsonschema import Draft202012Validator
-from validate import check_schema_validation
+from validate import check_schema_validation  # source of truth
 
 VERIFIED_API_TOKEN_ENV = "VERIFIED_API_TOKEN"
 SLA_MONITORING_SUBGRAPH_URL_ENV = "SLA_MONITORING_SUBGRAPH_URL"
@@ -94,8 +94,8 @@ def fetch_verified_providers(network: str, token: str) -> Optional[List[Dict[str
 
     errors = list(VERIFIED_PROVIDERS_VALIDATOR.iter_errors(data))
     if errors:
-        print(f"[{network}] WARNING: verified-providers response schema mismatch")
         first = errors[0]
+        print(f"[{network}] WARNING: verified-providers response schema mismatch")
         print("  message:", first.message)
         print("  path   :", list(first.absolute_path))
         return None
@@ -173,8 +173,8 @@ def fetch_sla_metrics_for_network(
 
     errors = list(SLA_RESPONSE_VALIDATOR.iter_errors(data))
     if errors:
-        print(f"[{network}] WARNING: SLA subgraph response schema mismatch")
         first = errors[0]
+        print(f"[{network}] WARNING: SLA subgraph response schema mismatch")
         print("  message:", first.message)
         print("  path   :", list(first.absolute_path))
         return None
