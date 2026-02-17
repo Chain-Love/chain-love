@@ -3,7 +3,6 @@ import re
 import json
 from jsonschema import Draft202012Validator
 from jsonpointer import resolve_pointer
-from csv_to_json import load_csv_to_dict_list, normalize
 import copy
 
 class Validator:
@@ -240,6 +239,8 @@ def check_validation(data, schema_validator, rules_validator) -> bool:
     return check_schema_validation(schema_validator, data) and check_rules_validation(rules_validator, data)
 
 def load_csv_folder(folder) -> dict:
+    from csv_to_json import load_csv_to_dict_list, normalize
+
     data = {}
     for category_file_name in os.listdir(folder):
         if not category_file_name.endswith(".csv"):
