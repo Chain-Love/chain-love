@@ -1,4 +1,4 @@
-Name: "CSV to JSON"
+name: "CSV to JSON"
 
 on:
   workflow_dispatch:
@@ -34,6 +34,68 @@ jobs:
       
       - name: Copy scripts from tools folder
         run: |
+          # استخدام المسارات المباشرة (بدون مجلد tools فرعي)
+          cp json-tools/csv_to_json.py .
+          cp json-tools/enrich_verified_metrics.py .
+          cp json-tools/validate.py .
+          cp json-tools/schema.json .
+          if [ -d "json-tools/validation" ]; then cp -r json-tools/validation .; fi
+          cp json-tools/update_sdks_metadata_*.py .
+          if [ -d "json-tools/meta" ]; then cp -r json-tools/meta .; fi
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Switch to target branch or create/merge from source
+        run: |
+          git fetch origin
+          if git ls-remote --exit-code --heads origin ${{ env.TARGET_BRANCH }}; then
+            echo "Target branch exists, checking out and merging from source"
+            git checkout ${{ env.TARGET_BRANCH }}
+            git merge origin/${{ env.SOURCE_BRANCH }} --no-edit
+          else
+            echo "Target branch does not exist, creating from source branch"
+            git checkout -b ${{ env.TARGET_BRANCH }} origin/${{ env.SOURCE_BRANCH }}
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          if [ -f "json-tools/requirements.txt" ]; then
+            pip install -r json-tools/requirements.txt
+          else
+            echo "requirements.txt not found, skipping..."
+          fi
+
+      - name: Run CSV to JSON and enrichment
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERIFIED_API_TOKEN: ${{ secrets.VERIFIED_API_TOKEN }}
+          SLA_MONITORING_SUBGRAPH_URL: ${{ secrets.SLA_MONITORING_SUBGRAPH_URL }}
+          GRAPH_API_KEY: ${{ secrets.GRAPH_API_KEY }}
+        run: |
+          python3 csv_to_json.py
+          python3 enrich_verified_metrics.py
+          if [ -f "update_sdks_metadata_github.py" ]; then python3 update_sdks_metadata_github.py --jsonfile all; fi
+          if [ -f "update_sdks_metadata_npm.py" ]; then python3 update_sdks_metadata_npm.py --jsonfile all; fi
+          if [ -f "update_sdks_metadata_gitlab.py" ]; then python3 update_sdks_metadata_gitlab.py --jsonfile all --fallback-to-tags; fi
+
+      - name: Commit and push
+        run: |
+          git add json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update processed file"
+            git push origin ${{ env.TARGET_BRANCH }}
+          fi
           # تم حذف /tools/ من جميع المسارات أدناه بناءً على سجل الخطأ
           cp json-tools/csv_to_json.py .
           cp json-tools/enrich_verified_metrics.py .
