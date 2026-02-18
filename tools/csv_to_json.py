@@ -327,13 +327,15 @@ def resolve_offers(
     """
     Replaces listing rows that contain offer refs with merged offer data.
 
-    Expected listing convention:
-      row["offer"] == "!offer:<offer_slug>"
-
-    Offers come from:
-      references/offers/<category>.csv
-    where <category> matches the current category being resolved.
+    Behavior:
+      - If row["offer"] == "!offer:<slug>"
+            → merge offer row as base
+            → listing overrides non-empty values
+            → resulting row["offer"] = offer_row["offer"]
+      - If no offer ref
+            → ensure row["offer"] = None
     """
+
     # Build offer indexes per category: {category: {offer_slug: offer_row}}
     offer_idx_by_category: dict[str, dict[str, dict]] = {}
     for cat, offers in offers_by_category.items():
@@ -342,45 +344,65 @@ def resolve_offers(
         )
 
     resolved = {}
+
     for category, items in data_by_category.items():
         out_items = []
+
         for item in items:
             if not isinstance(item, dict):
                 out_items.append(item)
                 continue
 
             offer_field = item.get("offer")
+
+            # ─────────────────────────────
+            # Case 1: listing contains !offer:<slug>
+            # ─────────────────────────────
             if isinstance(offer_field, str) and is_offer_ref(offer_field):
                 offer_slug = get_ref_slug(offer_field, OFFER_REF_PREFIX)
 
                 cat_offers = offer_idx_by_category.get(category)
                 if cat_offers is None:
                     raise ValueError(
-                        f"Category '{category}' uses !offer reference but references/offers/{category}.csv is missing"
+                        f"Category '{category}' uses !offer reference "
+                        f"but references/offers/{category}.csv is missing"
                     )
 
                 offer_row = cat_offers.get(offer_slug)
                 if offer_row is None:
                     raise ValueError(
-                        f"Offer '{offer_slug}' not found in references/offers/{category}.csv "
+                        f"Offer '{offer_slug}' not found in "
+                        f"references/offers/{category}.csv "
                         f"(referenced from listing '{item.get('slug')}')"
                     )
 
-                # Merge: offer base -> listing overrides (listing wins for non-nullish values)
+                # Base = offer row
                 merged = dict(offer_row)
 
+                # Listing overrides non-empty fields (except offer itself)
                 for k, v in item.items():
-                    # keep listing's slug, chain overrides, etc.
-                    # if listing has empty value, do not overwrite offer value
+                    if k == "offer":
+                        continue  # never override final offer value
+
                     if v is None:
                         continue
                     if isinstance(v, str) and v.strip() == "":
                         continue
+
                     merged[k] = v
 
+                # Final offer value comes from offers CSV (NOT slug)
+                merged["offer"] = offer_row.get("offer")
+
                 out_items.append(merged)
+
+            # ─────────────────────────────
+            # Case 2: no offer reference
+            # ─────────────────────────────
             else:
-                out_items.append(item)
+                new_item = dict(item)
+                new_item.setdefault("offer", None)
+                out_items.append(new_item)
 
         resolved[category] = out_items
 
@@ -418,25 +440,6 @@ def ensure_sdks_tbd_fields(result: dict):
             v = item.get(k)
             if v is None or (isinstance(v, str) and v.strip() == ""):
                 item[k] = "TBD"
-
-
-def drop_field(
-    data_by_category: dict[str, list[dict]], field: str
-) -> dict[str, list[dict]]:
-    cleaned = {}
-
-    for category, items in data_by_category.items():
-        out_items = []
-        for item in items:
-            if isinstance(item, dict) and field in item:
-                new_item = dict(item)
-                new_item.pop(field, None)
-                out_items.append(new_item)
-            else:
-                out_items.append(item)
-        cleaned[category] = out_items
-
-    return cleaned
 
 
 def load_json_file(path: str) -> dict:
@@ -623,9 +626,6 @@ def main():
             for e in errors:
                 print(e)
             exit(1)
-
-        # DROP TECHNICAL FIELDS
-        result = drop_field(result, "offer")
 
         ensure_sdks_tbd_fields(result)
 
