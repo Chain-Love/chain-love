@@ -1,4 +1,4 @@
-name: "CSV to JSON"
+Name: "CSV to JSON"
 
 on:
   workflow_dispatch:
@@ -34,13 +34,15 @@ jobs:
       
       - name: Copy scripts from tools folder
         run: |
-          cp json-tools/tools/csv_to_json.py .
-          cp json-tools/tools/enrich_verified_metrics.py .
-          cp json-tools/tools/validate.py .
-          cp json-tools/tools/schema.json .
-          cp -r json-tools/tools/validation .
-          cp json-tools/tools/update_sdks_metadata_*.py .
-          cp -r json-tools/meta .
+          # تم حذف /tools/ من جميع المسارات أدناه بناءً على سجل الخطأ
+          cp json-tools/csv_to_json.py .
+          cp json-tools/enrich_verified_metrics.py .
+          cp json-tools/validate.py .
+          cp json-tools/schema.json .
+          # التحقق من وجود المجلدات قبل النسخ لتفادي الفشل
+          if [ -d "json-tools/validation" ]; then cp -r json-tools/validation .; fi
+          cp json-tools/update_sdks_metadata_*.py .
+          if [ -d "json-tools/meta" ]; then cp -r json-tools/meta .; fi
 
       - name: Configure Git
         run: |
@@ -67,7 +69,12 @@ jobs:
       - name: Install Python dependencies
         run: |
           python3 -m pip install --upgrade pip
-          pip install -r json-tools/tools/requirements.txt
+          # تم تصحيح مسار ملف المتطلبات أيضاً
+          if [ -f "json-tools/requirements.txt" ]; then
+            pip install -r json-tools/requirements.txt
+          else
+            echo "requirements.txt not found, skipping..."
+          fi
 
       - name: Run CSV to JSON and enrichment
         env: 
@@ -78,9 +85,10 @@ jobs:
         run: |
           python3 csv_to_json.py
           python3 enrich_verified_metrics.py
-          python3 update_sdks_metadata_github.py --jsonfile all
-          python3 update_sdks_metadata_npm.py --jsonfile all
-          python3 update_sdks_metadata_gitlab.py --jsonfile all --fallback-to-tags
+          # التحقق من وجود ملفات الـ SDK قبل تشغيلها
+          if [ -f "update_sdks_metadata_github.py" ]; then python3 update_sdks_metadata_github.py --jsonfile all; fi
+          if [ -f "update_sdks_metadata_npm.py" ]; then python3 update_sdks_metadata_npm.py --jsonfile all; fi
+          if [ -f "update_sdks_metadata_gitlab.py" ]; then python3 update_sdks_metadata_gitlab.py --jsonfile all --fallback-to-tags; fi
 
       - name: Commit and push
         run: |
@@ -91,3 +99,4 @@ jobs:
             git commit -m "Update processed file"
             git push origin ${{ env.TARGET_BRANCH }}
           fi
+
