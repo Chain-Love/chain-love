@@ -1,86 +1,21 @@
-name: "Verified metrics refresh"
+name: "Debug - Find My Files"
 
-on:
-  schedule:
-    - cron: "*/30 * * * *"
+on: 
   workflow_dispatch:
-
-permissions:
-  contents: write
-
-concurrency:
-  group: verified-metrics-refresh
-  cancel-in-progress: false
-
-env:
-  TARGET_BRANCH: json
+  push:
 
 jobs:
-  refresh:
+  list_everything:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout json branch
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ env.TARGET_BRANCH }}
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Checkout json-tools branch into tools folder
+      - name: Checkout json-tools branch
         uses: actions/checkout@v4
         with:
           repository: ${{ github.repository }}
           ref: json-tools
           path: json-tools
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Copy scripts from tools folder
+      - name: Show Me Everything
         run: |
-          # تم تصحيح المسارات هنا (حذفنا tools/ الزائدة)
-          cp json-tools/enrich_verified_metrics.py .
-          cp json-tools/validate.py .
-          cp json-tools/schema.json .
-          # التحقق من وجود مجلد validation قبل نسخه لتجنب الأخطاء
-          if [ -d "json-tools/validation" ]; then
-            cp -r json-tools/validation .
-          else
-            echo "Validation folder not found, skipping..."
-          fi
-
-      - name: Configure Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install Python dependencies
-        run: |
-          python3 -m pip install --upgrade pip
-          # تم تصحيح مسار ملف المتطلبات هنا أيضاً
-          if [ -f "json-tools/requirements.txt" ]; then
-            pip install -r json-tools/requirements.txt
-          else
-            echo "requirements.txt not found, skipping pip install..."
-          fi
-
-      - name: Enrich verified metrics
-        env:
-          VERIFIED_API_TOKEN: ${{ secrets.VERIFIED_API_TOKEN }}
-          SLA_MONITORING_SUBGRAPH_URL: ${{ secrets.SLA_MONITORING_SUBGRAPH_URL }}
-          GRAPH_API_KEY: ${{ secrets.GRAPH_API_KEY }}
-        run: python3 enrich_verified_metrics.py
-
-      - name: Commit and push
-        run: |
-          git add json
-          # التحقق مما إذا كانت هناك تغييرات قبل محاولة الرفع
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Refresh verified metrics"
-            git push origin ${{ env.TARGET_BRANCH }}
-          fi
+          echo "--- القائمة الكاملة للملفات في فرع json-tools ---"
+          ls -R json-tools
