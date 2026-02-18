@@ -1,13 +1,28 @@
-name: "Debug - Find My Files"
+name: "CSV to JSON"
 
-on: 
+on:
   workflow_dispatch:
   push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+env:
+  SOURCE_BRANCH: main
+  TARGET_BRANCH: json
 
 jobs:
-  list_everything:
+  convert:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_BRANCH }}
+          fetch-depth: 0
+
       - name: Checkout json-tools branch
         uses: actions/checkout@v4
         with:
@@ -15,7 +30,40 @@ jobs:
           ref: json-tools
           path: json-tools
 
-      - name: Show Me Everything
+      - name: Copy existing scripts
         run: |
-          echo "--- القائمة الكاملة للملفات في فرع json-tools ---"
-          ls -R json-tools
+          # ننسخ الملفات التي تأكدنا من وجودها في سجل العملية رقم 8
+          cp json-tools/tools/csv_to_json.py .
+          cp json-tools/tools/validate.py .
+          cp json-tools/tools/schema.json .
+          cp json-tools/tools/update_sdks_metadata_*.py .
+          
+          # تنبيه: ملف enrich_verified_metrics.py مفقود من فرع json-tools
+          # سنقوم بنسخه فقط إذا وجدناه لتجنب توقف الكود
+          if [ -f "json-tools/tools/enrich_verified_metrics.py" ]; then
+            cp json-tools/tools/enrich_verified_metrics.py .
+          else
+            echo "Warning: enrich_verified_metrics.py is missing from json-tools/tools"
+          fi
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          # المسار الصحيح كما ظهر في القائمة
+          pip install -r json-tools/tools/requirements.txt
+
+      - name: Run scripts
+        run: |
+          # تشغيل الملفات الموجودة فقط
+          python3 csv_to_json.py
+          if [ -f "enrich_verified_metrics.py" ]; then python3 enrich_verified_metrics.py; fi
