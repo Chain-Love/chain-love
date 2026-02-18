@@ -159,22 +159,43 @@ class Http:
 
     def get_json(self, url: str, headers: Optional[Dict[str, str]] = None):
         r = self.session.get(url, headers=headers or {}, timeout=self.timeout)
-        if r.status_code == 204:
-            return r.status_code, None
         try:
-            return r.status_code, r.json()
+            data = r.json() if r.status_code != 204 else None
         except Exception:
-            return r.status_code, None
+            data = None
+        return r.status_code, data, r.headers
 
 
 class Npm:
-    def __init__(self, http: Http):
+    def __init__(self, http: Http, token: Optional[str]):
         self.http = http
+        self.headers: Dict[str, str] = {}
+        if token:
+            self.headers["Authorization"] = f"Bearer {token}"
+        self._rate_limit_warned = False
+
+    def _warn_if_limited(self, status: int, headers: Dict[str, str]) -> None:
+        if status == 429 and not self._rate_limit_warned:
+            ra = headers.get("Retry-After")
+            msg = "WARN: npm registry rate limit exceeded"
+            if ra:
+                msg += f", retry after {ra}s"
+            print(msg, file=sys.stderr)
+            self._rate_limit_warned = True
 
     def package(self, name: str) -> Optional[dict]:
         enc = urllib.parse.quote(name, safe="@/")
-        st, js = self.http.get_json(f"https://registry.npmjs.org/{enc}")
+        st, js, hdrs = self.http.get_json(
+            f"https://registry.npmjs.org/{enc}",
+            headers=self.headers,
+        )
+        self._warn_if_limited(st, hdrs)
         return js if st == 200 and isinstance(js, dict) else None
+
+
+# ---- Cache ----
+
+_npm_cache: Dict[str, Dict[str, str]] = {}
 
 
 def pick_latest_stable_version(pkg: dict) -> Optional[str]:
@@ -209,9 +230,13 @@ def normalize_npm_license(lic: Any) -> Optional[str]:
 
 
 def compute_from_npm(npm: Npm, pkg: str) -> Dict[str, str]:
+    if pkg in _npm_cache:
+        return _npm_cache[pkg]
+
     out: Dict[str, str] = {}
     js = npm.package(pkg)
     if not js:
+        _npm_cache[pkg] = out
         return out
 
     v = pick_latest_stable_version(js)
@@ -237,6 +262,7 @@ def compute_from_npm(npm: Npm, pkg: str) -> Dict[str, str]:
     if lic:
         out["license"] = lic
 
+    _npm_cache[pkg] = out
     return out
 
 
@@ -269,7 +295,7 @@ def main() -> int:
         paths = [path]
 
     http = Http()
-    npm = Npm(http)
+    npm = Npm(http, os.getenv("NPM_TOKEN"))
 
     total_scanned = total_updated = 0
     total_skipped_gh = total_matched = 0
