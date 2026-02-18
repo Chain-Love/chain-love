@@ -4,7 +4,6 @@ import os
 import string
 import unicodedata
 
-PROVIDER_REF_PREFIX = "!provider:"
 OFFER_REF_PREFIX = "!offer:"
 
 SDK_TBD_FIELDS = (
@@ -242,17 +241,6 @@ def load_csv_to_dict_list(file_path: str) -> list[dict] | None:
         return rows
 
 
-def find_one_by_slug(dict_list: list[dict], slug: str) -> dict | None:
-    for item in dict_list:
-        if item.get("slug") == slug:
-            return item
-    return None
-
-
-def is_provider_ref(value) -> bool:
-    return isinstance(value, str) and value.strip().startswith(PROVIDER_REF_PREFIX)
-
-
 def is_offer_ref(s: str) -> bool:
     return isinstance(s, str) and s.strip().startswith(OFFER_REF_PREFIX)
 
@@ -316,68 +304,6 @@ def build_index_by_slug(items: list[dict], *, label: str) -> dict[str, dict]:
     if dupes:
         raise ValueError(f"Duplicate slugs in {label}: {', '.join(sorted(set(dupes)))}")
     return idx
-
-
-def override_provider_ref(item: dict, providers: list[dict]):
-    """
-    Backward-compat / utility:
-    If item["provider"] is "!provider:<slug>", fill missing fields from provider record.
-
-    In the new model, providers are usually resolved via offers, but this keeps old behavior working.
-    """
-    if not isinstance(item, dict):
-        return item
-    p = item.get("provider")
-    if not is_provider_ref(p):
-        return item
-
-    provider_slug = get_ref_slug(p, PROVIDER_REF_PREFIX)
-    provider = find_one_by_slug(providers, provider_slug)
-    if provider is None:
-        raise ValueError(
-            f"Failed to find provider with slug '{provider_slug}' referenced from item '{item.get('slug')}'"
-        )
-
-    skipped_keys = {"slug"}
-    always_copy_keys = {
-        "provider"
-    }  # overwrite provider field with provider.slug or provider data? keep old behavior
-
-    for key in list(item.keys()):
-        if key in skipped_keys:
-            continue
-        v = item.get(key)
-        if (
-            key in always_copy_keys
-            or v is None
-            or (isinstance(v, str) and v.strip() == "")
-        ):
-            if key in provider:
-                item[key] = provider[key]
-
-    return item
-
-
-def process_category(
-    data_by_category: dict,
-    network_data_file_path: str,
-    provider_data_file_path: str | None,
-    property_name: str,
-) -> dict:
-    """
-    New model:
-    - Reads listing CSV (all-networks or specific-networks) and stores rows as-is.
-    - provider_data_file_path is kept for call-site compatibility; it can be None.
-    """
-    network_data = load_csv_to_dict_list(network_data_file_path)
-    if network_data is None:
-        print(
-            f"Failed to load network data from {network_data_file_path}, skipping {property_name}"
-        )
-        return data_by_category.copy()
-
-    # No per-category provider overrides anymore (providers are referenced / resolved later).
-    return {**data_by_category, property_name: network_data}
 
 
 def get_column_order(data_by_category: dict[str, list[dict]]) -> dict[str, list[str]]:
@@ -460,71 +386,6 @@ def resolve_offers(
     return resolved
 
 
-def resolve_providers(
-    data_by_category: dict[str, list[dict]],
-    providers: list[dict],
-) -> dict[str, list[dict]]:
-    """
-    Resolves provider slugs by inlining provider data into each item,
-    using the same semantics as the old override():
-
-    - provider field contains provider slug
-    - provider fields are copied into item ONLY if:
-        - item field is missing, None, or empty string
-    - item values always take precedence
-    """
-
-    providers_idx = build_index_by_slug(providers, label="providers.csv")
-
-    resolved = {}
-
-    for category, items in data_by_category.items():
-        out_items = []
-
-        for item in items:
-            if not isinstance(item, dict):
-                out_items.append(item)
-                continue
-
-            provider_slug = item.get("provider")
-
-            if not isinstance(provider_slug, str) or provider_slug.strip() == "":
-                out_items.append(item)
-                continue
-
-            provider = providers_idx.get(provider_slug)
-            if provider is None:
-                raise ValueError(
-                    f"Provider '{provider_slug}' not found in references/providers/providers.csv "
-                    f"(category '{category}', item '{item.get('slug')}')"
-                )
-
-            merged = dict(item)
-
-            # same semantics as old override()
-            skipped_keys = {"slug"}
-            always_copy_keys = {"provider"}
-
-            for key, value in provider.items():
-                if key in skipped_keys:
-                    continue
-
-                item_value = merged.get(key)
-
-                if (
-                    key in always_copy_keys
-                    or item_value is None
-                    or (isinstance(item_value, str) and item_value.strip() == "")
-                ):
-                    merged[key] = value
-
-            out_items.append(merged)
-
-        resolved[category] = out_items
-
-    return resolved
-
-
 def get_schema_version(
     schema_path: str = "schema.json", fallback: str = "1.0.0"
 ) -> str:
@@ -558,6 +419,143 @@ def ensure_sdks_tbd_fields(result: dict):
                 item[k] = "TBD"
 
 
+def drop_field(
+    data_by_category: dict[str, list[dict]], field: str
+) -> dict[str, list[dict]]:
+    cleaned = {}
+
+    for category, items in data_by_category.items():
+        out_items = []
+        for item in items:
+            if isinstance(item, dict) and field in item:
+                new_item = dict(item)
+                new_item.pop(field, None)
+                out_items.append(new_item)
+            else:
+                out_items.append(item)
+        cleaned[category] = out_items
+
+    return cleaned
+
+
+def load_json_file(path: str) -> dict:
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"Meta file not found: {path}")
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def build_provider_index_by_name(providers: list[dict]) -> dict[str, dict]:
+    idx = {}
+    for p in providers:
+        name = p.get("name")
+        if not isinstance(name, str) or not name.strip():
+            continue
+        if name in idx:
+            raise ValueError(f"Duplicate provider name in providers.csv: '{name}'")
+        idx[name] = p
+    return idx
+
+
+def collect_used_provider_names(data_by_category: dict[str, list[dict]]) -> set[str]:
+    names = set()
+
+    for items in data_by_category.values():
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            p = item.get("provider")
+            if isinstance(p, str) and p.strip():
+                names.add(p.strip())
+
+    return names
+
+
+def build_provider_meta_from_names(
+    provider_by_name: dict[str, dict],
+    provider_categories: dict[str, set[str]],
+) -> dict[str, dict]:
+    meta = {}
+
+    for name, categories in provider_categories.items():
+        p = provider_by_name.get(name)
+
+        categories_list = sorted(categories)
+
+        # ─────────────────────────────
+        # Case 1: provider is present in CSV
+        # ─────────────────────────────
+        if p:
+            slug = p.get("slug") or name
+            starred = p.get("starred")
+            if not isinstance(starred, bool):
+                starred = False
+
+            meta[slug] = {
+                "slug": slug,
+                "name": name,
+                "logoPath": p.get("logoPath"),
+                "description": p.get("description"),
+                "website": p.get("website"),
+                "docs": p.get("docs"),
+                "x": p.get("x"),
+                "github": p.get("github"),
+                "discord": p.get("discord"),
+                "telegram": p.get("telegram"),
+                "linkedin": p.get("linkedin"),
+                "supportEmail": p.get("supportEmail"),
+                "starred": starred,
+                "tag": p.get("tag"),
+                "categories": categories_list,
+            }
+
+        # ─────────────────────────────
+        # Case 2: provider is not in CSV
+        # ─────────────────────────────
+        else:
+            slug = name.lower().replace(" ", "-")
+
+            meta[slug] = {
+                "slug": slug,
+                "name": name,
+                "logoPath": None,
+                "description": None,
+                "website": None,
+                "docs": None,
+                "x": None,
+                "github": None,
+                "discord": None,
+                "telegram": None,
+                "linkedin": None,
+                "supportEmail": None,
+                "starred": False,
+                "tag": None,
+                "categories": categories_list,
+            }
+
+    return meta
+
+
+def collect_provider_categories(
+    data_by_category: dict[str, list[dict]]
+) -> dict[str, set[str]]:
+    """
+    Returns mapping: provider_name -> set(categories)
+    """
+    mapping: dict[str, set[str]] = {}
+
+    for category, items in data_by_category.items():
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+
+            provider = item.get("provider")
+            if isinstance(provider, str) and provider.strip():
+                mapping.setdefault(provider.strip(), set()).add(category)
+
+    return mapping
+
+
 def main():
     base_dir = "listings"
     all_networks_dir = os.path.join(base_dir, "all-networks")
@@ -571,6 +569,9 @@ def main():
 
     # References
     providers = load_providers("references/providers/providers.csv")
+    provider_by_name = build_provider_index_by_name(providers)
+    category_meta = load_json_file("meta/categories.json")
+    column_meta = load_json_file("meta/columns.json")
     offers_by_category = load_categories_from_folder("references/offers")
 
     # Global listings (apply to every network)
@@ -607,10 +608,7 @@ def main():
         # 3) Resolve !offer:<slug> (category-scoped)
         result = resolve_offers(result, offers_by_category)
 
-        # 4) Resolve provider links
-        result = resolve_providers(result, providers)
-
-        # 5) Normalize values (null/bool/json fields)
+        # 4) Normalize values (null/bool/json fields)
         result, errors = normalize(result)
         if errors:
             print(f"Errors while normalizing {network_name} JSON:")
@@ -618,10 +616,26 @@ def main():
                 print(e)
             exit(1)
 
+        # DROP TECHNICAL FIELDS
+        result = drop_field(result, "offer")
+
         ensure_sdks_tbd_fields(result)
 
         result["columns"] = get_column_order(result)
         result["schemaVersion"] = schema_version
+
+        provider_categories = collect_provider_categories(result)
+
+        provider_meta = build_provider_meta_from_names(
+            provider_by_name,
+            provider_categories,
+        )
+
+        result["meta"] = {
+            "categories": category_meta,
+            "columns": column_meta,
+            "providers": provider_meta,
+        }
 
         os.makedirs("json", exist_ok=True)
         with open(f"json/{network_name}.json", "w+", encoding="utf-8") as f:
