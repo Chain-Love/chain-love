@@ -3,6 +3,7 @@ import json
 import os
 import string
 import unicodedata
+import warnings
 
 OFFER_REF_PREFIX = "!offer:"
 
@@ -513,6 +514,12 @@ def build_provider_meta_from_names(
         # Case 2: provider is not in CSV
         # ─────────────────────────────
         else:
+            warnings.warn(
+                f"Provider '{name}' is used in categories {categories_list} "
+                f"but is missing from references/providers/providers.csv",
+                RuntimeWarning,
+            )
+
             slug = name.lower().replace(" ", "-")
 
             meta[slug] = {
