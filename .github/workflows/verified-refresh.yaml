@@ -36,10 +36,16 @@ jobs:
 
       - name: Copy scripts from tools folder
         run: |
-          cp json-tools/tools/enrich_verified_metrics.py .
-          cp json-tools/tools/validate.py .
-          cp json-tools/tools/schema.json .
-          cp -r json-tools/tools/validation .
+          # تم تصحيح المسارات هنا (حذفنا tools/ الزائدة)
+          cp json-tools/enrich_verified_metrics.py .
+          cp json-tools/validate.py .
+          cp json-tools/schema.json .
+          # التحقق من وجود مجلد validation قبل نسخه لتجنب الأخطاء
+          if [ -d "json-tools/validation" ]; then
+            cp -r json-tools/validation .
+          else
+            echo "Validation folder not found, skipping..."
+          fi
 
       - name: Configure Git
         run: |
@@ -54,7 +60,12 @@ jobs:
       - name: Install Python dependencies
         run: |
           python3 -m pip install --upgrade pip
-          pip install -r json-tools/tools/requirements.txt
+          # تم تصحيح مسار ملف المتطلبات هنا أيضاً
+          if [ -f "json-tools/requirements.txt" ]; then
+            pip install -r json-tools/requirements.txt
+          else
+            echo "requirements.txt not found, skipping pip install..."
+          fi
 
       - name: Enrich verified metrics
         env:
@@ -66,6 +77,7 @@ jobs:
       - name: Commit and push
         run: |
           git add json
+          # التحقق مما إذا كانت هناك تغييرات قبل محاولة الرفع
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
