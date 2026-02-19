@@ -4,6 +4,7 @@ on:
   workflow_run:
     workflows: [CSV to JSON]
     types: [completed]
+  workflow_dispatch: 
 
 permissions:
   contents: write
