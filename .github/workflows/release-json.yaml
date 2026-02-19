@@ -4,6 +4,7 @@ on:
   workflow_run:
     workflows: [CSV to JSON]
     types: [completed]
+  workflow_dispatch: 
 
 permissions:
   contents: write
@@ -11,7 +12,7 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
 
     steps:
       - name: Checkout repository
@@ -23,18 +24,13 @@ jobs:
         id: prep
         run: |
           mkdir -p release-assets
-          for file in json/*.json; do
-            filename=$(basename "$file")
-            schema_version=$(jq -r '.shcemaVersion // "1.0.0"' "$file")
-            new_name="schema-${schema_version}-${filename}"
-            cp "$file" "release-assets/$new_name"
-          done
+          cp json/*.json release-assets/
 
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          tag="json-release-${GITHUB_SHA::7}"
+          tag="json-$(date +%Y%m%d)-${GITHUB_SHA::7}"
           gh release create "$tag" release-assets/* \
             --title "JSON (${GITHUB_SHA::7})" \
             --notes "Automated release from json branch"
