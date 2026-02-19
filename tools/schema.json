@@ -33,6 +33,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "planName": { "type": ["string", "null"] },
         "planType": { "type": "string" },
         "apiType": { "type": "string" },
@@ -113,6 +114,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "chain": { "type": "string" },
         "technology": { "type": "string" },
         "monitoringAndAnalytics": {
@@ -165,6 +167,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "chain": { "type": "string" },
         "technology": { "type": "string" },
         "starred": { "type": "boolean" },
@@ -222,6 +225,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "chain": { "type": "string" },
         "technology": { "type": "string" },
         "openSource": { "type": "boolean" },
@@ -295,6 +299,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "toolType": { "type": "string" },
         "price": { "type": ["string", "null"] },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
@@ -327,6 +332,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "toolType": { "type": "string" },
         "price": { "type": ["string", "null"] },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
@@ -358,6 +364,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "chain": { "type": "string" },
         "requiresLogin": { "type": "boolean" },
         "hasCaptcha": { "type": "boolean" },
@@ -397,6 +404,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "chain": { "type": "string" },
         "dataSources": {
           "type": ["array", "null"],
@@ -436,6 +444,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "openSource": { "type": "boolean" },
         "supportedPlatforms": {
           "type": ["array", "null"],
@@ -497,6 +506,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -545,6 +555,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -581,6 +592,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -620,6 +632,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
+        "offer": {"type": "string"},
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }

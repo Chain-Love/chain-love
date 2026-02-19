@@ -4,7 +4,7 @@ import os
 import string
 import unicodedata
 
-PROVIDER_REF_PREFIX = "!provider:"
+PROVIDER_REF_PREFIX = "!offer:"
 
 SDK_TBD_FIELDS = (
     "latestKnownVersion",
@@ -377,17 +377,21 @@ def load_meta():
 
 
 def main():
-    if not os.path.exists("networks"):
-        print("No 'networks' directory found")
+    SPECIFIC_NETWORKS_OFFERS_FOLDER = "listings/specific-networks"
+    ALL_NETWORKS_OFFERS_FOLDER = "listings/all-networks"
+    OFFER_REFERENCES_FOLDER = "references/offers"
+
+    if not os.path.exists(SPECIFIC_NETWORKS_OFFERS_FOLDER):
+        print(f"No '{SPECIFIC_NETWORKS_OFFERS_FOLDER}' directory found")
         return
     
-    offchain_categories = load_categories_from_folder("offchain")
+    all_networks_offers = load_categories_from_folder(ALL_NETWORKS_OFFERS_FOLDER)
 
     schema_version = get_schema_version("schema.json", fallback="1.0.0")
     meta = load_meta()
 
-    for network_name in os.listdir("networks"):
-        network_dir_full_path = os.path.join("networks", network_name)
+    for network_name in os.listdir(SPECIFIC_NETWORKS_OFFERS_FOLDER):
+        network_dir_full_path = os.path.join(SPECIFIC_NETWORKS_OFFERS_FOLDER, network_name)
         # We're not interested in anything that's not a directory
         if not os.path.isdir(network_dir_full_path):
             continue
@@ -408,24 +412,24 @@ def main():
                 data_by_category=result,
                 property_name=category,
                 network_data_file_path=category_file_full_path,
-                provider_data_file_path=f"providers/{category}.csv",
+                provider_data_file_path=f"{OFFER_REFERENCES_FOLDER}/{category}.csv",
             )
 
         # Incorporate offchain data
-        for offchain_category_name in offchain_categories.keys():
+        for all_networks_offers_category in all_networks_offers.keys():
             # If offchain category name already exists in the result (e.g. apis), we need to merge
-            if offchain_category_name in result:
+            if all_networks_offers_category in result:
                 # If chain is relevant for category name, we need to add one entry per chain
-                if "chain" in result[offchain_category_name][0]:
-                    for chain in set([item["chain"] for item in result[offchain_category_name]]):
-                        result[offchain_category_name].extend(
-                            [item | {"chain": chain} for item in offchain_categories[offchain_category_name]]
+                if "chain" in result[all_networks_offers_category][0]:
+                    for chain in set([item["chain"] for item in result[all_networks_offers_category]]):
+                        result[all_networks_offers_category].extend(
+                            [item | {"chain": chain} for item in all_networks_offers[all_networks_offers_category]]
                         )
                 # Otherwise just add as is
                 else :
-                    result[offchain_category_name].extend(offchain_categories[offchain_category_name])
+                    result[all_networks_offers_category].extend(all_networks_offers[all_networks_offers_category])
             else:
-                result[offchain_category_name] = offchain_categories[offchain_category_name]
+                result[all_networks_offers_category] = all_networks_offers[all_networks_offers_category]
 
         result, errors = normalize(result)
         if len(errors) > 0:
