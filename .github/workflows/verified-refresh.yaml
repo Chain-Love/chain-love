@@ -1,0 +1,74 @@
+name: "Verified metrics refresh"
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: verified-metrics-refresh
+  cancel-in-progress: false
+
+env:
+  TARGET_BRANCH: json
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout json branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout json-tools branch into tools folder
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: json-tools
+          path: json-tools
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy scripts from tools folder
+        run: |
+          cp json-tools/tools/enrich_verified_metrics.py .
+          cp json-tools/tools/validate.py .
+          cp json-tools/tools/schema.json .
+          cp -r json-tools/tools/validation .
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install -r json-tools/tools/requirements.txt
+
+      - name: Enrich verified metrics
+        env:
+          VERIFIED_API_TOKEN: ${{ secrets.VERIFIED_API_TOKEN }}
+          SLA_MONITORING_SUBGRAPH_URL: ${{ secrets.SLA_MONITORING_SUBGRAPH_URL }}
+          GRAPH_API_KEY: ${{ secrets.GRAPH_API_KEY }}
+        run: python3 enrich_verified_metrics.py
+
+      - name: Commit and push
+        run: |
+          git add json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Refresh verified metrics"
+            git push origin ${{ env.TARGET_BRANCH }}
+          fi
