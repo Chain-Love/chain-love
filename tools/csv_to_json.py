@@ -608,14 +608,25 @@ def main():
             rows = load_csv_to_dict_list(path) or []
             result[category] = list(rows)
 
+
         # 2) Merge/replace with all-networks listings
+        chains = set()
+        for category, entities in result.items():
+            if not entities or not entities[0].get("chain"):
+                continue
+            chains.update([entity['chain'] for entity in entities])
+        
         for category, entities in global_listings.items():
             rows = list(entities)
             if len(entities) > 0 and "chain" in entities[0]:
-                # Default chains if the category is chain-aware and there are none in specific network
-                chains = ['mainnet']
-                if result.get(category):
-                    chains = set([entity['chain'] for entity in result[category]])
+                if len(chains) == 0:
+                    print(
+                        f"WARNING: Network '{network_name}' has no populated 'chain' values. "
+                        f"'all-networks' offers in chain-aware category '{category}' cannot be applied. "
+                        f"Add at least one entry with a non-empty 'chain' value to fix this."
+                    )
+                    continue
+
                 chain_aware_entities = [
                     {
                         **entity,
@@ -631,6 +642,7 @@ def main():
                 result[category].extend(rows)
             else:
                 result[category] = rows
+
 
         # 3) Resolve !offer:<slug> (category-scoped)
         result = resolve_offers(result, offers_by_category)
