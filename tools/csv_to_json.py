@@ -444,7 +444,7 @@ def main():
                     result[category] = [
                         {
                             **item,
-                            "slug": f"{item['slug']}-{chain}",
+                            "slug": f"{item['slug']}-{chain}".lower(),
                             "chain": chain,
                         }
                         for chain in DEFAULT_CHAINS
@@ -468,7 +468,7 @@ def main():
 
             for chain in chains:
                 for item in base_items:
-                    new_slug = f"{item['slug']}-{chain}"
+                    new_slug = f"{item['slug']}-{chain}".lower()
                     result[category].append({**item, "slug": new_slug, "chain": chain})
 
         result, errors = normalize(result)
