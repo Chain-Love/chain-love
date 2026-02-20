@@ -292,7 +292,7 @@ def main():
             had_errors = True
 
     # Validate providers
-    providers_data = load_csv_folder("providers")
+    providers_data = load_csv_folder("references/offers")
     providers_schema = make_providers_schema(network_schema=schema)
     providers_validator = Draft202012Validator(providers_schema)
     if not check_validation(data=providers_data, schema_validator=providers_validator, rules_validator=rules):
