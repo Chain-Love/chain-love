@@ -594,11 +594,7 @@ def main():
 
         result: dict[str, list[dict]] = {}
 
-        # 1) Start from all-networks listings (copy lists)
-        for category, entities in global_listings.items():
-            result[category] = list(entities)
-
-        # 2) Merge/replace with network-specific listings per category
+        # 1) Start with network-specific listings per category
         for category_file in os.listdir(network_dir):
             path = os.path.join(network_dir, category_file)
             if not os.path.isfile(path):
@@ -610,6 +606,27 @@ def main():
 
             # If category already exists from all-networks, append; else create.
             rows = load_csv_to_dict_list(path) or []
+            result[category] = list(rows)
+
+        # 2) Merge/replace with all-networks listings
+        for category, entities in global_listings.items():
+            rows = list(entities)
+            if len(entities) > 0 and "chain" in entities[0]:
+                # Default chains if the category is chain-aware and there are none in specific network
+                chains = ['mainnet']
+                if result.get(category):
+                    chains = set([entity['chain'] for entity in result[category]])
+                chain_aware_entities = [
+                    {
+                        **entity,
+                        "chain": chain,
+                        "slug": f"{entity['slug']}-{chain}".lower(),
+                    }
+                    for chain in chains
+                    for entity in entities
+                ]
+                rows = chain_aware_entities
+            
             if category in result:
                 result[category].extend(rows)
             else:
