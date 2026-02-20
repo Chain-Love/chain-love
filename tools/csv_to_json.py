@@ -576,7 +576,6 @@ def main():
         return
 
     schema_version = get_schema_version("schema.json", fallback="1.0.0")
-    meta = load_meta()
 
     # References
     providers = load_providers("references/providers/providers.csv")
@@ -631,7 +630,6 @@ def main():
 
         result["columns"] = get_column_order(result)
         result["schemaVersion"] = schema_version
-        result["meta"] = meta
 
         provider_categories = collect_provider_categories(result)
 
