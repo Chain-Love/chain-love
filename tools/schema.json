@@ -696,6 +696,12 @@
           "additionalProperties": {
             "$ref": "#/$defs/columnMeta"
           }
+        },
+        "providers": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/providerMeta"
+          }
         }
       }
     },
