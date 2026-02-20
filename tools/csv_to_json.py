@@ -4,6 +4,7 @@ import os
 import string
 import unicodedata
 
+PROVIDER_REF_COLUMN = "offer"
 PROVIDER_REF_PREFIX = "!offer:"
 
 SDK_TBD_FIELDS = (
@@ -12,6 +13,12 @@ SDK_TBD_FIELDS = (
     "maintainer",
     "license",
 )
+
+DEFAULT_CHAINS = ['mainnet']
+
+SPECIFIC_NETWORKS_OFFERS_FOLDER = "listings/specific-networks"
+ALL_NETWORKS_OFFERS_FOLDER = "listings/all-networks"
+OFFER_REFERENCES_FOLDER = "references/offers"
 
 def col_letter(idx: int) -> str:
     """Convert 0-based index to Excel column letters."""
@@ -242,11 +249,11 @@ def get_ref_slug(string: str) -> str:
 
 
 def override(item: dict, providers: list[dict]):
-    if not is_provider_ref(item["provider"]):
+    if not is_provider_ref(item[PROVIDER_REF_COLUMN]):
         # If the provider is not a reference, return the item unchanged
         return item
 
-    provider_slug = get_ref_slug(item["provider"])
+    provider_slug = get_ref_slug(item[PROVIDER_REF_COLUMN])
     provider = find_one_by_slug(providers, provider_slug)
 
     if provider is None:
@@ -256,7 +263,7 @@ def override(item: dict, providers: list[dict]):
     # Keys we never copy from the provider
     skipped_keys = {"slug"}
     # Keys we always copy, even if item has a value
-    always_copy_keys = {"provider"}
+    always_copy_keys = {PROVIDER_REF_COLUMN}
 
     for key in item.keys():
         if key in skipped_keys:
@@ -273,11 +280,14 @@ def override(item: dict, providers: list[dict]):
 
 def process_category(
     data_by_category: dict,
-    network_data_file_path: str,
     provider_data_file_path: str,
     property_name: str,
+    network_data_file_path: str | None = None,
+    network_data_dict: dict | None = None,
 ) -> dict:
-    network_data = load_csv_to_dict_list(network_data_file_path)
+    if network_data_file_path is None and network_data_dict is None:
+        raise ValueError("network_data_file_path or network_data_dict must be provided")
+    network_data = load_csv_to_dict_list(network_data_file_path) if network_data_dict is None else network_data_dict
     if network_data is None:
         # No network data - skip adding this category
         print(f"Failed to load network data from {network_data_file_path}, skipping {property_name}")
@@ -323,11 +333,11 @@ def load_categories_from_folder(folder) -> dict:
         if not category_file_name.endswith(".csv"):
             continue
         category_name = category_file_name[:-4]
-        data[category_name] = load_csv_to_dict_list(f"offchain/{category_file_name}")
+        data[category_name] = load_csv_to_dict_list(f"{ALL_NETWORKS_OFFERS_FOLDER}/{category_file_name}")
 
     result, errors = normalize(data)
     if len(errors) > 0:
-        print(f"Errors normalizing CSV data from 'offchain':")
+        print(f"Errors normalizing CSV data from '{ALL_NETWORKS_OFFERS_FOLDER}':")
         for err in errors:
             print(err)
         exit(1)
@@ -377,18 +387,25 @@ def load_meta():
 
 
 def main():
-    SPECIFIC_NETWORKS_OFFERS_FOLDER = "listings/specific-networks"
-    ALL_NETWORKS_OFFERS_FOLDER = "listings/all-networks"
-    OFFER_REFERENCES_FOLDER = "references/offers"
-
     if not os.path.exists(SPECIFIC_NETWORKS_OFFERS_FOLDER):
         print(f"No '{SPECIFIC_NETWORKS_OFFERS_FOLDER}' directory found")
         return
     
     all_networks_offers = load_categories_from_folder(ALL_NETWORKS_OFFERS_FOLDER)
+    resolved_all_networks_offers = {}
+    for k, v in all_networks_offers.items():
+        if v is not None:
+            resolved_all_networks_offers[k] = process_category(
+                data_by_category=resolved_all_networks_offers,
+                property_name=k,
+                network_data_dict=v,
+                provider_data_file_path=f"{OFFER_REFERENCES_FOLDER}/{k}.csv",
+            )
 
     schema_version = get_schema_version("schema.json", fallback="1.0.0")
     meta = load_meta()
+
+    networks = {}
 
     for network_name in os.listdir(SPECIFIC_NETWORKS_OFFERS_FOLDER):
         network_dir_full_path = os.path.join(SPECIFIC_NETWORKS_OFFERS_FOLDER, network_name)
@@ -416,20 +433,43 @@ def main():
             )
 
         # Incorporate offchain data
-        for all_networks_offers_category in all_networks_offers.keys():
-            # If offchain category name already exists in the result (e.g. apis), we need to merge
-            if all_networks_offers_category in result:
-                # If chain is relevant for category name, we need to add one entry per chain
-                if "chain" in result[all_networks_offers_category][0]:
-                    for chain in set([item["chain"] for item in result[all_networks_offers_category]]):
-                        result[all_networks_offers_category].extend(
-                            [item | {"chain": chain} for item in all_networks_offers[all_networks_offers_category]]
-                        )
-                # Otherwise just add as is
-                else :
-                    result[all_networks_offers_category].extend(all_networks_offers[all_networks_offers_category])
-            else:
-                result[all_networks_offers_category] = all_networks_offers[all_networks_offers_category]
+        for category, all_items in all_networks_offers.items():
+            is_chain_aware = (
+                len(all_items) > 0
+                and "chain" in all_items[0]
+            )
+
+            if category not in result:
+                if is_chain_aware:
+                    result[category] = [
+                        {
+                            **item,
+                            "slug": f"{item['slug']}-{chain}",
+                            "chain": chain,
+                        }
+                        for chain in DEFAULT_CHAINS
+                        for item in all_items
+                    ]
+                else:
+                    result[category] = all_items
+                continue
+    
+            if not result[category] or "chain" not in result[category][0]:
+                result[category].extend(all_items)
+                continue
+            
+            chains = {
+                item["chain"]
+                for item in result[category]
+                if item.get("chain")
+            }
+
+            base_items = list(all_items)
+
+            for chain in chains:
+                for item in base_items:
+                    new_slug = f"{item['slug']}-{chain}"
+                    result[category].append({**item, "slug": new_slug, "chain": chain})
 
         result, errors = normalize(result)
         if len(errors) > 0:

@@ -33,7 +33,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "planName": { "type": ["string", "null"] },
         "planType": { "type": "string" },
         "apiType": { "type": "string" },
@@ -76,7 +76,8 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
-        "historicalData": { "type": "string" }
+        "historicalData": { "type": "string" },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
         "slug",
@@ -104,7 +105,8 @@
         "supportSla",
         "technology",
         "additionalFeatures",
-        "historicalData"
+        "historicalData",
+        "tag"
       ]
     },
 
@@ -114,7 +116,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "chain": { "type": "string" },
         "technology": { "type": "string" },
         "monitoringAndAnalytics": {
@@ -141,7 +143,8 @@
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
-        }
+        },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
         "slug",
@@ -157,7 +160,8 @@
         "smartContractsVerifications",
         "fullHistory",
         "pricing",
-        "actionButtons"
+        "actionButtons",
+        "tag"
       ]
     },
 
@@ -167,7 +171,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "chain": { "type": "string" },
         "technology": { "type": "string" },
         "starred": { "type": "boolean" },
@@ -198,7 +202,8 @@
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
-        }
+        },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
         "slug",
@@ -215,7 +220,8 @@
         "economicalSecurityNote",
         "sdk",
         "auditsPerformed",
-        "actionButtons"
+        "actionButtons",
+        "tag"
       ]
     },
 
@@ -225,7 +231,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "chain": { "type": "string" },
         "technology": { "type": "string" },
         "openSource": { "type": "boolean" },
@@ -265,7 +271,8 @@
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
-        }
+        },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
         "slug",
@@ -288,7 +295,8 @@
         "auditsPerformed",
         "decentralizationModel",
         "sdk",
-        "actionButtons"
+        "actionButtons",
+        "tag"
       ]
     },
 
@@ -299,7 +307,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "toolType": { "type": "string" },
         "price": { "type": ["string", "null"] },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
@@ -332,7 +340,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "toolType": { "type": "string" },
         "price": { "type": ["string", "null"] },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
@@ -364,7 +372,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "chain": { "type": "string" },
         "requiresLogin": { "type": "boolean" },
         "hasCaptcha": { "type": "boolean" },
@@ -380,7 +388,8 @@
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
-        }
+        },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
         "slug",
@@ -394,7 +403,8 @@
         "dripLimitPeriod",
         "additionalNotes",
         "starred",
-        "actionButtons"
+        "actionButtons",
+        "tag"
       ]
     },
 
@@ -404,7 +414,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "chain": { "type": "string" },
         "dataSources": {
           "type": ["array", "null"],
@@ -422,7 +432,8 @@
           "items": { "type": "string" }
         },
         "planName": { "type": ["string", "null"] },
-        "planType": { "type": "string" }
+        "planType": { "type": "string" },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
         "slug",
@@ -434,7 +445,8 @@
         "price",
         "starred",
         "actionButtons",
-        "planType"
+        "planType",
+        "tag"
       ]
     },
 
@@ -444,7 +456,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "openSource": { "type": "boolean" },
         "supportedPlatforms": {
           "type": ["array", "null"],
@@ -474,7 +486,8 @@
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
-        }
+        },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
         "slug",
@@ -496,7 +509,8 @@
         "audit",
         "languages",
         "starred",
-        "actionButtons"
+        "actionButtons",
+        "tag"
       ]
     },
 
@@ -506,7 +520,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -555,7 +569,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -571,7 +585,8 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
-        "deliveryType": { "type": ["string"] }
+        "deliveryType": { "type": ["string"] },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
         "slug",
@@ -582,7 +597,8 @@
         "bannedCountries",
         "aggregator",
         "auditsPerformed",
-        "deliveryType"
+        "deliveryType",
+        "tag"
       ]
     },
     "platforms": {
@@ -592,7 +608,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -632,7 +648,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": "string"},
+        "offer": {"type": ["string", "null"]},
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
