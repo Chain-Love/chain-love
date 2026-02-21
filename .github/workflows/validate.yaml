@@ -36,6 +36,7 @@ jobs:
           cp json-tools/tools/csv_to_json.py .
           cp json-tools/tools/validate.py .
           cp json-tools/tools/schema.json .
+          cp -r json-tools/meta .
           ls -l
       
       - name: Run scripts inside network-disabled container
@@ -44,7 +45,7 @@ jobs:
             --network=none \
             -v ${{ github.workspace }}:/workspace \
             -w /workspace \
-            python:3.10-slim \
+            python:3.12-slim \
             /bin/bash -c "
               pip install --no-index --find-links=json-tools/tools/wheels -r json-tools/tools/requirements.txt && \
               python3 csv_to_json.py && \

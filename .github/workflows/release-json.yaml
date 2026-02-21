@@ -1,0 +1,36 @@
+name: Release JSONs
+
+on:
+  workflow_run:
+    workflows: [CSV to JSON]
+    types: [completed]
+  workflow_dispatch: 
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: json
+
+      - name: Prepare release assets
+        id: prep
+        run: |
+          mkdir -p release-assets
+          cp json/*.json release-assets/
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="json-$(date +%Y%m%d)-${GITHUB_SHA::7}"
+          gh release create "$tag" release-assets/* \
+            --title "JSON (${GITHUB_SHA::7})" \
+            --notes "Automated release from json branch"
