@@ -85,6 +85,16 @@ def rule_no_unclosed_markdown(data):
                 errors.append(f"Item {idx}: Markdown unclosed in field '{key}'")
     return errors
 
+def rule_chain_is_lowercase(data):
+    errors = []
+    for idx, item in enumerate(data):
+        if "chain" not in item.keys():
+            # chain is optional
+            continue
+        if not item["chain"].islower():
+            errors.append(f"Item {idx}: chain must be lowercase: want '{item['chain'].lower()}', got '{item['chain']}'. Please check all categories for the current network.")
+    return errors
+
 def has_unclosed_markdown(s: str) -> bool:
     if type(s) != str:
         return False
@@ -280,6 +290,7 @@ def main():
     rules.add_rule(rule_action_buttons_is_list_of_links)
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
+    rules.add_rule(rule_chain_is_lowercase)
 
     # Validate networks
     validator = Draft202012Validator(schema)
