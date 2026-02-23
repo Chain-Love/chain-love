@@ -274,9 +274,9 @@ def enrich_network_data(
 
 
 def process_all_networks() -> None:
-    verified_api_token = _get_env(VERIFIED_API_TOKEN)
-    subgraph_url = _get_env(SLA_MONITORING_SUBGRAPH_URL)
-    graph_api_key = _get_env(GRAPH_API_KEY)
+    verified_api_token = _get_env("VERIFIED_API_TOKEN")
+    subgraph_url = _get_env("SLA_MONITORING_SUBGRAPH_URL")
+    graph_api_key = _get_env("GRAPH_API_KEY")
 
     if not os.path.isdir("json"):
         print("No 'json' directory found, nothing to enrich")
