@@ -32,9 +32,13 @@ jobs:
           path: json-tools
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Copy csv_to_json.py script from tools folder
+      - name: Copy scripts from tools folder
         run: |
           cp json-tools/tools/csv_to_json.py .
+          cp json-tools/tools/enrich_verified_metrics.py .
+          cp json-tools/tools/validate.py .
+          cp json-tools/tools/schema.json .
+          cp -r json-tools/tools/validation .
           cp json-tools/tools/update_sdks_metadata_*.py .
           cp -r json-tools/meta .
 
@@ -63,13 +67,17 @@ jobs:
       - name: Install Python dependencies
         run: |
           python3 -m pip install --upgrade pip
-          pip install requests
+          pip install -r json-tools/tools/requirements.txt
 
-      - name: Run CSV to JSON
+      - name: Run CSV to JSON and enrichment
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERIFIED_API_TOKEN: ${{ secrets.VERIFIED_API_TOKEN }}
+          SLA_MONITORING_SUBGRAPH_URL: ${{ secrets.SLA_MONITORING_SUBGRAPH_URL }}
+          GRAPH_API_KEY: ${{ secrets.GRAPH_API_KEY }}
         run: |
           python3 csv_to_json.py
+          python3 enrich_verified_metrics.py
           python3 update_sdks_metadata_github.py --jsonfile all
           python3 update_sdks_metadata_npm.py --jsonfile all
           python3 update_sdks_metadata_gitlab.py --jsonfile all --fallback-to-tags
