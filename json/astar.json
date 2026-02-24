@@ -1668,7 +1668,7 @@
             "chain": "astar"
         },
         {
-            "slug": "arkham-shiden",
+            "slug": "arkham-astar",
             "provider": "Arkham",
             "offer": null,
             "actionButtons": [
@@ -1691,10 +1691,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "footprint-analytics-enterprise-shiden",
+            "slug": "footprint-analytics-enterprise-astar",
             "provider": "Footprint Analytics",
             "offer": null,
             "actionButtons": [
@@ -1714,10 +1714,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "sentry-aleno-shiden",
+            "slug": "sentry-aleno-astar",
             "provider": "Sentry by Aleno",
             "offer": null,
             "actionButtons": [
@@ -1739,7 +1739,7 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
             "slug": "arkham-shibuya",
@@ -1816,7 +1816,7 @@
             "chain": "shibuya"
         },
         {
-            "slug": "arkham-astar",
+            "slug": "arkham-shiden",
             "provider": "Arkham",
             "offer": null,
             "actionButtons": [
@@ -1839,10 +1839,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "footprint-analytics-enterprise-astar",
+            "slug": "footprint-analytics-enterprise-shiden",
             "provider": "Footprint Analytics",
             "offer": null,
             "actionButtons": [
@@ -1862,10 +1862,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "sentry-aleno-astar",
+            "slug": "sentry-aleno-shiden",
             "provider": "Sentry by Aleno",
             "offer": null,
             "actionButtons": [
@@ -1887,7 +1887,7 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         }
     ],
     "platforms": [
@@ -1955,27 +1955,6 @@
             "executionEnvironment": null
         },
         {
-            "slug": "apillon-the-cocoon",
-            "provider": "Apillon",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://apillon.io/pricing)"
-            ],
-            "toolType": "TBD",
-            "description": "It provides developers with APIs, SDKs, and a dashboard to simplify creating decentralized applications by abstracting blockchain complexities and offering access to Polkadot parachain-powered services",
-            "tag": [
-                "dApp development",
-                "Blockchain APIs",
-                "Web3 APIs"
-            ],
-            "planType": "Tiered",
-            "planName": "The Cocoon",
-            "price": "$79.9/mo",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
             "slug": "apillon-the-caterpillar",
             "provider": "Apillon",
             "offer": null,
@@ -1992,6 +1971,27 @@
             "planType": "Tiered",
             "planName": "The Caterpillar",
             "price": "$19.90/mo",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "apillon-the-cocoon",
+            "provider": "Apillon",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://apillon.io/pricing)"
+            ],
+            "toolType": "TBD",
+            "description": "It provides developers with APIs, SDKs, and a dashboard to simplify creating decentralized applications by abstracting blockchain complexities and offering access to Polkadot parachain-powered services",
+            "tag": [
+                "dApp development",
+                "Blockchain APIs",
+                "Web3 APIs"
+            ],
+            "planType": "Tiered",
+            "planName": "The Cocoon",
+            "price": "$79.9/mo",
             "trial": false,
             "availableApis": null,
             "executionEnvironment": null
@@ -2278,28 +2278,6 @@
             "executionEnvironment": null
         },
         {
-            "slug": "toolblox-starter",
-            "provider": "Toolblox",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.toolblox.net/Pricing)"
-            ],
-            "toolType": "TBD",
-            "description": "No-code platform for building, deploying and managing smart contracts and decentralized applications on various blockchain networks",
-            "tag": [
-                "Software development kit",
-                "API development",
-                "Programming utility",
-                "Coding tools"
-            ],
-            "planType": "Tiered",
-            "planName": "Starter",
-            "price": "$19/mo",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
             "slug": "toolblox-free",
             "provider": "Toolblox",
             "offer": null,
@@ -2361,6 +2339,28 @@
             "planType": "Tiered",
             "planName": "Professional",
             "price": "$42/mo",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "toolblox-starter",
+            "provider": "Toolblox",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.toolblox.net/Pricing)"
+            ],
+            "toolType": "TBD",
+            "description": "No-code platform for building, deploying and managing smart contracts and decentralized applications on various blockchain networks",
+            "tag": [
+                "Software development kit",
+                "API development",
+                "Programming utility",
+                "Coding tools"
+            ],
+            "planType": "Tiered",
+            "planName": "Starter",
+            "price": "$19/mo",
             "trial": false,
             "availableApis": null,
             "executionEnvironment": null
@@ -3217,20 +3217,20 @@
     ],
     "ramps": [
         {
-            "slug": "transak",
-            "provider": "Transak",
+            "slug": "banxa",
+            "provider": "Banxa",
             "offer": null,
             "actionButtons": [
-                "[Website](https://transak.com/)"
+                "[Website](https://banxa.com/)"
             ],
-            "kycLevel": "light",
+            "kycLevel": "full",
             "paymentMethods": [
                 "credit_card",
                 "debit_card",
-                "bank_transfer",
+                "sepa",
+                "ach",
                 "apple_pay",
-                "google_pay",
-                "pix"
+                "google_pay"
             ],
             "bannedCountries": [
                 "AF",
@@ -3243,6 +3243,68 @@
             "auditsPerformed": [
                 "ISO27001",
                 "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
+            "slug": "meld",
+            "provider": "Meld",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.meld.io/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
+            "slug": "mercuryo",
+            "provider": "Mercuryo",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://mercuryo.io/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "apple_pay",
+                "google_pay",
+                "sepa"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "ISO27001"
             ],
             "deliveryType": "TBD",
             "tag": null
@@ -3285,6 +3347,36 @@
             "tag": null
         },
         {
+            "slug": "onramper",
+            "provider": "Onramper",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://onramper.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "SOC2_TYPE_I"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
             "slug": "ramp-network",
             "provider": "Ramp Network",
             "offer": null,
@@ -3318,50 +3410,20 @@
             "tag": null
         },
         {
-            "slug": "onramper",
-            "provider": "Onramper",
+            "slug": "transak",
+            "provider": "Transak",
             "offer": null,
             "actionButtons": [
-                "[Website](https://onramper.com/)"
+                "[Website](https://transak.com/)"
             ],
-            "kycLevel": "full",
+            "kycLevel": "light",
             "paymentMethods": [
                 "credit_card",
                 "debit_card",
-                "sepa",
-                "ach",
+                "bank_transfer",
                 "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": true,
-            "auditsPerformed": [
-                "SOC2_TYPE_I"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "banxa",
-            "provider": "Banxa",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://banxa.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
+                "google_pay",
+                "pix"
             ],
             "bannedCountries": [
                 "AF",
@@ -3373,68 +3435,6 @@
             "aggregator": false,
             "auditsPerformed": [
                 "ISO27001",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "mercuryo",
-            "provider": "Mercuryo",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://mercuryo.io/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "apple_pay",
-                "google_pay",
-                "sepa"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "PCI_DSS",
-                "ISO27001"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "meld",
-            "provider": "Meld",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.meld.io/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": true,
-            "auditsPerformed": [
-                "PCI_DSS",
                 "SOC2_TYPE_II"
             ],
             "deliveryType": "TBD",
@@ -3918,6 +3918,26 @@
             "starred": false
         },
         {
+            "slug": "arka-developer",
+            "provider": "Etherspot Prime",
+            "offer": "Arka",
+            "actionButtons": [
+                "[Buy](https://etherspot.io/pricing/)",
+                "[Docs](https://etherspot.fyi/arka/intro)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "ERC-4337",
+                "Paymaster",
+                "Gasless transactions"
+            ],
+            "price": "$49/mo",
+            "planType": "Tiered",
+            "planName": "Developer",
+            "description": "Provides gasless transactions, sponsored transactions, and alternative gas payments using ERC-20 tokens, adhering to the ERC-4337 standard to improve dApp user experience",
+            "starred": false
+        },
+        {
             "slug": "arka-free",
             "provider": "Etherspot Prime",
             "offer": "Arka",
@@ -3934,26 +3954,6 @@
             "price": "$0",
             "planType": "Free",
             "planName": null,
-            "description": "Provides gasless transactions, sponsored transactions, and alternative gas payments using ERC-20 tokens, adhering to the ERC-4337 standard to improve dApp user experience",
-            "starred": false
-        },
-        {
-            "slug": "arka-startup",
-            "provider": "Etherspot Prime",
-            "offer": "Arka",
-            "actionButtons": [
-                "[Buy](https://etherspot.io/pricing/)",
-                "[Docs](https://etherspot.fyi/arka/intro)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "ERC-4337",
-                "Paymaster",
-                "Gasless transactions"
-            ],
-            "price": "$299/mo",
-            "planType": "Tiered",
-            "planName": "Startup",
             "description": "Provides gasless transactions, sponsored transactions, and alternative gas payments using ERC-20 tokens, adhering to the ERC-4337 standard to improve dApp user experience",
             "starred": false
         },
@@ -3978,7 +3978,7 @@
             "starred": false
         },
         {
-            "slug": "arka-developer",
+            "slug": "arka-startup",
             "provider": "Etherspot Prime",
             "offer": "Arka",
             "actionButtons": [
@@ -3991,9 +3991,9 @@
                 "Paymaster",
                 "Gasless transactions"
             ],
-            "price": "$49/mo",
+            "price": "$299/mo",
             "planType": "Tiered",
-            "planName": "Developer",
+            "planName": "Startup",
             "description": "Provides gasless transactions, sponsored transactions, and alternative gas payments using ERC-20 tokens, adhering to the ERC-4337 standard to improve dApp user experience",
             "starred": false
         },
@@ -5667,6 +5667,44 @@
             "tag": null
         },
         {
+            "slug": "enkrypt",
+            "provider": "Enkrypt",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.enkrypt.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "DOT"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "discord"
+            ],
+            "audit": [
+                "not availale"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
             "slug": "fearless",
             "provider": "Fearless",
             "offer": "Wallet",
@@ -6803,44 +6841,6 @@
             ],
             "starred": false,
             "tag": null
-        },
-        {
-            "slug": "enkrypt",
-            "provider": "Enkrypt",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.enkrypt.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Browser Extension"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20",
-                "DOT"
-            ],
-            "staking": false,
-            "price": "$0",
-            "support": [
-                "discord"
-            ],
-            "audit": [
-                "not availale"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false,
-            "tag": null
         }
     ],
     "explorers": [
@@ -7632,62 +7632,6 @@
             "chain": "astar"
         },
         {
-            "slug": "allthatnode-astar-starter-full-archive",
-            "provider": "AllThatNode",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.allthatnode.com/pricing.dsrv)",
-                "[Docs](https://docs.allthatnode.com/docs/welcome-to-all-that-node)"
-            ],
-            "planName": "Starter",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$29/mo, $289/yearly",
-            "queryPrice": "$0.58 per 1M CUs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace",
-                "websocket"
-            ],
-            "limitations": [
-                "2M CU/day",
-                "500 CUps throughput limit"
-            ],
-            "securityImprovements": [
-                "IP Whitelisting",
-                "JWT Authentication",
-                "Smart Contract Address Restrictions",
-                "Front-Running Protection",
-                "Comprehensive Analytics Dashboard"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom alerts",
-                "Reporting"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "astar"
-        },
-        {
             "slug": "allthatnode-astar-scale-full-archive",
             "provider": "AllThatNode",
             "offer": null,
@@ -7722,6 +7666,62 @@
             "limitations": [
                 "10M CU/day",
                 "2K CUps throughput limit"
+            ],
+            "securityImprovements": [
+                "IP Whitelisting",
+                "JWT Authentication",
+                "Smart Contract Address Restrictions",
+                "Front-Running Protection",
+                "Comprehensive Analytics Dashboard"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom alerts",
+                "Reporting"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "astar"
+        },
+        {
+            "slug": "allthatnode-astar-starter-full-archive",
+            "provider": "AllThatNode",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.allthatnode.com/pricing.dsrv)",
+                "[Docs](https://docs.allthatnode.com/docs/welcome-to-all-that-node)"
+            ],
+            "planName": "Starter",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$29/mo, $289/yearly",
+            "queryPrice": "$0.58 per 1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace",
+                "websocket"
+            ],
+            "limitations": [
+                "2M CU/day",
+                "500 CUps throughput limit"
             ],
             "securityImprovements": [
                 "IP Whitelisting",
@@ -8141,52 +8141,6 @@
             "chain": "astar"
         },
         {
-            "slug": "dwellir-astar-free-full-archive",
-            "provider": "Dwellir",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.dwellir.com/)",
-                "[Docs](https://www.dwellir.com/docs)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "trace",
-                "debug"
-            ],
-            "limitations": [
-                "20 responses/sec",
-                "100K daily response limit",
-                "1 API Key"
-            ],
-            "securityImprovements": [
-                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
-                "Bare metal servers"
-            ],
-            "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "astar"
-        },
-        {
             "slug": "dwellir-astar-developer-full-archive",
             "provider": "Dwellir",
             "offer": null,
@@ -8220,6 +8174,52 @@
                 "unlimited daily response",
                 "10 API Keys",
                 "25M responses"
+            ],
+            "securityImprovements": [
+                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
+                "Bare metal servers"
+            ],
+            "monitoringAndAnalytics": null,
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "astar"
+        },
+        {
+            "slug": "dwellir-astar-free-full-archive",
+            "provider": "Dwellir",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.dwellir.com/)",
+                "[Docs](https://www.dwellir.com/docs)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "trace",
+                "debug"
+            ],
+            "limitations": [
+                "20 responses/sec",
+                "100K daily response limit",
+                "1 API Key"
             ],
             "securityImprovements": [
                 "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
@@ -8373,52 +8373,6 @@
             "chain": "shibuya"
         },
         {
-            "slug": "dwellir-shibuya-free-full-archive",
-            "provider": "Dwellir",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.dwellir.com/)",
-                "[Docs](https://www.dwellir.com/docs)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "trace",
-                "debug"
-            ],
-            "limitations": [
-                "20 responses/sec",
-                "100K daily response limit",
-                "1 API Key"
-            ],
-            "securityImprovements": [
-                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
-                "Bare metal servers"
-            ],
-            "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "shibuya"
-        },
-        {
             "slug": "dwellir-shibuya-developer-full-archive",
             "provider": "Dwellir",
             "offer": null,
@@ -8452,6 +8406,52 @@
                 "unlimited daily response",
                 "10 API Keys",
                 "25M responses"
+            ],
+            "securityImprovements": [
+                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
+                "Bare metal servers"
+            ],
+            "monitoringAndAnalytics": null,
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "shibuya"
+        },
+        {
+            "slug": "dwellir-shibuya-free-full-archive",
+            "provider": "Dwellir",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.dwellir.com/)",
+                "[Docs](https://www.dwellir.com/docs)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "trace",
+                "debug"
+            ],
+            "limitations": [
+                "20 responses/sec",
+                "100K daily response limit",
+                "1 API Key"
             ],
             "securityImprovements": [
                 "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
@@ -8605,52 +8605,6 @@
             "chain": "shiden"
         },
         {
-            "slug": "dwellir-shiden-free-full-archive",
-            "provider": "Dwellir",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.dwellir.com/)",
-                "[Docs](https://www.dwellir.com/docs)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "trace",
-                "debug"
-            ],
-            "limitations": [
-                "20 responses/sec",
-                "100K daily response limit",
-                "1 API Key"
-            ],
-            "securityImprovements": [
-                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
-                "Bare metal servers"
-            ],
-            "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "shiden"
-        },
-        {
             "slug": "dwellir-shiden-developer-full-archive",
             "provider": "Dwellir",
             "offer": null,
@@ -8684,6 +8638,52 @@
                 "unlimited daily response",
                 "10 API Keys",
                 "25M responses"
+            ],
+            "securityImprovements": [
+                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
+                "Bare metal servers"
+            ],
+            "monitoringAndAnalytics": null,
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "shiden"
+        },
+        {
+            "slug": "dwellir-shiden-free-full-archive",
+            "provider": "Dwellir",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.dwellir.com/)",
+                "[Docs](https://www.dwellir.com/docs)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "trace",
+                "debug"
+            ],
+            "limitations": [
+                "20 responses/sec",
+                "100K daily response limit",
+                "1 API Key"
             ],
             "securityImprovements": [
                 "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
@@ -9430,7 +9430,60 @@
             "chain": "astar"
         },
         {
-            "slug": "onfinality-astar-dedicated-full-archive",
+            "slug": "onfinality-astar-accelerate-full-archive",
+            "provider": "OnFinality",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$249",
+            "queryPrice": "$3.75/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "astar"
+        },
+        {
+            "slug": "onfinality-astar-dedicated-collator",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -9439,9 +9492,9 @@
             ],
             "planName": null,
             "planType": "Dedicated",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
+            "historicalData": "Pruned",
+            "apiType": "Collator Node",
+            "technology": "Custom",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
             "verifiedUptime": null,
@@ -9480,7 +9533,7 @@
             "chain": "astar"
         },
         {
-            "slug": "onfinality-astar-dedicated-collator",
+            "slug": "onfinality-astar-dedicated-full-archive",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -9489,9 +9542,9 @@
             ],
             "planName": null,
             "planType": "Dedicated",
-            "historicalData": "Pruned",
-            "apiType": "Collator Node",
-            "technology": "Custom",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
             "accessPrice": "Custom",
             "queryPrice": "Custom",
             "verifiedUptime": null,
@@ -9633,6 +9686,57 @@
             "chain": "astar"
         },
         {
+            "slug": "onfinality-astar-free-plan-indexer",
+            "provider": "OnFinality",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://onfinality.io/en/networks/astar)",
+                "[Docs](https://documentation.onfinality.io/support/)"
+            ],
+            "planName": "Free Plan",
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "accessPrice": "Custom",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "2 active projects",
+                "Up to 500K stored entities",
+                "Up to 1K free deployment hours each month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Node Usage costs included in price",
+                "Support site"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "astar"
+        },
+        {
             "slug": "onfinality-astar-growth-full-archive",
             "provider": "OnFinality",
             "offer": null,
@@ -9681,110 +9785,6 @@
                 "Frankfurt"
             ],
             "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "astar"
-        },
-        {
-            "slug": "onfinality-astar-accelerate-full-archive",
-            "provider": "OnFinality",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/)"
-            ],
-            "planName": "Accelerate",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$249",
-            "queryPrice": "$3.75/million extra units",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Network native APIs",
-                "Trace API"
-            ],
-            "limitations": [
-                "20M/100M API response units",
-                "200/500 response units/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Requests count monitoring",
-                "Response time monitoring",
-                "Geographical monitoring",
-                "Per method monitoring"
-            ],
-            "regions": [
-                "N.Virginia",
-                "Ireland",
-                "Tokyo",
-                "Frankfurt"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "astar"
-        },
-        {
-            "slug": "onfinality-astar-free-plan-indexer",
-            "provider": "OnFinality",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://onfinality.io/en/networks/astar)",
-                "[Docs](https://documentation.onfinality.io/support/)"
-            ],
-            "planName": "Free Plan",
-            "planType": "Free",
-            "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "Custom",
-            "accessPrice": "Custom",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "2 active projects",
-                "Up to 500K stored entities",
-                "Up to 1K free deployment hours each month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Node Usage costs included in price",
-                "Support site"
-            ],
             "address": null,
             "tag": null,
             "chain": "astar"
@@ -10354,7 +10354,7 @@
             "chain": "shiden"
         },
         {
-            "slug": "1rpc-enterprise-recent-state-shiden",
+            "slug": "1rpc-enterprise-recent-state-astar",
             "provider": "1rpc",
             "offer": null,
             "actionButtons": [
@@ -10402,10 +10402,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "alchemy-enterprise-full-archive-shiden",
+            "slug": "alchemy-enterprise-full-archive-astar",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -10460,10 +10460,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "alchemy-enterprise-recent-state-shiden",
+            "slug": "alchemy-enterprise-recent-state-astar",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -10518,10 +10518,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "allthatnode-business-full-archive-shiden",
+            "slug": "allthatnode-business-full-archive-astar",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -10574,10 +10574,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "allthatnode-business-recent-state-shiden",
+            "slug": "allthatnode-business-recent-state-astar",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -10630,10 +10630,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "ankr-enterprise-full-archive-shiden",
+            "slug": "ankr-enterprise-full-archive-astar",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -10683,10 +10683,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "ankr-enterprise-recent-state-shiden",
+            "slug": "ankr-enterprise-recent-state-astar",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -10736,10 +10736,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "blockdaemon-enterprise-full-archive-shiden",
+            "slug": "blockdaemon-enterprise-full-archive-astar",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -10792,10 +10792,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "blockdaemon-enterprise-recent-state-shiden",
+            "slug": "blockdaemon-enterprise-recent-state-astar",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -10848,10 +10848,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "blockpi-enterprise-full-archive-shiden",
+            "slug": "blockpi-enterprise-full-archive-astar",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -10900,10 +10900,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "blockpi-enterprise-recent-state-shiden",
+            "slug": "blockpi-enterprise-recent-state-astar",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -10948,10 +10948,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "blockvision-enterprise-full-archive-shiden",
+            "slug": "blockvision-enterprise-full-archive-astar",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -10999,10 +10999,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "blockvision-enterprise-indexer-shiden",
+            "slug": "blockvision-enterprise-indexer-astar",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -11050,10 +11050,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "chainbase-enterprise-custom-shiden",
+            "slug": "chainbase-enterprise-custom-astar",
             "provider": "Chainbase",
             "offer": null,
             "actionButtons": [
@@ -11111,10 +11111,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "chainstack-enterprise-full-archive-shiden",
+            "slug": "chainstack-enterprise-full-archive-astar",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -11162,10 +11162,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "chainstack-enterprise-recent-state-shiden",
+            "slug": "chainstack-enterprise-recent-state-astar",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -11213,10 +11213,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "dipdup-enterprise-indexer-shiden",
+            "slug": "dipdup-enterprise-indexer-astar",
             "provider": "dipDup",
             "offer": null,
             "actionButtons": null,
@@ -11257,10 +11257,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "drpc-enterprise-full-archive-shiden",
+            "slug": "drpc-enterprise-full-archive-astar",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -11313,10 +11313,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "drpc-enterprise-recent-state-shiden",
+            "slug": "drpc-enterprise-recent-state-astar",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -11369,10 +11369,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "dwellir-enterprise-full-archive-shiden",
+            "slug": "dwellir-enterprise-full-archive-astar",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -11413,10 +11413,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "dwellir-enterprise-recent-state-shiden",
+            "slug": "dwellir-enterprise-recent-state-astar",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -11457,10 +11457,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "envio-dedicated-indexer-shiden",
+            "slug": "envio-dedicated-indexer-astar",
             "provider": "Envio",
             "offer": null,
             "actionButtons": null,
@@ -11518,10 +11518,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "getblock-enterprise-full-archive-shiden",
+            "slug": "getblock-enterprise-full-archive-astar",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -11570,10 +11570,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "getblock-enterprise-recent-state-shiden",
+            "slug": "getblock-enterprise-recent-state-astar",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -11622,10 +11622,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "ghostgraph-enterprise-indexer-shiden",
+            "slug": "ghostgraph-enterprise-indexer-astar",
             "provider": "GhostGraph",
             "offer": null,
             "actionButtons": null,
@@ -11673,10 +11673,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "ginco-enterprise-indexer-shiden",
+            "slug": "ginco-enterprise-indexer-astar",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -11727,10 +11727,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "ginco-enterprise-recent-state-shiden",
+            "slug": "ginco-enterprise-recent-state-astar",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -11781,10 +11781,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "goldrush-enterprise-indexer-shiden",
+            "slug": "goldrush-enterprise-indexer-astar",
             "provider": "Covalent",
             "offer": null,
             "actionButtons": null,
@@ -11824,10 +11824,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "goldsky-enterprise-indexer-shiden",
+            "slug": "goldsky-enterprise-indexer-astar",
             "provider": "Goldsky",
             "offer": null,
             "actionButtons": null,
@@ -11879,10 +11879,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "indexing-co-enterprise-indexer-shiden",
+            "slug": "indexing-co-enterprise-indexer-astar",
             "provider": "The Indexing Company",
             "offer": null,
             "actionButtons": [
@@ -11939,10 +11939,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "infstones-enterprise-full-archive-shiden",
+            "slug": "infstones-enterprise-full-archive-astar",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -11997,10 +11997,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "infstones-enterprise-recent-state-shiden",
+            "slug": "infstones-enterprise-recent-state-astar",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -12055,10 +12055,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "infura-enterprise-full-archive-shiden",
+            "slug": "infura-enterprise-full-archive-astar",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -12105,10 +12105,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "infura-enterprise-recent-state-shiden",
+            "slug": "infura-enterprise-recent-state-astar",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -12155,10 +12155,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "mobula-enterprise-indexer-shiden",
+            "slug": "mobula-enterprise-indexer-astar",
             "provider": "Mobula",
             "offer": null,
             "actionButtons": null,
@@ -12204,10 +12204,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "moralis-enterprise-full-archive-shiden",
+            "slug": "moralis-enterprise-full-archive-astar",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -12260,10 +12260,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "moralis-indexer-enterprise-shiden",
+            "slug": "moralis-indexer-enterprise-astar",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -12317,10 +12317,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "node-real-semita-shiden",
+            "slug": "node-real-semita-astar",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -12378,10 +12378,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "node-real-semita-full-archive-shiden",
+            "slug": "node-real-semita-full-archive-astar",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -12439,10 +12439,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "node-real-semita-recent-state-shiden",
+            "slug": "node-real-semita-recent-state-astar",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -12500,10 +12500,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "nownodes-custom-recent-state-shiden",
+            "slug": "nownodes-custom-recent-state-astar",
             "provider": "Nownodes",
             "offer": null,
             "actionButtons": [
@@ -12546,10 +12546,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "omnia-enterprise-recent-state-shiden",
+            "slug": "omnia-enterprise-recent-state-astar",
             "provider": "Omnia",
             "offer": null,
             "actionButtons": [
@@ -12602,10 +12602,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "onfinality-enterprise-full-archive-shiden",
+            "slug": "onfinality-enterprise-full-archive-astar",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -12655,10 +12655,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "onfinality-enterprise-trace-shiden",
+            "slug": "onfinality-enterprise-trace-astar",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -12708,10 +12708,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "onfinality-partner-plan-indexer-shiden",
+            "slug": "onfinality-partner-plan-indexer-astar",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -12761,10 +12761,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "quicknode-enterprise-full-archive-shiden",
+            "slug": "quicknode-enterprise-full-archive-astar",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -12820,10 +12820,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "quicknode-enterprise-recent-state-shiden",
+            "slug": "quicknode-enterprise-recent-state-astar",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -12879,10 +12879,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "radiumblock-enterprise-recent-state-shiden",
+            "slug": "radiumblock-enterprise-recent-state-astar",
             "provider": "RadiumBlock",
             "offer": null,
             "actionButtons": [
@@ -12923,10 +12923,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "rpcfast-enterprise-full-archive-shiden",
+            "slug": "rpcfast-enterprise-full-archive-astar",
             "provider": "RPCFast",
             "offer": null,
             "actionButtons": [
@@ -12974,10 +12974,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "tatum-enterprise-full-archive-shiden",
+            "slug": "tatum-enterprise-full-archive-astar",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -13030,10 +13030,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "tatum-enterprise-recent-state-shiden",
+            "slug": "tatum-enterprise-recent-state-astar",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -13086,10 +13086,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "tenderly-enterprise-recent-state-shiden",
+            "slug": "tenderly-enterprise-recent-state-astar",
             "provider": "Tenderly",
             "offer": null,
             "actionButtons": [
@@ -13136,10 +13136,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "thegraph-enterprise-indexer-shiden",
+            "slug": "thegraph-enterprise-indexer-astar",
             "provider": "The Graph",
             "offer": null,
             "actionButtons": null,
@@ -13180,10 +13180,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "thirdweb-enterprise-indexer-shiden",
+            "slug": "thirdweb-enterprise-indexer-astar",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": null,
@@ -13232,10 +13232,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "thirdweb-enterprise-recent-state-shiden",
+            "slug": "thirdweb-enterprise-recent-state-astar",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": [
@@ -13270,10 +13270,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "validation-cloud-private-full-archive-shiden",
+            "slug": "validation-cloud-private-full-archive-astar",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -13321,10 +13321,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
-            "slug": "validation-cloud-private-recent-state-shiden",
+            "slug": "validation-cloud-private-recent-state-astar",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -13372,7 +13372,7 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "shiden"
+            "chain": "astar"
         },
         {
             "slug": "1rpc-enterprise-recent-state-shibuya",
@@ -16396,7 +16396,7 @@
             "chain": "shibuya"
         },
         {
-            "slug": "1rpc-enterprise-recent-state-astar",
+            "slug": "1rpc-enterprise-recent-state-shiden",
             "provider": "1rpc",
             "offer": null,
             "actionButtons": [
@@ -16444,10 +16444,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "alchemy-enterprise-full-archive-astar",
+            "slug": "alchemy-enterprise-full-archive-shiden",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -16502,10 +16502,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "alchemy-enterprise-recent-state-astar",
+            "slug": "alchemy-enterprise-recent-state-shiden",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -16560,10 +16560,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "allthatnode-business-full-archive-astar",
+            "slug": "allthatnode-business-full-archive-shiden",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -16616,10 +16616,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "allthatnode-business-recent-state-astar",
+            "slug": "allthatnode-business-recent-state-shiden",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -16672,10 +16672,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "ankr-enterprise-full-archive-astar",
+            "slug": "ankr-enterprise-full-archive-shiden",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -16725,10 +16725,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "ankr-enterprise-recent-state-astar",
+            "slug": "ankr-enterprise-recent-state-shiden",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -16778,10 +16778,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "blockdaemon-enterprise-full-archive-astar",
+            "slug": "blockdaemon-enterprise-full-archive-shiden",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -16834,10 +16834,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "blockdaemon-enterprise-recent-state-astar",
+            "slug": "blockdaemon-enterprise-recent-state-shiden",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -16890,10 +16890,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "blockpi-enterprise-full-archive-astar",
+            "slug": "blockpi-enterprise-full-archive-shiden",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -16942,10 +16942,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "blockpi-enterprise-recent-state-astar",
+            "slug": "blockpi-enterprise-recent-state-shiden",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -16990,10 +16990,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "blockvision-enterprise-full-archive-astar",
+            "slug": "blockvision-enterprise-full-archive-shiden",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -17041,10 +17041,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "blockvision-enterprise-indexer-astar",
+            "slug": "blockvision-enterprise-indexer-shiden",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -17092,10 +17092,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "chainbase-enterprise-custom-astar",
+            "slug": "chainbase-enterprise-custom-shiden",
             "provider": "Chainbase",
             "offer": null,
             "actionButtons": [
@@ -17153,10 +17153,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "chainstack-enterprise-full-archive-astar",
+            "slug": "chainstack-enterprise-full-archive-shiden",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -17204,10 +17204,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "chainstack-enterprise-recent-state-astar",
+            "slug": "chainstack-enterprise-recent-state-shiden",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -17255,10 +17255,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "dipdup-enterprise-indexer-astar",
+            "slug": "dipdup-enterprise-indexer-shiden",
             "provider": "dipDup",
             "offer": null,
             "actionButtons": null,
@@ -17299,10 +17299,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "drpc-enterprise-full-archive-astar",
+            "slug": "drpc-enterprise-full-archive-shiden",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -17355,10 +17355,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "drpc-enterprise-recent-state-astar",
+            "slug": "drpc-enterprise-recent-state-shiden",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -17411,10 +17411,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "dwellir-enterprise-full-archive-astar",
+            "slug": "dwellir-enterprise-full-archive-shiden",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -17455,10 +17455,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "dwellir-enterprise-recent-state-astar",
+            "slug": "dwellir-enterprise-recent-state-shiden",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -17499,10 +17499,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "envio-dedicated-indexer-astar",
+            "slug": "envio-dedicated-indexer-shiden",
             "provider": "Envio",
             "offer": null,
             "actionButtons": null,
@@ -17560,10 +17560,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "getblock-enterprise-full-archive-astar",
+            "slug": "getblock-enterprise-full-archive-shiden",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -17612,10 +17612,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "getblock-enterprise-recent-state-astar",
+            "slug": "getblock-enterprise-recent-state-shiden",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -17664,10 +17664,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "ghostgraph-enterprise-indexer-astar",
+            "slug": "ghostgraph-enterprise-indexer-shiden",
             "provider": "GhostGraph",
             "offer": null,
             "actionButtons": null,
@@ -17715,10 +17715,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "ginco-enterprise-indexer-astar",
+            "slug": "ginco-enterprise-indexer-shiden",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -17769,10 +17769,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "ginco-enterprise-recent-state-astar",
+            "slug": "ginco-enterprise-recent-state-shiden",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -17823,10 +17823,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "goldrush-enterprise-indexer-astar",
+            "slug": "goldrush-enterprise-indexer-shiden",
             "provider": "Covalent",
             "offer": null,
             "actionButtons": null,
@@ -17866,10 +17866,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "goldsky-enterprise-indexer-astar",
+            "slug": "goldsky-enterprise-indexer-shiden",
             "provider": "Goldsky",
             "offer": null,
             "actionButtons": null,
@@ -17921,10 +17921,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "indexing-co-enterprise-indexer-astar",
+            "slug": "indexing-co-enterprise-indexer-shiden",
             "provider": "The Indexing Company",
             "offer": null,
             "actionButtons": [
@@ -17981,10 +17981,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "infstones-enterprise-full-archive-astar",
+            "slug": "infstones-enterprise-full-archive-shiden",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -18039,10 +18039,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "infstones-enterprise-recent-state-astar",
+            "slug": "infstones-enterprise-recent-state-shiden",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -18097,10 +18097,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "infura-enterprise-full-archive-astar",
+            "slug": "infura-enterprise-full-archive-shiden",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -18147,10 +18147,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "infura-enterprise-recent-state-astar",
+            "slug": "infura-enterprise-recent-state-shiden",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -18197,10 +18197,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "mobula-enterprise-indexer-astar",
+            "slug": "mobula-enterprise-indexer-shiden",
             "provider": "Mobula",
             "offer": null,
             "actionButtons": null,
@@ -18246,10 +18246,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "moralis-enterprise-full-archive-astar",
+            "slug": "moralis-enterprise-full-archive-shiden",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -18302,10 +18302,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "moralis-indexer-enterprise-astar",
+            "slug": "moralis-indexer-enterprise-shiden",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -18359,10 +18359,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "node-real-semita-astar",
+            "slug": "node-real-semita-shiden",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -18420,10 +18420,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "node-real-semita-full-archive-astar",
+            "slug": "node-real-semita-full-archive-shiden",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -18481,10 +18481,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "node-real-semita-recent-state-astar",
+            "slug": "node-real-semita-recent-state-shiden",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -18542,10 +18542,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "nownodes-custom-recent-state-astar",
+            "slug": "nownodes-custom-recent-state-shiden",
             "provider": "Nownodes",
             "offer": null,
             "actionButtons": [
@@ -18588,10 +18588,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "omnia-enterprise-recent-state-astar",
+            "slug": "omnia-enterprise-recent-state-shiden",
             "provider": "Omnia",
             "offer": null,
             "actionButtons": [
@@ -18644,10 +18644,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "onfinality-enterprise-full-archive-astar",
+            "slug": "onfinality-enterprise-full-archive-shiden",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -18697,10 +18697,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "onfinality-enterprise-trace-astar",
+            "slug": "onfinality-enterprise-trace-shiden",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -18750,10 +18750,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "onfinality-partner-plan-indexer-astar",
+            "slug": "onfinality-partner-plan-indexer-shiden",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -18803,10 +18803,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "quicknode-enterprise-full-archive-astar",
+            "slug": "quicknode-enterprise-full-archive-shiden",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -18862,10 +18862,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "quicknode-enterprise-recent-state-astar",
+            "slug": "quicknode-enterprise-recent-state-shiden",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -18921,10 +18921,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "radiumblock-enterprise-recent-state-astar",
+            "slug": "radiumblock-enterprise-recent-state-shiden",
             "provider": "RadiumBlock",
             "offer": null,
             "actionButtons": [
@@ -18965,10 +18965,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "rpcfast-enterprise-full-archive-astar",
+            "slug": "rpcfast-enterprise-full-archive-shiden",
             "provider": "RPCFast",
             "offer": null,
             "actionButtons": [
@@ -19016,10 +19016,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "tatum-enterprise-full-archive-astar",
+            "slug": "tatum-enterprise-full-archive-shiden",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -19072,10 +19072,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "tatum-enterprise-recent-state-astar",
+            "slug": "tatum-enterprise-recent-state-shiden",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -19128,10 +19128,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "tenderly-enterprise-recent-state-astar",
+            "slug": "tenderly-enterprise-recent-state-shiden",
             "provider": "Tenderly",
             "offer": null,
             "actionButtons": [
@@ -19178,10 +19178,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "thegraph-enterprise-indexer-astar",
+            "slug": "thegraph-enterprise-indexer-shiden",
             "provider": "The Graph",
             "offer": null,
             "actionButtons": null,
@@ -19222,10 +19222,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "thirdweb-enterprise-indexer-astar",
+            "slug": "thirdweb-enterprise-indexer-shiden",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": null,
@@ -19274,10 +19274,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "thirdweb-enterprise-recent-state-astar",
+            "slug": "thirdweb-enterprise-recent-state-shiden",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": [
@@ -19312,10 +19312,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "validation-cloud-private-full-archive-astar",
+            "slug": "validation-cloud-private-full-archive-shiden",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -19363,10 +19363,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         },
         {
-            "slug": "validation-cloud-private-recent-state-astar",
+            "slug": "validation-cloud-private-recent-state-shiden",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -19414,7 +19414,7 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "astar"
+            "chain": "shiden"
         }
     ],
     "faucets": [
@@ -19459,23 +19459,6 @@
     ],
     "storages": [
         {
-            "slug": "orbit-db",
-            "provider": "Orbit DB",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://orbitdb.org/)"
-            ],
-            "toolType": "Database",
-            "tag": [
-                "Decentralized database"
-            ],
-            "price": "$0",
-            "planType": "Free",
-            "planName": null,
-            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-            "starred": false
-        },
-        {
             "slug": "ipfs",
             "provider": "IPFS",
             "offer": null,
@@ -19492,6 +19475,23 @@
             "planType": "Free",
             "planName": null,
             "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+            "starred": false
+        },
+        {
+            "slug": "orbit-db",
+            "provider": "Orbit DB",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://orbitdb.org/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database"
+            ],
+            "price": "$0",
+            "planType": "Free",
+            "planName": null,
+            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
             "starred": false
         },
         {
@@ -22377,88 +22377,31 @@
                     "security"
                 ]
             },
-            "transak": {
-                "slug": "transak",
-                "name": "Transak",
-                "logoPath": "transak.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://transak.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "moonpay": {
-                "slug": "moonpay",
-                "name": "MoonPay",
-                "logoPath": "moonpay.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://www.moonpay.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "ramp-network": {
-                "slug": "ramp-network",
-                "name": "Ramp Network",
-                "logoPath": "ramp-network.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://ramp.network/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "onramper": {
-                "slug": "onramper",
-                "name": "Onramper",
-                "logoPath": "onramper.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://onramper.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
             "banxa": {
                 "slug": "banxa",
                 "name": "Banxa",
                 "logoPath": "banxa.png",
                 "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
                 "website": "https://banxa.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "meld": {
+                "slug": "meld",
+                "name": "Meld",
+                "logoPath": "meld.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://www.meld.io/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -22491,12 +22434,69 @@
                     "ramps"
                 ]
             },
-            "meld": {
-                "slug": "meld",
-                "name": "Meld",
-                "logoPath": "meld.png",
+            "moonpay": {
+                "slug": "moonpay",
+                "name": "MoonPay",
+                "logoPath": "moonpay.png",
                 "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://www.meld.io/",
+                "website": "https://www.moonpay.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "onramper": {
+                "slug": "onramper",
+                "name": "Onramper",
+                "logoPath": "onramper.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://onramper.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "ramp-network": {
+                "slug": "ramp-network",
+                "name": "Ramp Network",
+                "logoPath": "ramp-network.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://ramp.network/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "transak": {
+                "slug": "transak",
+                "name": "Transak",
+                "logoPath": "transak.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://transak.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -23635,6 +23635,25 @@
                     "wallets"
                 ]
             },
+            "enkrypt": {
+                "slug": "enkrypt",
+                "name": "Enkrypt",
+                "logoPath": "enkrypt.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://www.enkrypt.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "wallets"
+                ]
+            },
             "fearless": {
                 "slug": "fearless",
                 "name": "Fearless",
@@ -24097,25 +24116,6 @@
                 "logoPath": "zerion.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
                 "website": "https://zerion.io/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "wallets"
-                ]
-            },
-            "enkrypt": {
-                "slug": "enkrypt",
-                "name": "Enkrypt",
-                "logoPath": "enkrypt.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://www.enkrypt.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -24756,15 +24756,15 @@
                     "apis"
                 ]
             },
-            "orbit-db": {
-                "slug": "orbit-db",
-                "name": "Orbit DB",
-                "logoPath": "orbit-db.png",
-                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-                "website": "https://orbitdb.org/",
-                "docs": null,
+            "ipfs": {
+                "slug": "ipfs",
+                "name": "IPFS",
+                "logoPath": "ipfs.png",
+                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+                "website": "https://docs.ipfs.io/",
+                "docs": "https://docs.ipfs.io/",
                 "x": null,
-                "github": null,
+                "github": "ipfs-force-community/go-fvm-sdk",
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,
@@ -24775,15 +24775,15 @@
                     "storages"
                 ]
             },
-            "ipfs": {
-                "slug": "ipfs",
-                "name": "IPFS",
-                "logoPath": "ipfs.png",
-                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
-                "website": "https://docs.ipfs.io/",
-                "docs": "https://docs.ipfs.io/",
+            "orbit-db": {
+                "slug": "orbit-db",
+                "name": "Orbit DB",
+                "logoPath": "orbit-db.png",
+                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
+                "website": "https://orbitdb.org/",
+                "docs": null,
                 "x": null,
-                "github": "ipfs-force-community/go-fvm-sdk",
+                "github": null,
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,

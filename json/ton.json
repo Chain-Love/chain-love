@@ -1,82 +1,78 @@
 {
     "oracles": [
         {
-            "slug": "redstone-mainnet",
-            "provider": "RedStone",
+            "slug": "orbs-mainnet",
+            "provider": "Orbs",
             "offer": null,
             "actionButtons": [
-                "[Docs](https://docs.ton.org/ecosystem/oracles/redstone)"
+                "[Website](https://docs.orbs.network/v3/community-projects/ton-access)"
             ],
-            "technology": "Modular Oracle",
-            "starred": false,
+            "chain": "mainnet",
+            "technology": "Layer 3 Infrastructure",
+            "starred": true,
             "availableApis": [
-                "Price Feeds",
-                "Custom Data"
+                "RPC",
+                "Randomness"
             ],
             "monitoringAndAnalytics": [
-                "Custom Delivery Monitoring"
+                "Validator status"
             ],
             "additionalFeatures": [
-                "Data Packaging",
-                "Gas-efficient delivery",
-                "Smart contract plugins"
+                "Decentralized RPC",
+                "V3 Randomness"
             ],
             "dataTypes": [
-                "Token Prices",
-                "Custom External Data"
+                "Infrastructure",
+                "Randomness"
             ],
-            "decentralizationModel": "Hybrid",
+            "decentralizationModel": "Proof-of-Stake",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "economicalSecurityNote": "PoS Validators (Guardians)",
             "sdk": [
-                "JavaScript",
-                "Solidity"
+                "TypeScript"
             ],
             "auditsPerformed": [
-                "Trail of Bits",
-                "Audit by PeckShield, 2023"
+                "Internal",
+                "External Audits"
             ],
-            "tag": null,
-            "chain": "mainnet"
+            "tag": null
         },
         {
-            "slug": "redstone-testnet",
-            "provider": "RedStone",
+            "slug": "orbs-testnet",
+            "provider": "Orbs",
             "offer": null,
             "actionButtons": [
-                "[Docs](https://docs.ton.org/ecosystem/oracles/redstone)"
+                "[Website](https://docs.orbs.network/v3/community-projects/ton-access)"
             ],
-            "technology": "Modular Oracle",
-            "starred": false,
+            "chain": "testnet",
+            "technology": "Layer 3 Infrastructure",
+            "starred": true,
             "availableApis": [
-                "Price Feeds",
-                "Custom Data"
+                "RPC",
+                "Randomness"
             ],
             "monitoringAndAnalytics": [
-                "Custom Delivery Monitoring"
+                "Validator status"
             ],
             "additionalFeatures": [
-                "Data Packaging",
-                "Gas-efficient delivery",
-                "Smart contract plugins"
+                "Decentralized RPC",
+                "V3 Randomness"
             ],
             "dataTypes": [
-                "Token Prices",
-                "Custom External Data"
+                "Infrastructure",
+                "Randomness"
             ],
-            "decentralizationModel": "Hybrid",
+            "decentralizationModel": "Proof-of-Stake",
             "economicalSecurity": true,
-            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "economicalSecurityNote": "PoS Validators (Guardians)",
             "sdk": [
-                "JavaScript",
-                "Solidity"
+                "TypeScript"
             ],
             "auditsPerformed": [
-                "Trail of Bits",
-                "Audit by PeckShield, 2023"
+                "Internal",
+                "External Audits"
             ],
-            "tag": null,
-            "chain": "testnet"
+            "tag": null
         },
         {
             "slug": "pyth-mainnet",
@@ -153,78 +149,82 @@
             "chain": "testnet"
         },
         {
-            "slug": "orbs-mainnet",
-            "provider": "Orbs",
+            "slug": "redstone-mainnet",
+            "provider": "RedStone",
             "offer": null,
             "actionButtons": [
-                "[Website](https://docs.orbs.network/v3/community-projects/ton-access)"
+                "[Docs](https://docs.ton.org/ecosystem/oracles/redstone)"
             ],
-            "chain": "mainnet",
-            "technology": "Layer 3 Infrastructure",
-            "starred": true,
+            "technology": "Modular Oracle",
+            "starred": false,
             "availableApis": [
-                "RPC",
-                "Randomness"
+                "Price Feeds",
+                "Custom Data"
             ],
             "monitoringAndAnalytics": [
-                "Validator status"
+                "Custom Delivery Monitoring"
             ],
             "additionalFeatures": [
-                "Decentralized RPC",
-                "V3 Randomness"
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
             ],
             "dataTypes": [
-                "Infrastructure",
-                "Randomness"
+                "Token Prices",
+                "Custom External Data"
             ],
-            "decentralizationModel": "Proof-of-Stake",
+            "decentralizationModel": "Hybrid",
             "economicalSecurity": true,
-            "economicalSecurityNote": "PoS Validators (Guardians)",
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
             "sdk": [
-                "TypeScript"
+                "JavaScript",
+                "Solidity"
             ],
             "auditsPerformed": [
-                "Internal",
-                "External Audits"
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
             ],
-            "tag": null
+            "tag": null,
+            "chain": "mainnet"
         },
         {
-            "slug": "orbs-testnet",
-            "provider": "Orbs",
+            "slug": "redstone-testnet",
+            "provider": "RedStone",
             "offer": null,
             "actionButtons": [
-                "[Website](https://docs.orbs.network/v3/community-projects/ton-access)"
+                "[Docs](https://docs.ton.org/ecosystem/oracles/redstone)"
             ],
-            "chain": "testnet",
-            "technology": "Layer 3 Infrastructure",
-            "starred": true,
+            "technology": "Modular Oracle",
+            "starred": false,
             "availableApis": [
-                "RPC",
-                "Randomness"
+                "Price Feeds",
+                "Custom Data"
             ],
             "monitoringAndAnalytics": [
-                "Validator status"
+                "Custom Delivery Monitoring"
             ],
             "additionalFeatures": [
-                "Decentralized RPC",
-                "V3 Randomness"
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
             ],
             "dataTypes": [
-                "Infrastructure",
-                "Randomness"
+                "Token Prices",
+                "Custom External Data"
             ],
-            "decentralizationModel": "Proof-of-Stake",
+            "decentralizationModel": "Hybrid",
             "economicalSecurity": true,
-            "economicalSecurityNote": "PoS Validators (Guardians)",
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
             "sdk": [
-                "TypeScript"
+                "JavaScript",
+                "Solidity"
             ],
             "auditsPerformed": [
-                "Internal",
-                "External Audits"
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
             ],
-            "tag": null
+            "tag": null,
+            "chain": "testnet"
         }
     ],
     "sdks": [
@@ -1038,104 +1038,6 @@
     ],
     "analytics": [
         {
-            "slug": "tonstat",
-            "provider": "TonStat",
-            "offer": null,
-            "actionButtons": [
-                "[Dashboard](https://www.tonstat.com/)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Network Growth",
-                "Validators",
-                "Active Accounts",
-                "Transaction Count",
-                "Staking"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Public API"
-            ],
-            "price": "$0",
-            "planName": "Free",
-            "planType": "Free",
-            "starred": true,
-            "tag": null
-        },
-        {
-            "slug": "dyor-io",
-            "provider": "DYOR.io",
-            "offer": null,
-            "actionButtons": [
-                "[Dashboard](https://dyor.io/token/ton)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Jetton Prices",
-                "Liquidity Pools",
-                "Scam Detection",
-                "Holder Distribution",
-                "Rug Pull Checks"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "API (Premium)"
-            ],
-            "price": "Free / Premium",
-            "planName": "Freemium",
-            "planType": "Tiered",
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "geckoterminal",
-            "provider": "GeckoTerminal",
-            "offer": null,
-            "actionButtons": [
-                "[Dashboard](https://www.geckoterminal.com/ton/pools)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "DEX Trading Pairs",
-                "OHLCV Charts",
-                "Liquidity",
-                "Recent Trades"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "Public API"
-            ],
-            "price": "$0",
-            "planName": "Free",
-            "planType": "Free",
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "tonviewer-analytics",
-            "provider": "TonViewer",
-            "offer": null,
-            "actionButtons": [
-                "[Dashboard](https://tonviewer.com/)"
-            ],
-            "chain": "mainnet",
-            "dataSources": [
-                "Top Jettons",
-                "Top NFTs",
-                "Whale Tracking",
-                "Bridges"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "TonAPI"
-            ],
-            "price": "$0",
-            "planName": "Free",
-            "planType": "Free",
-            "starred": false,
-            "tag": null
-        },
-        {
             "slug": "dappradar",
             "provider": "DappRadar",
             "offer": null,
@@ -1239,6 +1141,55 @@
             "chain": "mainnet"
         },
         {
+            "slug": "dyor-io",
+            "provider": "DYOR.io",
+            "offer": null,
+            "actionButtons": [
+                "[Dashboard](https://dyor.io/token/ton)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Jetton Prices",
+                "Liquidity Pools",
+                "Scam Detection",
+                "Holder Distribution",
+                "Rug Pull Checks"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "API (Premium)"
+            ],
+            "price": "Free / Premium",
+            "planName": "Freemium",
+            "planType": "Tiered",
+            "starred": false,
+            "tag": null
+        },
+        {
+            "slug": "geckoterminal",
+            "provider": "GeckoTerminal",
+            "offer": null,
+            "actionButtons": [
+                "[Dashboard](https://www.geckoterminal.com/ton/pools)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "DEX Trading Pairs",
+                "OHLCV Charts",
+                "Liquidity",
+                "Recent Trades"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Public API"
+            ],
+            "price": "$0",
+            "planName": "Free",
+            "planType": "Free",
+            "starred": false,
+            "tag": null
+        },
+        {
             "slug": "messari",
             "provider": "Messari",
             "offer": null,
@@ -1313,6 +1264,55 @@
             "starred": false,
             "tag": null,
             "chain": "mainnet"
+        },
+        {
+            "slug": "tonstat",
+            "provider": "TonStat",
+            "offer": null,
+            "actionButtons": [
+                "[Dashboard](https://www.tonstat.com/)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Network Growth",
+                "Validators",
+                "Active Accounts",
+                "Transaction Count",
+                "Staking"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "Public API"
+            ],
+            "price": "$0",
+            "planName": "Free",
+            "planType": "Free",
+            "starred": true,
+            "tag": null
+        },
+        {
+            "slug": "tonviewer-analytics",
+            "provider": "TonViewer",
+            "offer": null,
+            "actionButtons": [
+                "[Dashboard](https://tonviewer.com/)"
+            ],
+            "chain": "mainnet",
+            "dataSources": [
+                "Top Jettons",
+                "Top NFTs",
+                "Whale Tracking",
+                "Bridges"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "TonAPI"
+            ],
+            "price": "$0",
+            "planName": "Free",
+            "planType": "Free",
+            "starred": false,
+            "tag": null
         },
         {
             "slug": "arkham-testnet",
@@ -1465,28 +1465,6 @@
     ],
     "platforms": [
         {
-            "slug": "dynamic-launch",
-            "provider": "Dynamic",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.dynamic.xyz/)"
-            ],
-            "toolType": "TBD",
-            "description": "It provides a suite of developer tools, primarily an SDK, to help integrate Web3 authentication, user management and non-custodial wallet infrastructure into applications",
-            "tag": [
-                "Software Development Tools",
-                "Application Development Tools",
-                "Platform as a Service",
-                "Integrated Development Environment"
-            ],
-            "planType": "Free",
-            "planName": "Launch",
-            "price": "$0",
-            "trial": false,
-            "availableApis": null,
-            "executionEnvironment": null
-        },
-        {
             "slug": "dynamic-growth",
             "provider": "Dynamic",
             "offer": null,
@@ -1504,6 +1482,28 @@
             "planType": "Tiered",
             "planName": "Growth",
             "price": "$249/mo",
+            "trial": false,
+            "availableApis": null,
+            "executionEnvironment": null
+        },
+        {
+            "slug": "dynamic-launch",
+            "provider": "Dynamic",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.dynamic.xyz/)"
+            ],
+            "toolType": "TBD",
+            "description": "It provides a suite of developer tools, primarily an SDK, to help integrate Web3 authentication, user management and non-custodial wallet infrastructure into applications",
+            "tag": [
+                "Software Development Tools",
+                "Application Development Tools",
+                "Platform as a Service",
+                "Integrated Development Environment"
+            ],
+            "planType": "Free",
+            "planName": "Launch",
+            "price": "$0",
             "trial": false,
             "availableApis": null,
             "executionEnvironment": null
@@ -2117,52 +2117,6 @@
     ],
     "bridges": [
         {
-            "slug": "ton-bridge",
-            "provider": "TON",
-            "offer": null,
-            "actionButtons": [
-                "[Bridge](https://bridge-v3.ton.org/)"
-            ],
-            "technology": "Cross‑chain Bridge",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "openSource": false,
-            "support": [
-                "Telegram"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Bridge API"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Decentralized oracle-based validation",
-                "Inbound and outbound transfers"
-            ],
-            "assetTypes": [
-                "Stablecoins",
-                "ERC-20",
-                "DAI",
-                "Toncoin"
-            ],
-            "price": "1-5 TON + Gas fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Decentralized oracles, slashing penalties, time locks and challenges",
-            "auditsPerformed": null,
-            "decentralizationModel": "Decentralized",
-            "sdk": [
-                "TypeScript",
-                "JavaScript"
-            ],
-            "supportedChains": [
-                "ethereum",
-                "ton",
-                "bnb chain"
-            ],
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
             "slug": "asterizm",
             "provider": "Asterizm",
             "offer": null,
@@ -2310,6 +2264,60 @@
                 "mode",
                 "taiko",
                 "ton"
+            ],
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "defiway-bridge",
+            "provider": "Defiway.Bridge",
+            "offer": null,
+            "actionButtons": [
+                "[Bridge](https://defiway.com/bridge/)"
+            ],
+            "technology": "Cross‑chain Transfer",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": false,
+            "support": [
+                "Website Form",
+                "Email"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Stablecoin Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Fast transaction speeds"
+            ],
+            "assetTypes": [
+                "Stablecoins"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Multisig validation, liquidity pools",
+            "auditsPerformed": [
+                "Audited by Certik"
+            ],
+            "decentralizationModel": "Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "arbitrum",
+                "base",
+                "solana",
+                "linea",
+                "optimism",
+                "plasma",
+                "polygon",
+                "ton",
+                "bnb chain",
+                "bitcoin",
+                "tron",
+                "scroll"
             ],
             "tag": null,
             "chain": "mainnet"
@@ -2919,55 +2927,47 @@
             "chain": "mainnet"
         },
         {
-            "slug": "defiway-bridge",
-            "provider": "Defiway.Bridge",
+            "slug": "ton-bridge",
+            "provider": "TON",
             "offer": null,
             "actionButtons": [
-                "[Bridge](https://defiway.com/bridge/)"
+                "[Bridge](https://bridge-v3.ton.org/)"
             ],
-            "technology": "Cross‑chain Transfer",
+            "technology": "Cross‑chain Bridge",
             "txSpeedSla": null,
             "throughputSla": null,
             "openSource": false,
             "support": [
-                "Website Form",
-                "Email"
+                "Telegram"
             ],
             "starred": false,
             "availableApis": [
-                "Stablecoin Transfer"
+                "Bridge API"
             ],
             "monitoringAndAnalytics": null,
             "additionalFeatures": [
-                "Fast transaction speeds"
+                "Decentralized oracle-based validation",
+                "Inbound and outbound transfers"
             ],
             "assetTypes": [
-                "Stablecoins"
+                "Stablecoins",
+                "ERC-20",
+                "DAI",
+                "Toncoin"
             ],
-            "price": "Gas Fee",
-            "economicalSecurity": false,
-            "economicalSecurityNote": "Multisig validation, liquidity pools",
-            "auditsPerformed": [
-                "Audited by Certik"
-            ],
+            "price": "1-5 TON + Gas fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Decentralized oracles, slashing penalties, time locks and challenges",
+            "auditsPerformed": null,
             "decentralizationModel": "Decentralized",
             "sdk": [
-                "Web UI"
+                "TypeScript",
+                "JavaScript"
             ],
             "supportedChains": [
                 "ethereum",
-                "arbitrum",
-                "base",
-                "solana",
-                "linea",
-                "optimism",
-                "plasma",
-                "polygon",
                 "ton",
-                "bnb chain",
-                "bitcoin",
-                "tron",
-                "scroll"
+                "bnb chain"
             ],
             "tag": null,
             "chain": "mainnet"
@@ -3013,26 +3013,6 @@
             "starred": false
         },
         {
-            "slug": "toncli",
-            "provider": "TON CLI",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://github.com/disintar/toncli)"
-            ],
-            "toolType": "CLI",
-            "tag": [
-                "Smart Contracts",
-                "FunC",
-                "CLI",
-                "Deployment"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "A command-line interface for compiling, testing, and deploying FunC smart contracts on the TON blockchain, commonly used in low-level TON development workflows",
-            "starred": false
-        },
-        {
             "slug": "ton-lite-client",
             "provider": "TON Lite Client",
             "offer": null,
@@ -3068,6 +3048,26 @@
             "planName": null,
             "planType": "Free",
             "description": "A tool that allows developers to run a local instance of the TON blockchain for rapid smart contract testing and debugging",
+            "starred": false
+        },
+        {
+            "slug": "toncli",
+            "provider": "TON CLI",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://github.com/disintar/toncli)"
+            ],
+            "toolType": "CLI",
+            "tag": [
+                "Smart Contracts",
+                "FunC",
+                "CLI",
+                "Deployment"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "A command-line interface for compiling, testing, and deploying FunC smart contracts on the TON blockchain, commonly used in low-level TON development workflows",
             "starred": false
         },
         {
@@ -4156,6 +4156,43 @@
             "tag": null
         },
         {
+            "slug": "cypherock-x1",
+            "provider": "Cypherock X1",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.cypherock.com/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Hardware"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20"
+            ],
+            "staking": false,
+            "price": "Paid",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
             "slug": "exodus",
             "provider": "Exodus",
             "offer": null,
@@ -4195,6 +4232,45 @@
             "languages": [
                 "EN",
                 "ES"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
+            "slug": "foxwallet",
+            "provider": "FoxWallet",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://foxwallet.com/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "email",
+                "discord"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
             ],
             "starred": false,
             "tag": null
@@ -4445,6 +4521,49 @@
             "tag": null
         },
         {
+            "slug": "mytonwallet",
+            "provider": "MyTonWallet",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://mytonwallet.io/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "Jettons",
+                "NFT"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "telegram",
+                "email"
+            ],
+            "audit": null,
+            "languages": [
+                "EN",
+                "RU",
+                "ZH",
+                "ES",
+                "ID"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
             "slug": "okxwallet",
             "provider": "OKX",
             "offer": "Wallet",
@@ -4540,6 +4659,42 @@
                 "VI",
                 "HI",
                 "JA"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
+            "slug": "openmask",
+            "provider": "OpenMask",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.openmask.app/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "Jettons",
+                "NFT"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "telegram",
+                "email"
+            ],
+            "audit": null,
+            "languages": [
+                "EN"
             ],
             "starred": false,
             "tag": null
@@ -4668,46 +4823,39 @@
             "tag": null
         },
         {
-            "slug": "trustwallet",
-            "provider": "Trust",
-            "offer": "Wallet",
+            "slug": "tonhub",
+            "provider": "Tonhub",
+            "offer": null,
             "actionButtons": [
-                "[Website](https://trustwallet.com/)"
+                "[Website](https://tonhub.com/)"
             ],
-            "openSource": false,
+            "openSource": true,
             "supportedPlatforms": [
                 "iOS",
-                "Android",
-                "Web"
+                "Android"
             ],
             "custodial": false,
             "mfa": true,
             "msig": false,
-            "hardware": false,
+            "hardware": true,
             "keyExport": true,
-            "native": false,
-            "evm": true,
+            "native": true,
+            "evm": false,
             "tendermint": false,
             "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
+                "Jettons",
+                "NFT"
             ],
             "staking": true,
             "price": "$0",
             "support": [
-                "email",
-                "helpdesk"
+                "telegram",
+                "email"
             ],
-            "audit": [
-                "[CertiK](https://www.certik.com/projects/trust-wallet)"
-            ],
+            "audit": null,
             "languages": [
                 "EN",
-                "ES",
-                "FR",
-                "ZH",
-                "JA"
+                "RU"
             ],
             "starred": false,
             "tag": null
@@ -4762,82 +4910,46 @@
             "tag": null
         },
         {
-            "slug": "mytonwallet",
-            "provider": "MyTonWallet",
-            "offer": null,
+            "slug": "trustwallet",
+            "provider": "Trust",
+            "offer": "Wallet",
             "actionButtons": [
-                "[Website](https://mytonwallet.io/)"
+                "[Website](https://trustwallet.com/)"
             ],
-            "openSource": true,
+            "openSource": false,
             "supportedPlatforms": [
-                "Browser Extension",
                 "iOS",
                 "Android",
                 "Web"
             ],
             "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "Jettons",
-                "NFT"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "telegram",
-                "email"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "RU",
-                "ZH",
-                "ES",
-                "ID"
-            ],
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "tonhub",
-            "provider": "Tonhub",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://tonhub.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
             "mfa": true,
             "msig": false,
-            "hardware": true,
+            "hardware": false,
             "keyExport": true,
-            "native": true,
-            "evm": false,
+            "native": false,
+            "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "Jettons",
-                "NFT"
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
             ],
             "staking": true,
             "price": "$0",
             "support": [
-                "telegram",
-                "email"
+                "email",
+                "helpdesk"
             ],
-            "audit": null,
+            "audit": [
+                "[CertiK](https://www.certik.com/projects/trust-wallet)"
+            ],
             "languages": [
                 "EN",
-                "RU"
+                "ES",
+                "FR",
+                "ZH",
+                "JA"
             ],
             "starred": false,
             "tag": null
@@ -4880,118 +4992,6 @@
                 "RU",
                 "UA",
                 "Multilingual"
-            ],
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "openmask",
-            "provider": "OpenMask",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.openmask.app/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "Jettons",
-                "NFT"
-            ],
-            "staking": false,
-            "price": "$0",
-            "support": [
-                "telegram",
-                "email"
-            ],
-            "audit": null,
-            "languages": [
-                "EN"
-            ],
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "cypherock-x1",
-            "provider": "Cypherock X1",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.cypherock.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Hardware"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20"
-            ],
-            "staking": false,
-            "price": "Paid",
-            "support": [
-                "email"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "foxwallet",
-            "provider": "FoxWallet",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://foxwallet.com/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20"
-            ],
-            "staking": false,
-            "price": "$0",
-            "support": [
-                "email",
-                "discord"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN"
             ],
             "starred": false,
             "tag": null
@@ -5163,76 +5163,6 @@
             "chain": "mainnet"
         },
         {
-            "slug": "tonviewer-mainnet",
-            "provider": "Brave",
-            "offer": "Brave Ltd.",
-            "actionButtons": [
-                "[Explore](https://tonviewer.com/)"
-            ],
-            "chain": "mainnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Addresses",
-                "Transactions",
-                "Blocks",
-                "Smart Contracts"
-            ],
-            "additionalFeatures": [
-                "Trace Visualization",
-                "Analysis tools beyond basic transaction",
-                "Block browsing"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Address",
-                "Transaction",
-                "Block"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "tonviewer-testnet",
-            "provider": "Brave",
-            "offer": "Brave Ltd.",
-            "actionButtons": [
-                "[Explore](https://testnet.tonviewer.com/)"
-            ],
-            "chain": "testnet",
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Addresses",
-                "Transactions",
-                "Blocks",
-                "Smart Contracts"
-            ],
-            "additionalFeatures": [
-                "Trace Visualization",
-                "Analysis tools beyond basic transaction",
-                "Block browsing"
-            ],
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Address",
-                "Transaction",
-                "Block"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Free",
-            "starred": false,
-            "tag": null
-        },
-        {
             "slug": "tonscan-mainnet",
             "provider": "Bakkenbaeck, Bastion Digital",
             "offer": null,
@@ -5313,619 +5243,81 @@
             "pricing": "Free",
             "starred": false,
             "tag": null
+        },
+        {
+            "slug": "tonviewer-mainnet",
+            "provider": "Brave",
+            "offer": "Brave Ltd.",
+            "actionButtons": [
+                "[Explore](https://tonviewer.com/)"
+            ],
+            "chain": "mainnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Addresses",
+                "Transactions",
+                "Blocks",
+                "Smart Contracts"
+            ],
+            "additionalFeatures": [
+                "Trace Visualization",
+                "Analysis tools beyond basic transaction",
+                "Block browsing"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction",
+                "Block"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false,
+            "tag": null
+        },
+        {
+            "slug": "tonviewer-testnet",
+            "provider": "Brave",
+            "offer": "Brave Ltd.",
+            "actionButtons": [
+                "[Explore](https://testnet.tonviewer.com/)"
+            ],
+            "chain": "testnet",
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Addresses",
+                "Transactions",
+                "Blocks",
+                "Smart Contracts"
+            ],
+            "additionalFeatures": [
+                "Trace Visualization",
+                "Analysis tools beyond basic transaction",
+                "Block browsing"
+            ],
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction",
+                "Block"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "starred": false,
+            "tag": null
         }
     ],
     "apis": [
         {
-            "slug": "dwellir-mainnet-dedicated-full-archive",
-            "provider": "Dwellir",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.dwellir.com/networks/ton)",
-                "[Contact](https://www.dwellir.com/contact)"
-            ],
-            "planName": null,
-            "planType": "Dedicated",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$8250/mo",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "trace",
-                "debug"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
-                "Bare metal servers"
-            ],
-            "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "dwellir-testnet-dedicated-recent-state",
-            "provider": "Dwellir",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.dwellir.com/networks/ton)",
-                "[Contact](https://www.dwellir.com/contact)"
-            ],
-            "planName": null,
-            "planType": "Dedicated",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$8250/mo",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "trace",
-                "debug"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
-                "Bare metal servers"
-            ],
-            "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "quicknode-mainnet-build-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/welcome)"
-            ],
-            "planName": "Build",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
-            "queryPrice": "$0.62 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "80M API credits",
-                "10 endpoints",
-                "50 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-accelerate-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/welcome)"
-            ],
-            "planName": "Accelerate",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
-            "queryPrice": "$0.55 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "450M API credits",
-                "20 endpoints",
-                "125 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-scale-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/welcome)"
-            ],
-            "planName": "Scale",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
-            "queryPrice": "$0.53 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "950M API credits",
-                "50 endpoints",
-                "250 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-business-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/welcome)"
-            ],
-            "planName": "Business",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
-            "queryPrice": "$0.5 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "2B API credits",
-                "50 endpoints",
-                "500 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-build-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/welcome)"
-            ],
-            "planName": "Build",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
-            "queryPrice": "$0.62 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "80M API credits",
-                "10 endpoints",
-                "50 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-accelerate-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/welcome)"
-            ],
-            "planName": "Accelerate",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
-            "queryPrice": "$0.55 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "450M API credits",
-                "20 endpoints",
-                "125 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-scale-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/welcome)"
-            ],
-            "planName": "Scale",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
-            "queryPrice": "$0.53 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "950M API credits",
-                "50 endpoints",
-                "250 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-business-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.quicknode.com/pricing)",
-                "[Docs](https://www.quicknode.com/docs/welcome)"
-            ],
-            "planName": "Business",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
-            "queryPrice": "$0.5 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "2B API credits",
-                "50 endpoints",
-                "500 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "ankr-mainnet-public-full-archive",
-            "provider": "Ankr",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.ankr.com/rpc/ton)",
-                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#ton)"
-            ],
-            "planName": null,
-            "planType": "Public",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Advanced ANKR API",
-                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
-                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
-                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Method Limiting",
-                "Error tracing",
-                "Contract addresses protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Community support"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "ankr-mainnet-free-recent-state",
+            "slug": "ankr-mainnet-free-full-archive",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -5934,7 +5326,7 @@
             ],
             "planName": null,
             "planType": "Free",
-            "historicalData": "Pruned",
+            "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "accessPrice": "$0",
@@ -5982,62 +5374,7 @@
             "chain": "mainnet"
         },
         {
-            "slug": "ankr-mainnet-pay-as-you-go-recent-state",
-            "provider": "Ankr",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.ankr.com/web3-api/chains-list/ton/)",
-                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#ton)"
-            ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "up to $10(payg plan)/$500-$3K(deal plan)",
-            "queryPrice": "$0.02(evm compatible API)/$0.05(solana API)/$0.07(beacon chains API)/$0.01(other API)/$0.07(advanced API) per 1K reqs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Advanced ANKR API",
-                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
-                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
-                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
-            ],
-            "limitations": [
-                "1.5K reqs/sec (node API)",
-                "1K reqs/min (advanced API)",
-                "3 projects (personal API tokens)"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Domain name protection",
-                "Custom rate limiting",
-                "Error tracing"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Support portal"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "ankr-mainnet-free-full-archive",
+            "slug": "ankr-mainnet-free-recent-state",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -6046,7 +5383,7 @@
             ],
             "planName": null,
             "planType": "Free",
-            "historicalData": "Archive",
+            "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "accessPrice": "$0",
@@ -6149,6 +5486,113 @@
             "chain": "mainnet"
         },
         {
+            "slug": "ankr-mainnet-pay-as-you-go-recent-state",
+            "provider": "Ankr",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.ankr.com/web3-api/chains-list/ton/)",
+                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#ton)"
+            ],
+            "planName": null,
+            "planType": "Pay-as-you-go",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "up to $10(payg plan)/$500-$3K(deal plan)",
+            "queryPrice": "$0.02(evm compatible API)/$0.05(solana API)/$0.07(beacon chains API)/$0.01(other API)/$0.07(advanced API) per 1K reqs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Advanced ANKR API",
+                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
+            ],
+            "limitations": [
+                "1.5K reqs/sec (node API)",
+                "1K reqs/min (advanced API)",
+                "3 projects (personal API tokens)"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Error tracing"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Support portal"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "ankr-mainnet-public-full-archive",
+            "provider": "Ankr",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.ankr.com/rpc/ton)",
+                "[Docs](https://www.ankr.com/docs/rpc-service/chains/chains-list/#ton)"
+            ],
+            "planName": null,
+            "planType": "Public",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Advanced ANKR API",
+                "[eth](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[debug](https://www.ankr.com/docs/rpc-service/chains/chains-list/)",
+                "[web3](https://www.ankr.com/docs/rpc-service/chains/chains-list/)"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Community support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
             "slug": "blockpi-mainnet-dedicated-recent-state",
             "provider": "BlockPi",
             "offer": null,
@@ -6187,6 +5631,58 @@
                 "Advanced analytics via Grafana/Prometheus",
                 "Custom alerting (Slack/Telegram)",
                 "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "blockpi-mainnet-elementary-recent-state",
+            "provider": "BlockPi",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://blockpi.io/pricing/)",
+                "[Docs](https://docs.blockpi.io/build/api-reference/ton)"
+            ],
+            "planName": "Elementary",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.20%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "500M/60d + 50M/mo RUs",
+                "1K reqs/sec",
+                "40K RU/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time dashboard metrics"
             ],
             "regions": [
                 "Global"
@@ -6279,58 +5775,6 @@
                 "50K RUs per $0.001 + 50M/mo RUs",
                 "20 reqs/sec",
                 "1K RU/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time dashboard metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "blockpi-mainnet-elementary-recent-state",
-            "provider": "BlockPi",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://blockpi.io/pricing/)",
-                "[Docs](https://docs.blockpi.io/build/api-reference/ton)"
-            ],
-            "planName": "Elementary",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$49",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.20%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "500M/60d + 50M/mo RUs",
-                "1K reqs/sec",
-                "40K RU/sec"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -6450,7 +5894,7 @@
             "chain": "mainnet"
         },
         {
-            "slug": "chainstack-mainnet-pay-as-you-go-recent-state",
+            "slug": "chainstack-mainnet-pay-as-you-go-full-archive",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -6459,7 +5903,7 @@
             ],
             "planName": null,
             "planType": "Pay-as-you-go",
-            "historicalData": "Pruned",
+            "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "accessPrice": "$49/$199/$349/mo (monthly plan), $40/$166/$290/mo (yearly plan)",
@@ -6504,7 +5948,7 @@
             "chain": "mainnet"
         },
         {
-            "slug": "chainstack-mainnet-pay-as-you-go-full-archive",
+            "slug": "chainstack-mainnet-pay-as-you-go-recent-state",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -6513,7 +5957,7 @@
             ],
             "planName": null,
             "planType": "Pay-as-you-go",
-            "historicalData": "Archive",
+            "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "accessPrice": "$49/$199/$349/mo (monthly plan), $40/$166/$290/mo (yearly plan)",
@@ -6607,6 +6051,60 @@
             "chain": "testnet"
         },
         {
+            "slug": "chainstack-testnet-pay-as-you-go-full-archive",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/getting-started-ton#getting-started-ton)"
+            ],
+            "planName": null,
+            "planType": "Pay-as-you-go",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/$199/$349/mo (monthly plan), $40/$166/$290/mo (yearly plan)",
+            "queryPrice": "$15/$12.5/$10 per 1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "250/400/600 RPS",
+                "20M/80M/140M requests",
+                "10,15,20 nodes"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
             "slug": "chainstack-testnet-pay-as-you-go-recent-state",
             "provider": "Chainstack",
             "offer": null,
@@ -6661,24 +6159,24 @@
             "chain": "testnet"
         },
         {
-            "slug": "chainstack-testnet-pay-as-you-go-full-archive",
-            "provider": "Chainstack",
+            "slug": "drpc-mainnet-pay-as-you-go-full-archive",
+            "provider": "dRPC",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://chainstack.com/pricing/?nab=0)",
-                "[Docs](https://docs.chainstack.com/reference/getting-started-ton#getting-started-ton)"
+                "[Buy](https://drpc.org/pricing)",
+                "[Docs](https://drpc.org/docs/ton-api)"
             ],
             "planName": null,
             "planType": "Pay-as-you-go",
             "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/$199/$349/mo (monthly plan), $40/$166/$290/mo (yearly plan)",
-            "queryPrice": "$15/$12.5/$10 per 1M extra requests",
+            "accessPrice": "$0",
+            "queryPrice": "$6/1M requests",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.90%",
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
@@ -6692,20 +6190,106 @@
                 "trace"
             ],
             "limitations": [
-                "250/400/600 RPS",
-                "20M/80M/140M requests",
-                "10,15,20 nodes"
+                "5K req/s, 20M CUs"
             ],
             "securityImprovements": [
                 "DDoS Protection",
                 "IP Protection",
-                "Dedicated infrastructure"
+                "Domain name protection",
+                "Custom rate limiting",
+                "Method Limiting",
+                "Error tracing",
+                "Contract addresses protection"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring",
-                "Engineering team support"
+                "per-method analytics",
+                "latency",
+                "CU analytics"
             ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "dwellir-mainnet-dedicated-full-archive",
+            "provider": "Dwellir",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.dwellir.com/networks/ton)",
+                "[Contact](https://www.dwellir.com/contact)"
+            ],
+            "planName": null,
+            "planType": "Dedicated",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$8250/mo",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "trace",
+                "debug"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
+                "Bare metal servers"
+            ],
+            "monitoringAndAnalytics": null,
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "dwellir-testnet-dedicated-recent-state",
+            "provider": "Dwellir",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.dwellir.com/networks/ton)",
+                "[Contact](https://www.dwellir.com/contact)"
+            ],
+            "planName": null,
+            "planType": "Dedicated",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$8250/mo",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "trace",
+                "debug"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
+                "Bare metal servers"
+            ],
+            "monitoringAndAnalytics": null,
             "regions": [
                 "Global"
             ],
@@ -6835,52 +6419,42 @@
             "chain": "mainnet"
         },
         {
-            "slug": "drpc-mainnet-pay-as-you-go-full-archive",
-            "provider": "dRPC",
+            "slug": "nownodes-mainnet-business-recent-state",
+            "provider": "Nownodes",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://drpc.org/pricing)",
-                "[Docs](https://drpc.org/docs/ton-api)"
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.io/nodes/ton)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Archive",
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$6/1M requests",
+            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
+            "queryPrice": "€50/€10/1M extra requests",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
+            "uptimeSla": "99.95%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "eth",
-                "web3",
-                "net",
-                "debug",
-                "trace"
+                "All read methods + MPoolPush"
             ],
             "limitations": [
-                "5K req/s, 20M CUs"
+                "1M/30M reqs/mo",
+                "up to 3/up to 25 API keys"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
                 "Domain name protection",
-                "Custom rate limiting",
-                "Method Limiting",
-                "Error tracing",
-                "Contract addresses protection"
+                "Secure infrastructure with 24/7 monitoring"
             ],
             "monitoringAndAnalytics": [
-                "per-method analytics",
-                "latency",
-                "CU analytics"
+                "per-key analytics"
             ],
             "regions": [
                 "Global"
@@ -7076,45 +6650,52 @@
             "chain": "mainnet"
         },
         {
-            "slug": "nownodes-mainnet-business-recent-state",
-            "provider": "Nownodes",
+            "slug": "onfinality-mainnet-accelerate-full-archive",
+            "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://nownodes.io/pricing)",
-                "[Docs](https://nownodes.io/nodes/ton)"
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/ton)"
             ],
-            "planName": "Business",
+            "planName": "Accelerate",
             "planType": "Tiered",
-            "historicalData": "Pruned",
+            "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
-            "queryPrice": "€50/€10/1M extra requests",
+            "accessPrice": "$249",
+            "queryPrice": "$3.75/million extra units",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.95%",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "All read methods + MPoolPush"
+                "Network native APIs",
+                "Trace API"
             ],
             "limitations": [
-                "1M/30M reqs/mo",
-                "up to 3/up to 25 API keys"
+                "20M/100M API response units",
+                "200/500 response units/sec"
             ],
             "securityImprovements": [
-                "Domain name protection",
-                "Secure infrastructure with 24/7 monitoring"
+                "DDoS Protection",
+                "IP Protection"
             ],
             "monitoringAndAnalytics": [
-                "per-key analytics"
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
             ],
             "regions": [
-                "Global"
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
             ],
             "additionalFeatures": null,
             "address": null,
@@ -7228,7 +6809,7 @@
             "chain": "mainnet"
         },
         {
-            "slug": "onfinality-mainnet-accelerate-full-archive",
+            "slug": "onfinality-testnet-accelerate-full-archive",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -7278,7 +6859,7 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
             "slug": "onfinality-testnet-developer-full-archive",
@@ -7387,57 +6968,476 @@
             "chain": "testnet"
         },
         {
-            "slug": "onfinality-testnet-accelerate-full-archive",
-            "provider": "OnFinality",
+            "slug": "quicknode-mainnet-accelerate-full-archive",
+            "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://onfinality.io/en/pricing)",
-                "[Docs](https://onfinality.io/en/networks/ton)"
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
             ],
             "planName": "Accelerate",
             "planType": "Tiered",
             "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "$249",
-            "queryPrice": "$3.75/million extra units",
+            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
+            "queryPrice": "$0.55 per 1M extra API credits",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
+            "uptimeSla": "99.99%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "Network native APIs",
-                "Trace API"
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
             ],
             "limitations": [
-                "20M/100M API response units",
-                "200/500 response units/sec"
+                "450M API credits",
+                "20 endpoints",
+                "125 reqs/sec"
             ],
             "securityImprovements": [
                 "DDoS Protection",
-                "IP Protection"
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
             ],
             "monitoringAndAnalytics": [
-                "Requests count monitoring",
-                "Response time monitoring",
-                "Geographical monitoring",
-                "Per method monitoring"
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
             ],
             "regions": [
-                "N.Virginia",
-                "Ireland",
-                "Tokyo",
-                "Frankfurt"
+                "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-accelerate-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
+            "queryPrice": "$0.55 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "450M API credits",
+                "20 endpoints",
+                "125 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-build-full-archive",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
+            ],
+            "planName": "Build",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
+            "queryPrice": "$0.62 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "80M API credits",
+                "10 endpoints",
+                "50 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-build-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
+            ],
+            "planName": "Build",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
+            "queryPrice": "$0.62 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "80M API credits",
+                "10 endpoints",
+                "50 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-business-full-archive",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
+            "queryPrice": "$0.5 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "2B API credits",
+                "50 endpoints",
+                "500 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-business-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
+            "queryPrice": "$0.5 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "2B API credits",
+                "50 endpoints",
+                "500 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-scale-full-archive",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
+            ],
+            "planName": "Scale",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
+            "queryPrice": "$0.53 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "950M API credits",
+                "50 endpoints",
+                "250 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-scale-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.quicknode.com/pricing)",
+                "[Docs](https://www.quicknode.com/docs/welcome)"
+            ],
+            "planName": "Scale",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
+            "queryPrice": "$0.53 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "950M API credits",
+                "50 endpoints",
+                "250 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
         },
         {
             "slug": "1rpc-enterprise-recent-state-testnet",
@@ -13544,23 +13544,6 @@
     ],
     "storages": [
         {
-            "slug": "orbit-db",
-            "provider": "Orbit DB",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://orbitdb.org/)"
-            ],
-            "toolType": "Database",
-            "tag": [
-                "Decentralized database"
-            ],
-            "price": "$0",
-            "planType": "Free",
-            "planName": null,
-            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-            "starred": false
-        },
-        {
             "slug": "ipfs",
             "provider": "IPFS",
             "offer": null,
@@ -13577,6 +13560,23 @@
             "planType": "Free",
             "planName": null,
             "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+            "starred": false
+        },
+        {
+            "slug": "orbit-db",
+            "provider": "Orbit DB",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://orbitdb.org/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database"
+            ],
+            "price": "$0",
+            "planType": "Free",
+            "planName": null,
+            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
             "starred": false
         },
         {
@@ -13652,6 +13652,7 @@
             "provider",
             "offer",
             "actionButtons",
+            "chain",
             "technology",
             "starred",
             "availableApis",
@@ -13663,8 +13664,7 @@
             "economicalSecurityNote",
             "sdk",
             "auditsPerformed",
-            "tag",
-            "chain"
+            "tag"
         ],
         "sdks": [
             "slug",
@@ -13691,7 +13691,6 @@
             "provider",
             "offer",
             "actionButtons",
-            "chain",
             "dataSources",
             "hasDashboard",
             "availableApis",
@@ -13699,7 +13698,8 @@
             "planName",
             "planType",
             "starred",
-            "tag"
+            "tag",
+            "chain"
         ],
         "platforms": [
             "slug",
@@ -14790,13 +14790,13 @@
             }
         },
         "providers": {
-            "redstone": {
-                "slug": "redstone",
-                "name": "RedStone",
-                "logoPath": "redstone.png",
+            "orbs": {
+                "slug": "orbs",
+                "name": "Orbs",
+                "logoPath": "orbs.png",
                 "description": "Provides oracle services for Web3 developers and users.",
-                "website": null,
-                "docs": null,
+                "website": "https://docs.orbs.network/v3/community-projects/ton-access",
+                "docs": "https://docs.orbs.network/v3",
                 "x": null,
                 "github": null,
                 "discord": null,
@@ -14806,7 +14806,8 @@
                 "starred": false,
                 "tag": null,
                 "categories": [
-                    "oracles"
+                    "oracles",
+                    "services"
                 ]
             },
             "pyth-network": {
@@ -14828,13 +14829,13 @@
                     "oracles"
                 ]
             },
-            "orbs": {
-                "slug": "orbs",
-                "name": "Orbs",
-                "logoPath": "orbs.png",
+            "redstone": {
+                "slug": "redstone",
+                "name": "RedStone",
+                "logoPath": "redstone.png",
                 "description": "Provides oracle services for Web3 developers and users.",
-                "website": "https://docs.orbs.network/v3/community-projects/ton-access",
-                "docs": "https://docs.orbs.network/v3",
+                "website": null,
+                "docs": null,
                 "x": null,
                 "github": null,
                 "discord": null,
@@ -14844,8 +14845,7 @@
                 "starred": false,
                 "tag": null,
                 "categories": [
-                    "oracles",
-                    "services"
+                    "oracles"
                 ]
             },
             "blueprint": {
@@ -15313,82 +15313,6 @@
                     "sdks"
                 ]
             },
-            "tonstat": {
-                "slug": "tonstat",
-                "name": "TonStat",
-                "logoPath": "tonstat.png",
-                "description": "Provides analytics products for Web3 developers and users.",
-                "website": "https://www.tonstat.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "analytics"
-                ]
-            },
-            "dyor-io": {
-                "slug": "dyor-io",
-                "name": "DYOR.io",
-                "logoPath": "dyor-io.png",
-                "description": "Provides analytics products for Web3 developers and users.",
-                "website": "https://dyor.io/token/ton",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "analytics"
-                ]
-            },
-            "geckoterminal": {
-                "slug": "geckoterminal",
-                "name": "GeckoTerminal",
-                "logoPath": "geckoterminal.png",
-                "description": "Provides analytics products for Web3 developers and users.",
-                "website": "https://www.geckoterminal.com/ton/pools",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "analytics"
-                ]
-            },
-            "tonviewer": {
-                "slug": "tonviewer",
-                "name": "TonViewer",
-                "logoPath": "tonviewer.png",
-                "description": "Provides analytics products for Web3 developers and users.",
-                "website": "https://tonviewer.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "analytics"
-                ]
-            },
             "dappradar": {
                 "slug": "dappradar",
                 "name": "DappRadar",
@@ -15465,6 +15389,44 @@
                     "analytics"
                 ]
             },
+            "dyor-io": {
+                "slug": "dyor-io",
+                "name": "DYOR.io",
+                "logoPath": "dyor-io.png",
+                "description": "Provides analytics products for Web3 developers and users.",
+                "website": "https://dyor.io/token/ton",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "analytics"
+                ]
+            },
+            "geckoterminal": {
+                "slug": "geckoterminal",
+                "name": "GeckoTerminal",
+                "logoPath": "geckoterminal.png",
+                "description": "Provides analytics products for Web3 developers and users.",
+                "website": "https://www.geckoterminal.com/ton/pools",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "analytics"
+                ]
+            },
             "messari": {
                 "slug": "messari",
                 "name": "Messari",
@@ -15509,6 +15471,44 @@
                 "logoPath": "token-terminal.png",
                 "description": "Provides analytics products for Web3 developers and users.",
                 "website": "https://tokenterminal.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "analytics"
+                ]
+            },
+            "tonstat": {
+                "slug": "tonstat",
+                "name": "TonStat",
+                "logoPath": "tonstat.png",
+                "description": "Provides analytics products for Web3 developers and users.",
+                "website": "https://www.tonstat.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "analytics"
+                ]
+            },
+            "tonviewer": {
+                "slug": "tonviewer",
+                "name": "TonViewer",
+                "logoPath": "tonviewer.png",
+                "description": "Provides analytics products for Web3 developers and users.",
+                "website": "https://tonviewer.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -16097,26 +16097,6 @@
                     "platforms"
                 ]
             },
-            "ton": {
-                "slug": "ton",
-                "name": "TON",
-                "logoPath": "ton.png",
-                "description": "Provides cross-chain bridge services for Web3 developers and users.",
-                "website": "https://bridge-v3.ton.org/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "bridges",
-                    "faucets"
-                ]
-            },
             "asterizm": {
                 "slug": "asterizm",
                 "name": "Asterizm",
@@ -16143,6 +16123,25 @@
                 "description": "Provides cross-chain bridge services for Web3 developers and users.",
                 "website": "https://app.chainspot.io/",
                 "docs": "https://docs.chainspot.io/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "bridges"
+                ]
+            },
+            "defiway-bridge": {
+                "slug": "defiway-bridge",
+                "name": "Defiway.Bridge",
+                "logoPath": "defiway-bridge.png",
+                "description": "Provides cross-chain bridge services for Web3 developers and users.",
+                "website": "https://defiway.com/bridge/",
+                "docs": null,
                 "x": null,
                 "github": null,
                 "discord": null,
@@ -16212,12 +16211,12 @@
                     "bridges"
                 ]
             },
-            "defiway-bridge": {
-                "slug": "defiway-bridge",
-                "name": "Defiway.Bridge",
-                "logoPath": "defiway-bridge.png",
+            "ton": {
+                "slug": "ton",
+                "name": "TON",
+                "logoPath": "ton.png",
                 "description": "Provides cross-chain bridge services for Web3 developers and users.",
-                "website": "https://defiway.com/bridge/",
+                "website": "https://bridge-v3.ton.org/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -16228,7 +16227,8 @@
                 "starred": false,
                 "tag": null,
                 "categories": [
-                    "bridges"
+                    "bridges",
+                    "faucets"
                 ]
             },
             "intellij-ton-plugin": {
@@ -16240,25 +16240,6 @@
                 "docs": null,
                 "x": null,
                 "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "ton-cli": {
-                "slug": "ton-cli",
-                "name": "TON CLI",
-                "logoPath": "ton-cli.png",
-                "description": "A command-line interface for compiling, testing, and deploying FunC smart contracts on the TON blockchain, commonly used in low-level TON development workflows",
-                "website": "https://github.com/disintar/toncli",
-                "docs": null,
-                "x": null,
-                "github": "disintar/toncli",
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,
@@ -16297,6 +16278,25 @@
                 "docs": null,
                 "x": null,
                 "github": "ton-org/sandbox",
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "ton-cli": {
+                "slug": "ton-cli",
+                "name": "TON CLI",
+                "logoPath": "ton-cli.png",
+                "description": "A command-line interface for compiling, testing, and deploying FunC smart contracts on the TON blockchain, commonly used in low-level TON development workflows",
+                "website": "https://github.com/disintar/toncli",
+                "docs": null,
+                "x": null,
+                "github": "disintar/toncli",
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,
@@ -17010,12 +17010,50 @@
                     "wallets"
                 ]
             },
+            "cypherock-x1": {
+                "slug": "cypherock-x1",
+                "name": "Cypherock X1",
+                "logoPath": "cypherock-x1.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://www.cypherock.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "wallets"
+                ]
+            },
             "exodus": {
                 "slug": "exodus",
                 "name": "Exodus",
                 "logoPath": "exodus.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
                 "website": "https://www.exodus.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "wallets"
+                ]
+            },
+            "foxwallet": {
+                "slug": "foxwallet",
+                "name": "FoxWallet",
+                "logoPath": "foxwallet.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://foxwallet.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -17124,6 +17162,25 @@
                     "wallets"
                 ]
             },
+            "mytonwallet": {
+                "slug": "mytonwallet",
+                "name": "MyTonWallet",
+                "logoPath": "mytonwallet.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://mytonwallet.io/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "wallets"
+                ]
+            },
             "okx": {
                 "slug": "okx",
                 "name": "OKX",
@@ -17150,6 +17207,25 @@
                 "logoPath": "onekey.png",
                 "description": "It provides a platform for developers to integrate secure blockchain wallet functionalities into both web and native applications",
                 "website": "https://onekey.so/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "wallets"
+                ]
+            },
+            "openmask": {
+                "slug": "openmask",
+                "name": "OpenMask",
+                "logoPath": "openmask.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://www.openmask.app/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -17220,12 +17296,12 @@
                     "wallets"
                 ]
             },
-            "trust": {
-                "slug": "trust",
-                "name": "Trust",
-                "logoPath": "trust.png",
+            "tonhub": {
+                "slug": "tonhub",
+                "name": "Tonhub",
+                "logoPath": "tonhub.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://trustwallet.com/",
+                "website": "https://tonhub.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -17258,31 +17334,12 @@
                     "wallets"
                 ]
             },
-            "mytonwallet": {
-                "slug": "mytonwallet",
-                "name": "MyTonWallet",
-                "logoPath": "mytonwallet.png",
+            "trust": {
+                "slug": "trust",
+                "name": "Trust",
+                "logoPath": "trust.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://mytonwallet.io/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "wallets"
-                ]
-            },
-            "tonhub": {
-                "slug": "tonhub",
-                "name": "Tonhub",
-                "logoPath": "tonhub.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://tonhub.com/",
+                "website": "https://trustwallet.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -17302,63 +17359,6 @@
                 "logoPath": "wallet-telegram.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
                 "website": "https://wallet.tg/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "wallets"
-                ]
-            },
-            "openmask": {
-                "slug": "openmask",
-                "name": "OpenMask",
-                "logoPath": "openmask.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://www.openmask.app/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "wallets"
-                ]
-            },
-            "cypherock-x1": {
-                "slug": "cypherock-x1",
-                "name": "Cypherock X1",
-                "logoPath": "cypherock-x1.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://www.cypherock.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "wallets"
-                ]
-            },
-            "foxwallet": {
-                "slug": "foxwallet",
-                "name": "FoxWallet",
-                "logoPath": "foxwallet.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://foxwallet.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -17410,25 +17410,6 @@
                     "explorers"
                 ]
             },
-            "brave": {
-                "slug": "brave",
-                "name": "Brave",
-                "logoPath": "brave.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://brave.com/wallet/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "explorers"
-                ]
-            },
             "bakkenbaeck-bastion-digital": {
                 "slug": "bakkenbaeck-bastion-digital",
                 "name": "Bakkenbaeck, Bastion Digital",
@@ -17448,13 +17429,13 @@
                     "explorers"
                 ]
             },
-            "dwellir": {
-                "slug": "dwellir",
-                "name": "Dwellir",
-                "logoPath": "dwellir.png",
-                "description": "Provides API infrastructure for Web3 developers and users.",
-                "website": "https://www.dwellir.com/",
-                "docs": "https://www.dwellir.com/docs",
+            "brave": {
+                "slug": "brave",
+                "name": "Brave",
+                "logoPath": "brave.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://brave.com/wallet/",
+                "docs": null,
                 "x": null,
                 "github": null,
                 "discord": null,
@@ -17464,7 +17445,7 @@
                 "starred": false,
                 "tag": null,
                 "categories": [
-                    "apis"
+                    "explorers"
                 ]
             },
             "ankr": {
@@ -17525,13 +17506,13 @@
                     "faucets"
                 ]
             },
-            "the-indexing-company": {
-                "slug": "the-indexing-company",
-                "name": "The Indexing Company",
-                "logoPath": "the-indexing-company.png",
+            "drpc": {
+                "slug": "drpc",
+                "name": "dRPC",
+                "logoPath": "drpc.png",
                 "description": "Provides API infrastructure for Web3 developers and users.",
-                "website": "https://docs.indexing.co/guide/overview",
-                "docs": "https://docs.indexing.co/guide/overview",
+                "website": "https://drpc.org/",
+                "docs": "https://drpc.org/docs",
                 "x": null,
                 "github": null,
                 "discord": null,
@@ -17544,13 +17525,32 @@
                     "apis"
                 ]
             },
-            "drpc": {
-                "slug": "drpc",
-                "name": "dRPC",
-                "logoPath": "drpc.png",
+            "dwellir": {
+                "slug": "dwellir",
+                "name": "Dwellir",
+                "logoPath": "dwellir.png",
                 "description": "Provides API infrastructure for Web3 developers and users.",
-                "website": "https://drpc.org/",
-                "docs": "https://drpc.org/docs",
+                "website": "https://www.dwellir.com/",
+                "docs": "https://www.dwellir.com/docs",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "apis"
+                ]
+            },
+            "the-indexing-company": {
+                "slug": "the-indexing-company",
+                "name": "The Indexing Company",
+                "logoPath": "the-indexing-company.png",
+                "description": "Provides API infrastructure for Web3 developers and users.",
+                "website": "https://docs.indexing.co/guide/overview",
+                "docs": "https://docs.indexing.co/guide/overview",
                 "x": null,
                 "github": null,
                 "discord": null,
@@ -17981,15 +17981,15 @@
                     "faucets"
                 ]
             },
-            "orbit-db": {
-                "slug": "orbit-db",
-                "name": "Orbit DB",
-                "logoPath": "orbit-db.png",
-                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-                "website": "https://orbitdb.org/",
-                "docs": null,
+            "ipfs": {
+                "slug": "ipfs",
+                "name": "IPFS",
+                "logoPath": "ipfs.png",
+                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+                "website": "https://docs.ipfs.io/",
+                "docs": "https://docs.ipfs.io/",
                 "x": null,
-                "github": null,
+                "github": "ipfs-force-community/go-fvm-sdk",
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,
@@ -18000,15 +18000,15 @@
                     "storages"
                 ]
             },
-            "ipfs": {
-                "slug": "ipfs",
-                "name": "IPFS",
-                "logoPath": "ipfs.png",
-                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
-                "website": "https://docs.ipfs.io/",
-                "docs": "https://docs.ipfs.io/",
+            "orbit-db": {
+                "slug": "orbit-db",
+                "name": "Orbit DB",
+                "logoPath": "orbit-db.png",
+                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
+                "website": "https://orbitdb.org/",
+                "docs": null,
                 "x": null,
-                "github": "ipfs-force-community/go-fvm-sdk",
+                "github": null,
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,

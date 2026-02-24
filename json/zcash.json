@@ -44,33 +44,6 @@
     ],
     "sdks": [
         {
-            "slug": "zcash-android-wallet-sdk",
-            "provider": "Zcash",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://github.com/zcash/zcash-android-wallet-sdk)",
-                "[Docs](https://z.cash/ecosystem/official-zcash-wallet-sdks/)"
-            ],
-            "toolType": "SDK",
-            "programmingLanguage": "Kotlin",
-            "tag": [
-                "Official Zcash wallet SDK",
-                "Android",
-                "APIs"
-            ],
-            "description": "Lightweight SDK connects Android to Zcash, allowing third-party Android apps to send and receive shielded transactions easily, securely and privately",
-            "planType": "Free",
-            "planName": null,
-            "price": "$0",
-            "trial": false,
-            "starred": false,
-            "dependencies": null,
-            "latestKnownVersion": "TBD",
-            "latestKnownReleaseDate": "TBD",
-            "maintainer": "zcash",
-            "license": "MIT"
-        },
-        {
             "slug": "tatum-sdk-free",
             "provider": "Tatum",
             "offer": null,
@@ -227,6 +200,33 @@
             "latestKnownReleaseDate": "TBD",
             "maintainer": "ChainSafe",
             "license": "Apache-2.0"
+        },
+        {
+            "slug": "zcash-android-wallet-sdk",
+            "provider": "Zcash",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://github.com/zcash/zcash-android-wallet-sdk)",
+                "[Docs](https://z.cash/ecosystem/official-zcash-wallet-sdks/)"
+            ],
+            "toolType": "SDK",
+            "programmingLanguage": "Kotlin",
+            "tag": [
+                "Official Zcash wallet SDK",
+                "Android",
+                "APIs"
+            ],
+            "description": "Lightweight SDK connects Android to Zcash, allowing third-party Android apps to send and receive shielded transactions easily, securely and privately",
+            "planType": "Free",
+            "planName": null,
+            "price": "$0",
+            "trial": false,
+            "starred": false,
+            "dependencies": null,
+            "latestKnownVersion": "TBD",
+            "latestKnownReleaseDate": "TBD",
+            "maintainer": "zcash",
+            "license": "MIT"
         },
         {
             "slug": "alchemy-sdk-enterprise",
@@ -770,6 +770,29 @@
             "chain": "mainnet"
         },
         {
+            "slug": "coinglass",
+            "provider": "Coinglass",
+            "offer": null,
+            "actionButtons": [
+                "[Dashboard](https://www.coinglass.com/currencies/ZEC)"
+            ],
+            "dataSources": [
+                "Derivatives",
+                "Open Interest",
+                "Liquidations"
+            ],
+            "hasDashboard": true,
+            "availableApis": [
+                "REST API"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "starred": false,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
             "slug": "cryptoquant",
             "provider": "CryptoQuant",
             "offer": null,
@@ -865,29 +888,6 @@
             "price": "$0/$4000/year",
             "planName": null,
             "planType": "Tiered",
-            "starred": false,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "coinglass",
-            "provider": "Coinglass",
-            "offer": null,
-            "actionButtons": [
-                "[Dashboard](https://www.coinglass.com/currencies/ZEC)"
-            ],
-            "dataSources": [
-                "Derivatives",
-                "Open Interest",
-                "Liquidations"
-            ],
-            "hasDashboard": true,
-            "availableApis": [
-                "REST API"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
             "starred": false,
             "tag": null,
             "chain": "mainnet"
@@ -2925,73 +2925,6 @@
     ],
     "explorers": [
         {
-            "slug": "blockchair",
-            "provider": "Blockchair",
-            "offer": null,
-            "actionButtons": null,
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Tokens",
-                "Contracts"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain Search",
-                "PDF Reports"
-            ],
-            "starred": false,
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": [
-                "Python",
-                "Node.js"
-            ],
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Free",
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "tokenview",
-            "provider": "TokenView",
-            "offer": null,
-            "actionButtons": null,
-            "technology": "Custom",
-            "monitoringAndAnalytics": [
-                "Accounts",
-                "Transactions",
-                "Tokens",
-                "Contracts"
-            ],
-            "additionalFeatures": [
-                "Token/NFT Explorer",
-                "RPC Service"
-            ],
-            "starred": false,
-            "availableApis": [
-                "REST API"
-            ],
-            "sdk": null,
-            "searchCapabilities": [
-                "Address",
-                "Transaction Hash",
-                "Block"
-            ],
-            "smartContractsVerifications": false,
-            "fullHistory": true,
-            "pricing": "Free",
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
             "slug": "3xpl",
             "provider": "3xpl",
             "offer": null,
@@ -3046,6 +2979,41 @@
             "sdk": null,
             "searchCapabilities": [
                 "Custom Queries"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "blockchair",
+            "provider": "Blockchair",
+            "offer": null,
+            "actionButtons": null,
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Tokens",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain Search",
+                "PDF Reports"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": [
+                "Python",
+                "Node.js"
+            ],
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block"
             ],
             "smartContractsVerifications": false,
             "fullHistory": true,
@@ -3114,9 +3082,87 @@
             "pricing": "Free",
             "tag": null,
             "chain": "testnet"
+        },
+        {
+            "slug": "tokenview",
+            "provider": "TokenView",
+            "offer": null,
+            "actionButtons": null,
+            "technology": "Custom",
+            "monitoringAndAnalytics": [
+                "Accounts",
+                "Transactions",
+                "Tokens",
+                "Contracts"
+            ],
+            "additionalFeatures": [
+                "Token/NFT Explorer",
+                "RPC Service"
+            ],
+            "starred": false,
+            "availableApis": [
+                "REST API"
+            ],
+            "sdk": null,
+            "searchCapabilities": [
+                "Address",
+                "Transaction Hash",
+                "Block"
+            ],
+            "smartContractsVerifications": false,
+            "fullHistory": true,
+            "pricing": "Free",
+            "tag": null,
+            "chain": "mainnet"
         }
     ],
     "apis": [
+        {
+            "slug": "nownodes-mainnet-business-recent-state",
+            "provider": "Nownodes",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.gitbook.io/zec-zcash)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
+            "queryPrice": "€50/€10/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "1M/30M reqs/mo",
+                "up to 3/up to 25 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
         {
             "slug": "nownodes-mainnet-dedicated-recent-state",
             "provider": "Nownodes",
@@ -3270,52 +3316,6 @@
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "accessPrice": "€20 (monthly plan), €220 (yearly plan)",
-            "queryPrice": "€50/€10/1M extra requests",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.95%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": [
-                "1M/30M reqs/mo",
-                "up to 3/up to 25 API keys"
-            ],
-            "securityImprovements": [
-                "Domain name protection",
-                "Secure infrastructure with 24/7 monitoring"
-            ],
-            "monitoringAndAnalytics": [
-                "per-key analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "nownodes-mainnet-business-recent-state",
-            "provider": "Nownodes",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://nownodes.io/pricing)",
-                "[Docs](https://nownodes.gitbook.io/zec-zcash)"
-            ],
-            "planName": "Business",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
             "queryPrice": "€50/€10/1M extra requests",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -9393,26 +9393,6 @@
     ],
     "faucets": [
         {
-            "slug": "claimcrypto",
-            "provider": "ClaimCrypto",
-            "offer": null,
-            "actionButtons": [
-                "[Faucet](https://claimcrypto.in/faucet/currency/zec)"
-            ],
-            "chain": "mainnet",
-            "requiresLogin": true,
-            "hasCaptcha": true,
-            "requiredMainnetBalance": null,
-            "price": "$0",
-            "starred": false,
-            "additionalNotes": [
-                "Requires FaucetPay account to claim"
-            ],
-            "dripLimitAmount": "0.00000038 ZEC",
-            "dripLimitPeriod": "7sec",
-            "tag": null
-        },
-        {
             "slug": "99faucet",
             "provider": "99faucet",
             "offer": null,
@@ -9430,6 +9410,26 @@
             ],
             "dripLimitAmount": "0.00000038 ZEC",
             "dripLimitPeriod": "10sec",
+            "tag": null
+        },
+        {
+            "slug": "claimcrypto",
+            "provider": "ClaimCrypto",
+            "offer": null,
+            "actionButtons": [
+                "[Faucet](https://claimcrypto.in/faucet/currency/zec)"
+            ],
+            "chain": "mainnet",
+            "requiresLogin": true,
+            "hasCaptcha": true,
+            "requiredMainnetBalance": null,
+            "price": "$0",
+            "starred": false,
+            "additionalNotes": [
+                "Requires FaucetPay account to claim"
+            ],
+            "dripLimitAmount": "0.00000038 ZEC",
+            "dripLimitPeriod": "7sec",
             "tag": null
         },
         {
@@ -9455,23 +9455,6 @@
     ],
     "storages": [
         {
-            "slug": "orbit-db",
-            "provider": "Orbit DB",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://orbitdb.org/)"
-            ],
-            "toolType": "Database",
-            "tag": [
-                "Decentralized database"
-            ],
-            "price": "$0",
-            "planType": "Free",
-            "planName": null,
-            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-            "starred": false
-        },
-        {
             "slug": "ipfs",
             "provider": "IPFS",
             "offer": null,
@@ -9488,6 +9471,23 @@
             "planType": "Free",
             "planName": null,
             "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+            "starred": false
+        },
+        {
+            "slug": "orbit-db",
+            "provider": "Orbit DB",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://orbitdb.org/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database"
+            ],
+            "price": "$0",
+            "planType": "Free",
+            "planName": null,
+            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
             "starred": false
         },
         {
@@ -11312,26 +11312,6 @@
                     "oracles"
                 ]
             },
-            "zcash": {
-                "slug": "zcash",
-                "name": "Zcash",
-                "logoPath": "zcash.png",
-                "description": "The core privacy technology powering Zcash's shielded transactions",
-                "website": "https://z.cash/learn/what-are-zk-snarks/",
-                "docs": "https://z.cash/ecosystem/official-zcash-wallet-sdks/",
-                "x": null,
-                "github": "zcash/zcash-android-wallet-sdk",
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "sdks",
-                    "security"
-                ]
-            },
             "tatum": {
                 "slug": "tatum",
                 "name": "Tatum",
@@ -11369,6 +11349,26 @@
                 "tag": null,
                 "categories": [
                     "sdks"
+                ]
+            },
+            "zcash": {
+                "slug": "zcash",
+                "name": "Zcash",
+                "logoPath": "zcash.png",
+                "description": "The core privacy technology powering Zcash's shielded transactions",
+                "website": "https://z.cash/learn/what-are-zk-snarks/",
+                "docs": "https://z.cash/ecosystem/official-zcash-wallet-sdks/",
+                "x": null,
+                "github": "zcash/zcash-android-wallet-sdk",
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "sdks",
+                    "security"
                 ]
             },
             "alchemy": {
@@ -11740,6 +11740,25 @@
                     "analytics"
                 ]
             },
+            "coinglass": {
+                "slug": "coinglass",
+                "name": "Coinglass",
+                "logoPath": "coinglass.png",
+                "description": "Provides analytics products for Web3 developers and users.",
+                "website": "https://www.coinglass.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "analytics"
+                ]
+            },
             "cryptoquant": {
                 "slug": "cryptoquant",
                 "name": "CryptoQuant",
@@ -11803,25 +11822,6 @@
                 "logoPath": "messari.png",
                 "description": "Provides analytics products for Web3 developers and users.",
                 "website": "https://messari.io/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "analytics"
-                ]
-            },
-            "coinglass": {
-                "slug": "coinglass",
-                "name": "Coinglass",
-                "logoPath": "coinglass.png",
-                "description": "Provides analytics products for Web3 developers and users.",
-                "website": "https://www.coinglass.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -13017,44 +13017,6 @@
                     "wallets"
                 ]
             },
-            "blockchair": {
-                "slug": "blockchair",
-                "name": "Blockchair",
-                "logoPath": "blockchair.png",
-                "description": "Provides explorer services for Web3 developers and users.",
-                "website": null,
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "explorers"
-                ]
-            },
-            "tokenview": {
-                "slug": "tokenview",
-                "name": "TokenView",
-                "logoPath": "tokenview.png",
-                "description": "Provides explorer services for Web3 developers and users.",
-                "website": null,
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "explorers"
-                ]
-            },
             "3xpl": {
                 "slug": "3xpl",
                 "name": "3xpl",
@@ -13093,12 +13055,50 @@
                     "explorers"
                 ]
             },
+            "blockchair": {
+                "slug": "blockchair",
+                "name": "Blockchair",
+                "logoPath": "blockchair.png",
+                "description": "Provides explorer services for Web3 developers and users.",
+                "website": null,
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "explorers"
+                ]
+            },
             "blockexplorer-one": {
                 "slug": "blockexplorer-one",
                 "name": "Blockexplorer.one",
                 "logoPath": "blockexplorer-one.png",
                 "description": "Provides explorer services for Web3 developers and users.",
                 "website": "https://blockexplorer.one/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "explorers"
+                ]
+            },
+            "tokenview": {
+                "slug": "tokenview",
+                "name": "TokenView",
+                "logoPath": "tokenview.png",
+                "description": "Provides explorer services for Web3 developers and users.",
+                "website": null,
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -13625,12 +13625,12 @@
                     "apis"
                 ]
             },
-            "claimcrypto": {
-                "slug": "claimcrypto",
-                "name": "ClaimCrypto",
-                "logoPath": "claimcrypto.png",
+            "99faucet": {
+                "slug": "99faucet",
+                "name": "99faucet",
+                "logoPath": "99faucet.png",
                 "description": "Provides faucet services for Web3 developers and users.",
-                "website": "https://claimcrypto.in/faucet/currency/zec",
+                "website": "https://99faucet.com/faucet/zec",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -13644,12 +13644,12 @@
                     "faucets"
                 ]
             },
-            "99faucet": {
-                "slug": "99faucet",
-                "name": "99faucet",
-                "logoPath": "99faucet.png",
+            "claimcrypto": {
+                "slug": "claimcrypto",
+                "name": "ClaimCrypto",
+                "logoPath": "claimcrypto.png",
                 "description": "Provides faucet services for Web3 developers and users.",
-                "website": "https://99faucet.com/faucet/zec",
+                "website": "https://claimcrypto.in/faucet/currency/zec",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -13682,15 +13682,15 @@
                     "faucets"
                 ]
             },
-            "orbit-db": {
-                "slug": "orbit-db",
-                "name": "Orbit DB",
-                "logoPath": "orbit-db.png",
-                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-                "website": "https://orbitdb.org/",
-                "docs": null,
+            "ipfs": {
+                "slug": "ipfs",
+                "name": "IPFS",
+                "logoPath": "ipfs.png",
+                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+                "website": "https://docs.ipfs.io/",
+                "docs": "https://docs.ipfs.io/",
                 "x": null,
-                "github": null,
+                "github": "ipfs-force-community/go-fvm-sdk",
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,
@@ -13701,15 +13701,15 @@
                     "storages"
                 ]
             },
-            "ipfs": {
-                "slug": "ipfs",
-                "name": "IPFS",
-                "logoPath": "ipfs.png",
-                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
-                "website": "https://docs.ipfs.io/",
-                "docs": "https://docs.ipfs.io/",
+            "orbit-db": {
+                "slug": "orbit-db",
+                "name": "Orbit DB",
+                "logoPath": "orbit-db.png",
+                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
+                "website": "https://orbitdb.org/",
+                "docs": null,
                 "x": null,
-                "github": "ipfs-force-community/go-fvm-sdk",
+                "github": null,
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,

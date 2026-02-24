@@ -1962,20 +1962,20 @@
     ],
     "ramps": [
         {
-            "slug": "transak",
-            "provider": "Transak",
+            "slug": "banxa",
+            "provider": "Banxa",
             "offer": null,
             "actionButtons": [
-                "[Website](https://transak.com/)"
+                "[Website](https://banxa.com/)"
             ],
-            "kycLevel": "light",
+            "kycLevel": "full",
             "paymentMethods": [
                 "credit_card",
                 "debit_card",
-                "bank_transfer",
+                "sepa",
+                "ach",
                 "apple_pay",
-                "google_pay",
-                "pix"
+                "google_pay"
             ],
             "bannedCountries": [
                 "AF",
@@ -1988,6 +1988,68 @@
             "auditsPerformed": [
                 "ISO27001",
                 "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
+            "slug": "meld",
+            "provider": "Meld",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.meld.io/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
+            "slug": "mercuryo",
+            "provider": "Mercuryo",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://mercuryo.io/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "apple_pay",
+                "google_pay",
+                "sepa"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "ISO27001"
             ],
             "deliveryType": "TBD",
             "tag": null
@@ -2030,6 +2092,36 @@
             "tag": null
         },
         {
+            "slug": "onramper",
+            "provider": "Onramper",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://onramper.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "SOC2_TYPE_I"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
             "slug": "ramp-network",
             "provider": "Ramp Network",
             "offer": null,
@@ -2063,20 +2155,18 @@
             "tag": null
         },
         {
-            "slug": "onramper",
-            "provider": "Onramper",
+            "slug": "sardine",
+            "provider": "Sardine",
             "offer": null,
             "actionButtons": [
-                "[Website](https://onramper.com/)"
+                "[Website](https://www.sardine.ai/)"
             ],
             "kycLevel": "full",
             "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
                 "ach",
-                "apple_pay",
-                "google_pay"
+                "instant_ach",
+                "credit_card",
+                "debit_card"
             ],
             "bannedCountries": [
                 "AF",
@@ -2085,9 +2175,9 @@
                 "KP",
                 "SY"
             ],
-            "aggregator": true,
+            "aggregator": false,
             "auditsPerformed": [
-                "SOC2_TYPE_I"
+                "SOC2_TYPE_II"
             ],
             "deliveryType": "TBD",
             "tag": null
@@ -2122,20 +2212,20 @@
             "tag": null
         },
         {
-            "slug": "banxa",
-            "provider": "Banxa",
+            "slug": "transak",
+            "provider": "Transak",
             "offer": null,
             "actionButtons": [
-                "[Website](https://banxa.com/)"
+                "[Website](https://transak.com/)"
             ],
-            "kycLevel": "full",
+            "kycLevel": "light",
             "paymentMethods": [
                 "credit_card",
                 "debit_card",
-                "sepa",
-                "ach",
+                "bank_transfer",
                 "apple_pay",
-                "google_pay"
+                "google_pay",
+                "pix"
             ],
             "bannedCountries": [
                 "AF",
@@ -2147,96 +2237,6 @@
             "aggregator": false,
             "auditsPerformed": [
                 "ISO27001",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "mercuryo",
-            "provider": "Mercuryo",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://mercuryo.io/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "apple_pay",
-                "google_pay",
-                "sepa"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "PCI_DSS",
-                "ISO27001"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "sardine",
-            "provider": "Sardine",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.sardine.ai/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "ach",
-                "instant_ach",
-                "credit_card",
-                "debit_card"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "meld",
-            "provider": "Meld",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.meld.io/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": true,
-            "auditsPerformed": [
-                "PCI_DSS",
                 "SOC2_TYPE_II"
             ],
             "deliveryType": "TBD",
@@ -2980,81 +2980,6 @@
     ],
     "services": [
         {
-            "slug": "aptos-cli",
-            "provider": "Aptos",
-            "offer": null,
-            "actionButtons": [
-                "[Docs](https://aptos.dev/build/cli)"
-            ],
-            "toolType": "CLI",
-            "tag": [
-                "Test",
-                "Compile",
-                "Install",
-                "Setup"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "The Aptos CLI is a tool to compile and test Move contracts. It can also quickly play with Aptos features on-chain",
-            "starred": false
-        },
-        {
-            "slug": "aptos-wallet-adapter",
-            "provider": "Aptos",
-            "offer": null,
-            "actionButtons": [
-                "[Docs](https://aptos.dev/build/sdks/wallet-adapter)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "AIP-62",
-                "Modern Wallet Standard"
-            ],
-            "price": "$0",
-            "planName": null,
-            "planType": "Free",
-            "description": "The Aptos Wallet Adapter provides a single interface for Aptos dapps and Aptos wallets to communicate with each other",
-            "starred": false
-        },
-        {
-            "slug": "chainlink-ccip",
-            "provider": "Chainlink",
-            "offer": "CCIP",
-            "actionButtons": [
-                "[Docs](https://docs.chain.link/ccip)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Blockchain interoperability"
-            ],
-            "price": "Custom",
-            "planType": "Pay-as-you-go",
-            "planName": null,
-            "description": "Blockchain interoperability protocol for transferring tokens and messages across chains",
-            "starred": false
-        },
-        {
-            "slug": "crossmint-free",
-            "provider": "Crossmint",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://crossmint.com/)"
-            ],
-            "toolType": "NFT",
-            "tag": [
-                "NFT",
-                "Minting",
-                "Payments",
-                "Fiat On-Ramp"
-            ],
-            "price": "$0",
-            "planType": "Free",
-            "planName": null,
-            "description": "Platform enabling fiat on-ramp for NFTs, letting users mint NFTs with credit cards; supports Optimism for seamless onboarding of new users",
-            "starred": false
-        },
-        {
             "slug": "alchemy-bundler-free",
             "provider": "Alchemy",
             "offer": "Bundler",
@@ -3219,6 +3144,81 @@
             "planType": "Pay-as-you-go",
             "planName": null,
             "description": "It provides developers with APIs and features to manage the entire transaction lifecycle, from creation and simulation to sending and monitoring, across various blockchain networks",
+            "starred": false
+        },
+        {
+            "slug": "aptos-cli",
+            "provider": "Aptos",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://aptos.dev/build/cli)"
+            ],
+            "toolType": "CLI",
+            "tag": [
+                "Test",
+                "Compile",
+                "Install",
+                "Setup"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "The Aptos CLI is a tool to compile and test Move contracts. It can also quickly play with Aptos features on-chain",
+            "starred": false
+        },
+        {
+            "slug": "aptos-wallet-adapter",
+            "provider": "Aptos",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://aptos.dev/build/sdks/wallet-adapter)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "AIP-62",
+                "Modern Wallet Standard"
+            ],
+            "price": "$0",
+            "planName": null,
+            "planType": "Free",
+            "description": "The Aptos Wallet Adapter provides a single interface for Aptos dapps and Aptos wallets to communicate with each other",
+            "starred": false
+        },
+        {
+            "slug": "chainlink-ccip",
+            "provider": "Chainlink",
+            "offer": "CCIP",
+            "actionButtons": [
+                "[Docs](https://docs.chain.link/ccip)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Blockchain interoperability"
+            ],
+            "price": "Custom",
+            "planType": "Pay-as-you-go",
+            "planName": null,
+            "description": "Blockchain interoperability protocol for transferring tokens and messages across chains",
+            "starred": false
+        },
+        {
+            "slug": "crossmint-free",
+            "provider": "Crossmint",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://crossmint.com/)"
+            ],
+            "toolType": "NFT",
+            "tag": [
+                "NFT",
+                "Minting",
+                "Payments",
+                "Fiat On-Ramp"
+            ],
+            "price": "$0",
+            "planType": "Free",
+            "planName": null,
+            "description": "Platform enabling fiat on-ramp for NFTs, letting users mint NFTs with credit cards; supports Optimism for seamless onboarding of new users",
             "starred": false
         },
         {
@@ -4663,6 +4663,43 @@
             "tag": null
         },
         {
+            "slug": "petra-wallet",
+            "provider": "Petra",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://petra.app/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "APT (Aptos Token Standard)"
+            ],
+            "staking": false,
+            "price": "$0",
+            "support": [
+                "[Email](support@petra.app)"
+            ],
+            "audit": null,
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
             "slug": "tokenpocket",
             "provider": "TokenPocket",
             "offer": null,
@@ -4744,43 +4781,6 @@
                 "FR",
                 "ZH",
                 "JA"
-            ],
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "petra-wallet",
-            "provider": "Petra",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://petra.app/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android",
-                "Web"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "APT (Aptos Token Standard)"
-            ],
-            "staking": false,
-            "price": "$0",
-            "support": [
-                "[Email](support@petra.app)"
-            ],
-            "audit": null,
-            "languages": [
-                "EN"
             ],
             "starred": false,
             "tag": null
@@ -5642,62 +5642,6 @@
             "chain": "mainnet"
         },
         {
-            "slug": "allthatnode-testnet-dedicated-recent-state",
-            "provider": "AllThatNode",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.allthatnode.com/dedicatednode.dsrv)",
-                "[Docs](https://docs.allthatnode.com/docs/supported-protocols-2)"
-            ],
-            "planName": null,
-            "planType": "Dedicated",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom pricing",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "Custom",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace",
-                "websocket"
-            ],
-            "limitations": [
-                "custom limits",
-                "unlimited throughput limit"
-            ],
-            "securityImprovements": [
-                "IP Whitelisting",
-                "JWT Authentication",
-                "Smart Contract Address Restrictions",
-                "Front-Running Protection",
-                "Comprehensive Analytics Dashboard"
-            ],
-            "monitoringAndAnalytics": [
-                "Advanced analytics",
-                "Custom dashboards",
-                "Engineering support"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
             "slug": "allthatnode-mainnet-free-full-archive",
             "provider": "AllThatNode",
             "offer": null,
@@ -5802,62 +5746,6 @@
             "chain": "mainnet"
         },
         {
-            "slug": "allthatnode-mainnet-starter-full-archive",
-            "provider": "AllThatNode",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.allthatnode.com/pricing.dsrv)",
-                "[Docs](https://docs.allthatnode.com/docs/supported-protocols-1)"
-            ],
-            "planName": "Starter",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$29/mo, $289/yearly",
-            "queryPrice": "$0.58 per 1M CUs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace",
-                "websocket"
-            ],
-            "limitations": [
-                "2M CU/day",
-                "500 CUps throughput limit"
-            ],
-            "securityImprovements": [
-                "IP Whitelisting",
-                "JWT Authentication",
-                "Smart Contract Address Restrictions",
-                "Front-Running Protection",
-                "Comprehensive Analytics Dashboard"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom alerts",
-                "Reporting"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
             "slug": "allthatnode-mainnet-scale-full-archive",
             "provider": "AllThatNode",
             "offer": null,
@@ -5892,6 +5780,118 @@
             "limitations": [
                 "10M CU/day",
                 "2K CUps throughput limit"
+            ],
+            "securityImprovements": [
+                "IP Whitelisting",
+                "JWT Authentication",
+                "Smart Contract Address Restrictions",
+                "Front-Running Protection",
+                "Comprehensive Analytics Dashboard"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom alerts",
+                "Reporting"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "allthatnode-mainnet-scale-recent-state",
+            "provider": "AllThatNode",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.allthatnode.com/pricing.dsrv)",
+                "[Docs](https://docs.allthatnode.com/docs/supported-protocols-1)"
+            ],
+            "planName": "Scale",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$139/mo, $1389/yearly",
+            "queryPrice": "$0.56 per 1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace",
+                "websocket"
+            ],
+            "limitations": [
+                "10M CU/day",
+                "2K CUps throughput limit"
+            ],
+            "securityImprovements": [
+                "IP Whitelisting",
+                "JWT Authentication",
+                "Smart Contract Address Restrictions",
+                "Front-Running Protection",
+                "Comprehensive Analytics Dashboard"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom alerts",
+                "Reporting"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "allthatnode-mainnet-starter-full-archive",
+            "provider": "AllThatNode",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.allthatnode.com/pricing.dsrv)",
+                "[Docs](https://docs.allthatnode.com/docs/supported-protocols-1)"
+            ],
+            "planName": "Starter",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$29/mo, $289/yearly",
+            "queryPrice": "$0.58 per 1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace",
+                "websocket"
+            ],
+            "limitations": [
+                "2M CU/day",
+                "500 CUps throughput limit"
             ],
             "securityImprovements": [
                 "IP Whitelisting",
@@ -5970,24 +5970,24 @@
             "chain": "mainnet"
         },
         {
-            "slug": "allthatnode-mainnet-scale-recent-state",
+            "slug": "allthatnode-testnet-dedicated-recent-state",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://www.allthatnode.com/pricing.dsrv)",
-                "[Docs](https://docs.allthatnode.com/docs/supported-protocols-1)"
+                "[Website](https://www.allthatnode.com/dedicatednode.dsrv)",
+                "[Docs](https://docs.allthatnode.com/docs/supported-protocols-2)"
             ],
-            "planName": "Scale",
-            "planType": "Tiered",
+            "planName": null,
+            "planType": "Dedicated",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "$139/mo, $1389/yearly",
-            "queryPrice": "$0.56 per 1M CUs",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom pricing",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
+            "uptimeSla": "Custom",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
@@ -6002,8 +6002,8 @@
                 "websocket"
             ],
             "limitations": [
-                "10M CU/day",
-                "2K CUps throughput limit"
+                "custom limits",
+                "unlimited throughput limit"
             ],
             "securityImprovements": [
                 "IP Whitelisting",
@@ -6013,9 +6013,9 @@
                 "Comprehensive Analytics Dashboard"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom alerts",
-                "Reporting"
+                "Advanced analytics",
+                "Custom dashboards",
+                "Engineering support"
             ],
             "regions": [
                 "Global"
@@ -6023,7 +6023,7 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
             "slug": "allthatnode-testnet-free-full-archive",
@@ -6130,62 +6130,6 @@
             "chain": "testnet"
         },
         {
-            "slug": "allthatnode-testnet-starter-full-archive",
-            "provider": "AllThatNode",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.allthatnode.com/pricing.dsrv)",
-                "[Docs](https://docs.allthatnode.com/docs/supported-protocols-1)"
-            ],
-            "planName": "Starter",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$29/mo, $289/yearly",
-            "queryPrice": "$0.58 per 1M CUs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace",
-                "websocket"
-            ],
-            "limitations": [
-                "2M CU/day",
-                "500 CUps throughput limit"
-            ],
-            "securityImprovements": [
-                "IP Whitelisting",
-                "JWT Authentication",
-                "Smart Contract Address Restrictions",
-                "Front-Running Protection",
-                "Comprehensive Analytics Dashboard"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom alerts",
-                "Reporting"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
             "slug": "allthatnode-testnet-scale-full-archive",
             "provider": "AllThatNode",
             "offer": null,
@@ -6242,7 +6186,63 @@
             "chain": "testnet"
         },
         {
-            "slug": "allthatnode-testnet-starter-recent-state",
+            "slug": "allthatnode-testnet-scale-recent-state",
+            "provider": "AllThatNode",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.allthatnode.com/pricing.dsrv)",
+                "[Docs](https://docs.allthatnode.com/docs/supported-protocols-1)"
+            ],
+            "planName": "Scale",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$139/mo, $1389/yearly",
+            "queryPrice": "$0.56 per 1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace",
+                "websocket"
+            ],
+            "limitations": [
+                "10M CU/day",
+                "2K CUps throughput limit"
+            ],
+            "securityImprovements": [
+                "IP Whitelisting",
+                "JWT Authentication",
+                "Smart Contract Address Restrictions",
+                "Front-Running Protection",
+                "Comprehensive Analytics Dashboard"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom alerts",
+                "Reporting"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "allthatnode-testnet-starter-full-archive",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -6251,7 +6251,7 @@
             ],
             "planName": "Starter",
             "planType": "Tiered",
-            "historicalData": "Pruned",
+            "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
             "accessPrice": "$29/mo, $289/yearly",
@@ -6298,20 +6298,20 @@
             "chain": "testnet"
         },
         {
-            "slug": "allthatnode-testnet-scale-recent-state",
+            "slug": "allthatnode-testnet-starter-recent-state",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
                 "[Buy](https://www.allthatnode.com/pricing.dsrv)",
                 "[Docs](https://docs.allthatnode.com/docs/supported-protocols-1)"
             ],
-            "planName": "Scale",
+            "planName": "Starter",
             "planType": "Tiered",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "$139/mo, $1389/yearly",
-            "queryPrice": "$0.56 per 1M CUs",
+            "accessPrice": "$29/mo, $289/yearly",
+            "queryPrice": "$0.58 per 1M CUs",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -6330,8 +6330,8 @@
                 "websocket"
             ],
             "limitations": [
-                "10M CU/day",
-                "2K CUps throughput limit"
+                "2M CU/day",
+                "500 CUps throughput limit"
             ],
             "securityImprovements": [
                 "IP Whitelisting",
@@ -7056,6 +7056,58 @@
             "chain": "mainnet"
         },
         {
+            "slug": "blockpi-mainnet-elementary-recent-state",
+            "provider": "BlockPi",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://blockpi.io/pricing/)",
+                "[Docs](https://docs.blockpi.io/build/api-reference/aptos)"
+            ],
+            "planName": "Elementary",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.20%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "500M/60d + 50M/mo RUs",
+                "1K reqs/sec",
+                "40K RU/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time dashboard metrics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
             "slug": "blockpi-mainnet-free-recent-state",
             "provider": "BlockPi",
             "offer": null,
@@ -7156,58 +7208,6 @@
             "chain": "mainnet"
         },
         {
-            "slug": "blockpi-mainnet-elementary-recent-state",
-            "provider": "BlockPi",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://blockpi.io/pricing/)",
-                "[Docs](https://docs.blockpi.io/build/api-reference/aptos)"
-            ],
-            "planName": "Elementary",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$49",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.20%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "500M/60d + 50M/mo RUs",
-                "1K reqs/sec",
-                "40K RU/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time dashboard metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
             "slug": "blockpi-mainnet-premium-recent-state",
             "provider": "BlockPi",
             "offer": null,
@@ -7255,65 +7255,6 @@
                 "Global"
             ],
             "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "chainbase-mainnet-free-custom",
-            "provider": "Chainbase",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://platform.chainbase.com/chainNetwork/Aptos)",
-                "[Docs](https://docs.chainbase.com/platform/datasets/overview#non-evm)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": true,
-            "trial": false,
-            "availableApis": [
-                "x402 Integration",
-                "Call Chainbase API",
-                "Web3 API",
-                "Basic API",
-                "NFT API",
-                "Token API",
-                "Balance API",
-                "Domain API",
-                "SQL API"
-            ],
-            "limitations": [
-                "2 reqs/sec",
-                "3 projects"
-            ],
-            "securityImprovements": [
-                "Decentralized Architecture",
-                "Auditing Practices",
-                "Compliance Standards",
-                "Partnerships with Security Tools"
-            ],
-            "monitoringAndAnalytics": [
-                "Community support"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Dual-chain design with Cosmos for coordination and EigenLayer for Ethereum security",
-                "AI and multi-chain interoperability"
-            ],
             "address": null,
             "tag": null,
             "chain": "mainnet"
@@ -7379,7 +7320,7 @@
             "chain": "mainnet"
         },
         {
-            "slug": "chainbase-testnet-free-custom",
+            "slug": "chainbase-mainnet-free-custom",
             "provider": "Chainbase",
             "offer": null,
             "actionButtons": [
@@ -7435,7 +7376,7 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
             "slug": "chainbase-testnet-developer-custom",
@@ -7485,6 +7426,65 @@
             "monitoringAndAnalytics": [
                 "Community support",
                 "Chat and Email"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Dual-chain design with Cosmos for coordination and EigenLayer for Ethereum security",
+                "AI and multi-chain interoperability"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "chainbase-testnet-free-custom",
+            "provider": "Chainbase",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://platform.chainbase.com/chainNetwork/Aptos)",
+                "[Docs](https://docs.chainbase.com/platform/datasets/overview#non-evm)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": true,
+            "trial": false,
+            "availableApis": [
+                "x402 Integration",
+                "Call Chainbase API",
+                "Web3 API",
+                "Basic API",
+                "NFT API",
+                "Token API",
+                "Balance API",
+                "Domain API",
+                "SQL API"
+            ],
+            "limitations": [
+                "2 reqs/sec",
+                "3 projects"
+            ],
+            "securityImprovements": [
+                "Decentralized Architecture",
+                "Auditing Practices",
+                "Compliance Standards",
+                "Partnerships with Security Tools"
+            ],
+            "monitoringAndAnalytics": [
+                "Community support"
             ],
             "regions": [
                 "Global"
@@ -7812,52 +7812,6 @@
             "chain": "testnet"
         },
         {
-            "slug": "dwellir-mainnet-free-full-archive",
-            "provider": "Dwellir",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.dwellir.com/networks/aptos)",
-                "[Docs](https://www.dwellir.com/docs/aptos)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "trace",
-                "debug"
-            ],
-            "limitations": [
-                "20 responses/sec",
-                "100K daily response limit",
-                "1 API Key"
-            ],
-            "securityImprovements": [
-                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
-                "Bare metal servers"
-            ],
-            "monitoringAndAnalytics": null,
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
             "slug": "dwellir-mainnet-developer-full-archive",
             "provider": "Dwellir",
             "offer": null,
@@ -7891,6 +7845,52 @@
                 "unlimited daily response",
                 "10 API Keys",
                 "25M responses"
+            ],
+            "securityImprovements": [
+                "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
+                "Bare metal servers"
+            ],
+            "monitoringAndAnalytics": null,
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "dwellir-mainnet-free-full-archive",
+            "provider": "Dwellir",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.dwellir.com/networks/aptos)",
+                "[Docs](https://www.dwellir.com/docs/aptos)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "trace",
+                "debug"
+            ],
+            "limitations": [
+                "20 responses/sec",
+                "100K daily response limit",
+                "1 API Key"
             ],
             "securityImprovements": [
                 "HTTPS and WebSocket protocols with strict authentication controls such as API key rotation, IP allow lists, and JWT-based authentication to prevent unauthorized access",
@@ -8662,457 +8662,20 @@
             "chain": "mainnet"
         },
         {
-            "slug": "nownodes-mainnet-dedicated-recent-state",
-            "provider": "Nownodes",
+            "slug": "node-real-mainnet-business-recent-state",
+            "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
-                "[Contact](https://account.nownodes.io/auth/login)",
-                "[Docs](https://nownodes.gitbook.io/apt-aptos/)"
-            ],
-            "planName": null,
-            "planType": "Dedicated",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "up to €400",
-            "queryPrice": "no overlimit charges",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.95%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": [
-                "Unlimited reqs/mo, no API keys - access via personal credentials"
-            ],
-            "securityImprovements": [
-                "Domain name protection",
-                "Secure infrastructure with 24/7 monitoring",
-                "Private RPC nodes"
-            ],
-            "monitoringAndAnalytics": [
-                "per-key analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "nownodes-mainnet-enterprise-recent-state",
-            "provider": "Nownodes",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://nownodes.io/pricing)",
-                "[Docs](https://nownodes.gitbook.io/apt-aptos/)"
-            ],
-            "planName": "Enterprise",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "€500 (monthly plan), €5500 (yearly plan)",
-            "queryPrice": "€5/1M extra requests",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.95%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": [
-                "100M req/mo, up to 100 API keys"
-            ],
-            "securityImprovements": [
-                "Domain name protection",
-                "Secure infrastructure with 24/7 monitoring",
-                "Private RPC nodes"
-            ],
-            "monitoringAndAnalytics": [
-                "per-key analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "nownodes-mainnet-free-recent-state",
-            "provider": "Nownodes",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://nownodes.io/nodes/aptos-apt)",
-                "[Docs](https://nownodes.gitbook.io/apt-aptos/)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "€0",
-            "queryPrice": "€0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.95%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": [
-                "100K reqs/mo",
-                "1 month only",
-                "1 API key/15 RPS limit"
-            ],
-            "securityImprovements": [
-                "Domain name protection",
-                "Secure infrastructure with 24/7 monitoring"
-            ],
-            "monitoringAndAnalytics": [
-                "per-key analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "nownodes-mainnet-pro-recent-state",
-            "provider": "Nownodes",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://nownodes.io/pricing)",
-                "[Docs](https://nownodes.gitbook.io/apt-aptos/)"
-            ],
-            "planName": "Pro",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "€20 (monthly plan), €220 (yearly plan)",
-            "queryPrice": "€50/€10/1M extra requests",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.95%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": [
-                "1M/30M reqs/mo",
-                "up to 3/up to 25 API keys"
-            ],
-            "securityImprovements": [
-                "Domain name protection",
-                "Secure infrastructure with 24/7 monitoring"
-            ],
-            "monitoringAndAnalytics": [
-                "per-key analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "nownodes-mainnet-business-recent-state",
-            "provider": "Nownodes",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://nownodes.io/pricing)",
-                "[Docs](https://nownodes.gitbook.io/apt-aptos/)"
+                "[Buy](https://nodereal.io/pricing)",
+                "[Docs](https://docs.nodereal.io/reference/get-started-aptos)"
             ],
             "planName": "Business",
             "planType": "Tiered",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
-            "queryPrice": "€50/€10/1M extra requests",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.95%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "All read methods + MPoolPush"
-            ],
-            "limitations": [
-                "1M/30M reqs/mo",
-                "up to 3/up to 25 API keys"
-            ],
-            "securityImprovements": [
-                "Domain name protection",
-                "Secure infrastructure with 24/7 monitoring"
-            ],
-            "monitoringAndAnalytics": [
-                "per-key analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "onfinality-mainnet-developer-full-archive",
-            "provider": "OnFinality",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://onfinality.io/en/networks/aptos)",
-                "[Docs](https://documentation.onfinality.io/support/aptos)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Network native APIs",
-                "Trace API"
-            ],
-            "limitations": [
-                "400K API daily limit",
-                "40 response units/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Requests count monitoring",
-                "Response time monitoring",
-                "Geographical monitoring",
-                "Per method monitoring"
-            ],
-            "regions": [
-                "N.Virginia",
-                "Ireland",
-                "Tokyo",
-                "Frankfurt"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "onfinality-mainnet-growth-full-archive",
-            "provider": "OnFinality",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/aptos)"
-            ],
-            "planName": "Growth",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$49",
-            "queryPrice": "$6/million extra units",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Network native APIs",
-                "Trace API"
-            ],
-            "limitations": [
-                "20M/100M API response units",
-                "200/500 response units/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Requests count monitoring",
-                "Response time monitoring",
-                "Geographical monitoring",
-                "Per method monitoring"
-            ],
-            "regions": [
-                "N.Virginia",
-                "Ireland",
-                "Tokyo",
-                "Frankfurt"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "onfinality-mainnet-accelerate-full-archive",
-            "provider": "OnFinality",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://onfinality.io/en/pricing)",
-                "[Docs](https://documentation.onfinality.io/support/aptos)"
-            ],
-            "planName": "Accelerate",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$249",
-            "queryPrice": "$3.75/million extra units",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Network native APIs",
-                "Trace API"
-            ],
-            "limitations": [
-                "20M/100M API response units",
-                "200/500 response units/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Requests count monitoring",
-                "Response time monitoring",
-                "Geographical monitoring",
-                "Per method monitoring"
-            ],
-            "regions": [
-                "N.Virginia",
-                "Ireland",
-                "Tokyo",
-                "Frankfurt"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "publicnode-mainnet-public-recent-state",
-            "provider": "PublicNode",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://aptos.publicnode.com/)"
-            ],
-            "planName": null,
-            "planType": "Public",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": null,
-            "securityImprovements": [
-                "DDoS Protection",
-                "Privacy-relays"
-            ],
-            "monitoringAndAnalytics": [
-                "Tracking key",
-                "Node health metrics",
-                "Advanced monitoring",
-                "Custom metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "omnia-testnet-free-recent-state",
-            "provider": "Omnia",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.omniatech.io/)",
-                "[Docs](https://docs.omniatech.io/)"
-            ],
-            "planName": "Free",
-            "planType": "Free",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
+            "accessPrice": "$499/mo (monthly plan), $424/mo (semi-annual plan), $399/mo (annual plan)",
+            "queryPrice": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -9123,1374 +8686,43 @@
             "starred": false,
             "trial": true,
             "availableApis": [
-                "Public RPC Endpoints",
-                "Security Features",
-                "Infrastructure Tools",
-                "Specialized APIs"
+                "eth_accounts",
+                "eth_blockNumber",
+                "eth_call",
+                "eth_getBalance",
+                "debug_traceTransaction",
+                "trace_block",
+                "trace_call"
             ],
             "limitations": [
-                "3M req/mo",
-                "50 rps"
+                "5B req/mo",
+                "3K rps",
+                "50 API Keys"
             ],
             "securityImprovements": [
-                "Front-running and Sandwich Attack Protection",
-                "Honeypot and Scam Protection"
+                "Maximal Extractable Value Protection",
+                "Secure APIs",
+                "Domain Whitelisting",
+                "Access Controls"
             ],
             "monitoringAndAnalytics": [
-                "Uptime and Availability Monitoring",
-                "Latency Metrics",
-                "HealthCheck Monitors",
-                "Data Integrity Checks"
+                "Real-time Monitoring",
+                "Request Analytics",
+                "Debug APIs",
+                "Performance Metrics"
             ],
             "regions": [
                 "Global"
             ],
             "additionalFeatures": [
-                "Advanced Integration and Development Tools",
-                "AI and Intelligent Automation",
-                "Security and Compliance",
-                "Management and Administration"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "omnia-testnet-pro-recent-state",
-            "provider": "Omnia",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://docs.omniatech.io/pricing-plans)"
-            ],
-            "planName": "Pro",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$31/mo",
-            "queryPrice": "$3.44/1M CUs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "Public RPC Endpoints",
-                "Security Features",
-                "Infrastructure Tools",
-                "Specialized APIs"
-            ],
-            "limitations": [
-                "9M req/mo",
-                "50 rps"
-            ],
-            "securityImprovements": [
-                "Front-running and Sandwich Attack Protection",
-                "Honeypot and Scam Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Uptime and Availability Monitoring",
-                "Latency Metrics",
-                "HealthCheck Monitors",
-                "Data Integrity Checks"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Advanced Integration and Development Tools",
-                "AI and Intelligent Automation",
-                "Security and Compliance",
-                "Management and Administration"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "omnia-testnet-pro-growth-recent-state",
-            "provider": "Omnia",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://docs.omniatech.io/pricing-plans)"
-            ],
-            "planName": "Pro Growth",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$79/mo",
-            "queryPrice": "$2.633/1M CUs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "Public RPC Endpoints",
-                "Security Features",
-                "Infrastructure Tools",
-                "Specialized APIs"
-            ],
-            "limitations": [
-                "30M req/mo",
-                "100 rps"
-            ],
-            "securityImprovements": [
-                "Front-running and Sandwich Attack Protection",
-                "Honeypot and Scam Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Uptime and Availability Monitoring",
-                "Latency Metrics",
-                "HealthCheck Monitors",
-                "Data Integrity Checks"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Advanced Integration and Development Tools",
-                "AI and Intelligent Automation",
-                "Security and Compliance",
-                "Management and Administration"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "omnia-testnet-pro-elite-recent-state",
-            "provider": "Omnia",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://docs.omniatech.io/pricing-plans)"
-            ],
-            "planName": "Pro Elite",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$792/mo",
-            "queryPrice": "$5.28/1M CUs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "98%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "Public RPC Endpoints",
-                "Security Features",
-                "Infrastructure Tools",
-                "Specialized APIs"
-            ],
-            "limitations": [
-                "150M req/mo",
-                "250 rps"
-            ],
-            "securityImprovements": [
-                "Front-running and Sandwich Attack Protection",
-                "Honeypot and Scam Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Uptime and Availability Monitoring",
-                "Latency Metrics",
-                "HealthCheck Monitors",
-                "Data Integrity Checks"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Advanced Integration and Development Tools",
-                "AI and Intelligent Automation",
-                "Security and Compliance",
-                "Management and Administration"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "omnia-mainnet-free-recent-state",
-            "provider": "Omnia",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.omniatech.io/)",
-                "[Docs](https://docs.omniatech.io/)"
-            ],
-            "planName": "Free",
-            "planType": "Free",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.80%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "Public RPC Endpoints",
-                "Security Features",
-                "Infrastructure Tools",
-                "Specialized APIs"
-            ],
-            "limitations": [
-                "3M req/mo",
-                "50 rps"
-            ],
-            "securityImprovements": [
-                "Front-running and Sandwich Attack Protection",
-                "Honeypot and Scam Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Uptime and Availability Monitoring",
-                "Latency Metrics",
-                "HealthCheck Monitors",
-                "Data Integrity Checks"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Advanced Integration and Development Tools",
-                "AI and Intelligent Automation",
-                "Security and Compliance",
-                "Management and Administration"
+                "Real-time Event Monitoring",
+                "Developer Tools & Support",
+                "Security & Compliance",
+                "Private Transactions & Enhanced APIs"
             ],
             "address": null,
             "tag": null,
             "chain": "mainnet"
-        },
-        {
-            "slug": "omnia-mainnet-pro-recent-state",
-            "provider": "Omnia",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://docs.omniatech.io/pricing-plans)"
-            ],
-            "planName": "Pro",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$31/mo",
-            "queryPrice": "$3.44/1M CUs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "Public RPC Endpoints",
-                "Security Features",
-                "Infrastructure Tools",
-                "Specialized APIs"
-            ],
-            "limitations": [
-                "9M req/mo",
-                "50 rps"
-            ],
-            "securityImprovements": [
-                "Front-running and Sandwich Attack Protection",
-                "Honeypot and Scam Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Uptime and Availability Monitoring",
-                "Latency Metrics",
-                "HealthCheck Monitors",
-                "Data Integrity Checks"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Advanced Integration and Development Tools",
-                "AI and Intelligent Automation",
-                "Security and Compliance",
-                "Management and Administration"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "omnia-mainnet-pro-growth-recent-state",
-            "provider": "Omnia",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://docs.omniatech.io/pricing-plans)"
-            ],
-            "planName": "Pro Growth",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$79/mo",
-            "queryPrice": "$2.633/1M CUs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "Public RPC Endpoints",
-                "Security Features",
-                "Infrastructure Tools",
-                "Specialized APIs"
-            ],
-            "limitations": [
-                "30M req/mo",
-                "100 rps"
-            ],
-            "securityImprovements": [
-                "Front-running and Sandwich Attack Protection",
-                "Honeypot and Scam Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Uptime and Availability Monitoring",
-                "Latency Metrics",
-                "HealthCheck Monitors",
-                "Data Integrity Checks"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Advanced Integration and Development Tools",
-                "AI and Intelligent Automation",
-                "Security and Compliance",
-                "Management and Administration"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "omnia-mainnet-pro-elite-recent-state",
-            "provider": "Omnia",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://docs.omniatech.io/pricing-plans)"
-            ],
-            "planName": "Pro Elite",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$792/mo",
-            "queryPrice": "$5.28/1M CUs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "98%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "Public RPC Endpoints",
-                "Security Features",
-                "Infrastructure Tools",
-                "Specialized APIs"
-            ],
-            "limitations": [
-                "150M req/mo",
-                "250 rps"
-            ],
-            "securityImprovements": [
-                "Front-running and Sandwich Attack Protection",
-                "Honeypot and Scam Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Uptime and Availability Monitoring",
-                "Latency Metrics",
-                "HealthCheck Monitors",
-                "Data Integrity Checks"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Advanced Integration and Development Tools",
-                "AI and Intelligent Automation",
-                "Security and Compliance",
-                "Management and Administration"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-build-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Build",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
-            "queryPrice": "$0.62 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "80M API credits",
-                "10 endpoints",
-                "50 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-accelerate-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Accelerate",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
-            "queryPrice": "$0.55 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "450M API credits",
-                "20 endpoints",
-                "125 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-scale-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Scale",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
-            "queryPrice": "$0.53 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "950M API credits",
-                "50 endpoints",
-                "250 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-business-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Business",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
-            "queryPrice": "$0.5 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "2B API credits",
-                "50 endpoints",
-                "500 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-build-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Build",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
-            "queryPrice": "$0.62 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "80M API credits",
-                "10 endpoints",
-                "50 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-accelerate-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Accelerate",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
-            "queryPrice": "$0.55 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "450M API credits",
-                "20 endpoints",
-                "125 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-scale-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Scale",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
-            "queryPrice": "$0.53 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "950M API credits",
-                "50 endpoints",
-                "250 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-mainnet-business-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Business",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
-            "queryPrice": "$0.5 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "2B API credits",
-                "50 endpoints",
-                "500 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "quicknode-testnet-build-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Build",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
-            "queryPrice": "$0.62 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "80M API credits",
-                "10 endpoints",
-                "50 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "quicknode-testnet-accelerate-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Accelerate",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
-            "queryPrice": "$0.55 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "450M API credits",
-                "20 endpoints",
-                "125 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "quicknode-testnet-scale-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Scale",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
-            "queryPrice": "$0.53 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "950M API credits",
-                "50 endpoints",
-                "250 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "quicknode-testnet-business-recent-state",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Business",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
-            "queryPrice": "$0.5 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "2B API credits",
-                "50 endpoints",
-                "500 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "quicknode-testnet-build-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Build",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
-            "queryPrice": "$0.62 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "80M API credits",
-                "10 endpoints",
-                "50 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "quicknode-testnet-accelerate-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Accelerate",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
-            "queryPrice": "$0.55 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "450M API credits",
-                "20 endpoints",
-                "125 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "quicknode-testnet-scale-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Scale",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
-            "queryPrice": "$0.53 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "950M API credits",
-                "50 endpoints",
-                "250 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "quicknode-testnet-business-full-archive",
-            "provider": "QuickNode",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.quicknode.com/contact-us)",
-                "[Docs](https://www.quicknode.com/docs/aptos)"
-            ],
-            "planName": "Business",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
-            "queryPrice": "$0.5 per 1M extra API credits",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "net",
-                "web3",
-                "debug",
-                "trace"
-            ],
-            "limitations": [
-                "2B API credits",
-                "50 endpoints",
-                "500 reqs/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection",
-                "Privacy preserving",
-                "SAML SSO"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards",
-                "Alerts & endpoints monitoring",
-                "Advanced analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Multi-Chain SDK",
-                "Smart Contract Explorer & Gas Tracker"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
         },
         {
             "slug": "node-real-mainnet-free-recent-state",
@@ -10682,7 +8914,7 @@
             "chain": "mainnet"
         },
         {
-            "slug": "node-real-mainnet-business-recent-state",
+            "slug": "node-real-testnet-business-recent-state",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -10742,7 +8974,7 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
             "slug": "node-real-testnet-free-recent-state",
@@ -10934,20 +9166,251 @@
             "chain": "testnet"
         },
         {
-            "slug": "node-real-testnet-business-recent-state",
-            "provider": "NodeReal",
+            "slug": "nownodes-mainnet-business-recent-state",
+            "provider": "Nownodes",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://nodereal.io/pricing)",
-                "[Docs](https://docs.nodereal.io/reference/get-started-aptos)"
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.gitbook.io/apt-aptos/)"
             ],
             "planName": "Business",
             "planType": "Tiered",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "$499/mo (monthly plan), $424/mo (semi-annual plan), $399/mo (annual plan)",
-            "queryPrice": null,
+            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
+            "queryPrice": "€50/€10/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "1M/30M reqs/mo",
+                "up to 3/up to 25 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "nownodes-mainnet-dedicated-recent-state",
+            "provider": "Nownodes",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://account.nownodes.io/auth/login)",
+                "[Docs](https://nownodes.gitbook.io/apt-aptos/)"
+            ],
+            "planName": null,
+            "planType": "Dedicated",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "up to €400",
+            "queryPrice": "no overlimit charges",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "Unlimited reqs/mo, no API keys - access via personal credentials"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "nownodes-mainnet-enterprise-recent-state",
+            "provider": "Nownodes",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.gitbook.io/apt-aptos/)"
+            ],
+            "planName": "Enterprise",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "€500 (monthly plan), €5500 (yearly plan)",
+            "queryPrice": "€5/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "100M req/mo, up to 100 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring",
+                "Private RPC nodes"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "nownodes-mainnet-free-recent-state",
+            "provider": "Nownodes",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://nownodes.io/nodes/aptos-apt)",
+                "[Docs](https://nownodes.gitbook.io/apt-aptos/)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "€0",
+            "queryPrice": "€0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "100K reqs/mo",
+                "1 month only",
+                "1 API key/15 RPS limit"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "nownodes-mainnet-pro-recent-state",
+            "provider": "Nownodes",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.gitbook.io/apt-aptos/)"
+            ],
+            "planName": "Pro",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "€20 (monthly plan), €220 (yearly plan)",
+            "queryPrice": "€50/€10/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "1M/30M reqs/mo",
+                "up to 3/up to 25 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "omnia-mainnet-free-recent-state",
+            "provider": "Omnia",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.omniatech.io/)",
+                "[Docs](https://docs.omniatech.io/)"
+            ],
+            "planName": "Free",
+            "planType": "Free",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -10958,39 +9421,1576 @@
             "starred": false,
             "trial": true,
             "availableApis": [
-                "eth_accounts",
-                "eth_blockNumber",
-                "eth_call",
-                "eth_getBalance",
-                "debug_traceTransaction",
-                "trace_block",
-                "trace_call"
+                "Public RPC Endpoints",
+                "Security Features",
+                "Infrastructure Tools",
+                "Specialized APIs"
             ],
             "limitations": [
-                "5B req/mo",
-                "3K rps",
-                "50 API Keys"
+                "3M req/mo",
+                "50 rps"
             ],
             "securityImprovements": [
-                "Maximal Extractable Value Protection",
-                "Secure APIs",
-                "Domain Whitelisting",
-                "Access Controls"
+                "Front-running and Sandwich Attack Protection",
+                "Honeypot and Scam Protection"
             ],
             "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Request Analytics",
-                "Debug APIs",
-                "Performance Metrics"
+                "Uptime and Availability Monitoring",
+                "Latency Metrics",
+                "HealthCheck Monitors",
+                "Data Integrity Checks"
             ],
             "regions": [
                 "Global"
             ],
             "additionalFeatures": [
-                "Real-time Event Monitoring",
-                "Developer Tools & Support",
-                "Security & Compliance",
-                "Private Transactions & Enhanced APIs"
+                "Advanced Integration and Development Tools",
+                "AI and Intelligent Automation",
+                "Security and Compliance",
+                "Management and Administration"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "omnia-mainnet-pro-elite-recent-state",
+            "provider": "Omnia",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://docs.omniatech.io/pricing-plans)"
+            ],
+            "planName": "Pro Elite",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$792/mo",
+            "queryPrice": "$5.28/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "98%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "Public RPC Endpoints",
+                "Security Features",
+                "Infrastructure Tools",
+                "Specialized APIs"
+            ],
+            "limitations": [
+                "150M req/mo",
+                "250 rps"
+            ],
+            "securityImprovements": [
+                "Front-running and Sandwich Attack Protection",
+                "Honeypot and Scam Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Uptime and Availability Monitoring",
+                "Latency Metrics",
+                "HealthCheck Monitors",
+                "Data Integrity Checks"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Advanced Integration and Development Tools",
+                "AI and Intelligent Automation",
+                "Security and Compliance",
+                "Management and Administration"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "omnia-mainnet-pro-growth-recent-state",
+            "provider": "Omnia",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://docs.omniatech.io/pricing-plans)"
+            ],
+            "planName": "Pro Growth",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$79/mo",
+            "queryPrice": "$2.633/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "Public RPC Endpoints",
+                "Security Features",
+                "Infrastructure Tools",
+                "Specialized APIs"
+            ],
+            "limitations": [
+                "30M req/mo",
+                "100 rps"
+            ],
+            "securityImprovements": [
+                "Front-running and Sandwich Attack Protection",
+                "Honeypot and Scam Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Uptime and Availability Monitoring",
+                "Latency Metrics",
+                "HealthCheck Monitors",
+                "Data Integrity Checks"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Advanced Integration and Development Tools",
+                "AI and Intelligent Automation",
+                "Security and Compliance",
+                "Management and Administration"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "omnia-mainnet-pro-recent-state",
+            "provider": "Omnia",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://docs.omniatech.io/pricing-plans)"
+            ],
+            "planName": "Pro",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$31/mo",
+            "queryPrice": "$3.44/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "Public RPC Endpoints",
+                "Security Features",
+                "Infrastructure Tools",
+                "Specialized APIs"
+            ],
+            "limitations": [
+                "9M req/mo",
+                "50 rps"
+            ],
+            "securityImprovements": [
+                "Front-running and Sandwich Attack Protection",
+                "Honeypot and Scam Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Uptime and Availability Monitoring",
+                "Latency Metrics",
+                "HealthCheck Monitors",
+                "Data Integrity Checks"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Advanced Integration and Development Tools",
+                "AI and Intelligent Automation",
+                "Security and Compliance",
+                "Management and Administration"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "omnia-testnet-free-recent-state",
+            "provider": "Omnia",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.omniatech.io/)",
+                "[Docs](https://docs.omniatech.io/)"
+            ],
+            "planName": "Free",
+            "planType": "Free",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.80%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "Public RPC Endpoints",
+                "Security Features",
+                "Infrastructure Tools",
+                "Specialized APIs"
+            ],
+            "limitations": [
+                "3M req/mo",
+                "50 rps"
+            ],
+            "securityImprovements": [
+                "Front-running and Sandwich Attack Protection",
+                "Honeypot and Scam Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Uptime and Availability Monitoring",
+                "Latency Metrics",
+                "HealthCheck Monitors",
+                "Data Integrity Checks"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Advanced Integration and Development Tools",
+                "AI and Intelligent Automation",
+                "Security and Compliance",
+                "Management and Administration"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "omnia-testnet-pro-elite-recent-state",
+            "provider": "Omnia",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://docs.omniatech.io/pricing-plans)"
+            ],
+            "planName": "Pro Elite",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$792/mo",
+            "queryPrice": "$5.28/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "98%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "Public RPC Endpoints",
+                "Security Features",
+                "Infrastructure Tools",
+                "Specialized APIs"
+            ],
+            "limitations": [
+                "150M req/mo",
+                "250 rps"
+            ],
+            "securityImprovements": [
+                "Front-running and Sandwich Attack Protection",
+                "Honeypot and Scam Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Uptime and Availability Monitoring",
+                "Latency Metrics",
+                "HealthCheck Monitors",
+                "Data Integrity Checks"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Advanced Integration and Development Tools",
+                "AI and Intelligent Automation",
+                "Security and Compliance",
+                "Management and Administration"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "omnia-testnet-pro-growth-recent-state",
+            "provider": "Omnia",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://docs.omniatech.io/pricing-plans)"
+            ],
+            "planName": "Pro Growth",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$79/mo",
+            "queryPrice": "$2.633/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "Public RPC Endpoints",
+                "Security Features",
+                "Infrastructure Tools",
+                "Specialized APIs"
+            ],
+            "limitations": [
+                "30M req/mo",
+                "100 rps"
+            ],
+            "securityImprovements": [
+                "Front-running and Sandwich Attack Protection",
+                "Honeypot and Scam Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Uptime and Availability Monitoring",
+                "Latency Metrics",
+                "HealthCheck Monitors",
+                "Data Integrity Checks"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Advanced Integration and Development Tools",
+                "AI and Intelligent Automation",
+                "Security and Compliance",
+                "Management and Administration"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "omnia-testnet-pro-recent-state",
+            "provider": "Omnia",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://docs.omniatech.io/pricing-plans)"
+            ],
+            "planName": "Pro",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$31/mo",
+            "queryPrice": "$3.44/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "Public RPC Endpoints",
+                "Security Features",
+                "Infrastructure Tools",
+                "Specialized APIs"
+            ],
+            "limitations": [
+                "9M req/mo",
+                "50 rps"
+            ],
+            "securityImprovements": [
+                "Front-running and Sandwich Attack Protection",
+                "Honeypot and Scam Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Uptime and Availability Monitoring",
+                "Latency Metrics",
+                "HealthCheck Monitors",
+                "Data Integrity Checks"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Advanced Integration and Development Tools",
+                "AI and Intelligent Automation",
+                "Security and Compliance",
+                "Management and Administration"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "onfinality-mainnet-accelerate-full-archive",
+            "provider": "OnFinality",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/aptos)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$249",
+            "queryPrice": "$3.75/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "onfinality-mainnet-developer-full-archive",
+            "provider": "OnFinality",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://onfinality.io/en/networks/aptos)",
+                "[Docs](https://documentation.onfinality.io/support/aptos)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "400K API daily limit",
+                "40 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "onfinality-mainnet-growth-full-archive",
+            "provider": "OnFinality",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://documentation.onfinality.io/support/aptos)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49",
+            "queryPrice": "$6/million extra units",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Network native APIs",
+                "Trace API"
+            ],
+            "limitations": [
+                "20M/100M API response units",
+                "200/500 response units/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
+            ],
+            "regions": [
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "publicnode-mainnet-public-recent-state",
+            "provider": "PublicNode",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://aptos.publicnode.com/)"
+            ],
+            "planName": null,
+            "planType": "Public",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": null,
+            "securityImprovements": [
+                "DDoS Protection",
+                "Privacy-relays"
+            ],
+            "monitoringAndAnalytics": [
+                "Tracking key",
+                "Node health metrics",
+                "Advanced monitoring",
+                "Custom metrics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-accelerate-full-archive",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
+            "queryPrice": "$0.55 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "450M API credits",
+                "20 endpoints",
+                "125 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-accelerate-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
+            "queryPrice": "$0.55 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "450M API credits",
+                "20 endpoints",
+                "125 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-build-full-archive",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Build",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
+            "queryPrice": "$0.62 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "80M API credits",
+                "10 endpoints",
+                "50 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-build-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Build",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
+            "queryPrice": "$0.62 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "80M API credits",
+                "10 endpoints",
+                "50 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-business-full-archive",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
+            "queryPrice": "$0.5 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "2B API credits",
+                "50 endpoints",
+                "500 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-business-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
+            "queryPrice": "$0.5 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "2B API credits",
+                "50 endpoints",
+                "500 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-scale-full-archive",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Scale",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
+            "queryPrice": "$0.53 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "950M API credits",
+                "50 endpoints",
+                "250 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-mainnet-scale-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Scale",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
+            "queryPrice": "$0.53 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "950M API credits",
+                "50 endpoints",
+                "250 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "quicknode-testnet-accelerate-full-archive",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
+            "queryPrice": "$0.55 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "450M API credits",
+                "20 endpoints",
+                "125 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "quicknode-testnet-accelerate-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Accelerate",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$249/mo (monthly plan), $212/mo (yearly plan)",
+            "queryPrice": "$0.55 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "450M API credits",
+                "20 endpoints",
+                "125 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "quicknode-testnet-build-full-archive",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Build",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
+            "queryPrice": "$0.62 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "80M API credits",
+                "10 endpoints",
+                "50 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "quicknode-testnet-build-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Build",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo (monthly plan),$42/mo (yearly plan)",
+            "queryPrice": "$0.62 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "80M API credits",
+                "10 endpoints",
+                "50 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "quicknode-testnet-business-full-archive",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
+            "queryPrice": "$0.5 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "2B API credits",
+                "50 endpoints",
+                "500 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "quicknode-testnet-business-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$999/mo (monthly plan), $849/mo (yearly plan)",
+            "queryPrice": "$0.5 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "2B API credits",
+                "50 endpoints",
+                "500 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "quicknode-testnet-scale-full-archive",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Scale",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
+            "queryPrice": "$0.53 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "950M API credits",
+                "50 endpoints",
+                "250 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "quicknode-testnet-scale-recent-state",
+            "provider": "QuickNode",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.quicknode.com/contact-us)",
+                "[Docs](https://www.quicknode.com/docs/aptos)"
+            ],
+            "planName": "Scale",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$499/mo (monthly plan),$424/mo (yearly plan)",
+            "queryPrice": "$0.53 per 1M extra API credits",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "net",
+                "web3",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "950M API credits",
+                "50 endpoints",
+                "250 reqs/sec"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Privacy preserving",
+                "SAML SSO"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards",
+                "Alerts & endpoints monitoring",
+                "Advanced analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Multi-Chain SDK",
+                "Smart Contract Explorer & Gas Tracker"
             ],
             "address": null,
             "tag": null,
@@ -17082,23 +17082,6 @@
     ],
     "storages": [
         {
-            "slug": "orbit-db",
-            "provider": "Orbit DB",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://orbitdb.org/)"
-            ],
-            "toolType": "Database",
-            "tag": [
-                "Decentralized database"
-            ],
-            "price": "$0",
-            "planType": "Free",
-            "planName": null,
-            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-            "starred": false
-        },
-        {
             "slug": "ipfs",
             "provider": "IPFS",
             "offer": null,
@@ -17115,6 +17098,23 @@
             "planType": "Free",
             "planName": null,
             "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+            "starred": false
+        },
+        {
+            "slug": "orbit-db",
+            "provider": "Orbit DB",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://orbitdb.org/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database"
+            ],
+            "price": "$0",
+            "planType": "Free",
+            "planName": null,
+            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
             "starred": false
         },
         {
@@ -17300,8 +17300,8 @@
             "toolType",
             "tag",
             "price",
-            "planName",
             "planType",
+            "planName",
             "description",
             "starred"
         ],
@@ -19536,107 +19536,31 @@
                     "platforms"
                 ]
             },
-            "transak": {
-                "slug": "transak",
-                "name": "Transak",
-                "logoPath": "transak.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://transak.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "moonpay": {
-                "slug": "moonpay",
-                "name": "MoonPay",
-                "logoPath": "moonpay.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://www.moonpay.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "ramp-network": {
-                "slug": "ramp-network",
-                "name": "Ramp Network",
-                "logoPath": "ramp-network.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://ramp.network/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "onramper": {
-                "slug": "onramper",
-                "name": "Onramper",
-                "logoPath": "onramper.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://onramper.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "stripe": {
-                "slug": "stripe",
-                "name": "Stripe",
-                "logoPath": "stripe.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://stripe.com/crypto",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
             "banxa": {
                 "slug": "banxa",
                 "name": "Banxa",
                 "logoPath": "banxa.png",
                 "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
                 "website": "https://banxa.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "meld": {
+                "slug": "meld",
+                "name": "Meld",
+                "logoPath": "meld.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://www.meld.io/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -19669,6 +19593,63 @@
                     "ramps"
                 ]
             },
+            "moonpay": {
+                "slug": "moonpay",
+                "name": "MoonPay",
+                "logoPath": "moonpay.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://www.moonpay.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "onramper": {
+                "slug": "onramper",
+                "name": "Onramper",
+                "logoPath": "onramper.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://onramper.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "ramp-network": {
+                "slug": "ramp-network",
+                "name": "Ramp Network",
+                "logoPath": "ramp-network.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://ramp.network/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
             "sardine": {
                 "slug": "sardine",
                 "name": "Sardine",
@@ -19688,12 +19669,31 @@
                     "ramps"
                 ]
             },
-            "meld": {
-                "slug": "meld",
-                "name": "Meld",
-                "logoPath": "meld.png",
+            "stripe": {
+                "slug": "stripe",
+                "name": "Stripe",
+                "logoPath": "stripe.png",
                 "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://www.meld.io/",
+                "website": "https://stripe.com/crypto",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "transak": {
+                "slug": "transak",
+                "name": "Transak",
+                "logoPath": "transak.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://transak.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -20714,6 +20714,25 @@
                     "wallets"
                 ]
             },
+            "petra": {
+                "slug": "petra",
+                "name": "Petra",
+                "logoPath": "petra.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://petra.app/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "wallets"
+                ]
+            },
             "tokenpocket": {
                 "slug": "tokenpocket",
                 "name": "TokenPocket",
@@ -20739,25 +20758,6 @@
                 "logoPath": "trust.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
                 "website": "https://trustwallet.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "wallets"
-                ]
-            },
-            "petra": {
-                "slug": "petra",
-                "name": "Petra",
-                "logoPath": "petra.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://petra.app/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -20961,6 +20961,25 @@
                     "apis"
                 ]
             },
+            "nodereal": {
+                "slug": "nodereal",
+                "name": "NodeReal",
+                "logoPath": "nodereal.png",
+                "description": "Provides API infrastructure for Web3 developers and users.",
+                "website": "https://nodereal.io/",
+                "docs": "https://docs.nodereal.io/docs/intro-nodereal",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "apis"
+                ]
+            },
             "nownodes": {
                 "slug": "nownodes",
                 "name": "Nownodes",
@@ -20968,6 +20987,25 @@
                 "description": "Provides API infrastructure for Web3 developers and users.",
                 "website": "https://account.nownodes.io/auth/login",
                 "docs": "https://nownodes.gitbook.io/documentation",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "apis"
+                ]
+            },
+            "omnia": {
+                "slug": "omnia",
+                "name": "Omnia",
+                "logoPath": "omnia.png",
+                "description": "Provides API infrastructure for Web3 developers and users.",
+                "website": "https://www.omniatech.io/",
+                "docs": "https://docs.omniatech.io/",
                 "x": null,
                 "github": null,
                 "discord": null,
@@ -21006,44 +21044,6 @@
                 "description": "Provides API infrastructure for Web3 developers and users.",
                 "website": "https://publicnode.com/",
                 "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "apis"
-                ]
-            },
-            "omnia": {
-                "slug": "omnia",
-                "name": "Omnia",
-                "logoPath": "omnia.png",
-                "description": "Provides API infrastructure for Web3 developers and users.",
-                "website": "https://www.omniatech.io/",
-                "docs": "https://docs.omniatech.io/",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "apis"
-                ]
-            },
-            "nodereal": {
-                "slug": "nodereal",
-                "name": "NodeReal",
-                "logoPath": "nodereal.png",
-                "description": "Provides API infrastructure for Web3 developers and users.",
-                "website": "https://nodereal.io/",
-                "docs": "https://docs.nodereal.io/docs/intro-nodereal",
                 "x": null,
                 "github": null,
                 "discord": null,
@@ -21379,15 +21379,15 @@
                     "faucets"
                 ]
             },
-            "orbit-db": {
-                "slug": "orbit-db",
-                "name": "Orbit DB",
-                "logoPath": "orbit-db.png",
-                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-                "website": "https://orbitdb.org/",
-                "docs": null,
+            "ipfs": {
+                "slug": "ipfs",
+                "name": "IPFS",
+                "logoPath": "ipfs.png",
+                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+                "website": "https://docs.ipfs.io/",
+                "docs": "https://docs.ipfs.io/",
                 "x": null,
-                "github": null,
+                "github": "ipfs-force-community/go-fvm-sdk",
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,
@@ -21398,15 +21398,15 @@
                     "storages"
                 ]
             },
-            "ipfs": {
-                "slug": "ipfs",
-                "name": "IPFS",
-                "logoPath": "ipfs.png",
-                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
-                "website": "https://docs.ipfs.io/",
-                "docs": "https://docs.ipfs.io/",
+            "orbit-db": {
+                "slug": "orbit-db",
+                "name": "Orbit DB",
+                "logoPath": "orbit-db.png",
+                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
+                "website": "https://orbitdb.org/",
+                "docs": null,
                 "x": null,
-                "github": "ipfs-force-community/go-fvm-sdk",
+                "github": null,
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,

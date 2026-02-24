@@ -1,6 +1,122 @@
 {
     "wallets": [
         {
+            "slug": "atomic-wallet",
+            "provider": "Atomic",
+            "offer": "Wallet",
+            "actionButtons": [
+                "[Website](https://atomicwallet.io)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": true,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-2",
+                "TRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "x",
+                "telegram"
+            ],
+            "audit": [
+                "audit by third parties"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
+            "slug": "coin-wallet",
+            "provider": "Coin Space",
+            "offer": "Wallet",
+            "actionButtons": [
+                "[Website](https://coin.space/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "BEP-20",
+                "ARC-20",
+                "TRC-20"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email"
+            ],
+            "audit": [
+                "regular internal security audit"
+            ],
+            "languages": [
+                "EN",
+                "PL",
+                "FR",
+                "DE",
+                "IT",
+                "DA",
+                "NL",
+                "RU",
+                "TL",
+                "ZH",
+                "AR",
+                "HI",
+                "UR",
+                "KO",
+                "ES",
+                "CS",
+                "FI",
+                "EL",
+                "TR",
+                "PT",
+                "PT-BR",
+                "RO",
+                "JA",
+                "SR",
+                "HU",
+                "SV",
+                "NO",
+                "FA",
+                "UK",
+                "TH",
+                "AF",
+                "MS",
+                "ID",
+                "LV"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
             "slug": "daedalus",
             "provider": "Daedalus Mainnet",
             "offer": null,
@@ -40,121 +156,37 @@
             "tag": null
         },
         {
-            "slug": "yoroi",
-            "provider": "Yoroi",
+            "slug": "ellipal",
+            "provider": "Ellipal",
             "offer": null,
             "actionButtons": [
-                "[Website](https://yoroi-wallet.com/)"
+                "[Website](https://www.ellipal.com/)"
             ],
-            "openSource": true,
+            "openSource": false,
             "supportedPlatforms": [
-                "Browser Extension",
+                "Hardware",
                 "iOS",
                 "Android"
             ],
             "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "ADA",
-                "Native Tokens"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "helpdesk",
-                "email"
-            ],
-            "audit": [
-                "Emurgo",
-                "Kudelski Security"
-            ],
-            "languages": [
-                "EN",
-                "JA",
-                "KO",
-                "ZH",
-                "RU",
-                "DE",
-                "FR"
-            ],
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "lace",
-            "provider": "Lace",
-            "offer": null,
-            "actionButtons": null,
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension"
-            ],
-            "custodial": false,
             "mfa": false,
             "msig": false,
             "hardware": true,
             "keyExport": true,
             "native": true,
-            "evm": false,
+            "evm": true,
             "tendermint": false,
             "tokensSupport": [
-                "ADA",
-                "Native Tokens",
-                "NFTs"
+                "ERC-20",
+                "BEP-20"
             ],
-            "staking": true,
-            "price": "$0",
+            "staking": false,
+            "price": "Paid",
             "support": [
-                "helpdesk",
-                "discord"
-            ],
-            "audit": [
-                "FYEO"
-            ],
-            "languages": [
-                "EN"
-            ],
-            "starred": true,
-            "tag": null
-        },
-        {
-            "slug": "nami",
-            "provider": "Nami",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://namiwallet.io/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Browser Extension"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": true,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "ADA",
-                "Native Tokens",
-                "NFTs"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "twitter",
                 "email"
             ],
             "audit": [
-                "IOG Internal"
+                "not availale"
             ],
             "languages": [
                 "EN"
@@ -203,75 +235,45 @@
             "tag": null
         },
         {
-            "slug": "vespr",
-            "provider": "Vespr",
+            "slug": "exodus",
+            "provider": "Exodus",
             "offer": null,
             "actionButtons": [
-                "[Website](https://vespr.xyz/)",
-                "[Twitter](https://twitter.com/vesprwallet)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
-            "tokensSupport": [
-                "ADA",
-                "Native Tokens"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "discord",
-                "twitter"
-            ],
-            "audit": null,
-            "languages": [
-                "EN"
-            ],
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "typhon",
-            "provider": "Typhon Wallet",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://typhonwallet.io/)"
+                "[Website](https://www.exodus.com/)"
             ],
             "openSource": true,
             "supportedPlatforms": [
-                "Browser Extension"
+                "Desktop",
+                "iOS",
+                "Android",
+                "Web"
             ],
             "custodial": false,
             "mfa": false,
             "msig": false,
             "hardware": true,
             "keyExport": true,
-            "native": true,
-            "evm": false,
-            "tendermint": false,
+            "native": false,
+            "evm": true,
+            "tendermint": true,
             "tokensSupport": [
-                "ADA",
-                "Native Tokens"
+                "ERC-20",
+                "BEP-20",
+                "TRC-20",
+                "SPL",
+                "Algorand Standard Assets (ASA)"
             ],
             "staking": true,
             "price": "$0",
             "support": [
-                "discord",
-                "github"
+                "[x](@ExodusAssist)",
+                "helpdesk",
+                "email"
             ],
             "audit": null,
             "languages": [
-                "EN"
+                "EN",
+                "ES"
             ],
             "starred": false,
             "tag": null
@@ -312,50 +314,6 @@
             ],
             "languages": [
                 "EN"
-            ],
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "exodus",
-            "provider": "Exodus",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.exodus.com/)"
-            ],
-            "openSource": true,
-            "supportedPlatforms": [
-                "Desktop",
-                "iOS",
-                "Android",
-                "Web"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": false,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20",
-                "TRC-20",
-                "SPL",
-                "Algorand Standard Assets (ASA)"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "[x](@ExodusAssist)",
-                "helpdesk",
-                "email"
-            ],
-            "audit": null,
-            "languages": [
-                "EN",
-                "ES"
             ],
             "starred": false,
             "tag": null
@@ -408,11 +366,94 @@
             "tag": null
         },
         {
-            "slug": "atomic-wallet",
-            "provider": "Atomic",
+            "slug": "lace",
+            "provider": "Lace",
+            "offer": null,
+            "actionButtons": null,
+            "openSource": false,
+            "supportedPlatforms": [
+                "Browser Extension"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ADA",
+                "Native Tokens",
+                "NFTs"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "helpdesk",
+                "discord"
+            ],
+            "audit": [
+                "FYEO"
+            ],
+            "languages": [
+                "EN"
+            ],
+            "starred": true,
+            "tag": null
+        },
+        {
+            "slug": "ledger",
+            "provider": "Ledger SAS",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.ledger.com/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "Desktop",
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "Paid",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "Regular audits by third parties"
+            ],
+            "languages": [
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "JA"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
+            "slug": "math-wallet",
+            "provider": "Math",
             "offer": "Wallet",
             "actionButtons": [
-                "[Website](https://atomicwallet.io)"
+                "[Website](https://www.mathwallet.org/)"
             ],
             "openSource": false,
             "supportedPlatforms": [
@@ -421,8 +462,8 @@
                 "Android"
             ],
             "custodial": false,
-            "mfa": false,
-            "msig": false,
+            "mfa": true,
+            "msig": true,
             "hardware": false,
             "keyExport": true,
             "native": true,
@@ -431,7 +472,12 @@
             "tokensSupport": [
                 "ERC-20",
                 "BEP-2",
-                "TRC-20"
+                "BEP-20",
+                "ERC-721",
+                "SPL",
+                "TRC-20",
+                "TRC-10",
+                "BRC-20"
             ],
             "staking": true,
             "price": "$0",
@@ -444,52 +490,71 @@
                 "audit by third parties"
             ],
             "languages": [
-                "EN"
+                "EN",
+                "FR",
+                "ES",
+                "DE",
+                "ZH",
+                "NL",
+                "IT",
+                "PL",
+                "PT",
+                "JA",
+                "IT",
+                "ID",
+                "HI",
+                "NL",
+                "CS",
+                "CA",
+                "BG",
+                "AR",
+                "VI",
+                "TR",
+                "RU",
+                "FA",
+                "KO",
+                "SV",
+                "HA",
+                "YO"
             ],
             "starred": false,
             "tag": null
         },
         {
-            "slug": "trustwallet",
-            "provider": "Trust",
-            "offer": "Wallet",
+            "slug": "nami",
+            "provider": "Nami",
+            "offer": null,
             "actionButtons": [
-                "[Website](https://trustwallet.com/)"
+                "[Website](https://namiwallet.io/)"
             ],
-            "openSource": false,
+            "openSource": true,
             "supportedPlatforms": [
-                "iOS",
-                "Android",
-                "Web"
+                "Browser Extension"
             ],
             "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": false,
+            "mfa": false,
+            "msig": true,
+            "hardware": true,
             "keyExport": true,
-            "native": false,
-            "evm": true,
+            "native": true,
+            "evm": false,
             "tendermint": false,
             "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
+                "ADA",
+                "Native Tokens",
+                "NFTs"
             ],
             "staking": true,
             "price": "$0",
             "support": [
-                "email",
-                "helpdesk"
+                "twitter",
+                "email"
             ],
             "audit": [
-                "[CertiK](https://www.certik.com/projects/trust-wallet)"
+                "IOG Internal"
             ],
             "languages": [
-                "EN",
-                "ES",
-                "FR",
-                "ZH",
-                "JA"
+                "EN"
             ],
             "starred": false,
             "tag": null
@@ -577,52 +642,6 @@
             "tag": null
         },
         {
-            "slug": "ledger",
-            "provider": "Ledger SAS",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.ledger.com/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Desktop",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "ERC-721",
-                "ERC-1155"
-            ],
-            "staking": true,
-            "price": "Paid",
-            "support": [
-                "email",
-                "helpdesk"
-            ],
-            "audit": [
-                "Regular audits by third parties"
-            ],
-            "languages": [
-                "EN",
-                "FR",
-                "ES",
-                "DE",
-                "ZH",
-                "JA"
-            ],
-            "starred": false,
-            "tag": null
-        },
-        {
             "slug": "trezor",
             "provider": "Trezor (via MetaMask)",
             "offer": null,
@@ -662,11 +681,130 @@
             "tag": null
         },
         {
-            "slug": "coin-wallet",
-            "provider": "Coin Space",
+            "slug": "trustwallet",
+            "provider": "Trust",
             "offer": "Wallet",
             "actionButtons": [
-                "[Website](https://coin.space/)"
+                "[Website](https://trustwallet.com/)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android",
+                "Web"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": false,
+            "evm": true,
+            "tendermint": false,
+            "tokensSupport": [
+                "ERC-20",
+                "ERC-721",
+                "ERC-1155"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "email",
+                "helpdesk"
+            ],
+            "audit": [
+                "[CertiK](https://www.certik.com/projects/trust-wallet)"
+            ],
+            "languages": [
+                "EN",
+                "ES",
+                "FR",
+                "ZH",
+                "JA"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
+            "slug": "typhon",
+            "provider": "Typhon Wallet",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://typhonwallet.io/)"
+            ],
+            "openSource": true,
+            "supportedPlatforms": [
+                "Browser Extension"
+            ],
+            "custodial": false,
+            "mfa": false,
+            "msig": false,
+            "hardware": true,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ADA",
+                "Native Tokens"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "discord",
+                "github"
+            ],
+            "audit": null,
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
+            "slug": "vespr",
+            "provider": "Vespr",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://vespr.xyz/)",
+                "[Twitter](https://twitter.com/vesprwallet)"
+            ],
+            "openSource": false,
+            "supportedPlatforms": [
+                "iOS",
+                "Android"
+            ],
+            "custodial": false,
+            "mfa": true,
+            "msig": false,
+            "hardware": false,
+            "keyExport": true,
+            "native": true,
+            "evm": false,
+            "tendermint": false,
+            "tokensSupport": [
+                "ADA",
+                "Native Tokens"
+            ],
+            "staking": true,
+            "price": "$0",
+            "support": [
+                "discord",
+                "twitter"
+            ],
+            "audit": null,
+            "languages": [
+                "EN"
+            ],
+            "starred": false,
+            "tag": null
+        },
+        {
+            "slug": "yoroi",
+            "provider": "Yoroi",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://yoroi-wallet.com/)"
             ],
             "openSource": true,
             "supportedPlatforms": [
@@ -679,192 +817,37 @@
             "msig": false,
             "hardware": true,
             "keyExport": true,
-            "native": false,
-            "evm": true,
+            "native": true,
+            "evm": false,
             "tendermint": false,
             "tokensSupport": [
-                "ERC-20",
-                "BEP-20",
-                "ARC-20",
-                "TRC-20"
+                "ADA",
+                "Native Tokens"
             ],
             "staking": true,
             "price": "$0",
             "support": [
+                "helpdesk",
                 "email"
             ],
             "audit": [
-                "regular internal security audit"
+                "Emurgo",
+                "Kudelski Security"
             ],
             "languages": [
                 "EN",
-                "PL",
-                "FR",
-                "DE",
-                "IT",
-                "DA",
-                "NL",
-                "RU",
-                "TL",
-                "ZH",
-                "AR",
-                "HI",
-                "UR",
-                "KO",
-                "ES",
-                "CS",
-                "FI",
-                "EL",
-                "TR",
-                "PT",
-                "PT-BR",
-                "RO",
                 "JA",
-                "SR",
-                "HU",
-                "SV",
-                "NO",
-                "FA",
-                "UK",
-                "TH",
-                "AF",
-                "MS",
-                "ID",
-                "LV"
-            ],
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "math-wallet",
-            "provider": "Math",
-            "offer": "Wallet",
-            "actionButtons": [
-                "[Website](https://www.mathwallet.org/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Browser Extension",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": true,
-            "msig": true,
-            "hardware": false,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": true,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-2",
-                "BEP-20",
-                "ERC-721",
-                "SPL",
-                "TRC-20",
-                "TRC-10",
-                "BRC-20"
-            ],
-            "staking": true,
-            "price": "$0",
-            "support": [
-                "email",
-                "x",
-                "telegram"
-            ],
-            "audit": [
-                "audit by third parties"
-            ],
-            "languages": [
-                "EN",
-                "FR",
-                "ES",
-                "DE",
-                "ZH",
-                "NL",
-                "IT",
-                "PL",
-                "PT",
-                "JA",
-                "IT",
-                "ID",
-                "HI",
-                "NL",
-                "CS",
-                "CA",
-                "BG",
-                "AR",
-                "VI",
-                "TR",
-                "RU",
-                "FA",
                 "KO",
-                "SV",
-                "HA",
-                "YO"
-            ],
-            "starred": false,
-            "tag": null
-        },
-        {
-            "slug": "ellipal",
-            "provider": "Ellipal",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.ellipal.com/)"
-            ],
-            "openSource": false,
-            "supportedPlatforms": [
-                "Hardware",
-                "iOS",
-                "Android"
-            ],
-            "custodial": false,
-            "mfa": false,
-            "msig": false,
-            "hardware": true,
-            "keyExport": true,
-            "native": true,
-            "evm": true,
-            "tendermint": false,
-            "tokensSupport": [
-                "ERC-20",
-                "BEP-20"
-            ],
-            "staking": false,
-            "price": "Paid",
-            "support": [
-                "email"
-            ],
-            "audit": [
-                "not availale"
-            ],
-            "languages": [
-                "EN"
+                "ZH",
+                "RU",
+                "DE",
+                "FR"
             ],
             "starred": false,
             "tag": null
         }
     ],
     "storages": [
-        {
-            "slug": "orbit-db",
-            "provider": "Orbit DB",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://orbitdb.org/)"
-            ],
-            "toolType": "Database",
-            "tag": [
-                "Decentralized database"
-            ],
-            "price": "$0",
-            "planType": "Free",
-            "planName": null,
-            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-            "starred": false
-        },
         {
             "slug": "ipfs",
             "provider": "IPFS",
@@ -882,6 +865,23 @@
             "planType": "Free",
             "planName": null,
             "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+            "starred": false
+        },
+        {
+            "slug": "orbit-db",
+            "provider": "Orbit DB",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://orbitdb.org/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database"
+            ],
+            "price": "$0",
+            "planType": "Free",
+            "planName": null,
+            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
             "starred": false
         },
         {
@@ -3888,6 +3888,44 @@
             }
         },
         "providers": {
+            "atomic": {
+                "slug": "atomic",
+                "name": "Atomic",
+                "logoPath": "atomic.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://atomicwallet.io",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "wallets"
+                ]
+            },
+            "coin-space": {
+                "slug": "coin-space",
+                "name": "Coin Space",
+                "logoPath": "coin-space.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://coin.space/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "wallets"
+                ]
+            },
             "daedalus-mainnet": {
                 "slug": "daedalus-mainnet",
                 "name": "Daedalus Mainnet",
@@ -3907,50 +3945,12 @@
                     "wallets"
                 ]
             },
-            "yoroi": {
-                "slug": "yoroi",
-                "name": "Yoroi",
-                "logoPath": "yoroi.png",
+            "ellipal": {
+                "slug": "ellipal",
+                "name": "Ellipal",
+                "logoPath": "ellipal.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://yoroi-wallet.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "wallets"
-                ]
-            },
-            "lace": {
-                "slug": "lace",
-                "name": "Lace",
-                "logoPath": "lace.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": null,
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "wallets"
-                ]
-            },
-            "nami": {
-                "slug": "nami",
-                "name": "Nami",
-                "logoPath": "nami.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://namiwallet.io/",
+                "website": "https://www.ellipal.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -3983,31 +3983,12 @@
                     "wallets"
                 ]
             },
-            "vespr": {
-                "slug": "vespr",
-                "name": "Vespr",
-                "logoPath": "vespr.png",
+            "exodus": {
+                "slug": "exodus",
+                "name": "Exodus",
+                "logoPath": "exodus.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://vespr.xyz/",
-                "docs": null,
-                "x": "vesprwallet",
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "wallets"
-                ]
-            },
-            "typhon-wallet": {
-                "slug": "typhon-wallet",
-                "name": "Typhon Wallet",
-                "logoPath": "typhon-wallet.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://typhonwallet.io/",
+                "website": "https://www.exodus.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -4040,25 +4021,6 @@
                     "wallets"
                 ]
             },
-            "exodus": {
-                "slug": "exodus",
-                "name": "Exodus",
-                "logoPath": "exodus.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://www.exodus.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "wallets"
-                ]
-            },
             "guarda": {
                 "slug": "guarda",
                 "name": "Guarda",
@@ -4078,12 +4040,12 @@
                     "wallets"
                 ]
             },
-            "atomic": {
-                "slug": "atomic",
-                "name": "Atomic",
-                "logoPath": "atomic.png",
+            "lace": {
+                "slug": "lace",
+                "name": "Lace",
+                "logoPath": "lace.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://atomicwallet.io",
+                "website": null,
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -4097,12 +4059,50 @@
                     "wallets"
                 ]
             },
-            "trust": {
-                "slug": "trust",
-                "name": "Trust",
-                "logoPath": "trust.png",
+            "ledger-sas": {
+                "slug": "ledger-sas",
+                "name": "Ledger SAS",
+                "logoPath": "ledger-sas.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://trustwallet.com/",
+                "website": "https://www.ledger.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "wallets"
+                ]
+            },
+            "math": {
+                "slug": "math",
+                "name": "Math",
+                "logoPath": "math.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://www.mathwallet.org/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "wallets"
+                ]
+            },
+            "nami": {
+                "slug": "nami",
+                "name": "Nami",
+                "logoPath": "nami.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://namiwallet.io/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -4154,25 +4154,6 @@
                     "wallets"
                 ]
             },
-            "ledger-sas": {
-                "slug": "ledger-sas",
-                "name": "Ledger SAS",
-                "logoPath": "ledger-sas.png",
-                "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://www.ledger.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "wallets"
-                ]
-            },
             "trezor-via-metamask": {
                 "slug": "trezor-via-metamask",
                 "name": "Trezor (via MetaMask)",
@@ -4192,12 +4173,12 @@
                     "wallets"
                 ]
             },
-            "coin-space": {
-                "slug": "coin-space",
-                "name": "Coin Space",
-                "logoPath": "coin-space.png",
+            "trust": {
+                "slug": "trust",
+                "name": "Trust",
+                "logoPath": "trust.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://coin.space/",
+                "website": "https://trustwallet.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -4211,12 +4192,12 @@
                     "wallets"
                 ]
             },
-            "math": {
-                "slug": "math",
-                "name": "Math",
-                "logoPath": "math.png",
+            "typhon-wallet": {
+                "slug": "typhon-wallet",
+                "name": "Typhon Wallet",
+                "logoPath": "typhon-wallet.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://www.mathwallet.org/",
+                "website": "https://typhonwallet.io/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -4230,14 +4211,14 @@
                     "wallets"
                 ]
             },
-            "ellipal": {
-                "slug": "ellipal",
-                "name": "Ellipal",
-                "logoPath": "ellipal.png",
+            "vespr": {
+                "slug": "vespr",
+                "name": "Vespr",
+                "logoPath": "vespr.png",
                 "description": "Provides wallet solutions for Web3 developers and users.",
-                "website": "https://www.ellipal.com/",
+                "website": "https://vespr.xyz/",
                 "docs": null,
-                "x": null,
+                "x": "vesprwallet",
                 "github": null,
                 "discord": null,
                 "telegram": null,
@@ -4249,12 +4230,12 @@
                     "wallets"
                 ]
             },
-            "orbit-db": {
-                "slug": "orbit-db",
-                "name": "Orbit DB",
-                "logoPath": "orbit-db.png",
-                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-                "website": "https://orbitdb.org/",
+            "yoroi": {
+                "slug": "yoroi",
+                "name": "Yoroi",
+                "logoPath": "yoroi.png",
+                "description": "Provides wallet solutions for Web3 developers and users.",
+                "website": "https://yoroi-wallet.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -4265,7 +4246,7 @@
                 "starred": false,
                 "tag": null,
                 "categories": [
-                    "storages"
+                    "wallets"
                 ]
             },
             "ipfs": {
@@ -4277,6 +4258,25 @@
                 "docs": "https://docs.ipfs.io/",
                 "x": null,
                 "github": "ipfs-force-community/go-fvm-sdk",
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "storages"
+                ]
+            },
+            "orbit-db": {
+                "slug": "orbit-db",
+                "name": "Orbit DB",
+                "logoPath": "orbit-db.png",
+                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
+                "website": "https://orbitdb.org/",
+                "docs": null,
+                "x": null,
+                "github": null,
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,

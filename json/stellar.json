@@ -1894,166 +1894,6 @@
     ],
     "ramps": [
         {
-            "slug": "transak",
-            "provider": "Transak",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://transak.com/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "bank_transfer",
-                "apple_pay",
-                "google_pay",
-                "pix"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "moonpay",
-            "provider": "MoonPay",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.moonpay.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay",
-                "paypal"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CN",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU",
-                "BY",
-                "VE"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "PCI_DSS",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "ramp-network",
-            "provider": "Ramp Network",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://ramp.network/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "apple_pay",
-                "google_pay",
-                "revolut_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "YE"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "ISO27001",
-                "SOC2_TYPE_II",
-                "PCI_DSS"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "onramper",
-            "provider": "Onramper",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://onramper.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": true,
-            "auditsPerformed": [
-                "SOC2_TYPE_I"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "stripe-crypto",
-            "provider": "Stripe",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://stripe.com/crypto)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "ach"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "SOC2_TYPE_II",
-                "PCI_DSS"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
             "slug": "banxa",
             "provider": "Banxa",
             "offer": null,
@@ -2111,6 +1951,166 @@
             "auditsPerformed": [
                 "PCI_DSS",
                 "ISO27001"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
+            "slug": "moonpay",
+            "provider": "MoonPay",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.moonpay.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay",
+                "paypal"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CN",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU",
+                "BY",
+                "VE"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "PCI_DSS",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
+            "slug": "onramper",
+            "provider": "Onramper",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://onramper.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "SOC2_TYPE_I"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
+            "slug": "ramp-network",
+            "provider": "Ramp Network",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://ramp.network/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "apple_pay",
+                "google_pay",
+                "revolut_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "YE"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II",
+                "PCI_DSS"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
+            "slug": "stripe-crypto",
+            "provider": "Stripe",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://stripe.com/crypto)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "ach"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "SOC2_TYPE_II",
+                "PCI_DSS"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
+            "slug": "transak",
+            "provider": "Transak",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://transak.com/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "bank_transfer",
+                "apple_pay",
+                "google_pay",
+                "pix"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "ISO27001",
+                "SOC2_TYPE_II"
             ],
             "deliveryType": "TBD",
             "tag": null
@@ -5603,62 +5603,6 @@
             "chain": "mainnet"
         },
         {
-            "slug": "blockdaemon-mainnet-starter-full-archive",
-            "provider": "Blockdaemon",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.blockdaemon.com/protocols/stellar)",
-                "[Docs](https://docs.blockdaemon.com/reference/stellar-methods-rpc-api)"
-            ],
-            "planName": "Starter",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": null,
-            "queryPrice": "$42.5/1M CUs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "15-65M CUs/mo",
-                "100 RPS",
-                "1 Test Key",
-                "10 Live Keys"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring"
-            ],
-            "regions": [
-                "South Africa",
-                "Asia",
-                "Canada Central",
-                "Europe",
-                "South America",
-                "US"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
             "slug": "blockdaemon-mainnet-growth-full-archive",
             "provider": "Blockdaemon",
             "offer": null,
@@ -5690,6 +5634,62 @@
             "limitations": [
                 "115-365M CUs/mo",
                 "200 RPS",
+                "1 Test Key",
+                "10 Live Keys"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "South Africa",
+                "Asia",
+                "Canada Central",
+                "Europe",
+                "South America",
+                "US"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "blockdaemon-mainnet-starter-full-archive",
+            "provider": "Blockdaemon",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.blockdaemon.com/protocols/stellar)",
+                "[Docs](https://docs.blockdaemon.com/reference/stellar-methods-rpc-api)"
+            ],
+            "planName": "Starter",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": null,
+            "queryPrice": "$42.5/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "15-65M CUs/mo",
+                "100 RPS",
                 "1 Test Key",
                 "10 Live Keys"
             ],
@@ -5819,6 +5819,61 @@
             "chain": "testnet"
         },
         {
+            "slug": "blockdaemon-testnet-growth-recent-state",
+            "provider": "Blockdaemon",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.blockdaemon.com/protocols/stellar)",
+                "[Docs](https://docs.blockdaemon.com/reference/stellar-methods-rpc-api)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": null,
+            "queryPrice": "$20/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "horizon",
+                "soroban-rpc"
+            ],
+            "limitations": [
+                "115-365M CUs/mo",
+                "200 RPS",
+                "1 Test Key",
+                "10 Live Keys"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "South Africa",
+                "Asia",
+                "Canada Central",
+                "Europe",
+                "South America",
+                "US"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
             "slug": "blockdaemon-testnet-starter-recent-state",
             "provider": "Blockdaemon",
             "offer": null,
@@ -5875,59 +5930,446 @@
             "chain": "testnet"
         },
         {
-            "slug": "blockdaemon-testnet-growth-recent-state",
-            "provider": "Blockdaemon",
+            "slug": "gateway-fm-mainnet-basic",
+            "provider": "Gateway.fm",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://www.blockdaemon.com/protocols/stellar)",
-                "[Docs](https://docs.blockdaemon.com/reference/stellar-methods-rpc-api)"
+                "[Website](https://gateway.fm/indexer/)"
             ],
-            "planName": "Growth",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": null,
-            "queryPrice": "$20/1M CUs",
+            "planName": "Basic",
+            "planType": "Basic",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "chain": "mainnet",
+            "accessPrice": "$2K/mo",
+            "queryPrice": null,
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.90%",
+            "uptimeSla": "100%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": "24h response",
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "EVM Smart Contract Event Indexing",
+                "Real-Time Data Streaming",
+                "Swagger-Based API"
+            ],
+            "limitations": [
+                "1K rps"
+            ],
+            "securityImprovements": [
+                "Zero-Trust Architecture",
+                "End-to-End Encryption",
+                "Privacy Protection",
+                "Enterprise Security Frameworks"
+            ],
+            "monitoringAndAnalytics": [
+                "Performance Metrics",
+                "Uptime and Reliability",
+                "Real-time Data Streaming",
+                "Customizable Dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "High Performance and Scalability",
+                "Flexible Database Configuration",
+                "Custom Middleware for Complex Calculations",
+                "Developer-Friendly APIs"
+            ],
+            "address": null,
+            "tag": null
+        },
+        {
+            "slug": "gateway-fm-mainnet-dedicated-recent-state",
+            "provider": "Gateway.fm",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://gateway.fm/rpc/)"
+            ],
+            "planName": null,
+            "planType": "Dedicated",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_* methods"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": [
+                "Zero-Trust Architecture",
+                "End-to-End Encryption",
+                "Continuous Monitoring",
+                "DDoS Protection & API Rate Limiting"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Performance Metrics",
+                "Uptime and Reliability",
+                "Throughput Monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "High Performance and Scalability",
+                "Flexible Database Configuration",
+                "Custom Middleware for Complex Calculations",
+                "Developer-Friendly APIs"
+            ],
+            "address": null,
+            "tag": null
+        },
+        {
+            "slug": "gateway-fm-mainnet-enterprise",
+            "provider": "Gateway.fm",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://gateway.fm/indexer/)"
+            ],
+            "planName": "Enterprise",
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "100%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": "24h response",
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "EVM Smart Contract Event Indexing",
+                "Real-Time Data Streaming",
+                "Swagger-Based API"
+            ],
+            "limitations": [
+                "1K rps"
+            ],
+            "securityImprovements": [
+                "Zero-Trust Architecture",
+                "End-to-End Encryption",
+                "Privacy Protection",
+                "Enterprise Security Frameworks"
+            ],
+            "monitoringAndAnalytics": [
+                "Performance Metrics",
+                "Uptime and Reliability",
+                "Real-time Data Streaming",
+                "Customizable Dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "High Performance and Scalability",
+                "Flexible Database Configuration",
+                "Custom Middleware for Complex Calculations",
+                "Developer-Friendly APIs"
+            ],
+            "address": null,
+            "tag": null
+        },
+        {
+            "slug": "gateway-fm-mainnet-enterprise-recent-state",
+            "provider": "Gateway.fm",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://gateway.fm/rpc/)"
+            ],
+            "planName": null,
+            "planType": "Enterprise",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.99%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_* methods"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": [
+                "Zero-Trust Architecture",
+                "End-to-End Encryption",
+                "Continuous Monitoring",
+                "DDoS Protection & API Rate Limiting"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Performance Metrics",
+                "Uptime and Reliability",
+                "Throughput Monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "High Performance and Scalability",
+                "Flexible Database Configuration",
+                "Custom Middleware for Complex Calculations",
+                "Developer-Friendly APIs"
+            ],
+            "address": null,
+            "tag": null
+        },
+        {
+            "slug": "gateway-fm-mainnet-free-recent-state",
+            "provider": "Gateway.fm",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://gateway.fm/rpc/)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_* methods"
+            ],
+            "limitations": [
+                "130M req/mo",
+                "50 rps"
+            ],
+            "securityImprovements": [
+                "Zero-Trust Architecture",
+                "End-to-End Encryption",
+                "Continuous Monitoring",
+                "DDoS Protection & API Rate Limiting"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Performance Metrics",
+                "Uptime and Reliability",
+                "Throughput Monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "High Performance and Scalability",
+                "Flexible Database Configuration",
+                "Custom Middleware for Complex Calculations",
+                "Developer-Friendly APIs"
+            ],
+            "address": null,
+            "tag": null
+        },
+        {
+            "slug": "gateway-fm-mainnet-pro",
+            "provider": "Gateway.fm",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://gateway.fm/indexer/)"
+            ],
+            "planName": "Pro",
+            "planType": "Pro",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "chain": "mainnet",
+            "accessPrice": "$4K/mo",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "100%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "horizon",
-                "soroban-rpc"
+                "EVM Smart Contract Event Indexing",
+                "Real-Time Data Streaming",
+                "Swagger-Based API"
             ],
             "limitations": [
-                "115-365M CUs/mo",
-                "200 RPS",
-                "1 Test Key",
-                "10 Live Keys"
+                "1K rps"
             ],
             "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
+                "Zero-Trust Architecture",
+                "End-to-End Encryption",
+                "Privacy Protection",
+                "Enterprise Security Frameworks"
             ],
             "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring"
+                "Performance Metrics",
+                "Uptime and Reliability",
+                "Real-time Data Streaming",
+                "Customizable Dashboards"
             ],
             "regions": [
-                "South Africa",
-                "Asia",
-                "Canada Central",
-                "Europe",
-                "South America",
-                "US"
+                "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "High Performance and Scalability",
+                "Flexible Database Configuration",
+                "Custom Middleware for Complex Calculations",
+                "Developer-Friendly APIs"
+            ],
             "address": null,
-            "tag": null,
-            "chain": "testnet"
+            "tag": null
+        },
+        {
+            "slug": "gateway-fm-mainnet-pro-plus",
+            "provider": "Gateway.fm",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://gateway.fm/indexer/)"
+            ],
+            "planName": "Pro+",
+            "planType": "Pro+",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "chain": "mainnet",
+            "accessPrice": "$1K/mo",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "100%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "EVM Smart Contract Event Indexing",
+                "Real-Time Data Streaming",
+                "Swagger-Based API"
+            ],
+            "limitations": [
+                "1K rps"
+            ],
+            "securityImprovements": [
+                "Zero-Trust Architecture",
+                "End-to-End Encryption",
+                "Privacy Protection",
+                "Enterprise Security Frameworks"
+            ],
+            "monitoringAndAnalytics": [
+                "Performance Metrics",
+                "Uptime and Reliability",
+                "Real-time Data Streaming",
+                "Customizable Dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "High Performance and Scalability",
+                "Flexible Database Configuration",
+                "Custom Middleware for Complex Calculations",
+                "Developer-Friendly APIs"
+            ],
+            "address": null,
+            "tag": null
+        },
+        {
+            "slug": "gateway-fm-mainnet-public-recent-state",
+            "provider": "Gateway.fm",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://gateway.fm/rpc/)"
+            ],
+            "planName": null,
+            "planType": "Public",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "chain": "mainnet",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_* methods"
+            ],
+            "limitations": [
+                "75M req/mo",
+                "30 rps"
+            ],
+            "securityImprovements": [
+                "Zero-Trust Architecture",
+                "End-to-End Encryption",
+                "Continuous Monitoring",
+                "DDoS Protection & API Rate Limiting"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Performance Metrics",
+                "Uptime and Reliability",
+                "Throughput Monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "High Performance and Scalability",
+                "Flexible Database Configuration",
+                "Custom Middleware for Complex Calculations",
+                "Developer-Friendly APIs"
+            ],
+            "address": null,
+            "tag": null
         },
         {
             "slug": "getblock-mainnet-dedicated-full-archive",
@@ -6824,6 +7266,52 @@
             "tag": null
         },
         {
+            "slug": "nownodes-mainnet-business-recent-state",
+            "provider": "Nownodes",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.io/nodes/stellar-xlm)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
+            "queryPrice": "€50/€10/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "1M/30M reqs/mo",
+                "up to 3/up to 25 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
             "slug": "nownodes-mainnet-dedicated-recent-state",
             "provider": "Nownodes",
             "offer": null,
@@ -7009,45 +7497,52 @@
             "chain": "mainnet"
         },
         {
-            "slug": "nownodes-mainnet-business-recent-state",
-            "provider": "Nownodes",
+            "slug": "onfinality-mainnet-accelerate-full-archive",
+            "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://nownodes.io/pricing)",
-                "[Docs](https://nownodes.io/nodes/stellar-xlm)"
+                "[Buy](https://onfinality.io/en/pricing)",
+                "[Docs](https://onfinality.io/en/networks/stellar)"
             ],
-            "planName": "Business",
+            "planName": "Accelerate",
             "planType": "Tiered",
-            "historicalData": "Pruned",
+            "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
-            "queryPrice": "€50/€10/1M extra requests",
+            "accessPrice": "$249",
+            "queryPrice": "$3.75/million extra units",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.95%",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "All read methods + MPoolPush"
+                "Network native APIs",
+                "Trace API"
             ],
             "limitations": [
-                "1M/30M reqs/mo",
-                "up to 3/up to 25 API keys"
+                "20M/100M API response units",
+                "200/500 response units/sec"
             ],
             "securityImprovements": [
-                "Domain name protection",
-                "Secure infrastructure with 24/7 monitoring"
+                "DDoS Protection",
+                "IP Protection"
             ],
             "monitoringAndAnalytics": [
-                "per-key analytics"
+                "Requests count monitoring",
+                "Response time monitoring",
+                "Geographical monitoring",
+                "Per method monitoring"
             ],
             "regions": [
-                "Global"
+                "N.Virginia",
+                "Ireland",
+                "Tokyo",
+                "Frankfurt"
             ],
             "additionalFeatures": null,
             "address": null,
@@ -7122,59 +7617,6 @@
             "technology": "EVM JSON-RPC",
             "accessPrice": "$49",
             "queryPrice": "$6/million extra units",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Network native APIs",
-                "Trace API"
-            ],
-            "limitations": [
-                "20M/100M API response units",
-                "200/500 response units/sec"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Requests count monitoring",
-                "Response time monitoring",
-                "Geographical monitoring",
-                "Per method monitoring"
-            ],
-            "regions": [
-                "N.Virginia",
-                "Ireland",
-                "Tokyo",
-                "Frankfurt"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "onfinality-mainnet-accelerate-full-archive",
-            "provider": "OnFinality",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://onfinality.io/en/pricing)",
-                "[Docs](https://onfinality.io/en/networks/stellar)"
-            ],
-            "planName": "Accelerate",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$249",
-            "queryPrice": "$3.75/million extra units",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -7359,448 +7801,6 @@
             "address": null,
             "tag": null,
             "chain": "mainnet"
-        },
-        {
-            "slug": "gateway-fm-mainnet-free-recent-state",
-            "provider": "Gateway.fm",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://gateway.fm/rpc/)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_* methods"
-            ],
-            "limitations": [
-                "130M req/mo",
-                "50 rps"
-            ],
-            "securityImprovements": [
-                "Zero-Trust Architecture",
-                "End-to-End Encryption",
-                "Continuous Monitoring",
-                "DDoS Protection & API Rate Limiting"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Performance Metrics",
-                "Uptime and Reliability",
-                "Throughput Monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "High Performance and Scalability",
-                "Flexible Database Configuration",
-                "Custom Middleware for Complex Calculations",
-                "Developer-Friendly APIs"
-            ],
-            "address": null,
-            "tag": null
-        },
-        {
-            "slug": "gateway-fm-mainnet-public-recent-state",
-            "provider": "Gateway.fm",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://gateway.fm/rpc/)"
-            ],
-            "planName": null,
-            "planType": "Public",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_* methods"
-            ],
-            "limitations": [
-                "75M req/mo",
-                "30 rps"
-            ],
-            "securityImprovements": [
-                "Zero-Trust Architecture",
-                "End-to-End Encryption",
-                "Continuous Monitoring",
-                "DDoS Protection & API Rate Limiting"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Performance Metrics",
-                "Uptime and Reliability",
-                "Throughput Monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "High Performance and Scalability",
-                "Flexible Database Configuration",
-                "Custom Middleware for Complex Calculations",
-                "Developer-Friendly APIs"
-            ],
-            "address": null,
-            "tag": null
-        },
-        {
-            "slug": "gateway-fm-mainnet-enterprise-recent-state",
-            "provider": "Gateway.fm",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://gateway.fm/rpc/)"
-            ],
-            "planName": null,
-            "planType": "Enterprise",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_* methods"
-            ],
-            "limitations": [
-                "Custom"
-            ],
-            "securityImprovements": [
-                "Zero-Trust Architecture",
-                "End-to-End Encryption",
-                "Continuous Monitoring",
-                "DDoS Protection & API Rate Limiting"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Performance Metrics",
-                "Uptime and Reliability",
-                "Throughput Monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "High Performance and Scalability",
-                "Flexible Database Configuration",
-                "Custom Middleware for Complex Calculations",
-                "Developer-Friendly APIs"
-            ],
-            "address": null,
-            "tag": null
-        },
-        {
-            "slug": "gateway-fm-mainnet-dedicated-recent-state",
-            "provider": "Gateway.fm",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://gateway.fm/rpc/)"
-            ],
-            "planName": null,
-            "planType": "Dedicated",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "chain": "mainnet",
-            "accessPrice": "Custom",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_* methods"
-            ],
-            "limitations": [
-                "Custom"
-            ],
-            "securityImprovements": [
-                "Zero-Trust Architecture",
-                "End-to-End Encryption",
-                "Continuous Monitoring",
-                "DDoS Protection & API Rate Limiting"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Performance Metrics",
-                "Uptime and Reliability",
-                "Throughput Monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "High Performance and Scalability",
-                "Flexible Database Configuration",
-                "Custom Middleware for Complex Calculations",
-                "Developer-Friendly APIs"
-            ],
-            "address": null,
-            "tag": null
-        },
-        {
-            "slug": "gateway-fm-mainnet-basic",
-            "provider": "Gateway.fm",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://gateway.fm/indexer/)"
-            ],
-            "planName": "Basic",
-            "planType": "Basic",
-            "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "Custom",
-            "chain": "mainnet",
-            "accessPrice": "$2K/mo",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "100%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": "24h response",
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "EVM Smart Contract Event Indexing",
-                "Real-Time Data Streaming",
-                "Swagger-Based API"
-            ],
-            "limitations": [
-                "1K rps"
-            ],
-            "securityImprovements": [
-                "Zero-Trust Architecture",
-                "End-to-End Encryption",
-                "Privacy Protection",
-                "Enterprise Security Frameworks"
-            ],
-            "monitoringAndAnalytics": [
-                "Performance Metrics",
-                "Uptime and Reliability",
-                "Real-time Data Streaming",
-                "Customizable Dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "High Performance and Scalability",
-                "Flexible Database Configuration",
-                "Custom Middleware for Complex Calculations",
-                "Developer-Friendly APIs"
-            ],
-            "address": null,
-            "tag": null
-        },
-        {
-            "slug": "gateway-fm-mainnet-pro",
-            "provider": "Gateway.fm",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://gateway.fm/indexer/)"
-            ],
-            "planName": "Pro",
-            "planType": "Pro",
-            "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "Custom",
-            "chain": "mainnet",
-            "accessPrice": "$4K/mo",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "100%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "EVM Smart Contract Event Indexing",
-                "Real-Time Data Streaming",
-                "Swagger-Based API"
-            ],
-            "limitations": [
-                "1K rps"
-            ],
-            "securityImprovements": [
-                "Zero-Trust Architecture",
-                "End-to-End Encryption",
-                "Privacy Protection",
-                "Enterprise Security Frameworks"
-            ],
-            "monitoringAndAnalytics": [
-                "Performance Metrics",
-                "Uptime and Reliability",
-                "Real-time Data Streaming",
-                "Customizable Dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "High Performance and Scalability",
-                "Flexible Database Configuration",
-                "Custom Middleware for Complex Calculations",
-                "Developer-Friendly APIs"
-            ],
-            "address": null,
-            "tag": null
-        },
-        {
-            "slug": "gateway-fm-mainnet-pro-plus",
-            "provider": "Gateway.fm",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://gateway.fm/indexer/)"
-            ],
-            "planName": "Pro+",
-            "planType": "Pro+",
-            "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "Custom",
-            "chain": "mainnet",
-            "accessPrice": "$1K/mo",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "100%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "EVM Smart Contract Event Indexing",
-                "Real-Time Data Streaming",
-                "Swagger-Based API"
-            ],
-            "limitations": [
-                "1K rps"
-            ],
-            "securityImprovements": [
-                "Zero-Trust Architecture",
-                "End-to-End Encryption",
-                "Privacy Protection",
-                "Enterprise Security Frameworks"
-            ],
-            "monitoringAndAnalytics": [
-                "Performance Metrics",
-                "Uptime and Reliability",
-                "Real-time Data Streaming",
-                "Customizable Dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "High Performance and Scalability",
-                "Flexible Database Configuration",
-                "Custom Middleware for Complex Calculations",
-                "Developer-Friendly APIs"
-            ],
-            "address": null,
-            "tag": null
-        },
-        {
-            "slug": "gateway-fm-mainnet-enterprise",
-            "provider": "Gateway.fm",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://gateway.fm/indexer/)"
-            ],
-            "planName": "Enterprise",
-            "planType": "Enterprise",
-            "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "Custom",
-            "chain": "mainnet",
-            "accessPrice": "Custom",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "100%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": "24h response",
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "EVM Smart Contract Event Indexing",
-                "Real-Time Data Streaming",
-                "Swagger-Based API"
-            ],
-            "limitations": [
-                "1K rps"
-            ],
-            "securityImprovements": [
-                "Zero-Trust Architecture",
-                "End-to-End Encryption",
-                "Privacy Protection",
-                "Enterprise Security Frameworks"
-            ],
-            "monitoringAndAnalytics": [
-                "Performance Metrics",
-                "Uptime and Reliability",
-                "Real-time Data Streaming",
-                "Customizable Dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "High Performance and Scalability",
-                "Flexible Database Configuration",
-                "Custom Middleware for Complex Calculations",
-                "Developer-Friendly APIs"
-            ],
-            "address": null,
-            "tag": null
         },
         {
             "slug": "1rpc-enterprise-recent-state-testnet",
@@ -13921,23 +13921,6 @@
     ],
     "storages": [
         {
-            "slug": "orbit-db",
-            "provider": "Orbit DB",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://orbitdb.org/)"
-            ],
-            "toolType": "Database",
-            "tag": [
-                "Decentralized database"
-            ],
-            "price": "$0",
-            "planType": "Free",
-            "planName": null,
-            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-            "starred": false
-        },
-        {
             "slug": "ipfs",
             "provider": "IPFS",
             "offer": null,
@@ -13954,6 +13937,23 @@
             "planType": "Free",
             "planName": null,
             "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+            "starred": false
+        },
+        {
+            "slug": "orbit-db",
+            "provider": "Orbit DB",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://orbitdb.org/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database"
+            ],
+            "price": "$0",
+            "planType": "Free",
+            "planName": null,
+            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
             "starred": false
         },
         {
@@ -16377,12 +16377,31 @@
                     "security"
                 ]
             },
-            "transak": {
-                "slug": "transak",
-                "name": "Transak",
-                "logoPath": "transak.png",
+            "banxa": {
+                "slug": "banxa",
+                "name": "Banxa",
+                "logoPath": "banxa.png",
                 "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://transak.com/",
+                "website": "https://banxa.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "mercuryo": {
+                "slug": "mercuryo",
+                "name": "Mercuryo",
+                "logoPath": "mercuryo.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://mercuryo.io/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -16415,12 +16434,12 @@
                     "ramps"
                 ]
             },
-            "ramp-network": {
-                "slug": "ramp-network",
-                "name": "Ramp Network",
-                "logoPath": "ramp-network.png",
+            "onramper": {
+                "slug": "onramper",
+                "name": "Onramper",
+                "logoPath": "onramper.png",
                 "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://ramp.network/",
+                "website": "https://onramper.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -16434,12 +16453,12 @@
                     "ramps"
                 ]
             },
-            "onramper": {
-                "slug": "onramper",
-                "name": "Onramper",
-                "logoPath": "onramper.png",
+            "ramp-network": {
+                "slug": "ramp-network",
+                "name": "Ramp Network",
+                "logoPath": "ramp-network.png",
                 "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://onramper.com/",
+                "website": "https://ramp.network/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -16472,31 +16491,12 @@
                     "ramps"
                 ]
             },
-            "banxa": {
-                "slug": "banxa",
-                "name": "Banxa",
-                "logoPath": "banxa.png",
+            "transak": {
+                "slug": "transak",
+                "name": "Transak",
+                "logoPath": "transak.png",
                 "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://banxa.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "mercuryo": {
-                "slug": "mercuryo",
-                "name": "Mercuryo",
-                "logoPath": "mercuryo.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://mercuryo.io/",
+                "website": "https://transak.com/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -18050,6 +18050,25 @@
                     "apis"
                 ]
             },
+            "gateway-fm": {
+                "slug": "gateway-fm",
+                "name": "Gateway.fm",
+                "logoPath": "gateway-fm.png",
+                "description": "Provides API infrastructure for Web3 developers and users.",
+                "website": "https://gateway.fm/rpc/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "apis"
+                ]
+            },
             "getblock": {
                 "slug": "getblock",
                 "name": "GetBlock",
@@ -18189,25 +18208,6 @@
                 "logoPath": "the-graph.png",
                 "description": "Provides API infrastructure for Web3 developers and users.",
                 "website": null,
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "apis"
-                ]
-            },
-            "gateway-fm": {
-                "slug": "gateway-fm",
-                "name": "Gateway.fm",
-                "logoPath": "gateway-fm.png",
-                "description": "Provides API infrastructure for Web3 developers and users.",
-                "website": "https://gateway.fm/rpc/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -18677,15 +18677,15 @@
                     "faucets"
                 ]
             },
-            "orbit-db": {
-                "slug": "orbit-db",
-                "name": "Orbit DB",
-                "logoPath": "orbit-db.png",
-                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-                "website": "https://orbitdb.org/",
-                "docs": null,
+            "ipfs": {
+                "slug": "ipfs",
+                "name": "IPFS",
+                "logoPath": "ipfs.png",
+                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+                "website": "https://docs.ipfs.io/",
+                "docs": "https://docs.ipfs.io/",
                 "x": null,
-                "github": null,
+                "github": "ipfs-force-community/go-fvm-sdk",
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,
@@ -18696,15 +18696,15 @@
                     "storages"
                 ]
             },
-            "ipfs": {
-                "slug": "ipfs",
-                "name": "IPFS",
-                "logoPath": "ipfs.png",
-                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
-                "website": "https://docs.ipfs.io/",
-                "docs": "https://docs.ipfs.io/",
+            "orbit-db": {
+                "slug": "orbit-db",
+                "name": "Orbit DB",
+                "logoPath": "orbit-db.png",
+                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
+                "website": "https://orbitdb.org/",
+                "docs": null,
                 "x": null,
-                "github": "ipfs-force-community/go-fvm-sdk",
+                "github": null,
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,

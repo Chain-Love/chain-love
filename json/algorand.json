@@ -1896,20 +1896,20 @@
     ],
     "ramps": [
         {
-            "slug": "transak",
-            "provider": "Transak",
+            "slug": "banxa",
+            "provider": "Banxa",
             "offer": null,
             "actionButtons": [
-                "[Website](https://transak.com/)"
+                "[Website](https://banxa.com/)"
             ],
-            "kycLevel": "light",
+            "kycLevel": "full",
             "paymentMethods": [
                 "credit_card",
                 "debit_card",
-                "bank_transfer",
+                "sepa",
+                "ach",
                 "apple_pay",
-                "google_pay",
-                "pix"
+                "google_pay"
             ],
             "bannedCountries": [
                 "AF",
@@ -1922,6 +1922,68 @@
             "auditsPerformed": [
                 "ISO27001",
                 "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
+            "slug": "meld",
+            "provider": "Meld",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.meld.io/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "SOC2_TYPE_II"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
+            "slug": "mercuryo",
+            "provider": "Mercuryo",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://mercuryo.io/)"
+            ],
+            "kycLevel": "light",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "apple_pay",
+                "google_pay",
+                "sepa"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY",
+                "RU"
+            ],
+            "aggregator": false,
+            "auditsPerformed": [
+                "PCI_DSS",
+                "ISO27001"
             ],
             "deliveryType": "TBD",
             "tag": null
@@ -1964,6 +2026,36 @@
             "tag": null
         },
         {
+            "slug": "onramper",
+            "provider": "Onramper",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://onramper.com/)"
+            ],
+            "kycLevel": "full",
+            "paymentMethods": [
+                "credit_card",
+                "debit_card",
+                "sepa",
+                "ach",
+                "apple_pay",
+                "google_pay"
+            ],
+            "bannedCountries": [
+                "AF",
+                "CU",
+                "IR",
+                "KP",
+                "SY"
+            ],
+            "aggregator": true,
+            "auditsPerformed": [
+                "SOC2_TYPE_I"
+            ],
+            "deliveryType": "TBD",
+            "tag": null
+        },
+        {
             "slug": "ramp-network",
             "provider": "Ramp Network",
             "offer": null,
@@ -1997,50 +2089,20 @@
             "tag": null
         },
         {
-            "slug": "onramper",
-            "provider": "Onramper",
+            "slug": "transak",
+            "provider": "Transak",
             "offer": null,
             "actionButtons": [
-                "[Website](https://onramper.com/)"
+                "[Website](https://transak.com/)"
             ],
-            "kycLevel": "full",
+            "kycLevel": "light",
             "paymentMethods": [
                 "credit_card",
                 "debit_card",
-                "sepa",
-                "ach",
+                "bank_transfer",
                 "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": true,
-            "auditsPerformed": [
-                "SOC2_TYPE_I"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "banxa",
-            "provider": "Banxa",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://banxa.com/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
+                "google_pay",
+                "pix"
             ],
             "bannedCountries": [
                 "AF",
@@ -2056,124 +2118,9 @@
             ],
             "deliveryType": "TBD",
             "tag": null
-        },
-        {
-            "slug": "mercuryo",
-            "provider": "Mercuryo",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://mercuryo.io/)"
-            ],
-            "kycLevel": "light",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "apple_pay",
-                "google_pay",
-                "sepa"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY",
-                "RU"
-            ],
-            "aggregator": false,
-            "auditsPerformed": [
-                "PCI_DSS",
-                "ISO27001"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
-        },
-        {
-            "slug": "meld",
-            "provider": "Meld",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.meld.io/)"
-            ],
-            "kycLevel": "full",
-            "paymentMethods": [
-                "credit_card",
-                "debit_card",
-                "sepa",
-                "ach",
-                "apple_pay",
-                "google_pay"
-            ],
-            "bannedCountries": [
-                "AF",
-                "CU",
-                "IR",
-                "KP",
-                "SY"
-            ],
-            "aggregator": true,
-            "auditsPerformed": [
-                "PCI_DSS",
-                "SOC2_TYPE_II"
-            ],
-            "deliveryType": "TBD",
-            "tag": null
         }
     ],
     "bridges": [
-        {
-            "slug": "messina",
-            "provider": "MessinaOne",
-            "offer": "Bridge",
-            "actionButtons": [
-                "[Bridge](https://messina.one/bridge)",
-                "[Docs](https://messinaone.gitbook.io/messina/)"
-            ],
-            "technology": "Cross‑chain Bridge via Wormhole",
-            "txSpeedSla": null,
-            "throughputSla": null,
-            "openSource": true,
-            "support": [
-                "Discord"
-            ],
-            "starred": false,
-            "availableApis": [
-                "Asset Transfer"
-            ],
-            "monitoringAndAnalytics": null,
-            "additionalFeatures": [
-                "Wormhole integration",
-                "Liquidity pools"
-            ],
-            "assetTypes": [
-                "ETH",
-                "ERC‑20"
-            ],
-            "price": "Gas Fee",
-            "economicalSecurity": true,
-            "economicalSecurityNote": "Audited by Certik & Kudelski",
-            "auditsPerformed": [
-                "Certik",
-                "Kudelski Security"
-            ],
-            "decentralizationModel": "Partially Decentralized",
-            "sdk": [
-                "Web UI"
-            ],
-            "supportedChains": [
-                "ethereum",
-                "bnb chain",
-                "base",
-                "algorand",
-                "arbitrum",
-                "optimism",
-                "aptos",
-                "polygon",
-                "avalanche"
-            ],
-            "tag": null,
-            "chain": "mainnet"
-        },
         {
             "slug": "allbridge",
             "provider": "Allbridge Core",
@@ -2229,6 +2176,59 @@
                 "sui",
                 "tron",
                 "unichain"
+            ],
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "messina",
+            "provider": "MessinaOne",
+            "offer": "Bridge",
+            "actionButtons": [
+                "[Bridge](https://messina.one/bridge)",
+                "[Docs](https://messinaone.gitbook.io/messina/)"
+            ],
+            "technology": "Cross‑chain Bridge via Wormhole",
+            "txSpeedSla": null,
+            "throughputSla": null,
+            "openSource": true,
+            "support": [
+                "Discord"
+            ],
+            "starred": false,
+            "availableApis": [
+                "Asset Transfer"
+            ],
+            "monitoringAndAnalytics": null,
+            "additionalFeatures": [
+                "Wormhole integration",
+                "Liquidity pools"
+            ],
+            "assetTypes": [
+                "ETH",
+                "ERC‑20"
+            ],
+            "price": "Gas Fee",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited by Certik & Kudelski",
+            "auditsPerformed": [
+                "Certik",
+                "Kudelski Security"
+            ],
+            "decentralizationModel": "Partially Decentralized",
+            "sdk": [
+                "Web UI"
+            ],
+            "supportedChains": [
+                "ethereum",
+                "bnb chain",
+                "base",
+                "algorand",
+                "arbitrum",
+                "optimism",
+                "aptos",
+                "polygon",
+                "avalanche"
             ],
             "tag": null,
             "chain": "mainnet"
@@ -4534,62 +4534,6 @@
             "chain": "mainnet"
         },
         {
-            "slug": "blockdaemon-mainnet-starter-full-archive",
-            "provider": "Blockdaemon",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://www.blockdaemon.com/api/rpc)",
-                "[Docs](https://docs.blockdaemon.com/reference/algorand-rpc-methods)"
-            ],
-            "planName": "Starter",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "Algorand REST",
-            "accessPrice": null,
-            "queryPrice": "$42.5/1M CUs",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "15-65M CUs/mo",
-                "100 RPS",
-                "1 Test Key",
-                "10 Live Keys"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom monitoring"
-            ],
-            "regions": [
-                "South Africa",
-                "Asia",
-                "Canada Central",
-                "Europe",
-                "South America",
-                "US"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
             "slug": "blockdaemon-mainnet-growth-recent-full-archive",
             "provider": "Blockdaemon",
             "offer": null,
@@ -4621,6 +4565,62 @@
             "limitations": [
                 "115-365M CUs/mo",
                 "200 RPS",
+                "1 Test Key",
+                "10 Live Keys"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring"
+            ],
+            "regions": [
+                "South Africa",
+                "Asia",
+                "Canada Central",
+                "Europe",
+                "South America",
+                "US"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "blockdaemon-mainnet-starter-full-archive",
+            "provider": "Blockdaemon",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://www.blockdaemon.com/api/rpc)",
+                "[Docs](https://docs.blockdaemon.com/reference/algorand-rpc-methods)"
+            ],
+            "planName": "Starter",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "Algorand REST",
+            "accessPrice": null,
+            "queryPrice": "$42.5/1M CUs",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "15-65M CUs/mo",
+                "100 RPS",
                 "1 Test Key",
                 "10 Live Keys"
             ],
@@ -5287,6 +5287,502 @@
             "address": null,
             "tag": null,
             "chain": "testnet"
+        },
+        {
+            "slug": "node-real-mainnet-business",
+            "provider": "NodeReal",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://nodereal.io/pricing)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Algorand Indexer",
+            "accessPrice": "$499/mo (monthly plan), $424/mo (semi-annual plan), $399/mo (annual plan)",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.80%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_accounts",
+                "eth_blockNumber",
+                "eth_call",
+                "eth_getBalance",
+                "debug_traceTransaction",
+                "trace_block",
+                "trace_call"
+            ],
+            "limitations": [
+                "5B req/mo",
+                "3K rps",
+                "50 API Keys"
+            ],
+            "securityImprovements": [
+                "Maximal Extractable Value Protection",
+                "Secure APIs",
+                "Domain Whitelisting",
+                "Access Controls"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Request Analytics",
+                "Debug APIs",
+                "Performance Metrics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Real-time Event Monitoring",
+                "Developer Tools & Support",
+                "Security & Compliance",
+                "Private Transactions & Enhanced APIs"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "node-real-mainnet-business-recent-state",
+            "provider": "NodeReal",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://nodereal.io/pricing)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "Algorand REST",
+            "accessPrice": "$499/mo (monthly plan), $424/mo (semi-annual plan), $399/mo (annual plan)",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.80%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_accounts",
+                "eth_blockNumber",
+                "eth_call",
+                "eth_getBalance",
+                "debug_traceTransaction",
+                "trace_block",
+                "trace_call"
+            ],
+            "limitations": [
+                "5B req/mo",
+                "3K rps",
+                "50 API Keys"
+            ],
+            "securityImprovements": [
+                "Maximal Extractable Value Protection",
+                "Secure APIs",
+                "Domain Whitelisting",
+                "Access Controls"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Request Analytics",
+                "Debug APIs",
+                "Performance Metrics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Real-time Event Monitoring",
+                "Developer Tools & Support",
+                "Security & Compliance",
+                "Private Transactions & Enhanced APIs"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "node-real-mainnet-free",
+            "provider": "NodeReal",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://nodereal.io/api-marketplace/algorand-rest-api)"
+            ],
+            "planName": "Free",
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Algorand Indexer",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.80%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_accounts",
+                "eth_blockNumber",
+                "eth_call",
+                "eth_getBalance",
+                "debug_traceTransaction",
+                "trace_block",
+                "trace_call"
+            ],
+            "limitations": [
+                "100M req/mo",
+                "150 rps",
+                "3 API Keys"
+            ],
+            "securityImprovements": [
+                "Maximal Extractable Value Protection",
+                "Secure APIs",
+                "Domain Whitelisting",
+                "Access Controls"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Request Analytics",
+                "Debug APIs",
+                "Performance Metrics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Real-time Event Monitoring",
+                "Developer Tools & Support",
+                "Security & Compliance",
+                "Private Transactions & Enhanced APIs"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "node-real-mainnet-free-recent-state",
+            "provider": "NodeReal",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://nodereal.io/api-marketplace/algorand-rest-api)"
+            ],
+            "planName": "Free",
+            "planType": "Free",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "Algorand REST",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.80%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_accounts",
+                "eth_blockNumber",
+                "eth_call",
+                "eth_getBalance",
+                "debug_traceTransaction",
+                "trace_block",
+                "trace_call"
+            ],
+            "limitations": [
+                "100M req/mo",
+                "150 rps",
+                "3 API Keys"
+            ],
+            "securityImprovements": [
+                "Maximal Extractable Value Protection",
+                "Secure APIs",
+                "Domain Whitelisting",
+                "Access Controls"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Request Analytics",
+                "Debug APIs",
+                "Performance Metrics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Real-time Event Monitoring",
+                "Developer Tools & Support",
+                "Security & Compliance",
+                "Private Transactions & Enhanced APIs"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "node-real-mainnet-growth",
+            "provider": "NodeReal",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://nodereal.io/pricing)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Algorand Indexer",
+            "accessPrice": "$39/mo (monthly plan), $33/mo (semi-annual plan), $31/mo (annual plan)",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.80%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_accounts",
+                "eth_blockNumber",
+                "eth_call",
+                "eth_getBalance",
+                "debug_traceTransaction",
+                "trace_block",
+                "trace_call"
+            ],
+            "limitations": [
+                "500M req/mo",
+                "700 rps",
+                "15 API Keys"
+            ],
+            "securityImprovements": [
+                "Maximal Extractable Value Protection",
+                "Secure APIs",
+                "Domain Whitelisting",
+                "Access Controls"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Request Analytics",
+                "Debug APIs",
+                "Performance Metrics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Real-time Event Monitoring",
+                "Developer Tools & Support",
+                "Security & Compliance",
+                "Private Transactions & Enhanced APIs"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "node-real-mainnet-growth-recent-state",
+            "provider": "NodeReal",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://nodereal.io/pricing)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "Algorand REST",
+            "accessPrice": "$39/mo (monthly plan), $33/mo (semi-annual plan), $31/mo (annual plan)",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.80%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_accounts",
+                "eth_blockNumber",
+                "eth_call",
+                "eth_getBalance",
+                "debug_traceTransaction",
+                "trace_block",
+                "trace_call"
+            ],
+            "limitations": [
+                "500M req/mo",
+                "700 rps",
+                "15 API Keys"
+            ],
+            "securityImprovements": [
+                "Maximal Extractable Value Protection",
+                "Secure APIs",
+                "Domain Whitelisting",
+                "Access Controls"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Request Analytics",
+                "Debug APIs",
+                "Performance Metrics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Real-time Event Monitoring",
+                "Developer Tools & Support",
+                "Security & Compliance",
+                "Private Transactions & Enhanced APIs"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "node-real-mainnet-team",
+            "provider": "NodeReal",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://nodereal.io/pricing)"
+            ],
+            "planName": "Team",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Algorand Indexer",
+            "accessPrice": "$199/mo (monthly plan), $169/mo (semi-annual plan), $159/mo (annual plan)",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.80%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_accounts",
+                "eth_blockNumber",
+                "eth_call",
+                "eth_getBalance",
+                "debug_traceTransaction",
+                "trace_block",
+                "trace_call"
+            ],
+            "limitations": [
+                "2B req/mo",
+                "1.5K rps",
+                "30 API Keys"
+            ],
+            "securityImprovements": [
+                "Maximal Extractable Value Protection",
+                "Secure APIs",
+                "Domain Whitelisting",
+                "Access Controls"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Request Analytics",
+                "Debug APIs",
+                "Performance Metrics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Real-time Event Monitoring",
+                "Developer Tools & Support",
+                "Security & Compliance",
+                "Private Transactions & Enhanced APIs"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "node-real-mainnet-team-recent-state",
+            "provider": "NodeReal",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://nodereal.io/pricing)"
+            ],
+            "planName": "Team",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "Algorand REST",
+            "accessPrice": "$199/mo (monthly plan), $169/mo (semi-annual plan), $159/mo (annual plan)",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.80%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": true,
+            "availableApis": [
+                "eth_accounts",
+                "eth_blockNumber",
+                "eth_call",
+                "eth_getBalance",
+                "debug_traceTransaction",
+                "trace_block",
+                "trace_call"
+            ],
+            "limitations": [
+                "2B req/mo",
+                "1.5K rps",
+                "30 API Keys"
+            ],
+            "securityImprovements": [
+                "Maximal Extractable Value Protection",
+                "Secure APIs",
+                "Domain Whitelisting",
+                "Access Controls"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Monitoring",
+                "Request Analytics",
+                "Debug APIs",
+                "Performance Metrics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Real-time Event Monitoring",
+                "Developer Tools & Support",
+                "Security & Compliance",
+                "Private Transactions & Enhanced APIs"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
         },
         {
             "slug": "nodely-mainnet-enterprise",
@@ -6231,6 +6727,52 @@
             "tag": null
         },
         {
+            "slug": "nownodes-mainnet-business-recent-state",
+            "provider": "Nownodes",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://nownodes.io/pricing)",
+                "[Docs](https://nownodes.io/blog/how-to-access-algorand-rpc-api/)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "Algorand REST",
+            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
+            "queryPrice": "€50/€10/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.95%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "All read methods + MPoolPush"
+            ],
+            "limitations": [
+                "1M/30M reqs/mo",
+                "up to 3/up to 25 API keys"
+            ],
+            "securityImprovements": [
+                "Domain name protection",
+                "Secure infrastructure with 24/7 monitoring"
+            ],
+            "monitoringAndAnalytics": [
+                "per-key analytics"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
             "slug": "nownodes-mainnet-dedicated-recent-state",
             "provider": "Nownodes",
             "offer": null,
@@ -6416,7 +6958,7 @@
             "chain": "mainnet"
         },
         {
-            "slug": "nownodes-mainnet-business-recent-state",
+            "slug": "nownodes-testnet-business-recent-state",
             "provider": "Nownodes",
             "offer": null,
             "actionButtons": [
@@ -6459,7 +7001,7 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
             "slug": "nownodes-testnet-dedicated-recent-state",
@@ -6647,50 +7189,108 @@
             "chain": "testnet"
         },
         {
-            "slug": "nownodes-testnet-business-recent-state",
-            "provider": "Nownodes",
+            "slug": "onfinality-mainnet-free-plan-indexer",
+            "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://nownodes.io/pricing)",
-                "[Docs](https://nownodes.io/blog/how-to-access-algorand-rpc-api/)"
+                "[Contact](https://indexing.onfinality.io/pricing)",
+                "[Docs](https://subquery.network/indexer/algorand)"
             ],
-            "planName": "Business",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "Algorand REST",
-            "accessPrice": "€200 (monthly plan), €2200 (yearly plan)",
-            "queryPrice": "€50/€10/1M extra requests",
+            "planName": "Free Plan",
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "accessPrice": "Custom",
+            "queryPrice": "$0",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.95%",
+            "uptimeSla": null,
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
             "trial": false,
             "availableApis": [
-                "All read methods + MPoolPush"
+                "GraphQL"
             ],
             "limitations": [
-                "1M/30M reqs/mo",
-                "up to 3/up to 25 API keys"
+                "2 active projects",
+                "Up to 500K stored entities",
+                "Up to 1K free deployment hours each month"
             ],
             "securityImprovements": [
-                "Domain name protection",
-                "Secure infrastructure with 24/7 monitoring"
+                "DDoS Protection",
+                "IP Protection"
             ],
             "monitoringAndAnalytics": [
-                "per-key analytics"
+                "Usage analytics",
+                "Custom dashboards"
             ],
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "Node Usage costs included in price",
+                "Support site"
+            ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
+        },
+        {
+            "slug": "onfinality-mainnet-standard-plan-indexer",
+            "provider": "OnFinality",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://indexing.onfinality.io/pricing)",
+                "[Docs](https://subquery.network/indexer/algorand)"
+            ],
+            "planName": "Standard Plan",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "accessPrice": "Custom",
+            "queryPrice": "$3.5 per additional 100K stored entities per month, $1 per additional 100K stored entities per month after 10M stored entities",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "GraphQL"
+            ],
+            "limitations": [
+                "First 500K stored entities are free",
+                "$1/additional 100K stored entities/mo after 10M stored entities",
+                "Unlimited active projects and storage",
+                "Unlimited deployment hours each month"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom dashboards"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Node and API Usage costs included in price",
+                "Telegram support",
+                "Support site"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
         },
         {
             "slug": "subquery-mainnet-pay-as-you-go-indexer",
@@ -7076,606 +7676,6 @@
             "address": null,
             "tag": null,
             "chain": "testnet"
-        },
-        {
-            "slug": "node-real-mainnet-free-recent-state",
-            "provider": "NodeReal",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://nodereal.io/api-marketplace/algorand-rest-api)"
-            ],
-            "planName": "Free",
-            "planType": "Free",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "Algorand REST",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.80%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_accounts",
-                "eth_blockNumber",
-                "eth_call",
-                "eth_getBalance",
-                "debug_traceTransaction",
-                "trace_block",
-                "trace_call"
-            ],
-            "limitations": [
-                "100M req/mo",
-                "150 rps",
-                "3 API Keys"
-            ],
-            "securityImprovements": [
-                "Maximal Extractable Value Protection",
-                "Secure APIs",
-                "Domain Whitelisting",
-                "Access Controls"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Request Analytics",
-                "Debug APIs",
-                "Performance Metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Real-time Event Monitoring",
-                "Developer Tools & Support",
-                "Security & Compliance",
-                "Private Transactions & Enhanced APIs"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "node-real-mainnet-growth-recent-state",
-            "provider": "NodeReal",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://nodereal.io/pricing)"
-            ],
-            "planName": "Growth",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "Algorand REST",
-            "accessPrice": "$39/mo (monthly plan), $33/mo (semi-annual plan), $31/mo (annual plan)",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.80%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_accounts",
-                "eth_blockNumber",
-                "eth_call",
-                "eth_getBalance",
-                "debug_traceTransaction",
-                "trace_block",
-                "trace_call"
-            ],
-            "limitations": [
-                "500M req/mo",
-                "700 rps",
-                "15 API Keys"
-            ],
-            "securityImprovements": [
-                "Maximal Extractable Value Protection",
-                "Secure APIs",
-                "Domain Whitelisting",
-                "Access Controls"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Request Analytics",
-                "Debug APIs",
-                "Performance Metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Real-time Event Monitoring",
-                "Developer Tools & Support",
-                "Security & Compliance",
-                "Private Transactions & Enhanced APIs"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "node-real-mainnet-team-recent-state",
-            "provider": "NodeReal",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://nodereal.io/pricing)"
-            ],
-            "planName": "Team",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "Algorand REST",
-            "accessPrice": "$199/mo (monthly plan), $169/mo (semi-annual plan), $159/mo (annual plan)",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.80%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_accounts",
-                "eth_blockNumber",
-                "eth_call",
-                "eth_getBalance",
-                "debug_traceTransaction",
-                "trace_block",
-                "trace_call"
-            ],
-            "limitations": [
-                "2B req/mo",
-                "1.5K rps",
-                "30 API Keys"
-            ],
-            "securityImprovements": [
-                "Maximal Extractable Value Protection",
-                "Secure APIs",
-                "Domain Whitelisting",
-                "Access Controls"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Request Analytics",
-                "Debug APIs",
-                "Performance Metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Real-time Event Monitoring",
-                "Developer Tools & Support",
-                "Security & Compliance",
-                "Private Transactions & Enhanced APIs"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "node-real-mainnet-business-recent-state",
-            "provider": "NodeReal",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://nodereal.io/pricing)"
-            ],
-            "planName": "Business",
-            "planType": "Tiered",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "Algorand REST",
-            "accessPrice": "$499/mo (monthly plan), $424/mo (semi-annual plan), $399/mo (annual plan)",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.80%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_accounts",
-                "eth_blockNumber",
-                "eth_call",
-                "eth_getBalance",
-                "debug_traceTransaction",
-                "trace_block",
-                "trace_call"
-            ],
-            "limitations": [
-                "5B req/mo",
-                "3K rps",
-                "50 API Keys"
-            ],
-            "securityImprovements": [
-                "Maximal Extractable Value Protection",
-                "Secure APIs",
-                "Domain Whitelisting",
-                "Access Controls"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Request Analytics",
-                "Debug APIs",
-                "Performance Metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Real-time Event Monitoring",
-                "Developer Tools & Support",
-                "Security & Compliance",
-                "Private Transactions & Enhanced APIs"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "node-real-mainnet-free",
-            "provider": "NodeReal",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://nodereal.io/api-marketplace/algorand-rest-api)"
-            ],
-            "planName": "Free",
-            "planType": "Free",
-            "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "Algorand Indexer",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.80%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_accounts",
-                "eth_blockNumber",
-                "eth_call",
-                "eth_getBalance",
-                "debug_traceTransaction",
-                "trace_block",
-                "trace_call"
-            ],
-            "limitations": [
-                "100M req/mo",
-                "150 rps",
-                "3 API Keys"
-            ],
-            "securityImprovements": [
-                "Maximal Extractable Value Protection",
-                "Secure APIs",
-                "Domain Whitelisting",
-                "Access Controls"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Request Analytics",
-                "Debug APIs",
-                "Performance Metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Real-time Event Monitoring",
-                "Developer Tools & Support",
-                "Security & Compliance",
-                "Private Transactions & Enhanced APIs"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "node-real-mainnet-growth",
-            "provider": "NodeReal",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://nodereal.io/pricing)"
-            ],
-            "planName": "Growth",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "Algorand Indexer",
-            "accessPrice": "$39/mo (monthly plan), $33/mo (semi-annual plan), $31/mo (annual plan)",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.80%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_accounts",
-                "eth_blockNumber",
-                "eth_call",
-                "eth_getBalance",
-                "debug_traceTransaction",
-                "trace_block",
-                "trace_call"
-            ],
-            "limitations": [
-                "500M req/mo",
-                "700 rps",
-                "15 API Keys"
-            ],
-            "securityImprovements": [
-                "Maximal Extractable Value Protection",
-                "Secure APIs",
-                "Domain Whitelisting",
-                "Access Controls"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Request Analytics",
-                "Debug APIs",
-                "Performance Metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Real-time Event Monitoring",
-                "Developer Tools & Support",
-                "Security & Compliance",
-                "Private Transactions & Enhanced APIs"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "node-real-mainnet-team",
-            "provider": "NodeReal",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://nodereal.io/pricing)"
-            ],
-            "planName": "Team",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "Algorand Indexer",
-            "accessPrice": "$199/mo (monthly plan), $169/mo (semi-annual plan), $159/mo (annual plan)",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.80%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_accounts",
-                "eth_blockNumber",
-                "eth_call",
-                "eth_getBalance",
-                "debug_traceTransaction",
-                "trace_block",
-                "trace_call"
-            ],
-            "limitations": [
-                "2B req/mo",
-                "1.5K rps",
-                "30 API Keys"
-            ],
-            "securityImprovements": [
-                "Maximal Extractable Value Protection",
-                "Secure APIs",
-                "Domain Whitelisting",
-                "Access Controls"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Request Analytics",
-                "Debug APIs",
-                "Performance Metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Real-time Event Monitoring",
-                "Developer Tools & Support",
-                "Security & Compliance",
-                "Private Transactions & Enhanced APIs"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "node-real-mainnet-business",
-            "provider": "NodeReal",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://nodereal.io/pricing)"
-            ],
-            "planName": "Business",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "Algorand Indexer",
-            "accessPrice": "$499/mo (monthly plan), $424/mo (semi-annual plan), $399/mo (annual plan)",
-            "queryPrice": null,
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.80%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": true,
-            "availableApis": [
-                "eth_accounts",
-                "eth_blockNumber",
-                "eth_call",
-                "eth_getBalance",
-                "debug_traceTransaction",
-                "trace_block",
-                "trace_call"
-            ],
-            "limitations": [
-                "5B req/mo",
-                "3K rps",
-                "50 API Keys"
-            ],
-            "securityImprovements": [
-                "Maximal Extractable Value Protection",
-                "Secure APIs",
-                "Domain Whitelisting",
-                "Access Controls"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time Monitoring",
-                "Request Analytics",
-                "Debug APIs",
-                "Performance Metrics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Real-time Event Monitoring",
-                "Developer Tools & Support",
-                "Security & Compliance",
-                "Private Transactions & Enhanced APIs"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "onfinality-mainnet-free-plan-indexer",
-            "provider": "OnFinality",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://indexing.onfinality.io/pricing)",
-                "[Docs](https://subquery.network/indexer/algorand)"
-            ],
-            "planName": "Free Plan",
-            "planType": "Free",
-            "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "Custom",
-            "accessPrice": "Custom",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "2 active projects",
-                "Up to 500K stored entities",
-                "Up to 1K free deployment hours each month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Node Usage costs included in price",
-                "Support site"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
-        },
-        {
-            "slug": "onfinality-mainnet-standard-plan-indexer",
-            "provider": "OnFinality",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://indexing.onfinality.io/pricing)",
-                "[Docs](https://subquery.network/indexer/algorand)"
-            ],
-            "planName": "Standard Plan",
-            "planType": "Tiered",
-            "historicalData": "Archive",
-            "apiType": "Indexed Data",
-            "technology": "Custom",
-            "accessPrice": "Custom",
-            "queryPrice": "$3.5 per additional 100K stored entities per month, $1 per additional 100K stored entities per month after 10M stored entities",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": null,
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "GraphQL"
-            ],
-            "limitations": [
-                "First 500K stored entities are free",
-                "$1/additional 100K stored entities/mo after 10M stored entities",
-                "Unlimited active projects and storage",
-                "Unlimited deployment hours each month"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Custom dashboards"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": [
-                "Node and API Usage costs included in price",
-                "Telegram support",
-                "Support site"
-            ],
-            "address": null,
-            "tag": null,
-            "chain": "mainnet"
         },
         {
             "slug": "1rpc-enterprise-recent-state-testnet",
@@ -13764,23 +13764,6 @@
     ],
     "storages": [
         {
-            "slug": "orbit-db",
-            "provider": "Orbit DB",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://orbitdb.org/)"
-            ],
-            "toolType": "Database",
-            "tag": [
-                "Decentralized database"
-            ],
-            "price": "$0",
-            "planType": "Free",
-            "planName": null,
-            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-            "starred": false
-        },
-        {
             "slug": "ipfs",
             "provider": "IPFS",
             "offer": null,
@@ -13797,6 +13780,23 @@
             "planType": "Free",
             "planName": null,
             "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+            "starred": false
+        },
+        {
+            "slug": "orbit-db",
+            "provider": "Orbit DB",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://orbitdb.org/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database"
+            ],
+            "price": "$0",
+            "planType": "Free",
+            "planName": null,
+            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
             "starred": false
         },
         {
@@ -16229,107 +16229,12 @@
                     "security"
                 ]
             },
-            "transak": {
-                "slug": "transak",
-                "name": "Transak",
-                "logoPath": "transak.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://transak.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "moonpay": {
-                "slug": "moonpay",
-                "name": "MoonPay",
-                "logoPath": "moonpay.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://www.moonpay.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "ramp-network": {
-                "slug": "ramp-network",
-                "name": "Ramp Network",
-                "logoPath": "ramp-network.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://ramp.network/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "onramper": {
-                "slug": "onramper",
-                "name": "Onramper",
-                "logoPath": "onramper.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://onramper.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
             "banxa": {
                 "slug": "banxa",
                 "name": "Banxa",
                 "logoPath": "banxa.png",
                 "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
                 "website": "https://banxa.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "ramps"
-                ]
-            },
-            "mercuryo": {
-                "slug": "mercuryo",
-                "name": "Mercuryo",
-                "logoPath": "mercuryo.png",
-                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
-                "website": "https://mercuryo.io/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -16362,13 +16267,108 @@
                     "ramps"
                 ]
             },
-            "messinaone": {
-                "slug": "messinaone",
-                "name": "MessinaOne",
-                "logoPath": "messinaone.png",
+            "mercuryo": {
+                "slug": "mercuryo",
+                "name": "Mercuryo",
+                "logoPath": "mercuryo.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://mercuryo.io/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "moonpay": {
+                "slug": "moonpay",
+                "name": "MoonPay",
+                "logoPath": "moonpay.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://www.moonpay.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "onramper": {
+                "slug": "onramper",
+                "name": "Onramper",
+                "logoPath": "onramper.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://onramper.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "ramp-network": {
+                "slug": "ramp-network",
+                "name": "Ramp Network",
+                "logoPath": "ramp-network.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://ramp.network/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "transak": {
+                "slug": "transak",
+                "name": "Transak",
+                "logoPath": "transak.png",
+                "description": "Provides fiat on/off-ramp services for Web3 developers and users.",
+                "website": "https://transak.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "ramps"
+                ]
+            },
+            "allbridge-core": {
+                "slug": "allbridge-core",
+                "name": "Allbridge Core",
+                "logoPath": "allbridge-core.png",
                 "description": "Provides cross-chain bridge services for Web3 developers and users.",
-                "website": "https://messina.one/bridge",
-                "docs": "https://messinaone.gitbook.io/messina/",
+                "website": "https://core.allbridge.io/",
+                "docs": "https://docs-core.allbridge.io/",
                 "x": null,
                 "github": null,
                 "discord": null,
@@ -16381,13 +16381,13 @@
                     "bridges"
                 ]
             },
-            "allbridge-core": {
-                "slug": "allbridge-core",
-                "name": "Allbridge Core",
-                "logoPath": "allbridge-core.png",
+            "messinaone": {
+                "slug": "messinaone",
+                "name": "MessinaOne",
+                "logoPath": "messinaone.png",
                 "description": "Provides cross-chain bridge services for Web3 developers and users.",
-                "website": "https://core.allbridge.io/",
-                "docs": "https://docs-core.allbridge.io/",
+                "website": "https://messina.one/bridge",
+                "docs": "https://messinaone.gitbook.io/messina/",
                 "x": null,
                 "github": null,
                 "discord": null,
@@ -17464,6 +17464,25 @@
                     "apis"
                 ]
             },
+            "nodereal": {
+                "slug": "nodereal",
+                "name": "NodeReal",
+                "logoPath": "nodereal.png",
+                "description": "Provides API infrastructure for Web3 developers and users.",
+                "website": "https://nodereal.io/",
+                "docs": "https://docs.nodereal.io/docs/intro-nodereal",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "apis"
+                ]
+            },
             "nodely": {
                 "slug": "nodely",
                 "name": "Nodely",
@@ -17502,44 +17521,6 @@
                     "apis"
                 ]
             },
-            "subquery": {
-                "slug": "subquery",
-                "name": "Subquery",
-                "logoPath": "subquery.png",
-                "description": "Provides API infrastructure for Web3 developers and users.",
-                "website": "https://app.subquery.network/explorer/home?category=rpc",
-                "docs": "https://subquery.network/doc/subquery_network/introduction/introduction.html",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "apis"
-                ]
-            },
-            "nodereal": {
-                "slug": "nodereal",
-                "name": "NodeReal",
-                "logoPath": "nodereal.png",
-                "description": "Provides API infrastructure for Web3 developers and users.",
-                "website": "https://nodereal.io/",
-                "docs": "https://docs.nodereal.io/docs/intro-nodereal",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "apis"
-                ]
-            },
             "onfinality": {
                 "slug": "onfinality",
                 "name": "OnFinality",
@@ -17547,6 +17528,25 @@
                 "description": "Provides API infrastructure for Web3 developers and users.",
                 "website": "https://onfinality.io/en/pricing",
                 "docs": "https://documentation.onfinality.io/support/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "apis"
+                ]
+            },
+            "subquery": {
+                "slug": "subquery",
+                "name": "Subquery",
+                "logoPath": "subquery.png",
+                "description": "Provides API infrastructure for Web3 developers and users.",
+                "website": "https://app.subquery.network/explorer/home?category=rpc",
+                "docs": "https://subquery.network/doc/subquery_network/introduction/introduction.html",
                 "x": null,
                 "github": null,
                 "discord": null,
@@ -17996,15 +17996,15 @@
                     "apis"
                 ]
             },
-            "orbit-db": {
-                "slug": "orbit-db",
-                "name": "Orbit DB",
-                "logoPath": "orbit-db.png",
-                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-                "website": "https://orbitdb.org/",
-                "docs": null,
+            "ipfs": {
+                "slug": "ipfs",
+                "name": "IPFS",
+                "logoPath": "ipfs.png",
+                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+                "website": "https://docs.ipfs.io/",
+                "docs": "https://docs.ipfs.io/",
                 "x": null,
-                "github": null,
+                "github": "ipfs-force-community/go-fvm-sdk",
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,
@@ -18015,15 +18015,15 @@
                     "storages"
                 ]
             },
-            "ipfs": {
-                "slug": "ipfs",
-                "name": "IPFS",
-                "logoPath": "ipfs.png",
-                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
-                "website": "https://docs.ipfs.io/",
-                "docs": "https://docs.ipfs.io/",
+            "orbit-db": {
+                "slug": "orbit-db",
+                "name": "Orbit DB",
+                "logoPath": "orbit-db.png",
+                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
+                "website": "https://orbitdb.org/",
+                "docs": null,
                 "x": null,
-                "github": "ipfs-force-community/go-fvm-sdk",
+                "github": null,
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,
