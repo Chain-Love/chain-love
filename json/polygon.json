@@ -15542,69 +15542,20 @@
             "chain": "mainnet"
         },
         {
-            "slug": "chainstack-amoy-free-recent-state",
+            "slug": "chainstack-amoy-business-full-archive",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://chainstack.com/pricing/)",
-                "[Docs](https://docs.chainstack.com/docs/platform-introduction)"
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
             ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$20/1M extra requests",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.90%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "eth",
-                "web3",
-                "net"
-            ],
-            "limitations": [
-                "25 RPS",
-                "3M requests/mo"
-            ],
-            "securityImprovements": [
-                "DDoS Protection",
-                "IP Protection"
-            ],
-            "monitoringAndAnalytics": [
-                "Usage analytics",
-                "Basic monitoring"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "amoy"
-        },
-        {
-            "slug": "chainstack-amoy-pay-as-you-go-full-archive",
-            "provider": "Chainstack",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://chainstack.com/pricing/)",
-                "[Docs](https://docs.chainstack.com/docs/platform-introduction)"
-            ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
+            "planName": "Business",
+            "planType": "Tiered",
             "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/$199/$349/mo (monthly plan), $40/$166/$290/mo (yearly plan)",
-            "queryPrice": "$15/$12.5/$10 per 1M extra requests",
+            "accessPrice": "$349/mo (monthly plan), $290/mo (yearly plan)",
+            "queryPrice": "$10/1M extra requests",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -15622,9 +15573,9 @@
                 "trace"
             ],
             "limitations": [
-                "250/400/600 RPS",
-                "20M/80M/140M requests",
-                "10,15,20 nodes"
+                "400 RPS",
+                "80M requests",
+                "15 projects"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -15639,20 +15590,80 @@
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
             "address": null,
             "tag": null,
             "chain": "amoy"
         },
         {
-            "slug": "chainstack-mainnet-free-recent-state",
+            "slug": "chainstack-amoy-business-recent-state",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://chainstack.com/pricing/)",
-                "[Docs](https://docs.chainstack.com/docs/platform-introduction)"
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
             ],
-            "planName": null,
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$349/mo (monthly plan), $290/mo (yearly plan)",
+            "queryPrice": "$10/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "600 RPS",
+                "140M requests",
+                "20 projects"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "amoy"
+        },
+        {
+            "slug": "chainstack-amoy-developer-recent-state",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://chainstack.com/build-better-with-polygon/)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
+            ],
+            "planName": "Developer",
             "planType": "Free",
             "historicalData": "Pruned",
             "apiType": "RPC",
@@ -15675,7 +15686,8 @@
             ],
             "limitations": [
                 "25 RPS",
-                "3M requests/mo"
+                "3M reqs/mo",
+                "1 project"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -15688,26 +15700,314 @@
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "amoy"
+        },
+        {
+            "slug": "chainstack-amoy-growth-full-archive",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo (monthly plan), $40/mo (yearly plan)",
+            "queryPrice": "$15/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "25 RPS",
+                "3M reqs/mo",
+                "1 project"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "amoy"
+        },
+        {
+            "slug": "chainstack-amoy-growth-recent-state",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo (monthly plan), $40/mo (yearly plan)",
+            "queryPrice": "$15/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "250 RPS",
+                "20M requests",
+                "10 projects"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "amoy"
+        },
+        {
+            "slug": "chainstack-amoy-pro-full-archive",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
+            ],
+            "planName": "Pro",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$199/mo (monthly plan), $166/mo (yearly plan)",
+            "queryPrice": "$12.5/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "250 RPS",
+                "20M requests",
+                "10 projects"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "amoy"
+        },
+        {
+            "slug": "chainstack-amoy-pro-recent-state",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
+            ],
+            "planName": "Pro",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$199/mo (monthly plan), $166/mo (yearly plan)",
+            "queryPrice": "$12.5/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "400 RPS",
+                "80M requests",
+                "15 projects"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "amoy"
+        },
+        {
+            "slug": "chainstack-mainnet-business-full-archive",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$349/mo (monthly plan), $290/mo (yearly plan)",
+            "queryPrice": "$10/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "400 RPS",
+                "80M requests",
+                "15 projects"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
             "address": null,
             "tag": null,
             "chain": "mainnet"
         },
         {
-            "slug": "chainstack-mainnet-pay-as-you-go-full-archive",
+            "slug": "chainstack-mainnet-business-recent-state",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://chainstack.com/pricing/)",
-                "[Docs](https://docs.chainstack.com/docs/platform-introduction)"
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Archive",
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/$199/$349/mo (monthly plan), $40/$166/$290/mo (yearly plan)",
-            "queryPrice": "$15/$12.5/$10 per 1M extra requests",
+            "accessPrice": "$349/mo (monthly plan), $290/mo (yearly plan)",
+            "queryPrice": "$10/1M extra requests",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -15725,9 +16025,9 @@
                 "trace"
             ],
             "limitations": [
-                "250/400/600 RPS",
-                "20M/80M/140M requests",
-                "10,15,20 nodes"
+                "600 RPS",
+                "140M requests",
+                "20 projects"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -15742,7 +16042,291 @@
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "chainstack-mainnet-developer-recent-state",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://chainstack.com/build-better-with-polygon/)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
+            ],
+            "planName": "Developer",
+            "planType": "Free",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$20/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net"
+            ],
+            "limitations": [
+                "25 RPS",
+                "3M reqs/mo",
+                "1 project"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Basic monitoring"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "chainstack-mainnet-growth-full-archive",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo (monthly plan), $40/mo (yearly plan)",
+            "queryPrice": "$15/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "25 RPS",
+                "3M reqs/mo",
+                "1 project"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "chainstack-mainnet-growth-recent-state",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
+            ],
+            "planName": "Growth",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo (monthly plan), $40/mo (yearly plan)",
+            "queryPrice": "$15/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "250 RPS",
+                "20M requests",
+                "10 projects"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "chainstack-mainnet-pro-full-archive",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
+            ],
+            "planName": "Pro",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$199/mo (monthly plan), $166/mo (yearly plan)",
+            "queryPrice": "$12.5/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "250 RPS",
+                "20M requests",
+                "10 projects"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "chainstack-mainnet-pro-recent-state",
+            "provider": "Chainstack",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://chainstack.com/pricing/?nab=0)",
+                "[Docs](https://docs.chainstack.com/reference/polygon-getting-started)"
+            ],
+            "planName": "Pro",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$199/mo (monthly plan), $166/mo (yearly plan)",
+            "queryPrice": "$12.5/1M extra requests",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": "99.90%",
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "eth",
+                "web3",
+                "net",
+                "debug",
+                "trace"
+            ],
+            "limitations": [
+                "400 RPS",
+                "80M requests",
+                "15 projects"
+            ],
+            "securityImprovements": [
+                "DDoS Protection",
+                "IP Protection",
+                "Dedicated infrastructure"
+            ],
+            "monitoringAndAnalytics": [
+                "Usage analytics",
+                "Custom monitoring",
+                "Engineering team support"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
             "address": null,
             "tag": null,
             "chain": "mainnet"
@@ -22608,8 +23192,8 @@
                 "[Contact](https://console.chainstack.com/user/account#signup?plan=enterprise)",
                 "[Docs](https://docs.chainstack.com/docs/platform-introduction)"
             ],
-            "planName": null,
-            "planType": "Enterprise",
+            "planName": "Enterprise",
+            "planType": "Tiered",
             "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
@@ -22632,7 +23216,9 @@
                 "trace"
             ],
             "limitations": [
-                "400M requests"
+                "600 RPS",
+                "140M requests",
+                "20 projects"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -22646,7 +23232,10 @@
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
             "address": null,
             "tag": null,
             "chain": "mainnet"
@@ -22659,8 +23248,8 @@
                 "[Contact](https://console.chainstack.com/user/account#signup?plan=enterprise)",
                 "[Docs](https://docs.chainstack.com/docs/platform-introduction)"
             ],
-            "planName": null,
-            "planType": "Enterprise",
+            "planName": "Enterprise",
+            "planType": "Tiered",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
@@ -22674,7 +23263,7 @@
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
-            "trial": false,
+            "trial": true,
             "availableApis": [
                 "eth",
                 "web3",
@@ -22683,7 +23272,8 @@
                 "trace"
             ],
             "limitations": [
-                "400M requests"
+                "400M requests",
+                "unlimited projects"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -22697,7 +23287,10 @@
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
             "address": null,
             "tag": null,
             "chain": "mainnet"
@@ -25629,8 +26222,8 @@
                 "[Contact](https://console.chainstack.com/user/account#signup?plan=enterprise)",
                 "[Docs](https://docs.chainstack.com/docs/platform-introduction)"
             ],
-            "planName": null,
-            "planType": "Enterprise",
+            "planName": "Enterprise",
+            "planType": "Tiered",
             "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
@@ -25653,7 +26246,9 @@
                 "trace"
             ],
             "limitations": [
-                "400M requests"
+                "600 RPS",
+                "140M requests",
+                "20 projects"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -25667,7 +26262,10 @@
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
             "address": null,
             "tag": null,
             "chain": "amoy"
@@ -25680,8 +26278,8 @@
                 "[Contact](https://console.chainstack.com/user/account#signup?plan=enterprise)",
                 "[Docs](https://docs.chainstack.com/docs/platform-introduction)"
             ],
-            "planName": null,
-            "planType": "Enterprise",
+            "planName": "Enterprise",
+            "planType": "Tiered",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
@@ -25695,7 +26293,7 @@
             "blocksBehindSla": null,
             "supportSla": null,
             "starred": false,
-            "trial": false,
+            "trial": true,
             "availableApis": [
                 "eth",
                 "web3",
@@ -25704,7 +26302,8 @@
                 "trace"
             ],
             "limitations": [
-                "400M requests"
+                "400M requests",
+                "unlimited projects"
             ],
             "securityImprovements": [
                 "DDoS Protection",
@@ -25718,7 +26317,10 @@
             "regions": [
                 "Global"
             ],
-            "additionalFeatures": null,
+            "additionalFeatures": [
+                "GraphQL Queries",
+                "Standard Support"
+            ],
             "address": null,
             "tag": null,
             "chain": "amoy"
