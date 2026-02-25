@@ -323,6 +323,7 @@ def get_column_order(data_by_category: dict[str, list[dict]]) -> dict[str, list[
 def resolve_offers(
     data_by_category: dict[str, list[dict]],
     offers_by_category: dict[str, list[dict]],
+    network_name: str,
 ) -> dict[str, list[dict]]:
     """
     Replaces listing rows that contain offer refs with merged offer data.
@@ -371,9 +372,13 @@ def resolve_offers(
                 offer_row = cat_offers.get(offer_slug)
                 if offer_row is None:
                     raise ValueError(
-                        f"Offer '{offer_slug}' not found in "
-                        f"references/offers/{category}.csv "
-                        f"(referenced from listing '{item.get('slug')}')"
+                        f"Offer '{offer_slug}' is missing in references/offers/{category}.csv.\n"
+                        f"This offer is referenced from either:\n"
+                        f"  - listings/all-networks/{category}.csv\n"
+                        f"  - listings/specific-networks/{network_name}/{category}.csv\n\n"
+                        f"Action required:\n"
+                        f"  1. Add a row with slug '{offer_slug}' to references/offers/{category}.csv, or\n"
+                        f"  2. Remove or correct the reference in the listings file.\n"
                     )
 
                 # Base = offer row
@@ -645,7 +650,7 @@ def main():
 
 
         # 3) Resolve !offer:<slug> (category-scoped)
-        result = resolve_offers(result, offers_by_category)
+        result = resolve_offers(result, offers_by_category, network_name=network_name)
 
         # 4) Normalize values (null/bool/json fields)
         result, errors = normalize(result)
