@@ -27,6 +27,7 @@ COPY_FROM_UPSTREAM = [
 
 # Scripts expected to end up in project root
 SCRIPTS = [
+    "validate_csv.py",
     "csv_to_json.py",
     "validate.py",
 ]
