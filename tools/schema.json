@@ -35,8 +35,24 @@
         "provider": { "type": "string" },
         "offer": {"type": ["string", "null"]},
         "planName": { "type": ["string", "null"] },
-        "planType": { "type": "string" },
-        "apiType": { "type": "string" },
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        },
+        "apiType": {
+          "type": "string",
+          "examples": [
+            "RPC",
+            "Indexed Data"
+          ]
+        },
         "chain": { "type": "string" },
         "address": { "type": ["string", "null"] },
         "accessPrice": { "type": ["string", "null"] },
@@ -71,12 +87,24 @@
           "items": { "type": "string" }
         },
         "supportSla": { "type": ["string", "null"] },
-        "technology": { "type": "string" },
+        "technology": {
+          "type": "string",
+          "examples": [
+            "EVM JSON-RPC",
+            "The Graph"
+          ]
+        },
         "additionalFeatures": {
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
-        "historicalData": { "type": "string" },
+        "historicalData": {
+          "type": "string",
+          "examples": [
+            "Pruned",
+            "Archive"
+          ]
+        },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
@@ -318,7 +346,17 @@
           "items": { "type": "string" }
         },
         "planName": { "type": ["string", "null"] },
-        "planType": { "type": "string" }
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        }
       },
       "required": [
         "slug",
@@ -351,7 +389,17 @@
           "items": { "type": "string" }
         },
         "planName": { "type": ["string", "null"] },
-        "planType": { "type": "string" }
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        }
       },
       "required": [
         "slug",
@@ -432,7 +480,17 @@
           "items": { "type": "string" }
         },
         "planName": { "type": ["string", "null"] },
-        "planType": { "type": "string" },
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
@@ -530,7 +588,12 @@
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
         "description": { "type": ["string", "null"] },
         "planName": { "type": ["string", "null"] },
-        "planType": { "type": "string" },
+        "planType": {
+          "oneOf": [
+            { "type": "string", "enum": ["Free", "Pay-as-you-go", "Enterprise", "Dedicated", "Tiered", "One-time payment"] },
+            { "type": "string" }
+          ]
+        },
         "price": { "type": ["string", "null"] },
         "trial": { "type": "boolean" },
         "starred": { "type": "boolean" },
@@ -616,7 +679,12 @@
         "toolType": { "type": "string" },
         "description": { "type": ["string", "null"] },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
-        "planType": { "type": "string" },
+        "planType": {
+          "oneOf": [
+            { "type": "string", "enum": ["Free", "Pay-as-you-go", "Enterprise", "Dedicated", "Tiered", "One-time payment"] },
+            { "type": "string" }
+          ]
+        },
         "planName": { "type": ["string", "null"] },
         "price": { "type": ["string"] },
         "trial": { "type": ["boolean"] },
@@ -655,7 +723,17 @@
         },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
         "description": { "type": ["string", "null"] },
-        "planType": { "type": "string" },
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        },
         "planName": { "type": ["string", "null"] },
         "price": { "type": ["string"] },
         "trial": { "type": ["boolean"] },
