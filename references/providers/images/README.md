@@ -17,4 +17,4 @@ Store provider logo files in this folder.
 ## Recommended image format
 
 - Square logo (1:1 aspect ratio), transparent background when possible.
-- Recommended size: 512x512 px or 1024x1024 px.
+- Recommended size: between 160x160 to 500x500 pixels.
