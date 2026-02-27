@@ -562,79 +562,832 @@
             "tag": null
         }
     ],
-    "storages": [
+    "services": [
         {
-            "slug": "ipfs",
-            "provider": "IPFS",
-            "offer": null,
+            "slug": "alchemy-bundler-enterprise",
+            "provider": "Alchemy",
+            "offer": "Bundler",
             "actionButtons": [
-                "[Docs](https://docs.ipfs.io/)"
+                "[Contact](https://www.alchemy.com/contact-sales)",
+                "[Docs](https://www.alchemy.com/docs/wallets/resources/terms#bundler)"
             ],
             "toolType": "Tool",
             "tag": [
-                "Go",
-                "JavaScript",
-                "Storage"
-            ],
-            "price": "$0",
-            "planType": "Free",
-            "planName": null,
-            "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
-            "starred": false
-        },
-        {
-            "slug": "orbit-db",
-            "provider": "Orbit DB",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://orbitdb.org/)"
-            ],
-            "toolType": "Database",
-            "tag": [
-                "Decentralized database"
-            ],
-            "price": "$0",
-            "planType": "Free",
-            "planName": null,
-            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-            "starred": false
-        },
-        {
-            "slug": "tableland-db",
-            "provider": "Tableland",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://tableland.xyz/)"
-            ],
-            "toolType": "Database",
-            "tag": [
-                "Decentralized database",
-                "SQL database",
-                "SQLite"
+                "Account Abstraction",
+                "ERC-4337",
+                "Rundler",
+                "Web3 development",
+                "Smart contract wallets"
             ],
             "price": "Custom",
-            "planType": "TBD",
+            "planType": "Enterprise",
             "planName": null,
-            "description": "It allows developers to store, manage, and query structured data for decentralized applications using familiar SQL statements, with access control and ownership tied to the blockchain",
+            "description": "It is a developer tool that aggregates multiple blockchain operations into a single transaction for efficient, reliable execution on-chain",
             "starred": false
         },
         {
-            "slug": "thread-db",
-            "provider": "Powergate",
-            "offer": "Thread DB",
+            "slug": "alchemy-gas-manager-enterprise",
+            "provider": "Alchemy",
+            "offer": "Gas Manager",
             "actionButtons": [
-                "[Docs](https://docs.textile.io/threads/)"
+                "[Contact](https://www.alchemy.com/contact-sales)",
+                "[Docs](https://www.alchemy.com/docs/wallets/resources/terms#gas-manager)"
             ],
-            "toolType": "Database",
+            "toolType": "Tool",
             "tag": [
-                "Decentralized database",
-                "P2P database"
+                "Gas sponsorship",
+                "Gasless transactions",
+                "Paymaster",
+                "Transaction fee management"
             ],
             "price": "Custom",
-            "planType": "TBD",
+            "planType": "Enterprise",
             "planName": null,
-            "description": "It is a multi-party,decentralized database solution built on IPFS and Libp2p that provides an alternative architecture for data on the web",
+            "description": "It is an ERC-4337 compliant paymaster, allowing developers to sponsor the gas fees for their users on a blockchain",
             "starred": false
+        },
+        {
+            "slug": "alchemy-smart-wallet-enterprise",
+            "provider": "Alchemy",
+            "offer": "Smart Wallet",
+            "actionButtons": [
+                "[Contact](https://www.alchemy.com/contact-sales)",
+                "[Docs](https://www.alchemy.com/docs/wallets)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Account Abstraction",
+                "Smart Contract Wallets",
+                "Wallet Developer Tools",
+                "Embedded Wallets"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Provides the infrastructure to build secure, user-friendly web3 applications, streamlining the onboarding process for end-users",
+            "starred": false
+        },
+        {
+            "slug": "alchemy-transaction-enterprise",
+            "provider": "Alchemy",
+            "offer": "Transaction",
+            "actionButtons": [
+                "[Contact](https://www.alchemy.com/contact-sales)",
+                "[Docs](https://www.alchemy.com/docs/wallets/transactions/overview)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Blockchain transactions",
+                "Faster Ethereum transactions",
+                "Reliable transaction API"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides developers with APIs and features to manage the entire transaction lifecycle, from creation and simulation to sending and monitoring, across various blockchain networks",
+            "starred": false
+        },
+        {
+            "slug": "arka-enterprise",
+            "provider": "Etherspot Prime",
+            "offer": "Arka",
+            "actionButtons": [
+                "[Contact](https://etherspot.io/get-quote/)",
+                "[Docs](https://etherspot.fyi/arka/intro)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "ERC-4337",
+                "Paymaster",
+                "Gasless transactions"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Provides gasless transactions, sponsored transactions, and alternative gas payments using ERC-20 tokens, adhering to the ERC-4337 standard to improve dApp user experience",
+            "starred": false
+        },
+        {
+            "slug": "bitbond-token-tool-enterprise",
+            "provider": "Bitbond Token Tool",
+            "offer": null,
+            "actionButtons": [
+                "[Buy](https://tokentool.bitbond.com/pricing)",
+                "[Docs](https://docs.bitbond.com/asset-tokenization-suite)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Blockchain",
+                "Tokenization",
+                "Smart Contracts",
+                "No-code / Codeless",
+                "Token Generator"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It is a web-based service for developers and businesses that provides a no-code platform to create, manage and distribute various blockchain tokens and NFTs across multiple EVM-compatible blockchains and other networks",
+            "starred": false
+        },
+        {
+            "slug": "bitgo",
+            "provider": "BitGo",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.bitgo.com/)"
+            ],
+            "toolType": "Finance",
+            "tag": [
+                "Institutional-grade custody solution",
+                "Security"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Institutional-grade digital asset infrastructure company that provides secure custody, wallet, trading, staking and settlement services for cryptocurrencies",
+            "starred": false
+        },
+        {
+            "slug": "blocknative-batch-decoder",
+            "provider": "Blocknative",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://blocknative.com/)",
+                "[Doc](https://docs.blocknative.com/ethernow/batch-decoder-api)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Batch Decoder",
+                "Mempool Analysis",
+                "OP Stack",
+                "Explorer"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It offers a suite of APIs, SDKs, and tools that help developers and traders monitor, manage, and optimize blockchain transactions by providing visibility into the mempool",
+            "starred": false
+        },
+        {
+            "slug": "bonadocs",
+            "provider": "Bonadocs",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://registry.bonadocs.com/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Blockchain documentation",
+                "Smart contract documentation",
+                "API documentation tool"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides a suite of developer tools designed to simplify smart contract integration, documentation, and collaboration for Web3 engineering teams",
+            "starred": false
+        },
+        {
+            "slug": "bonadocs-docgen",
+            "provider": "Bonadocs",
+            "offer": "Docgen",
+            "actionButtons": [
+                "[Docs](https://docs.bonadocs.com/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Documentation",
+                "Dev Productivity"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It helps developers automatically generate beautiful, interactive documentation websites for their Solidity smart contract projects directly from the codebase",
+            "starred": false
+        },
+        {
+            "slug": "brand-extender",
+            "provider": "Brand Extender",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://brandextender.io/)"
+            ],
+            "toolType": "NFT",
+            "tag": [
+                "NFT/Web3 Tools",
+                "SDK"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It enables the creation of fully on-chain derivative NFTs or sets of NFTs, leveraging existing NFT collections with open intellectual property (IP) rights",
+            "starred": false
+        },
+        {
+            "slug": "build-bear-enterprise",
+            "provider": "BuildBear",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.buildbear.io/pricing)",
+                "[Docs](https://www.buildbear.io/docs/docs)"
+            ],
+            "toolType": "Testing and Debugging",
+            "tag": [
+                "Web3 Development",
+                "Smart Contract Testing",
+                "EVM-Compatible Testnets"
+            ],
+            "price": "From $499",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides cloud-enabled, private and shareable EVM sandbox environments for testing and debugging smart contracts in production-like conditions",
+            "starred": false
+        },
+        {
+            "slug": "cannon",
+            "provider": "Cannon",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://usecannon.com/)",
+                "[Docs](https://usecannon.com/learn/guides/get-started/setup)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Smart Contract Deployment",
+                "Blockchain DevOps",
+                "Ethereum Network Development",
+                "Smart Contract Package Manager"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It helps manage and streamline the deployment, upgrade and configuration of smart contracts and entire protocols across various networks",
+            "starred": false
+        },
+        {
+            "slug": "coingate-enterprise",
+            "provider": "CoinGate",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://coingate.com/)"
+            ],
+            "toolType": "Finance",
+            "tag": [
+                "Merchant",
+                "Invoicing",
+                "Processing"
+            ],
+            "price": "1% Fee",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Cryptocurrency payment gateway. It enables accepting payments in Bitcoin, USDC and various other cryptocurrencies",
+            "starred": false
+        },
+        {
+            "slug": "coinsdo",
+            "provider": "CoinsDo",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.coinsdo.com/en)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Wallet as a Service (WaaS)",
+                "Digital asset wallet solutions",
+                "Cryptocurrency wallet API"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Provides a suite of developer tools, primarily a Wallet-as-a-Service solution, that allows developers and businesses to integrate secure, non-custodial digital asset management and transaction capabilities into their own applications",
+            "starred": false
+        },
+        {
+            "slug": "crossmint-enterprise",
+            "provider": "Crossmint",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.crossmint.com/contact/sales)"
+            ],
+            "toolType": "NFT",
+            "tag": [
+                "NFT",
+                "Minting",
+                "Payments",
+                "Fiat On-Ramp"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Platform enabling fiat on-ramp for NFTs, letting users mint NFTs with credit cards; supports Optimism for seamless onboarding of new users",
+            "starred": false
+        },
+        {
+            "slug": "curvegrid-enterprise",
+            "provider": "Curvegrid",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.curvegrid.com/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Web3 infrastructure",
+                "API",
+                "Smart contracts",
+                "Enterprise blockchain"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides developer tools and infrastructure-as-a-service to help businesses and developers build and deploy decentralized applications faster and more easily",
+            "starred": false
+        },
+        {
+            "slug": "dapprovals-enterprise",
+            "provider": "dApprovals",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://dapproval.com/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Code Review Approvals",
+                "Deployment Approvals",
+                "CI/CD Approvals",
+                "Infrastructure Approvals"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": "Custom",
+            "description": "Provides services for managing and securing Web3 transaction approvals",
+            "starred": false
+        },
+        {
+            "slug": "datacurve-enterprise",
+            "provider": "DataCurve",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://datacurve.io/)"
+            ],
+            "toolType": "AI",
+            "tag": [
+                "AI platform",
+                "Customer data platform",
+                "Data analytics",
+                "CRM integration"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "DataCurve unifies sport fan identity and behavior across every touchpoint using blockchain - creating a measurable foundation for personalization, sponsor attribution, and revenue growth.",
+            "starred": false
+        },
+        {
+            "slug": "decubate-tms",
+            "provider": "Decubate TMS",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://tms.finance/)"
+            ],
+            "toolType": "Finance",
+            "tag": [
+                "No-code token platform",
+                "Token minting",
+                "Liquidity farming"
+            ],
+            "price": "From $5K",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It is a no-code, all-in-one platform that provides Web3 builders and projects with the necessary tools to launch, manage, and scale their tokens efficiently and securely",
+            "starred": false
+        },
+        {
+            "slug": "flexa",
+            "provider": "Flexa",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://flexa.network/)"
+            ],
+            "toolType": "Finance",
+            "tag": [
+                "Merchant",
+                "Real-world",
+                "Payments"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Digital payment network enabling instant, fraud-proof payments at major retailers",
+            "starred": false
+        },
+        {
+            "slug": "laika-ai",
+            "provider": "Laika AI",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://laikalabs.ai/)"
+            ],
+            "toolType": "AI",
+            "tag": [
+                "AI",
+                "On-chain Data",
+                "Analytics"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It offers an enterprise API and a SDK for custom agent development, allowing other developers to integrate its analytics and smart contract auditing features into their own applications",
+            "starred": false
+        },
+        {
+            "slug": "mosaia-enterprise",
+            "provider": "Mosaia",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://calendly.com/cyril-mosaia)"
+            ],
+            "toolType": "AI",
+            "tag": [
+                "Building and deploying AI agents and teams"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
+            "starred": false
+        },
+        {
+            "slug": "multisender",
+            "provider": "Multisender",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://multisender.app/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Multisender",
+                "Multisend",
+                "Bulk sender",
+                "Send multiple tokens",
+                "Batch transactions",
+                "Token distribution"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides a specific function that development teams and project managers use to manage and distribute digital assets efficiently. It operates via the user's own smart wallet but not a wallet provider itself",
+            "starred": false
+        },
+        {
+            "slug": "onmeta",
+            "provider": "Onmeta",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://onmeta.in/)"
+            ],
+            "toolType": "Finance",
+            "tag": [
+                "Web3 infrastructure",
+                "On/Off-ramp solutions",
+                "Payment APIs",
+                "SDK integration"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides developers with fiat-to-crypto i.e on-ramp and crypto-to-fiat i.e off-ramp infrastructure for integrating cryptocurrency buy and sell functionality into Web3 applications, platforms, or wallets",
+            "starred": false
+        },
+        {
+            "slug": "paymaster",
+            "provider": "Coinbase",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://docs.cdp.coinbase.com/paymaster/introduction/welcome)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Account Abstraction"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Account abstraction endpoints to send transactions and sponsor gas",
+            "starred": false
+        },
+        {
+            "slug": "rarible",
+            "provider": "Rarible",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://docs.rarible.org/docs/introduction)"
+            ],
+            "toolType": "NFT",
+            "tag": [
+                "Rarible SDK",
+                "Rarible Protocol",
+                "Multichain SDK",
+                "NFT API",
+                "NFT Development"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It simplifies building NFT applications by providing an abstraction layer over multiple blockchains, allowing developers to easily create, mint, sell, buy, transfer and query NFTs without deep blockchain specifics",
+            "starred": false
+        },
+        {
+            "slug": "reown-enterprise",
+            "provider": "Reown",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://reown.com/)",
+                "[Docs](https://docs.reown.com/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Smart Wallets",
+                "Social Login",
+                "Paymasters",
+                "Gas Sponsorship"
+            ],
+            "price": "$250+",
+            "planType": "Enterprise",
+            "planName": "Enterpeise",
+            "description": "Tools to build user-friendly smart wallets with social login, paymaster configuration for gas fees sponsorship and chain abstraction for seamless UX",
+            "starred": false
+        },
+        {
+            "slug": "rollup-codes",
+            "provider": "Rollup.codes",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.rollup.codes/linea)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Ethereum Rollups",
+                "Analysis",
+                "Opcodes"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides resources and data to help developers building on rollups select the optimal configurations and integrate third-party services",
+            "starred": false
+        },
+        {
+            "slug": "sign-protocol",
+            "provider": "Sign Protocol",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://docs.ethsign.xyz/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Blockchain signature tools",
+                "Smart contracts",
+                "Web3 identity/attestation"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It offers a suite of tools and APIs for integrating blockchain-based, legally compliant document signing and data verification functionalities into other Web3 applications",
+            "starred": false
+        },
+        {
+            "slug": "smartmuv",
+            "provider": "SmartMuv",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://smartmuv.app/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Smart contract analysis",
+                "Blockchain data extraction",
+                "Web3 development tools"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It facilitate solidity smart contract analysis, deep storage data extraction, and migration",
+            "starred": false
+        },
+        {
+            "slug": "sprintcheckout",
+            "provider": "Sprintcheckout",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://sprintcheckout.com/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Crypto payment gateway",
+                "Web3 payment tools",
+                "Blockchain payment solution"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides the infrastructure and tools for developers to seamlessly incorporate modern, low-cost, and user-friendly crypto payment options into their projects",
+            "starred": false
+        },
+        {
+            "slug": "stackup-enterprise",
+            "provider": "Stackup",
+            "offer": null,
+            "actionButtons": [
+                "[Contact](https://www.stackup.fi/contact)",
+                "[Docs](https://docs.stackup.fi/)"
+            ],
+            "toolType": "Finance",
+            "tag": [
+                "Account Abstraction",
+                "Wallet"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides smart account tooling for building account abstraction within your apps. They offer Paymaster and Bundler APIs for sponsoring gas and sending account abstraction transactions",
+            "starred": false
+        },
+        {
+            "slug": "sublime-ethereum",
+            "provider": "Sublime-Ethereum",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://github.com/davidhq/SublimeEthereum)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Solidity"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides developers with a specialized, efficient interface for building decentralized applications and smart contracts on the blockchain",
+            "starred": false
+        },
+        {
+            "slug": "swaps",
+            "provider": "Swaps",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.swaps.xyz/)",
+                "[Docs](https://docs.swaps.xyz/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Blockchain development",
+                "Decentralized applications",
+                "Crypto payment gateway"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It abstracts the complexities of blockchain interactions, allowing developers to integrate diverse on-chain crypto experiences into their applications more easily",
+            "starred": false
+        },
+        {
+            "slug": "tally",
+            "provider": "Tally",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.tally.xyz/)"
+            ],
+            "toolType": "Finance",
+            "tag": [
+                "Decentralized Autonomous Organizations",
+                "Web3 & Blockchain",
+                "Governance & Voting"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides web3 infrastructure and developer tools for building, managing, and integrating on-chain governance and decentralized autonomous organizations",
+            "starred": false
+        },
+        {
+            "slug": "tenderly-sandbox",
+            "provider": "Tenderly",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://docs.tenderly.co/tenderly-sandbox)"
+            ],
+            "toolType": "IDE",
+            "tag": [
+                "Smart Contract Development",
+                "Solidity IDE",
+                "In-browser Editor",
+                "Transaction Debugging"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It is a browser-based integrated development environment (IDE) for smart contracts that allows developers to write, test and debug Solidity code instantly without any local setup",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-aa",
+            "provider": "Thirdweb",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://portal.thirdweb.com/engine/v2/features/account-abstraction)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "SDK"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Comprehensive solution for smart accounts with paymaster and sponsored transactions",
+            "starred": false
+        },
+        {
+            "slug": "thirdweb-pay",
+            "provider": "Thirdweb",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://portal.thirdweb.com/pay)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "SDK"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "Fiat and cross-chain crypto payments with gas fee abstraction",
+            "starred": false
+        },
+        {
+            "slug": "univoucher",
+            "provider": "UniVoucher",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://docs.univoucher.com/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Gift card",
+                "Payment gateway",
+                "Wallet integration"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It offers an API and documentation that allow developers to integrate the functionality of creating and managing decentralized, tangible crypto gift cards into their own applications",
+            "starred": false
+        },
+        {
+            "slug": "zero-dev-enterprise",
+            "provider": "ZeroDev",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://docs.zerodev.app/)"
+            ],
+            "toolType": "Tool",
+            "tag": [
+                "Account Abstraction",
+                "Programmable Wallet",
+                "UI"
+            ],
+            "price": "Custom",
+            "planType": "Enterprise",
+            "planName": null,
+            "description": "It provides a software development kit for developers to build user-friendly applications and smart wallets with advanced features",
+            "starred": false
+        }
+    ],
+    "security": [
+        {
+            "slug": "blowfish-enterprise",
+            "provider": "Blowfish",
+            "offer": null,
+            "actionButtons": [
+                "[Website](blowfish.xyz)"
+            ],
+            "tag": [
+                "Encryption",
+                "Password Hashing",
+                "Data Security",
+                "Cryptography"
+            ],
+            "description": "Protects Web3 users by analyzing transactions to identify and block malicious activity in real-time",
+            "planType": "Enterprise",
+            "planName": null,
+            "price": "Custom",
+            "trial": false,
+            "starred": false,
+            "toolType": "TBD",
+            "deliveryType": "TBD",
+            "executionEnvironment": null,
+            "coverage": [
+                "TBD"
+            ],
+            "compliance": null
         }
     ],
     "sdks": [
@@ -1755,831 +2508,78 @@
             "executionEnvironment": null
         }
     ],
-    "security": [
+    "storages": [
         {
-            "slug": "blowfish-enterprise",
-            "provider": "Blowfish",
+            "slug": "ipfs",
+            "provider": "IPFS",
             "offer": null,
             "actionButtons": [
-                "[Website](blowfish.xyz)"
-            ],
-            "tag": [
-                "Encryption",
-                "Password Hashing",
-                "Data Security",
-                "Cryptography"
-            ],
-            "description": "Protects Web3 users by analyzing transactions to identify and block malicious activity in real-time",
-            "planType": "Enterprise",
-            "planName": null,
-            "price": "Custom",
-            "trial": false,
-            "starred": false,
-            "toolType": "TBD",
-            "deliveryType": "TBD",
-            "executionEnvironment": null,
-            "coverage": [
-                "TBD"
-            ],
-            "compliance": null
-        }
-    ],
-    "services": [
-        {
-            "slug": "alchemy-bundler-enterprise",
-            "provider": "Alchemy",
-            "offer": "Bundler",
-            "actionButtons": [
-                "[Contact](https://www.alchemy.com/contact-sales)",
-                "[Docs](https://www.alchemy.com/docs/wallets/resources/terms#bundler)"
+                "[Docs](https://docs.ipfs.io/)"
             ],
             "toolType": "Tool",
             "tag": [
-                "Account Abstraction",
-                "ERC-4337",
-                "Rundler",
-                "Web3 development",
-                "Smart contract wallets"
+                "Go",
+                "JavaScript",
+                "Storage"
             ],
-            "price": "Custom",
-            "planType": "Enterprise",
+            "price": "$0",
+            "planType": "Free",
             "planName": null,
-            "description": "It is a developer tool that aggregates multiple blockchain operations into a single transaction for efficient, reliable execution on-chain",
+            "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
             "starred": false
         },
         {
-            "slug": "alchemy-gas-manager-enterprise",
-            "provider": "Alchemy",
-            "offer": "Gas Manager",
-            "actionButtons": [
-                "[Contact](https://www.alchemy.com/contact-sales)",
-                "[Docs](https://www.alchemy.com/docs/wallets/resources/terms#gas-manager)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Gas sponsorship",
-                "Gasless transactions",
-                "Paymaster",
-                "Transaction fee management"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It is an ERC-4337 compliant paymaster, allowing developers to sponsor the gas fees for their users on a blockchain",
-            "starred": false
-        },
-        {
-            "slug": "alchemy-smart-wallet-enterprise",
-            "provider": "Alchemy",
-            "offer": "Smart Wallet",
-            "actionButtons": [
-                "[Contact](https://www.alchemy.com/contact-sales)",
-                "[Docs](https://www.alchemy.com/docs/wallets)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Account Abstraction",
-                "Smart Contract Wallets",
-                "Wallet Developer Tools",
-                "Embedded Wallets"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "Provides the infrastructure to build secure, user-friendly web3 applications, streamlining the onboarding process for end-users",
-            "starred": false
-        },
-        {
-            "slug": "alchemy-transaction-enterprise",
-            "provider": "Alchemy",
-            "offer": "Transaction",
-            "actionButtons": [
-                "[Contact](https://www.alchemy.com/contact-sales)",
-                "[Docs](https://www.alchemy.com/docs/wallets/transactions/overview)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Blockchain transactions",
-                "Faster Ethereum transactions",
-                "Reliable transaction API"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides developers with APIs and features to manage the entire transaction lifecycle, from creation and simulation to sending and monitoring, across various blockchain networks",
-            "starred": false
-        },
-        {
-            "slug": "arka-enterprise",
-            "provider": "Etherspot Prime",
-            "offer": "Arka",
-            "actionButtons": [
-                "[Contact](https://etherspot.io/get-quote/)",
-                "[Docs](https://etherspot.fyi/arka/intro)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "ERC-4337",
-                "Paymaster",
-                "Gasless transactions"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "Provides gasless transactions, sponsored transactions, and alternative gas payments using ERC-20 tokens, adhering to the ERC-4337 standard to improve dApp user experience",
-            "starred": false
-        },
-        {
-            "slug": "bitbond-token-tool-enterprise",
-            "provider": "Bitbond Token Tool",
+            "slug": "orbit-db",
+            "provider": "Orbit DB",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://tokentool.bitbond.com/pricing)",
-                "[Docs](https://docs.bitbond.com/asset-tokenization-suite)"
+                "[Website](https://orbitdb.org/)"
             ],
-            "toolType": "Tool",
+            "toolType": "Database",
             "tag": [
-                "Blockchain",
-                "Tokenization",
-                "Smart Contracts",
-                "No-code / Codeless",
-                "Token Generator"
+                "Decentralized database"
+            ],
+            "price": "$0",
+            "planType": "Free",
+            "planName": null,
+            "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
+            "starred": false
+        },
+        {
+            "slug": "tableland-db",
+            "provider": "Tableland",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://tableland.xyz/)"
+            ],
+            "toolType": "Database",
+            "tag": [
+                "Decentralized database",
+                "SQL database",
+                "SQLite"
             ],
             "price": "Custom",
-            "planType": "Enterprise",
+            "planType": "TBD",
             "planName": null,
-            "description": "It is a web-based service for developers and businesses that provides a no-code platform to create, manage and distribute various blockchain tokens and NFTs across multiple EVM-compatible blockchains and other networks",
+            "description": "It allows developers to store, manage, and query structured data for decentralized applications using familiar SQL statements, with access control and ownership tied to the blockchain",
             "starred": false
         },
         {
-            "slug": "bitgo",
-            "provider": "BitGo",
-            "offer": null,
+            "slug": "thread-db",
+            "provider": "Powergate",
+            "offer": "Thread DB",
             "actionButtons": [
-                "[Website](https://www.bitgo.com/)"
+                "[Docs](https://docs.textile.io/threads/)"
             ],
-            "toolType": "Finance",
+            "toolType": "Database",
             "tag": [
-                "Institutional-grade custody solution",
-                "Security"
+                "Decentralized database",
+                "P2P database"
             ],
             "price": "Custom",
-            "planType": "Enterprise",
+            "planType": "TBD",
             "planName": null,
-            "description": "Institutional-grade digital asset infrastructure company that provides secure custody, wallet, trading, staking and settlement services for cryptocurrencies",
-            "starred": false
-        },
-        {
-            "slug": "blocknative-batch-decoder",
-            "provider": "Blocknative",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://blocknative.com/)",
-                "[Doc](https://docs.blocknative.com/ethernow/batch-decoder-api)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Batch Decoder",
-                "Mempool Analysis",
-                "OP Stack",
-                "Explorer"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It offers a suite of APIs, SDKs, and tools that help developers and traders monitor, manage, and optimize blockchain transactions by providing visibility into the mempool",
-            "starred": false
-        },
-        {
-            "slug": "bonadocs",
-            "provider": "Bonadocs",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://registry.bonadocs.com/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Blockchain documentation",
-                "Smart contract documentation",
-                "API documentation tool"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides a suite of developer tools designed to simplify smart contract integration, documentation, and collaboration for Web3 engineering teams",
-            "starred": false
-        },
-        {
-            "slug": "bonadocs-docgen",
-            "provider": "Bonadocs",
-            "offer": "Docgen",
-            "actionButtons": [
-                "[Docs](https://docs.bonadocs.com/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Documentation",
-                "Dev Productivity"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It helps developers automatically generate beautiful, interactive documentation websites for their Solidity smart contract projects directly from the codebase",
-            "starred": false
-        },
-        {
-            "slug": "brand-extender",
-            "provider": "Brand Extender",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://brandextender.io/)"
-            ],
-            "toolType": "NFT",
-            "tag": [
-                "NFT/Web3 Tools",
-                "SDK"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It enables the creation of fully on-chain derivative NFTs or sets of NFTs, leveraging existing NFT collections with open intellectual property (IP) rights",
-            "starred": false
-        },
-        {
-            "slug": "build-bear-enterprise",
-            "provider": "BuildBear",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.buildbear.io/pricing)",
-                "[Docs](https://www.buildbear.io/docs/docs)"
-            ],
-            "toolType": "Testing and Debugging",
-            "tag": [
-                "Web3 Development",
-                "Smart Contract Testing",
-                "EVM-Compatible Testnets"
-            ],
-            "price": "From $499",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides cloud-enabled, private and shareable EVM sandbox environments for testing and debugging smart contracts in production-like conditions",
-            "starred": false
-        },
-        {
-            "slug": "cannon",
-            "provider": "Cannon",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://usecannon.com/)",
-                "[Docs](https://usecannon.com/learn/guides/get-started/setup)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Smart Contract Deployment",
-                "Blockchain DevOps",
-                "Ethereum Network Development",
-                "Smart Contract Package Manager"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It helps manage and streamline the deployment, upgrade and configuration of smart contracts and entire protocols across various networks",
-            "starred": false
-        },
-        {
-            "slug": "coingate-enterprise",
-            "provider": "CoinGate",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://coingate.com/)"
-            ],
-            "toolType": "Finance",
-            "tag": [
-                "Merchant",
-                "Invoicing",
-                "Processing"
-            ],
-            "price": "1% Fee",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "Cryptocurrency payment gateway. It enables accepting payments in Bitcoin, USDC and various other cryptocurrencies",
-            "starred": false
-        },
-        {
-            "slug": "coinsdo",
-            "provider": "CoinsDo",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.coinsdo.com/en)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Wallet as a Service (WaaS)",
-                "Digital asset wallet solutions",
-                "Cryptocurrency wallet API"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "Provides a suite of developer tools, primarily a Wallet-as-a-Service solution, that allows developers and businesses to integrate secure, non-custodial digital asset management and transaction capabilities into their own applications",
-            "starred": false
-        },
-        {
-            "slug": "crossmint-enterprise",
-            "provider": "Crossmint",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.crossmint.com/contact/sales)"
-            ],
-            "toolType": "NFT",
-            "tag": [
-                "NFT",
-                "Minting",
-                "Payments",
-                "Fiat On-Ramp"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "Platform enabling fiat on-ramp for NFTs, letting users mint NFTs with credit cards; supports Optimism for seamless onboarding of new users",
-            "starred": false
-        },
-        {
-            "slug": "curvegrid-enterprise",
-            "provider": "Curvegrid",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.curvegrid.com/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Web3 infrastructure",
-                "API",
-                "Smart contracts",
-                "Enterprise blockchain"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides developer tools and infrastructure-as-a-service to help businesses and developers build and deploy decentralized applications faster and more easily",
-            "starred": false
-        },
-        {
-            "slug": "dapprovals-enterprise",
-            "provider": "dApprovals",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://dapproval.com/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Code Review Approvals",
-                "Deployment Approvals",
-                "CI/CD Approvals",
-                "Infrastructure Approvals"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": "Custom",
-            "description": "Provides services for managing and securing Web3 transaction approvals",
-            "starred": false
-        },
-        {
-            "slug": "datacurve-enterprise",
-            "provider": "DataCurve",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://datacurve.io/)"
-            ],
-            "toolType": "AI",
-            "tag": [
-                "AI platform",
-                "Customer data platform",
-                "Data analytics",
-                "CRM integration"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "DataCurve unifies sport fan identity and behavior across every touchpoint using blockchain - creating a measurable foundation for personalization, sponsor attribution, and revenue growth.",
-            "starred": false
-        },
-        {
-            "slug": "decubate-tms",
-            "provider": "Decubate TMS",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://tms.finance/)"
-            ],
-            "toolType": "Finance",
-            "tag": [
-                "No-code token platform",
-                "Token minting",
-                "Liquidity farming"
-            ],
-            "price": "From $5K",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It is a no-code, all-in-one platform that provides Web3 builders and projects with the necessary tools to launch, manage, and scale their tokens efficiently and securely",
-            "starred": false
-        },
-        {
-            "slug": "flexa",
-            "provider": "Flexa",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://flexa.network/)"
-            ],
-            "toolType": "Finance",
-            "tag": [
-                "Merchant",
-                "Real-world",
-                "Payments"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "Digital payment network enabling instant, fraud-proof payments at major retailers",
-            "starred": false
-        },
-        {
-            "slug": "laika-ai",
-            "provider": "Laika AI",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://laikalabs.ai/)"
-            ],
-            "toolType": "AI",
-            "tag": [
-                "AI",
-                "On-chain Data",
-                "Analytics"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It offers an enterprise API and a SDK for custom agent development, allowing other developers to integrate its analytics and smart contract auditing features into their own applications",
-            "starred": false
-        },
-        {
-            "slug": "mosaia-enterprise",
-            "provider": "Mosaia",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://calendly.com/cyril-mosaia)"
-            ],
-            "toolType": "AI",
-            "tag": [
-                "Building and deploying AI agents and teams"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
-            "starred": false
-        },
-        {
-            "slug": "multisender",
-            "provider": "Multisender",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://multisender.app/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Multisender",
-                "Multisend",
-                "Bulk sender",
-                "Send multiple tokens",
-                "Batch transactions",
-                "Token distribution"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides a specific function that development teams and project managers use to manage and distribute digital assets efficiently. It operates via the user's own smart wallet but not a wallet provider itself",
-            "starred": false
-        },
-        {
-            "slug": "onmeta",
-            "provider": "Onmeta",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://onmeta.in/)"
-            ],
-            "toolType": "Finance",
-            "tag": [
-                "Web3 infrastructure",
-                "On/Off-ramp solutions",
-                "Payment APIs",
-                "SDK integration"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides developers with fiat-to-crypto i.e on-ramp and crypto-to-fiat i.e off-ramp infrastructure for integrating cryptocurrency buy and sell functionality into Web3 applications, platforms, or wallets",
-            "starred": false
-        },
-        {
-            "slug": "paymaster",
-            "provider": "Coinbase",
-            "offer": null,
-            "actionButtons": [
-                "[Docs](https://docs.cdp.coinbase.com/paymaster/introduction/welcome)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Account Abstraction"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "Account abstraction endpoints to send transactions and sponsor gas",
-            "starred": false
-        },
-        {
-            "slug": "rarible",
-            "provider": "Rarible",
-            "offer": null,
-            "actionButtons": [
-                "[Docs](https://docs.rarible.org/docs/introduction)"
-            ],
-            "toolType": "NFT",
-            "tag": [
-                "Rarible SDK",
-                "Rarible Protocol",
-                "Multichain SDK",
-                "NFT API",
-                "NFT Development"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It simplifies building NFT applications by providing an abstraction layer over multiple blockchains, allowing developers to easily create, mint, sell, buy, transfer and query NFTs without deep blockchain specifics",
-            "starred": false
-        },
-        {
-            "slug": "reown-enterprise",
-            "provider": "Reown",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://reown.com/)",
-                "[Docs](https://docs.reown.com/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Smart Wallets",
-                "Social Login",
-                "Paymasters",
-                "Gas Sponsorship"
-            ],
-            "price": "$250+",
-            "planType": "Enterprise",
-            "planName": "Enterpeise",
-            "description": "Tools to build user-friendly smart wallets with social login, paymaster configuration for gas fees sponsorship and chain abstraction for seamless UX",
-            "starred": false
-        },
-        {
-            "slug": "rollup-codes",
-            "provider": "Rollup.codes",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.rollup.codes/linea)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Ethereum Rollups",
-                "Analysis",
-                "Opcodes"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides resources and data to help developers building on rollups select the optimal configurations and integrate third-party services",
-            "starred": false
-        },
-        {
-            "slug": "sign-protocol",
-            "provider": "Sign Protocol",
-            "offer": null,
-            "actionButtons": [
-                "[Docs](https://docs.ethsign.xyz/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Blockchain signature tools",
-                "Smart contracts",
-                "Web3 identity/attestation"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It offers a suite of tools and APIs for integrating blockchain-based, legally compliant document signing and data verification functionalities into other Web3 applications",
-            "starred": false
-        },
-        {
-            "slug": "smartmuv",
-            "provider": "SmartMuv",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://smartmuv.app/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Smart contract analysis",
-                "Blockchain data extraction",
-                "Web3 development tools"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It facilitate solidity smart contract analysis, deep storage data extraction, and migration",
-            "starred": false
-        },
-        {
-            "slug": "sprintcheckout",
-            "provider": "Sprintcheckout",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://sprintcheckout.com/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Crypto payment gateway",
-                "Web3 payment tools",
-                "Blockchain payment solution"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides the infrastructure and tools for developers to seamlessly incorporate modern, low-cost, and user-friendly crypto payment options into their projects",
-            "starred": false
-        },
-        {
-            "slug": "stackup-enterprise",
-            "provider": "Stackup",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://www.stackup.fi/contact)",
-                "[Docs](https://docs.stackup.fi/)"
-            ],
-            "toolType": "Finance",
-            "tag": [
-                "Account Abstraction",
-                "Wallet"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides smart account tooling for building account abstraction within your apps. They offer Paymaster and Bundler APIs for sponsoring gas and sending account abstraction transactions",
-            "starred": false
-        },
-        {
-            "slug": "sublime-ethereum",
-            "provider": "Sublime-Ethereum",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://github.com/davidhq/SublimeEthereum)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Solidity"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides developers with a specialized, efficient interface for building decentralized applications and smart contracts on the blockchain",
-            "starred": false
-        },
-        {
-            "slug": "swaps",
-            "provider": "Swaps",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.swaps.xyz/)",
-                "[Docs](https://docs.swaps.xyz/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Blockchain development",
-                "Decentralized applications",
-                "Crypto payment gateway"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It abstracts the complexities of blockchain interactions, allowing developers to integrate diverse on-chain crypto experiences into their applications more easily",
-            "starred": false
-        },
-        {
-            "slug": "tally",
-            "provider": "Tally",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://www.tally.xyz/)"
-            ],
-            "toolType": "Finance",
-            "tag": [
-                "Decentralized Autonomous Organizations",
-                "Web3 & Blockchain",
-                "Governance & Voting"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides web3 infrastructure and developer tools for building, managing, and integrating on-chain governance and decentralized autonomous organizations",
-            "starred": false
-        },
-        {
-            "slug": "tenderly-sandbox",
-            "provider": "Tenderly",
-            "offer": null,
-            "actionButtons": [
-                "[Docs](https://docs.tenderly.co/tenderly-sandbox)"
-            ],
-            "toolType": "IDE",
-            "tag": [
-                "Smart Contract Development",
-                "Solidity IDE",
-                "In-browser Editor",
-                "Transaction Debugging"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It is a browser-based integrated development environment (IDE) for smart contracts that allows developers to write, test and debug Solidity code instantly without any local setup",
-            "starred": false
-        },
-        {
-            "slug": "thirdweb-aa",
-            "provider": "Thirdweb",
-            "offer": null,
-            "actionButtons": [
-                "[Docs](https://portal.thirdweb.com/engine/v2/features/account-abstraction)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "SDK"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "Comprehensive solution for smart accounts with paymaster and sponsored transactions",
-            "starred": false
-        },
-        {
-            "slug": "thirdweb-pay",
-            "provider": "Thirdweb",
-            "offer": null,
-            "actionButtons": [
-                "[Docs](https://portal.thirdweb.com/pay)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "SDK"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "Fiat and cross-chain crypto payments with gas fee abstraction",
-            "starred": false
-        },
-        {
-            "slug": "univoucher",
-            "provider": "UniVoucher",
-            "offer": null,
-            "actionButtons": [
-                "[Docs](https://docs.univoucher.com/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Gift card",
-                "Payment gateway",
-                "Wallet integration"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It offers an API and documentation that allow developers to integrate the functionality of creating and managing decentralized, tangible crypto gift cards into their own applications",
-            "starred": false
-        },
-        {
-            "slug": "zero-dev-enterprise",
-            "provider": "ZeroDev",
-            "offer": null,
-            "actionButtons": [
-                "[Docs](https://docs.zerodev.app/)"
-            ],
-            "toolType": "Tool",
-            "tag": [
-                "Account Abstraction",
-                "Programmable Wallet",
-                "UI"
-            ],
-            "price": "Custom",
-            "planType": "Enterprise",
-            "planName": null,
-            "description": "It provides a software development kit for developers to build user-friendly applications and smart wallets with advanced features",
+            "description": "It is a multi-party,decentralized database solution built on IPFS and Libp2p that provides an alternative architecture for data on the web",
             "starred": false
         }
     ],
@@ -2608,7 +2608,7 @@
             "starred",
             "tag"
         ],
-        "storages": [
+        "services": [
             "slug",
             "provider",
             "offer",
@@ -2620,6 +2620,24 @@
             "planName",
             "description",
             "starred"
+        ],
+        "security": [
+            "slug",
+            "provider",
+            "offer",
+            "actionButtons",
+            "tag",
+            "description",
+            "planType",
+            "planName",
+            "price",
+            "trial",
+            "starred",
+            "toolType",
+            "deliveryType",
+            "executionEnvironment",
+            "coverage",
+            "compliance"
         ],
         "sdks": [
             "slug",
@@ -2656,25 +2674,7 @@
             "availableApis",
             "executionEnvironment"
         ],
-        "security": [
-            "slug",
-            "provider",
-            "offer",
-            "actionButtons",
-            "tag",
-            "description",
-            "planType",
-            "planName",
-            "price",
-            "trial",
-            "starred",
-            "toolType",
-            "deliveryType",
-            "executionEnvironment",
-            "coverage",
-            "compliance"
-        ],
-        "services": [
+        "storages": [
             "slug",
             "provider",
             "offer",
@@ -3850,82 +3850,6 @@
                     "wallets"
                 ]
             },
-            "ipfs": {
-                "slug": "ipfs",
-                "name": "IPFS",
-                "logoPath": "ipfs.png",
-                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
-                "website": "https://docs.ipfs.io/",
-                "docs": "https://docs.ipfs.io/",
-                "x": null,
-                "github": "ipfs-force-community/go-fvm-sdk",
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "storages"
-                ]
-            },
-            "orbit-db": {
-                "slug": "orbit-db",
-                "name": "Orbit DB",
-                "logoPath": "orbit-db.png",
-                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
-                "website": "https://orbitdb.org/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "storages"
-                ]
-            },
-            "tableland": {
-                "slug": "tableland",
-                "name": "Tableland",
-                "logoPath": "tableland.png",
-                "description": "It allows developers to store, manage, and query structured data for decentralized applications using familiar SQL statements, with access control and ownership tied to the blockchain",
-                "website": "https://tableland.xyz/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "storages"
-                ]
-            },
-            "powergate": {
-                "slug": "powergate",
-                "name": "Powergate",
-                "logoPath": "powergate.png",
-                "description": "Textile Powergate SDK for building on Filecoin",
-                "website": "https://docs.textile.io/powergate/",
-                "docs": "https://docs.textile.io/powergate/",
-                "x": null,
-                "github": "textileio/powergate",
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "storages"
-                ]
-            },
             "alchemy": {
                 "slug": "alchemy",
                 "name": "Alchemy",
@@ -3944,6 +3868,692 @@
                 "categories": [
                     "sdks",
                     "services"
+                ]
+            },
+            "etherspot-prime": {
+                "slug": "etherspot-prime",
+                "name": "Etherspot Prime",
+                "logoPath": "etherspot-prime.png",
+                "description": "Account Abstraction SDK providing Web2-like smart wallet experiences i.e social logins batched transactions to Ethereum dApps",
+                "website": "https://etherspot.io",
+                "docs": "https://etherspot.fyi/prime-sdk/intro",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "bitbond-token-tool": {
+                "slug": "bitbond-token-tool",
+                "name": "Bitbond Token Tool",
+                "logoPath": "bitbond-token-tool.png",
+                "description": "It is a web-based service for developers and businesses that provides a no-code platform to create, manage and distribute various blockchain tokens and NFTs across multiple EVM-compatible blockchains and other networks",
+                "website": "https://tokentool.bitbond.com/pricing",
+                "docs": "https://docs.bitbond.com/asset-tokenization-suite",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "bitgo": {
+                "slug": "bitgo",
+                "name": "BitGo",
+                "logoPath": "bitgo.png",
+                "description": "Institutional-grade digital asset infrastructure company that provides secure custody, wallet, trading, staking and settlement services for cryptocurrencies",
+                "website": "https://www.bitgo.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "blocknative": {
+                "slug": "blocknative",
+                "name": "Blocknative",
+                "logoPath": "blocknative.png",
+                "description": "It offers a suite of APIs, SDKs, and tools that help developers and traders monitor, manage, and optimize blockchain transactions by providing visibility into the mempool",
+                "website": "https://blocknative.com/",
+                "docs": "https://docs.blocknative.com/ethernow/batch-decoder-api",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "bonadocs": {
+                "slug": "bonadocs",
+                "name": "Bonadocs",
+                "logoPath": "bonadocs.png",
+                "description": "It provides a suite of developer tools designed to simplify smart contract integration, documentation, and collaboration for Web3 engineering teams",
+                "website": "https://registry.bonadocs.com/",
+                "docs": "https://docs.bonadocs.com/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "brand-extender": {
+                "slug": "brand-extender",
+                "name": "Brand Extender",
+                "logoPath": "brand-extender.png",
+                "description": "It enables the creation of fully on-chain derivative NFTs or sets of NFTs, leveraging existing NFT collections with open intellectual property (IP) rights",
+                "website": "https://brandextender.io/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "buildbear": {
+                "slug": "buildbear",
+                "name": "BuildBear",
+                "logoPath": "buildbear.png",
+                "description": "It provides cloud-enabled, private and shareable EVM sandbox environments for testing and debugging smart contracts in production-like conditions",
+                "website": "https://www.buildbear.io/pricing",
+                "docs": "https://www.buildbear.io/docs/docs",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "cannon": {
+                "slug": "cannon",
+                "name": "Cannon",
+                "logoPath": "cannon.png",
+                "description": "It helps manage and streamline the deployment, upgrade and configuration of smart contracts and entire protocols across various networks",
+                "website": "https://usecannon.com/",
+                "docs": "https://usecannon.com/learn/guides/get-started/setup",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "coingate": {
+                "slug": "coingate",
+                "name": "CoinGate",
+                "logoPath": "coingate.png",
+                "description": "Cryptocurrency payment gateway. It enables accepting payments in Bitcoin, USDC and various other cryptocurrencies",
+                "website": "https://coingate.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "coinsdo": {
+                "slug": "coinsdo",
+                "name": "CoinsDo",
+                "logoPath": "coinsdo.png",
+                "description": "Provides a suite of developer tools, primarily a Wallet-as-a-Service solution, that allows developers and businesses to integrate secure, non-custodial digital asset management and transaction capabilities into their own applications",
+                "website": "https://www.coinsdo.com/en",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "crossmint": {
+                "slug": "crossmint",
+                "name": "Crossmint",
+                "logoPath": "crossmint.png",
+                "description": "Platform enabling fiat on-ramp for NFTs, letting users mint NFTs with credit cards; supports Optimism for seamless onboarding of new users",
+                "website": "https://www.crossmint.com/contact/sales",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "curvegrid": {
+                "slug": "curvegrid",
+                "name": "Curvegrid",
+                "logoPath": "curvegrid.png",
+                "description": "It provides developer tools and infrastructure-as-a-service to help businesses and developers build and deploy decentralized applications faster and more easily",
+                "website": "https://www.curvegrid.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "dapprovals": {
+                "slug": "dapprovals",
+                "name": "dApprovals",
+                "logoPath": "dapprovals.png",
+                "description": "Provides services for managing and securing Web3 transaction approvals",
+                "website": "https://dapproval.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "datacurve": {
+                "slug": "datacurve",
+                "name": "DataCurve",
+                "logoPath": "datacurve.png",
+                "description": "Provides developer services for Web3 developers and users.",
+                "website": "https://datacurve.io/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "decubate-tms": {
+                "slug": "decubate-tms",
+                "name": "Decubate TMS",
+                "logoPath": "decubate-tms.png",
+                "description": "It is a no-code, all-in-one platform that provides Web3 builders and projects with the necessary tools to launch, manage, and scale their tokens efficiently and securely",
+                "website": "https://tms.finance/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "flexa": {
+                "slug": "flexa",
+                "name": "Flexa",
+                "logoPath": "flexa.png",
+                "description": "Digital payment network enabling instant, fraud-proof payments at major retailers",
+                "website": "https://flexa.network/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "laika-ai": {
+                "slug": "laika-ai",
+                "name": "Laika AI",
+                "logoPath": "laika-ai.png",
+                "description": "It offers an enterprise API and a SDK for custom agent development, allowing other developers to integrate its analytics and smart contract auditing features into their own applications",
+                "website": "https://laikalabs.ai/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "mosaia": {
+                "slug": "mosaia",
+                "name": "Mosaia",
+                "logoPath": "mosaia.png",
+                "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
+                "website": "https://www.mosaia.io/pricing",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "multisender": {
+                "slug": "multisender",
+                "name": "Multisender",
+                "logoPath": "multisender.png",
+                "description": "It provides a specific function that development teams and project managers use to manage and distribute digital assets efficiently. It operates via the user's own smart wallet but not a wallet provider itself",
+                "website": "https://multisender.app/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "onmeta": {
+                "slug": "onmeta",
+                "name": "Onmeta",
+                "logoPath": "onmeta.png",
+                "description": "It provides developers with fiat-to-crypto i.e on-ramp and crypto-to-fiat i.e off-ramp infrastructure for integrating cryptocurrency buy and sell functionality into Web3 applications, platforms, or wallets",
+                "website": "https://onmeta.in/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "coinbase": {
+                "slug": "coinbase",
+                "name": "Coinbase",
+                "logoPath": "coinbase.png",
+                "description": "Toolkit enabling AI agents to interact with blockchain networks with secure wallet management and comprehensive onchain capabilities",
+                "website": "https://docs.cdp.coinbase.com/agent-kit/welcome",
+                "docs": "https://docs.cdp.coinbase.com/paymaster/introduction/welcome",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "rarible": {
+                "slug": "rarible",
+                "name": "Rarible",
+                "logoPath": "rarible.png",
+                "description": "It simplifies building NFT applications by providing an abstraction layer over multiple blockchains, allowing developers to easily create, mint, sell, buy, transfer and query NFTs without deep blockchain specifics",
+                "website": "https://docs.rarible.org/docs/introduction",
+                "docs": "https://docs.rarible.org/docs/introduction",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "reown": {
+                "slug": "reown",
+                "name": "Reown",
+                "logoPath": "reown.png",
+                "description": "Tools to build user-friendly smart wallets with social login, paymaster configuration for gas fees sponsorship and chain abstraction for seamless UX",
+                "website": "https://reown.com/",
+                "docs": "https://docs.reown.com/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "rollup-codes": {
+                "slug": "rollup-codes",
+                "name": "Rollup.codes",
+                "logoPath": "rollup-codes.png",
+                "description": "It provides resources and data to help developers building on rollups select the optimal configurations and integrate third-party services",
+                "website": "https://www.rollup.codes/linea",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "sign-protocol": {
+                "slug": "sign-protocol",
+                "name": "Sign Protocol",
+                "logoPath": "sign-protocol.png",
+                "description": "It offers a suite of tools and APIs for integrating blockchain-based, legally compliant document signing and data verification functionalities into other Web3 applications",
+                "website": "https://docs.ethsign.xyz/",
+                "docs": "https://docs.ethsign.xyz/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "smartmuv": {
+                "slug": "smartmuv",
+                "name": "SmartMuv",
+                "logoPath": "smartmuv.png",
+                "description": "It facilitate solidity smart contract analysis, deep storage data extraction, and migration",
+                "website": "https://smartmuv.app/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "sprintcheckout": {
+                "slug": "sprintcheckout",
+                "name": "Sprintcheckout",
+                "logoPath": "sprintcheckout.png",
+                "description": "It provides the infrastructure and tools for developers to seamlessly incorporate modern, low-cost, and user-friendly crypto payment options into their projects",
+                "website": "https://sprintcheckout.com/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "stackup": {
+                "slug": "stackup",
+                "name": "Stackup",
+                "logoPath": "stackup.png",
+                "description": "Provides smart account tooling for building account abstraction within your apps. They offer Paymaster and Bundler APIs for sponsoring gas and sending account abstraction transactions",
+                "website": "https://www.stackup.fi/contact",
+                "docs": "https://docs.stackup.fi/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "sublime-ethereum": {
+                "slug": "sublime-ethereum",
+                "name": "Sublime-Ethereum",
+                "logoPath": "sublime-ethereum.png",
+                "description": "It provides developers with a specialized, efficient interface for building decentralized applications and smart contracts on the blockchain",
+                "website": null,
+                "docs": null,
+                "x": null,
+                "github": "davidhq/SublimeEthereum",
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "swaps": {
+                "slug": "swaps",
+                "name": "Swaps",
+                "logoPath": "swaps.png",
+                "description": "It abstracts the complexities of blockchain interactions, allowing developers to integrate diverse on-chain crypto experiences into their applications more easily",
+                "website": "https://www.swaps.xyz/",
+                "docs": "https://docs.swaps.xyz/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "tally": {
+                "slug": "tally",
+                "name": "Tally",
+                "logoPath": "tally.png",
+                "description": "It provides web3 infrastructure and developer tools for building, managing, and integrating on-chain governance and decentralized autonomous organizations",
+                "website": "https://www.tally.xyz/",
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "tenderly": {
+                "slug": "tenderly",
+                "name": "Tenderly",
+                "logoPath": "tenderly.png",
+                "description": "It is a browser-based integrated development environment (IDE) for smart contracts that allows developers to write, test and debug Solidity code instantly without any local setup",
+                "website": "https://tenderly.co/",
+                "docs": "https://docs.tenderly.co/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "platforms",
+                    "services"
+                ]
+            },
+            "thirdweb": {
+                "slug": "thirdweb",
+                "name": "Thirdweb",
+                "logoPath": "thirdweb.png",
+                "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
+                "website": "https://portal.thirdweb.com/engine/v2/features/account-abstraction",
+                "docs": "https://portal.thirdweb.com/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "platforms",
+                    "services"
+                ]
+            },
+            "univoucher": {
+                "slug": "univoucher",
+                "name": "UniVoucher",
+                "logoPath": "univoucher.png",
+                "description": "It offers an API and documentation that allow developers to integrate the functionality of creating and managing decentralized, tangible crypto gift cards into their own applications",
+                "website": "https://docs.univoucher.com/",
+                "docs": "https://docs.univoucher.com/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "zerodev": {
+                "slug": "zerodev",
+                "name": "ZeroDev",
+                "logoPath": "zerodev.png",
+                "description": "It provides a software development kit for developers to build user-friendly applications and smart wallets with advanced features",
+                "website": "https://docs.zerodev.app/",
+                "docs": "https://docs.zerodev.app/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "services"
+                ]
+            },
+            "blowfish": {
+                "slug": "blowfish",
+                "name": "Blowfish",
+                "logoPath": "blowfish.png",
+                "description": "Protects Web3 users by analyzing transactions to identify and block malicious activity in real-time",
+                "website": null,
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "security"
                 ]
             },
             "biconomy": {
@@ -4688,46 +5298,6 @@
                     "platforms"
                 ]
             },
-            "tenderly": {
-                "slug": "tenderly",
-                "name": "Tenderly",
-                "logoPath": "tenderly.png",
-                "description": "It is a browser-based integrated development environment (IDE) for smart contracts that allows developers to write, test and debug Solidity code instantly without any local setup",
-                "website": "https://tenderly.co/",
-                "docs": "https://docs.tenderly.co/",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "platforms",
-                    "services"
-                ]
-            },
-            "thirdweb": {
-                "slug": "thirdweb",
-                "name": "Thirdweb",
-                "logoPath": "thirdweb.png",
-                "description": "Leading all-in-one platform for Web3 developers to build, launch and manage applications with pre-built contracts and infrastructure tools",
-                "website": "https://portal.thirdweb.com/engine/v2/features/account-abstraction",
-                "docs": "https://portal.thirdweb.com/",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "platforms",
-                    "services"
-                ]
-            },
             "thx-network": {
                 "slug": "thx-network",
                 "name": "THX Network",
@@ -4804,12 +5374,31 @@
                     "platforms"
                 ]
             },
-            "blowfish": {
-                "slug": "blowfish",
-                "name": "Blowfish",
-                "logoPath": "blowfish.png",
-                "description": "Protects Web3 users by analyzing transactions to identify and block malicious activity in real-time",
-                "website": null,
+            "ipfs": {
+                "slug": "ipfs",
+                "name": "IPFS",
+                "logoPath": "ipfs.png",
+                "description": "Open decentralized protocol to store, verify, and share data across distributed networks commonly used in blockchain",
+                "website": "https://docs.ipfs.io/",
+                "docs": "https://docs.ipfs.io/",
+                "x": null,
+                "github": "ipfs-force-community/go-fvm-sdk",
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "storages"
+                ]
+            },
+            "orbit-db": {
+                "slug": "orbit-db",
+                "name": "Orbit DB",
+                "logoPath": "orbit-db.png",
+                "description": "It provides a serverless, distributed, peer-to-peer database for building decentralized applications",
+                "website": "https://orbitdb.org/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -4820,53 +5409,15 @@
                 "starred": false,
                 "tag": null,
                 "categories": [
-                    "security"
+                    "storages"
                 ]
             },
-            "etherspot-prime": {
-                "slug": "etherspot-prime",
-                "name": "Etherspot Prime",
-                "logoPath": "etherspot-prime.png",
-                "description": "Account Abstraction SDK providing Web2-like smart wallet experiences i.e social logins batched transactions to Ethereum dApps",
-                "website": "https://etherspot.io",
-                "docs": "https://etherspot.fyi/prime-sdk/intro",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "bitbond-token-tool": {
-                "slug": "bitbond-token-tool",
-                "name": "Bitbond Token Tool",
-                "logoPath": "bitbond-token-tool.png",
-                "description": "It is a web-based service for developers and businesses that provides a no-code platform to create, manage and distribute various blockchain tokens and NFTs across multiple EVM-compatible blockchains and other networks",
-                "website": "https://tokentool.bitbond.com/pricing",
-                "docs": "https://docs.bitbond.com/asset-tokenization-suite",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "bitgo": {
-                "slug": "bitgo",
-                "name": "BitGo",
-                "logoPath": "bitgo.png",
-                "description": "Institutional-grade digital asset infrastructure company that provides secure custody, wallet, trading, staking and settlement services for cryptocurrencies",
-                "website": "https://www.bitgo.com/",
+            "tableland": {
+                "slug": "tableland",
+                "name": "Tableland",
+                "logoPath": "tableland.png",
+                "description": "It allows developers to store, manage, and query structured data for decentralized applications using familiar SQL statements, with access control and ownership tied to the blockchain",
+                "website": "https://tableland.xyz/",
                 "docs": null,
                 "x": null,
                 "github": null,
@@ -4877,18 +5428,18 @@
                 "starred": false,
                 "tag": null,
                 "categories": [
-                    "services"
+                    "storages"
                 ]
             },
-            "blocknative": {
-                "slug": "blocknative",
-                "name": "Blocknative",
-                "logoPath": "blocknative.png",
-                "description": "It offers a suite of APIs, SDKs, and tools that help developers and traders monitor, manage, and optimize blockchain transactions by providing visibility into the mempool",
-                "website": "https://blocknative.com/",
-                "docs": "https://docs.blocknative.com/ethernow/batch-decoder-api",
+            "powergate": {
+                "slug": "powergate",
+                "name": "Powergate",
+                "logoPath": "powergate.png",
+                "description": "Textile Powergate SDK for building on Filecoin",
+                "website": "https://docs.textile.io/powergate/",
+                "docs": "https://docs.textile.io/powergate/",
                 "x": null,
-                "github": null,
+                "github": "textileio/powergate",
                 "discord": null,
                 "telegram": null,
                 "linkedin": null,
@@ -4896,558 +5447,7 @@
                 "starred": false,
                 "tag": null,
                 "categories": [
-                    "services"
-                ]
-            },
-            "bonadocs": {
-                "slug": "bonadocs",
-                "name": "Bonadocs",
-                "logoPath": "bonadocs.png",
-                "description": "It provides a suite of developer tools designed to simplify smart contract integration, documentation, and collaboration for Web3 engineering teams",
-                "website": "https://registry.bonadocs.com/",
-                "docs": "https://docs.bonadocs.com/",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "brand-extender": {
-                "slug": "brand-extender",
-                "name": "Brand Extender",
-                "logoPath": "brand-extender.png",
-                "description": "It enables the creation of fully on-chain derivative NFTs or sets of NFTs, leveraging existing NFT collections with open intellectual property (IP) rights",
-                "website": "https://brandextender.io/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "buildbear": {
-                "slug": "buildbear",
-                "name": "BuildBear",
-                "logoPath": "buildbear.png",
-                "description": "It provides cloud-enabled, private and shareable EVM sandbox environments for testing and debugging smart contracts in production-like conditions",
-                "website": "https://www.buildbear.io/pricing",
-                "docs": "https://www.buildbear.io/docs/docs",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "cannon": {
-                "slug": "cannon",
-                "name": "Cannon",
-                "logoPath": "cannon.png",
-                "description": "It helps manage and streamline the deployment, upgrade and configuration of smart contracts and entire protocols across various networks",
-                "website": "https://usecannon.com/",
-                "docs": "https://usecannon.com/learn/guides/get-started/setup",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "coingate": {
-                "slug": "coingate",
-                "name": "CoinGate",
-                "logoPath": "coingate.png",
-                "description": "Cryptocurrency payment gateway. It enables accepting payments in Bitcoin, USDC and various other cryptocurrencies",
-                "website": "https://coingate.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "coinsdo": {
-                "slug": "coinsdo",
-                "name": "CoinsDo",
-                "logoPath": "coinsdo.png",
-                "description": "Provides a suite of developer tools, primarily a Wallet-as-a-Service solution, that allows developers and businesses to integrate secure, non-custodial digital asset management and transaction capabilities into their own applications",
-                "website": "https://www.coinsdo.com/en",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "crossmint": {
-                "slug": "crossmint",
-                "name": "Crossmint",
-                "logoPath": "crossmint.png",
-                "description": "Platform enabling fiat on-ramp for NFTs, letting users mint NFTs with credit cards; supports Optimism for seamless onboarding of new users",
-                "website": "https://www.crossmint.com/contact/sales",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "curvegrid": {
-                "slug": "curvegrid",
-                "name": "Curvegrid",
-                "logoPath": "curvegrid.png",
-                "description": "It provides developer tools and infrastructure-as-a-service to help businesses and developers build and deploy decentralized applications faster and more easily",
-                "website": "https://www.curvegrid.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "dapprovals": {
-                "slug": "dapprovals",
-                "name": "dApprovals",
-                "logoPath": "dapprovals.png",
-                "description": "Provides services for managing and securing Web3 transaction approvals",
-                "website": "https://dapproval.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "datacurve": {
-                "slug": "datacurve",
-                "name": "DataCurve",
-                "logoPath": "datacurve.png",
-                "description": "Provides developer services for Web3 developers and users.",
-                "website": "https://datacurve.io/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "decubate-tms": {
-                "slug": "decubate-tms",
-                "name": "Decubate TMS",
-                "logoPath": "decubate-tms.png",
-                "description": "It is a no-code, all-in-one platform that provides Web3 builders and projects with the necessary tools to launch, manage, and scale their tokens efficiently and securely",
-                "website": "https://tms.finance/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "flexa": {
-                "slug": "flexa",
-                "name": "Flexa",
-                "logoPath": "flexa.png",
-                "description": "Digital payment network enabling instant, fraud-proof payments at major retailers",
-                "website": "https://flexa.network/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "laika-ai": {
-                "slug": "laika-ai",
-                "name": "Laika AI",
-                "logoPath": "laika-ai.png",
-                "description": "It offers an enterprise API and a SDK for custom agent development, allowing other developers to integrate its analytics and smart contract auditing features into their own applications",
-                "website": "https://laikalabs.ai/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "mosaia": {
-                "slug": "mosaia",
-                "name": "Mosaia",
-                "logoPath": "mosaia.png",
-                "description": "It is a platform for developers and non-developers to build, deploy, and manage autonomous AI agents that connect with external applications and data sources",
-                "website": "https://www.mosaia.io/pricing",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "multisender": {
-                "slug": "multisender",
-                "name": "Multisender",
-                "logoPath": "multisender.png",
-                "description": "It provides a specific function that development teams and project managers use to manage and distribute digital assets efficiently. It operates via the user's own smart wallet but not a wallet provider itself",
-                "website": "https://multisender.app/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "onmeta": {
-                "slug": "onmeta",
-                "name": "Onmeta",
-                "logoPath": "onmeta.png",
-                "description": "It provides developers with fiat-to-crypto i.e on-ramp and crypto-to-fiat i.e off-ramp infrastructure for integrating cryptocurrency buy and sell functionality into Web3 applications, platforms, or wallets",
-                "website": "https://onmeta.in/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "coinbase": {
-                "slug": "coinbase",
-                "name": "Coinbase",
-                "logoPath": "coinbase.png",
-                "description": "Toolkit enabling AI agents to interact with blockchain networks with secure wallet management and comprehensive onchain capabilities",
-                "website": "https://docs.cdp.coinbase.com/agent-kit/welcome",
-                "docs": "https://docs.cdp.coinbase.com/paymaster/introduction/welcome",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "rarible": {
-                "slug": "rarible",
-                "name": "Rarible",
-                "logoPath": "rarible.png",
-                "description": "It simplifies building NFT applications by providing an abstraction layer over multiple blockchains, allowing developers to easily create, mint, sell, buy, transfer and query NFTs without deep blockchain specifics",
-                "website": "https://docs.rarible.org/docs/introduction",
-                "docs": "https://docs.rarible.org/docs/introduction",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "reown": {
-                "slug": "reown",
-                "name": "Reown",
-                "logoPath": "reown.png",
-                "description": "Tools to build user-friendly smart wallets with social login, paymaster configuration for gas fees sponsorship and chain abstraction for seamless UX",
-                "website": "https://reown.com/",
-                "docs": "https://docs.reown.com/",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "rollup-codes": {
-                "slug": "rollup-codes",
-                "name": "Rollup.codes",
-                "logoPath": "rollup-codes.png",
-                "description": "It provides resources and data to help developers building on rollups select the optimal configurations and integrate third-party services",
-                "website": "https://www.rollup.codes/linea",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "sign-protocol": {
-                "slug": "sign-protocol",
-                "name": "Sign Protocol",
-                "logoPath": "sign-protocol.png",
-                "description": "It offers a suite of tools and APIs for integrating blockchain-based, legally compliant document signing and data verification functionalities into other Web3 applications",
-                "website": "https://docs.ethsign.xyz/",
-                "docs": "https://docs.ethsign.xyz/",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "smartmuv": {
-                "slug": "smartmuv",
-                "name": "SmartMuv",
-                "logoPath": "smartmuv.png",
-                "description": "It facilitate solidity smart contract analysis, deep storage data extraction, and migration",
-                "website": "https://smartmuv.app/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "sprintcheckout": {
-                "slug": "sprintcheckout",
-                "name": "Sprintcheckout",
-                "logoPath": "sprintcheckout.png",
-                "description": "It provides the infrastructure and tools for developers to seamlessly incorporate modern, low-cost, and user-friendly crypto payment options into their projects",
-                "website": "https://sprintcheckout.com/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "stackup": {
-                "slug": "stackup",
-                "name": "Stackup",
-                "logoPath": "stackup.png",
-                "description": "Provides smart account tooling for building account abstraction within your apps. They offer Paymaster and Bundler APIs for sponsoring gas and sending account abstraction transactions",
-                "website": "https://www.stackup.fi/contact",
-                "docs": "https://docs.stackup.fi/",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "sublime-ethereum": {
-                "slug": "sublime-ethereum",
-                "name": "Sublime-Ethereum",
-                "logoPath": "sublime-ethereum.png",
-                "description": "It provides developers with a specialized, efficient interface for building decentralized applications and smart contracts on the blockchain",
-                "website": null,
-                "docs": null,
-                "x": null,
-                "github": "davidhq/SublimeEthereum",
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "swaps": {
-                "slug": "swaps",
-                "name": "Swaps",
-                "logoPath": "swaps.png",
-                "description": "It abstracts the complexities of blockchain interactions, allowing developers to integrate diverse on-chain crypto experiences into their applications more easily",
-                "website": "https://www.swaps.xyz/",
-                "docs": "https://docs.swaps.xyz/",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "tally": {
-                "slug": "tally",
-                "name": "Tally",
-                "logoPath": "tally.png",
-                "description": "It provides web3 infrastructure and developer tools for building, managing, and integrating on-chain governance and decentralized autonomous organizations",
-                "website": "https://www.tally.xyz/",
-                "docs": null,
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "univoucher": {
-                "slug": "univoucher",
-                "name": "UniVoucher",
-                "logoPath": "univoucher.png",
-                "description": "It offers an API and documentation that allow developers to integrate the functionality of creating and managing decentralized, tangible crypto gift cards into their own applications",
-                "website": "https://docs.univoucher.com/",
-                "docs": "https://docs.univoucher.com/",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
-                ]
-            },
-            "zerodev": {
-                "slug": "zerodev",
-                "name": "ZeroDev",
-                "logoPath": "zerodev.png",
-                "description": "It provides a software development kit for developers to build user-friendly applications and smart wallets with advanced features",
-                "website": "https://docs.zerodev.app/",
-                "docs": "https://docs.zerodev.app/",
-                "x": null,
-                "github": null,
-                "discord": null,
-                "telegram": null,
-                "linkedin": null,
-                "supportEmail": null,
-                "starred": false,
-                "tag": null,
-                "categories": [
-                    "services"
+                    "storages"
                 ]
             }
         }
