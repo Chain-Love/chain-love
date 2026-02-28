@@ -36,6 +36,7 @@ jobs:
           cp json-tools/tools/csv_to_json.py .
           cp json-tools/tools/validate.py .
           cp json-tools/tools/schema.json .
+          cp json-tools/tools/validate_csv.py .
           cp -r json-tools/meta .
           ls -l
       
@@ -48,6 +49,7 @@ jobs:
             python:3.12-slim \
             /bin/bash -c "
               pip install --no-index --find-links=json-tools/tools/wheels -r json-tools/tools/requirements.txt && \
+              python3 validate_csv.py && \
               python3 csv_to_json.py && \
               python3 validate.py
             "
