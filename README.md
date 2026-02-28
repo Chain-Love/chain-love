@@ -36,7 +36,7 @@ listings/
 Go to https://chain.love and select the network you would like to explore. Take a look also at [our AI](https://chatgpt.com/g/g-68bf52c0b60c8191a56c6f98959b97ec-chain-love) that is based on this open-source database!
 
 ### Programmatically
-Go to [Releases](releases) to fetch latest JSONs we produce.
+Go to [Releases](https://github.com/Chain-Love/chain-love/releases) to fetch latest JSONs we produce.
 
 ## How to Contribute
 
