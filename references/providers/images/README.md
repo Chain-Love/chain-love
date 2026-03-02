@@ -21,11 +21,11 @@ Store provider logo files in this folder.
 - **Do not submit logos with a solid background** (white, black, gray, etc.) — these look broken on dark/light themes.
 - Exception: if the logo itself includes a background as an intentional part of its design (e.g. a black rounded square that is part of the brand identity), it is acceptable to keep it. This should be the rare case, not the default.
 
-|                 ✅ Use                 |                ❌ Do not use                |
-| :------------------------------------: | :-----------------------------------------: |
-| <img src="example1.png" width="180" /> | <img src="exampleDoNot1.png" width="180" /> |
-| <img src="example2.png" width="180" /> | <img src="exampleDoNot2.png" width="180" /> |
-|         Transparent background         |              Solid background               |
+| ✅ Use | ❌ Do not use |
+|:---:|:---:|
+| ![](example1.png) | ![](exampleDoNot1.png) |
+| ![](example2.png) | ![](exampleDoNot2.png) |
+| Transparent background | Solid background |
 
 ## Finding the logo
 
