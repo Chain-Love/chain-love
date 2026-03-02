@@ -7882,24 +7882,24 @@
             "chain": "mainnet"
         },
         {
-            "slug": "getblock-mainnet-dedicated-full-archive",
+            "slug": "getblock-mainnet-advanced-recent-state",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
-                "[Contact](https://account.getblock.io/sign-up)",
+                "[Buy](https://getblock.io/pricing/)",
                 "[Docs](https://docs.getblock.io/api-reference/aptos-apt)"
             ],
-            "planName": null,
-            "planType": "Dedicated",
-            "historicalData": "Archive",
+            "planName": "Advanced",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "Up to $1.5K",
-            "queryPrice": "Custom",
+            "accessPrice": "$199/mo",
+            "queryPrice": "$0.9/1M CUs",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
+            "uptimeSla": "99.98%",
             "bandwidthSla": null,
             "blocksBehindSla": null,
             "supportSla": null,
@@ -7913,9 +7913,9 @@
                 "WebSockets"
             ],
             "limitations": [
-                "custom limits",
-                "unlimited requests",
-                "unlimited rate limit"
+                "220M CUs",
+                "300 RPS",
+                "25 Access Tokens"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays",
@@ -7928,7 +7928,9 @@
                 "Advanced monitoring and analytics"
             ],
             "regions": [
-                "Global"
+                "EU",
+                "USA",
+                "APAC"
             ],
             "additionalFeatures": null,
             "address": null,
@@ -7948,7 +7950,7 @@
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "Up to $1K",
+            "accessPrice": "up to 1K/mo",
             "queryPrice": "Custom",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -7982,7 +7984,9 @@
                 "Advanced monitoring and analytics"
             ],
             "regions": [
-                "Global"
+                "EU",
+                "USA",
+                "APAC"
             ],
             "additionalFeatures": null,
             "address": null,
@@ -8021,7 +8025,7 @@
                 "WebSockets"
             ],
             "limitations": [
-                "50K CU",
+                "50K CUs",
                 "20 RPS",
                 "2 Access Tokens"
             ],
@@ -8036,7 +8040,9 @@
                 "Advanced monitoring and analytics"
             ],
             "regions": [
-                "Global"
+                "EU",
+                "USA",
+                "APAC"
             ],
             "additionalFeatures": null,
             "address": null,
@@ -8044,20 +8050,20 @@
             "chain": "mainnet"
         },
         {
-            "slug": "getblock-mainnet-pay-as-you-go-full-archive",
+            "slug": "getblock-mainnet-pro-recent-state",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
                 "[Buy](https://getblock.io/pricing/)",
                 "[Docs](https://docs.getblock.io/api-reference/aptos-apt)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Archive",
+            "planName": "Pro",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
+            "accessPrice": "$499/mo",
+            "queryPrice": "$0.83/1M CUs",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -8075,9 +8081,9 @@
                 "WebSockets"
             ],
             "limitations": [
-                "50M/220M/600M CU",
-                "100/300/500 RPS",
-                "10/25/50 Access Tokens"
+                "600M CUs",
+                "500 RPS",
+                "50 Access Tokens"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays",
@@ -8090,7 +8096,9 @@
                 "Advanced monitoring and analytics"
             ],
             "regions": [
-                "Global"
+                "EU",
+                "USA",
+                "APAC"
             ],
             "additionalFeatures": null,
             "address": null,
@@ -8098,20 +8106,20 @@
             "chain": "mainnet"
         },
         {
-            "slug": "getblock-mainnet-pay-as-you-go-recent-state",
+            "slug": "getblock-mainnet-starter-recent-state",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
                 "[Buy](https://getblock.io/pricing/)",
                 "[Docs](https://docs.getblock.io/api-reference/aptos-apt)"
             ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
+            "planName": "Starter",
+            "planType": "Tiered",
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
+            "accessPrice": "$49/mo",
+            "queryPrice": "$0.98/1M CUs",
             "verifiedUptime": null,
             "verifiedLatency": null,
             "verifiedBlocksBehindAvg": null,
@@ -8129,9 +8137,9 @@
                 "WebSockets"
             ],
             "limitations": [
-                "50M/220M/600M CU",
-                "100/300/500 RPS",
-                "10/25/50 Access Tokens"
+                "50M CUs",
+                "100 RPS",
+                "10 Access Tokens"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays",
@@ -8144,282 +8152,14 @@
                 "Advanced monitoring and analytics"
             ],
             "regions": [
-                "Global"
+                "EU",
+                "USA",
+                "APAC"
             ],
             "additionalFeatures": null,
             "address": null,
             "tag": null,
             "chain": "mainnet"
-        },
-        {
-            "slug": "getblock-testnet-dedicated-full-archive",
-            "provider": "GetBlock",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://account.getblock.io/sign-up)",
-                "[Docs](https://docs.getblock.io/api-reference/aptos-apt)"
-            ],
-            "planName": null,
-            "planType": "Dedicated",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "Up to $1.5K",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "custom limits",
-                "unlimited requests",
-                "unlimited rate limit"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "getblock-testnet-dedicated-recent-state",
-            "provider": "GetBlock",
-            "offer": null,
-            "actionButtons": [
-                "[Contact](https://account.getblock.io/sign-up)",
-                "[Docs](https://docs.getblock.io/api-reference/aptos-apt)"
-            ],
-            "planName": null,
-            "planType": "Dedicated",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "Up to $1K",
-            "queryPrice": "Custom",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.99%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "custom limits",
-                "unlimited requests",
-                "unlimited rate limit"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "getblock-testnet-free-recent-state",
-            "provider": "GetBlock",
-            "offer": null,
-            "actionButtons": [
-                "[Website](https://getblock.io/nodes/apt/)",
-                "[Docs](https://docs.getblock.io/api-reference/aptos-apt)"
-            ],
-            "planName": null,
-            "planType": "Free",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$0",
-            "queryPrice": "$0",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.98%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "50K CU",
-                "20 RPS",
-                "2 Access Tokens"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "getblock-testnet-pay-as-you-go-full-archive",
-            "provider": "GetBlock",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://getblock.io/pricing/)",
-                "[Docs](https://docs.getblock.io/api-reference/aptos-apt)"
-            ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Archive",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.98%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "50M/220M/600M CU",
-                "100/300/500 RPS",
-                "10/25/50 Access Tokens"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
-        },
-        {
-            "slug": "getblock-testnet-pay-as-you-go-recent-state",
-            "provider": "GetBlock",
-            "offer": null,
-            "actionButtons": [
-                "[Buy](https://getblock.io/pricing/)",
-                "[Docs](https://docs.getblock.io/api-reference/aptos-apt)"
-            ],
-            "planName": null,
-            "planType": "Pay-as-you-go",
-            "historicalData": "Pruned",
-            "apiType": "RPC",
-            "technology": "EVM JSON-RPC",
-            "accessPrice": "$49/$199/$499/mo (monthly plan), $39/$159/$399 (yearly plan)",
-            "queryPrice": "$0.98/$0.9/$0.83 per 1M CU (monthly plan), $0.78/$0.72/$0.67 per 1M CU (yearly plan)",
-            "verifiedUptime": null,
-            "verifiedLatency": null,
-            "verifiedBlocksBehindAvg": null,
-            "uptimeSla": "99.98%",
-            "bandwidthSla": null,
-            "blocksBehindSla": null,
-            "supportSla": null,
-            "starred": false,
-            "trial": false,
-            "availableApis": [
-                "Algorand Native API",
-                "Indexer API",
-                "Algo API",
-                "NFTs",
-                "WebSockets"
-            ],
-            "limitations": [
-                "50M/220M/600M CU",
-                "100/300/500 RPS",
-                "10/25/50 Access Tokens"
-            ],
-            "securityImprovements": [
-                "Privacy Protected Relays",
-                "Transaction Sanitizers",
-                "Dedicated nodes with enterprise-grade security",
-                "Multi-region infrastructure"
-            ],
-            "monitoringAndAnalytics": [
-                "Real-time performance tracking",
-                "Advanced monitoring and analytics"
-            ],
-            "regions": [
-                "Global"
-            ],
-            "additionalFeatures": null,
-            "address": null,
-            "tag": null,
-            "chain": "testnet"
         },
         {
             "slug": "indexing-co-mainnet-free-indexer",
@@ -12167,7 +11907,7 @@
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://getblock.io/pricing/)",
+                "[Contact](https://account.getblock.io/sign-up)",
                 "[Docs](https://docs.getblock.io/)"
             ],
             "planName": null,
@@ -12175,7 +11915,7 @@
             "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
+            "accessPrice": "Custom",
             "queryPrice": "Custom",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -12194,7 +11934,7 @@
                 "WebSockets"
             ],
             "limitations": [
-                "custom limits"
+                "Custom limits"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays",
@@ -12207,7 +11947,9 @@
                 "Advanced monitoring and analytics"
             ],
             "regions": [
-                "Global"
+                "EU",
+                "USA",
+                "APAC"
             ],
             "additionalFeatures": null,
             "address": null,
@@ -12227,7 +11969,7 @@
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
+            "accessPrice": "Custom",
             "queryPrice": "Custom",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -12246,7 +11988,7 @@
                 "WebSockets"
             ],
             "limitations": [
-                "custom limits"
+                "Custom limits"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays",
@@ -12259,7 +12001,9 @@
                 "Advanced monitoring and analytics"
             ],
             "regions": [
-                "Global"
+                "EU",
+                "USA",
+                "APAC"
             ],
             "additionalFeatures": null,
             "address": null,
@@ -15305,7 +15049,7 @@
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
-                "[Buy](https://getblock.io/pricing/)",
+                "[Contact](https://account.getblock.io/sign-up)",
                 "[Docs](https://docs.getblock.io/)"
             ],
             "planName": null,
@@ -15313,7 +15057,7 @@
             "historicalData": "Archive",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
+            "accessPrice": "Custom",
             "queryPrice": "Custom",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -15332,7 +15076,7 @@
                 "WebSockets"
             ],
             "limitations": [
-                "custom limits"
+                "Custom limits"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays",
@@ -15345,7 +15089,9 @@
                 "Advanced monitoring and analytics"
             ],
             "regions": [
-                "Global"
+                "EU",
+                "USA",
+                "APAC"
             ],
             "additionalFeatures": null,
             "address": null,
@@ -15365,7 +15111,7 @@
             "historicalData": "Pruned",
             "apiType": "RPC",
             "technology": "EVM JSON-RPC",
-            "accessPrice": "Up to $999/mo (monthly plan), $799 (yearly plan)",
+            "accessPrice": "Custom",
             "queryPrice": "Custom",
             "verifiedUptime": null,
             "verifiedLatency": null,
@@ -15384,7 +15130,7 @@
                 "WebSockets"
             ],
             "limitations": [
-                "custom limits"
+                "Custom limits"
             ],
             "securityImprovements": [
                 "Privacy Protected Relays",
@@ -15397,7 +15143,9 @@
                 "Advanced monitoring and analytics"
             ],
             "regions": [
-                "Global"
+                "EU",
+                "USA",
+                "APAC"
             ],
             "additionalFeatures": null,
             "address": null,
