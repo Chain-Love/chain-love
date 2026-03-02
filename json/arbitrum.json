@@ -6362,7 +6362,7 @@
             "chain": "mainnet"
         },
         {
-            "slug": "arkham-sepolia",
+            "slug": "arkham-one",
             "provider": "Arkham",
             "offer": null,
             "actionButtons": [
@@ -6385,10 +6385,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "footprint-analytics-enterprise-sepolia",
+            "slug": "footprint-analytics-enterprise-one",
             "provider": "Footprint Analytics",
             "offer": null,
             "actionButtons": [
@@ -6408,10 +6408,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "sentry-aleno-sepolia",
+            "slug": "sentry-aleno-one",
             "provider": "Sentry by Aleno",
             "offer": null,
             "actionButtons": [
@@ -6433,7 +6433,7 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
             "slug": "arkham-nova",
@@ -6510,7 +6510,7 @@
             "chain": "nova"
         },
         {
-            "slug": "arkham-one",
+            "slug": "arkham-sepolia",
             "provider": "Arkham",
             "offer": null,
             "actionButtons": [
@@ -6533,10 +6533,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "footprint-analytics-enterprise-one",
+            "slug": "footprint-analytics-enterprise-sepolia",
             "provider": "Footprint Analytics",
             "offer": null,
             "actionButtons": [
@@ -6556,10 +6556,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "sentry-aleno-one",
+            "slug": "sentry-aleno-sepolia",
             "provider": "Sentry by Aleno",
             "offer": null,
             "actionButtons": [
@@ -6581,7 +6581,7 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         }
     ],
     "security": [
@@ -15198,6 +15198,65 @@
             "address": null,
             "tag": null,
             "chain": "sepolia"
+        },
+        {
+            "slug": "bitquery-one-developer-indexer",
+            "provider": "Bitquery",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://bitquery.io/blockchains/arbitrum-blockchain-api)",
+                "[Docs](https://docs.bitquery.io/docs/blockchain/Arbitrum/?_gl=1*cvv1nc*_gcl_au*MTgxMDc2ODkxNy4xNzY5MTIxMjYx*_ga*MTc0ODY0NjA2NS4xNzY5MTIxMjYw*_ga_G3M21F20D7*czE3NzI0Mzc5MjIkbzQkZzEkdDE3NzI0NDA0MDckajU4JGwwJGgw*_ga_40YKNYZTBN*czE3NzI0Mzc5MjIkbzQkZzEkdDE3NzI0NDA0MDgkajYwJGwwJGgw)"
+            ],
+            "planName": "Developer",
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Blockchain Data API (V1 API)",
+                "Bitquery Streaming API (V2 API)",
+                "GraphQL API"
+            ],
+            "limitations": [
+                "1K points",
+                "10 reqs/mint",
+                "10 rows/req",
+                "2 simultaneous streams for Testing purposes"
+            ],
+            "securityImprovements": [
+                "Token-based authentication",
+                "Real-time validation",
+                "Cross-validation",
+                "MEV detection"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Real-time tracking",
+                "Balance checkers"
+            ],
+            "regions": [
+                "US",
+                "Europe",
+                "Asia"
+            ],
+            "additionalFeatures": [
+                "ClickHouse OLAP for fast analytics",
+                "SOC 2 compliance"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "one"
         },
         {
             "slug": "blockdaemon-nova-dedicated-full-archive",
@@ -30586,6 +30645,62 @@
             "chain": "mainnet"
         },
         {
+            "slug": "bitquery-commercial-indexer-mainnet",
+            "provider": "Bitquery",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://bitquery.io/)",
+                "[Docs](https://docs.bitquery.io/)"
+            ],
+            "planName": "Commercial",
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Blockchain Data API (V1 API)",
+                "Bitquery Streaming API (V2 API)",
+                "GraphQL API"
+            ],
+            "limitations": [
+                "custom limits"
+            ],
+            "securityImprovements": [
+                "Token-based authentication",
+                "Real-time validation",
+                "Cross-validation",
+                "MEV detection"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Real-time tracking",
+                "Balance checkers"
+            ],
+            "regions": [
+                "US",
+                "Europe",
+                "Asia"
+            ],
+            "additionalFeatures": [
+                "ClickHouse OLAP for fast analytics",
+                "SOC 2 compliance"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
             "slug": "blockdaemon-enterprise-full-archive-mainnet",
             "provider": "Blockdaemon",
             "offer": null,
@@ -33343,7 +33458,7 @@
             "chain": "mainnet"
         },
         {
-            "slug": "1rpc-enterprise-recent-state-sepolia",
+            "slug": "1rpc-enterprise-recent-state-one",
             "provider": "1rpc",
             "offer": null,
             "actionButtons": [
@@ -33391,10 +33506,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "alchemy-enterprise-full-archive-sepolia",
+            "slug": "alchemy-enterprise-full-archive-one",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -33449,10 +33564,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "alchemy-enterprise-recent-state-sepolia",
+            "slug": "alchemy-enterprise-recent-state-one",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -33507,10 +33622,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "allthatnode-business-full-archive-sepolia",
+            "slug": "allthatnode-business-full-archive-one",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -33563,10 +33678,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "allthatnode-business-recent-state-sepolia",
+            "slug": "allthatnode-business-recent-state-one",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -33619,10 +33734,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "ankr-enterprise-full-archive-sepolia",
+            "slug": "ankr-enterprise-full-archive-one",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -33672,10 +33787,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "ankr-enterprise-recent-state-sepolia",
+            "slug": "ankr-enterprise-recent-state-one",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -33725,10 +33840,66 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "blockdaemon-enterprise-full-archive-sepolia",
+            "slug": "bitquery-commercial-indexer-one",
+            "provider": "Bitquery",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://bitquery.io/)",
+                "[Docs](https://docs.bitquery.io/)"
+            ],
+            "planName": "Commercial",
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Blockchain Data API (V1 API)",
+                "Bitquery Streaming API (V2 API)",
+                "GraphQL API"
+            ],
+            "limitations": [
+                "custom limits"
+            ],
+            "securityImprovements": [
+                "Token-based authentication",
+                "Real-time validation",
+                "Cross-validation",
+                "MEV detection"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Real-time tracking",
+                "Balance checkers"
+            ],
+            "regions": [
+                "US",
+                "Europe",
+                "Asia"
+            ],
+            "additionalFeatures": [
+                "ClickHouse OLAP for fast analytics",
+                "SOC 2 compliance"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "one"
+        },
+        {
+            "slug": "blockdaemon-enterprise-full-archive-one",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -33781,10 +33952,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "blockdaemon-enterprise-recent-state-sepolia",
+            "slug": "blockdaemon-enterprise-recent-state-one",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -33837,10 +34008,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "blockpi-enterprise-full-archive-sepolia",
+            "slug": "blockpi-enterprise-full-archive-one",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -33889,10 +34060,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "blockpi-enterprise-recent-state-sepolia",
+            "slug": "blockpi-enterprise-recent-state-one",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -33937,10 +34108,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "blockvision-enterprise-full-archive-sepolia",
+            "slug": "blockvision-enterprise-full-archive-one",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -33988,10 +34159,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "blockvision-enterprise-indexer-sepolia",
+            "slug": "blockvision-enterprise-indexer-one",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -34039,10 +34210,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "chainbase-enterprise-custom-sepolia",
+            "slug": "chainbase-enterprise-custom-one",
             "provider": "Chainbase",
             "offer": null,
             "actionButtons": [
@@ -34100,10 +34271,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "chainstack-enterprise-full-archive-sepolia",
+            "slug": "chainstack-enterprise-full-archive-one",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -34156,10 +34327,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "chainstack-enterprise-recent-state-sepolia",
+            "slug": "chainstack-enterprise-recent-state-one",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -34211,10 +34382,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "crypto-apis-enterprise-full-archive-sepolia",
+            "slug": "crypto-apis-enterprise-full-archive-one",
             "provider": "Crypto APIs",
             "offer": null,
             "actionButtons": [
@@ -34266,10 +34437,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "crypto-apis-enterprise-recent-state-sepolia",
+            "slug": "crypto-apis-enterprise-recent-state-one",
             "provider": "Crypto APIs",
             "offer": null,
             "actionButtons": [
@@ -34321,10 +34492,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "dipdup-enterprise-indexer-sepolia",
+            "slug": "dipdup-enterprise-indexer-one",
             "provider": "dipDup",
             "offer": null,
             "actionButtons": null,
@@ -34365,10 +34536,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "drpc-enterprise-full-archive-sepolia",
+            "slug": "drpc-enterprise-full-archive-one",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -34421,10 +34592,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "drpc-enterprise-recent-state-sepolia",
+            "slug": "drpc-enterprise-recent-state-one",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -34477,10 +34648,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "dwellir-enterprise-full-archive-sepolia",
+            "slug": "dwellir-enterprise-full-archive-one",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -34521,10 +34692,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "dwellir-enterprise-recent-state-sepolia",
+            "slug": "dwellir-enterprise-recent-state-one",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -34565,10 +34736,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "envio-dedicated-indexer-sepolia",
+            "slug": "envio-dedicated-indexer-one",
             "provider": "Envio",
             "offer": null,
             "actionButtons": null,
@@ -34626,10 +34797,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "getblock-enterprise-full-archive-sepolia",
+            "slug": "getblock-enterprise-full-archive-one",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -34680,10 +34851,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "getblock-enterprise-recent-state-sepolia",
+            "slug": "getblock-enterprise-recent-state-one",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -34734,10 +34905,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "ghostgraph-enterprise-indexer-sepolia",
+            "slug": "ghostgraph-enterprise-indexer-one",
             "provider": "GhostGraph",
             "offer": null,
             "actionButtons": null,
@@ -34785,10 +34956,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "ginco-enterprise-indexer-sepolia",
+            "slug": "ginco-enterprise-indexer-one",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -34839,10 +35010,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "ginco-enterprise-recent-state-sepolia",
+            "slug": "ginco-enterprise-recent-state-one",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -34893,10 +35064,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "goldrush-enterprise-indexer-sepolia",
+            "slug": "goldrush-enterprise-indexer-one",
             "provider": "Covalent",
             "offer": null,
             "actionButtons": null,
@@ -34936,10 +35107,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "goldsky-enterprise-indexer-sepolia",
+            "slug": "goldsky-enterprise-indexer-one",
             "provider": "Goldsky",
             "offer": null,
             "actionButtons": null,
@@ -34991,10 +35162,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "indexing-co-enterprise-indexer-sepolia",
+            "slug": "indexing-co-enterprise-indexer-one",
             "provider": "The Indexing Company",
             "offer": null,
             "actionButtons": [
@@ -35051,10 +35222,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "infstones-enterprise-full-archive-sepolia",
+            "slug": "infstones-enterprise-full-archive-one",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -35109,10 +35280,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "infstones-enterprise-recent-state-sepolia",
+            "slug": "infstones-enterprise-recent-state-one",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -35167,10 +35338,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "infura-enterprise-full-archive-sepolia",
+            "slug": "infura-enterprise-full-archive-one",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -35217,10 +35388,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "infura-enterprise-recent-state-sepolia",
+            "slug": "infura-enterprise-recent-state-one",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -35267,10 +35438,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "mobula-enterprise-indexer-sepolia",
+            "slug": "mobula-enterprise-indexer-one",
             "provider": "Mobula",
             "offer": null,
             "actionButtons": null,
@@ -35316,10 +35487,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "moralis-enterprise-full-archive-sepolia",
+            "slug": "moralis-enterprise-full-archive-one",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -35372,10 +35543,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "moralis-indexer-enterprise-sepolia",
+            "slug": "moralis-indexer-enterprise-one",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -35429,10 +35600,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "node-real-semita-sepolia",
+            "slug": "node-real-semita-one",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -35490,10 +35661,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "node-real-semita-full-archive-sepolia",
+            "slug": "node-real-semita-full-archive-one",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -35551,10 +35722,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "node-real-semita-recent-state-sepolia",
+            "slug": "node-real-semita-recent-state-one",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -35612,10 +35783,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "nownodes-custom-recent-state-sepolia",
+            "slug": "nownodes-custom-recent-state-one",
             "provider": "Nownodes",
             "offer": null,
             "actionButtons": [
@@ -35658,10 +35829,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "omnia-enterprise-recent-state-sepolia",
+            "slug": "omnia-enterprise-recent-state-one",
             "provider": "Omnia",
             "offer": null,
             "actionButtons": [
@@ -35714,10 +35885,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "onfinality-enterprise-full-archive-sepolia",
+            "slug": "onfinality-enterprise-full-archive-one",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -35767,10 +35938,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "onfinality-enterprise-trace-sepolia",
+            "slug": "onfinality-enterprise-trace-one",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -35820,10 +35991,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "onfinality-partner-plan-indexer-sepolia",
+            "slug": "onfinality-partner-plan-indexer-one",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -35873,10 +36044,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "quicknode-enterprise-full-archive-sepolia",
+            "slug": "quicknode-enterprise-full-archive-one",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -35932,10 +36103,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "quicknode-enterprise-recent-state-sepolia",
+            "slug": "quicknode-enterprise-recent-state-one",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -35991,10 +36162,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "radiumblock-enterprise-recent-state-sepolia",
+            "slug": "radiumblock-enterprise-recent-state-one",
             "provider": "RadiumBlock",
             "offer": null,
             "actionButtons": [
@@ -36035,10 +36206,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "rpcfast-enterprise-full-archive-sepolia",
+            "slug": "rpcfast-enterprise-full-archive-one",
             "provider": "RPCFast",
             "offer": null,
             "actionButtons": [
@@ -36086,10 +36257,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "tatum-business-full-archive-sepolia",
+            "slug": "tatum-business-full-archive-one",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -36141,10 +36312,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "tatum-business-recent-state-sepolia",
+            "slug": "tatum-business-recent-state-one",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -36196,10 +36367,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "tenderly-enterprise-recent-state-sepolia",
+            "slug": "tenderly-enterprise-recent-state-one",
             "provider": "Tenderly",
             "offer": null,
             "actionButtons": [
@@ -36246,10 +36417,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "thegraph-enterprise-indexer-sepolia",
+            "slug": "thegraph-enterprise-indexer-one",
             "provider": "The Graph",
             "offer": null,
             "actionButtons": null,
@@ -36290,10 +36461,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "thirdweb-enterprise-indexer-sepolia",
+            "slug": "thirdweb-enterprise-indexer-one",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": null,
@@ -36342,10 +36513,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "thirdweb-enterprise-recent-state-sepolia",
+            "slug": "thirdweb-enterprise-recent-state-one",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": [
@@ -36380,10 +36551,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "validation-cloud-private-full-archive-sepolia",
+            "slug": "validation-cloud-private-full-archive-one",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -36431,10 +36602,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
-            "slug": "validation-cloud-private-recent-state-sepolia",
+            "slug": "validation-cloud-private-recent-state-one",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -36482,7 +36653,7 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "sepolia"
+            "chain": "one"
         },
         {
             "slug": "1rpc-enterprise-recent-state-nova",
@@ -36865,6 +37036,62 @@
                 "Global"
             ],
             "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "nova"
+        },
+        {
+            "slug": "bitquery-commercial-indexer-nova",
+            "provider": "Bitquery",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://bitquery.io/)",
+                "[Docs](https://docs.bitquery.io/)"
+            ],
+            "planName": "Commercial",
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Blockchain Data API (V1 API)",
+                "Bitquery Streaming API (V2 API)",
+                "GraphQL API"
+            ],
+            "limitations": [
+                "custom limits"
+            ],
+            "securityImprovements": [
+                "Token-based authentication",
+                "Real-time validation",
+                "Cross-validation",
+                "MEV detection"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Real-time tracking",
+                "Balance checkers"
+            ],
+            "regions": [
+                "US",
+                "Europe",
+                "Asia"
+            ],
+            "additionalFeatures": [
+                "ClickHouse OLAP for fast analytics",
+                "SOC 2 compliance"
+            ],
             "address": null,
             "tag": null,
             "chain": "nova"
@@ -39627,7 +39854,7 @@
             "chain": "nova"
         },
         {
-            "slug": "1rpc-enterprise-recent-state-one",
+            "slug": "1rpc-enterprise-recent-state-sepolia",
             "provider": "1rpc",
             "offer": null,
             "actionButtons": [
@@ -39675,10 +39902,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "alchemy-enterprise-full-archive-one",
+            "slug": "alchemy-enterprise-full-archive-sepolia",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -39733,10 +39960,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "alchemy-enterprise-recent-state-one",
+            "slug": "alchemy-enterprise-recent-state-sepolia",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -39791,10 +40018,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "allthatnode-business-full-archive-one",
+            "slug": "allthatnode-business-full-archive-sepolia",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -39847,10 +40074,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "allthatnode-business-recent-state-one",
+            "slug": "allthatnode-business-recent-state-sepolia",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -39903,10 +40130,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "ankr-enterprise-full-archive-one",
+            "slug": "ankr-enterprise-full-archive-sepolia",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -39956,10 +40183,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "ankr-enterprise-recent-state-one",
+            "slug": "ankr-enterprise-recent-state-sepolia",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -40009,10 +40236,66 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "blockdaemon-enterprise-full-archive-one",
+            "slug": "bitquery-commercial-indexer-sepolia",
+            "provider": "Bitquery",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://bitquery.io/)",
+                "[Docs](https://docs.bitquery.io/)"
+            ],
+            "planName": "Commercial",
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "Indexed Data",
+            "technology": "Custom",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Blockchain Data API (V1 API)",
+                "Bitquery Streaming API (V2 API)",
+                "GraphQL API"
+            ],
+            "limitations": [
+                "custom limits"
+            ],
+            "securityImprovements": [
+                "Token-based authentication",
+                "Real-time validation",
+                "Cross-validation",
+                "MEV detection"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time monitoring",
+                "Real-time tracking",
+                "Balance checkers"
+            ],
+            "regions": [
+                "US",
+                "Europe",
+                "Asia"
+            ],
+            "additionalFeatures": [
+                "ClickHouse OLAP for fast analytics",
+                "SOC 2 compliance"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "sepolia"
+        },
+        {
+            "slug": "blockdaemon-enterprise-full-archive-sepolia",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -40065,10 +40348,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "blockdaemon-enterprise-recent-state-one",
+            "slug": "blockdaemon-enterprise-recent-state-sepolia",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -40121,10 +40404,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "blockpi-enterprise-full-archive-one",
+            "slug": "blockpi-enterprise-full-archive-sepolia",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -40173,10 +40456,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "blockpi-enterprise-recent-state-one",
+            "slug": "blockpi-enterprise-recent-state-sepolia",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -40221,10 +40504,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "blockvision-enterprise-full-archive-one",
+            "slug": "blockvision-enterprise-full-archive-sepolia",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -40272,10 +40555,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "blockvision-enterprise-indexer-one",
+            "slug": "blockvision-enterprise-indexer-sepolia",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -40323,10 +40606,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "chainbase-enterprise-custom-one",
+            "slug": "chainbase-enterprise-custom-sepolia",
             "provider": "Chainbase",
             "offer": null,
             "actionButtons": [
@@ -40384,10 +40667,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "chainstack-enterprise-full-archive-one",
+            "slug": "chainstack-enterprise-full-archive-sepolia",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -40440,10 +40723,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "chainstack-enterprise-recent-state-one",
+            "slug": "chainstack-enterprise-recent-state-sepolia",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -40495,10 +40778,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "crypto-apis-enterprise-full-archive-one",
+            "slug": "crypto-apis-enterprise-full-archive-sepolia",
             "provider": "Crypto APIs",
             "offer": null,
             "actionButtons": [
@@ -40550,10 +40833,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "crypto-apis-enterprise-recent-state-one",
+            "slug": "crypto-apis-enterprise-recent-state-sepolia",
             "provider": "Crypto APIs",
             "offer": null,
             "actionButtons": [
@@ -40605,10 +40888,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "dipdup-enterprise-indexer-one",
+            "slug": "dipdup-enterprise-indexer-sepolia",
             "provider": "dipDup",
             "offer": null,
             "actionButtons": null,
@@ -40649,10 +40932,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "drpc-enterprise-full-archive-one",
+            "slug": "drpc-enterprise-full-archive-sepolia",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -40705,10 +40988,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "drpc-enterprise-recent-state-one",
+            "slug": "drpc-enterprise-recent-state-sepolia",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -40761,10 +41044,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "dwellir-enterprise-full-archive-one",
+            "slug": "dwellir-enterprise-full-archive-sepolia",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -40805,10 +41088,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "dwellir-enterprise-recent-state-one",
+            "slug": "dwellir-enterprise-recent-state-sepolia",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -40849,10 +41132,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "envio-dedicated-indexer-one",
+            "slug": "envio-dedicated-indexer-sepolia",
             "provider": "Envio",
             "offer": null,
             "actionButtons": null,
@@ -40910,10 +41193,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "getblock-enterprise-full-archive-one",
+            "slug": "getblock-enterprise-full-archive-sepolia",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -40964,10 +41247,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "getblock-enterprise-recent-state-one",
+            "slug": "getblock-enterprise-recent-state-sepolia",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -41018,10 +41301,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "ghostgraph-enterprise-indexer-one",
+            "slug": "ghostgraph-enterprise-indexer-sepolia",
             "provider": "GhostGraph",
             "offer": null,
             "actionButtons": null,
@@ -41069,10 +41352,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "ginco-enterprise-indexer-one",
+            "slug": "ginco-enterprise-indexer-sepolia",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -41123,10 +41406,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "ginco-enterprise-recent-state-one",
+            "slug": "ginco-enterprise-recent-state-sepolia",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -41177,10 +41460,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "goldrush-enterprise-indexer-one",
+            "slug": "goldrush-enterprise-indexer-sepolia",
             "provider": "Covalent",
             "offer": null,
             "actionButtons": null,
@@ -41220,10 +41503,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "goldsky-enterprise-indexer-one",
+            "slug": "goldsky-enterprise-indexer-sepolia",
             "provider": "Goldsky",
             "offer": null,
             "actionButtons": null,
@@ -41275,10 +41558,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "indexing-co-enterprise-indexer-one",
+            "slug": "indexing-co-enterprise-indexer-sepolia",
             "provider": "The Indexing Company",
             "offer": null,
             "actionButtons": [
@@ -41335,10 +41618,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "infstones-enterprise-full-archive-one",
+            "slug": "infstones-enterprise-full-archive-sepolia",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -41393,10 +41676,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "infstones-enterprise-recent-state-one",
+            "slug": "infstones-enterprise-recent-state-sepolia",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -41451,10 +41734,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "infura-enterprise-full-archive-one",
+            "slug": "infura-enterprise-full-archive-sepolia",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -41501,10 +41784,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "infura-enterprise-recent-state-one",
+            "slug": "infura-enterprise-recent-state-sepolia",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -41551,10 +41834,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "mobula-enterprise-indexer-one",
+            "slug": "mobula-enterprise-indexer-sepolia",
             "provider": "Mobula",
             "offer": null,
             "actionButtons": null,
@@ -41600,10 +41883,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "moralis-enterprise-full-archive-one",
+            "slug": "moralis-enterprise-full-archive-sepolia",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -41656,10 +41939,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "moralis-indexer-enterprise-one",
+            "slug": "moralis-indexer-enterprise-sepolia",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -41713,10 +41996,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "node-real-semita-one",
+            "slug": "node-real-semita-sepolia",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -41774,10 +42057,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "node-real-semita-full-archive-one",
+            "slug": "node-real-semita-full-archive-sepolia",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -41835,10 +42118,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "node-real-semita-recent-state-one",
+            "slug": "node-real-semita-recent-state-sepolia",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -41896,10 +42179,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "nownodes-custom-recent-state-one",
+            "slug": "nownodes-custom-recent-state-sepolia",
             "provider": "Nownodes",
             "offer": null,
             "actionButtons": [
@@ -41942,10 +42225,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "omnia-enterprise-recent-state-one",
+            "slug": "omnia-enterprise-recent-state-sepolia",
             "provider": "Omnia",
             "offer": null,
             "actionButtons": [
@@ -41998,10 +42281,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "onfinality-enterprise-full-archive-one",
+            "slug": "onfinality-enterprise-full-archive-sepolia",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -42051,10 +42334,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "onfinality-enterprise-trace-one",
+            "slug": "onfinality-enterprise-trace-sepolia",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -42104,10 +42387,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "onfinality-partner-plan-indexer-one",
+            "slug": "onfinality-partner-plan-indexer-sepolia",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -42157,10 +42440,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "quicknode-enterprise-full-archive-one",
+            "slug": "quicknode-enterprise-full-archive-sepolia",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -42216,10 +42499,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "quicknode-enterprise-recent-state-one",
+            "slug": "quicknode-enterprise-recent-state-sepolia",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -42275,10 +42558,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "radiumblock-enterprise-recent-state-one",
+            "slug": "radiumblock-enterprise-recent-state-sepolia",
             "provider": "RadiumBlock",
             "offer": null,
             "actionButtons": [
@@ -42319,10 +42602,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "rpcfast-enterprise-full-archive-one",
+            "slug": "rpcfast-enterprise-full-archive-sepolia",
             "provider": "RPCFast",
             "offer": null,
             "actionButtons": [
@@ -42370,10 +42653,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "tatum-business-full-archive-one",
+            "slug": "tatum-business-full-archive-sepolia",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -42425,10 +42708,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "tatum-business-recent-state-one",
+            "slug": "tatum-business-recent-state-sepolia",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -42480,10 +42763,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "tenderly-enterprise-recent-state-one",
+            "slug": "tenderly-enterprise-recent-state-sepolia",
             "provider": "Tenderly",
             "offer": null,
             "actionButtons": [
@@ -42530,10 +42813,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "thegraph-enterprise-indexer-one",
+            "slug": "thegraph-enterprise-indexer-sepolia",
             "provider": "The Graph",
             "offer": null,
             "actionButtons": null,
@@ -42574,10 +42857,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "thirdweb-enterprise-indexer-one",
+            "slug": "thirdweb-enterprise-indexer-sepolia",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": null,
@@ -42626,10 +42909,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "thirdweb-enterprise-recent-state-one",
+            "slug": "thirdweb-enterprise-recent-state-sepolia",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": [
@@ -42664,10 +42947,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "validation-cloud-private-full-archive-one",
+            "slug": "validation-cloud-private-full-archive-sepolia",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -42715,10 +42998,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         },
         {
-            "slug": "validation-cloud-private-recent-state-one",
+            "slug": "validation-cloud-private-recent-state-sepolia",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -42766,7 +43049,7 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "one"
+            "chain": "sepolia"
         }
     ],
     "ramps": [
@@ -50393,6 +50676,25 @@
                 "description": "Provides API infrastructure for Web3 developers and users.",
                 "website": "https://www.ankr.com/rpc/home/",
                 "docs": "https://www.ankr.com/docs/rpc-service/chains/chains-list/",
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "apis"
+                ]
+            },
+            "bitquery": {
+                "slug": "bitquery",
+                "name": "Bitquery",
+                "logoPath": "bitquery.png",
+                "description": "Provides explorer services for Web3 developers and users.",
+                "website": "https://explorer.bitquery.io/",
+                "docs": null,
                 "x": null,
                 "github": null,
                 "discord": null,
