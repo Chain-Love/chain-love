@@ -21,11 +21,10 @@ Store provider logo files in this folder.
 - **Do not submit logos with a solid background** (white, black, gray, etc.) — these look broken on dark/light themes.
 - Exception: if the logo itself includes a background as an intentional part of its design (e.g. a black rounded square that is part of the brand identity), it is acceptable to keep it. This should be the rare case, not the default.
 
-Use:
-![correct3xpl](https://3xpl.com/assets/images/brand-kit/logomarks/dark.svg)
-
-No use:
-![incorrect3xpl](https://raw.githubusercontent.com/harunsulaiman/chain-love/18bb5f5100fea6b2c9431cc84d21d67bac5c5259/references/providers/images/3xpl.png)
+| ✅ Use | ❌ Do not use |
+|:---:|:---:|
+| <img src="https://3xpl.com/assets/images/brand-kit/logomarks/dark.svg" width="80" /> | <img src="https://raw.githubusercontent.com/harunsulaiman/chain-love/18bb5f5100fea6b2c9431cc84d21d67bac5c5259/references/providers/images/3xpl.png" width="80" /> |
+| Transparent background | Solid background |
 
 ## Finding the logo
 
