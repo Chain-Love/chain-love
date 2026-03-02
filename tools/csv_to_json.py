@@ -264,12 +264,9 @@ def load_categories_from_folder(folder: str) -> dict:
         return {}
 
     data = {}
-    for category_file_name in os.listdir(folder):
-        if not category_file_name.endswith(".csv"):
-            continue
-        category_name = category_file_name[:-4]
-        data[category_name] = (
-            load_csv_to_dict_list(os.path.join(folder, category_file_name)) or []
+    for category in list_categories(folder):
+        data[category.name] = (
+            load_csv_to_dict_list(file_path=category.path) or []
         )
 
     result, errors = normalize(data)
@@ -306,18 +303,60 @@ def build_index_by_slug(items: list[dict], *, label: str) -> dict[str, dict]:
         raise ValueError(f"Duplicate slugs in {label}: {', '.join(sorted(set(dupes)))}")
     return idx
 
+class Category:
+    def __init__(self, name: str, path: str):
+        self.name = name
+        self.path = path
 
-def get_column_order(data_by_category: dict[str, list[dict]]) -> dict[str, list[str]]:
-    categories = data_by_category.keys()
-    column_order = {category: [] for category in categories}
+def list_categories(folder: str) -> list[Category]:
+    categories = []
 
-    for category in categories:
-        items = data_by_category[category]
-        if items:
-            first_row = items[0]
-            column_order[category] = list(first_row.keys())
+    for name in os.listdir(folder):
+        path = os.path.join(folder, name)
+        if not os.path.isfile(path):
+            continue
+        if not name.endswith(".csv"):
+            continue
 
-    return column_order
+        categories.append(Category(name[:-4], path))
+
+    return categories
+
+def get_csv_headers(filename: str) -> list[str]:
+    """
+    Returns CSV headers as a list of strings
+    in the exact order they appear in the file.
+
+    Raises:
+        ValueError: if the file is empty or has no header row.
+    """
+    with open(filename, mode="r", newline="", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        try:
+            headers = next(reader)
+        except StopIteration:
+            raise ValueError(f"CSV file '{filename}' is empty.")
+
+        if not headers:
+            raise ValueError(f"CSV file '{filename}' has no header row.")
+
+        return headers
+
+
+def get_column_order(base_categories: list[Category], extra_categories: list[Category]) -> dict[str, list[str]]:
+    base_names = {c.name for c in base_categories}
+    unique_extras = [
+        c for c in extra_categories
+        if c.name not in base_names
+    ]
+
+    category_columns: dict[str, list[str]] = {}
+    
+    for category in base_categories + unique_extras:
+        headers = get_csv_headers(category.path)
+        category_columns[category.name] = headers
+
+    return category_columns
 
 
 def resolve_offers(
@@ -591,28 +630,15 @@ def main():
 
     # Global listings (apply to every network)
     global_listings = load_categories_from_folder(all_networks_dir)
+    global_listings_categories = list_categories(folder=all_networks_dir)
 
     for network_name in os.listdir(specific_networks_dir):
         network_dir = os.path.join(specific_networks_dir, network_name)
         if not os.path.isdir(network_dir):
             continue
 
-        result: dict[str, list[dict]] = {}
-
-        # 1) Start with network-specific listings per category
-        for category_file in os.listdir(network_dir):
-            path = os.path.join(network_dir, category_file)
-            if not os.path.isfile(path):
-                continue
-            if not category_file.endswith(".csv"):
-                continue
-
-            category = category_file[:-4]
-
-            # If category already exists from all-networks, append; else create.
-            rows = load_csv_to_dict_list(path) or []
-            result[category] = list(rows)
-
+        # 1) Start with network-specific listings
+        result: dict[str, list[dict]] = load_categories_from_folder(network_dir)
 
         # 2) Merge/replace with all-networks listings
         chains = set()
@@ -662,7 +688,10 @@ def main():
 
         ensure_sdks_tbd_fields(result)
 
-        result["columns"] = get_column_order(result)
+        result["columns"] = get_column_order(
+            base_categories=list_categories(network_dir),
+            extra_categories=global_listings_categories,
+        )
         result["schemaVersion"] = schema_version
 
         provider_categories = collect_provider_categories(result)
