@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ERC-8004 Agents Subgraph Response (data object)",
+  "type": "object",
+  "properties": {
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "agentId": { "type": "string" },
+          "owner": { "type": "string" },
+          "agentURI": { "type": "string" },
+          "agentURIType": { "type": "string" },
+          "agentWallet": { "type": ["string", "null"] },
+          "registeredAt": { "type": "string" },
+          "registeredBlock": { "type": "string" },
+          "updatedAt": { "type": "string" },
+          "totalFeedbackCount": { "type": ["string", "integer"] },
+          "activeFeedbackCount": { "type": ["string", "integer"] },
+          "feedbackValueSum": { "type": "string" },
+          "averageRating": { "type": "string" }
+        },
+        "required": [
+          "id",
+          "agentId",
+          "owner",
+          "agentURI",
+          "registeredAt",
+          "totalFeedbackCount",
+          "activeFeedbackCount",
+          "averageRating"
+        ]
+      }
+    }
+  },
+  "required": ["agents"]
+}
