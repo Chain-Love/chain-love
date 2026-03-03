@@ -3542,6 +3542,487 @@
             "chain": "testnet"
         }
     ],
+    "oracles": [
+        {
+            "slug": "api3-mainnet",
+            "provider": "API3",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://market.api3.org/avalanche)"
+            ],
+            "technology": "Push & Pull Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ],
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "api3-testnet",
+            "provider": "API3",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://market.api3.org/avalanche-testnet)"
+            ],
+            "technology": "Push & Pull Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "QRNG",
+                "Airnode",
+                "dAPIs"
+            ],
+            "monitoringAndAnalytics": [
+                "Feed health dashboard"
+            ],
+            "additionalFeatures": [
+                "Quantum RNG"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "First‑party dAPI model",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "OEV RFP Security Assessment (Compound/Commonwealth audit, Jun 2025)",
+                "Quantstamp audit of API3 Data Feed Proxy Combinators (2024)",
+                "Internal audit of Airnode and first‑party infrastructure (2023)"
+            ],
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "band",
+            "provider": "Band Protocol",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://www.bandpartners.io/ecosystem/Avalanche)"
+            ],
+            "technology": "Cross-chain Oracle",
+            "starred": false,
+            "availableApis": [
+                "Oracle Scripts",
+                "IBC Feeds"
+            ],
+            "monitoringAndAnalytics": [
+                "Validator Performance"
+            ],
+            "additionalFeatures": [
+                "IBC compatibility",
+                "Flexible scripting"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "ASTR",
+                "ATOM",
+                "AVAX",
+                "BNB",
+                "BUSD",
+                "DAI",
+                "DOT",
+                "ETH",
+                "FTM",
+                "MATIC",
+                "SOL",
+                "USDC",
+                "USDT",
+                "WBTC"
+            ],
+            "decentralizationModel": "Delegated Proof-of-Stake",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Cosmos-based staking model",
+            "sdk": [
+                "CosmJS",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "CertiK"
+            ],
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "chainlink-mainnet",
+            "provider": "Chainlink",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://docs.chain.link/ccip/directory/mainnet/chain/avalanche-mainnet)"
+            ],
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ],
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "chainlink-testnet",
+            "provider": "Chainlink",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://docs.chain.link/ccip/directory/testnet/chain/avalanche-fuji-testnet)"
+            ],
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "Proof of Reserve"
+            ],
+            "monitoringAndAnalytics": [
+                "Node performance metrics"
+            ],
+            "additionalFeatures": [
+                "Economic Aggregation",
+                "Cross-chain support"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Audited network, high TVL",
+            "sdk": [
+                "TypeScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (Jul 2024)",
+                "OpenZeppelin (Sep 2024)",
+                "ChainSecurity (Mar 2024)",
+                "Code4rena (Nov 2024)",
+                "Quantstamp",
+                "SigmaPrime"
+            ],
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "dia",
+            "provider": "DIA",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://www.diadata.org/docs/guides/chain-specific-guide/avalanche)"
+            ],
+            "technology": "DIA",
+            "starred": false,
+            "availableApis": [
+                "REST",
+                "GraphQL"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Price Feeds"
+            ],
+            "additionalFeatures": [
+                "Cross-chain compatibility",
+                "Customizable data feeds",
+                "Customizable data feeds",
+                "Advanced architecture using Layer 2 rollup"
+            ],
+            "dataTypes": [
+                "BTC",
+                "DIA",
+                "USDC"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": false,
+            "economicalSecurityNote": "Explicitly state in their terms and conditions that using their price feeds is a user's risk",
+            "sdk": [
+                "Solidity",
+                "Vyper"
+            ],
+            "auditsPerformed": [
+                "April 2025, by MixBytes",
+                "May 2022, by Chainsulting"
+            ],
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "pyth",
+            "provider": "Pyth Network",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://docs.pyth.network/price-feeds/core/contract-addresses/evm#mainnets)"
+            ],
+            "technology": "Pull Oracle",
+            "starred": false,
+            "availableApis": [
+                "Asset Price Feeds (incl. ARB/USD)"
+            ],
+            "monitoringAndAnalytics": [
+                "Real time price feeds"
+            ],
+            "additionalFeatures": [
+                "Cross‑chain via Wormhole"
+            ],
+            "dataTypes": [
+                "Asset Prices",
+                "FX",
+                "Metals"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Data from top-tier liquidity providers audited",
+            "sdk": [
+                "Solidity",
+                "Python SDK"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits (2023)",
+                "Certik (2022)"
+            ],
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "redstone",
+            "provider": "RedStone",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://app.redstone.finance/app/feeds/?page=1&sortBy=popularity&sortDesc=false&perPage=32&networks=43114)"
+            ],
+            "technology": "Modular Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feeds",
+                "Custom Data"
+            ],
+            "monitoringAndAnalytics": [
+                "Custom Delivery Monitoring"
+            ],
+            "additionalFeatures": [
+                "Data Packaging",
+                "Gas-efficient delivery",
+                "Smart contract plugins"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "Custom External Data"
+            ],
+            "decentralizationModel": "Hybrid",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Slashing, incentives through data availability and reputation",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "Trail of Bits",
+                "Audit by PeckShield, 2023"
+            ],
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "supra-mainnet",
+            "provider": "Supra",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle/networks)"
+            ],
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ],
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "supra-testnet",
+            "provider": "Supra",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://docs.supra.com/oracles/data-feeds/pull-oracle/networks)"
+            ],
+            "technology": "Decentralized Oracle",
+            "starred": false,
+            "availableApis": [
+                "Price Feed",
+                "VRF",
+                "REST"
+            ],
+            "monitoringAndAnalytics": [
+                "Real-time Dashboard"
+            ],
+            "additionalFeatures": [
+                "High-speed oracle data with low-latency feeds"
+            ],
+            "dataTypes": [
+                "Price Feeds",
+                "Randomness"
+            ],
+            "decentralizationModel": "Decentralized",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Validator node network with cryptographic proofs",
+            "sdk": [
+                "TypeScript"
+            ],
+            "auditsPerformed": [
+                "Audited by Halborn Security (2023)"
+            ],
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "witnet-mainnet",
+            "provider": "Witnet",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://docs.witnet.io/smart-contracts/supported-chains)"
+            ],
+            "technology": "Independent Oracle Network",
+            "starred": false,
+            "availableApis": [
+                "Witnet Bridge"
+            ],
+            "monitoringAndAnalytics": [
+                "Data verification trace"
+            ],
+            "additionalFeatures": [
+                "Built-in randomness",
+                "Bridge to EVM"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "APIs",
+                "Feeds"
+            ],
+            "decentralizationModel": "Proof-of-Work",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Economic incentives and mining",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "None Public"
+            ],
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "witnet-testnet",
+            "provider": "Witnet",
+            "offer": null,
+            "actionButtons": [
+                "[Docs](https://docs.witnet.io/smart-contracts/supported-chains)"
+            ],
+            "technology": "Independent Oracle Network",
+            "starred": false,
+            "availableApis": [
+                "Witnet Bridge"
+            ],
+            "monitoringAndAnalytics": [
+                "Data verification trace"
+            ],
+            "additionalFeatures": [
+                "Built-in randomness",
+                "Bridge to EVM"
+            ],
+            "dataTypes": [
+                "Token Prices",
+                "APIs",
+                "Feeds"
+            ],
+            "decentralizationModel": "Proof-of-Work",
+            "economicalSecurity": true,
+            "economicalSecurityNote": "Economic incentives and mining",
+            "sdk": [
+                "JavaScript",
+                "Solidity"
+            ],
+            "auditsPerformed": [
+                "None Public"
+            ],
+            "tag": null,
+            "chain": "testnet"
+        }
+    ],
     "explorers": [
         {
             "slug": "3xpl",
@@ -12408,6 +12889,25 @@
             "starred",
             "tag"
         ],
+        "oracles": [
+            "slug",
+            "provider",
+            "offer",
+            "actionButtons",
+            "chain",
+            "technology",
+            "starred",
+            "availableApis",
+            "monitoringAndAnalytics",
+            "additionalFeatures",
+            "dataTypes",
+            "decentralizationModel",
+            "economicalSecurity",
+            "economicalSecurityNote",
+            "sdk",
+            "auditsPerformed",
+            "tag"
+        ],
         "explorers": [
             "slug",
             "provider",
@@ -13561,7 +14061,8 @@
                 "tag": null,
                 "categories": [
                     "bridges",
-                    "faucets"
+                    "faucets",
+                    "oracles"
                 ]
             },
             "chainport": {
@@ -14496,6 +14997,139 @@
                 "tag": null,
                 "categories": [
                     "analytics"
+                ]
+            },
+            "api3": {
+                "slug": "api3",
+                "name": "API3",
+                "logoPath": "api3.png",
+                "description": "Provides oracle services for Web3 developers and users.",
+                "website": null,
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "oracles"
+                ]
+            },
+            "band-protocol": {
+                "slug": "band-protocol",
+                "name": "Band Protocol",
+                "logoPath": "band-protocol.png",
+                "description": "Provides oracle services for Web3 developers and users.",
+                "website": null,
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "oracles"
+                ]
+            },
+            "dia": {
+                "slug": "dia",
+                "name": "DIA",
+                "logoPath": "dia.png",
+                "description": "Provides oracle services for Web3 developers and users.",
+                "website": null,
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "oracles"
+                ]
+            },
+            "pyth-network": {
+                "slug": "pyth-network",
+                "name": "Pyth Network",
+                "logoPath": "pyth-network.png",
+                "description": "Provides oracle services for Web3 developers and users.",
+                "website": null,
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "oracles"
+                ]
+            },
+            "redstone": {
+                "slug": "redstone",
+                "name": "RedStone",
+                "logoPath": "redstone.png",
+                "description": "Provides oracle services for Web3 developers and users.",
+                "website": null,
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "oracles"
+                ]
+            },
+            "supra": {
+                "slug": "supra",
+                "name": "Supra",
+                "logoPath": "supra.png",
+                "description": "Provides oracle services for Web3 developers and users.",
+                "website": null,
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "oracles"
+                ]
+            },
+            "witnet": {
+                "slug": "witnet",
+                "name": "Witnet",
+                "logoPath": "witnet.png",
+                "description": "Provides oracle services for Web3 developers and users.",
+                "website": null,
+                "docs": null,
+                "x": null,
+                "github": null,
+                "discord": null,
+                "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "oracles"
                 ]
             },
             "3xpl": {
