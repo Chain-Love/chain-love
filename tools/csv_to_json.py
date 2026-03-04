@@ -522,6 +522,7 @@ def collect_used_provider_names(data_by_category: dict[str, list[dict]]) -> set[
 def build_provider_meta_from_names(
     provider_by_name: dict[str, dict],
     provider_categories: dict[str, set[str]],
+    network: str,
 ) -> dict[str, dict]:
     meta = {}
 
@@ -561,31 +562,25 @@ def build_provider_meta_from_names(
         # Case 2: provider is not in CSV
         # ─────────────────────────────
         else:
-            warnings.warn(
-                f"Provider '{name}' is used in categories {categories_list} "
-                f"but is missing from references/providers/providers.csv",
-                RuntimeWarning,
+            all_network_paths = "\n".join(
+                f"  - listings/all-networks/{c}.csv" for c in categories_list
             )
-
-            slug = name.lower().replace(" ", "-")
-
-            meta[slug] = {
-                "slug": slug,
-                "name": name,
-                "logoPath": None,
-                "description": None,
-                "website": None,
-                "docs": None,
-                "x": None,
-                "github": None,
-                "discord": None,
-                "telegram": None,
-                "linkedin": None,
-                "supportEmail": None,
-                "starred": False,
-                "tag": None,
-                "categories": categories_list,
-            }
+            specific_network_paths = "\n".join(
+                f"  - listings/specific-networks/{network}/{c}.csv" for c in categories_list
+            )
+            references_paths = "\n".join(
+                f"  - references/offers/{c}.csv (most likely source)" for c in categories_list
+            )
+            raise ValueError(
+                f"Provider '{name}' is missing in references/providers/providers.csv.\n"
+                f"This provider is referenced in one of the following files:\n"
+                f"{references_paths}\n"
+                f"{all_network_paths}\n"
+                f"{specific_network_paths}\n\n"
+                f"Action required:\n"
+                f"  1. Add a provider entry with name '{name}' to references/providers/providers.csv, or\n"
+                f"  2. Remove or correct the provider name in the files listed above.\n"
+            )
 
     return meta
 
@@ -699,6 +694,7 @@ def main():
         provider_meta = build_provider_meta_from_names(
             provider_by_name,
             provider_categories,
+            network=network_name,
         )
 
         result["meta"] = {
