@@ -39,6 +39,7 @@ jobs:
 
       - name: Copy script to workspace
         run: |
+          cp json-tools/tools/schema.json .
           cp json-tools/tools/validate.py .
           cp json-tools/tools/fetch_agents.py .
 
