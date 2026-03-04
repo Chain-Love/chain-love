@@ -4,7 +4,7 @@ an ``agents`` array into the existing ``json/{network}.json`` files.
 
 Environment variables
 ---------------------
-GRAPH_API_KEY              – Shared API key for The Graph gateway.
+ERC8004_API_KEY              – Shared API key for The Graph gateway.
 ERC8004_SUBGRAPH_IDS       – JSON object mapping network names (matching the
                              json/{network}.json filenames) to Subgraph IDs.
                              Example:
@@ -281,8 +281,8 @@ def save_json_file(path: str, data: Dict[str, Any]) -> None:
 # ---------------------------------------------------------------------------
 
 
-def _build_url(subgraph_id: str, graph_api_key: str) -> str:
-    return GRAPH_GATEWAY.format(key=graph_api_key, id=subgraph_id)
+def _build_url(subgraph_id: str, erc8004_api_key: str) -> str:
+    return GRAPH_GATEWAY.format(key=erc8004_api_key, id=subgraph_id)
 
 
 def graphql_request(
@@ -318,14 +318,14 @@ def graphql_request(
 
 
 def fetch_all_agents(
-    network: str, subgraph_id: str, graph_api_key: str
+    network: str, subgraph_id: str, erc8004_api_key: str
 ) -> Optional[List[Dict[str, Any]]]:
     """
     Paginate through all Agent entities.
 
     Returns list of raw agent dicts, or None on failure.
     """
-    url = _build_url(subgraph_id, graph_api_key)
+    url = _build_url(subgraph_id, erc8004_api_key)
     all_agents: List[Dict[str, Any]] = []
     last_id = ""
 
@@ -390,7 +390,7 @@ def transform_agent(raw: Dict[str, Any], chain: str) -> Dict[str, Any]:
 
 
 def process_all_networks() -> None:
-    graph_api_key = _get_env("GRAPH_API_KEY")
+    erc8004_api_key = _get_env("ERC8004_API_KEY")
     subgraph_ids = _parse_subgraph_ids()
 
     if not subgraph_ids:
@@ -426,7 +426,7 @@ def process_all_networks() -> None:
             continue
 
         # Fetch agents from subgraph
-        raw_agents = fetch_all_agents(network, subgraph_id, graph_api_key)
+        raw_agents = fetch_all_agents(network, subgraph_id, erc8004_api_key)
         if raw_agents is None:
             continue
 
