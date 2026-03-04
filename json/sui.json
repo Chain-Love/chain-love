@@ -13618,7 +13618,8 @@
                 "filter": null,
                 "sorting": null,
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "identity"
             },
             "starred": {
                 "key": "starred",
@@ -13628,7 +13629,8 @@
                 "filter": null,
                 "sorting": null,
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "highlights"
             },
             "provider": {
                 "key": "provider",
@@ -13638,7 +13640,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": "left",
-                "cellType": "provider"
+                "cellType": "provider",
+                "group": "identity"
             },
             "actionButtons": {
                 "key": "actionButtons",
@@ -13648,7 +13651,8 @@
                 "filter": null,
                 "sorting": null,
                 "pinning": "left",
-                "cellType": "actionButtons"
+                "cellType": "actionButtons",
+                "group": "links"
             },
             "limitations": {
                 "key": "limitations",
@@ -13658,7 +13662,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "offer": {
                 "key": "offer",
@@ -13668,7 +13673,8 @@
                 "filter": null,
                 "sorting": null,
                 "pinning": "left",
-                "cellType": null
+                "cellType": null,
+                "group": "identity"
             },
             "address": {
                 "key": "address",
@@ -13678,7 +13684,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": "address"
+                "cellType": "address",
+                "group": "links"
             },
             "chain": {
                 "key": "chain",
@@ -13688,7 +13695,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": "chain"
+                "cellType": "chain",
+                "group": "identity"
             },
             "apiType": {
                 "key": "apiType",
@@ -13698,7 +13706,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "serviceDetails"
             },
             "planType": {
                 "key": "planType",
@@ -13708,7 +13717,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": "planType"
+                "cellType": "planType",
+                "group": "serviceDetails"
             },
             "planName": {
                 "key": "planName",
@@ -13718,7 +13728,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "serviceDetails"
             },
             "technology": {
                 "key": "technology",
@@ -13728,7 +13739,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "serviceDetails"
             },
             "regions": {
                 "key": "regions",
@@ -13738,7 +13750,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "historicalData": {
                 "key": "historicalData",
@@ -13748,7 +13761,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "serviceDetails"
             },
             "accessPrice": {
                 "key": "accessPrice",
@@ -13758,7 +13772,8 @@
                 "filter": "range",
                 "sorting": "number",
                 "pinning": null,
-                "cellType": "numericRange"
+                "cellType": "numericRange",
+                "group": "pricingAndSlas"
             },
             "trial": {
                 "key": "trial",
@@ -13768,7 +13783,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "highlights"
             },
             "queryPrice": {
                 "key": "queryPrice",
@@ -13778,7 +13794,8 @@
                 "filter": "range",
                 "sorting": "number",
                 "pinning": null,
-                "cellType": "numericRange"
+                "cellType": "numericRange",
+                "group": "pricingAndSlas"
             },
             "supportSla": {
                 "key": "supportSla",
@@ -13788,7 +13805,8 @@
                 "filter": "select",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "pricingAndSlas"
             },
             "uptimeSla": {
                 "key": "uptimeSla",
@@ -13798,7 +13816,8 @@
                 "filter": "range",
                 "sorting": "number",
                 "pinning": null,
-                "cellType": "slaNumeric"
+                "cellType": "slaNumeric",
+                "group": "pricingAndSlas"
             },
             "verifiedUptime": {
                 "key": "verifiedUptime",
@@ -13808,7 +13827,8 @@
                 "filter": "range",
                 "sorting": "number",
                 "pinning": null,
-                "cellType": "verifiedUptime"
+                "cellType": "verifiedUptime",
+                "group": "capabilities"
             },
             "bandwidthSla": {
                 "key": "bandwidthSla",
@@ -13818,7 +13838,8 @@
                 "filter": "range",
                 "sorting": "number",
                 "pinning": null,
-                "cellType": "slaNumeric"
+                "cellType": "slaNumeric",
+                "group": "pricingAndSlas"
             },
             "blocksBehindSla": {
                 "key": "blocksBehindSla",
@@ -13828,7 +13849,8 @@
                 "filter": "range",
                 "sorting": "number",
                 "pinning": null,
-                "cellType": "slaNumeric"
+                "cellType": "slaNumeric",
+                "group": "pricingAndSlas"
             },
             "verifiedBlocksBehindAvg": {
                 "key": "verifiedBlocksBehindAvg",
@@ -13838,7 +13860,8 @@
                 "filter": "range",
                 "sorting": "number",
                 "pinning": null,
-                "cellType": "verifiedBlocksBehindAvg"
+                "cellType": "verifiedBlocksBehindAvg",
+                "group": "capabilities"
             },
             "verifiedLatency": {
                 "key": "verifiedLatency",
@@ -13848,7 +13871,8 @@
                 "filter": "range",
                 "sorting": "number",
                 "pinning": null,
-                "cellType": "verifiedLatency"
+                "cellType": "verifiedLatency",
+                "group": "capabilities"
             },
             "availableApis": {
                 "key": "availableApis",
@@ -13858,7 +13882,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "securityImprovements": {
                 "key": "securityImprovements",
@@ -13868,7 +13893,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "monitoringAndAnalytics": {
                 "key": "monitoringAndAnalytics",
@@ -13878,7 +13904,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "additionalFeatures": {
                 "key": "additionalFeatures",
@@ -13888,7 +13915,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "sdk": {
                 "key": "sdk",
@@ -13898,7 +13926,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "developerExperience"
             },
             "searchCapabilities": {
                 "key": "searchCapabilities",
@@ -13908,7 +13937,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "smartContractsVerifications": {
                 "key": "smartContractsVerifications",
@@ -13918,7 +13948,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "capabilities"
             },
             "fullHistory": {
                 "key": "fullHistory",
@@ -13928,7 +13959,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "capabilities"
             },
             "pricing": {
                 "key": "pricing",
@@ -13938,7 +13970,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "pricing"
             },
             "dataTypes": {
                 "key": "dataTypes",
@@ -13948,7 +13981,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "decentralizationModel": {
                 "key": "decentralizationModel",
@@ -13958,7 +13992,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "security"
             },
             "economicalSecurity": {
                 "key": "economicalSecurity",
@@ -13968,7 +14003,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "security"
             },
             "economicalSecurityNote": {
                 "key": "economicalSecurityNote",
@@ -13978,7 +14014,8 @@
                 "filter": "select",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "security"
             },
             "auditsPerformed": {
                 "key": "auditsPerformed",
@@ -13988,7 +14025,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "security"
             },
             "openSource": {
                 "key": "openSource",
@@ -13998,7 +14036,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "highlights"
             },
             "support": {
                 "key": "support",
@@ -14008,7 +14047,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "serviceDetails"
             },
             "supportedChains": {
                 "key": "supportedChains",
@@ -14018,7 +14058,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "price": {
                 "key": "price",
@@ -14028,7 +14069,8 @@
                 "filter": "range",
                 "sorting": "number",
                 "pinning": null,
-                "cellType": "numericRange"
+                "cellType": "numericRange",
+                "group": "pricing"
             },
             "assetTypes": {
                 "key": "assetTypes",
@@ -14038,7 +14080,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "txSpeedSla": {
                 "key": "txSpeedSla",
@@ -14048,7 +14091,8 @@
                 "filter": null,
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "performance"
             },
             "throughputSla": {
                 "key": "throughputSla",
@@ -14058,7 +14102,8 @@
                 "filter": null,
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "performance"
             },
             "tag": {
                 "key": "tag",
@@ -14068,7 +14113,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "tagsPopover"
+                "cellType": "tagsPopover",
+                "group": "capabilities"
             },
             "toolType": {
                 "key": "toolType",
@@ -14078,7 +14124,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "serviceDetails"
             },
             "description": {
                 "key": "description",
@@ -14088,7 +14135,8 @@
                 "filter": null,
                 "sorting": "string",
                 "pinning": null,
-                "cellType": "description"
+                "cellType": "description",
+                "group": "serviceDetails"
             },
             "programmingLanguage": {
                 "key": "programmingLanguage",
@@ -14098,7 +14146,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "serviceDetails"
             },
             "dependencies": {
                 "key": "dependencies",
@@ -14108,7 +14157,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "tagsPopover"
+                "cellType": "tagsPopover",
+                "group": "technicalDetails"
             },
             "latestKnownVersion": {
                 "key": "latestKnownVersion",
@@ -14118,7 +14168,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "technicalDetails"
             },
             "latestKnownReleaseDate": {
                 "key": "latestKnownReleaseDate",
@@ -14128,7 +14179,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "date",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "technicalDetails"
             },
             "maintainer": {
                 "key": "maintainer",
@@ -14138,7 +14190,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "technicalDetails"
             },
             "license": {
                 "key": "license",
@@ -14148,7 +14201,8 @@
                 "filter": "select",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "technicalDetails"
             },
             "requiresLogin": {
                 "key": "requiresLogin",
@@ -14158,7 +14212,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "accessAndLimits"
             },
             "hasCaptcha": {
                 "key": "hasCaptcha",
@@ -14168,7 +14223,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "accessAndLimits"
             },
             "requiredMainnetBalance": {
                 "key": "requiredMainnetBalance",
@@ -14178,7 +14234,8 @@
                 "filter": null,
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "accessAndLimits"
             },
             "dripLimitAmount": {
                 "key": "dripLimitAmount",
@@ -14188,7 +14245,8 @@
                 "filter": null,
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "accessAndLimits"
             },
             "dripLimitPeriod": {
                 "key": "dripLimitPeriod",
@@ -14198,7 +14256,8 @@
                 "filter": null,
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "accessAndLimits"
             },
             "additionalNotes": {
                 "key": "additionalNotes",
@@ -14208,7 +14267,8 @@
                 "filter": null,
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "accessAndLimits"
             },
             "hasDashboard": {
                 "key": "hasDashboard",
@@ -14218,7 +14278,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "highlights"
             },
             "dataSources": {
                 "key": "dataSources",
@@ -14228,7 +14289,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "supportedPlatforms": {
                 "key": "supportedPlatforms",
@@ -14238,7 +14300,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "custodial": {
                 "key": "custodial",
@@ -14248,7 +14311,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "security"
             },
             "mfa": {
                 "key": "mfa",
@@ -14258,7 +14322,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "security"
             },
             "msig": {
                 "key": "msig",
@@ -14268,7 +14333,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "security"
             },
             "hardware": {
                 "key": "hardware",
@@ -14278,7 +14344,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "security"
             },
             "keyExport": {
                 "key": "keyExport",
@@ -14288,7 +14355,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "security"
             },
             "native": {
                 "key": "native",
@@ -14298,7 +14366,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "capabilities"
             },
             "evm": {
                 "key": "evm",
@@ -14308,7 +14377,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "capabilities"
             },
             "tendermint": {
                 "key": "tendermint",
@@ -14318,7 +14388,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "capabilities"
             },
             "tokensSupport": {
                 "key": "tokensSupport",
@@ -14328,7 +14399,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "staking": {
                 "key": "staking",
@@ -14338,7 +14410,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "capabilities"
             },
             "audit": {
                 "key": "audit",
@@ -14348,7 +14421,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "security"
             },
             "languages": {
                 "key": "languages",
@@ -14358,7 +14432,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "aggregator": {
                 "key": "aggregator",
@@ -14368,7 +14443,8 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "highlights"
             },
             "bannedCountries": {
                 "key": "bannedCountries",
@@ -14378,7 +14454,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "compliance": {
                 "key": "compliance",
@@ -14388,7 +14465,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "coverage": {
                 "key": "coverage",
@@ -14398,7 +14476,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             },
             "deliveryType": {
                 "key": "deliveryType",
@@ -14408,7 +14487,8 @@
                 "filter": "select",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "serviceDetails"
             },
             "executionEnvironment": {
                 "key": "executionEnvironment",
@@ -14418,7 +14498,8 @@
                 "filter": "select",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "technicalDetails"
             },
             "kycLevel": {
                 "key": "kycLevel",
@@ -14428,7 +14509,8 @@
                 "filter": "select",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": null
+                "cellType": null,
+                "group": "serviceDetails"
             },
             "paymentMethods": {
                 "key": "paymentMethods",
@@ -14438,7 +14520,8 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover"
+                "cellType": "arrayPopover",
+                "group": "capabilities"
             }
         },
         "providers": {
