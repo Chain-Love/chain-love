@@ -589,9 +589,14 @@
         "description": { "type": ["string", "null"] },
         "planName": { "type": ["string", "null"] },
         "planType": {
-          "oneOf": [
-            { "type": "string", "enum": ["Free", "Pay-as-you-go", "Enterprise", "Dedicated", "Tiered", "One-time payment"] },
-            { "type": "string" }
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
           ]
         },
         "price": { "type": ["string", "null"] },
@@ -680,9 +685,14 @@
         "description": { "type": ["string", "null"] },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
         "planType": {
-          "oneOf": [
-            { "type": "string", "enum": ["Free", "Pay-as-you-go", "Enterprise", "Dedicated", "Tiered", "One-time payment"] },
-            { "type": "string" }
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
           ]
         },
         "planName": { "type": ["string", "null"] },
