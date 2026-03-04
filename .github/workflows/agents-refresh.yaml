@@ -38,7 +38,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Copy script to workspace
-        run: cp json-tools/tools/fetch_agents.py .
+        run: |
+          cp json-tools/tools/validate.py .
+          cp json-tools/tools/fetch_agents.py .
 
       - name: Configure Git
         run: |
