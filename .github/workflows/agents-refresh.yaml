@@ -62,7 +62,7 @@ jobs:
       - name: Fetch ERC-8004 agents
         env:
           GRAPH_API_KEY: ${{ secrets.GRAPH_API_KEY }}
-          ERC8004_SUBGRAPH_IDS: ${{ secrets.ERC8004_SUBGRAPH_IDS }}
+          ERC8004_SUBGRAPH_IDS: ${{ vars.ERC8004_SUBGRAPH_IDS }}
         run: python3 fetch_agents.py
 
       - name: Commit and push
