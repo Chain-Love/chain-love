@@ -53,7 +53,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      
+
       - name: Install Python dependencies
         run: |
           python3 -m pip install --upgrade pip
@@ -61,7 +61,7 @@ jobs:
 
       - name: Fetch ERC-8004 agents
         env:
-          GRAPH_API_KEY: ${{ secrets.GRAPH_API_KEY }}
+          GRAPH_API_KEY: ${{ secrets.ERC8004_API_KEY }}
           ERC8004_SUBGRAPH_IDS: ${{ vars.ERC8004_SUBGRAPH_IDS }}
         run: python3 fetch_agents.py
 
