@@ -35,6 +35,7 @@ jobs:
       - name: Copy scripts from tools folder
         run: |
           cp json-tools/tools/csv_to_json.py .
+          cp json-tools/tools/fetch_agents.py .
           cp json-tools/tools/enrich_verified_metrics.py .
           cp json-tools/tools/validate.py .
           cp json-tools/tools/schema.json .
@@ -78,6 +79,7 @@ jobs:
         run: |
           python3 csv_to_json.py
           python3 enrich_verified_metrics.py
+          python3 fetch_agents.py
           python3 update_sdks_metadata_github.py --jsonfile all
           python3 update_sdks_metadata_npm.py --jsonfile all
           python3 update_sdks_metadata_gitlab.py --jsonfile all --fallback-to-tags
