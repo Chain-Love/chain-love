@@ -422,6 +422,13 @@ def fetch_all_agents(
 
 
 def transform_agent(raw: AgentRaw, chain: NetworkName) -> AgentRecord:
+    """
+    Map a Subgraph Agent entity to the Chain.Love JSON shape.
+
+    The output mirrors the per-offer structure used by other categories
+    (slug, offer, chain, starred, …) so the website can render it in
+    the same table component.
+    """
     agent_id = raw["agentId"]
     return {
         "slug": f"erc8004-agent-{agent_id}",
