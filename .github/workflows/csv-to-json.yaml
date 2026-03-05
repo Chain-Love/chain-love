@@ -54,7 +54,7 @@ jobs:
           if git ls-remote --exit-code --heads origin ${{ env.TARGET_BRANCH }}; then
             echo "Target branch exists, checking out and merging from source"
             git checkout ${{ env.TARGET_BRANCH }}
-            git merge origin/${{ env.SOURCE_BRANCH }} --no-edit
+            git merge origin/${{ env.SOURCE_BRANCH }} --no-edit -X theirs
           else
             echo "Target branch does not exist, creating from source branch"
             git checkout -b ${{ env.TARGET_BRANCH }} origin/${{ env.SOURCE_BRANCH }}
