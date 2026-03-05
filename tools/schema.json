@@ -785,6 +785,14 @@
       "properties": {
         "slug": { "type": "string" },
         "offer": { "type": ["string", "null"] },
+        "name": { "type": ["string", "null"] },
+        "description": { "type": ["string", "null"] },
+        "image": { "type": ["string", "null"] },
+        "active": { "type": ["boolean", "null"] },
+        "supportedTrust": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
         "agentId": { "type": "integer" },
         "owner": { "type": "string" },
         "agentURI": { "type": ["string", "null"] },

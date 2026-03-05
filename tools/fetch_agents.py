@@ -9,6 +9,7 @@ ERC8004_SUBGRAPH_IDS       – JSON object mapping network names (matching the
                              Example:
                                {"arbitrum":"https://proxy.arbitrum.chain.love/subgraphs/name/arbitrum-one/8004-Watchtower-Subgraph"}
 """
+import base64
 import json
 import os
 from copy import deepcopy
@@ -47,6 +48,11 @@ class AgentRaw(TypedDict):
 class AgentRecord(TypedDict):
     slug: str
     offer: str
+    name: Optional[str]
+    description: Optional[str]
+    image: Optional[str]
+    active: Optional[bool]
+    supportedTrust: Optional[List[str]]
     agentId: int
     owner: str
     agentURI: str
@@ -120,6 +126,11 @@ PAGE_SIZE = 1000  # The Graph max entities per page
 AGENTS_COLUMNS = [
     "slug",
     "offer",
+    "name",
+    "description",
+    "image",
+    "active",
+    "supportedTrust",
     "agentId",
     "owner",
     "agentURI",
@@ -266,6 +277,46 @@ AGENTS_COLUMN_META: Dict[str, ColumnMeta] = {
         "pinning": None,
         "cellType": None,
     },
+    "name": {
+        "key": "name",
+        "label": "Name",
+        "icon": "lucide:Tag",
+        "description": "Agent name from ERC-8004 registration file (agentURI).",
+        "filter": "searchableMultiSelect",
+        "sorting": "string",
+        "pinning": None,
+        "cellType": None,
+    },
+    "image": {
+        "key": "image",
+        "label": "Image",
+        "icon": "lucide:Image",
+        "description": "Image URL from ERC-8004 registration file.",
+        "filter": None,
+        "sorting": None,
+        "pinning": None,
+        "cellType": "link",
+    },
+    "active": {
+        "key": "active",
+        "label": "Active",
+        "icon": "lucide:CheckCircle",
+        "description": "Whether the agent is marked active in the registration file (ERC-8004).",
+        "filter": "select",
+        "sorting": "boolean",
+        "pinning": None,
+        "cellType": None,
+    },
+    "supportedTrust": {
+        "key": "supportedTrust",
+        "label": "Supported Trust",
+        "icon": "lucide:Shield",
+        "description": "Trust models (e.g. reputation, crypto-economic) from ERC-8004.",
+        "filter": "searchableMultiSelect",
+        "sorting": "arrayLength",
+        "pinning": None,
+        "cellType": "arrayPopover",
+    },
 }
 
 # ---------------------------------------------------------------------------
@@ -340,6 +391,86 @@ def load_json_file(path: str) -> JsonObject:
 def save_json_file(path: str, data: JsonObject) -> None:
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
+
+
+# ---------------------------------------------------------------------------
+# ERC-8004 registration file (agentURI)
+# ---------------------------------------------------------------------------
+
+# Public IPFS gateway for resolving ipfs:// URIs
+IPFS_GATEWAY = "https://ipfs.io/ipfs/"
+
+# Timeout for fetching registration file
+REGISTRATION_FETCH_TIMEOUT = 10
+
+
+def _fetch_registration_json(agent_uri: str) -> Optional[Dict[str, Any]]:
+    """
+    Resolve agentURI to JSON per EIP-8004.
+    Supports: data:application/json;base64,..., ipfs://, https://
+    Returns parsed JSON or None on failure.
+    """
+    if not agent_uri or not isinstance(agent_uri, str):
+        return None
+    agent_uri = agent_uri.strip()
+    if agent_uri.startswith("data:application/json;base64,"):
+        try:
+            b64 = agent_uri.split(",", 1)[1]
+            data = base64.b64decode(b64)
+            return json.loads(data.decode("utf-8"))
+        except Exception:
+            return None
+    if agent_uri.startswith("ipfs://"):
+        # ipfs://Qm... or ipfs://cid
+        cid = agent_uri[7:].strip()
+        if not cid:
+            return None
+        url = f"{IPFS_GATEWAY}{cid}"
+        try:
+            resp = requests.get(url, timeout=REGISTRATION_FETCH_TIMEOUT)
+            resp.raise_for_status()
+            return resp.json()
+        except Exception:
+            return None
+    if agent_uri.startswith("https://") or agent_uri.startswith("http://"):
+        try:
+            resp = requests.get(agent_uri, timeout=REGISTRATION_FETCH_TIMEOUT)
+            resp.raise_for_status()
+            return resp.json()
+        except Exception:
+            return None
+    return None
+
+
+def _extract_registration_fields(registration: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Extract EIP-8004 registration file fields for Chain.Love agents.
+    Returns dict with name, description, image, active, supportedTrust (all optional).
+    """
+    out: Dict[str, Any] = {
+        "name": None,
+        "description": None,
+        "image": None,
+        "active": None,
+        "supportedTrust": None,
+    }
+    if not isinstance(registration, dict):
+        return out
+    name = registration.get("name")
+    if isinstance(name, str):
+        out["name"] = name.strip() or None
+    desc = registration.get("description")
+    if isinstance(desc, str):
+        out["description"] = desc.strip() or None
+    image = registration.get("image")
+    if isinstance(image, str):
+        out["image"] = image.strip() or None
+    if "active" in registration:
+        out["active"] = bool(registration["active"])
+    st = registration.get("supportedTrust")
+    if isinstance(st, list):
+        out["supportedTrust"] = [str(x).strip() for x in st if x]
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -425,14 +556,22 @@ def transform_agent(raw: AgentRaw, chain: NetworkName) -> AgentRecord:
     """
     Map a Subgraph Agent entity to the Chain.Love JSON shape.
 
-    The output mirrors the per-offer structure used by other categories
-    (slug, offer, chain, starred, …) so the website can render it in
-    the same table component.
+    Enriches with EIP-8004 registration file fields (name, description, image,
+    active, supportedTrust) when agentURI is resolvable.
     """
     agent_id = raw["agentId"]
+    agent_uri = raw.get("agentURI") or ""
+    reg_data = _fetch_registration_json(agent_uri)
+    reg = _extract_registration_fields(reg_data) if reg_data else _extract_registration_fields({})
+    name = reg.get("name")
     return {
         "slug": f"erc8004-agent-{agent_id}",
-        "offer": f"Agent #{agent_id}",
+        "offer": name if name else f"Agent #{agent_id}",
+        "name": reg.get("name"),
+        "description": reg.get("description"),
+        "image": reg.get("image"),
+        "active": reg.get("active"),
+        "supportedTrust": reg.get("supportedTrust"),
         "agentId": int(agent_id),
         "owner": raw["owner"],
         "agentURI": raw["agentURI"],
