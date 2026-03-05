@@ -2,7 +2,10 @@ name: Release JSONs
 
 on:
   workflow_run:
-    workflows: [CSV to JSON]
+    workflows:
+      - CSV to JSON
+      - ERC-8004 agents refresh
+      - Verified metrics refresh
     types: [completed]
   workflow_dispatch: 
 
