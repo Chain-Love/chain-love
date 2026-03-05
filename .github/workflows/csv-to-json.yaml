@@ -71,7 +71,9 @@ jobs:
           pip install -r json-tools/tools/requirements.txt
 
       - name: Run CSV to JSON and enrichment
-        env: 
+        env:
+          ERC8004_API_KEY: ${{ secrets.ERC8004_API_KEY }}
+          ERC8004_SUBGRAPH_IDS: ${{ vars.ERC8004_SUBGRAPH_IDS }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERIFIED_API_TOKEN: ${{ secrets.VERIFIED_API_TOKEN }}
           SLA_MONITORING_SUBGRAPH_URL: ${{ secrets.SLA_MONITORING_SUBGRAPH_URL }}
