@@ -284,8 +284,8 @@ AGENTS_COLUMN_META: Dict[str, ColumnMeta] = {
         "description": "Agent name from ERC-8004 registration file (agentURI).",
         "filter": "searchableMultiSelect",
         "sorting": "string",
-        "pinning": None,
-        "cellType": None,
+        "pinning": "left",
+        "cellType": "provider",
     },
     "image": {
         "key": "image",
