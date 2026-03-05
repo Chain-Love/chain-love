@@ -1,3 +1,14 @@
+"""
+Fetch ERC-8004 agent data from per-network Subgraph endpoints and inject
+an ``agents`` array into the existing ``json/{network}.json`` files.
+Environment variables
+---------------------
+ERC8004_API_KEY              – Shared subgraph query key for all installations.
+ERC8004_SUBGRAPH_IDS       – JSON object mapping network names (matching the
+                             json/{network}.json filenames) to subgraph query URLs.
+                             Example:
+                               {"arbitrum":"https://proxy.arbitrum.chain.love/subgraphs/name/arbitrum-one/8004-Watchtower-Subgraph"}
+"""
 import json
 import os
 from copy import deepcopy
