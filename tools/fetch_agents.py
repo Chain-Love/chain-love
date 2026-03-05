@@ -1,23 +1,92 @@
 """
 Fetch ERC-8004 agent data from per-network Subgraph endpoints and inject
 an ``agents`` array into the existing ``json/{network}.json`` files.
-
 Environment variables
 ---------------------
-ERC8004_API_KEY              – Shared API key for The Graph gateway.
+ERC8004_API_KEY              – Shared subgraph query key for all installations.
 ERC8004_SUBGRAPH_IDS       – JSON object mapping network names (matching the
-                             json/{network}.json filenames) to Subgraph IDs.
+                             json/{network}.json filenames) to subgraph query URLs.
                              Example:
-                               {"arbitrum":"ABC","ethereum":"DEF","base":"GHI","polygon":"JKL"}
+                               {"arbitrum":"https://proxy.arbitrum.chain.love/subgraphs/name/arbitrum-one/8004-Watchtower-Subgraph"}
 """
 import json
 import os
 from copy import deepcopy
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, NewType, TypedDict
 
 import requests
 from jsonschema import Draft202012Validator
-from validate import check_schema_validation  # source of truth
+from validate import check_schema_validation  # type: ignore
+
+# ---------------------------------------------------------------------------
+# Types
+# ---------------------------------------------------------------------------
+
+NetworkName = NewType("NetworkName", str)
+SubgraphQueryURL = NewType("SubgraphQueryURL", str)
+
+SubgraphQueryURLByNetwork = Dict[NetworkName, SubgraphQueryURL]
+
+
+class AgentRaw(TypedDict):
+    id: str
+    agentId: str
+    owner: str
+    agentURI: str
+    agentURIType: str
+    agentWallet: Optional[str]
+    registeredAt: str
+    registeredBlock: str
+    updatedAt: str
+    totalFeedbackCount: str
+    activeFeedbackCount: str
+    feedbackValueSum: str
+    averageRating: Any
+
+
+class AgentRecord(TypedDict):
+    slug: str
+    offer: str
+    agentId: int
+    owner: str
+    agentURI: str
+    agentURIType: str
+    agentWallet: Optional[str]
+    chain: str
+    identityRegistry: str
+    reputationRegistry: str
+    totalFeedbackCount: int
+    activeFeedbackCount: int
+    averageRating: Any
+    registeredAt: int
+    updatedAt: int
+    starred: bool
+
+
+AgentsList = List[AgentRecord]
+
+
+class GraphQLResponse(TypedDict):
+    agents: List[AgentRaw]
+
+
+JsonObject = Dict[str, Any]
+
+class CategoryMeta(TypedDict):
+    key: str
+    label: str
+    icon: Optional[str]
+    description: str
+
+class ColumnMeta(TypedDict):
+    key: str
+    label: str
+    icon: Optional[str]
+    description: str
+    filter: Optional[str]
+    sorting: Optional[str]
+    pinning: Optional[str]
+    cellType: Optional[str]
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -40,9 +109,6 @@ def _load_validator(path: str) -> Draft202012Validator:
 AGENTS_RESPONSE_VALIDATOR = _load_validator(
     os.path.join(VALIDATION_DIR, "agents_response.schema.json")
 )
-
-# The Graph gateway URL template
-GRAPH_GATEWAY = "https://gateway.thegraph.com/api/{key}/subgraphs/id/{id}"
 
 # ERC-8004 contract addresses (same on every EVM chain via CREATE2)
 IDENTITY_REGISTRY = "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
@@ -71,7 +137,7 @@ AGENTS_COLUMNS = [
 ]
 
 # Category meta entry (ensures meta.categories.agents exists for validation)
-AGENTS_CATEGORY_META = {
+AGENTS_CATEGORY_META: CategoryMeta = {
     "key": "agents",
     "label": "Agents",
     "icon": "lucide:Bot",
@@ -79,7 +145,7 @@ AGENTS_CATEGORY_META = {
 }
 
 # Column meta for agent-specific fields (injected into meta.columns if missing)
-AGENTS_COLUMN_META = {
+AGENTS_COLUMN_META: Dict[str, ColumnMeta] = {
     "agentId": {
         "key": "agentId",
         "label": "Agent ID",
@@ -249,7 +315,7 @@ def _get_env(name: str) -> str:
     return value
 
 
-def _parse_subgraph_ids() -> Dict[str, str]:
+def _parse_subgraph_ids() -> SubgraphQueryURLByNetwork:
     """Parse ERC8004_SUBGRAPH_IDS JSON env var into a dict."""
     raw = _get_env("ERC8004_SUBGRAPH_IDS")
     try:
@@ -258,7 +324,7 @@ def _parse_subgraph_ids() -> Dict[str, str]:
         raise ConfigError(f"ERC8004_SUBGRAPH_IDS is not valid JSON: {e}")
     if not isinstance(ids, dict):
         raise ConfigError("ERC8004_SUBGRAPH_IDS must be a JSON object")
-    return ids
+    return ids  # type: ignore
 
 
 # ---------------------------------------------------------------------------
@@ -266,12 +332,12 @@ def _parse_subgraph_ids() -> Dict[str, str]:
 # ---------------------------------------------------------------------------
 
 
-def load_json_file(path: str) -> Dict[str, Any]:
+def load_json_file(path: str) -> JsonObject:
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-def save_json_file(path: str, data: Dict[str, Any]) -> None:
+def save_json_file(path: str, data: JsonObject) -> None:
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
@@ -281,13 +347,13 @@ def save_json_file(path: str, data: Dict[str, Any]) -> None:
 # ---------------------------------------------------------------------------
 
 
-def _build_url(subgraph_id: str, erc8004_api_key: str) -> str:
-    return GRAPH_GATEWAY.format(key=erc8004_api_key, id=subgraph_id)
+def _build_url(subgraphQueryURL: SubgraphQueryURL, erc8004_api_key: str) -> str:
+    return f"{subgraphQueryURL}?token={erc8004_api_key}"
 
 
 def graphql_request(
     url: str, query: str, variables: Optional[Dict[str, Any]] = None
-) -> Dict[str, Any]:
+) -> GraphQLResponse:
     """Send a GraphQL POST request and return the parsed JSON body."""
     try:
         resp = requests.post(
@@ -314,19 +380,19 @@ def graphql_request(
     if data is None:
         raise RuntimeError("Subgraph response missing 'data'")
 
-    return data
+    return data  # type: ignore
 
 
 def fetch_all_agents(
-    network: str, subgraph_id: str, erc8004_api_key: str
-) -> Optional[List[Dict[str, Any]]]:
+    network: NetworkName, subgraphQueryUrl: SubgraphQueryURL, erc8004_api_key: str
+) -> Optional[List[AgentRaw]]:
     """
     Paginate through all Agent entities.
 
     Returns list of raw agent dicts, or None on failure.
     """
-    url = _build_url(subgraph_id, erc8004_api_key)
-    all_agents: List[Dict[str, Any]] = []
+    url = _build_url(subgraphQueryUrl, erc8004_api_key)
+    all_agents: List[AgentRaw] = []
     last_id = ""
 
     while True:
@@ -336,7 +402,7 @@ def fetch_all_agents(
             print(f"[{network}] WARNING: {e}")
             return None
 
-        errors = list(AGENTS_RESPONSE_VALIDATOR.iter_errors(data))
+        errors = list(AGENTS_RESPONSE_VALIDATOR.iter_errors(data)) # type: ignore
         if errors:
             first = errors[0]
             print(f"[{network}] WARNING: subgraph response schema mismatch")
@@ -355,7 +421,7 @@ def fetch_all_agents(
     return all_agents
 
 
-def transform_agent(raw: Dict[str, Any], chain: str) -> Dict[str, Any]:
+def transform_agent(raw: AgentRaw, chain: NetworkName) -> AgentRecord:
     """
     Map a Subgraph Agent entity to the Chain.Love JSON shape.
 
@@ -430,7 +496,7 @@ def process_all_networks() -> None:
         if raw_agents is None:
             continue
 
-        agents = [transform_agent(a, network) for a in raw_agents]
+        agents: AgentsList = [transform_agent(a, network) for a in raw_agents]
         agents.sort(key=lambda a: a["agentId"])
         print(f"[{network}] Fetched {len(agents)} agents")
 
