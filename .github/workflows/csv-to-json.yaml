@@ -93,10 +93,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update processed file"
-
-            # Rebase on origin/${{ env.TARGET_BRANCH }} to avoid conflicts
-            git fetch origin ${{ env.TARGET_BRANCH }}
-            git rebase origin/${{ env.TARGET_BRANCH }}
-
-            git push origin ${{ env.TARGET_BRANCH }}
+            # Since this workflow does the same job as agents-refresh and verified-refresh,
+            # we do not care about the work they have done.
+            git push origin ${{ env.TARGET_BRANCH }} --force
           fi
