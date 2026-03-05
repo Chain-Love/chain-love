@@ -5,16 +5,16 @@ from typing import Any, Dict, List, Optional, NewType, TypedDict
 
 import requests
 from jsonschema import Draft202012Validator
-from validate import check_schema_validation  # source of truth
+from validate import check_schema_validation  # type: ignore
 
 # ---------------------------------------------------------------------------
 # Types
 # ---------------------------------------------------------------------------
 
 NetworkName = NewType("NetworkName", str)
-SubgraphId = NewType("SubgraphId", str)
+SubgraphQueryURL = NewType("SubgraphQueryURL", str)
 
-SubgraphIdByNetwork = Dict[NetworkName, SubgraphId]
+SubgraphQueryURLByNetwork = Dict[NetworkName, SubgraphQueryURL]
 
 
 class AgentRaw(TypedDict):
@@ -98,9 +98,6 @@ def _load_validator(path: str) -> Draft202012Validator:
 AGENTS_RESPONSE_VALIDATOR = _load_validator(
     os.path.join(VALIDATION_DIR, "agents_response.schema.json")
 )
-
-# The Graph gateway URL template
-GRAPH_GATEWAY = "https://gateway.thegraph.com/api/{key}/subgraphs/id/{id}"
 
 # ERC-8004 contract addresses (same on every EVM chain via CREATE2)
 IDENTITY_REGISTRY = "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
@@ -307,7 +304,7 @@ def _get_env(name: str) -> str:
     return value
 
 
-def _parse_subgraph_ids() -> SubgraphIdByNetwork:
+def _parse_subgraph_ids() -> SubgraphQueryURLByNetwork:
     """Parse ERC8004_SUBGRAPH_IDS JSON env var into a dict."""
     raw = _get_env("ERC8004_SUBGRAPH_IDS")
     try:
@@ -339,8 +336,8 @@ def save_json_file(path: str, data: JsonObject) -> None:
 # ---------------------------------------------------------------------------
 
 
-def _build_url(subgraph_id: SubgraphId, erc8004_api_key: str) -> str:
-    return GRAPH_GATEWAY.format(key=erc8004_api_key, id=subgraph_id)
+def _build_url(subgraphQueryURL: SubgraphQueryURL, erc8004_api_key: str) -> str:
+    return f"{subgraphQueryURL}?token={erc8004_api_key}"
 
 
 def graphql_request(
@@ -376,14 +373,14 @@ def graphql_request(
 
 
 def fetch_all_agents(
-    network: NetworkName, subgraph_id: SubgraphId, erc8004_api_key: str
+    network: NetworkName, subgraphQueryUrl: SubgraphQueryURL, erc8004_api_key: str
 ) -> Optional[List[AgentRaw]]:
     """
     Paginate through all Agent entities.
 
     Returns list of raw agent dicts, or None on failure.
     """
-    url = _build_url(subgraph_id, erc8004_api_key)
+    url = _build_url(subgraphQueryUrl, erc8004_api_key)
     all_agents: List[AgentRaw] = []
     last_id = ""
 
@@ -394,7 +391,7 @@ def fetch_all_agents(
             print(f"[{network}] WARNING: {e}")
             return None
 
-        errors = list(AGENTS_RESPONSE_VALIDATOR.iter_errors(data))
+        errors = list(AGENTS_RESPONSE_VALIDATOR.iter_errors(data)) # type: ignore
         if errors:
             first = errors[0]
             print(f"[{network}] WARNING: subgraph response schema mismatch")
