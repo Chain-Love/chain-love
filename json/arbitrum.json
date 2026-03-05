@@ -45862,6 +45862,50 @@
                 "cellType": "address",
                 "group": "identity"
             },
+            "name": {
+                "key": "name",
+                "label": "Name",
+                "icon": "lucide:Tag",
+                "description": "Agent name from ERC-8004 registration file (agentURI).",
+                "filter": "searchableMultiSelect",
+                "sorting": "string",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
+            },
+            "image": {
+                "key": "image",
+                "label": "Image",
+                "icon": "lucide:Image",
+                "description": "Image URL from ERC-8004 registration file.",
+                "filter": null,
+                "sorting": null,
+                "pinning": null,
+                "cellType": "link",
+                "group": "identity"
+            },
+            "active": {
+                "key": "active",
+                "label": "Active",
+                "icon": "lucide:CheckCircle",
+                "description": "Whether the agent is marked active in the registration file (ERC-8004).",
+                "filter": "select",
+                "sorting": "boolean",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
+            },
+            "supportedTrust": {
+                "key": "supportedTrust",
+                "label": "Supported Trust",
+                "icon": "lucide:Shield",
+                "description": "Trust models supported by the agent (e.g. reputation, crypto-economic, tee-attestation) from ERC-8004.",
+                "filter": "searchableMultiSelect",
+                "sorting": "arrayLength",
+                "pinning": null,
+                "cellType": "arrayPopover",
+                "group": "identity"
+            },
             "identityRegistry": {
                 "key": "identityRegistry",
                 "label": "Identity Registry",
@@ -45938,46 +45982,6 @@
                 "pinning": null,
                 "cellType": null,
                 "group": "identity"
-            },
-            "name": {
-                "key": "name",
-                "label": "Name",
-                "icon": "lucide:Tag",
-                "description": "Agent name from ERC-8004 registration file (agentURI).",
-                "filter": "searchableMultiSelect",
-                "sorting": "string",
-                "pinning": null,
-                "cellType": null
-            },
-            "image": {
-                "key": "image",
-                "label": "Image",
-                "icon": "lucide:Image",
-                "description": "Image URL from ERC-8004 registration file.",
-                "filter": null,
-                "sorting": null,
-                "pinning": null,
-                "cellType": "link"
-            },
-            "active": {
-                "key": "active",
-                "label": "Active",
-                "icon": "lucide:CheckCircle",
-                "description": "Whether the agent is marked active in the registration file (ERC-8004).",
-                "filter": "select",
-                "sorting": "boolean",
-                "pinning": null,
-                "cellType": null
-            },
-            "supportedTrust": {
-                "key": "supportedTrust",
-                "label": "Supported Trust",
-                "icon": "lucide:Shield",
-                "description": "Trust models (e.g. reputation, crypto-economic) from ERC-8004.",
-                "filter": "searchableMultiSelect",
-                "sorting": "arrayLength",
-                "pinning": null,
-                "cellType": "arrayPopover"
             }
         },
         "providers": {
@@ -66274,6 +66278,58 @@
             "averageRating": "0",
             "registeredAt": 1772660903,
             "updatedAt": 1772660903,
+            "starred": false
+        },
+        {
+            "slug": "erc8004-agent-597",
+            "offer": "Zyfai Rebalancer Agent for 0x090bFBF210aeFB01F0ab13b72C3aDe18eE6F5C97",
+            "name": "Zyfai Rebalancer Agent for 0x090bFBF210aeFB01F0ab13b72C3aDe18eE6F5C97",
+            "description": "A ZK powered rebalancer agent that finds the best yet low risk yield opportunities for you across various bluechip protocols on multiple chains, such as Base, Arbitrum, Plasma, etc.",
+            "image": "https://www.zyf.ai/Zyfai-logo-png.png",
+            "active": true,
+            "supportedTrust": [
+                "crypto-economic",
+                "reputation"
+            ],
+            "agentId": 597,
+            "owner": "0x090bfbf210aefb01f0ab13b72c3ade18ee6f5c97",
+            "agentURI": "ipfs://bafkreiehx73eynhwym4vaify46s77r3o3thw4nc576cpgzzrasiwguyove",
+            "agentURIType": "ipfs",
+            "agentWallet": "0x090bfbf210aefb01f0ab13b72c3ade18ee6f5c97",
+            "chain": "arbitrum",
+            "identityRegistry": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
+            "reputationRegistry": "0x8004BAa17C55a88189AE136b182e5fdA19dE9b63",
+            "totalFeedbackCount": 0,
+            "activeFeedbackCount": 0,
+            "averageRating": "0",
+            "registeredAt": 1772725254,
+            "updatedAt": 1772725254,
+            "starred": false
+        },
+        {
+            "slug": "erc8004-agent-598",
+            "offer": "Zyfai Rebalancer Agent for 0xcD26022dC6b8Dda9349073d4cC0A0F5542209b63",
+            "name": "Zyfai Rebalancer Agent for 0xcD26022dC6b8Dda9349073d4cC0A0F5542209b63",
+            "description": "A ZK powered rebalancer agent that finds the best yet low risk yield opportunities for you across various bluechip protocols on multiple chains, such as Base, Arbitrum, Plasma, etc.",
+            "image": "https://www.zyf.ai/Zyfai-logo-png.png",
+            "active": true,
+            "supportedTrust": [
+                "crypto-economic",
+                "reputation"
+            ],
+            "agentId": 598,
+            "owner": "0xcd26022dc6b8dda9349073d4cc0a0f5542209b63",
+            "agentURI": "ipfs://bafkreifcigchh67zb7y3e3jmj7essaugqcw6wgyivmakucw5fwmmhi36hi",
+            "agentURIType": "ipfs",
+            "agentWallet": "0xcd26022dc6b8dda9349073d4cc0a0f5542209b63",
+            "chain": "arbitrum",
+            "identityRegistry": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
+            "reputationRegistry": "0x8004BAa17C55a88189AE136b182e5fdA19dE9b63",
+            "totalFeedbackCount": 0,
+            "activeFeedbackCount": 0,
+            "averageRating": "0",
+            "registeredAt": 1772730323,
+            "updatedAt": 1772730323,
             "starred": false
         }
     ]

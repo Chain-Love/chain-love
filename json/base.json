@@ -35110,6 +35110,50 @@
                 "cellType": "address",
                 "group": "identity"
             },
+            "name": {
+                "key": "name",
+                "label": "Name",
+                "icon": "lucide:Tag",
+                "description": "Agent name from ERC-8004 registration file (agentURI).",
+                "filter": "searchableMultiSelect",
+                "sorting": "string",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
+            },
+            "image": {
+                "key": "image",
+                "label": "Image",
+                "icon": "lucide:Image",
+                "description": "Image URL from ERC-8004 registration file.",
+                "filter": null,
+                "sorting": null,
+                "pinning": null,
+                "cellType": "link",
+                "group": "identity"
+            },
+            "active": {
+                "key": "active",
+                "label": "Active",
+                "icon": "lucide:CheckCircle",
+                "description": "Whether the agent is marked active in the registration file (ERC-8004).",
+                "filter": "select",
+                "sorting": "boolean",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
+            },
+            "supportedTrust": {
+                "key": "supportedTrust",
+                "label": "Supported Trust",
+                "icon": "lucide:Shield",
+                "description": "Trust models supported by the agent (e.g. reputation, crypto-economic, tee-attestation) from ERC-8004.",
+                "filter": "searchableMultiSelect",
+                "sorting": "arrayLength",
+                "pinning": null,
+                "cellType": "arrayPopover",
+                "group": "identity"
+            },
             "identityRegistry": {
                 "key": "identityRegistry",
                 "label": "Identity Registry",
