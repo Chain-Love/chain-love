@@ -167,6 +167,16 @@ AGENTS_COLUMN_META: Dict[str, ColumnMeta] = {
         "pinning": None,
         "cellType": None,
     },
+       "averageRating": {
+        "key": "averageRating",
+        "label": "Avg Rating",
+        "icon": "lucide:TrendingUp",
+        "description": "Average reputation rating from active feedback.",
+        "filter": None,
+        "sorting": "number",
+        "pinning": None,
+        "cellType": None,
+    },
     "owner": {
         "key": "owner",
         "label": "Owner",
