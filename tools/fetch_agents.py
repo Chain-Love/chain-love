@@ -64,6 +64,7 @@ class AgentRecord(TypedDict):
     totalFeedbackCount: int
     activeFeedbackCount: int
     averageRating: Any
+    rank: int
     registeredAt: int
     updatedAt: int
     starred: bool
@@ -142,6 +143,7 @@ AGENTS_COLUMNS = [
     "reputationRegistry",
     "totalFeedbackCount",
     "activeFeedbackCount",
+    "rank",
     "registeredAt",
     "updatedAt",
     "starred",
@@ -272,6 +274,16 @@ AGENTS_COLUMN_META: Dict[str, ColumnMeta] = {
         "label": "Updated At",
         "icon": "lucide:CalendarClock",
         "description": "Unix timestamp of the last on-chain update.",
+        "filter": None,
+        "sorting": "number",
+        "pinning": None,
+        "cellType": None,
+    },
+    "rank": {
+        "key": "rank",
+        "label": "Rank",
+        "icon": "lucide:Trophy",
+        "description": "Bayesian-weighted rank among all agents on this chain (1 = best).",
         "filter": None,
         "sorting": "number",
         "pinning": None,
@@ -583,10 +595,83 @@ def transform_agent(raw: AgentRaw, chain: NetworkName) -> AgentRecord:
         "totalFeedbackCount": int(raw["totalFeedbackCount"]),
         "activeFeedbackCount": int(raw["activeFeedbackCount"]),
         "averageRating": raw["averageRating"],
+        "rank": 0,  # placeholder — overwritten by compute_ranks()
         "registeredAt": int(raw["registeredAt"]),
         "updatedAt": int(raw["updatedAt"]),
         "starred": False,
     }
+
+
+# ---------------------------------------------------------------------------
+# Bayesian ranking
+# ---------------------------------------------------------------------------
+
+
+def compute_ranks(agents: AgentsList) -> None:
+    """
+    Assign a per-chain Bayesian rank to each agent **in place**.
+
+    Uses the IMDB-style weighted rating formula:
+        score = (v / (v + m)) * R  +  (m / (v + m)) * C
+
+    Where:
+        v = agent's activeFeedbackCount
+        m = median activeFeedbackCount across all agents (minimum threshold)
+        R = agent's averageRating
+        C = global mean averageRating across all agents
+
+    Agents are ranked by score descending (rank 1 = best).
+    Agents with zero feedback are ranked last, ordered by agentId.
+    """
+    if not agents:
+        return
+
+    # Separate agents with and without feedback
+    with_feedback = [a for a in agents if a["activeFeedbackCount"] > 0]
+    without_feedback = [a for a in agents if a["activeFeedbackCount"] == 0]
+
+    if not with_feedback:
+        # No feedback data at all — rank by agentId ascending
+        agents.sort(key=lambda a: a["agentId"])
+        for i, a in enumerate(agents):
+            a["rank"] = i + 1
+        return
+
+    # Compute m (median active feedback count)
+    counts = sorted(a["activeFeedbackCount"] for a in with_feedback)
+    mid = len(counts) // 2
+    if len(counts) % 2 == 0:
+        m = (counts[mid - 1] + counts[mid]) / 2.0
+    else:
+        m = float(counts[mid])
+    m = max(m, 1.0)  # floor at 1 to avoid division edge cases
+
+    # Compute C (global mean average rating)
+    ratings = [float(a["averageRating"]) for a in with_feedback]
+    C = sum(ratings) / len(ratings)
+
+    # Compute Bayesian score for agents with feedback
+    scored: list = []
+    for a in with_feedback:
+        v = float(a["activeFeedbackCount"])
+        R = float(a["averageRating"])
+        score = (v / (v + m)) * R + (m / (v + m)) * C
+        scored.append((score, a))
+
+    # Sort by score descending, then by agentId ascending for ties
+    scored.sort(key=lambda t: (-t[0], t[1]["agentId"]))
+
+    # Assign ranks
+    rank = 1
+    for _, a in scored:
+        a["rank"] = rank
+        rank += 1
+
+    # Agents without feedback get the remaining ranks, ordered by agentId
+    without_feedback.sort(key=lambda a: a["agentId"])
+    for a in without_feedback:
+        a["rank"] = rank
+        rank += 1
 
 
 # ---------------------------------------------------------------------------
@@ -636,6 +721,7 @@ def process_all_networks() -> None:
             continue
 
         agents: AgentsList = [transform_agent(a, network) for a in raw_agents]
+        compute_ranks(agents)
         agents.sort(key=lambda a: a["agentId"])
         print(f"[{network}] Fetched {len(agents)} agents")
 
