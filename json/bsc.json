@@ -28282,6 +28282,12 @@
                 "label": "Storages",
                 "icon": "lucide:Database",
                 "description": "Storage providers and data layers."
+            },
+            "agents": {
+                "key": "agents",
+                "label": "Agents",
+                "icon": "lucide:Bot",
+                "description": "ERC-8004 on-chain AI agents with identity and reputation."
             }
         },
         "columns": {
@@ -29196,7 +29202,139 @@
                 "sorting": "arrayLength",
                 "pinning": null,
                 "cellType": "arrayPopover",
-                "group": "capabilities"
+                "group": "pricing"
+            },
+            "agentId": {
+                "key": "agentId",
+                "label": "Agent ID",
+                "icon": "lucide:Hash",
+                "description": "ERC-8004 on-chain agent identifier.",
+                "filter": null,
+                "sorting": "number",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
+            },
+            "owner": {
+                "key": "owner",
+                "label": "Owner",
+                "icon": "lucide:User",
+                "description": "Address that registered the agent.",
+                "filter": "searchableMultiSelect",
+                "sorting": "string",
+                "pinning": null,
+                "cellType": "address",
+                "group": "identity"
+            },
+            "agentURI": {
+                "key": "agentURI",
+                "label": "Agent URI",
+                "icon": "lucide:ExternalLink",
+                "description": "Off-chain metadata link (IPFS/HTTPS).",
+                "filter": null,
+                "sorting": null,
+                "pinning": null,
+                "cellType": "link",
+                "group": "identity"
+            },
+            "agentURIType": {
+                "key": "agentURIType",
+                "label": "URI Type",
+                "icon": null,
+                "description": "Type of the Agent URI (ipfs, https, etc.).",
+                "filter": "select",
+                "sorting": "string",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
+            },
+            "agentWallet": {
+                "key": "agentWallet",
+                "label": "Agent Wallet",
+                "icon": "lucide:Wallet",
+                "description": "Wallet address associated with the agent.",
+                "filter": null,
+                "sorting": null,
+                "pinning": null,
+                "cellType": "address",
+                "group": "identity"
+            },
+            "identityRegistry": {
+                "key": "identityRegistry",
+                "label": "Identity Registry",
+                "icon": "lucide:FileKey",
+                "description": "ERC-8004 Identity Registry contract address.",
+                "filter": null,
+                "sorting": null,
+                "pinning": null,
+                "cellType": "address",
+                "group": "identity"
+            },
+            "reputationRegistry": {
+                "key": "reputationRegistry",
+                "label": "Reputation Registry",
+                "icon": "lucide:Star",
+                "description": "ERC-8004 Reputation Registry contract address.",
+                "filter": null,
+                "sorting": null,
+                "pinning": null,
+                "cellType": "address",
+                "group": "identity"
+            },
+            "totalFeedbackCount": {
+                "key": "totalFeedbackCount",
+                "label": "Total Feedback",
+                "icon": "lucide:MessageSquare",
+                "description": "Total number of feedback entries (including revoked).",
+                "filter": null,
+                "sorting": "number",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
+            },
+            "activeFeedbackCount": {
+                "key": "activeFeedbackCount",
+                "label": "Active Feedback",
+                "icon": "lucide:MessageSquareCheck",
+                "description": "Number of non-revoked feedback entries.",
+                "filter": null,
+                "sorting": "number",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
+            },
+            "averageRating": {
+                "key": "averageRating",
+                "label": "Avg Rating",
+                "icon": "lucide:TrendingUp",
+                "description": "Average reputation rating from active feedback.",
+                "filter": null,
+                "sorting": "number",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
+            },
+            "registeredAt": {
+                "key": "registeredAt",
+                "label": "Registered At",
+                "icon": "lucide:CalendarPlus",
+                "description": "Unix timestamp when the agent was registered on-chain.",
+                "filter": null,
+                "sorting": "number",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
+            },
+            "updatedAt": {
+                "key": "updatedAt",
+                "label": "Updated At",
+                "icon": "lucide:CalendarClock",
+                "description": "Unix timestamp of the last on-chain update.",
+                "filter": null,
+                "sorting": "number",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
             }
         },
         "providers": {
@@ -33006,10 +33144,10 @@
             "crypto-apis": {
                 "slug": "crypto-apis",
                 "name": "Crypto APIs",
-                "logoPath": null,
-                "description": null,
-                "website": null,
-                "docs": null,
+                "logoPath": "crypto-apis.png",
+                "description": "It is a blockchain infrastructure provider offering unified REST APIs and tools for developers building crypto applications",
+                "website": "https://cryptoapis.io/",
+                "docs": "https://developers.cryptoapis.io/v-2.2024-12-12-175/RESTapis/general-information/overview",
                 "x": null,
                 "github": null,
                 "discord": null,
