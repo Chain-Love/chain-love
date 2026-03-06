@@ -1,12 +1,12 @@
 ## Infrastructure schema & meta guide
 
-This guide explains how to **add or remove categories and columns** in this branch, using only:
+This guide explains how to **add new categories and columns for the Chain.Love platform**:
 
 - `tools/schema.json` – the JSON Schema.
 - `meta/categories.json` – category metadata.
 - `meta/columns.json` – column metadata.
 
-Data files are **out of scope** here. They live in a different branch and are covered by a separate style guide.
+Data files are **out of scope** here. They live in a `main` branch and are covered by the [respective README.md.](https://github.com/Chain-Love/chain-love/blob/main/README.md).
 
 ---
 
