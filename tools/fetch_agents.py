@@ -10,10 +10,12 @@ ERC8004_SUBGRAPH_IDS       – JSON object mapping network names (matching the
                                {"arbitrum":"https://proxy.arbitrum.chain.love/subgraphs/name/arbitrum-one/8004-Watchtower-Subgraph"}
 """
 import base64
+import gzip
 import json
 import os
 from copy import deepcopy
 from typing import Any, Dict, List, Optional, NewType, TypedDict
+from urllib.parse import unquote_plus
 
 import requests
 from jsonschema import Draft202012Validator
@@ -418,24 +420,67 @@ IPFS_GATEWAY = "https://ipfs.io/ipfs/"
 REGISTRATION_FETCH_TIMEOUT = 10
 
 
+def _decode_data_uri_payload(agent_uri: str) -> Optional[str]:
+    """
+    Decode data: URI payload (application/json; base64, URL-encoded, or gzip).
+    Returns decoded UTF-8 string or None on failure.
+    Mirrors agent-uri-cell.tsx decodeDataUri / decodeDataUriAsync logic.
+    """
+    if "," not in agent_uri:
+        return None
+    head, _, payload = agent_uri.partition(",")
+    meta = head.lower()
+    payload = payload.strip()
+    if "enc=gzip" in meta or "gzip" in meta:
+        if "base64" in meta:
+            try:
+                raw = base64.b64decode(payload)
+                return gzip.decompress(raw).decode("utf-8")
+            except Exception:
+                return None
+    if "base64" in meta:
+        try:
+            raw = base64.b64decode(payload)
+            return raw.decode("utf-8")
+        except Exception:
+            return None
+    # URL-encoded (e.g. data:application/json,{%22name%22:...})
+    try:
+        return unquote_plus(payload)
+    except Exception:
+        return None
+
+
 def _fetch_registration_json(agent_uri: str) -> Optional[Dict[str, Any]]:
     """
     Resolve agentURI to JSON per EIP-8004.
-    Supports: data:application/json;base64,..., ipfs://, https://
-    Returns parsed JSON or None on failure.
+    Supports: raw JSON string, data:application/json;base64,..., data: with gzip,
+    data: URL-encoded, ipfs://, https://
+    Returns parsed JSON (registration object) or None on failure.
     """
     if not agent_uri or not isinstance(agent_uri, str):
         return None
     agent_uri = agent_uri.strip()
-    if agent_uri.startswith("data:application/json;base64,"):
+
+    # Raw JSON string (e.g. "{\"name\":\"...\"}")
+    if agent_uri.startswith("{") or agent_uri.startswith("["):
         try:
-            b64 = agent_uri.split(",", 1)[1]
-            data = base64.b64decode(b64)
-            return json.loads(data.decode("utf-8"))
-        except Exception:
+            return json.loads(agent_uri)
+        except json.JSONDecodeError:
             return None
+
+    # data: URI (inline JSON)
+    if agent_uri.startswith("data:"):
+        decoded = _decode_data_uri_payload(agent_uri)
+        if decoded is None:
+            return None
+        try:
+            data = json.loads(decoded)
+            return data if isinstance(data, dict) else None
+        except json.JSONDecodeError:
+            return None
+
     if agent_uri.startswith("ipfs://"):
-        # ipfs://Qm... or ipfs://cid
         cid = agent_uri[7:].strip()
         if not cid:
             return None
@@ -459,7 +504,9 @@ def _fetch_registration_json(agent_uri: str) -> Optional[Dict[str, Any]]:
 def _extract_registration_fields(registration: Dict[str, Any]) -> Dict[str, Any]:
     """
     Extract EIP-8004 registration file fields for Chain.Love agents.
-    Returns dict with name, description, image, active, supportedTrust (all optional).
+    Maps registration JSON (e.g. type, name, description, image, supportedTrusts,
+    active, x402support) into artifact fields: name, description, image, active,
+    supportedTrust. Uses supportedTrusts (plural) from EIP-8004 when present.
     """
     out: Dict[str, Any] = {
         "name": None,
@@ -481,7 +528,8 @@ def _extract_registration_fields(registration: Dict[str, Any]) -> Dict[str, Any]
         out["image"] = image.strip() or None
     if "active" in registration:
         out["active"] = bool(registration["active"])
-    st = registration.get("supportedTrust")
+    # EIP-8004 registration may use supportedTrusts (plural)
+    st = registration.get("supportedTrust") or registration.get("supportedTrusts")
     if isinstance(st, list):
         out["supportedTrust"] = [str(x).strip() for x in st if x]
     return out
