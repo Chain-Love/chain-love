@@ -1,8 +1,10 @@
-# Chain.Love Data Enrichment: Execution Plan & Quality Contract
+# Chain.Love Data Enrichment: Execution Plan & Quality Contract (Superseded)
 
-**Status:** Draft / Waiting for Approval  
-**Date:** 2026-02-08  
-**Executor:** AI Agent (Codex-Prime / Trae)  
+**Note:** This document has been superseded by [Project_Guiding_Document.md](file:///c%3A%5CUsers%5CSemek%5CWebstormProjects%5CChain.Love%5CProject_Guiding_Document.md), which contains the most up-to-date project plan, status, and execution details.
+
+**Status:** Superseded / Historical Reference
+**Date:** 2026-03-06
+**Executor:** AI Agent (Codex-Prime / Trae)
 **Approver:** Joshua Onyekachukwu
 
 ---
@@ -15,9 +17,9 @@ I confirm full access to the local development environment:
 
 ---
 
-## 2. Network Status & Batching Strategy
+## 2. Network Status & Batching Strategy (Historical)
 
-Based on the Master Requirement Document, the following networks are identified for processing.
+Based on the Master Requirement Document, the following networks were identified for processing. This section reflects the plan *prior* to the completion of the Foundation Repair and Batch 1 (Base Network) execution. For the current batching strategy, please refer to the [Project_Guiding_Document.md](file:///c%3A%5CUsers%5CSemek%5CWebstormProjects%5CChain.Love%5CProject_Guiding_Document.md).
 
 ### **Completed / Previously Attempted (Out of Scope for this Plan)**
 *   **Arbitrum**
@@ -86,43 +88,6 @@ These are grouped into batches to manage complexity and reviewer load.
 
 ---
 
-## 4. Scope of Work Per Network
+## 4. Scope of Work Per Network (Refer to Project Guiding Document)
 
-For each network in the batches above, the workflow is:
-
-### **Phase 1: Deduplication (Cleanup)**
-*   **Action:** Scan existing network CSVs (`api.csv`, `explorer.csv`, etc.).
-*   **Logic:** Compare against `providers/*.csv`.
-*   **Execution:**
-    *   Replace hardcoded values with `!provider:<slug>` where applicable.
-    *   **Clear** cells that are identical to the provider's default.
-    *   Remove `[]` or `null` garbage values left by previous attempts.
-
-### **Phase 2: Enrichment (New Data)**
-*   **Categories:** RPCs (`api.csv`), Explorers (`explorer.csv`), Wallets (`wallet.csv`), DevTools (`devTool.csv`).
-*   **Action:** Add **new** providers that are missing.
-*   **Logic:**
-    *   If the provider exists globally: Add row with `!provider:<slug>`.
-    *   If the provider is new/unique: Add full row data (and potentially add to global providers if reusable).
-
-### **Phase 3: Validation**
-*   **Automated:** Run `validate_cells.py` and `check_syntax.py`.
-*   **Manual:** Review diff to ensure NO "noisy" changes (whitespace, reordering without cause).
-
----
-
-## 5. Execution Roadmap
-
-1.  **Approve this Plan:** You (User) review and approve this document.
-2.  **Start Batch 1 (Base):**
-    *   Create branch `feat/enrich-base`.
-    *   Perform Deduplication & Cleanup.
-    *   Perform Enrichment.
-    *   Validate & Commit.
-    *   **STOP** and present for review.
-3.  **Proceed to Linea, Solana, Aptos:**
-    *   Repeat process sequentially.
-    *   Ensure PR size limits are respected (split into multiple PRs if Base is too large).
-4.  **Review Point:** After Batch 1 is merged/approved, proceed to Batch 2.
-
-**Ready to execute upon your command.**
+For the current workflow and detailed scope of work per network, please refer to the [Project_Guiding_Document.md](file:///c%3A%5CUsers%5CSemek%5CWebstormProjects%5CChain.Love%5CProject_Guiding_Document.md).

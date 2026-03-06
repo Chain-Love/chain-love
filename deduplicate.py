@@ -1,101 +1,97 @@
-import csv
 import os
+import csv
 
-def deduplicate_network_files(network_name):
-    print(f"Deduplicating network: {network_name}")
-    # Try both current dir and 'chain-love' dir
-    if os.path.exists("networks"):
-        base_dir = "."
-    elif os.path.exists("chain-love/networks"):
-        base_dir = "chain-love"
-    else:
-        print("Could not find networks directory.")
+def deduplicate_base_network_file(network_file_path):
+    filename = os.path.basename(network_file_path)
+    global_provider_file_path = os.path.join('repo', 'providers', filename)
+
+    if not os.path.exists(global_provider_file_path):
+        print(f"Warning: Global provider file not found for {filename}. Skipping deduplication.")
         return
-        
-    network_dir = os.path.join(base_dir, "networks", network_name)
-    providers_dir = os.path.join(base_dir, "providers")
+
+    with open(network_file_path, 'r', encoding='utf-8') as f:
+        network_content_lines = list(csv.reader(f))
+
+    with open(global_provider_file_path, 'r', encoding='utf-8') as f:
+        global_content_lines = list(csv.reader(f))
+
+    original_network_header = network_content_lines[0]
+    global_header = global_content_lines[0]
+
+    # --- Advanced Header Alignment Logic ---
+    # Create a mapping from global header column name to its index in the original network header
+    # This handles missing columns in network_header and extra columns in network_header
+    original_network_header_map = {col: i for i, col in enumerate(original_network_header)}
     
-    if not os.path.exists(network_dir):
-        print(f"Network directory {network_dir} does not exist.")
+    # Create the new aligned network content (header + data rows)
+    aligned_network_content = []
+    aligned_network_header = []
+    column_indices_to_keep = []
+
+    for global_col in global_header:
+        aligned_network_header.append(global_col)
+        if global_col in original_network_header_map:
+            column_indices_to_keep.append(original_network_header_map[global_col])
+        else:
+            # This means a column from global_header is missing in network_header
+            # We'll handle this by adding an empty string in the data rows later
+            column_indices_to_keep.append(None) # Placeholder to indicate a new column
+    
+    aligned_network_content.append(aligned_network_header)
+
+    for original_network_row in network_content_lines[1:]:
+        aligned_row = ['' for _ in aligned_network_header] # Initialize with empty strings
+        for i, global_col in enumerate(aligned_network_header):
+            original_index = -1
+            if global_col in original_network_header_map:
+                original_index = original_network_header_map[global_col]
+            
+            if original_index != -1 and original_index < len(original_network_row):
+                aligned_row[i] = original_network_row[original_index]
+        aligned_network_content.append(aligned_row)
+
+    network_content_lines = aligned_network_content
+    network_header = aligned_network_content[0]
+    # --- End Advanced Header Alignment Logic ---
+
+    if network_header != global_header:
+        print(f"Error: Headers still do not match between {network_file_path} and {global_provider_file_path} after alignment. Aborting deduplication.")
         return
 
-    # Map category names to their provider files
-    category_to_provider = {
-        "api.csv": "api.csv",
-        "bridge.csv": "bridge.csv",
-        "devTool.csv": "devTool.csv",
-        "explorer.csv": "explorer.csv",
-        "faucet.csv": "faucet.csv",
-        "oracle.csv": "oracle.csv",
-        "wallet.csv": "wallet.csv",
-        "analytic.csv": "analytic.csv"
-    }
+    modified_network_content = [network_header]
+    header_to_index = {col: i for i, col in enumerate(network_header)}
 
-    # Load global providers
-    providers_data = {}
-    for cat_file in category_to_provider.values():
-        provider_path = os.path.join(providers_dir, cat_file)
-        if os.path.exists(provider_path):
-            with open(provider_path, 'r', encoding='utf-8') as f:
-                reader = csv.DictReader(f)
-                providers_data[cat_file] = {row['slug']: row for row in reader}
+    for i in range(1, len(network_content_lines)):
+        network_row = list(network_content_lines[i])  # Create a mutable list
+        provider_slug_col = network_row[header_to_index['provider']] if 'provider' in header_to_index else ''
 
-    # Process each file in the network directory
-    for file_name in os.listdir(network_dir):
-        if file_name.lower() not in [k.lower() for k in category_to_provider.keys()]:
-            continue
+        if provider_slug_col.startswith('!provider:'):
+            provider_slug = provider_slug_col.split(':', 1)[1]
 
-        network_file_path = os.path.join(network_dir, file_name)
-        
-        # Match case-insensitive for the category
-        provider_cat = None
-        for k, v in category_to_provider.items():
-            if k.lower() == file_name.lower():
-                provider_cat = v
-                break
-        
-        if not provider_cat or provider_cat not in providers_data:
-            continue
+            global_provider_row = None
+            for g_row in global_content_lines[1:]:
+                if g_row and g_row[header_to_index['slug']] == provider_slug:
+                    global_provider_row = g_row
+                    break
+            
+            if global_provider_row:
+                for j, cell_value in enumerate(network_row):
+                    if j < len(global_provider_row) and cell_value == global_provider_row[j]:
+                        network_row[j] = '' # Clear the cell if it's identical
+        modified_network_content.append(network_row)
+    
+    with open(network_file_path, 'w', encoding='utf-8', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerows(modified_network_content)
+    print(f"Deduplication complete for {network_file_path}")
 
-        global_providers = providers_data[provider_cat]
-        
-        updated_rows = []
-        headers = []
-        
-        if not os.path.exists(network_file_path):
-            continue
+def run_deduplication():
+    base_network_dir = 'repo/networks/base'
+    for root, dirs, files in os.walk(base_network_dir):
+        for file in files:
+            if file.endswith('.csv'):
+                file_path = os.path.join(root, file)
+                deduplicate_base_network_file(file_path)
 
-        with open(network_file_path, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            headers = reader.fieldnames
-            if not headers:
-                continue
-            for row in reader:
-                provider_ref = row.get('provider', '')
-                if provider_ref and provider_ref.startswith('!provider:'):
-                    provider_slug = provider_ref.split(':', 1)[1]
-                    if provider_slug in global_providers:
-                        global_row = global_providers[provider_slug]
-                        # Compare each field and clear if it matches global
-                        for field in headers:
-                            if field in ['slug', 'provider', 'chain']: # Keep these
-                                continue
-                            
-                            # If the network cell matches the global cell, clear it
-                            if field in global_row:
-                                if str(row[field]) == str(global_row[field]):
-                                    row[field] = ''
-                updated_rows.append(row)
-
-        if updated_rows:
-            with open(network_file_path, 'w', encoding='utf-8', newline='') as f:
-                writer = csv.DictWriter(f, fieldnames=headers)
-                writer.writeheader()
-                writer.writerows(updated_rows)
-            print(f"Updated {network_file_path}")
-
-if __name__ == "__main__":
-    import sys
-    networks = sys.argv[1:] if len(sys.argv) > 1 else ["arbitrum", "ton", "bsc", "ethereum", "optimism", "polygon"]
-    for network in networks:
-        deduplicate_network_files(network)
+if __name__ == '__main__':
+    run_deduplication()
