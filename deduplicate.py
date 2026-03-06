@@ -86,7 +86,7 @@ def deduplicate_base_network_file(network_file_path):
     print(f"Deduplication complete for {network_file_path}")
 
 def run_deduplication():
-    base_network_dir = 'repo/networks/polygon'
+    base_network_dir = 'repo/networks/arbitrum'
     for root, dirs, files in os.walk(base_network_dir):
         for file in files:
             if file.endswith('.csv'):

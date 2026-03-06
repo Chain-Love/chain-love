@@ -2,13 +2,20 @@ import os
 import csv
 
 def clean_and_validate_file(file_path):
-    forbidden_patterns = ['["', '"]', '","', 'NULL', 'null', '{}', 'FALSE', 'TRUE']
     found_issues_in_file = False
     
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
     original_content = content
+
+    # Convert TRUE/FALSE to true/false for JSON compatibility
+    content = content.replace('TRUE', 'true')
+    content = content.replace('FALSE', 'false')
+
+    # Existing forbidden patterns (without TRUE/FALSE)
+    forbidden_patterns = ['["', '"]', '","', 'NULL', 'null', '{}']
+
     for pattern in forbidden_patterns:
         content = content.replace(pattern, '')
     
