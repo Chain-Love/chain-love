@@ -84,6 +84,7 @@ class CategoryMeta(TypedDict):
     label: str
     icon: Optional[str]
     description: str
+    defaultSorting: Optional[str]
 
 class ColumnMeta(TypedDict):
     key: str
@@ -155,6 +156,7 @@ AGENTS_CATEGORY_META: CategoryMeta = {
     "label": "Agents",
     "icon": "lucide:Bot",
     "description": "ERC-8004 on-chain AI agents with identity and reputation.",
+    "defaultSorting": "rank",
 }
 
 # Column meta for agent-specific fields (injected into meta.columns if missing)
@@ -733,13 +735,12 @@ def process_all_networks() -> None:
         if "columns" in enriched:
             enriched["columns"]["agents"] = AGENTS_COLUMNS
 
-        # Ensure meta.categories.agents exists (needed for validation)
+        # Ensure meta.categories.agents exists with full meta (defaultSorting, etc.)
         meta = enriched.get("meta", {})
         categories = meta.get("categories", {})
-        if "agents" not in categories:
-            categories["agents"] = AGENTS_CATEGORY_META
-            meta["categories"] = categories
-            enriched["meta"] = meta
+        categories["agents"] = AGENTS_CATEGORY_META
+        meta["categories"] = categories
+        enriched["meta"] = meta
 
         # Ensure agent-specific columns use our meta (overwrite so pinning, cellType, etc. are correct)
         columns_meta = meta.get("columns", {})
