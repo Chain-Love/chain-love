@@ -55,6 +55,7 @@ class AgentRecord(TypedDict):
     image: Optional[str]
     active: Optional[bool]
     supportedTrust: Optional[List[str]]
+    registrationType: Optional[str]
     agentId: int
     owner: str
     agentURI: str
@@ -131,9 +132,10 @@ AGENTS_COLUMNS = [
     "slug",
     "offer",
     "name",
-     "agentId",
-    "description",
     "rank",
+    "agentId",
+    "description",
+    "registrationType",
     "averageRating",
     "image",
     "active",
@@ -302,6 +304,16 @@ AGENTS_COLUMN_META: Dict[str, ColumnMeta] = {
         "sorting": "string",
         "pinning": "left",
         "cellType": "agent",
+    },
+    "registrationType": {
+        "key": "registrationType",
+        "label": "Registration Type",
+        "icon": "lucide:FileType",
+        "description": "EIP-8004 registration document type (e.g. registration-v1).",
+        "filter": None,
+        "sorting": "string",
+        "pinning": None,
+        "cellType": None,
     },
     "image": {
         "key": "image",
@@ -504,8 +516,9 @@ def _fetch_registration_json(agent_uri: str) -> Optional[Dict[str, Any]]:
 def _extract_registration_fields(registration: Dict[str, Any]) -> Dict[str, Any]:
     """
     Extract EIP-8004 registration file fields for Chain.Love agents.
-    Maps registration JSON (e.g. type, name, description, image, supportedTrusts,
-    active, x402support) into artifact fields: name, description, image, active,
+    Input is the JSON document at agentURI; field names are from that document
+    (e.g. "type", "name", "description", "image"). Maps them into artifact
+    fields: registrationType <- "type", name, description, image, active,
     supportedTrust. Uses supportedTrusts (plural) from EIP-8004 when present.
     """
     out: Dict[str, Any] = {
@@ -514,9 +527,14 @@ def _extract_registration_fields(registration: Dict[str, Any]) -> Dict[str, Any]
         "image": None,
         "active": None,
         "supportedTrust": None,
+        "registrationType": None,
     }
     if not isinstance(registration, dict):
         return out
+    # Registration document at agentURI has field "type" (e.g. registration-v1 URL)
+    type_val = registration.get("type")
+    if isinstance(type_val, str):
+        out["registrationType"] = type_val.strip() or None
     name = registration.get("name")
     if isinstance(name, str):
         out["name"] = name.strip() or None
@@ -619,7 +637,9 @@ def transform_agent(raw: AgentRaw, chain: NetworkName) -> AgentRecord:
     Map a Subgraph Agent entity to the Chain.Love JSON shape.
 
     Enriches with EIP-8004 registration file fields (name, description, image,
-    active, supportedTrust) when agentURI is resolvable.
+    active, supportedTrust, registrationType) by fetching and parsing the
+    document at agentURI (data:, ipfs://, or https://). registrationType
+    comes from the "type" field of that JSON (e.g. registration-v1).
     """
     agent_id = raw["agentId"]
     agent_uri = raw.get("agentURI") or ""
@@ -634,6 +654,7 @@ def transform_agent(raw: AgentRaw, chain: NetworkName) -> AgentRecord:
         "image": reg.get("image"),
         "active": reg.get("active"),
         "supportedTrust": reg.get("supportedTrust"),
+        "registrationType": reg.get("registrationType"),
         "agentId": int(agent_id),
         "owner": raw["owner"],
         "agentURI": raw["agentURI"],
