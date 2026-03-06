@@ -5839,7 +5839,7 @@
             "chain": "sepolia"
         },
         {
-            "slug": "arkham-testnet",
+            "slug": "arkham-mainnet",
             "provider": "Arkham",
             "offer": null,
             "actionButtons": [
@@ -5862,10 +5862,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "footprint-analytics-enterprise-testnet",
+            "slug": "footprint-analytics-enterprise-mainnet",
             "provider": "Footprint Analytics",
             "offer": null,
             "actionButtons": [
@@ -5885,10 +5885,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "sentry-aleno-testnet",
+            "slug": "sentry-aleno-mainnet",
             "provider": "Sentry by Aleno",
             "offer": null,
             "actionButtons": [
@@ -5910,7 +5910,7 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
             "slug": "arkham-hoodi",
@@ -5987,7 +5987,7 @@
             "chain": "hoodi"
         },
         {
-            "slug": "arkham-mainnet",
+            "slug": "arkham-testnet",
             "provider": "Arkham",
             "offer": null,
             "actionButtons": [
@@ -6010,10 +6010,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "footprint-analytics-enterprise-mainnet",
+            "slug": "footprint-analytics-enterprise-testnet",
             "provider": "Footprint Analytics",
             "offer": null,
             "actionButtons": [
@@ -6033,10 +6033,10 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "sentry-aleno-mainnet",
+            "slug": "sentry-aleno-testnet",
             "provider": "Sentry by Aleno",
             "offer": null,
             "actionButtons": [
@@ -6058,7 +6058,7 @@
             "planType": "Enterprise",
             "starred": false,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         }
     ],
     "security": [
@@ -29325,6 +29325,410 @@
             "chain": "mainnet"
         },
         {
+            "slug": "watchdata-mainnet-business-full-archive",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://ethereum.api.watchdata.io/node/jsonrpc)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$99/mo",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "450M Watch units/mo",
+                "600 Watch units/s",
+                "15 API Keys"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Email support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "watchdata-mainnet-business-recent-state",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://ethereum.api.watchdata.io/node/jsonrpc)"
+            ],
+            "planName": "Business",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$99/mo",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "450M Watch units/mo",
+                "600 Watch units/s",
+                "15 API Keys"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Email support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "watchdata-mainnet-free-full-archive",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://ethereum.api.watchdata.io/node/jsonrpc)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "100M Watch units/mo",
+                "200 Watch units/s",
+                "5 API Keys"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "watchdata-mainnet-free-recent-state",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://ethereum.api.watchdata.io/node/jsonrpc)"
+            ],
+            "planName": null,
+            "planType": "Free",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$0",
+            "queryPrice": "$0",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "100M Watch units/mo",
+                "200 Watch units/s",
+                "5 API Keys"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": null,
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "watchdata-mainnet-production-full-archive",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://ethereum.api.watchdata.io/node/jsonrpc)"
+            ],
+            "planName": "Production",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$299/mo",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "600M Watch units/mo",
+                "600 Watch units/s",
+                "20 API Keys"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "24/7 Email support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "watchdata-mainnet-production-recent-state",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://ethereum.api.watchdata.io/node/jsonrpc)"
+            ],
+            "planName": "Production",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$299/mo",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "600M Watch units/mo",
+                "600 Watch units/s",
+                "20 API Keys"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "24/7 Email support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "watchdata-mainnet-startup-full-archive",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://ethereum.api.watchdata.io/node/jsonrpc)"
+            ],
+            "planName": "Startup",
+            "planType": "Tiered",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "200M Watch units/mo",
+                "400 Watch units/s",
+                "10 API Keys"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Discord support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "watchdata-mainnet-startup-recent-state",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://ethereum.api.watchdata.io/node/jsonrpc)"
+            ],
+            "planName": "Startup",
+            "planType": "Tiered",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "$49/mo",
+            "queryPrice": null,
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "200M Watch units/mo",
+                "400 Watch units/s",
+                "10 API Keys"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Discord support"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
             "slug": "1rpc-enterprise-recent-state-sepolia",
             "provider": "1rpc",
             "offer": null,
@@ -32479,7 +32883,107 @@
             "chain": "sepolia"
         },
         {
-            "slug": "1rpc-enterprise-recent-state-testnet",
+            "slug": "watchdata-custom-full-archive-sepolia",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://watchdata.io/)",
+                "[Docs](https://docs.watchdata.io/resources/pricing-and-limits)"
+            ],
+            "planName": "Custom",
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Dedicated"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "sepolia"
+        },
+        {
+            "slug": "watchdata-custom-recent-state-sepolia",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://watchdata.io/)",
+                "[Docs](https://docs.watchdata.io/resources/pricing-and-limits)"
+            ],
+            "planName": "Custom",
+            "planType": "Enterprise",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Dedicated"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "sepolia"
+        },
+        {
+            "slug": "1rpc-enterprise-recent-state-mainnet",
             "provider": "1rpc",
             "offer": null,
             "actionButtons": [
@@ -32527,10 +33031,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "alchemy-enterprise-full-archive-testnet",
+            "slug": "alchemy-enterprise-full-archive-mainnet",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -32585,10 +33089,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "alchemy-enterprise-recent-state-testnet",
+            "slug": "alchemy-enterprise-recent-state-mainnet",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -32643,10 +33147,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "allthatnode-business-full-archive-testnet",
+            "slug": "allthatnode-business-full-archive-mainnet",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -32699,10 +33203,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "allthatnode-business-recent-state-testnet",
+            "slug": "allthatnode-business-recent-state-mainnet",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -32755,10 +33259,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "ankr-enterprise-full-archive-testnet",
+            "slug": "ankr-enterprise-full-archive-mainnet",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -32808,10 +33312,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "ankr-enterprise-recent-state-testnet",
+            "slug": "ankr-enterprise-recent-state-mainnet",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -32861,10 +33365,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "bitquery-commercial-indexer-testnet",
+            "slug": "bitquery-commercial-indexer-mainnet",
             "provider": "Bitquery",
             "offer": null,
             "actionButtons": [
@@ -32917,10 +33421,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "blockdaemon-enterprise-full-archive-testnet",
+            "slug": "blockdaemon-enterprise-full-archive-mainnet",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -32973,10 +33477,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "blockdaemon-enterprise-recent-state-testnet",
+            "slug": "blockdaemon-enterprise-recent-state-mainnet",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -33029,10 +33533,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "blockpi-enterprise-full-archive-testnet",
+            "slug": "blockpi-enterprise-full-archive-mainnet",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -33081,10 +33585,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "blockpi-enterprise-recent-state-testnet",
+            "slug": "blockpi-enterprise-recent-state-mainnet",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -33129,10 +33633,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "blockvision-enterprise-full-archive-testnet",
+            "slug": "blockvision-enterprise-full-archive-mainnet",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -33180,10 +33684,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "blockvision-enterprise-indexer-testnet",
+            "slug": "blockvision-enterprise-indexer-mainnet",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -33231,10 +33735,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "chainbase-enterprise-custom-testnet",
+            "slug": "chainbase-enterprise-custom-mainnet",
             "provider": "Chainbase",
             "offer": null,
             "actionButtons": [
@@ -33292,10 +33796,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "chainstack-enterprise-full-archive-testnet",
+            "slug": "chainstack-enterprise-full-archive-mainnet",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -33348,10 +33852,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "chainstack-enterprise-recent-state-testnet",
+            "slug": "chainstack-enterprise-recent-state-mainnet",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -33403,10 +33907,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "crypto-apis-enterprise-full-archive-testnet",
+            "slug": "crypto-apis-enterprise-full-archive-mainnet",
             "provider": "Crypto APIs",
             "offer": null,
             "actionButtons": [
@@ -33458,10 +33962,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "crypto-apis-enterprise-recent-state-testnet",
+            "slug": "crypto-apis-enterprise-recent-state-mainnet",
             "provider": "Crypto APIs",
             "offer": null,
             "actionButtons": [
@@ -33513,10 +34017,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "drpc-enterprise-full-archive-testnet",
+            "slug": "drpc-enterprise-full-archive-mainnet",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -33569,10 +34073,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "drpc-enterprise-recent-state-testnet",
+            "slug": "drpc-enterprise-recent-state-mainnet",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -33625,10 +34129,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "dwellir-enterprise-full-archive-testnet",
+            "slug": "dwellir-enterprise-full-archive-mainnet",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -33669,10 +34173,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "dwellir-enterprise-recent-state-testnet",
+            "slug": "dwellir-enterprise-recent-state-mainnet",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -33713,10 +34217,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "envio-dedicated-indexer-testnet",
+            "slug": "envio-dedicated-indexer-mainnet",
             "provider": "Envio",
             "offer": null,
             "actionButtons": null,
@@ -33774,10 +34278,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "getblock-enterprise-full-archive-testnet",
+            "slug": "getblock-enterprise-full-archive-mainnet",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -33828,10 +34332,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "getblock-enterprise-recent-state-testnet",
+            "slug": "getblock-enterprise-recent-state-mainnet",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -33882,10 +34386,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "ghostgraph-enterprise-indexer-testnet",
+            "slug": "ghostgraph-enterprise-indexer-mainnet",
             "provider": "GhostGraph",
             "offer": null,
             "actionButtons": null,
@@ -33933,10 +34437,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "ginco-enterprise-indexer-testnet",
+            "slug": "ginco-enterprise-indexer-mainnet",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -33987,10 +34491,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "ginco-enterprise-recent-state-testnet",
+            "slug": "ginco-enterprise-recent-state-mainnet",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -34041,10 +34545,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "goldrush-enterprise-indexer-testnet",
+            "slug": "goldrush-enterprise-indexer-mainnet",
             "provider": "Covalent",
             "offer": null,
             "actionButtons": null,
@@ -34084,10 +34588,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "goldsky-enterprise-indexer-testnet",
+            "slug": "goldsky-enterprise-indexer-mainnet",
             "provider": "Goldsky",
             "offer": null,
             "actionButtons": null,
@@ -34139,10 +34643,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "indexing-co-enterprise-indexer-testnet",
+            "slug": "indexing-co-enterprise-indexer-mainnet",
             "provider": "The Indexing Company",
             "offer": null,
             "actionButtons": [
@@ -34199,10 +34703,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "infstones-enterprise-full-archive-testnet",
+            "slug": "infstones-enterprise-full-archive-mainnet",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -34257,10 +34761,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "infstones-enterprise-recent-state-testnet",
+            "slug": "infstones-enterprise-recent-state-mainnet",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -34315,10 +34819,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "infura-enterprise-full-archive-testnet",
+            "slug": "infura-enterprise-full-archive-mainnet",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -34365,10 +34869,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "infura-enterprise-recent-state-testnet",
+            "slug": "infura-enterprise-recent-state-mainnet",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -34415,10 +34919,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "mobula-enterprise-indexer-testnet",
+            "slug": "mobula-enterprise-indexer-mainnet",
             "provider": "Mobula",
             "offer": null,
             "actionButtons": null,
@@ -34464,10 +34968,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "moralis-enterprise-full-archive-testnet",
+            "slug": "moralis-enterprise-full-archive-mainnet",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -34520,10 +35024,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "moralis-indexer-enterprise-testnet",
+            "slug": "moralis-indexer-enterprise-mainnet",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -34577,10 +35081,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "node-real-semita-testnet",
+            "slug": "node-real-semita-mainnet",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -34638,10 +35142,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "node-real-semita-full-archive-testnet",
+            "slug": "node-real-semita-full-archive-mainnet",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -34699,10 +35203,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "node-real-semita-recent-state-testnet",
+            "slug": "node-real-semita-recent-state-mainnet",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -34760,10 +35264,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "nownodes-custom-recent-state-testnet",
+            "slug": "nownodes-custom-recent-state-mainnet",
             "provider": "Nownodes",
             "offer": null,
             "actionButtons": [
@@ -34806,10 +35310,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "omnia-enterprise-recent-state-testnet",
+            "slug": "omnia-enterprise-recent-state-mainnet",
             "provider": "Omnia",
             "offer": null,
             "actionButtons": [
@@ -34862,10 +35366,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "onfinality-enterprise-full-archive-testnet",
+            "slug": "onfinality-enterprise-full-archive-mainnet",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -34915,10 +35419,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "onfinality-enterprise-trace-testnet",
+            "slug": "onfinality-enterprise-trace-mainnet",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -34968,10 +35472,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "onfinality-partner-plan-indexer-testnet",
+            "slug": "onfinality-partner-plan-indexer-mainnet",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -35021,10 +35525,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "quicknode-enterprise-full-archive-testnet",
+            "slug": "quicknode-enterprise-full-archive-mainnet",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -35080,10 +35584,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "quicknode-enterprise-recent-state-testnet",
+            "slug": "quicknode-enterprise-recent-state-mainnet",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -35139,10 +35643,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "radiumblock-enterprise-recent-state-testnet",
+            "slug": "radiumblock-enterprise-recent-state-mainnet",
             "provider": "RadiumBlock",
             "offer": null,
             "actionButtons": [
@@ -35183,10 +35687,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "rpcfast-enterprise-full-archive-testnet",
+            "slug": "rpcfast-enterprise-full-archive-mainnet",
             "provider": "RPCFast",
             "offer": null,
             "actionButtons": [
@@ -35234,10 +35738,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "tatum-business-full-archive-testnet",
+            "slug": "tatum-business-full-archive-mainnet",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -35289,10 +35793,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "tatum-business-recent-state-testnet",
+            "slug": "tatum-business-recent-state-mainnet",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -35344,10 +35848,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "tenderly-enterprise-recent-state-testnet",
+            "slug": "tenderly-enterprise-recent-state-mainnet",
             "provider": "Tenderly",
             "offer": null,
             "actionButtons": [
@@ -35394,10 +35898,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "thegraph-enterprise-indexer-testnet",
+            "slug": "thegraph-enterprise-indexer-mainnet",
             "provider": "The Graph",
             "offer": null,
             "actionButtons": null,
@@ -35438,10 +35942,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "thirdweb-enterprise-indexer-testnet",
+            "slug": "thirdweb-enterprise-indexer-mainnet",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": null,
@@ -35490,10 +35994,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "thirdweb-enterprise-recent-state-testnet",
+            "slug": "thirdweb-enterprise-recent-state-mainnet",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": [
@@ -35528,10 +36032,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "validation-cloud-private-full-archive-testnet",
+            "slug": "validation-cloud-private-full-archive-mainnet",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -35579,10 +36083,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
         },
         {
-            "slug": "validation-cloud-private-recent-state-testnet",
+            "slug": "validation-cloud-private-recent-state-mainnet",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -35630,7 +36134,107 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "testnet"
+            "chain": "mainnet"
+        },
+        {
+            "slug": "watchdata-custom-full-archive-mainnet",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://watchdata.io/)",
+                "[Docs](https://docs.watchdata.io/resources/pricing-and-limits)"
+            ],
+            "planName": "Custom",
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Dedicated"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
+        },
+        {
+            "slug": "watchdata-custom-recent-state-mainnet",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://watchdata.io/)",
+                "[Docs](https://docs.watchdata.io/resources/pricing-and-limits)"
+            ],
+            "planName": "Custom",
+            "planType": "Enterprise",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Dedicated"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "mainnet"
         },
         {
             "slug": "1rpc-enterprise-recent-state-hoodi",
@@ -38787,7 +39391,107 @@
             "chain": "hoodi"
         },
         {
-            "slug": "1rpc-enterprise-recent-state-mainnet",
+            "slug": "watchdata-custom-full-archive-hoodi",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://watchdata.io/)",
+                "[Docs](https://docs.watchdata.io/resources/pricing-and-limits)"
+            ],
+            "planName": "Custom",
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Dedicated"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "hoodi"
+        },
+        {
+            "slug": "watchdata-custom-recent-state-hoodi",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://watchdata.io/)",
+                "[Docs](https://docs.watchdata.io/resources/pricing-and-limits)"
+            ],
+            "planName": "Custom",
+            "planType": "Enterprise",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Dedicated"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "hoodi"
+        },
+        {
+            "slug": "1rpc-enterprise-recent-state-testnet",
             "provider": "1rpc",
             "offer": null,
             "actionButtons": [
@@ -38835,10 +39539,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "alchemy-enterprise-full-archive-mainnet",
+            "slug": "alchemy-enterprise-full-archive-testnet",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -38893,10 +39597,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "alchemy-enterprise-recent-state-mainnet",
+            "slug": "alchemy-enterprise-recent-state-testnet",
             "provider": "Alchemy",
             "offer": null,
             "actionButtons": [
@@ -38951,10 +39655,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "allthatnode-business-full-archive-mainnet",
+            "slug": "allthatnode-business-full-archive-testnet",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -39007,10 +39711,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "allthatnode-business-recent-state-mainnet",
+            "slug": "allthatnode-business-recent-state-testnet",
             "provider": "AllThatNode",
             "offer": null,
             "actionButtons": [
@@ -39063,10 +39767,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "ankr-enterprise-full-archive-mainnet",
+            "slug": "ankr-enterprise-full-archive-testnet",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -39116,10 +39820,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "ankr-enterprise-recent-state-mainnet",
+            "slug": "ankr-enterprise-recent-state-testnet",
             "provider": "Ankr",
             "offer": null,
             "actionButtons": [
@@ -39169,10 +39873,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "bitquery-commercial-indexer-mainnet",
+            "slug": "bitquery-commercial-indexer-testnet",
             "provider": "Bitquery",
             "offer": null,
             "actionButtons": [
@@ -39225,10 +39929,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "blockdaemon-enterprise-full-archive-mainnet",
+            "slug": "blockdaemon-enterprise-full-archive-testnet",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -39281,10 +39985,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "blockdaemon-enterprise-recent-state-mainnet",
+            "slug": "blockdaemon-enterprise-recent-state-testnet",
             "provider": "Blockdaemon",
             "offer": null,
             "actionButtons": [
@@ -39337,10 +40041,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "blockpi-enterprise-full-archive-mainnet",
+            "slug": "blockpi-enterprise-full-archive-testnet",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -39389,10 +40093,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "blockpi-enterprise-recent-state-mainnet",
+            "slug": "blockpi-enterprise-recent-state-testnet",
             "provider": "BlockPi",
             "offer": null,
             "actionButtons": [
@@ -39437,10 +40141,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "blockvision-enterprise-full-archive-mainnet",
+            "slug": "blockvision-enterprise-full-archive-testnet",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -39488,10 +40192,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "blockvision-enterprise-indexer-mainnet",
+            "slug": "blockvision-enterprise-indexer-testnet",
             "provider": "BlockVision",
             "offer": null,
             "actionButtons": [
@@ -39539,10 +40243,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "chainbase-enterprise-custom-mainnet",
+            "slug": "chainbase-enterprise-custom-testnet",
             "provider": "Chainbase",
             "offer": null,
             "actionButtons": [
@@ -39600,10 +40304,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "chainstack-enterprise-full-archive-mainnet",
+            "slug": "chainstack-enterprise-full-archive-testnet",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -39656,10 +40360,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "chainstack-enterprise-recent-state-mainnet",
+            "slug": "chainstack-enterprise-recent-state-testnet",
             "provider": "Chainstack",
             "offer": null,
             "actionButtons": [
@@ -39711,10 +40415,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "crypto-apis-enterprise-full-archive-mainnet",
+            "slug": "crypto-apis-enterprise-full-archive-testnet",
             "provider": "Crypto APIs",
             "offer": null,
             "actionButtons": [
@@ -39766,10 +40470,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "crypto-apis-enterprise-recent-state-mainnet",
+            "slug": "crypto-apis-enterprise-recent-state-testnet",
             "provider": "Crypto APIs",
             "offer": null,
             "actionButtons": [
@@ -39821,10 +40525,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "drpc-enterprise-full-archive-mainnet",
+            "slug": "drpc-enterprise-full-archive-testnet",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -39877,10 +40581,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "drpc-enterprise-recent-state-mainnet",
+            "slug": "drpc-enterprise-recent-state-testnet",
             "provider": "dRPC",
             "offer": null,
             "actionButtons": [
@@ -39933,10 +40637,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "dwellir-enterprise-full-archive-mainnet",
+            "slug": "dwellir-enterprise-full-archive-testnet",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -39977,10 +40681,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "dwellir-enterprise-recent-state-mainnet",
+            "slug": "dwellir-enterprise-recent-state-testnet",
             "provider": "Dwellir",
             "offer": null,
             "actionButtons": [
@@ -40021,10 +40725,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "envio-dedicated-indexer-mainnet",
+            "slug": "envio-dedicated-indexer-testnet",
             "provider": "Envio",
             "offer": null,
             "actionButtons": null,
@@ -40082,10 +40786,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "getblock-enterprise-full-archive-mainnet",
+            "slug": "getblock-enterprise-full-archive-testnet",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -40136,10 +40840,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "getblock-enterprise-recent-state-mainnet",
+            "slug": "getblock-enterprise-recent-state-testnet",
             "provider": "GetBlock",
             "offer": null,
             "actionButtons": [
@@ -40190,10 +40894,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "ghostgraph-enterprise-indexer-mainnet",
+            "slug": "ghostgraph-enterprise-indexer-testnet",
             "provider": "GhostGraph",
             "offer": null,
             "actionButtons": null,
@@ -40241,10 +40945,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "ginco-enterprise-indexer-mainnet",
+            "slug": "ginco-enterprise-indexer-testnet",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -40295,10 +40999,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "ginco-enterprise-recent-state-mainnet",
+            "slug": "ginco-enterprise-recent-state-testnet",
             "provider": "Ginco",
             "offer": null,
             "actionButtons": [
@@ -40349,10 +41053,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "goldrush-enterprise-indexer-mainnet",
+            "slug": "goldrush-enterprise-indexer-testnet",
             "provider": "Covalent",
             "offer": null,
             "actionButtons": null,
@@ -40392,10 +41096,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "goldsky-enterprise-indexer-mainnet",
+            "slug": "goldsky-enterprise-indexer-testnet",
             "provider": "Goldsky",
             "offer": null,
             "actionButtons": null,
@@ -40447,10 +41151,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "indexing-co-enterprise-indexer-mainnet",
+            "slug": "indexing-co-enterprise-indexer-testnet",
             "provider": "The Indexing Company",
             "offer": null,
             "actionButtons": [
@@ -40507,10 +41211,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "infstones-enterprise-full-archive-mainnet",
+            "slug": "infstones-enterprise-full-archive-testnet",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -40565,10 +41269,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "infstones-enterprise-recent-state-mainnet",
+            "slug": "infstones-enterprise-recent-state-testnet",
             "provider": "InfStones",
             "offer": null,
             "actionButtons": [
@@ -40623,10 +41327,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "infura-enterprise-full-archive-mainnet",
+            "slug": "infura-enterprise-full-archive-testnet",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -40673,10 +41377,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "infura-enterprise-recent-state-mainnet",
+            "slug": "infura-enterprise-recent-state-testnet",
             "provider": "Infura",
             "offer": null,
             "actionButtons": [
@@ -40723,10 +41427,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "mobula-enterprise-indexer-mainnet",
+            "slug": "mobula-enterprise-indexer-testnet",
             "provider": "Mobula",
             "offer": null,
             "actionButtons": null,
@@ -40772,10 +41476,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "moralis-enterprise-full-archive-mainnet",
+            "slug": "moralis-enterprise-full-archive-testnet",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -40828,10 +41532,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "moralis-indexer-enterprise-mainnet",
+            "slug": "moralis-indexer-enterprise-testnet",
             "provider": "Moralis",
             "offer": null,
             "actionButtons": [
@@ -40885,10 +41589,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "node-real-semita-mainnet",
+            "slug": "node-real-semita-testnet",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -40946,10 +41650,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "node-real-semita-full-archive-mainnet",
+            "slug": "node-real-semita-full-archive-testnet",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -41007,10 +41711,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "node-real-semita-recent-state-mainnet",
+            "slug": "node-real-semita-recent-state-testnet",
             "provider": "NodeReal",
             "offer": null,
             "actionButtons": [
@@ -41068,10 +41772,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "nownodes-custom-recent-state-mainnet",
+            "slug": "nownodes-custom-recent-state-testnet",
             "provider": "Nownodes",
             "offer": null,
             "actionButtons": [
@@ -41114,10 +41818,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "omnia-enterprise-recent-state-mainnet",
+            "slug": "omnia-enterprise-recent-state-testnet",
             "provider": "Omnia",
             "offer": null,
             "actionButtons": [
@@ -41170,10 +41874,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "onfinality-enterprise-full-archive-mainnet",
+            "slug": "onfinality-enterprise-full-archive-testnet",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -41223,10 +41927,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "onfinality-enterprise-trace-mainnet",
+            "slug": "onfinality-enterprise-trace-testnet",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -41276,10 +41980,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "onfinality-partner-plan-indexer-mainnet",
+            "slug": "onfinality-partner-plan-indexer-testnet",
             "provider": "OnFinality",
             "offer": null,
             "actionButtons": [
@@ -41329,10 +42033,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "quicknode-enterprise-full-archive-mainnet",
+            "slug": "quicknode-enterprise-full-archive-testnet",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -41388,10 +42092,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "quicknode-enterprise-recent-state-mainnet",
+            "slug": "quicknode-enterprise-recent-state-testnet",
             "provider": "QuickNode",
             "offer": null,
             "actionButtons": [
@@ -41447,10 +42151,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "radiumblock-enterprise-recent-state-mainnet",
+            "slug": "radiumblock-enterprise-recent-state-testnet",
             "provider": "RadiumBlock",
             "offer": null,
             "actionButtons": [
@@ -41491,10 +42195,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "rpcfast-enterprise-full-archive-mainnet",
+            "slug": "rpcfast-enterprise-full-archive-testnet",
             "provider": "RPCFast",
             "offer": null,
             "actionButtons": [
@@ -41542,10 +42246,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "tatum-business-full-archive-mainnet",
+            "slug": "tatum-business-full-archive-testnet",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -41597,10 +42301,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "tatum-business-recent-state-mainnet",
+            "slug": "tatum-business-recent-state-testnet",
             "provider": "Tatum",
             "offer": null,
             "actionButtons": [
@@ -41652,10 +42356,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "tenderly-enterprise-recent-state-mainnet",
+            "slug": "tenderly-enterprise-recent-state-testnet",
             "provider": "Tenderly",
             "offer": null,
             "actionButtons": [
@@ -41702,10 +42406,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "thegraph-enterprise-indexer-mainnet",
+            "slug": "thegraph-enterprise-indexer-testnet",
             "provider": "The Graph",
             "offer": null,
             "actionButtons": null,
@@ -41746,10 +42450,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "thirdweb-enterprise-indexer-mainnet",
+            "slug": "thirdweb-enterprise-indexer-testnet",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": null,
@@ -41798,10 +42502,10 @@
             ],
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "thirdweb-enterprise-recent-state-mainnet",
+            "slug": "thirdweb-enterprise-recent-state-testnet",
             "provider": "Thirdweb",
             "offer": null,
             "actionButtons": [
@@ -41836,10 +42540,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "validation-cloud-private-full-archive-mainnet",
+            "slug": "validation-cloud-private-full-archive-testnet",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -41887,10 +42591,10 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
         },
         {
-            "slug": "validation-cloud-private-recent-state-mainnet",
+            "slug": "validation-cloud-private-recent-state-testnet",
             "provider": "Validation Cloud",
             "offer": null,
             "actionButtons": [
@@ -41938,7 +42642,107 @@
             "additionalFeatures": null,
             "address": null,
             "tag": null,
-            "chain": "mainnet"
+            "chain": "testnet"
+        },
+        {
+            "slug": "watchdata-custom-full-archive-testnet",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://watchdata.io/)",
+                "[Docs](https://docs.watchdata.io/resources/pricing-and-limits)"
+            ],
+            "planName": "Custom",
+            "planType": "Enterprise",
+            "historicalData": "Archive",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Dedicated"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
+        },
+        {
+            "slug": "watchdata-custom-recent-state-testnet",
+            "provider": "WatchData",
+            "offer": null,
+            "actionButtons": [
+                "[Website](https://watchdata.io/)",
+                "[Docs](https://docs.watchdata.io/resources/pricing-and-limits)"
+            ],
+            "planName": "Custom",
+            "planType": "Enterprise",
+            "historicalData": "Pruned",
+            "apiType": "RPC",
+            "technology": "EVM JSON-RPC",
+            "accessPrice": "Custom",
+            "queryPrice": "Custom",
+            "verifiedUptime": null,
+            "verifiedLatency": null,
+            "verifiedBlocksBehindAvg": null,
+            "uptimeSla": null,
+            "bandwidthSla": null,
+            "blocksBehindSla": null,
+            "supportSla": null,
+            "starred": false,
+            "trial": false,
+            "availableApis": [
+                "Powered API",
+                "Crypto Price API",
+                "Bitcoin API",
+                "Ethereum API",
+                "Tron API",
+                "Polygon API",
+                "Binance Smart Chain API"
+            ],
+            "limitations": [
+                "Custom"
+            ],
+            "securityImprovements": null,
+            "monitoringAndAnalytics": [
+                "Dashboard"
+            ],
+            "regions": [
+                "Global"
+            ],
+            "additionalFeatures": [
+                "Dedicated"
+            ],
+            "address": null,
+            "tag": null,
+            "chain": "testnet"
         }
     ],
     "ramps": [
@@ -44687,8 +45491,8 @@
                 "description": "Agent name from ERC-8004 registration file (agentURI).",
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
-                "pinning": "left",
-                "cellType": "agent",
+                "pinning": null,
+                "cellType": null,
                 "group": "identity"
             },
             "image": {
@@ -44811,6 +45615,16 @@
                 "pinning": null,
                 "cellType": null,
                 "group": "identity"
+            },
+            "registrationType": {
+                "key": "registrationType",
+                "label": "Registration Type",
+                "icon": "lucide:FileType",
+                "description": "EIP-8004 registration document type (e.g. registration-v1).",
+                "filter": null,
+                "sorting": "string",
+                "pinning": null,
+                "cellType": null
             }
         },
         "providers": {
@@ -50610,6 +51424,25 @@
                 "github": null,
                 "discord": null,
                 "telegram": null,
+                "linkedin": null,
+                "supportEmail": null,
+                "starred": false,
+                "tag": null,
+                "categories": [
+                    "apis"
+                ]
+            },
+            "watchdata": {
+                "slug": "watchdata",
+                "name": "WatchData",
+                "logoPath": "watchdata.png",
+                "description": "It is a blockchain API provider that provides Web3 infrastructure for building applications using blockchain and offer powerful solutions alongside a suite of developer tools",
+                "website": null,
+                "docs": null,
+                "x": null,
+                "github": "https://www.watchdata.io/https://www.watchdata.io/",
+                "discord": null,
+                "telegram": "https://discord.com/invite/TZRJbZ6bdn",
                 "linkedin": null,
                 "supportEmail": null,
                 "starred": false,
