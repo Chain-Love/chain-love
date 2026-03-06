@@ -974,8 +974,8 @@
     "description": "Agent name from ERC-8004 registration file (agentURI).",
     "filter": "searchableMultiSelect",
     "sorting": "string",
-    "pinning": "left",
-    "cellType": "agent",
+    "pinning": null,
+    "cellType": null,
     "group": "identity"
   },
   "image": {
@@ -1098,5 +1098,15 @@
     "pinning": null,
     "cellType": null,
     "group": "identity"
+  },
+  "registrationType": {
+    "key": "registrationType",
+    "label": "Registration Type",
+    "icon": "lucide:FileType",
+    "description": "EIP-8004 registration document type (e.g. registration-v1).",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null
   }
 }
