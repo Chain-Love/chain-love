@@ -741,11 +741,10 @@ def process_all_networks() -> None:
             meta["categories"] = categories
             enriched["meta"] = meta
 
-        # Ensure agent-specific columns exist in meta.columns
+        # Ensure agent-specific columns use our meta (overwrite so pinning, cellType, etc. are correct)
         columns_meta = meta.get("columns", {})
         for col_key, col_def in AGENTS_COLUMN_META.items():
-            if col_key not in columns_meta:
-                columns_meta[col_key] = col_def
+            columns_meta[col_key] = col_def
         meta["columns"] = columns_meta
         enriched["meta"] = meta
 
