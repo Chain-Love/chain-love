@@ -45816,8 +45816,7 @@
                 "filter": null,
                 "sorting": "number",
                 "pinning": null,
-                "cellType": null,
-                "group": "identity"
+                "cellType": null
             },
             "owner": {
                 "key": "owner",
@@ -45827,8 +45826,7 @@
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
                 "pinning": null,
-                "cellType": "address",
-                "group": "identity"
+                "cellType": "address"
             },
             "agentURI": {
                 "key": "agentURI",
@@ -45836,10 +45834,9 @@
                 "icon": "lucide:ExternalLink",
                 "description": "Off-chain metadata link (IPFS/HTTPS).",
                 "filter": null,
-                "sorting": null,
+                "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "link",
-                "group": "identity"
+                "cellType": "link"
             },
             "agentURIType": {
                 "key": "agentURIType",
@@ -45847,10 +45844,9 @@
                 "icon": null,
                 "description": "Type of the Agent URI (ipfs, https, etc.).",
                 "filter": "select",
-                "sorting": "string",
+                "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": null,
-                "group": "identity"
+                "cellType": null
             },
             "agentWallet": {
                 "key": "agentWallet",
@@ -45858,10 +45854,9 @@
                 "icon": "lucide:Wallet",
                 "description": "Wallet address associated with the agent.",
                 "filter": null,
-                "sorting": null,
+                "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "address",
-                "group": "identity"
+                "cellType": "address"
             },
             "name": {
                 "key": "name",
@@ -45870,9 +45865,8 @@
                 "description": "Agent name from ERC-8004 registration file (agentURI).",
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
-                "pinning": null,
-                "cellType": null,
-                "group": "identity"
+                "pinning": "left",
+                "cellType": "provider"
             },
             "image": {
                 "key": "image",
@@ -45882,8 +45876,7 @@
                 "filter": null,
                 "sorting": null,
                 "pinning": null,
-                "cellType": "link",
-                "group": "identity"
+                "cellType": "link"
             },
             "active": {
                 "key": "active",
@@ -45893,19 +45886,17 @@
                 "filter": "select",
                 "sorting": "boolean",
                 "pinning": null,
-                "cellType": null,
-                "group": "identity"
+                "cellType": null
             },
             "supportedTrust": {
                 "key": "supportedTrust",
                 "label": "Supported Trust",
                 "icon": "lucide:Shield",
-                "description": "Trust models supported by the agent (e.g. reputation, crypto-economic, tee-attestation) from ERC-8004.",
+                "description": "Trust models (e.g. reputation, crypto-economic) from ERC-8004.",
                 "filter": "searchableMultiSelect",
                 "sorting": "arrayLength",
                 "pinning": null,
-                "cellType": "arrayPopover",
-                "group": "identity"
+                "cellType": "arrayPopover"
             },
             "identityRegistry": {
                 "key": "identityRegistry",
@@ -45913,10 +45904,9 @@
                 "icon": "lucide:FileKey",
                 "description": "ERC-8004 Identity Registry contract address.",
                 "filter": null,
-                "sorting": null,
+                "sorting": "string",
                 "pinning": null,
-                "cellType": "address",
-                "group": "identity"
+                "cellType": "address"
             },
             "reputationRegistry": {
                 "key": "reputationRegistry",
@@ -45924,10 +45914,9 @@
                 "icon": "lucide:Star",
                 "description": "ERC-8004 Reputation Registry contract address.",
                 "filter": null,
-                "sorting": null,
+                "sorting": "string",
                 "pinning": null,
-                "cellType": "address",
-                "group": "identity"
+                "cellType": "address"
             },
             "totalFeedbackCount": {
                 "key": "totalFeedbackCount",
@@ -45937,8 +45926,7 @@
                 "filter": null,
                 "sorting": "number",
                 "pinning": null,
-                "cellType": null,
-                "group": "identity"
+                "cellType": null
             },
             "activeFeedbackCount": {
                 "key": "activeFeedbackCount",
@@ -45948,8 +45936,7 @@
                 "filter": null,
                 "sorting": "number",
                 "pinning": null,
-                "cellType": null,
-                "group": "identity"
+                "cellType": null
             },
             "averageRating": {
                 "key": "averageRating",
@@ -45957,10 +45944,9 @@
                 "icon": "lucide:TrendingUp",
                 "description": "Average reputation rating from active feedback.",
                 "filter": null,
-                "sorting": "number",
+                "sorting": "string",
                 "pinning": null,
-                "cellType": null,
-                "group": "identity"
+                "cellType": null
             },
             "registeredAt": {
                 "key": "registeredAt",
@@ -45970,8 +45956,7 @@
                 "filter": null,
                 "sorting": "number",
                 "pinning": null,
-                "cellType": null,
-                "group": "identity"
+                "cellType": null
             },
             "updatedAt": {
                 "key": "updatedAt",
@@ -45981,8 +45966,7 @@
                 "filter": null,
                 "sorting": "number",
                 "pinning": null,
-                "cellType": null,
-                "group": "identity"
+                "cellType": null
             },
             "rank": {
                 "key": "rank",
