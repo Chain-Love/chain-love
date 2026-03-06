@@ -3104,7 +3104,8 @@
                 "key": "agents",
                 "label": "Agents",
                 "icon": "lucide:Bot",
-                "description": "ERC-8004 on-chain AI agents with identity and reputation."
+                "description": "ERC-8004 on-chain AI agents with identity and reputation.",
+                "defaultSorting": "rank"
             }
         },
         "columns": {
@@ -4083,8 +4084,8 @@
                 "description": "Agent name from ERC-8004 registration file (agentURI).",
                 "filter": "searchableMultiSelect",
                 "sorting": "string",
-                "pinning": null,
-                "cellType": null,
+                "pinning": "left",
+                "cellType": "agent",
                 "group": "identity"
             },
             "image": {
@@ -4191,6 +4192,17 @@
                 "label": "Updated At",
                 "icon": "lucide:CalendarClock",
                 "description": "Unix timestamp of the last on-chain update.",
+                "filter": null,
+                "sorting": "number",
+                "pinning": null,
+                "cellType": null,
+                "group": "identity"
+            },
+            "rank": {
+                "key": "rank",
+                "label": "Rank",
+                "icon": "lucide:Trophy",
+                "description": "Bayesian-weighted rank among all agents on this chain (1 = best).",
                 "filter": null,
                 "sorting": "number",
                 "pinning": null,
