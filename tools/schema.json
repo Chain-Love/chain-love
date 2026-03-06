@@ -19,6 +19,7 @@
     "faucets": { "type": "array", "items": { "$ref": "#/$defs/faucets" } },
     "analytics": { "type": "array", "items": { "$ref": "#/$defs/analytics" } },
     "wallets": { "type": "array", "items": { "$ref": "#/$defs/wallets" } },
+    "mcpservers": { "type": "array", "items": { "$ref": "#/$defs/mcpservers" } },
     "sdks": { "type": "array", "items": { "$ref": "#/$defs/sdks" } },
     "ramps": { "type": "array", "items": { "$ref": "#/$defs/ramps" } },
     "platforms": { "type": "array", "items": { "$ref": "#/$defs/platforms" } },
@@ -564,6 +565,57 @@
       ]
     },
 
+    "mcpservers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "offer": { "type": ["string", "null"] },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "serverType": { "type": "string" },
+        "hostingType": { "type": "string" },
+        "transportType": { "type": "string" },
+        "mcpEndpoint": { "type": ["string", "null"] },
+        "authType": { "type": "string" },
+        "x402": { "type": "boolean" },
+        "onChainWrite": { "type": "boolean" },
+        "agentSkills": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "planType": { "type": "string" },
+        "planName": { "type": ["string", "null"] },
+        "price": { "type": ["string", "null"] },
+        "trial": { "type": "boolean" },
+        "starred": { "type": "boolean" }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "serverType",
+        "hostingType",
+        "transportType",
+        "mcpEndpoint",
+        "authType",
+        "x402",
+        "onChainWrite",
+        "agentSkills",
+        "tag",
+        "description",
+        "planType",
+        "price",
+        "trial",
+        "starred"
+      ]
+    },
+
     "sdks": {
       "type": "object",
       "additionalProperties": false,
@@ -828,6 +880,7 @@
         "faucets": { "type": "array", "items": { "type": "string" } },
         "analytics": { "type": "array", "items": { "type": "string" } },
         "wallets": { "type": "array", "items": { "type": "string" } },
+        "mcpservers": { "type": "array", "items": { "type": "string" } },
         "services": { "type": "array", "items": { "type": "string" } },
         "ramps": { "type": "array", "items": { "type": "string" } },
         "storages": { "type": "array", "items": { "type": "string" } },
@@ -927,6 +980,7 @@
               "faucets",
               "analytics",
               "wallets",
+              "mcpservers",
               "sdks",
               "ramps",
               "platforms",
