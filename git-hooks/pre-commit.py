@@ -10,6 +10,7 @@ import tempfile
 import urllib.request
 from pathlib import Path
 from typing import Iterable
+import csv
 
 # ──────────────────────────────────────
 # Configuration
@@ -116,10 +117,58 @@ def download_and_extract(url: str, dest: Path, subpath: str) -> None:
                 with tar.extractfile(m) as src, open(target_path, "wb") as out:
                     shutil.copyfileobj(src, out)
 
+def detect_newline(path):
+    with open(path, "rb") as f:
+        chunk = f.read(8192)
+    if b"\r\n" in chunk:
+        return "\r\n"
+    return "\n"
+
+def get_repo_root() -> Path:
+    out = subprocess.check_output(
+        ["git", "rev-parse", "--show-toplevel"],
+        text=True,
+    ).strip()
+    return Path(out)
+
+def sort_csv_by_slug(repo_root: Path) -> None:
+    """
+    Sort all CSV files by 'slug' column if it exists.
+    Rewrites the file and stages it.
+    """
+    print("Sorting CSV files by slug")
+
+    for csv_file in repo_root.rglob("*.csv"):
+        if ".git" in csv_file.parts:
+            continue
+
+        with open(csv_file, newline="") as f:
+            reader = csv.DictReader(f)
+            if not reader.fieldnames or "slug" not in reader.fieldnames:
+                continue
+
+            rows = list(reader)
+            if not rows:
+                continue
+
+        rows_sorted = sorted(rows, key=lambda r: r["slug"])
+        newline_style = detect_newline(csv_file)
+
+        with open(csv_file, "w", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=reader.fieldnames, lineterminator=newline_style)
+            writer.writeheader()
+            writer.writerows(rows_sorted)
+
+        subprocess.run(["git", "add", str(csv_file)], check=True)
+        print(f"  sorted: {csv_file}")
 
 def main() -> None:
     ensure_tool_exists("git")
     ensure_tool_exists("tar")
+
+    # Sort CSV files
+    real_root = get_repo_root()
+    sort_csv_by_slug(real_root)
 
     with tempfile.TemporaryDirectory(prefix="precommit-root-") as tmp:
         tmp_root = Path(tmp)
