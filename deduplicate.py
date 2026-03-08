@@ -53,7 +53,6 @@ def deduplicate_base_network_file(network_file_path):
     network_content_lines = aligned_network_content
     network_header = aligned_network_content[0]
     # --- End Advanced Header Alignment Logic ---
-
     if network_header != global_header:
         print(f"Error: Headers still do not match between {network_file_path} and {global_provider_file_path} after alignment. Aborting deduplication.")
         return
