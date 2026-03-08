@@ -47,7 +47,7 @@ def clean_and_validate_file(file_path):
 
 def validate_files():
     total_issues_found = False
-    for root, dirs, files in os.walk('listings/specific-networks/linea'):
+    for root, dirs, files in os.walk('listings/specific-networks/solana'):
         for file in files:
             if file.endswith('.csv'):
                 file_path = os.path.join(root, file)
