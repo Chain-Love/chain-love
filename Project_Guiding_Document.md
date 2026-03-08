@@ -60,6 +60,8 @@ Every non-empty cell in a network file must pass all of the following:
     - Exact column count per header.
     - Correct filename casing.
     - UTF-8, comma-delimited, no BOM.
+    - **Slugs (first column in CSVs) must be in ascending alphabetical order.**
+    - **`.gitmodules` file must be clean:** No orphaned submodule entries.
 
 ---
 
