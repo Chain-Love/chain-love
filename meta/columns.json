@@ -909,7 +909,8 @@
     "filter": "searchableMultiSelect",
     "sorting": "arrayLength",
     "pinning": null,
-    "cellType": "arrayPopover"
+    "cellType": "arrayPopover",
+    "group": "pricing"
   },
   "serverType": {
     "key": "serverType",
@@ -919,7 +920,8 @@
     "filter": "searchableMultiSelect",
     "sorting": "string",
     "pinning": null,
-    "cellType": null
+    "cellType": null,
+    "group": "serviceDetails"
   },
   "hostingType": {
     "key": "hostingType",
@@ -929,7 +931,8 @@
     "filter": "select",
     "sorting": "string",
     "pinning": null,
-    "cellType": null
+    "cellType": null,
+    "group": "technicalDetails"
   },
   "transportType": {
     "key": "transportType",
@@ -939,7 +942,8 @@
     "filter": "searchableMultiSelect",
     "sorting": "string",
     "pinning": null,
-    "cellType": null
+    "cellType": null,
+    "group": "technicalDetails"
   },
   "mcpEndpoint": {
     "key": "mcpEndpoint",
@@ -949,7 +953,8 @@
     "filter": "searchableMultiSelect",
     "sorting": "string",
     "pinning": null,
-    "cellType": "address"
+    "cellType": "address",
+    "group": "technicalDetails"
   },
   "authType": {
     "key": "authType",
@@ -959,7 +964,8 @@
     "filter": "searchableMultiSelect",
     "sorting": "string",
     "pinning": null,
-    "cellType": null
+    "cellType": null,
+    "group": "security"
   },
   "x402": {
     "key": "x402",
@@ -969,7 +975,8 @@
     "filter": "select",
     "sorting": "boolean",
     "pinning": null,
-    "cellType": null
+    "cellType": null,
+    "group": "pricing"
   },
   "onChainWrite": {
     "key": "onChainWrite",
@@ -979,7 +986,8 @@
     "filter": "select",
     "sorting": "boolean",
     "pinning": null,
-    "cellType": null
+    "cellType": null,
+    "group": "capabilities"
   },
   "agentSkills": {
     "key": "agentSkills",
@@ -989,9 +997,8 @@
     "filter": "searchableMultiSelect",
     "sorting": "arrayLength",
     "pinning": null,
-    "cellType": "arrayPopover"
     "cellType": "arrayPopover",
-    "group": "pricing"
+    "group": "capabilities"
   },
   "agentId": {
     "key": "agentId",
