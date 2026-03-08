@@ -86,7 +86,7 @@ def deduplicate_base_network_file(network_file_path):
     print(f"Deduplication complete for {network_file_path}")
 
 def run_deduplication():
-    base_network_dir = 'listings/specific-networks/solana'
+    base_network_dir = 'listings/specific-networks/aptos'
     for root, dirs, files in os.walk(base_network_dir):
         for file in files:
             if file.endswith('.csv'):
