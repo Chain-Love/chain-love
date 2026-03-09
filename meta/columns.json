@@ -1028,7 +1028,7 @@
     "icon": "lucide:ExternalLink",
     "description": "Off-chain metadata link (IPFS/HTTPS).",
     "filter": null,
-    "sorting": null,
+    "sorting": "arrayLength",
     "pinning": null,
     "cellType": "link",
     "group": "identity"
@@ -1039,7 +1039,7 @@
     "icon": null,
     "description": "Type of the Agent URI (ipfs, https, etc.).",
     "filter": "select",
-    "sorting": "string",
+    "sorting": "arrayLength",
     "pinning": null,
     "cellType": null,
     "group": "identity"
@@ -1049,8 +1049,8 @@
     "label": "Agent Wallet",
     "icon": "lucide:Wallet",
     "description": "Wallet address associated with the agent.",
-    "filter": null,
-    "sorting": null,
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
     "pinning": null,
     "cellType": "address",
     "group": "identity"
@@ -1062,8 +1062,8 @@
     "description": "Agent name from ERC-8004 registration file (agentURI).",
     "filter": "searchableMultiSelect",
     "sorting": "string",
-    "pinning": null,
-    "cellType": null,
+    "pinning": "left",
+    "cellType": "agent",
     "group": "identity"
   },
   "image": {
@@ -1105,7 +1105,7 @@
     "icon": "lucide:FileKey",
     "description": "ERC-8004 Identity Registry contract address.",
     "filter": "searchableMultiSelect",
-    "sorting": null,
+    "sorting": "string",
     "pinning": null,
     "cellType": "address",
     "group": "identity"
@@ -1116,7 +1116,7 @@
     "icon": "lucide:Star",
     "description": "ERC-8004 Reputation Registry contract address.",
     "filter": "searchableMultiSelect",
-    "sorting": null,
+    "sorting": "string",
     "pinning": null,
     "cellType": "address",
     "group": "identity"
@@ -1137,7 +1137,7 @@
     "label": "Active Feedback",
     "icon": "lucide:MessageSquareCheck",
     "description": "Number of non-revoked feedback entries.",
-    "filter": null,
+    "filter": "range",
     "sorting": "number",
     "pinning": null,
     "cellType": null,
@@ -1149,9 +1149,9 @@
     "icon": "lucide:TrendingUp",
     "description": "Average reputation rating from active feedback.",
     "filter": "range",
-    "sorting": "number",
+    "sorting": "string",
     "pinning": null,
-    "cellType": null,
+    "cellType": "numericRange",
     "group": "identity"
   },
   "registeredAt": {
@@ -1159,7 +1159,7 @@
     "label": "Registered At",
     "icon": "lucide:CalendarPlus",
     "description": "Unix timestamp when the agent was registered on-chain.",
-    "filter": null,
+    "filter": "dateRange",
     "sorting": "number",
     "pinning": null,
     "cellType": null,
@@ -1170,7 +1170,7 @@
     "label": "Updated At",
     "icon": "lucide:CalendarClock",
     "description": "Unix timestamp of the last on-chain update.",
-    "filter": null,
+    "filter": "dateRange",
     "sorting": "number",
     "pinning": null,
     "cellType": null,
