@@ -137,6 +137,16 @@ AGENTS_COLUMNS = [
     "starred",
 ]
 
+# Ranking quality profile fields ordered by impact in AGENTS_COLUMNS.
+# Earlier fields have larger penalties when missing.
+RANK_QUALITY_COLUMNS = [c for c in AGENTS_COLUMNS if c != "rank"]
+
+# Strong penalties that enforce:
+# - missing name can never appear at the very top against named agents
+# - missing name + description ranks below complete (name+description) agents
+MISSING_NAME_RANK_PENALTY = 1000.0
+MISSING_DESCRIPTION_RANK_PENALTY = 500.0
+
 # ---------------------------------------------------------------------------
 # GraphQL query
 # ---------------------------------------------------------------------------
@@ -468,6 +478,44 @@ def transform_agent(raw: AgentRaw, chain: NetworkName) -> AgentRecord:
 # ---------------------------------------------------------------------------
 
 
+def _is_missing_profile_value(value: Any) -> bool:
+    if value is None:
+        return True
+
+    if isinstance(value, str):
+        normalized = value.strip().lower()
+        return normalized in {"", "unknown", "none", "not available", "n/a", "na", "null"}
+
+    if isinstance(value, (list, tuple, set, dict)):
+        return len(value) == 0
+
+    return False
+
+
+def _profile_completeness_penalty(agent: AgentRecord) -> int:
+    """
+    Compute weighted penalty for missing profile fields.
+
+    Weight is derived from AGENTS_COLUMNS order:
+    earlier columns apply stronger penalties.
+    """
+    total = len(RANK_QUALITY_COLUMNS)
+    penalty = 0
+    for index, field in enumerate(RANK_QUALITY_COLUMNS):
+        if _is_missing_profile_value(agent.get(field)):
+            penalty += total - index
+    return penalty
+
+
+def _ranking_penalty(agent: AgentRecord) -> float:
+    penalty = float(_profile_completeness_penalty(agent))
+    if _is_missing_profile_value(agent.get("name")):
+        penalty += MISSING_NAME_RANK_PENALTY
+    if _is_missing_profile_value(agent.get("description")):
+        penalty += MISSING_DESCRIPTION_RANK_PENALTY
+    return penalty
+
+
 def compute_ranks(agents: AgentsList) -> None:
     """
     Assign a per-chain Bayesian rank to each agent **in place**.
@@ -481,8 +529,12 @@ def compute_ranks(agents: AgentsList) -> None:
         R = agent's averageRating
         C = global mean averageRating across all agents
 
-    Agents are ranked by score descending (rank 1 = best).
-    Agents with zero feedback are ranked last, ordered by agentId.
+    Profile completeness is folded into ranking via penalty:
+        adjusted_score = bayesian_score - ranking_penalty
+    Missing fields increase ranking_penalty, with stronger impact for earlier
+    columns in AGENTS_COLUMNS. Missing name/description use extra hard penalties.
+    Agents are ranked by adjusted_score descending (then agentId ascending).
+    Agents with zero feedback are still ranked after agents with feedback.
     """
     if not agents:
         return
@@ -492,9 +544,10 @@ def compute_ranks(agents: AgentsList) -> None:
     without_feedback = [a for a in agents if a["activeFeedbackCount"] == 0]
 
     if not with_feedback:
-        # No feedback data at all — rank by agentId ascending
-        agents.sort(key=lambda a: a["agentId"])
-        for i, a in enumerate(agents):
+        # No feedback data at all — rank by profile completeness only.
+        no_feedback_scored = [(-_ranking_penalty(a), a) for a in agents]
+        no_feedback_scored.sort(key=lambda t: (-t[0], t[1]["agentId"]))
+        for i, (_, a) in enumerate(no_feedback_scored):
             a["rank"] = i + 1
         return
 
@@ -511,15 +564,16 @@ def compute_ranks(agents: AgentsList) -> None:
     ratings = [float(a["averageRating"]) for a in with_feedback]
     C = sum(ratings) / len(ratings)
 
-    # Compute Bayesian score for agents with feedback
+    # Compute adjusted score for agents with feedback
     scored: list = []
     for a in with_feedback:
         v = float(a["activeFeedbackCount"])
         R = float(a["averageRating"])
-        score = (v / (v + m)) * R + (m / (v + m)) * C
-        scored.append((score, a))
+        bayesian_score = (v / (v + m)) * R + (m / (v + m)) * C
+        adjusted_score = bayesian_score - _ranking_penalty(a)
+        scored.append((adjusted_score, a))
 
-    # Sort by score descending, then by agentId ascending for ties
+    # Keep original ordering semantics: score descending, then agentId.
     scored.sort(key=lambda t: (-t[0], t[1]["agentId"]))
 
     # Assign ranks
@@ -528,9 +582,10 @@ def compute_ranks(agents: AgentsList) -> None:
         a["rank"] = rank
         rank += 1
 
-    # Agents without feedback get the remaining ranks, ordered by agentId
-    without_feedback.sort(key=lambda a: a["agentId"])
-    for a in without_feedback:
+    # Agents without feedback get the remaining ranks (completeness-aware).
+    without_feedback_scored = [(-_ranking_penalty(a), a) for a in without_feedback]
+    without_feedback_scored.sort(key=lambda t: (-t[0], t[1]["agentId"]))
+    for _, a in without_feedback_scored:
         a["rank"] = rank
         rank += 1
 
