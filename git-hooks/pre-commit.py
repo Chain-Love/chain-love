@@ -131,6 +131,12 @@ def get_repo_root() -> Path:
     ).strip()
     return Path(out)
 
+def iter_csv(repo_root: Path) -> Iterable[Path]:
+    for csv_file in repo_root.rglob("*.csv"):
+        if ".git" in csv_file.parts:
+            continue
+        yield csv_file
+
 def sort_csv_by_slug(repo_root: Path) -> None:
     """
     Sort all CSV files by 'slug' column if it exists.
@@ -138,10 +144,7 @@ def sort_csv_by_slug(repo_root: Path) -> None:
     """
     print("Sorting CSV files by slug")
 
-    for csv_file in repo_root.rglob("*.csv"):
-        if ".git" in csv_file.parts:
-            continue
-
+    for csv_file in iter_csv(repo_root):
         with open(csv_file, newline="") as f:
             reader = csv.DictReader(f)
             if not reader.fieldnames or "slug" not in reader.fieldnames:
@@ -162,6 +165,48 @@ def sort_csv_by_slug(repo_root: Path) -> None:
         subprocess.run(["git", "add", str(csv_file)], check=True)
         print(f"  sorted: {csv_file}")
 
+def csv_quote_if_nonempty(value: str | None) -> str:
+    if value is None or value == "":
+        return ""
+    s = str(value).replace('"', '""')
+    return f'"{s}"'
+
+
+def rewrite_with_quotes(repo_root: Path) -> None:
+    """
+    Rewrite all CSV files so that:
+    - empty fields stay empty
+    - non-empty fields are always double-quoted
+    """
+    print("Rewriting CSV files")
+
+    for csv_file in iter_csv(repo_root):
+        with open(csv_file, newline="") as f:
+            reader = csv.DictReader(f)
+
+            if not reader.fieldnames:
+                continue
+
+            rows = list(reader)
+            if not rows:
+                continue
+
+        newline_style = detect_newline(csv_file)
+
+        with open(csv_file, "w", newline="") as f:
+            header = ",".join(csv_quote_if_nonempty(name) for name in reader.fieldnames)
+            f.write(header + newline_style)
+
+            for row in rows:
+                line = ",".join(
+                    csv_quote_if_nonempty(row.get(field))
+                    for field in reader.fieldnames
+                )
+                f.write(line + newline_style)
+
+        subprocess.run(["git", "add", str(csv_file)], check=True)
+        print(f"  rewritten: {csv_file}")
+
 def main() -> None:
     ensure_tool_exists("git")
     ensure_tool_exists("tar")
@@ -169,6 +214,7 @@ def main() -> None:
     # Sort CSV files
     real_root = get_repo_root()
     sort_csv_by_slug(real_root)
+    rewrite_with_quotes(real_root)
 
     with tempfile.TemporaryDirectory(prefix="precommit-root-") as tmp:
         tmp_root = Path(tmp)
