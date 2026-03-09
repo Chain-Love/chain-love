@@ -912,6 +912,94 @@
     "cellType": "arrayPopover",
     "group": "pricing"
   },
+  "serverType": {
+    "key": "serverType",
+    "label": "Server Type",
+    "icon": "lucide:Boxes",
+    "description": "Primary MCP server category aligned with Chain.Love category taxonomy.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "serviceDetails"
+  },
+  "hostingType": {
+    "key": "hostingType",
+    "label": "Hosting Type",
+    "icon": "lucide:CloudCog",
+    "description": "Where the MCP server runs (Remote, Self-hosted, or Both).",
+    "filter": "select",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "technicalDetails"
+  },
+  "transportType": {
+    "key": "transportType",
+    "label": "Transport Type",
+    "icon": "lucide:Network",
+    "description": "MCP transport protocol used by the server (stdio, SSE, Streamable HTTP).",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "technicalDetails"
+  },
+  "mcpEndpoint": {
+    "key": "mcpEndpoint",
+    "label": "MCP Endpoint",
+    "icon": "lucide:Globe",
+    "description": "Remote MCP endpoint URL when hostingType is Remote or Both.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": "address",
+    "group": "technicalDetails"
+  },
+  "authType": {
+    "key": "authType",
+    "label": "Auth Type",
+    "icon": "lucide:KeyRound",
+    "description": "Authentication method required by the MCP server.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "security"
+  },
+  "x402": {
+    "key": "x402",
+    "label": "x402",
+    "icon": "lucide:BadgeDollarSign",
+    "description": "Whether the MCP server supports x402 payments.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null,
+    "group": "pricing"
+  },
+  "onChainWrite": {
+    "key": "onChainWrite",
+    "label": "On-Chain Write",
+    "icon": "lucide:PenSquare",
+    "description": "Whether MCP tools can execute state-changing on-chain actions.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null,
+    "group": "capabilities"
+  },
+  "agentSkills": {
+    "key": "agentSkills",
+    "label": "Agent Skills",
+    "icon": "lucide:BrainCircuit",
+    "description": "Capabilities exposed to AI agents (MVP free-form strings).",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
   "agentId": {
     "key": "agentId",
     "label": "Agent ID",
