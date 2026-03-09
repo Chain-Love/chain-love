@@ -263,7 +263,7 @@ AGENTS_COLUMN_META: Dict[str, ColumnMeta] = {
         "filter": "range",
         "sorting": "string",
         "pinning": None,
-        "cellType": None,
+        "cellType": "numericRange",
     },
     "registeredAt": {
         "key": "registeredAt",
