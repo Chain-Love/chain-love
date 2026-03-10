@@ -641,7 +641,8 @@ def main():
             if not entities or not entities[0].get("chain"):
                 continue
             chains.update([entity['chain'].lower() for entity in entities])
-        
+        chains = sorted(chains)
+
         for category, entities in global_listings.items():
             rows = list(entities)
             if len(entities) > 0 and "chain" in entities[0]:
