@@ -35,6 +35,7 @@ jobs:
       - name: Copy scripts from tools folder
         run: |
           cp json-tools/tools/csv_to_json.py .
+          cp json-tools/tools/fetch_agents.py .
           cp json-tools/tools/enrich_verified_metrics.py .
           cp json-tools/tools/validate.py .
           cp json-tools/tools/schema.json .
@@ -53,7 +54,7 @@ jobs:
           if git ls-remote --exit-code --heads origin ${{ env.TARGET_BRANCH }}; then
             echo "Target branch exists, checking out and merging from source"
             git checkout ${{ env.TARGET_BRANCH }}
-            git merge origin/${{ env.SOURCE_BRANCH }} --no-edit
+            git merge origin/${{ env.SOURCE_BRANCH }} --no-edit -X theirs
           else
             echo "Target branch does not exist, creating from source branch"
             git checkout -b ${{ env.TARGET_BRANCH }} origin/${{ env.SOURCE_BRANCH }}
@@ -70,7 +71,9 @@ jobs:
           pip install -r json-tools/tools/requirements.txt
 
       - name: Run CSV to JSON and enrichment
-        env: 
+        env:
+          ERC8004_API_KEY: ${{ secrets.ERC8004_API_KEY }}
+          ERC8004_SUBGRAPH_IDS: ${{ vars.ERC8004_SUBGRAPH_IDS }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERIFIED_API_TOKEN: ${{ secrets.VERIFIED_API_TOKEN }}
           SLA_MONITORING_SUBGRAPH_URL: ${{ secrets.SLA_MONITORING_SUBGRAPH_URL }}
@@ -78,6 +81,7 @@ jobs:
         run: |
           python3 csv_to_json.py
           python3 enrich_verified_metrics.py
+          python3 fetch_agents.py
           python3 update_sdks_metadata_github.py --jsonfile all
           python3 update_sdks_metadata_npm.py --jsonfile all
           python3 update_sdks_metadata_gitlab.py --jsonfile all --fallback-to-tags
@@ -89,5 +93,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update processed file"
-            git push origin ${{ env.TARGET_BRANCH }}
+            # Since this workflow does the same job as agents-refresh and verified-refresh,
+            # we do not care about the work they have done.
+            git push origin ${{ env.TARGET_BRANCH }} --force
           fi
