@@ -4,10 +4,12 @@ an ``agents`` array into the existing ``json/{network}.json`` files.
 Environment variables
 ---------------------
 ERC8004_API_KEY              – Shared subgraph query key for all installations.
-ERC8004_SUBGRAPH_IDS       – JSON object mapping network names (matching the
-                             json/{network}.json filenames) to subgraph query URLs.
+ERC8004_SUBGRAPH_IDS       – JSON object: each key is the network label (used for
+                             json/{label}.json). Each value is
+                             { "chain": "<value for agent.chain>", "url": "<subgraph URL>" }.
                              Example:
-                               {"arbitrum":"https://proxy.arbitrum.chain.love/subgraphs/name/arbitrum-one/8004-Watchtower-Subgraph"}
+                               {"arbitrum": {"chain": "one", "url": "https://proxy.arbitrum.chain.love/..."}}
+                             → file json/arbitrum.json, agents get agent["chain"] = "one"
 """
 import base64
 import gzip
@@ -28,7 +30,13 @@ from validate import check_schema_validation  # type: ignore
 NetworkName = NewType("NetworkName", str)
 SubgraphQueryURL = NewType("SubgraphQueryURL", str)
 
-SubgraphQueryURLByNetwork = Dict[NetworkName, SubgraphQueryURL]
+
+class SubgraphEntry(TypedDict):
+    chain: str
+    url: str
+
+
+SubgraphConfig = Dict[str, SubgraphEntry]
 
 
 class AgentRaw(TypedDict):
@@ -194,16 +202,25 @@ def _get_env(name: str) -> str:
     return value
 
 
-def _parse_subgraph_ids() -> SubgraphQueryURLByNetwork:
-    """Parse ERC8004_SUBGRAPH_IDS JSON env var into a dict."""
+def _parse_subgraph_ids() -> SubgraphConfig:
+    """Parse ERC8004_SUBGRAPH_IDS JSON env var. Each value must have 'chain' and 'url'."""
     raw = _get_env("ERC8004_SUBGRAPH_IDS")
     try:
-        ids = json.loads(raw)
+        data = json.loads(raw)
     except json.JSONDecodeError as e:
         raise ConfigError(f"ERC8004_SUBGRAPH_IDS is not valid JSON: {e}")
-    if not isinstance(ids, dict):
+    if not isinstance(data, dict):
         raise ConfigError("ERC8004_SUBGRAPH_IDS must be a JSON object")
-    return ids  # type: ignore
+    for key, entry in data.items():
+        if not isinstance(entry, dict):
+            raise ConfigError(
+                f"ERC8004_SUBGRAPH_IDS['{key}'] must be an object with 'chain' and 'url'"
+            )
+        if "chain" not in entry or "url" not in entry:
+            raise ConfigError(
+                f"ERC8004_SUBGRAPH_IDS['{key}'] must have 'chain' and 'url'"
+            )
+    return data  # type: ignore
 
 
 # ---------------------------------------------------------------------------
@@ -607,39 +624,45 @@ def process_all_networks() -> None:
         print("No 'json' directory found, nothing to enrich")
         return
 
-    for network, subgraph_id in subgraph_ids.items():
-        path = os.path.join("json", f"{network}.json")
+    for label, entry in subgraph_ids.items():
+        chain = entry["chain"]  # значение для agent["chain"] в отдаваемом объекте
+        subgraph_url = entry["url"]
+        path = os.path.join("json", f"{label}.json")  # label = название сети (arbitrum, avalanche)
 
         if not os.path.isfile(path):
-            print(f"[{network}] WARNING: {path} not found, skipping")
+            print(f"[{label}] WARNING: {path} not found, skipping")
             continue
 
-        print(f"[{network}] Processing {path}")
+        print(f"[{label}] Processing {path}")
 
         try:
             original_data = load_json_file(path)
         except Exception as e:
-            print(f"[{network}] WARNING: failed to read JSON file: {e}")
+            print(f"[{label}] WARNING: failed to read JSON file: {e}")
             continue
 
         if not check_schema_validation(
             schema_validator=SCHEMA_VALIDATOR, data=original_data
         ):
             print(
-                f"[{network}] ERROR: original data does not conform to schema, "
+                f"[{label}] ERROR: original data does not conform to schema, "
                 "skipping enrichment"
             )
             continue
 
         # Fetch agents from subgraph
-        raw_agents = fetch_all_agents(network, subgraph_id, erc8004_api_key)
+        raw_agents = fetch_all_agents(
+            NetworkName(label),
+            SubgraphQueryURL(subgraph_url),
+            erc8004_api_key,
+        )
         if raw_agents is None:
             continue
 
-        agents: AgentsList = [transform_agent(a, network) for a in raw_agents]
+        agents: AgentsList = [transform_agent(a, NetworkName(chain)) for a in raw_agents]
         compute_ranks(agents)
         agents.sort(key=lambda a: a["agentId"])
-        print(f"[{network}] Fetched {len(agents)} agents")
+        print(f"[{label}] Fetched {len(agents)} agents")
 
         # Inject into enriched copy
         enriched = deepcopy(original_data)
@@ -655,7 +678,7 @@ def process_all_networks() -> None:
             schema_validator=SCHEMA_VALIDATOR, data=enriched
         ):
             print(
-                f"[{network}] ERROR: enriched data does not conform to schema, "
+                f"[{label}] ERROR: enriched data does not conform to schema, "
                 "skipping write"
             )
             continue
@@ -663,9 +686,9 @@ def process_all_networks() -> None:
         if enriched != original_data:
             try:
                 save_json_file(path, enriched)
-                print(f"[{network}] JSON updated with {len(agents)} agents")
+                print(f"[{label}] JSON updated with {len(agents)} agents")
             except Exception as e:
-                print(f"[{network}] ERROR: failed to write enriched JSON: {e}")
+                print(f"[{label}] ERROR: failed to write enriched JSON: {e}")
 
 
 def main() -> None:
