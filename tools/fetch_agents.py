@@ -4,11 +4,12 @@ an ``agents`` array into the existing ``json/{network}.json`` files.
 Environment variables
 ---------------------
 ERC8004_API_KEY              – Shared subgraph query key for all installations.
-ERC8004_SUBGRAPH_IDS       – JSON object: each key is a label, each value is
-                             { "chain": "<chainKey>", "url": "<subgraph URL>" }.
-                             ``chain`` is used for json/{chain}.json and agent.chain.
+ERC8004_SUBGRAPH_IDS       – JSON object: each key is the network label (used for
+                             json/{label}.json). Each value is
+                             { "chain": "<value for agent.chain>", "url": "<subgraph URL>" }.
                              Example:
-                               {"arbitrum": {"chain": "arbitrum-one", "url": "https://proxy.arbitrum.chain.love/subgraphs/name/arbitrum-one/8004-Watchtower-Subgraph"}}
+                               {"arbitrum": {"chain": "one", "url": "https://proxy.arbitrum.chain.love/..."}}
+                             → file json/arbitrum.json, agents get agent["chain"] = "one"
 """
 import base64
 import gzip
@@ -623,35 +624,35 @@ def process_all_networks() -> None:
         print("No 'json' directory found, nothing to enrich")
         return
 
-    for _label, entry in subgraph_ids.items():
-        chain = entry["chain"]
+    for label, entry in subgraph_ids.items():
+        chain = entry["chain"]  # значение для agent["chain"] в отдаваемом объекте
         subgraph_url = entry["url"]
-        path = os.path.join("json", f"{chain}.json")
+        path = os.path.join("json", f"{label}.json")  # label = название сети (arbitrum, avalanche)
 
         if not os.path.isfile(path):
-            print(f"[{chain}] WARNING: {path} not found, skipping")
+            print(f"[{label}] WARNING: {path} not found, skipping")
             continue
 
-        print(f"[{chain}] Processing {path}")
+        print(f"[{label}] Processing {path}")
 
         try:
             original_data = load_json_file(path)
         except Exception as e:
-            print(f"[{chain}] WARNING: failed to read JSON file: {e}")
+            print(f"[{label}] WARNING: failed to read JSON file: {e}")
             continue
 
         if not check_schema_validation(
             schema_validator=SCHEMA_VALIDATOR, data=original_data
         ):
             print(
-                f"[{chain}] ERROR: original data does not conform to schema, "
+                f"[{label}] ERROR: original data does not conform to schema, "
                 "skipping enrichment"
             )
             continue
 
         # Fetch agents from subgraph
         raw_agents = fetch_all_agents(
-            NetworkName(chain),
+            NetworkName(label),
             SubgraphQueryURL(subgraph_url),
             erc8004_api_key,
         )
@@ -661,7 +662,7 @@ def process_all_networks() -> None:
         agents: AgentsList = [transform_agent(a, NetworkName(chain)) for a in raw_agents]
         compute_ranks(agents)
         agents.sort(key=lambda a: a["agentId"])
-        print(f"[{chain}] Fetched {len(agents)} agents")
+        print(f"[{label}] Fetched {len(agents)} agents")
 
         # Inject into enriched copy
         enriched = deepcopy(original_data)
@@ -677,7 +678,7 @@ def process_all_networks() -> None:
             schema_validator=SCHEMA_VALIDATOR, data=enriched
         ):
             print(
-                f"[{chain}] ERROR: enriched data does not conform to schema, "
+                f"[{label}] ERROR: enriched data does not conform to schema, "
                 "skipping write"
             )
             continue
@@ -685,9 +686,9 @@ def process_all_networks() -> None:
         if enriched != original_data:
             try:
                 save_json_file(path, enriched)
-                print(f"[{chain}] JSON updated with {len(agents)} agents")
+                print(f"[{label}] JSON updated with {len(agents)} agents")
             except Exception as e:
-                print(f"[{chain}] ERROR: failed to write enriched JSON: {e}")
+                print(f"[{label}] ERROR: failed to write enriched JSON: {e}")
 
 
 def main() -> None:
