@@ -12,6 +12,10 @@ def clean_and_validate_file(file_path):
         'null': '',
         '{}': '',
         '[]': '',
+        '"[': '[', # Remove leading quote for JSON array
+        ']"': ']', # Remove trailing quote for JSON array
+        '"{': '{', # Remove leading quote for JSON object
+        '}"': '}', # Remove trailing quote for JSON object
         '","': ',', # Replace quoted comma with simple comma
     }
 
@@ -57,16 +61,52 @@ def clean_and_validate_file(file_path):
                                 print(f"  [JSON Error] {file_path}: Line {row_idx+2}, Column 'actionButtons' has malformed JSON: {cell_value.strip()} - {e}")
                                 # Attempt a more aggressive cleanup if simple JSON.loads fails
                                 cleaned_cell = cell_value.strip().replace('""', '"') # Replace doubled quotes
-                                try:
-                                    cleaned_json = json.dumps(json.loads(cleaned_cell))
-                                    if cleaned_json != cell_value.strip():
-                                        print(f"  [JSON Auto-Fix] {file_path}: Line {row_idx+2}, Column 'actionButtons' auto-fixed JSON.")
-                                        row[action_buttons_col_index] = cleaned_json
-                                        found_issues_in_file = True
-                                except json.JSONDecodeError:
-                                    pass # Still malformed, leave as is or manual fix required
+                                # Aggressively remove trailing quotes after a closing parenthesis in markdown links
+                                if cleaned_cell.endswith(')""'): # Handles case like [[Text](URL)]""
+                                    cleaned_cell = cleaned_cell[:-2] + ']"' # Remove the extra quote, keep the JSON array end
+                                elif cleaned_cell.endswith(')"'): # Handles case like [[Text](URL)]"
+                                    cleaned_cell = cleaned_cell[:-1] + ']"' # Remove the extra quote, keep the JSON array end
+
+                                if cleaned_cell.startswith('[') and cleaned_cell.endswith(']'):
+                                    # Further cleanup for cases like `["["Text"]("URL")]` or `["Text(URL)"]`
+                                    # Try to interpret as a list of markdown links and reconstruct valid JSON
+                                    try:
+                                        # Attempt to load as a JSON array of strings
+                                        json_array = json.loads(cleaned_cell)
+                                        # If it's a list of strings, ensure each string is a valid markdown link format
+                                        reconstructed_array = []
+                                        for item in json_array:
+                                            if item.startswith('[') and item.endswith(')') and '(' in item and ']' in item:
+                                                reconstructed_array.append(item)
+                                            else:
+                                                # If not a markdown link, try to parse as JSON again
+                                                reconstructed_array.append(json.dumps(item))
+                                        cleaned_json = json.dumps(reconstructed_array)
+                                        if cleaned_json != cell_value.strip():
+                                            print(f"  [JSON Auto-Fix - Markdown Array] {file_path}: Line {row_idx+2}, Column 'actionButtons' auto-fixed markdown array JSON.")
+                                            row[action_buttons_col_index] = cleaned_json
+                                            found_issues_in_file = True
+                                    except json.JSONDecodeError:
+                                        # If it's not a simple JSON array of strings, try to fix as a single malformed markdown link
+                                        # This block attempts to handle single malformed markdown links like '[[Text](URL)]'
+                                        if cleaned_cell.startswith('[[') and cleaned_cell.endswith(']]'):
+                                            temp_cell = cleaned_cell[1:-1] # Remove outer brackets, e.g., '"[Text](URL)"'
+                                            # Check if it's a quoted markdown link like `"[Text](URL)"`
+                                            if temp_cell.startswith('"') and temp_cell.endswith('"'):
+                                                temp_cell = temp_cell[1:-1] # Remove inner quotes, e.g., '[Text](URL)'
+                                            # Now try to wrap it in a proper JSON array
+                                            try:
+                                                cleaned_json = json.dumps([temp_cell])
+                                                if cleaned_json != cell_value.strip():
+                                                    print(f"  [JSON Auto-Fix - Single Markdown] {file_path}: Line {row_idx+2}, Column 'actionButtons' auto-fixed single markdown JSON.")
+                                                    row[action_buttons_col_index] = cleaned_json
+                                                    found_issues_in_file = True
+                                            except Exception:
+                                                pass # Still malformed, leave as is
+                                        else:
+                                            pass # Still malformed, leave as is or manual fix required
                     rows.append(row)
-            
+
             if found_issues_in_file:
                 with open(file_path, 'w', encoding='utf-8', newline='') as f_csv_out:
                     writer = csv.writer(f_csv_out)
