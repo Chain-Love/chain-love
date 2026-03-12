@@ -1,1 +1,3 @@
-Read [AGENTS.md](https://github.com/Chain-Love/chain-love/blob/main/AGENTS.md) to get detailed instructions on database structure and contribution rules. For even more details on contribution - read [CONTRIBUTING.md](https://github.com/Chain-Love/chain-love/blob/main/CONTRIBUTING.md)
+# Claude Integration
+
+This document outlines the integration of Claude into the project.
