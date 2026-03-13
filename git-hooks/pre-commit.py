@@ -11,6 +11,7 @@ import urllib.request
 from pathlib import Path
 from typing import Iterable
 import csv
+import re
 
 # ──────────────────────────────────────
 # Configuration
@@ -32,6 +33,8 @@ SCRIPTS = [
     "csv_to_json.py",
     "validate.py",
 ]
+
+URL_PATTERN = re.compile(r"https?://", re.IGNORECASE)
 
 # ──────────────────────────────────────
 # Helpers
@@ -187,16 +190,55 @@ def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
         subprocess.run(["git", "add", str(csv_file)], check=True)
         print(f"  sorted: {csv_file}")
 
-def looks_like_url(v: str) -> bool:
-    return v.startswith("http://") or v.startswith("https://")
+def field_contains_url(value: str) -> bool:
+    return bool(value and URL_PATTERN.search(value.strip()))
+
+
+def quote_csv_field(value: str) -> str:
+    escaped = value.replace('"', '""')
+    return f'"{escaped}"'
+
+
+def split_raw_csv_fields(line: str, delimiter: str = ",") -> list[tuple[str, bool]]:
+    fields: list[tuple[str, bool]] = []
+    start = 0
+    i = 0
+    in_quotes = False
+    was_quoted = False
+
+    while i < len(line):
+        char = line[i]
+
+        if in_quotes:
+            if char == '"' and i + 1 < len(line) and line[i + 1] == '"':
+                i += 2
+                continue
+            if char == '"':
+                in_quotes = False
+            i += 1
+            continue
+
+        if char == '"' and i == start:
+            was_quoted = True
+            in_quotes = True
+            i += 1
+            continue
+
+        if char == delimiter:
+            fields.append((line[start:i], was_quoted))
+            start = i + 1
+            was_quoted = False
+
+        i += 1
+
+    fields.append((line[start:], was_quoted))
+    return fields
 
 
 def rewrite_urls(repo_root: Path, delimiter: str = ",") -> None:
     print("Rewriting CSV URL cells")
 
     for csv_file in iter_csv(repo_root):
-        newline_style = detect_newline(csv_file)
-
         with csv_file.open("r", newline="") as f:
             lines = f.readlines()
 
@@ -207,19 +249,30 @@ def rewrite_urls(repo_root: Path, delimiter: str = ",") -> None:
 
         for raw_line in lines:
             line = raw_line.rstrip("\r\n")
+            line_ending = raw_line[len(line):]
+            raw_fields = split_raw_csv_fields(line, delimiter)
+            parsed_fields = next(csv.reader([line], delimiter=delimiter))
 
-            parts = line.split(delimiter)
+            if len(raw_fields) != len(parsed_fields):
+                die(
+                    f"Failed to rewrite URL cells in {csv_file}: "
+                    f"raw field count {len(raw_fields)} != parsed field count {len(parsed_fields)}"
+                )
 
-            for i, cell in enumerate(parts):
-                cell = cell.strip()
+            rewritten_fields: list[str] = []
+            changed = False
 
-                if (
-                    not (cell.startswith('"') and cell.endswith('"'))
-                    and looks_like_url(cell)
-                ):
-                    parts[i] = f'"{cell}"'
+            for (raw_field, was_quoted), parsed_field in zip(raw_fields, parsed_fields):
+                if field_contains_url(parsed_field) and not was_quoted:
+                    rewritten_fields.append(quote_csv_field(parsed_field))
+                    changed = True
+                else:
+                    rewritten_fields.append(raw_field)
 
-            out_lines.append(delimiter.join(parts) + newline_style)
+            if changed:
+                out_lines.append(delimiter.join(rewritten_fields) + line_ending)
+            else:
+                out_lines.append(line + line_ending)
 
         with csv_file.open("w", newline="") as f:
             f.writelines(out_lines)
