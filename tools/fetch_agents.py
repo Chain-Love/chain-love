@@ -15,8 +15,9 @@ import base64
 import gzip
 import json
 import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from copy import deepcopy
-from typing import Any, Dict, List, Optional, NewType, TypedDict
+from typing import Any, Dict, List, Optional, NewType, TypedDict, Tuple
 from urllib.parse import unquote_plus
 
 import requests
@@ -611,84 +612,72 @@ def compute_ranks(agents: AgentsList) -> None:
 # Main
 # ---------------------------------------------------------------------------
 
+MAX_WORKERS = 8
+
+
+def _process_one_network(
+    label: str, entry: SubgraphEntry, erc8004_api_key: str
+) -> Tuple[str, str, Optional[JsonObject], Optional[JsonObject], int]:
+    """Process one network; returns (label, path, original_data, enriched_data, count)."""
+    chain = entry["chain"]
+    subgraph_url = entry["url"]
+    path = os.path.join("json", f"{label}.json")
+    if not os.path.isfile(path):
+        print(f"[{label}] WARNING: {path} not found, skipping")
+        return (label, path, None, None, 0)
+    print(f"[{label}] Processing {path}")
+    try:
+        original_data = load_json_file(path)
+    except Exception as e:
+        print(f"[{label}] WARNING: failed to read JSON file: {e}")
+        return (label, path, None, None, 0)
+    if not check_schema_validation(SCHEMA_VALIDATOR, original_data):
+        print(f"[{label}] ERROR: original data does not conform to schema, skipping enrichment")
+        return (label, path, None, None, 0)
+    raw_agents = fetch_all_agents(NetworkName(label), SubgraphQueryURL(subgraph_url), erc8004_api_key)
+    if raw_agents is None:
+        return (label, path, original_data, None, 0)
+    agents: AgentsList = [transform_agent(a, NetworkName(chain)) for a in raw_agents]
+    compute_ranks(agents)
+    agents.sort(key=lambda a: a["agentId"])
+    print(f"[{label}] Fetched {len(agents)} agents")
+    enriched = deepcopy(original_data)
+    enriched["agents"] = agents
+    if isinstance(enriched.get("columns"), dict):
+        enriched["columns"]["agents"] = list(AGENTS_COLUMNS)
+    if not check_schema_validation(SCHEMA_VALIDATOR, enriched):
+        print(f"[{label}] ERROR: enriched data does not conform to schema, skipping write")
+        return (label, path, original_data, None, len(agents))
+    return (label, path, original_data, enriched, len(agents))
+
 
 def process_all_networks() -> None:
     erc8004_api_key = _get_env("ERC8004_API_KEY")
     subgraph_ids = _parse_subgraph_ids()
-
     if not subgraph_ids:
         print("ERC8004_SUBGRAPH_IDS is empty. Nothing to do.")
         return
-
     if not os.path.isdir("json"):
         print("No 'json' directory found, nothing to enrich")
         return
-
-    for label, entry in subgraph_ids.items():
-        chain = entry["chain"]  # значение для agent["chain"] в отдаваемом объекте
-        subgraph_url = entry["url"]
-        path = os.path.join("json", f"{label}.json")  # label = название сети (arbitrum, avalanche)
-
-        if not os.path.isfile(path):
-            print(f"[{label}] WARNING: {path} not found, skipping")
-            continue
-
-        print(f"[{label}] Processing {path}")
-
-        try:
-            original_data = load_json_file(path)
-        except Exception as e:
-            print(f"[{label}] WARNING: failed to read JSON file: {e}")
-            continue
-
-        if not check_schema_validation(
-            schema_validator=SCHEMA_VALIDATOR, data=original_data
-        ):
-            print(
-                f"[{label}] ERROR: original data does not conform to schema, "
-                "skipping enrichment"
-            )
-            continue
-
-        # Fetch agents from subgraph
-        raw_agents = fetch_all_agents(
-            NetworkName(label),
-            SubgraphQueryURL(subgraph_url),
-            erc8004_api_key,
-        )
-        if raw_agents is None:
-            continue
-
-        agents: AgentsList = [transform_agent(a, NetworkName(chain)) for a in raw_agents]
-        compute_ranks(agents)
-        agents.sort(key=lambda a: a["agentId"])
-        print(f"[{label}] Fetched {len(agents)} agents")
-
-        # Inject into enriched copy
-        enriched = deepcopy(original_data)
-        enriched["agents"] = agents
-
-        # agents column order is sourced from this script (AGENTS_COLUMNS).
-        columns = enriched.get("columns")
-        if isinstance(columns, dict):
-            columns["agents"] = list(AGENTS_COLUMNS)
-
-        # Validate enriched data
-        if not check_schema_validation(
-            schema_validator=SCHEMA_VALIDATOR, data=enriched
-        ):
-            print(
-                f"[{label}] ERROR: enriched data does not conform to schema, "
-                "skipping write"
-            )
-            continue
-
-        if enriched != original_data:
+    workers = min(MAX_WORKERS, len(subgraph_ids))
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {
+            executor.submit(_process_one_network, label, entry, erc8004_api_key): label
+            for label, entry in subgraph_ids.items()
+        }
+        for future in as_completed(futures):
             try:
-                save_json_file(path, enriched)
-                print(f"[{label}] JSON updated with {len(agents)} agents")
+                label, path, orig, enriched, count = future.result()
             except Exception as e:
-                print(f"[{label}] ERROR: failed to write enriched JSON: {e}")
+                print(f"[{futures[future]}] ERROR: {e}")
+                continue
+            if enriched is not None and orig is not None and enriched != orig:
+                try:
+                    save_json_file(path, enriched)
+                    print(f"[{label}] JSON updated with {count} agents")
+                except Exception as e:
+                    print(f"[{label}] ERROR: failed to write enriched JSON: {e}")
 
 
 def main() -> None:
