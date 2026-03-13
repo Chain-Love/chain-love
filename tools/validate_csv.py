@@ -50,46 +50,31 @@ def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
 
     return errors
 
+def looks_like_url(v: str) -> bool:
+    return v.startswith("http://") or v.startswith("https://")
+
 def rule_links_must_be_quoted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
     errors: List[str] = []
+    delimiter: str = ","
 
-    try:
-        raw_lines = path.read_text(encoding="utf-8").splitlines()
-    except Exception as e:
-        return [f"{path}: read error during link quoting validation: {e}"]
-
-    if not raw_lines:
+    with path.open(newline="", encoding="utf-8") as f:
+        lines = f.readlines()
+    
+    if not lines:
         return []
-
-    for lineno, raw_line in enumerate(raw_lines, start=1):
-        # Parse properly using CSV parser
-        parsed_fields = next(csv.reader([raw_line]))
-
-        cursor = 0
-        for field in parsed_fields:
-            field_stripped = field.strip()
-
-            # Locate this field in the raw line
-            # We search from current cursor forward
-            idx = raw_line.find(field, cursor)
-            if idx == -1:
-                continue
-
-            # Determine if it was quoted
-            was_quoted = (
-                idx > 0
-                and idx + len(field) < len(raw_line)
-                and raw_line[idx - 1] == '"'
-                and raw_line[idx + len(field)] == '"'
-            )
-
-            if field_stripped and URL_PATTERN.search(field_stripped):
-                if not was_quoted:
-                    errors.append(
-                        f"{path}: row {lineno}: URL field must be quoted: {field_stripped}"
-                    )
-
-            cursor = idx + len(field)
+    
+    for raw_line in lines:
+        line = raw_line.rstrip("\r\n")
+        parts = line.split(delimiter)
+        for i, cell in enumerate(parts):
+            cell = cell.strip()
+            if (
+                not (cell.startswith('"') and cell.endswith('"'))
+                and looks_like_url(cell)
+            ):
+                errors.append(
+                    f"{path}: row {lines.index(raw_line) + 1}: column {i + 1}: URL '{cell}' must be quoted"
+                )
 
     return errors
 
