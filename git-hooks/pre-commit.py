@@ -10,6 +10,7 @@ import tempfile
 import urllib.request
 from pathlib import Path
 from typing import Iterable
+import csv
 
 # ──────────────────────────────────────
 # Configuration
@@ -116,10 +117,125 @@ def download_and_extract(url: str, dest: Path, subpath: str) -> None:
                 with tar.extractfile(m) as src, open(target_path, "wb") as out:
                     shutil.copyfileobj(src, out)
 
+def detect_newline(path):
+    with open(path, "rb") as f:
+        chunk = f.read(8192)
+    if b"\r\n" in chunk:
+        return "\r\n"
+    return "\n"
+
+def get_repo_root() -> Path:
+    out = subprocess.check_output(
+        ["git", "rev-parse", "--show-toplevel"],
+        text=True,
+    ).strip()
+    return Path(out)
+
+def iter_csv(repo_root: Path) -> Iterable[Path]:
+    for csv_file in repo_root.rglob("*.csv"):
+        if ".git" in csv_file.parts:
+            continue
+        yield csv_file
+
+def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
+    """
+    Sort CSV files by slug column without modifying quoting.
+    Uses the same naive delimiter parsing as rewrite_urls().
+    """
+    print("Sorting CSV files by slug")
+
+    for csv_file in iter_csv(repo_root):
+        newline_style = detect_newline(csv_file)
+
+        with csv_file.open("r", newline="") as f:
+            lines = f.readlines()
+
+        if len(lines) <= 1:
+            continue
+
+        header_line = lines[0].rstrip("\r\n")
+        header_parts = [h.strip().strip('"') for h in header_line.split(delimiter)]
+
+        if "slug" not in header_parts:
+            continue
+
+        slug_idx = header_parts.index("slug")
+
+        data_lines = lines[1:]
+
+        def slug_key(raw_line: str) -> str:
+            parts = raw_line.rstrip("\r\n").split(delimiter)
+
+            if slug_idx >= len(parts):
+                return ""
+
+            cell = parts[slug_idx].strip()
+
+            # normalize quoted slug for sorting only
+            if cell.startswith('"') and cell.endswith('"'):
+                cell = cell[1:-1]
+
+            return cell
+
+        rows_sorted = sorted(data_lines, key=slug_key)
+
+        with csv_file.open("w", newline="") as f:
+            f.write(header_line + newline_style)
+            for row in rows_sorted:
+                f.write(row.rstrip("\r\n") + newline_style)
+
+        subprocess.run(["git", "add", str(csv_file)], check=True)
+        print(f"  sorted: {csv_file}")
+
+def looks_like_url(v: str) -> bool:
+    return v.startswith("http://") or v.startswith("https://")
+
+
+def rewrite_urls(repo_root: Path, delimiter: str = ",") -> None:
+    print("Rewriting CSV URL cells")
+
+    for csv_file in iter_csv(repo_root):
+        newline_style = detect_newline(csv_file)
+
+        with csv_file.open("r", newline="") as f:
+            lines = f.readlines()
+
+        if not lines:
+            continue
+
+        out_lines: list[str] = []
+
+        for raw_line in lines:
+            line = raw_line.rstrip("\r\n")
+
+            parts = line.split(delimiter)
+
+            for i, cell in enumerate(parts):
+                cell = cell.strip()
+
+                if (
+                    not (cell.startswith('"') and cell.endswith('"'))
+                    and looks_like_url(cell)
+                ):
+                    parts[i] = f'"{cell}"'
+
+            out_lines.append(delimiter.join(parts) + newline_style)
+
+        with csv_file.open("w", newline="") as f:
+            f.writelines(out_lines)
+
+        subprocess.run(["git", "add", str(csv_file)], check=True)
+        print(f"  rewritten: {csv_file}")
+
 
 def main() -> None:
     ensure_tool_exists("git")
     ensure_tool_exists("tar")
+
+    # Sort CSV files
+    real_root = get_repo_root()
+    sort_csv_by_slug(real_root)
+    rewrite_urls(real_root)
 
     with tempfile.TemporaryDirectory(prefix="precommit-root-") as tmp:
         tmp_root = Path(tmp)
