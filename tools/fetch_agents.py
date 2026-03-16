@@ -16,6 +16,8 @@ import gzip
 import json
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import re
+import unicodedata
 from copy import deepcopy
 from typing import Any, Dict, List, Optional, NewType, TypedDict, Tuple
 from urllib.parse import unquote_plus
@@ -118,6 +120,7 @@ IDENTITY_REGISTRY = "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
 REPUTATION_REGISTRY = "0x8004BAa17C55a88189AE136b182e5fdA19dE9b63"
 
 PAGE_SIZE = 1000  # The Graph max entities per page
+AGENT_SLUG_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
 
 # Column order for the agents category (injected into data["columns"])
 AGENTS_COLUMNS = [
@@ -371,6 +374,25 @@ def _extract_registration_fields(registration: Dict[str, Any]) -> Dict[str, Any]
     return out
 
 
+def _slugify_agent_name(name: Optional[str]) -> Optional[str]:
+    if not isinstance(name, str):
+        return None
+
+    ascii_name = (
+        unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
+    )
+    slug = AGENT_SLUG_NON_ALNUM_RE.sub("-", ascii_name.lower()).strip("-")
+    return slug or None
+
+
+def _build_agent_slug(agent_id: str, name: Optional[str], chain: str) -> str:
+    name_slug = _slugify_agent_name(name)
+    chain_slug = AGENT_SLUG_NON_ALNUM_RE.sub("-", chain.lower()).strip("-")
+    if name_slug:
+        return f"erc8004-agent-{name_slug}-{agent_id}-{chain_slug}"
+    return f"erc8004-agent-{agent_id}-{chain_slug}"
+
+
 # ---------------------------------------------------------------------------
 # Subgraph helpers
 # ---------------------------------------------------------------------------
@@ -465,9 +487,9 @@ def transform_agent(raw: AgentRaw, chain: NetworkName) -> AgentRecord:
     reg = _extract_registration_fields(reg_data) if reg_data else _extract_registration_fields({})
     name = reg.get("name")
     return {
-        "slug": f"erc8004-agent-{agent_id}",
+        "slug": _build_agent_slug(agent_id, name, str(chain)),
         "offer": name if name else f"Agent #{agent_id}",
-        "name": reg.get("name"),
+        "name": name,
         "description": reg.get("description"),
         "image": reg.get("image"),
         "active": reg.get("active"),
