@@ -638,9 +638,14 @@ def main():
         # 2) Merge/replace with all-networks listings
         chains = set()
         for category, entities in result.items():
-            if not entities or not entities[0].get("chain"):
+            if not entities or "chain" not in entities[0]:
                 continue
-            chains.update([entity['chain'].lower() for entity in entities])
+            for entity in entities:
+                if not entity.get("chain"):
+                    print(f"ERROR: Network-specific chain-aware offer has no populated 'chain' value. Offending offer: network '{network_name}', category '{category}', slug '{entity.get('slug')}'")
+                    exit(1)
+                chains.update([entity['chain'].lower()])
+
         chains = sorted(chains)
 
         for category, entities in global_listings.items():
