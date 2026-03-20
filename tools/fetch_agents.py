@@ -577,9 +577,13 @@ def fetch_all_agents(
         except RuntimeError as e:
             msg = str(e)
             # The common failure mode when fields don't exist yet in the deployed subgraph.
+            # Different GraphQL servers error messages differently:
+            # - Type `Agent` has no field `creator`
+            # - Cannot query field "creator" on type "Agent"
+            # - Field "creator" doesn't exist
             missing_fields = (
-                ("Cannot query field" in msg or "doesn't exist" in msg)
-                and ("creator" in msg or "creatorTx" in msg)
+                ("creator" in msg or "creatorTx" in msg)
+                and ("no field" in msg or "Cannot query field" in msg or "doesn't exist" in msg)
             )
             if active_query == query_with_creator and missing_fields:
                 print(

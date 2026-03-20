@@ -1022,6 +1022,28 @@
     "cellType": "address",
     "group": "identity"
   },
+  "creator": {
+    "key": "creator",
+    "label": "Creator",
+    "icon": "lucide:UserPlus",
+    "description": "Tx sender that created the agent (initial Registered() call).",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": "address",
+    "group": "identity"
+  },
+  "creatorTx": {
+    "key": "creatorTx",
+    "label": "Creator Tx",
+    "icon": "lucide:Hash",
+    "description": "Transaction hash of the initial Registered() call.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "identity"
+  },
   "agentURI": {
     "key": "agentURI",
     "label": "Agent URI",
