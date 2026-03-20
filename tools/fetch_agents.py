@@ -22,7 +22,6 @@ from copy import deepcopy
 from typing import Any, Dict, List, Optional, NewType, TypedDict, Tuple
 from urllib.parse import unquote_plus
 
-from typing_extensions import NotRequired
 
 import requests
 from jsonschema import Draft202012Validator
@@ -49,8 +48,8 @@ class AgentRaw(TypedDict):
     agentId: str
     owner: str
     # Present only when the deployed subgraph schema includes these fields.
-    creator: NotRequired[str]
-    creatorTx: NotRequired[str]
+    creator: Optional[str]
+    creatorTx: Optional[str]
     agentURI: str
     agentURIType: str
     agentWallet: Optional[str]
@@ -73,8 +72,8 @@ class AgentRecord(TypedDict):
     supportedTrust: Optional[List[str]]
     registrationType: Optional[str]
     agentId: int
-    creator: NotRequired[str]
-    creatorTx: NotRequired[str]
+    creator: Optional[str]
+    creatorTx: Optional[str]
     owner: str
     agentURI: str
     agentURIType: str
