@@ -15,6 +15,7 @@ import base64
 import gzip
 import json
 import os
+from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import re
 import unicodedata
@@ -312,6 +313,17 @@ class ConfigError(RuntimeError):
     pass
 
 
+def _utc_ts() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _log(msg: str, network: Optional[str] = None) -> None:
+    if network:
+        print(f"[{_utc_ts()}] [{network}] {msg}")
+    else:
+        print(f"[{_utc_ts()}] {msg}")
+
+
 def _get_env(name: str) -> str:
     value = os.environ.get(name)
     if not value:
@@ -567,7 +579,9 @@ def fetch_all_agents(
     # Detect subgraph schema capability once per network.
     active_query: Optional[str] = query_with_creator
 
+    page = 0
     while True:
+        page += 1
         if active_query is None:
             # Should never happen, but keep it explicit.
             return None
@@ -586,23 +600,28 @@ def fetch_all_agents(
                 and ("no field" in msg or "Cannot query field" in msg or "doesn't exist" in msg)
             )
             if active_query == query_with_creator and missing_fields:
-                print(
-                    f"[{network}] INFO: subgraph has no creator fields yet; retrying without creator/creatorTx"
+                _log(
+                    "INFO: subgraph has no creator fields yet; retrying without creator/creatorTx",
+                    str(network),
                 )
                 active_query = query_no_creator
                 continue
-            print(f"[{network}] WARNING: {e}")
+            _log(f"WARNING: {e}", str(network))
             return None
 
         errors = list(AGENTS_RESPONSE_VALIDATOR.iter_errors(data)) # type: ignore
         if errors:
             first = errors[0]
-            print(f"[{network}] WARNING: subgraph response schema mismatch")
-            print("  message:", first.message)
-            print("  path   :", list(first.absolute_path))
+            _log("WARNING: subgraph response schema mismatch", str(network))
+            _log(f"  message: {first.message}", str(network))
+            _log(f"  path   : {list(first.absolute_path)}", str(network))
             return None
 
         batch = data.get("agents", [])
+        _log(
+            f"Agents page {page}: fetched {len(batch)} rows (last_id='{last_id or '<start>'}')",
+            str(network),
+        )
         if not batch:
             break
         all_agents.extend(batch)
@@ -690,22 +709,28 @@ def fetch_all_feedbacks_by_agent(
     feedbacks: Dict[str, List[FeedbackItem]] = {}
     last_id = ""
 
+    page = 0
     while True:
+        page += 1
         try:
             data = graphql_request(url, FEEDBACKS_QUERY, {"lastId": last_id})
         except RuntimeError as e:
-            print(f"[{network}] WARNING: {e}")
+            _log(f"WARNING: {e}", str(network))
             return {}
 
         errors = list(FEEDBACKS_RESPONSE_VALIDATOR.iter_errors(data))  # type: ignore
         if errors:
             first = errors[0]
-            print(f"[{network}] WARNING: feedback response schema mismatch")
-            print("  message:", first.message)
-            print("  path   :", list(first.absolute_path))
+            _log("WARNING: feedback response schema mismatch", str(network))
+            _log(f"  message: {first.message}", str(network))
+            _log(f"  path   : {list(first.absolute_path)}", str(network))
             return {}
 
         batch = data.get("feedbacks", [])
+        _log(
+            f"Feedbacks page {page}: fetched {len(batch)} rows (last_id='{last_id or '<start>'}')",
+            str(network),
+        )
         if not batch:
             break
 
@@ -879,27 +904,35 @@ def _process_one_network(
     label: str, entry: SubgraphEntry, erc8004_api_key: str
 ) -> Tuple[str, str, Optional[JsonObject], Optional[JsonObject], int]:
     """Process one network; returns (label, path, original_data, enriched_data, count)."""
+    started_at = datetime.now(timezone.utc)
     chain = entry["chain"]
     subgraph_url = entry["url"]
     path = os.path.join("json", f"{label}.json")
     if not os.path.isfile(path):
-        print(f"[{label}] WARNING: {path} not found, skipping")
+        _log(f"WARNING: {path} not found, skipping", label)
         return (label, path, None, None, 0)
-    print(f"[{label}] Processing {path}")
+    _log(f"START processing {path}", label)
     try:
         original_data = load_json_file(path)
     except Exception as e:
-        print(f"[{label}] WARNING: failed to read JSON file: {e}")
+        _log(f"WARNING: failed to read JSON file: {e}", label)
         return (label, path, None, None, 0)
     if not check_schema_validation(SCHEMA_VALIDATOR, original_data):
-        print(f"[{label}] ERROR: original data does not conform to schema, skipping enrichment")
+        _log(
+            "ERROR: original data does not conform to schema, skipping enrichment",
+            label,
+        )
         return (label, path, None, None, 0)
+    _log("Fetching agents from subgraph", label)
     raw_agents = fetch_all_agents(NetworkName(label), SubgraphQueryURL(subgraph_url), erc8004_api_key)
     if raw_agents is None:
+        _log("ABORT: failed to fetch agents", label)
         return (label, path, original_data, None, 0)
+    _log(f"Fetched agents: {len(raw_agents)}", label)
 
     # Map Feedback.agent -> Agent.agentId (on-chain id), not Agent.id (entity id).
     agent_entity_ids = {a["agentId"] for a in raw_agents}
+    _log("Fetching feedbacks from subgraph", label)
     feedbacks_by_agent = fetch_all_feedbacks_by_agent(
         NetworkName(label),
         SubgraphQueryURL(subgraph_url),
@@ -907,6 +940,7 @@ def _process_one_network(
         agent_onchain_ids={str(x) for x in agent_entity_ids},
         per_agent_limit=20,
     )
+    _log(f"Feedback map built for {len(feedbacks_by_agent)} agents", label)
 
     def _transform(a: AgentRaw) -> AgentRecord:
         agent_entity_id = str(a["agentId"])
@@ -918,27 +952,32 @@ def _process_one_network(
     agents: AgentsList = [_transform(a) for a in raw_agents]
     compute_ranks(agents)
     agents.sort(key=lambda a: a["agentId"])
-    print(f"[{label}] Fetched {len(agents)} agents")
+    _log(f"Transformed and ranked {len(agents)} agents", label)
     enriched = deepcopy(original_data)
     enriched["agents"] = agents
     if isinstance(enriched.get("columns"), dict):
         enriched["columns"]["agents"] = list(AGENTS_COLUMNS)
     if not check_schema_validation(SCHEMA_VALIDATOR, enriched):
-        print(f"[{label}] ERROR: enriched data does not conform to schema, skipping write")
+        _log("ERROR: enriched data does not conform to schema, skipping write", label)
         return (label, path, original_data, None, len(agents))
+    elapsed = (datetime.now(timezone.utc) - started_at).total_seconds()
+    _log(f"DONE in {elapsed:.2f}s", label)
     return (label, path, original_data, enriched, len(agents))
 
 
 def process_all_networks() -> None:
+    started_at = datetime.now(timezone.utc)
+    _log("fetch_agents.py started")
     erc8004_api_key = _get_env("ERC8004_API_KEY")
     subgraph_ids = _parse_subgraph_ids()
     if not subgraph_ids:
-        print("ERC8004_SUBGRAPH_IDS is empty. Nothing to do.")
+        _log("ERC8004_SUBGRAPH_IDS is empty. Nothing to do.")
         return
     if not os.path.isdir("json"):
-        print("No 'json' directory found, nothing to enrich")
+        _log("No 'json' directory found, nothing to enrich")
         return
     workers = min(MAX_WORKERS, len(subgraph_ids))
+    _log(f"Networks to process: {len(subgraph_ids)} | workers: {workers}")
     with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {
             executor.submit(_process_one_network, label, entry, erc8004_api_key): label
@@ -948,14 +987,18 @@ def process_all_networks() -> None:
             try:
                 label, path, orig, enriched, count = future.result()
             except Exception as e:
-                print(f"[{futures[future]}] ERROR: {e}")
+                _log(f"ERROR: {e}", futures[future])
                 continue
             if enriched is not None and orig is not None and enriched != orig:
                 try:
                     save_json_file(path, enriched)
-                    print(f"[{label}] JSON updated with {count} agents")
+                    _log(f"JSON updated with {count} agents", label)
                 except Exception as e:
-                    print(f"[{label}] ERROR: failed to write enriched JSON: {e}")
+                    _log(f"ERROR: failed to write enriched JSON: {e}", label)
+            else:
+                _log("No JSON changes to write", label)
+    elapsed = (datetime.now(timezone.utc) - started_at).total_seconds()
+    _log(f"fetch_agents.py finished in {elapsed:.2f}s")
 
 
 def main() -> None:
