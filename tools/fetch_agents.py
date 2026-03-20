@@ -22,6 +22,8 @@ from copy import deepcopy
 from typing import Any, Dict, List, Optional, NewType, TypedDict, Tuple
 from urllib.parse import unquote_plus
 
+from typing_extensions import NotRequired
+
 import requests
 from jsonschema import Draft202012Validator
 from validate import check_schema_validation  # type: ignore
@@ -46,6 +48,9 @@ class AgentRaw(TypedDict):
     id: str
     agentId: str
     owner: str
+    # Present only when the deployed subgraph schema includes these fields.
+    creator: NotRequired[str]
+    creatorTx: NotRequired[str]
     agentURI: str
     agentURIType: str
     agentWallet: Optional[str]
@@ -68,6 +73,8 @@ class AgentRecord(TypedDict):
     supportedTrust: Optional[List[str]]
     registrationType: Optional[str]
     agentId: int
+    creator: NotRequired[str]
+    creatorTx: NotRequired[str]
     owner: str
     agentURI: str
     agentURIType: str
@@ -82,6 +89,7 @@ class AgentRecord(TypedDict):
     registeredAt: int
     updatedAt: int
     starred: bool
+    feedbacks: List["FeedbackItem"]
 
 
 AgentsList = List[AgentRecord]
@@ -89,6 +97,47 @@ AgentsList = List[AgentRecord]
 
 class GraphQLResponse(TypedDict):
     agents: List[AgentRaw]
+
+
+class FeedbackAgentRaw(TypedDict):
+    agentId: str
+
+
+class FeedbackItem(TypedDict):
+    id: str
+    isRevoked: bool
+    clientAddress: str
+    feedbackIndex: int
+    value: str
+    valueDecimals: int
+    normalizedValue: str
+    tag1: str
+    tag2: str
+    endpoint: str
+    feedbackURI: str
+    createdAt: int
+    createdBlock: int
+
+
+class FeedbackRaw(TypedDict):
+    id: str
+    agent: FeedbackAgentRaw
+    isRevoked: bool
+    clientAddress: str
+    feedbackIndex: int
+    value: str
+    valueDecimals: int
+    normalizedValue: str
+    tag1: str
+    tag2: str
+    endpoint: str
+    feedbackURI: str
+    createdAt: int
+    createdBlock: int
+
+
+class FeedbacksGraphQLResponse(TypedDict):
+    feedbacks: List[FeedbackRaw]
 
 
 JsonObject = Dict[str, Any]
@@ -115,6 +164,10 @@ AGENTS_RESPONSE_VALIDATOR = _load_validator(
     os.path.join(VALIDATION_DIR, "agents_response.schema.json")
 )
 
+FEEDBACKS_RESPONSE_VALIDATOR = _load_validator(
+    os.path.join(VALIDATION_DIR, "feedbacks_response.schema.json")
+)
+
 # ERC-8004 contract addresses (same on every EVM chain via CREATE2)
 IDENTITY_REGISTRY = "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
 REPUTATION_REGISTRY = "0x8004BAa17C55a88189AE136b182e5fdA19dE9b63"
@@ -135,6 +188,8 @@ AGENTS_COLUMNS = [
     "image",
     "active",
     "supportedTrust",
+    "creator",
+    "creatorTx",
     "owner",
     "agentURI",
     "agentURIType",
@@ -151,7 +206,11 @@ AGENTS_COLUMNS = [
 
 # Ranking quality profile fields ordered by impact in AGENTS_COLUMNS.
 # Earlier fields have larger penalties when missing.
-RANK_QUALITY_COLUMNS = [c for c in AGENTS_COLUMNS if c != "rank"]
+# `creator`/`creatorTx` are always present when the subgraph is healthy, so
+# excluding them avoids shifting rank weights.
+RANK_QUALITY_COLUMNS = [
+    c for c in AGENTS_COLUMNS if c not in {"rank", "creator", "creatorTx"}
+]
 
 # Strong penalties that enforce:
 # - missing name can never appear at the very top against named agents
@@ -163,7 +222,37 @@ MISSING_DESCRIPTION_RANK_PENALTY = 500.0
 # GraphQL query
 # ---------------------------------------------------------------------------
 
-AGENTS_QUERY = """
+# New fields in Agent schema are optional across different deployed subgraph versions.
+# So we need both query variants for backward compatibility.
+AGENTS_QUERY_WITH_CREATOR = """
+query FetchAgents($lastId: ID!) {
+  agents(
+    first: %d
+    where: { id_gt: $lastId }
+    orderBy: id
+    orderDirection: asc
+  ) {
+    id
+    agentId
+    owner
+    creator
+    creatorTx
+    agentURI
+    agentURIType
+    agentWallet
+    registeredAt
+    registeredBlock
+    updatedAt
+    totalFeedbackCount
+    activeFeedbackCount
+    feedbackValueSum
+    averageRating
+  }
+}
+""" % PAGE_SIZE
+
+
+AGENTS_QUERY_NO_CREATOR = """
 query FetchAgents($lastId: ID!) {
   agents(
     first: %d
@@ -184,6 +273,33 @@ query FetchAgents($lastId: ID!) {
     activeFeedbackCount
     feedbackValueSum
     averageRating
+  }
+}
+""" % PAGE_SIZE
+
+
+FEEDBACKS_QUERY = """
+query FetchFeedbacks($lastId: ID!) {
+  feedbacks(
+    first: %d
+    where: { id_gt: $lastId }
+    orderBy: id
+    orderDirection: asc
+  ) {
+    id
+    agent { agentId }
+    isRevoked
+    clientAddress
+    feedbackIndex
+    value
+    valueDecimals
+    normalizedValue
+    tag1
+    tag2
+    endpoint
+    feedbackURI
+    createdAt
+    createdBlock
   }
 }
 """ % PAGE_SIZE
@@ -446,10 +562,32 @@ def fetch_all_agents(
     all_agents: List[AgentRaw] = []
     last_id = ""
 
+    query_with_creator: Optional[str] = AGENTS_QUERY_WITH_CREATOR
+    query_no_creator: Optional[str] = AGENTS_QUERY_NO_CREATOR
+
+    # Detect subgraph schema capability once per network.
+    active_query: Optional[str] = query_with_creator
+
     while True:
+        if active_query is None:
+            # Should never happen, but keep it explicit.
+            return None
+
         try:
-            data = graphql_request(url, AGENTS_QUERY, {"lastId": last_id})
+            data = graphql_request(url, active_query, {"lastId": last_id})
         except RuntimeError as e:
+            msg = str(e)
+            # The common failure mode when fields don't exist yet in the deployed subgraph.
+            missing_fields = (
+                ("Cannot query field" in msg or "doesn't exist" in msg)
+                and ("creator" in msg or "creatorTx" in msg)
+            )
+            if active_query == query_with_creator and missing_fields:
+                print(
+                    f"[{network}] INFO: subgraph has no creator fields yet; retrying without creator/creatorTx"
+                )
+                active_query = query_no_creator
+                continue
             print(f"[{network}] WARNING: {e}")
             return None
 
@@ -486,7 +624,7 @@ def transform_agent(raw: AgentRaw, chain: NetworkName) -> AgentRecord:
     reg_data = _fetch_registration_json(agent_uri)
     reg = _extract_registration_fields(reg_data) if reg_data else _extract_registration_fields({})
     name = reg.get("name")
-    return {
+    out: AgentRecord = {
         "slug": _build_agent_slug(agent_id, name, str(chain)),
         "offer": name if name else f"Agent #{agent_id}",
         "name": name,
@@ -503,6 +641,8 @@ def transform_agent(raw: AgentRaw, chain: NetworkName) -> AgentRecord:
         "chain": chain,
         "identityRegistry": IDENTITY_REGISTRY,
         "reputationRegistry": REPUTATION_REGISTRY,
+        # Default aggregates from `agents` query.
+        # If we successfully parse Feedback entities, these will be overridden later.
         "totalFeedbackCount": int(raw["totalFeedbackCount"]),
         "activeFeedbackCount": int(raw["activeFeedbackCount"]),
         "averageRating": raw["averageRating"],
@@ -510,7 +650,102 @@ def transform_agent(raw: AgentRaw, chain: NetworkName) -> AgentRecord:
         "registeredAt": int(raw["registeredAt"]),
         "updatedAt": int(raw["updatedAt"]),
         "starred": False,
+        "feedbacks": [],
     }
+
+    # Backward compatible: older subgraph deployments won't have these fields.
+    if "creator" in raw:
+        # These are Bytes in the subgraph; Graph usually returns 0x-prefixed hex strings.
+        out["creator"] = raw["creator"]
+    if "creatorTx" in raw:
+        out["creatorTx"] = raw["creatorTx"]
+
+    return out
+
+
+def _coerce_int(v: Any, default: int = 0) -> int:
+    try:
+        return int(v)
+    except Exception:
+        return default
+
+
+def fetch_all_feedbacks_by_agent(
+    network: NetworkName,
+    subgraphQueryUrl: SubgraphQueryURL,
+    erc8004_api_key: str,
+    agent_onchain_ids: Optional[set[str]] = None,
+    per_agent_limit: int = 20,
+) -> Dict[str, List[FeedbackItem]]:
+    """
+    Scan Feedback entities and return per-agent feedback lists.
+
+    Returns mapping:
+      agentId -> [feedbackItem, ...]
+    """
+    url = _build_url(subgraphQueryUrl, erc8004_api_key)
+    feedbacks: Dict[str, List[FeedbackItem]] = {}
+    last_id = ""
+
+    while True:
+        try:
+            data = graphql_request(url, FEEDBACKS_QUERY, {"lastId": last_id})
+        except RuntimeError as e:
+            print(f"[{network}] WARNING: {e}")
+            return {}
+
+        errors = list(FEEDBACKS_RESPONSE_VALIDATOR.iter_errors(data))  # type: ignore
+        if errors:
+            first = errors[0]
+            print(f"[{network}] WARNING: feedback response schema mismatch")
+            print("  message:", first.message)
+            print("  path   :", list(first.absolute_path))
+            return {}
+
+        batch = data.get("feedbacks", [])
+        if not batch:
+            break
+
+        for fb in batch:
+            agent_id = str(fb["agent"]["agentId"])
+            if agent_onchain_ids is not None and agent_id not in agent_onchain_ids:
+                continue
+
+            if agent_id not in feedbacks:
+                feedbacks[agent_id] = []
+
+            item: FeedbackItem = {
+                "id": str(fb["id"]),
+                "isRevoked": bool(fb["isRevoked"]),
+                "clientAddress": str(fb["clientAddress"]),
+                "feedbackIndex": _coerce_int(fb["feedbackIndex"]),
+                "value": str(fb["value"]),
+                "valueDecimals": _coerce_int(fb["valueDecimals"]),
+                "normalizedValue": str(fb["normalizedValue"]),
+                "tag1": str(fb["tag1"]),
+                "tag2": str(fb["tag2"]),
+                "endpoint": str(fb["endpoint"]),
+                "feedbackURI": str(fb["feedbackURI"]),
+                "createdAt": _coerce_int(fb["createdAt"]),
+                "createdBlock": _coerce_int(fb["createdBlock"]),
+            }
+
+            if len(feedbacks[agent_id]) < per_agent_limit:
+                feedbacks[agent_id].append(item)
+                continue
+
+            # Keep only the latest feedbacks by `createdAt`.
+            # (We might see older entries after reaching the limit due to entity-id ordering.)
+            min_item = min(feedbacks[agent_id], key=lambda x: x["createdAt"])
+            if item["createdAt"] >= min_item["createdAt"]:
+                min_idx = feedbacks[agent_id].index(min_item)
+                feedbacks[agent_id][min_idx] = item
+
+        last_id = batch[-1]["id"]
+        if len(batch) < PAGE_SIZE:
+            break
+
+    return feedbacks
 
 
 # ---------------------------------------------------------------------------
@@ -659,7 +894,25 @@ def _process_one_network(
     raw_agents = fetch_all_agents(NetworkName(label), SubgraphQueryURL(subgraph_url), erc8004_api_key)
     if raw_agents is None:
         return (label, path, original_data, None, 0)
-    agents: AgentsList = [transform_agent(a, NetworkName(chain)) for a in raw_agents]
+
+    # Map Feedback.agent -> Agent.agentId (on-chain id), not Agent.id (entity id).
+    agent_entity_ids = {a["agentId"] for a in raw_agents}
+    feedbacks_by_agent = fetch_all_feedbacks_by_agent(
+        NetworkName(label),
+        SubgraphQueryURL(subgraph_url),
+        erc8004_api_key,
+        agent_onchain_ids={str(x) for x in agent_entity_ids},
+        per_agent_limit=20,
+    )
+
+    def _transform(a: AgentRaw) -> AgentRecord:
+        agent_entity_id = str(a["agentId"])
+        agent_feedbacks = feedbacks_by_agent.get(agent_entity_id, [])
+        agent = transform_agent(a, NetworkName(chain))
+        agent["feedbacks"] = agent_feedbacks
+        return agent
+
+    agents: AgentsList = [_transform(a) for a in raw_agents]
     compute_ranks(agents)
     agents.sort(key=lambda a: a["agentId"])
     print(f"[{label}] Fetched {len(agents)} agents")

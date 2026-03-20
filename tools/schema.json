@@ -839,6 +839,8 @@
         },
         "agentId": { "type": "integer" },
         "owner": { "type": "string" },
+        "creator": { "type": "string" },
+        "creatorTx": { "type": "string" },
         "agentURI": { "type": ["string", "null"] },
         "agentURIType": { "type": ["string", "null"] },
         "agentWallet": { "type": ["string", "null"] },
@@ -851,7 +853,44 @@
         "rank": { "type": "integer" },
         "registeredAt": { "type": "integer" },
         "updatedAt": { "type": "integer" },
-        "starred": { "type": "boolean" }
+        "starred": { "type": "boolean" },
+        "feedbacks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string" },
+              "isRevoked": { "type": "boolean" },
+              "clientAddress": { "type": "string" },
+              "feedbackIndex": { "type": ["string", "integer"] },
+              "value": { "type": "string" },
+              "valueDecimals": { "type": ["string", "integer"] },
+              "normalizedValue": { "type": "string" },
+              "tag1": { "type": "string" },
+              "tag2": { "type": "string" },
+              "endpoint": { "type": "string" },
+              "feedbackURI": { "type": "string" },
+              "createdAt": { "type": ["string", "integer"] },
+              "createdBlock": { "type": ["string", "integer"] }
+            },
+            "required": [
+              "id",
+              "isRevoked",
+              "clientAddress",
+              "feedbackIndex",
+              "value",
+              "valueDecimals",
+              "normalizedValue",
+              "tag1",
+              "tag2",
+              "endpoint",
+              "feedbackURI",
+              "createdAt",
+              "createdBlock"
+            ]
+          }
+        }
       },
       "required": [
         "slug",

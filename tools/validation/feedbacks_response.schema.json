@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ERC-8004 Feedbacks Subgraph Response (data object)",
+  "type": "object",
+  "properties": {
+    "feedbacks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "agent": {
+            "type": "object",
+            "properties": {
+              "agentId": { "type": ["string", "integer"] }
+            },
+            "required": ["agentId"],
+            "additionalProperties": false
+          },
+          "isRevoked": { "type": "boolean" },
+          "clientAddress": { "type": "string" },
+          "feedbackIndex": { "type": ["string", "integer"] },
+          "value": { "type": "string" },
+          "valueDecimals": { "type": ["string", "integer"] },
+          "normalizedValue": { "type": "string" },
+          "tag1": { "type": "string" },
+          "tag2": { "type": "string" },
+          "endpoint": { "type": "string" },
+          "feedbackURI": { "type": "string" },
+          "createdAt": { "type": ["string", "integer"] },
+          "createdBlock": { "type": ["string", "integer"] }
+        },
+        "required": [
+          "id",
+          "agent",
+          "isRevoked",
+          "clientAddress",
+          "feedbackIndex",
+          "value",
+          "valueDecimals",
+          "normalizedValue",
+          "tag1",
+          "tag2",
+          "endpoint",
+          "feedbackURI",
+          "createdAt",
+          "createdBlock"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["feedbacks"],
+  "additionalProperties": false
+}
