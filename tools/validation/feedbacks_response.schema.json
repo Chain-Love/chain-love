@@ -28,7 +28,28 @@
           "endpoint": { "type": "string" },
           "feedbackURI": { "type": "string" },
           "createdAt": { "type": ["string", "integer"] },
-          "createdBlock": { "type": ["string", "integer"] }
+          "createdBlock": { "type": ["string", "integer"] },
+          "responses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "responseURI": { "type": "string" },
+                "responseHash": { "type": "string" },
+                "createdAt": { "type": ["string", "integer"] },
+                "createdBlock": { "type": ["string", "integer"] }
+              },
+              "required": [
+                "id",
+                "responseURI",
+                "responseHash",
+                "createdAt",
+                "createdBlock"
+              ],
+              "additionalProperties": false
+            }
+          }
         },
         "required": [
           "id",

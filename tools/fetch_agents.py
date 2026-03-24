@@ -114,7 +114,15 @@ class FeedbackItem(TypedDict):
     tag1: str
     tag2: str
     endpoint: str
-    feedbackURI: str
+    createdAt: int
+    createdBlock: int
+    responses: List["FeedbackResponseItem"]
+
+
+class FeedbackResponseItem(TypedDict):
+    id: str
+    responseURI: str
+    responseHash: str
     createdAt: int
     createdBlock: int
 
@@ -132,6 +140,15 @@ class FeedbackRaw(TypedDict):
     tag2: str
     endpoint: str
     feedbackURI: str
+    createdAt: int
+    createdBlock: int
+    responses: List["FeedbackResponseRaw"]
+
+
+class FeedbackResponseRaw(TypedDict):
+    id: str
+    responseURI: str
+    responseHash: str
     createdAt: int
     createdBlock: int
 
@@ -300,9 +317,17 @@ query FetchFeedbacks($lastId: ID!) {
     feedbackURI
     createdAt
     createdBlock
+    responses(orderBy: createdAt, orderDirection: asc) {
+      id
+      responseURI
+      responseHash
+      createdAt
+      createdBlock
+    }
   }
 }
 """ % PAGE_SIZE
+
 
 # ---------------------------------------------------------------------------
 # Environment helpers
@@ -742,6 +767,19 @@ def fetch_all_feedbacks_by_agent(
             if agent_id not in feedbacks:
                 feedbacks[agent_id] = []
 
+            responses_raw = fb.get("responses", [])
+            responses: List[FeedbackResponseItem] = []
+            for response in responses_raw:
+                responses.append(
+                    {
+                        "id": str(response["id"]),
+                        "responseURI": str(response["responseURI"]),
+                        "responseHash": str(response["responseHash"]),
+                        "createdAt": _coerce_int(response["createdAt"]),
+                        "createdBlock": _coerce_int(response["createdBlock"]),
+                    }
+                )
+
             item: FeedbackItem = {
                 "id": str(fb["id"]),
                 "isRevoked": bool(fb["isRevoked"]),
@@ -756,6 +794,7 @@ def fetch_all_feedbacks_by_agent(
                 "feedbackURI": str(fb["feedbackURI"]),
                 "createdAt": _coerce_int(fb["createdAt"]),
                 "createdBlock": _coerce_int(fb["createdBlock"]),
+                "responses": responses,
             }
 
             if len(feedbacks[agent_id]) < per_agent_limit:
