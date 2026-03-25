@@ -37,19 +37,18 @@ def save_json(path: str, data: Any) -> None:
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
-def validate(data: Any) -> None:
+def main() -> None:
+    config: Config = load_config()
+
     schema_path = "schema.json"
     if not os.path.exists(schema_path):
         raise FileNotFoundError(f"Schema file not found: {schema_path}")
     
     schema = load_json(schema_path)
     validator = Draft202012Validator(schema)
-    check_schema_validation(validator, data)
-
-def main() -> None:
-    config: Config = load_config()
     
     for network_name in config:
+        print(f"Processing network: {network_name}")
         network_json_path = f"json/{network_name}.json"
         if not os.path.exists(network_json_path):
             raise FileNotFoundError(f"JSON file not found: {network_json_path}")
@@ -57,7 +56,8 @@ def main() -> None:
         network_json: Any = load_json(network_json_path)
         agents: Any = fetch_agents(network_name)
         network_json["agents"] = agents
-        validate(network_json)
+        if not check_schema_validation(validator, network_json):
+            raise ValueError(f"Schema validation failed for network: {network_name}")
         save_json(network_json_path, network_json)
 
 
