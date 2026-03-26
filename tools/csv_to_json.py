@@ -355,6 +355,35 @@ def get_column_order(base_categories: list[Category], extra_categories: list[Cat
     for category in base_categories + unique_extras:
         headers = get_csv_headers(category.path)
         category_columns[category.name] = headers
+    
+    # Hardcode columns order for automatically generated agents category
+    category_columns["agents"] = [
+        "slug",
+        "offer",
+        "name",
+        "rank",
+        "agentId",
+        "description",
+        "registrationType",
+        "averageRating",
+        "image",
+        "active",
+        "supportedTrust",
+        "creator",
+        "creatorTx",
+        "owner",
+        "agentURI",
+        "agentURIType",
+        "agentWallet",
+        "chain",
+        "identityRegistry",
+        "reputationRegistry",
+        "totalFeedbackCount",
+        "activeFeedbackCount",
+        "registeredAt",
+        "updatedAt",
+        "starred",
+    ]
 
     return category_columns
 
