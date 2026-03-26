@@ -48,23 +48,17 @@ def main() -> None:
     validator = Draft202012Validator(schema)
     
     for network_name in config:
-        try:
-            print(f"Processing network: {network_name}")
-            network_json_path = f"json/{network_name}.json"
-            if not os.path.exists(network_json_path):
-                print(f"Skipping {network_name}: JSON file not found: {network_json_path}")
-                continue
+        print(f"Processing network: {network_name}")
+        network_json_path = f"json/{network_name}.json"
+        if not os.path.exists(network_json_path):
+            raise FileNotFoundError(f"JSON file not found: {network_json_path}")
 
-            network_json: Any = load_json(network_json_path)
-            agents: Any = fetch_agents(network_name)
-            network_json["agents"] = agents
-            if not check_schema_validation(validator, network_json):
-                print(f"Skipping {network_name}: schema validation failed")
-                continue
-            save_json(network_json_path, network_json)
-        except Exception as exc:
-            print(f"Skipping {network_name}: {exc}")
-            continue
+        network_json: Any = load_json(network_json_path)
+        agents: Any = fetch_agents(network_name)
+        network_json["agents"] = agents
+        if not check_schema_validation(validator, network_json):
+            raise ValueError(f"Schema validation failed for network: {network_name}")
+        save_json(network_json_path, network_json)
 
 
 if __name__ == "__main__":
