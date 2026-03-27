@@ -1,0 +1,105 @@
+name: Build & Release JSON
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-release-json-main
+  cancel-in-progress: true
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      
+      - name: Checkout json-tools
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: json-tools
+          path: json-tools
+      
+      - name: Copy scripts
+        run: |
+          cp json-tools/tools/csv_to_json.py .
+          cp json-tools/tools/fetch_agents.py .
+          cp json-tools/tools/enrich_verified_metrics.py .
+          cp json-tools/tools/validate.py .
+          cp json-tools/tools/schema.json .
+          cp -r json-tools/tools/validation .
+          cp json-tools/tools/update_sdks_metadata_*.py .
+          cp -r json-tools/meta .
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r json-tools/tools/requirements.txt
+      
+      - name: Run full pipeline
+        env:
+          ERC8004_API_KEY: ${{ secrets.ERC8004_API_KEY }}
+          ERC8004_SUBGRAPH_IDS: ${{ vars.ERC8004_SUBGRAPH_IDS }}
+          VERIFIED_API_TOKEN: ${{ secrets.VERIFIED_API_TOKEN }}
+          SLA_MONITORING_SUBGRAPH_URL: ${{ secrets.SLA_MONITORING_SUBGRAPH_URL }}
+          GRAPH_API_KEY: ${{ secrets.GRAPH_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python csv_to_json.py
+          python3 enrich_verified_metrics.py
+          python3 fetch_agents.py
+          python3 update_sdks_metadata_github.py --jsonfile all
+          python3 update_sdks_metadata_npm.py --jsonfile all
+          python3 update_sdks_metadata_gitlab.py --jsonfile all --fallback-to-tags
+      
+      - name: Prepare assets
+        run: |
+          mkdir -p release-assets
+          cp json/*.json release-assets/
+      
+      - name: Compute checksum
+        id: checksum
+        run: |
+          sha=$(find release-assets -type f -exec sha256sum {} \; | sort | sha256sum | cut -d' ' -f1)
+          echo "sha=$sha" >> $GITHUB_OUTPUT
+      
+      - name: Get last release checksum
+        id: last
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          last=$(gh release list --limit 1 --json name -q '.[0].name' || true)
+          echo "last=$last" >> $GITHUB_OUTPUT
+      
+      - name: Skip if no changes
+        if: steps.last.outputs.last == steps.checksum.outputs.sha
+        run: |
+          echo "No changes detected"
+          exit 0
+      
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="json-$(date +%Y%m%d-%H%M%S)"
+          gh release create "$tag" release-assets/* \
+            --title "${{ steps.checksum.outputs.sha }}" \
+            --notes "Automated JSON release"
