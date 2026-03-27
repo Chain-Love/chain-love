@@ -462,6 +462,15 @@
           "items": { "type": "string" }
         },
         "hasDashboard": { "type": "boolean" },
+        "historicalData": { 
+          "type": "string", 
+          "examples": [
+            "1 month",
+            "2 years",
+            "3 weeks",
+            "5 years"
+          ]
+        },
         "availableApis": {
           "type": ["array", "null"],
           "items": { "type": "string" }
