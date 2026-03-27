@@ -40,7 +40,7 @@ def load_network_json(path: str) -> NetworkData:
 
 
 def write_tar(network: str, data: NetworkData) -> None:
-    tar_path: str = os.path.join(JSON_DIR, f"{network}.ndjson.tar")
+    tar_path: str = os.path.join(JSON_DIR, f"{network}-ndjson.tar")
 
     with tarfile.open(tar_path, "w") as tar:
         for category, items in data.items():
