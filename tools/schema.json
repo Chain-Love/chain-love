@@ -462,6 +462,15 @@
           "items": { "type": "string" }
         },
         "hasDashboard": { "type": "boolean" },
+        "historicalData": {
+          "type": ["string", "null"],
+          "examples": [
+            "1 month",
+            "3 years",
+            "2 weeks",
+            "5 years"
+          ]
+        },
         "availableApis": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -492,6 +501,7 @@
         "chain",
         "dataSources",
         "hasDashboard",
+        "historicalData",
         "availableApis",
         "price",
         "starred",
