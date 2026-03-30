@@ -75,7 +75,7 @@ jobs:
       - name: Prepare assets
         run: |
           mkdir -p release-assets
-          cp json/*.json release-assets/
+          cp json/* release-assets/
       
       - name: Compute checksum
         id: checksum
