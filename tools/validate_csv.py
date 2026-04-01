@@ -2,6 +2,9 @@ from pathlib import Path
 from typing import Iterator, Callable, List, Dict
 import os
 import csv
+import re
+
+URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
 
 Rule = Callable[[Path, List[Dict[str, str]]], List[str]]
 
@@ -47,6 +50,34 @@ def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
 
     return errors
 
+def looks_like_url(v: str) -> bool:
+    return v.startswith("http://") or v.startswith("https://")
+
+def rule_links_must_be_quoted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    errors: List[str] = []
+    delimiter: str = ","
+
+    with path.open(newline="", encoding="utf-8") as f:
+        lines = f.readlines()
+    
+    if not lines:
+        return []
+    
+    for raw_line in lines:
+        line = raw_line.rstrip("\r\n")
+        parts = line.split(delimiter)
+        for i, cell in enumerate(parts):
+            cell = cell.strip()
+            if (
+                not (cell.startswith('"') and cell.endswith('"'))
+                and looks_like_url(cell)
+            ):
+                errors.append(
+                    f"{path}: row {lines.index(raw_line) + 1}: column {i + 1}: URL '{cell}' must be quoted"
+                )
+
+    return errors
+
 def iter_csv_files(root: Path) -> Iterator[Path]:
     for dirpath, _, filenames in os.walk(root):
         for name in sorted(filenames):
@@ -58,6 +89,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
 

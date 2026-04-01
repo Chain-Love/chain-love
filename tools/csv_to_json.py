@@ -355,6 +355,35 @@ def get_column_order(base_categories: list[Category], extra_categories: list[Cat
     for category in base_categories + unique_extras:
         headers = get_csv_headers(category.path)
         category_columns[category.name] = headers
+    
+    # Hardcode columns order for automatically generated agents category
+    category_columns["agents"] = [
+        "slug",
+        "offer",
+        "name",
+        "rank",
+        "agentId",
+        "description",
+        "registrationType",
+        "averageRating",
+        "image",
+        "active",
+        "supportedTrust",
+        "creator",
+        "creatorTx",
+        "owner",
+        "agentURI",
+        "agentURIType",
+        "agentWallet",
+        "chain",
+        "identityRegistry",
+        "reputationRegistry",
+        "totalFeedbackCount",
+        "activeFeedbackCount",
+        "registeredAt",
+        "updatedAt",
+        "starred",
+    ]
 
     return category_columns
 
@@ -522,6 +551,7 @@ def collect_used_provider_names(data_by_category: dict[str, list[dict]]) -> set[
 def build_provider_meta_from_names(
     provider_by_name: dict[str, dict],
     provider_categories: dict[str, set[str]],
+    network: str,
 ) -> dict[str, dict]:
     meta = {}
 
@@ -561,31 +591,25 @@ def build_provider_meta_from_names(
         # Case 2: provider is not in CSV
         # ─────────────────────────────
         else:
-            warnings.warn(
-                f"Provider '{name}' is used in categories {categories_list} "
-                f"but is missing from references/providers/providers.csv",
-                RuntimeWarning,
+            all_network_paths = "\n".join(
+                f"  - listings/all-networks/{c}.csv" for c in categories_list
             )
-
-            slug = name.lower().replace(" ", "-")
-
-            meta[slug] = {
-                "slug": slug,
-                "name": name,
-                "logoPath": None,
-                "description": None,
-                "website": None,
-                "docs": None,
-                "x": None,
-                "github": None,
-                "discord": None,
-                "telegram": None,
-                "linkedin": None,
-                "supportEmail": None,
-                "starred": False,
-                "tag": None,
-                "categories": categories_list,
-            }
+            specific_network_paths = "\n".join(
+                f"  - listings/specific-networks/{network}/{c}.csv" for c in categories_list
+            )
+            references_paths = "\n".join(
+                f"  - references/offers/{c}.csv (most likely source)" for c in categories_list
+            )
+            raise ValueError(
+                f"Provider '{name}' is missing in references/providers/providers.csv.\n"
+                f"This provider is referenced in one of the following files:\n"
+                f"{references_paths}\n"
+                f"{all_network_paths}\n"
+                f"{specific_network_paths}\n\n"
+                f"Action required:\n"
+                f"  1. Add a provider entry with name '{name}' to references/providers/providers.csv, or\n"
+                f"  2. Remove or correct the provider name in the files listed above.\n"
+            )
 
     return meta
 
@@ -643,10 +667,16 @@ def main():
         # 2) Merge/replace with all-networks listings
         chains = set()
         for category, entities in result.items():
-            if not entities or not entities[0].get("chain"):
+            if not entities or "chain" not in entities[0]:
                 continue
-            chains.update([entity['chain'].lower() for entity in entities])
-        
+            for entity in entities:
+                if not entity.get("chain"):
+                    print(f"ERROR: Network-specific chain-aware offer has no populated 'chain' value. Offending offer: network '{network_name}', category '{category}', slug '{entity.get('slug')}'")
+                    exit(1)
+                chains.update([entity['chain'].lower()])
+
+        chains = sorted(chains)
+
         for category, entities in global_listings.items():
             rows = list(entities)
             if len(entities) > 0 and "chain" in entities[0]:
@@ -699,6 +729,7 @@ def main():
         provider_meta = build_provider_meta_from_names(
             provider_by_name,
             provider_categories,
+            network=network_name,
         )
 
         result["meta"] = {

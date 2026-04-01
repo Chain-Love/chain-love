@@ -19,10 +19,12 @@
     "faucets": { "type": "array", "items": { "$ref": "#/$defs/faucets" } },
     "analytics": { "type": "array", "items": { "$ref": "#/$defs/analytics" } },
     "wallets": { "type": "array", "items": { "$ref": "#/$defs/wallets" } },
+    "mcpservers": { "type": "array", "items": { "$ref": "#/$defs/mcpservers" } },
     "sdks": { "type": "array", "items": { "$ref": "#/$defs/sdks" } },
     "ramps": { "type": "array", "items": { "$ref": "#/$defs/ramps" } },
     "platforms": { "type": "array", "items": { "$ref": "#/$defs/platforms" } },
     "security": { "type": "array", "items": { "$ref": "#/$defs/security" } },
+    "agents": { "type": "array", "items": { "$ref": "#/$defs/agents" } },
     "columns": { "$ref": "#/$defs/columns" },
     "meta": { "$ref": "#/$defs/meta" }
   },
@@ -33,7 +35,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "planName": { "type": ["string", "null"] },
         "planType": {
           "type": "string",
@@ -48,10 +50,7 @@
         },
         "apiType": {
           "type": "string",
-          "examples": [
-            "RPC",
-            "Indexed Data"
-          ]
+          "examples": ["RPC", "Indexed Data"]
         },
         "chain": { "type": "string" },
         "address": { "type": ["string", "null"] },
@@ -89,10 +88,7 @@
         "supportSla": { "type": ["string", "null"] },
         "technology": {
           "type": "string",
-          "examples": [
-            "EVM JSON-RPC",
-            "The Graph"
-          ]
+          "examples": ["EVM JSON-RPC", "The Graph"]
         },
         "additionalFeatures": {
           "type": ["array", "null"],
@@ -100,10 +96,7 @@
         },
         "historicalData": {
           "type": "string",
-          "examples": [
-            "Pruned",
-            "Archive"
-          ]
+          "examples": ["Pruned", "Archive"]
         },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
@@ -144,7 +137,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "chain": { "type": "string" },
         "technology": { "type": "string" },
         "monitoringAndAnalytics": {
@@ -199,7 +192,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "chain": { "type": "string" },
         "technology": { "type": "string" },
         "starred": { "type": "boolean" },
@@ -259,7 +252,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "chain": { "type": "string" },
         "technology": { "type": "string" },
         "openSource": { "type": "boolean" },
@@ -335,7 +328,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "toolType": { "type": "string" },
         "price": { "type": ["string", "null"] },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
@@ -378,7 +371,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "toolType": { "type": "string" },
         "price": { "type": ["string", "null"] },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
@@ -420,7 +413,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "chain": { "type": "string" },
         "requiresLogin": { "type": "boolean" },
         "hasCaptcha": { "type": "boolean" },
@@ -462,13 +455,22 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "chain": { "type": "string" },
         "dataSources": {
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
         "hasDashboard": { "type": "boolean" },
+        "historicalData": {
+          "type": ["string", "null"],
+          "examples": [
+            "1 month",
+            "3 years",
+            "2 weeks",
+            "5 years"
+          ]
+        },
         "availableApis": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -499,6 +501,7 @@
         "chain",
         "dataSources",
         "hasDashboard",
+        "historicalData",
         "availableApis",
         "price",
         "starred",
@@ -514,7 +517,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "openSource": { "type": "boolean" },
         "supportedPlatforms": {
           "type": ["array", "null"],
@@ -572,13 +575,64 @@
       ]
     },
 
+    "mcpservers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "offer": { "type": ["string", "null"] },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "serverType": { "type": "string" },
+        "hostingType": { "type": "string" },
+        "transportType": { "type": "string" },
+        "mcpEndpoint": { "type": ["string", "null"] },
+        "authType": { "type": "string" },
+        "x402": { "type": "boolean" },
+        "onChainWrite": { "type": "boolean" },
+        "agentSkills": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "planType": { "type": "string" },
+        "planName": { "type": ["string", "null"] },
+        "price": { "type": ["string", "null"] },
+        "trial": { "type": "boolean" },
+        "starred": { "type": "boolean" }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "serverType",
+        "hostingType",
+        "transportType",
+        "mcpEndpoint",
+        "authType",
+        "x402",
+        "onChainWrite",
+        "agentSkills",
+        "tag",
+        "description",
+        "planType",
+        "price",
+        "trial",
+        "starred"
+      ]
+    },
+
     "sdks": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -589,9 +643,14 @@
         "description": { "type": ["string", "null"] },
         "planName": { "type": ["string", "null"] },
         "planType": {
-          "oneOf": [
-            { "type": "string", "enum": ["Free", "Pay-as-you-go", "Enterprise", "Dedicated", "Tiered", "One-time payment"] },
-            { "type": "string" }
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
           ]
         },
         "price": { "type": ["string", "null"] },
@@ -632,7 +691,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -671,7 +730,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -680,9 +739,14 @@
         "description": { "type": ["string", "null"] },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
         "planType": {
-          "oneOf": [
-            { "type": "string", "enum": ["Free", "Pay-as-you-go", "Enterprise", "Dedicated", "Tiered", "One-time payment"] },
-            { "type": "string" }
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
           ]
         },
         "planName": { "type": ["string", "null"] },
@@ -716,7 +780,7 @@
       "properties": {
         "slug": { "type": "string" },
         "provider": { "type": "string" },
-        "offer": {"type": ["string", "null"]},
+        "offer": { "type": ["string", "null"] },
         "actionButtons": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -768,6 +832,113 @@
         "compliance"
       ]
     },
+    "agents": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "offer": { "type": ["string", "null"] },
+        "name": { "type": ["string", "null"] },
+        "description": { "type": ["string", "null"] },
+        "image": { "type": ["string", "null"] },
+        "active": { "type": ["boolean", "null"] },
+        "registrationType": { "type": ["string", "null"] },
+        "supportedTrust": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "agentId": { "type": "integer" },
+        "owner": { "type": "string" },
+        "creator": { "type": "string" },
+        "creatorTx": { "type": "string" },
+        "agentURI": { "type": ["string", "null"] },
+        "agentURIType": { "type": ["string", "null"] },
+        "agentWallet": { "type": ["string", "null"] },
+        "chain": { "type": "string" },
+        "identityRegistry": { "type": "string" },
+        "reputationRegistry": { "type": "string" },
+        "totalFeedbackCount": { "type": "integer" },
+        "activeFeedbackCount": { "type": "integer" },
+        "averageRating": { "type": "string" },
+        "rank": { "type": "integer" },
+        "registeredAt": { "type": "integer" },
+        "updatedAt": { "type": "integer" },
+        "starred": { "type": "boolean" },
+        "feedbacks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string" },
+              "isRevoked": { "type": "boolean" },
+              "clientAddress": { "type": "string" },
+              "feedbackIndex": { "type": ["string", "integer"] },
+              "value": { "type": "string" },
+              "valueDecimals": { "type": ["string", "integer"] },
+              "normalizedValue": { "type": "string" },
+              "tag1": { "type": "string" },
+              "tag2": { "type": "string" },
+              "endpoint": { "type": "string" },
+              "feedbackURI": { "type": "string" },
+              "createdAt": { "type": ["string", "integer"] },
+              "createdBlock": { "type": ["string", "integer"] },
+              "responses": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": { "type": "string" },
+                    "responseURI": { "type": "string" },
+                    "responseHash": { "type": "string" },
+                    "createdAt": { "type": ["string", "integer"] },
+                    "createdBlock": { "type": ["string", "integer"] }
+                  },
+                  "required": [
+                    "id",
+                    "responseURI",
+                    "responseHash",
+                    "createdAt",
+                    "createdBlock"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "isRevoked",
+              "clientAddress",
+              "feedbackIndex",
+              "value",
+              "valueDecimals",
+              "normalizedValue",
+              "tag1",
+              "tag2",
+              "endpoint",
+              "feedbackURI",
+              "createdAt",
+              "createdBlock"
+            ]
+          }
+        }
+      },
+      "required": [
+        "slug",
+        "offer",
+        "agentId",
+        "owner",
+        "chain",
+        "identityRegistry",
+        "reputationRegistry",
+        "totalFeedbackCount",
+        "activeFeedbackCount",
+        "averageRating",
+        "registeredAt",
+        "updatedAt",
+        "starred"
+      ]
+    },
     "columns": {
       "type": "object",
       "additionalProperties": false,
@@ -779,12 +950,14 @@
         "faucets": { "type": "array", "items": { "type": "string" } },
         "analytics": { "type": "array", "items": { "type": "string" } },
         "wallets": { "type": "array", "items": { "type": "string" } },
+        "mcpservers": { "type": "array", "items": { "type": "string" } },
         "services": { "type": "array", "items": { "type": "string" } },
         "ramps": { "type": "array", "items": { "type": "string" } },
         "storages": { "type": "array", "items": { "type": "string" } },
         "sdks": { "type": "array", "items": { "type": "string" } },
         "platforms": { "type": "array", "items": { "type": "string" } },
-        "security": { "type": "array", "items": { "type": "string" } }
+        "security": { "type": "array", "items": { "type": "string" } },
+        "agents": { "type": "array", "items": { "type": "string" } }
       }
     },
     "meta": {
@@ -820,7 +993,8 @@
         "key": { "type": "string" },
         "label": { "type": "string" },
         "icon": { "type": ["string", "null"] },
-        "description": { "type": ["string", "null"] }
+        "description": { "type": ["string", "null"] },
+        "defaultSorting": { "type": ["string", "null"] }
       }
     },
     "columnMeta": {
@@ -836,7 +1010,8 @@
         "filter": { "type": ["string", "null"] },
         "sorting": { "type": ["string", "null"] },
         "pinning": { "type": ["string", "null"] },
-        "cellType": { "type": ["string", "null"] }
+        "cellType": { "type": ["string", "null"] },
+        "group": { "type": ["string", "null"] }
       }
     },
     "providerMeta": {
@@ -875,10 +1050,12 @@
               "faucets",
               "analytics",
               "wallets",
+              "mcpservers",
               "sdks",
               "ramps",
               "platforms",
-              "security"
+              "security",
+              "agents"
             ]
           },
           "uniqueItems": true,
