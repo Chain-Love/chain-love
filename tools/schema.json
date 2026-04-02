@@ -591,6 +591,16 @@
         "transportType": { "type": "string" },
         "mcpEndpoint": { "type": ["string", "null"] },
         "authType": { "type": "string" },
+        "credentialKey": { "type": ["string", "null"] },
+        "selfHostedCommand": { "type": ["string", "null"] },
+        "selfHostedArgs": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "selfHostedRequiredEnvVars": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
         "x402": { "type": "boolean" },
         "onChainWrite": { "type": "boolean" },
         "agentSkills": {
@@ -614,6 +624,10 @@
         "transportType",
         "mcpEndpoint",
         "authType",
+        "credentialKey",
+        "selfHostedCommand",
+        "selfHostedArgs",
+        "selfHostedRequiredEnvVars",
         "x402",
         "onChainWrite",
         "agentSkills",
