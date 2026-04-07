@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-          fetch-depth: 1
+          fetch-depth: 0
       
       - name: Materialize PR additions only
         if: github.event_name == 'pull_request'
@@ -30,9 +30,14 @@ jobs:
       
           base = os.environ["GITHUB_BASE_REF"]
           subprocess.run(["git","fetch","origin",base], check=True)
+
+          merge_base = subprocess.check_output(
+              ["git", "merge-base", f"origin/{base}", "HEAD"],
+              text=True
+          ).strip()
       
           diff = subprocess.check_output(
-              ["git","diff","--unified=0",f"origin/{base}..HEAD"],
+              ["git","diff","--unified=0",f"{merge_base}..HEAD"],
               text=True
           )
       
@@ -50,6 +55,79 @@ jobs:
               if lines:
                   Path(f).parent.mkdir(parents=True, exist_ok=True)
                   Path(f).write_text("\n".join(lines) + "\n")
+          PY
+      
+      - name: Replace each CSV file with extracted links
+        run: |
+          python3 - <<'PY'
+          import csv
+          import re
+          from pathlib import Path
+          
+          url_re = re.compile(r'https?://[^\s,"\'>)]+')
+          
+          def clean(v: str) -> str:
+              v = (v or "").strip()
+              if v.startswith("@"):
+                  v = v[1:]
+              return v.strip()
+          
+          def provider_handle_to_url(platform: str, value: str) -> str:
+              raw = (value or "").strip()
+              if not raw:
+                  return ""
+          
+              if raw.startswith(("http://", "https://")):
+                  return raw
+          
+              v = clean(raw)
+              if not v:
+                  return ""
+          
+              if platform == "x":
+                  return f"https://x.com/{v}"
+              if platform == "github":
+                  return f"https://github.com/{v}"
+              if platform == "discord":
+                  return f"https://discord.gg/{v}"
+              if platform == "telegram":
+                  return f"https://t.me/{v}"
+              if platform == "linkedin":
+                  return f"https://www.linkedin.com/in/{v}"
+          
+              return ""
+          
+          def unique(seq: list[str]) -> list[str]:
+              seen: set[str] = set()
+              out: list[str] = []
+              for item in seq:
+                  if item and item not in seen:
+                      seen.add(item)
+                      out.append(item)
+              return out
+          
+          for path in Path(".").rglob("*.csv"):
+              if not path.is_file() or ".git" in path.parts:
+                  continue
+          
+              content = path.read_text(encoding="utf-8", errors="ignore")
+              links = url_re.findall(content)
+          
+              if path.as_posix() == "references/providers/providers.csv":
+                  with path.open(newline="", encoding="utf-8", errors="ignore") as f:
+                      reader = csv.DictReader(f)
+                      for row in reader:
+                          for col in ("x", "github", "discord", "telegram", "linkedin"):
+                              url = provider_handle_to_url(col, row.get(col, ""))
+                              if url:
+                                  links.append(url)
+          
+              links = unique(links)
+          
+              path.write_text(
+                  ("\n".join(links) + "\n") if links else "",
+                  encoding="utf-8"
+              )
           PY
 
       - name: Run Lychee on CSV files
