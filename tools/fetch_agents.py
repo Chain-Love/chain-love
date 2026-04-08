@@ -24,7 +24,7 @@ def load_config() -> Config:
     return config
 
 def fetch_agents(network_name: NetworkName) -> Any:
-    url: str = f"https://app.chain.love/agents?network={network_name}"
+    url: str = f"https://app.chain.love/agents-json?network={network_name}"
     res = requests.get(url)
     res.raise_for_status()
     return res.json()
