@@ -41,6 +41,7 @@ jobs:
           cp json-tools/tools/validate.py .
           cp json-tools/tools/schema.json .
           cp json-tools/tools/create_ndjson.py .
+          cp json-tools/tools/generate_release_index.py .
           cp -r json-tools/tools/validation .
           cp json-tools/tools/update_sdks_metadata_*.py .
           cp -r json-tools/meta .
@@ -97,11 +98,24 @@ jobs:
           echo "No changes detected"
           exit 0
       
+      - name: Generate tag
+        id: tag
+        run: |
+          tag="json-$(date +%Y%m%d-%H%M%S)"
+          echo "tag=$tag" >> $GITHUB_OUTPUT
+
+      - name: Generate release index
+        env:
+          RELEASE_TAG: ${{ steps.tag.outputs.tag }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python generate_release_index.py
+      
       - name: Create release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ steps.tag.outputs.tag }}
         run: |
-          tag="json-$(date +%Y%m%d-%H%M%S)"
-          gh release create "$tag" release-assets/* \
+          gh release create "$RELEASE_TAG" release-assets/* \
             --title "${{ steps.checksum.outputs.sha }}" \
             --notes "Automated JSON release"
