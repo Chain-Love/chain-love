@@ -7,3 +7,13 @@ This directory contains concrete listing instances (e.g. this folder answers the
 
 Listings are the final node in the model:
 `provider -> offer -> listing`.
+
+## Adding a new network
+
+A complete new network contribution includes:
+
+1. A new folder under `specific-networks/<network>/` with the category CSV files.
+2. **Chain logo PNG files** inside that folder — one per unique `chain` value used in
+   the CSVs (e.g. `mainnet.png`, `testnet.png`). Transparent background required.
+
+See [`specific-networks/README.md`](specific-networks/README.md) for the full image spec.

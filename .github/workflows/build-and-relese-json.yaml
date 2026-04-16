@@ -41,6 +41,8 @@ jobs:
           cp json-tools/tools/validate.py .
           cp json-tools/tools/schema.json .
           cp json-tools/tools/create_ndjson.py .
+          cp json-tools/tools/generate_release_index.py .
+          cp json-tools/tools/create_sqlite.py .
           cp -r json-tools/tools/validation .
           cp json-tools/tools/update_sdks_metadata_*.py .
           cp -r json-tools/meta .
@@ -71,24 +73,33 @@ jobs:
           python3 update_sdks_metadata_npm.py --jsonfile all
           python3 update_sdks_metadata_gitlab.py --jsonfile all --fallback-to-tags
           python3 create_ndjson.py
+          python3 create_sqlite.py
       
       - name: Prepare assets
         run: |
           mkdir -p release-assets
-          cp json/*.json release-assets/
+          cp json/* release-assets/
       
       - name: Compute checksum
         id: checksum
         run: |
           sha=$(find release-assets -type f -exec sha256sum {} \; | sort | sha256sum | cut -d' ' -f1)
           echo "sha=$sha" >> $GITHUB_OUTPUT
+          echo "$sha" > release-assets/checksum.txt
       
       - name: Get last release checksum
         id: last
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          last=$(gh release list --limit 1 --json name -q '.[0].name' || true)
+          url=$(gh release view --json assets -q '.assets[]? | select(.name=="checksum.txt") | .url' || true)
+
+          if [ -z "$url" ]; then
+            echo "last=" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          last=$(curl -s -H "Authorization: token $GH_TOKEN" "$url" | tr -d '\n')
           echo "last=$last" >> $GITHUB_OUTPUT
       
       - name: Skip if no changes
@@ -97,11 +108,24 @@ jobs:
           echo "No changes detected"
           exit 0
       
+      - name: Generate tag
+        id: tag
+        run: |
+          tag="json-$(date +%Y%m%d-%H%M%S)"
+          echo "tag=$tag" >> $GITHUB_OUTPUT
+
+      - name: Generate release index
+        env:
+          RELEASE_TAG: ${{ steps.tag.outputs.tag }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python generate_release_index.py
+      
       - name: Create release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ steps.tag.outputs.tag }}
         run: |
-          tag="json-$(date +%Y%m%d-%H%M%S)"
-          gh release create "$tag" release-assets/* \
-            --title "${{ steps.checksum.outputs.sha }}" \
+          gh release create "$RELEASE_TAG" release-assets/* \
+            --title "$RELEASE_TAG" \
             --notes "Automated JSON release"

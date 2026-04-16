@@ -191,43 +191,6 @@ def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
 
-def rewrite_urls(repo_root: Path, delimiter: str = ",") -> None:
-    print("Rewriting CSV URL cells")
-
-    for csv_file in iter_csv(repo_root):
-        newline_style = detect_newline(csv_file)
-
-        with csv_file.open("r", newline="") as f:
-            lines = f.readlines()
-
-        if not lines:
-            continue
-
-        out_lines: list[str] = []
-
-        for raw_line in lines:
-            line = raw_line.rstrip("\r\n")
-
-            parts = line.split(delimiter)
-
-            for i, cell in enumerate(parts):
-                cell = cell.strip()
-
-                if (
-                    not (cell.startswith('"') and cell.endswith('"'))
-                    and looks_like_url(cell)
-                ):
-                    parts[i] = f'"{cell}"'
-
-            out_lines.append(delimiter.join(parts) + newline_style)
-
-        with csv_file.open("w", newline="") as f:
-            f.writelines(out_lines)
-
-        subprocess.run(["git", "add", str(csv_file)], check=True)
-        print(f"  rewritten: {csv_file}")
-
-
 def main() -> None:
     ensure_tool_exists("git")
     ensure_tool_exists("tar")
@@ -235,7 +198,6 @@ def main() -> None:
     # Sort CSV files
     real_root = get_repo_root()
     sort_csv_by_slug(real_root)
-    rewrite_urls(real_root)
 
     with tempfile.TemporaryDirectory(prefix="precommit-root-") as tmp:
         tmp_root = Path(tmp)

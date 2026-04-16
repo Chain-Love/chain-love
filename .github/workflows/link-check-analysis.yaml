@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-          fetch-depth: 1
+          fetch-depth: 0
       
       - name: Materialize PR additions only
         if: github.event_name == 'pull_request'
@@ -30,9 +30,14 @@ jobs:
       
           base = os.environ["GITHUB_BASE_REF"]
           subprocess.run(["git","fetch","origin",base], check=True)
+
+          merge_base = subprocess.check_output(
+              ["git", "merge-base", f"origin/{base}", "HEAD"],
+              text=True
+          ).strip()
       
           diff = subprocess.check_output(
-              ["git","diff","--unified=0",f"origin/{base}..HEAD"],
+              ["git","diff","--unified=0",f"{merge_base}..HEAD"],
               text=True
           )
       

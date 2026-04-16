@@ -28,6 +28,8 @@ Before editing data, read the Style Guide:
 | Add/update reusable offer (product/plan) | `references/offers/<category>.csv` |
 | Add/update an offer on one chain | `listings/specific-networks/<network>/<category>.csv` |
 | Add/update entries for every chain | `listings/all-networks/<category>.csv` |
+| Add a new network | `listings/specific-networks/<network>/` — CSV files **and** chain logo PNGs (see below) |
+| Add/update chain logo for a network | `listings/specific-networks/<network>/<chain>.png` |
 
 ## How references work
 
@@ -45,6 +47,20 @@ Before editing data, read the Style Guide:
 - Use full URLs for `website` and `docs`.
 - For platform columns with known domains (`x`, `github`, `discord`, `telegram`, `linkedin`), store only the part after the domain.
   - Example: `https://github.com/Chain-Love/chain-love` -> `Chain-Love/chain-love`
+
+## Chain logo images
+
+Each `listings/specific-networks/<network>/` folder contains PNG logo files named after
+the `chain` values used in that network's CSVs (for example `mainnet.png`, `testnet.png`).
+
+When adding a new network or a CSV that introduces a new `chain` value, include the
+corresponding `<chain>.png` in the same PR.
+
+Requirements:
+- PNG format, transparent background, square aspect ratio, 160–500 px per side.
+- No solid-colour backgrounds (white, black, etc.).
+- See [`listings/specific-networks/README.md`](listings/specific-networks/README.md) for
+  the full spec and logo source suggestions.
 
 ## Contribution workflow
 
