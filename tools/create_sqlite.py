@@ -62,15 +62,15 @@ class Table:
 
     def create_sql(self) -> str:
         cols = ",\n  ".join(
-            f"{c.name} {c.type}{'' if c.nullable else ' NOT NULL'}"
+            f'"{c.name}" {c.type}{"" if c.nullable else " NOT NULL"}'
             for c in self.columns
         )
         return f"CREATE TABLE IF NOT EXISTS {self.name} (\n  {cols}\n);"
 
     def index_sql(self) -> List[str]:
         return [
-            f"CREATE INDEX IF NOT EXISTS idx_{self.name}_{col.name} "
-            f"ON {self.name} ({col.name});"
+            f'CREATE INDEX IF NOT EXISTS idx_{self.name}_{col.name} '
+            f'ON {self.name} ("{col.name}");'
             for col in self.columns
         ]
 
@@ -140,6 +140,60 @@ def build_tables(schema: JSONSchemaRoot) -> List[Table]:
 
     return tables
 
+
+def build_meta_tables() -> List[Table]:
+    return [
+        Table(
+            "__meta_categories",
+            [
+                Column("network", "TEXT", False),
+                Column("key", "TEXT", False),
+                Column("label", "TEXT", True),
+                Column("icon", "TEXT", True),
+                Column("description", "TEXT", True),
+                Column("columns_order", "TEXT", True),
+                Column("position", "INTEGER", False),
+            ],
+        ),
+        Table(
+            "__meta_columns",
+            [
+                Column("network", "TEXT", False),
+                Column("key", "TEXT", False),
+                Column("label", "TEXT", True),
+                Column("icon", "TEXT", True),
+                Column("description", "TEXT", True),
+                Column("filter", "TEXT", True),
+                Column("sorting", "TEXT", True),
+                Column("pinning", "TEXT", True),
+                Column("cellType", "TEXT", True),
+                Column("group", "TEXT", True),
+            ],
+        ),
+        Table(
+            "__meta_providers",
+            [
+                Column("network", "TEXT", False),
+                Column("slug", "TEXT", False),
+                Column("name", "TEXT", True),
+                Column("logoPath", "TEXT", True),
+                Column("description", "TEXT", True),
+                Column("website", "TEXT", True),
+                Column("docs", "TEXT", True),
+                Column("x", "TEXT", True),
+                Column("github", "TEXT", True),
+                Column("discord", "TEXT", True),
+                Column("telegram", "TEXT", True),
+                Column("linkedin", "TEXT", True),
+                Column("supportEmail", "TEXT", True),
+                Column("starred", "INTEGER", True),
+                Column("tag", "TEXT", True),
+                Column("categories", "TEXT", True),
+                Column("key", "TEXT", True),
+            ],
+        ),
+    ]
+
 # =========================
 # NDJSON
 # =========================
@@ -168,7 +222,8 @@ def insert_batch(conn: sqlite3.Connection, table: Table, rows: List[Dict]):
     cols = [c.name for c in table.columns]
     placeholders = ",".join(["?"] * len(cols))
 
-    sql = f"INSERT INTO {table.name} ({','.join(cols)}) VALUES ({placeholders})"
+    quoted_cols = ",".join(f'"{c}"' for c in cols)
+    sql = f'INSERT INTO {table.name} ({quoted_cols}) VALUES ({placeholders})'
 
     values = [
         [normalize_value(row.get(col)) for col in cols]
@@ -212,7 +267,7 @@ def compress_db(db_path: Path, output_dir: Path):
 
 def main():
     schema = load_schema()
-    tables = build_tables(schema)
+    tables = build_tables(schema) + build_meta_tables()
     table_map = {t.name: t for t in tables}
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -242,8 +297,68 @@ def main():
             print(f"Processing {network}")
 
             with tarfile.open(archive, "r:gz") as tar:
+
+                # --- collect columns/*.json ---
+                columns_map: Dict[str, List[str]] = {}
                 for member in tar.getmembers():
-                    if not member.name.endswith(".ndjson"):
+                    if member.name.startswith("columns/") and member.name.endswith(".json"):
+                        f = tar.extractfile(member)
+                        if not f:
+                            continue
+                        category = Path(member.name).stem
+                        columns_map[category] = json.load(f)
+
+                # --- process meta/*.ndjson ---
+                meta_tables = {
+                    "categories": table_map["__meta_categories"],
+                    "columns": table_map["__meta_columns"],
+                    "providers": table_map["__meta_providers"],
+                }
+
+                category_position = 0
+
+                for member in tar.getmembers():
+                    if not member.name.startswith("meta/") or not member.name.endswith(".ndjson"):
+                        continue
+
+                    name = Path(member.name).stem
+                    table = meta_tables.get(name)
+                    if not table:
+                        continue
+
+                    f = tar.extractfile(member)
+                    if not f:
+                        continue
+
+                    batch_global: List[Dict] = []
+                    batch_network: List[Dict] = []
+
+                    for obj in stream_ndjson(f):
+                        obj["network"] = network
+
+                        if name == "categories":
+                            key = obj.get("key")
+                            if key and key in columns_map:
+                                obj["columns_order"] = columns_map[key]
+
+                            obj["position"] = category_position
+                            category_position += 1
+
+                        batch_global.append(obj)
+                        batch_network.append(obj)
+
+                        if len(batch_global) >= BATCH_SIZE:
+                            insert_batch(global_conn, table, batch_global)
+                            insert_batch(get_network_conn(network), table, batch_network)
+                            batch_global.clear()
+                            batch_network.clear()
+
+                    insert_batch(global_conn, table, batch_global)
+                    insert_batch(get_network_conn(network), table, batch_network)
+
+                # --- process data tables ---
+                for member in tar.getmembers():
+                    if not member.name.endswith(".ndjson") or member.name.startswith("meta/"):
                         continue
 
                     table_name = Path(member.name).name.replace(".ndjson", "")
