@@ -152,6 +152,7 @@ def build_meta_tables() -> List[Table]:
                 Column("icon", "TEXT", True),
                 Column("description", "TEXT", True),
                 Column("columns_order", "TEXT", True),
+                Column("position", "INTEGER", False),
             ],
         ),
         Table(
@@ -314,6 +315,8 @@ def main():
                     "providers": table_map["__meta_providers"],
                 }
 
+                category_position = 0
+
                 for member in tar.getmembers():
                     if not member.name.startswith("meta/") or not member.name.endswith(".ndjson"):
                         continue
@@ -337,6 +340,9 @@ def main():
                             key = obj.get("key")
                             if key and key in columns_map:
                                 obj["columns_order"] = columns_map[key]
+
+                            obj["position"] = category_position
+                            category_position += 1
 
                         batch_global.append(obj)
                         batch_network.append(obj)
