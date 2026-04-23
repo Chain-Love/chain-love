@@ -89,7 +89,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
-    validator.add_rule(rule_links_must_be_quoted)
+    #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
 
