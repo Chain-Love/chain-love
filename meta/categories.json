@@ -1,45 +1,22 @@
 {
-  "apis": {
-    "key": "apis",
-    "label": "APIs",
-    "icon": "lucide:Server",
-    "description": "Servers that connect to blockchain and send transactions fast, and services to search, filter, and access structured blockchain data."
-  },
-  "explorers": {
-    "key": "explorers",
-    "label": "Explorers",
-    "icon": "lucide:Binoculars",
-    "description": "Tools to view transactions, blocks, and addresses in real time."
-  },
-  "oracles": {
-    "key": "oracles",
-    "label": "Oracles",
-    "icon": "lucide:Waypoints",
-    "description": "Services that bring external data into blockchain for smart contracts."
-  },
-  "bridges": {
-    "key": "bridges",
-    "label": "Bridges",
-    "icon": "lucide:BringToFront",
-    "description": "Tools for transferring tokens and data across different blockchains."
-  },
-  "services": {
-    "key": "services",
-    "label": "Services",
-    "icon": "lucide:ChartNetwork",
-    "description": "Development platforms, tools, and services for developers."
-  },
   "mcpservers": {
     "key": "mcpservers",
     "label": "MCP Servers",
     "icon": "lucide:Cpu",
     "description": "Model Context Protocol servers for AI-agent interactions with Web3 data and on-chain actions."
   },
-  "sdks": {
-    "key": "sdks",
-    "label": "SDKs",
-    "icon": "lucide:CodeXml",
-    "description": "SDKs, frameworks, and libraries for developers."
+  "agents": {
+    "key": "agents",
+    "label": "Agents",
+    "icon": "lucide:Bot",
+    "description": "ERC-8004 on-chain AI agents with identity and reputation.",
+    "defaultSorting": "rank"
+  },
+  "ramps": {
+    "key": "ramps",
+    "label": "Ramps",
+    "icon": "lucide:ArrowLeftRight",
+    "description": "On/off-ramp providers for fiat and crypto."
   },
   "faucets": {
     "key": "faucets",
@@ -59,17 +36,47 @@
     "icon": "lucide:WalletMinimal",
     "description": "Apps to store, send, and interact with tokens and DApps."
   },
+  "explorers": {
+    "key": "explorers",
+    "label": "Explorers",
+    "icon": "lucide:Binoculars",
+    "description": "Tools to view transactions, blocks, and addresses in real time."
+  },
+  "apis": {
+    "key": "apis",
+    "label": "APIs",
+    "icon": "lucide:Server",
+    "description": "Servers that connect to blockchain and send transactions fast, and services to search, filter, and access structured blockchain data."
+  },
+  "oracles": {
+    "key": "oracles",
+    "label": "Oracles",
+    "icon": "lucide:Waypoints",
+    "description": "Services that bring external data into blockchain for smart contracts."
+  },
+  "bridges": {
+    "key": "bridges",
+    "label": "Bridges",
+    "icon": "lucide:BringToFront",
+    "description": "Tools for transferring tokens and data across different blockchains."
+  },
+  "services": {
+    "key": "services",
+    "label": "Services",
+    "icon": "lucide:ChartNetwork",
+    "description": "Development platforms, tools, and services for developers."
+  },
+  "sdks": {
+    "key": "sdks",
+    "label": "SDKs",
+    "icon": "lucide:CodeXml",
+    "description": "SDKs, frameworks, and libraries for developers."
+  },
   "platforms": {
     "key": "platforms",
     "label": "Platforms",
     "icon": "lucide:LayoutGrid",
     "description": "Infrastructure platforms and stacks."
-  },
-  "ramps": {
-    "key": "ramps",
-    "label": "Ramps",
-    "icon": "lucide:ArrowLeftRight",
-    "description": "On/off-ramp providers for fiat and crypto."
   },
   "security": {
     "key": "security",
@@ -82,12 +89,5 @@
     "label": "Storages",
     "icon": "lucide:Database",
     "description": "Storage providers and data layers."
-  },
-  "agents": {
-    "key": "agents",
-    "label": "Agents",
-    "icon": "lucide:Bot",
-    "description": "ERC-8004 on-chain AI agents with identity and reputation.",
-    "defaultSorting": "rank"
   }
 }
