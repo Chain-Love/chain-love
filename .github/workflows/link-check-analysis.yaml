@@ -46,7 +46,13 @@ jobs:
               if l.startswith("+++ b/"): cur = l[6:]
               elif cur and l.startswith("+") and not l.startswith("+++"):
                   files[cur].append(l[1:])
-      
+          
+          headers = {}
+          for f in files:
+              if Path(f).exists():
+                  with open(f) as fp:
+                      headers[f] = fp.readline().rstrip("\n")
+          
           for p in Path(".").iterdir():
               if p.name != ".git":
                   subprocess.run(["rm","-rf",str(p)])
@@ -54,7 +60,8 @@ jobs:
           for f, lines in files.items():
               if lines:
                   Path(f).parent.mkdir(parents=True, exist_ok=True)
-                  Path(f).write_text("\n".join(lines) + "\n")
+                  content = ([headers[f]] if f in headers else []) + lines
+                  Path(f).write_text("\n".join(content) + "\n")
           PY
       
       - name: Replace each CSV file with extracted links
