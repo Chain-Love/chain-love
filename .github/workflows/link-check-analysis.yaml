@@ -144,6 +144,7 @@ jobs:
           failIfEmpty: false
           args: >
             --extensions csv
+            --method GET
             --accept 200,204,400,401,403,405,429
             --timeout 5
             --no-progress
