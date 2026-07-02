@@ -193,6 +193,40 @@ def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
+def validate_specific_network_chain_logos(repo_root: Path) -> None:
+    """
+    Require a sibling PNG for each chain value used by a specific network.
+    """
+    print("Validating specific-network chain logos")
+
+    specific_networks_root = repo_root / "listings" / "specific-networks"
+    errors: list[str] = []
+
+    for network_dir in sorted(p for p in specific_networks_root.iterdir() if p.is_dir()):
+        chains: set[str] = set()
+
+        for csv_file in sorted(network_dir.glob("*.csv")):
+            with csv_file.open("r", newline="") as f:
+                reader = csv.DictReader(f)
+                if not reader.fieldnames or "chain" not in reader.fieldnames:
+                    continue
+
+                for row in reader:
+                    chain = (row.get("chain") or "").strip()
+                    if chain:
+                        chains.add(chain)
+
+        for chain in sorted(chains):
+            logo_path = network_dir / f"{chain}.png"
+            if not logo_path.exists():
+                errors.append(str(logo_path.relative_to(repo_root)))
+
+    if errors:
+        die(
+            "Each specific-network chain value must have a sibling PNG logo:\n"
+            "  - " + "\n  - ".join(errors)
+        )
+
 def offer_reference_slug(value: str | None) -> str | None:
     value = (value or "").strip()
 
@@ -281,6 +315,7 @@ def main() -> None:
     # Sort CSV files
     real_root = get_repo_root()
     sort_csv_by_slug(real_root)
+    validate_specific_network_chain_logos(real_root)
     validate_offer_reference_categories(real_root)
 
     with tempfile.TemporaryDirectory(prefix="precommit-root-") as tmp:
