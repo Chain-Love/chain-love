@@ -259,6 +259,44 @@ def build_offer_category_index(repo_root: Path) -> dict[str, set[str]]:
 
     return dict(categories_by_slug)
 
+def validate_offer_references_resolve(repo_root: Path) -> None:
+    """
+    Ensure every listing !offer reference points at a known offer slug.
+    """
+    print("Validating offer references resolve")
+
+    valid_offer_slugs = set(build_offer_category_index(repo_root))
+    errors: list[str] = []
+
+    for csv_file in sorted((repo_root / "listings").rglob("*.csv")):
+        with csv_file.open("r", newline="") as f:
+            reader = csv.DictReader(f)
+            if not reader.fieldnames or "offer" not in reader.fieldnames:
+                continue
+
+            for line_number, row in enumerate(reader, start=2):
+                offer_slug = offer_reference_slug(row.get("offer"))
+                if not offer_slug or offer_slug in valid_offer_slugs:
+                    continue
+
+                row_slug = (row.get("slug") or "").strip()
+                relative_path = csv_file.relative_to(repo_root)
+                row_hint = f" slug={row_slug}" if row_slug else ""
+                errors.append(
+                    f"{relative_path}:{line_number}{row_hint} references "
+                    f"unknown {OFFER_REFERENCE_PREFIX}{offer_slug}"
+                )
+
+    if errors:
+        visible_errors = errors[:50]
+        if len(errors) > len(visible_errors):
+            visible_errors.append(f"... and {len(errors) - len(visible_errors)} more")
+
+        die(
+            "Listing offer references must resolve to references/offers slugs:\n"
+            "  - " + "\n  - ".join(visible_errors)
+        )
+
 def validate_offer_reference_categories(repo_root: Path) -> None:
     """
     Ensure category listings hydrate offers from a matching category file.
@@ -316,6 +354,7 @@ def main() -> None:
     real_root = get_repo_root()
     sort_csv_by_slug(real_root)
     validate_specific_network_chain_logos(real_root)
+    validate_offer_references_resolve(real_root)
     validate_offer_reference_categories(real_root)
 
     with tempfile.TemporaryDirectory(prefix="precommit-root-") as tmp:
