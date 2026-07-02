@@ -8,6 +8,7 @@ import sys
 import tarfile
 import tempfile
 import urllib.request
+from collections import defaultdict
 from pathlib import Path
 from typing import Iterable
 import csv
@@ -32,6 +33,8 @@ SCRIPTS = [
     "csv_to_json.py",
     "validate.py",
 ]
+
+OFFER_REFERENCE_PREFIX = "!offer:"
 
 # ──────────────────────────────────────
 # Helpers
@@ -190,6 +193,158 @@ def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
+def validate_specific_network_chain_logos(repo_root: Path) -> None:
+    """
+    Require a sibling PNG for each chain value used by a specific network.
+    """
+    print("Validating specific-network chain logos")
+
+    specific_networks_root = repo_root / "listings" / "specific-networks"
+    errors: list[str] = []
+
+    for network_dir in sorted(p for p in specific_networks_root.iterdir() if p.is_dir()):
+        chains: set[str] = set()
+
+        for csv_file in sorted(network_dir.glob("*.csv")):
+            with csv_file.open("r", newline="") as f:
+                reader = csv.DictReader(f)
+                if not reader.fieldnames or "chain" not in reader.fieldnames:
+                    continue
+
+                for row in reader:
+                    chain = (row.get("chain") or "").strip()
+                    if chain:
+                        chains.add(chain)
+
+        for chain in sorted(chains):
+            logo_path = network_dir / f"{chain}.png"
+            if not logo_path.exists():
+                errors.append(str(logo_path.relative_to(repo_root)))
+
+    if errors:
+        die(
+            "Each specific-network chain value must have a sibling PNG logo:\n"
+            "  - " + "\n  - ".join(errors)
+        )
+
+def offer_reference_slug(value: str | None) -> str | None:
+    value = (value or "").strip()
+
+    if not value.startswith(OFFER_REFERENCE_PREFIX):
+        return None
+
+    slug = value[len(OFFER_REFERENCE_PREFIX):].strip()
+    return slug or None
+
+def build_offer_category_index(repo_root: Path) -> dict[str, set[str]]:
+    """
+    Map each offer slug to every category CSV that defines it.
+
+    Some offers are intentionally represented in more than one category file
+    with category-specific columns, so the validator must preserve all matches
+    instead of letting later files overwrite earlier ones.
+    """
+    categories_by_slug: dict[str, set[str]] = defaultdict(set)
+
+    for csv_file in sorted((repo_root / "references" / "offers").rglob("*.csv")):
+        with csv_file.open("r", newline="") as f:
+            reader = csv.DictReader(f)
+            if not reader.fieldnames or "slug" not in reader.fieldnames:
+                continue
+
+            for row in reader:
+                slug = (row.get("slug") or "").strip()
+                if slug:
+                    categories_by_slug[slug].add(csv_file.name)
+
+    return dict(categories_by_slug)
+
+def validate_offer_references_resolve(repo_root: Path) -> None:
+    """
+    Ensure every listing !offer reference points at a known offer slug.
+    """
+    print("Validating offer references resolve")
+
+    valid_offer_slugs = set(build_offer_category_index(repo_root))
+    errors: list[str] = []
+
+    for csv_file in sorted((repo_root / "listings").rglob("*.csv")):
+        with csv_file.open("r", newline="") as f:
+            reader = csv.DictReader(f)
+            if not reader.fieldnames or "offer" not in reader.fieldnames:
+                continue
+
+            for line_number, row in enumerate(reader, start=2):
+                offer_slug = offer_reference_slug(row.get("offer"))
+                if not offer_slug or offer_slug in valid_offer_slugs:
+                    continue
+
+                row_slug = (row.get("slug") or "").strip()
+                relative_path = csv_file.relative_to(repo_root)
+                row_hint = f" slug={row_slug}" if row_slug else ""
+                errors.append(
+                    f"{relative_path}:{line_number}{row_hint} references "
+                    f"unknown {OFFER_REFERENCE_PREFIX}{offer_slug}"
+                )
+
+    if errors:
+        visible_errors = errors[:50]
+        if len(errors) > len(visible_errors):
+            visible_errors.append(f"... and {len(errors) - len(visible_errors)} more")
+
+        die(
+            "Listing offer references must resolve to references/offers slugs:\n"
+            "  - " + "\n  - ".join(visible_errors)
+        )
+
+def validate_offer_reference_categories(repo_root: Path) -> None:
+    """
+    Ensure category listings hydrate offers from a matching category file.
+
+    Missing offer slugs are left to the dedicated dangling-reference check;
+    this guardrail only validates resolved offer references.
+    """
+    print("Validating offer reference categories")
+
+    categories_by_slug = build_offer_category_index(repo_root)
+    errors: list[str] = []
+
+    for csv_file in sorted((repo_root / "listings").rglob("*.csv")):
+        with csv_file.open("r", newline="") as f:
+            reader = csv.DictReader(f)
+            if not reader.fieldnames or "offer" not in reader.fieldnames:
+                continue
+
+            listing_category = csv_file.name
+
+            for line_number, row in enumerate(reader, start=2):
+                offer_slug = offer_reference_slug(row.get("offer"))
+                if not offer_slug:
+                    continue
+
+                offer_categories = categories_by_slug.get(offer_slug)
+                if not offer_categories:
+                    continue
+
+                if listing_category not in offer_categories:
+                    relative_path = csv_file.relative_to(repo_root)
+                    resolved = ", ".join(sorted(offer_categories))
+                    errors.append(
+                        f"{relative_path}:{line_number} references "
+                        f"{OFFER_REFERENCE_PREFIX}{offer_slug}, which is defined in "
+                        f"{resolved} but not {listing_category}"
+                    )
+
+    if errors:
+        visible_errors = errors[:50]
+        if len(errors) > len(visible_errors):
+            visible_errors.append(f"... and {len(errors) - len(visible_errors)} more")
+
+        die(
+            "Offer references must resolve to an offer defined in the same "
+            "category CSV:\n  - " + "\n  - ".join(visible_errors)
+        )
+
 
 def main() -> None:
     ensure_tool_exists("git")
@@ -198,6 +353,9 @@ def main() -> None:
     # Sort CSV files
     real_root = get_repo_root()
     sort_csv_by_slug(real_root)
+    validate_specific_network_chain_logos(real_root)
+    validate_offer_references_resolve(real_root)
+    validate_offer_reference_categories(real_root)
 
     with tempfile.TemporaryDirectory(prefix="precommit-root-") as tmp:
         tmp_root = Path(tmp)
