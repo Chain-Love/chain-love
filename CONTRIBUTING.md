@@ -1,5 +1,8 @@
 # Contributing to Chain.Love
 
+
+! **We recommend using "Contributor" wizard available at https://app.chain.love/contributor.**
+
 This repository is intentionally CSV-first so contributors can edit data in spreadsheet tools without programming knowledge.
 
 ## Start here (required)
@@ -92,8 +95,6 @@ Platform-specific install links:
 
 - Python: <https://www.python.org/downloads/>
 - pipx: <https://pipx.pypa.io/stable/installation/>
-
-Alternatively - consider using "Contributor" wizard - click "+ Add provider" at any network's Toolbox (e.g. https://filecoin.chain.love)
 
 ## Reporting issues
 
