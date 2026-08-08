@@ -4,20 +4,24 @@ import json
 from jsonschema import Draft202012Validator
 from jsonpointer import resolve_pointer
 import copy
+from pathlib import Path
 
 class Validator:
     def __init__(self):
         self.rules = []
 
-    def add_rule(self, rule_func):
+    def add_rule(self, rule_func, *, with_context=False):
         """Add a new validation rule function."""
-        self.rules.append(rule_func)
+        self.rules.append((rule_func, with_context))
 
-    def validate(self, data):
+    def validate(self, data, context=None):
         """Run all registered validation rules."""
         errors = []
-        for rule in self.rules:
-            errors.extend(rule(data))
+        for rule, with_context in self.rules:
+            if with_context:
+                errors.extend(rule(data, context))
+            else:
+                errors.extend(rule(data))
         return errors
 
 def rule_slug_unique(data):
@@ -93,6 +97,142 @@ def rule_chain_is_lowercase(data):
             continue
         if not item["chain"].islower():
             errors.append(f"Item {idx}: chain must be lowercase: want '{item['chain'].lower()}', got '{item['chain']}'. Please check all categories for the current network.")
+    return errors
+
+
+CHAIN_VALIDATION_ALLOWLIST_PATH = Path(__file__).with_name("chain_validation_allowlist.json")
+CHAIN_SIGNAL_TOKENS = (
+    "mainnet",
+    "testnet",
+    "devnet",
+    "sepolia",
+    "hoodi",
+    "calibnet",
+    "fuji",
+    "goerli",
+    "holesky",
+    "nova",
+    "one",
+    "pulsar",
+)
+CHAIN_SIGNAL_RE = re.compile(
+    r"(?<![a-z0-9])(?:" + "|".join(CHAIN_SIGNAL_TOKENS) + r")(?![a-z0-9])",
+    re.IGNORECASE,
+)
+MAINNET_CHAIN_ALIASES = {"mainnet", "one", "nova"}
+TESTNET_CHAIN_ALIASES = {
+    "testnet",
+    "devnet",
+    "sepolia",
+    "hoodi",
+    "calibnet",
+    "fuji",
+    "goerli",
+    "holesky",
+    "pulsar",
+}
+
+
+def load_chain_validation_allowlist(path=CHAIN_VALIDATION_ALLOWLIST_PATH):
+    """Load exact network/slug exceptions for intentional cross-network rows."""
+    if not path.exists():
+        return set()
+
+    with path.open("r", encoding="utf-8") as f:
+        payload = json.load(f)
+
+    entries = payload.get("entries", {}) if isinstance(payload, dict) else payload
+    if isinstance(entries, dict):
+        if not all(
+            isinstance(key, str) and isinstance(reason, str) and reason.strip()
+            for key, reason in entries.items()
+        ):
+            raise ValueError(
+                f"{path}: every 'entries' key must map to a non-empty reason"
+            )
+        return set(entries)
+    if isinstance(entries, list) and all(isinstance(entry, str) for entry in entries):
+        return set(entries)
+    raise ValueError(
+        f"{path}: expected an 'entries' object mapping exact keys to reasons"
+    )
+
+
+def _chain_signals_from_text(value):
+    if not isinstance(value, str):
+        return set()
+    return {match.group(0).lower() for match in CHAIN_SIGNAL_RE.finditer(value)}
+
+
+def _url_signals(item):
+    signals = set()
+
+    def visit(value):
+        if isinstance(value, str):
+            if "http://" in value.lower() or "https://" in value.lower():
+                signals.update(_chain_signals_from_text(value))
+        elif isinstance(value, list):
+            for child in value:
+                visit(child)
+        elif isinstance(value, dict):
+            for child in value.values():
+                visit(child)
+
+    for key, value in item.items():
+        if key != "slug":
+            visit(value)
+    return signals
+
+
+def _chain_matches_signal(chain, signal):
+    if chain == signal:
+        return True
+    if signal == "mainnet":
+        return chain in MAINNET_CHAIN_ALIASES
+    if signal == "testnet":
+        return chain in TESTNET_CHAIN_ALIASES
+    return False
+
+
+def rule_chain_values_consistent(data, context=None):
+    """Reject obvious slug/URL chain contradictions in a generated network file."""
+    context = context or {}
+    network_name = context.get("network")
+    allowlist = context.get("allowlist", set())
+    errors = []
+
+    # Offer/reference tables are validated separately and do not have a
+    # specific-network folder context to compare against.
+    if not network_name:
+        return errors
+
+    for idx, item in enumerate(data):
+        chain = item.get("chain")
+        slug = item.get("slug")
+        if not isinstance(chain, str) or not isinstance(slug, str):
+            continue
+
+        allowlist_key = f"{network_name}/{slug}"
+        if allowlist_key in allowlist:
+            continue
+
+        slug_signals = _chain_signals_from_text(slug)
+        signals = slug_signals or _url_signals(item)
+        if not signals:
+            continue
+
+        normalized_chain = chain.strip().lower()
+        if any(_chain_matches_signal(normalized_chain, signal) for signal in signals):
+            continue
+
+        expected = ", ".join(sorted(signals))
+        errors.append(
+            f"Item {idx}: chain '{chain}' conflicts with network signal(s) "
+            f"[{expected}] in '{slug}' for '{network_name}'. "
+            "Correct the chain value or add the exact '<network>/<slug>' key "
+            "to tools/chain_validation_allowlist.json with a documented reason."
+        )
+
     return errors
 
 def has_unclosed_markdown(s: str) -> bool:
@@ -211,7 +351,7 @@ def check_schema_validation(schema_validator, data) -> bool:
 
     return len(errors) == 0
 
-def check_rules_validation(rules_validator, data) -> bool:
+def check_rules_validation(rules_validator, data, context=None) -> bool:
     """
     Validate a given set of data against a set of rules.
 
@@ -226,7 +366,7 @@ def check_rules_validation(rules_validator, data) -> bool:
     for category in data.keys():
         if category in ("columns", "schemaVersion", "meta"):
             continue
-        errors = rules_validator.validate(data[category])
+        errors = rules_validator.validate(data[category], context=context)
         for err in errors:
             had_errors = True
             print(f"Error validating {category}: {err}")
@@ -245,8 +385,10 @@ def check_rules_validation(rules_validator, data) -> bool:
 
     return not had_errors
 
-def check_validation(data, schema_validator, rules_validator) -> bool:
-    return check_schema_validation(schema_validator, data) and check_rules_validation(rules_validator, data)
+def check_validation(data, schema_validator, rules_validator, context=None) -> bool:
+    return check_schema_validation(schema_validator, data) and check_rules_validation(
+        rules_validator, data, context=context
+    )
 
 def load_csv_folder(folder) -> dict:
     from csv_to_json import load_csv_to_dict_list, normalize
@@ -291,6 +433,8 @@ def main():
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
     rules.add_rule(rule_chain_is_lowercase)
+    rules.add_rule(rule_chain_values_consistent, with_context=True)
+    chain_validation_allowlist = load_chain_validation_allowlist()
 
     # Validate networks
     validator = Draft202012Validator(schema)
@@ -299,7 +443,16 @@ def main():
         data = None
         with open(f"json/{network_spec}", "r") as f:
             data = json.load(f)
-        if not check_validation(data=data, schema_validator=validator, rules_validator=rules):
+        context = {
+            "network": Path(network_spec).stem,
+            "allowlist": chain_validation_allowlist,
+        }
+        if not check_validation(
+            data=data,
+            schema_validator=validator,
+            rules_validator=rules,
+            context=context,
+        ):
             had_errors = True
 
     # Validate providers
