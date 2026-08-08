@@ -11,7 +11,14 @@ However, schema/meta changes in this branch must be mirrored in data tables on `
 
 ### Wallet and write metadata
 
-The `walletConnection` column uses `none`, `optional`, `required`, or `unknown` to describe whether a connected user wallet is needed for the advertised capabilities. `onChainWrite` is a nullable boolean: `TRUE` means the offer can execute state-changing on-chain actions and `FALSE` means it cannot. Leave either field blank when the authoritative source does not establish the value; do not infer it from a product name or category. These fields are optional so existing tables and network-specific overrides remain valid during incremental backfills.
+The `walletConnection` column uses `none`, `optional`, `required`, or `unknown`
+to describe whether normal documented use of an offer needs a connected user
+wallet. Use `unknown` only after reviewing the source and finding it unclear;
+leave the cell blank when the row has not been reviewed for this field yet.
+`onChainWrite` records whether the documented offer can execute state-changing
+on-chain actions. Do not infer either field from a product name or category.
+The new fields are optional for services and platforms so existing tables and
+network-specific overrides remain valid during incremental backfills.
 
 ---
 
@@ -566,6 +573,6 @@ When asked to **remove a column**, an agent should:
   - Leave `meta/columns.json` unchanged.
   - On `main`, remove the column from that category’s CSV files (see **§5**).
 - **§5 Scenario 2** (column key removed everywhere):
-- Edit `tools/schema.json`: remove the column from every `$defs.<category>` where it appears.
-- Remove its entry from `meta/columns.json`.
-- On `main`, remove the column from every affected category CSV (see **§5**).
+  - Edit `tools/schema.json`: remove the column from every `$defs.<category>` where it appears.
+  - Remove its entry from `meta/columns.json`.
+  - On `main`, remove the column from every affected category CSV (see **§5**).
