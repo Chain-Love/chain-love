@@ -1026,9 +1026,20 @@
     "key": "onChainWrite",
     "label": "On-Chain Write",
     "icon": "lucide:PenSquare",
-    "description": "Whether MCP tools can execute state-changing on-chain actions.",
+    "description": "Whether the offer can execute state-changing on-chain actions; leave blank when the source does not establish this.",
     "filter": "select",
     "sorting": "boolean",
+    "pinning": null,
+    "cellType": null,
+    "group": "capabilities"
+  },
+  "walletConnection": {
+    "key": "walletConnection",
+    "label": "Wallet Connection",
+    "icon": "lucide:WalletCards",
+    "description": "Whether a connected user wallet is unnecessary, optional, required, or not documented for the advertised capabilities.",
+    "filter": "select",
+    "sorting": "string",
     "pinning": null,
     "cellType": null,
     "group": "capabilities"

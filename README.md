@@ -9,6 +9,10 @@ This guide explains how to **add new categories and columns for the Chain.Love p
 Data files are not documented in detail in this guide. Their structure and contribution flow are described in the `main` branch README: [README.md](https://github.com/Chain-Love/chain-love/blob/main/README.md).  
 However, schema/meta changes in this branch must be mirrored in data tables on `main` (for example when adding/removing categories or columns).
 
+### Wallet and write metadata
+
+The `walletConnection` column uses `none`, `optional`, `required`, or `unknown` to describe whether a connected user wallet is needed for the advertised capabilities. `onChainWrite` is a nullable boolean: `TRUE` means the offer can execute state-changing on-chain actions and `FALSE` means it cannot. Leave either field blank when the authoritative source does not establish the value; do not infer it from a product name or category. These fields are optional so existing tables and network-specific overrides remain valid during incremental backfills.
+
 ---
 
 ## 1. Files and responsibilities
@@ -562,7 +566,6 @@ When asked to **remove a column**, an agent should:
   - Leave `meta/columns.json` unchanged.
   - On `main`, remove the column from that category’s CSV files (see **§5**).
 - **§5 Scenario 2** (column key removed everywhere):
-  - Edit `tools/schema.json`: remove the column from every `$defs.<category>` where it appears.
-  - Remove its entry from `meta/columns.json`.
-  - On `main`, remove the column from every affected category CSV (see **§5**).
-
+- Edit `tools/schema.json`: remove the column from every `$defs.<category>` where it appears.
+- Remove its entry from `meta/columns.json`.
+- On `main`, remove the column from every affected category CSV (see **§5**).
