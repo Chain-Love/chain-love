@@ -349,6 +349,15 @@
             "Tiered",
             "One-time payment"
           ]
+        },
+        "walletConnection": {
+          "type": ["string", "null"],
+          "enum": ["none", "optional", "required", "unknown", null],
+          "description": "Whether normal documented use of the offer needs a connected user wallet; use unknown only after review."
+        },
+        "onChainWrite": {
+          "type": ["boolean", "null"],
+          "description": "Whether the documented offer can execute state-changing on-chain actions."
         }
       },
       "required": [
@@ -602,7 +611,15 @@
           "items": { "type": "string" }
         },
         "x402": { "type": "boolean" },
-        "onChainWrite": { "type": "boolean" },
+        "walletConnection": {
+          "type": ["string", "null"],
+          "enum": ["none", "optional", "required", "unknown", null],
+          "description": "Whether normal documented use of the offer needs a connected user wallet; use unknown only after review."
+        },
+        "onChainWrite": {
+          "type": "boolean",
+          "description": "Whether MCP tools can execute state-changing on-chain actions."
+        },
         "agentSkills": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -770,7 +787,16 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
-        "executionEnvironment": { "type": ["string", "null"] }
+        "executionEnvironment": { "type": ["string", "null"] },
+        "walletConnection": {
+          "type": ["string", "null"],
+          "enum": ["none", "optional", "required", "unknown", null],
+          "description": "Whether normal documented use of the offer needs a connected user wallet; use unknown only after review."
+        },
+        "onChainWrite": {
+          "type": ["boolean", "null"],
+          "description": "Whether the documented offer can execute state-changing on-chain actions."
+        }
       },
       "required": [
         "slug",
