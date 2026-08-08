@@ -94,9 +94,21 @@ def test_schema_rejects_duplicate_authentication_methods():
     assert_invalid(item)
 
 
+def test_schema_rejects_empty_authentication_methods():
+    item = base_api_item()
+    item["authenticationMethods"] = []
+    assert_invalid(item)
+
+
 def test_schema_rejects_none_combined_with_other_methods():
     item = base_api_item()
     item["authenticationMethods"] = ["none", "api_key"]
+    assert_invalid(item)
+
+
+def test_schema_rejects_unknown_authentication_methods():
+    item = base_api_item()
+    item["authenticationMethods"] = ["session_cookie"]
     assert_invalid(item)
 
 
@@ -185,7 +197,9 @@ def main():
     test_schema_accepts_expected_authentication_methods()
     test_schema_allows_blank_authentication_methods()
     test_schema_rejects_duplicate_authentication_methods()
+    test_schema_rejects_empty_authentication_methods()
     test_schema_rejects_none_combined_with_other_methods()
+    test_schema_rejects_unknown_authentication_methods()
     test_loader_pads_legacy_rows_that_omit_optional_authentication_methods()
 
 
