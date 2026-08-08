@@ -90,6 +90,30 @@
           "type": "string",
           "examples": ["EVM JSON-RPC", "The Graph"]
         },
+        "authenticationMethods": {
+          "type": ["array", "null"],
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "none",
+              "api_key",
+              "bearer_token",
+              "jwt",
+              "basic_auth",
+              "oauth2",
+              "mtls",
+              "wallet_signature"
+            ]
+          },
+          "not": {
+            "type": "array",
+            "minItems": 2,
+            "contains": {"const": "none"}
+          },
+          "description": "Credential or authentication methods officially supported or required for calling the API endpoint. Blank means the method has not been verified; none is exclusive."
+        },
         "additionalFeatures": {
           "type": ["array", "null"],
           "items": { "type": "string" }
