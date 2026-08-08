@@ -564,5 +564,24 @@ When asked to **remove a column**, an agent should:
 - **§5 Scenario 2** (column key removed everywhere):
   - Edit `tools/schema.json`: remove the column from every `$defs.<category>` where it appears.
   - Remove its entry from `meta/columns.json`.
-  - On `main`, remove the column from every affected category CSV (see **§5**).
+- On `main`, remove the column from every affected category CSV (see **§5**).
 
+---
+
+## 7. Chain-value consistency validation
+
+The validator checks generated network JSON for obvious contradictions between a
+row's `chain` value and network-specific signals in its slug or source URLs. For
+example, a `sepolia` slug must not be published with `chain=mainnet`, and a
+`mainnet` slug must not be published with `chain=calibnet`.
+
+The check is intentionally conservative:
+
+- generic `mainnet` and `testnet` signals accept their known aliases;
+- rows without an obvious signal are left for normal manual review;
+- intentional exceptions are recorded by exact `<network>/<slug>` key and a
+  non-empty reason in `tools/chain_validation_allowlist.json`.
+
+If a row is intentionally cross-network, add a short explanation to the matching
+allowlist entry and include that explanation in the pull request. Otherwise,
+correct the CSV `chain` value or the source-backed slug/URL before submitting.
