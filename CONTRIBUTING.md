@@ -48,8 +48,9 @@ Before editing data, read the Style Guide:
 - In `references/offers/*.csv` (for example `actionButtons`), keep Markdown link style (for example `[Website](https://example.com)`).
 - In `references/providers/providers.csv`, keep plain links only (no Markdown wrappers).
 - Use full URLs for `website` and `docs`.
-- For platform columns with known domains (`x`, `github`, `discord`, `telegram`, `linkedin`), store only the part after the domain.
-  - Example: `https://github.com/Chain-Love/chain-love` -> `Chain-Love/chain-love`
+- For `x`, `discord`, `telegram`, and `linkedin`, store only the part after the platform domain.
+- For `github`, store only the owning GitHub organization or account login; do not store a repository path in provider identity metadata.
+  - Example: `https://github.com/Chain-Love/chain-love` -> `Chain-Love`
 
 ## Chain logo images
 
@@ -107,5 +108,4 @@ Use [GitHub Issues](https://github.com/Chain-Love/chain-love/issues).
 ## Grant program and rewards
 
 See the [Grant Program](../../discussions/41). Database contributions may be eligible for USDT/USDC rewards under certain conditions.
-
 
