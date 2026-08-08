@@ -564,7 +564,7 @@ When asked to **remove a column**, an agent should:
 - **§5 Scenario 2** (column key removed everywhere):
   - Edit `tools/schema.json`: remove the column from every `$defs.<category>` where it appears.
   - Remove its entry from `meta/columns.json`.
-- On `main`, remove the column from every affected category CSV (see **§5**).
+  - On `main`, remove the column from every affected category CSV (see **§5**).
 
 ---
 
