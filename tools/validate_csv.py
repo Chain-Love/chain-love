@@ -84,11 +84,43 @@ def iter_csv_files(root: Path) -> Iterator[Path]:
             if name.lower().endswith(".csv"):
                 yield Path(dirpath) / name
 
+OFFER_REF_PREFIX = "!offer:"
+
+def rule_offer_cell_must_be_reference(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """DBIP #1955: listing offer cells must be canonical !offer:<slug> references.
+
+    Non-empty offer values that are plain text (instead of a canonical
+    reference) bypass both unresolved-reference and category-match validation,
+    so downstream consumers cannot tell inline data from a missing canonical
+    offer. Applies to listings/**/*.csv only; offers tables legitimately carry
+    an `offer` display column.
+    """
+    errors: List[str] = []
+    str_path = str(path)
+    if "listings" not in str_path:
+        return errors
+    if not rows or "offer" not in rows[0]:
+        return errors
+
+    for idx, row in enumerate(rows, start=2):  # header = row 1
+        raw = row.get("offer", "")
+        offer = (raw or "").strip()
+        if not offer:
+            continue
+        if offer.startswith(OFFER_REF_PREFIX):
+            continue
+        errors.append(
+            f"{path}: row {idx}: slug '{row.get('slug', '')}': offer cell must use "
+            f"'{OFFER_REF_PREFIX}<slug>' reference syntax (got '{offer}')"
+        )
+    return errors
+
 def main():
     root = Path(".")
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_offer_cell_must_be_reference)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
