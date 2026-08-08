@@ -577,7 +577,12 @@ example, a `sepolia` slug must not be published with `chain=mainnet`, and a
 
 The check is intentionally conservative:
 
-- generic `mainnet` and `testnet` signals accept their known aliases;
+- generic `testnet` signals accept known testnet aliases such as `sepolia` and
+  `holesky`;
+- generic `mainnet` signals match `chain=mainnet`, the current network's
+  canonical chain value, or a documented network-scoped mainnet alias;
+- ambiguous chain-family labels such as `one` are not treated as global network
+  signals;
 - rows without an obvious signal are left for normal manual review;
 - intentional exceptions are recorded by exact `<network>/<slug>` key and a
   non-empty reason in `tools/chain_validation_allowlist.json`.

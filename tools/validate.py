@@ -112,17 +112,19 @@ CHAIN_SIGNAL_TOKENS = (
     "goerli",
     "holesky",
     "nova",
-    "one",
     "pulsar",
 )
 CHAIN_SIGNAL_RE = re.compile(
     r"(?<![a-z0-9])(?:" + "|".join(CHAIN_SIGNAL_TOKENS) + r")(?![a-z0-9])",
     re.IGNORECASE,
 )
-MAINNET_CHAIN_ALIASES = {"mainnet", "one", "nova"}
+MAINNET_CHAIN_ALIASES = {"mainnet"}
 TESTNET_CHAIN_ALIASES = {
     "testnet",
     "devnet",
+    "amoy",
+    "coston",
+    "coston2",
     "sepolia",
     "hoodi",
     "calibnet",
@@ -130,6 +132,10 @@ TESTNET_CHAIN_ALIASES = {
     "goerli",
     "holesky",
     "pulsar",
+    "shibuya",
+}
+NETWORK_MAINNET_CHAIN_ALIASES = {
+    "arbitrum": {"one", "nova"},
 }
 
 
@@ -150,8 +156,6 @@ def load_chain_validation_allowlist(path=CHAIN_VALIDATION_ALLOWLIST_PATH):
             raise ValueError(
                 f"{path}: every 'entries' key must map to a non-empty reason"
             )
-        return set(entries)
-    if isinstance(entries, list) and all(isinstance(entry, str) for entry in entries):
         return set(entries)
     raise ValueError(
         f"{path}: expected an 'entries' object mapping exact keys to reasons"
@@ -184,11 +188,18 @@ def _url_signals(item):
     return signals
 
 
-def _chain_matches_signal(chain, signal):
+def _chain_matches_signal(chain, signal, network_name=None):
+    network_name = network_name.strip().lower() if isinstance(network_name, str) else None
     if chain == signal:
         return True
+    if chain == "testnet" and signal in TESTNET_CHAIN_ALIASES:
+        return True
     if signal == "mainnet":
-        return chain in MAINNET_CHAIN_ALIASES
+        return (
+            chain in MAINNET_CHAIN_ALIASES
+            or chain == network_name
+            or chain in NETWORK_MAINNET_CHAIN_ALIASES.get(network_name, set())
+        )
     if signal == "testnet":
         return chain in TESTNET_CHAIN_ALIASES
     return False
@@ -216,16 +227,20 @@ def rule_chain_values_consistent(data, context=None):
         if allowlist_key in allowlist:
             continue
 
-        slug_signals = _chain_signals_from_text(slug)
-        signals = slug_signals or _url_signals(item)
+        signals = _chain_signals_from_text(slug) | _url_signals(item)
         if not signals:
             continue
 
         normalized_chain = chain.strip().lower()
-        if any(_chain_matches_signal(normalized_chain, signal) for signal in signals):
+        conflicting_signals = sorted(
+            signal
+            for signal in signals
+            if not _chain_matches_signal(normalized_chain, signal, network_name)
+        )
+        if not conflicting_signals:
             continue
 
-        expected = ", ".join(sorted(signals))
+        expected = ", ".join(conflicting_signals)
         errors.append(
             f"Item {idx}: chain '{chain}' conflicts with network signal(s) "
             f"[{expected}] in '{slug}' for '{network_name}'. "
