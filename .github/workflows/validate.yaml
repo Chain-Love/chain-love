@@ -1,11 +1,11 @@
-name: "Validate JSON tooling"
+name: "Validate JSON"
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  validate-tools:
+  validate:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -26,3 +26,17 @@ jobs:
 
       - name: Check JSON schema
         run: python -m json.tool tools/schema.json > /dev/null
+
+      - name: Run focused authentication metadata tests
+        run: python tools/test_authentication_methods.py
+
+      - name: Validate current data with proposed tools
+        run: |
+          git fetch --depth=1 origin main
+          mkdir -p validation-run
+          cp -R tools/. validation-run/
+          cp -R meta validation-run/
+          git archive origin/main references listings | tar -x -C validation-run
+          cd validation-run
+          python csv_to_json.py
+          python validate.py
