@@ -84,11 +84,44 @@ def iter_csv_files(root: Path) -> Iterator[Path]:
             if name.lower().endswith(".csv"):
                 yield Path(dirpath) / name
 
+
+LOGO_EXTENSIONS = {".png", ".jpg", ".jpeg", ".svg", ".webp"}
+
+
+def rule_provider_logo_exists(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """DBIP #1949: every non-empty logoPath in references/providers/providers.csv
+    must point at an existing file under references/providers/images/ with an
+    allowed image extension (.png/.jpg/.jpeg/.svg/.webp).
+    """
+    errors: List[str] = []
+    if str(path) != "references/providers/providers.csv":
+        return errors
+    if not rows or "logoPath" not in rows[0]:
+        return errors
+    images = Path("references/providers/images")
+    for idx, row in enumerate(rows, start=2):
+        logo = (row.get("logoPath") or "").strip()
+        if not logo:
+            continue
+        target = images / logo
+        if not target.exists():
+            errors.append(
+                f"{path}: row {idx}: slug '{row.get('slug','')}': logoPath '{logo}' has no file under references/providers/images/"
+            )
+            continue
+        if target.suffix.lower() not in LOGO_EXTENSIONS:
+            errors.append(
+                f"{path}: row {idx}: slug '{row.get('slug','')}': logoPath '{logo}' has disallowed extension {target.suffix} (allowed: {sorted(LOGO_EXTENSIONS)})"
+            )
+    return errors
+
+
 def main():
     root = Path(".")
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_provider_logo_exists)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
