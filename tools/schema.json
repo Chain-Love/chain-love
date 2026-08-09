@@ -528,6 +528,36 @@
         "msig": { "type": "boolean" },
         "hardware": { "type": "boolean" },
         "keyExport": { "type": "boolean" },
+        "recoveryMethods": {
+          "type": ["array", "null"],
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "seed_phrase",
+              "cloud_backup",
+              "social_guardians",
+              "multisig",
+              "passkey",
+              "hardware_backup",
+              "provider_assisted",
+              "none",
+              "unknown"
+            ]
+          },
+          "not": {
+            "type": "array",
+            "minItems": 2,
+            "contains": { "const": "none" }
+          },
+          "description": "Officially documented mechanisms for restoring wallet access after loss of a device, key, or authentication credential. unknown is for unreviewed migration rows; none is exclusive."
+        },
+        "recoveryDelay": {
+          "type": ["string", "null"],
+          "pattern": "^(0|[1-9][0-9]*(m|h|d))$",
+          "description": "Minimum documented product- or protocol-enforced waiting period before recovery can finalize. Use null when not applicable or undocumented."
+        },
         "native": { "type": "boolean" },
         "evm": { "type": "boolean" },
         "tendermint": { "type": "boolean" },
