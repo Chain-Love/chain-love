@@ -327,6 +327,8 @@
       "additionalProperties": false,
       "properties": {
         "slug": { "type": "string" },
+        "walletConnection": { "type": ["string", "null"], "enum": ["none", "optional", "required", "unknown"] },
+        "onChainWrite": { "type": ["boolean", "null"] },
         "provider": { "type": "string" },
         "offer": { "type": ["string", "null"] },
         "toolType": { "type": "string" },
@@ -580,6 +582,7 @@
       "additionalProperties": false,
       "properties": {
         "slug": { "type": "string" },
+        "walletConnection": { "type": ["string", "null"], "enum": ["none", "optional", "required", "unknown"] },
         "provider": { "type": "string" },
         "offer": { "type": ["string", "null"] },
         "actionButtons": {
@@ -743,6 +746,8 @@
       "additionalProperties": false,
       "properties": {
         "slug": { "type": "string" },
+        "walletConnection": { "type": ["string", "null"], "enum": ["none", "optional", "required", "unknown"] },
+        "onChainWrite": { "type": ["boolean", "null"] },
         "provider": { "type": "string" },
         "offer": { "type": ["string", "null"] },
         "actionButtons": {

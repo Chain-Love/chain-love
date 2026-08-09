@@ -78,6 +78,29 @@ def rule_links_must_be_quoted(path: Path, rows: List[Dict[str, str]]) -> List[st
 
     return errors
 
+WALLET_CONNECTION_VALUES = {"", "none", "optional", "required", "unknown"}
+ON_CHAIN_WRITE_VALUES = {"", "TRUE", "FALSE"}
+
+
+def rule_wallet_metadata_enums(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    if not rows:
+        return []
+
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        wc = (row.get("walletConnection") or "").strip()
+        if wc not in WALLET_CONNECTION_VALUES:
+            errors.append(
+                f"{path}: row {idx}: walletConnection invalid value '{wc}' (allowed: none | optional | required | unknown)"
+            )
+        oc = (row.get("onChainWrite") or "").strip()
+        if oc not in ON_CHAIN_WRITE_VALUES:
+            errors.append(
+                f"{path}: row {idx}: onChainWrite invalid value '{oc}' (allowed: TRUE | FALSE)"
+            )
+    return errors
+
+
 def iter_csv_files(root: Path) -> Iterator[Path]:
     for dirpath, _, filenames in os.walk(root):
         for name in sorted(filenames):
@@ -89,6 +112,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_wallet_metadata_enums)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
