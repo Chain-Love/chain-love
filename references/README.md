@@ -20,6 +20,7 @@ Use references for data you want to define once and reuse across many listings.
   - `x`, `discord`, `telegram`, `linkedin`: store the value after the platform domain only.
   - `github`: store the owning GitHub organization or account login only; repository paths are not stored in provider identity metadata.
     - Example: `https://github.com/Chain-Love/chain-love` -> `Chain-Love`.
+    - If a repository URL points to the product or source code users need, keep it in the relevant offer or listing link field instead.
 
 Link style difference:
 

@@ -51,6 +51,7 @@ Before editing data, read the Style Guide:
 - For `x`, `discord`, `telegram`, and `linkedin`, store only the part after the platform domain.
 - For `github`, store only the owning GitHub organization or account login; do not store a repository path in provider identity metadata.
   - Example: `https://github.com/Chain-Love/chain-love` -> `Chain-Love`
+  - If a specific repository is the product or source users need, keep that repository URL in the relevant offer or listing link field instead.
 
 ## Chain logo images
 
@@ -108,4 +109,3 @@ Use [GitHub Issues](https://github.com/Chain-Love/chain-love/issues).
 ## Grant program and rewards
 
 See the [Grant Program](../../discussions/41). Database contributions may be eligible for USDT/USDC rewards under certain conditions.
-
