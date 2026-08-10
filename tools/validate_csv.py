@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Iterator, Callable, List, Dict
 import os
 import csv
+import json
 import re
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
@@ -84,11 +85,84 @@ def iter_csv_files(root: Path) -> Iterator[Path]:
             if name.lower().endswith(".csv"):
                 yield Path(dirpath) / name
 
+
+AUTHENTICATION_METHODS = {
+    "none",
+    "api_key",
+    "bearer_token",
+    "jwt",
+    "basic_auth",
+    "oauth2",
+    "mtls",
+    "wallet_signature",
+}
+
+
+def rule_authenticationMethods(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """Validate DBIP #2471 authenticationMethods values in API CSVs."""
+    errors: List[str] = []
+    if not rows or "authenticationMethods" not in rows[0]:
+        return errors
+
+    for idx, row in enumerate(rows, start=2):
+        raw = (row.get("authenticationMethods") or "").strip()
+        if not raw or raw.lower() == "null":
+            continue
+
+        try:
+            value = json.loads(raw)
+        except json.JSONDecodeError:
+            errors.append(
+                f"{path}: row {idx}: slug '{row.get('slug', '')}': "
+                "authenticationMethods is not valid JSON"
+            )
+            continue
+
+        if not isinstance(value, list):
+            errors.append(
+                f"{path}: row {idx}: slug '{row.get('slug', '')}': "
+                "authenticationMethods must be a JSON array or null"
+            )
+            continue
+
+        invalid = [
+            item
+            for item in value
+            if not isinstance(item, str) or item not in AUTHENTICATION_METHODS
+        ]
+        if invalid:
+            errors.append(
+                f"{path}: row {idx}: slug '{row.get('slug', '')}': "
+                f"authenticationMethods contains unsupported values {invalid}"
+            )
+
+        seen = []
+        duplicates = False
+        for item in value:
+            if item in seen:
+                duplicates = True
+                break
+            seen.append(item)
+        if duplicates:
+            errors.append(
+                f"{path}: row {idx}: slug '{row.get('slug', '')}': "
+                "authenticationMethods must not contain duplicates"
+            )
+
+        if "none" in value and len(value) > 1:
+            errors.append(
+                f"{path}: row {idx}: slug '{row.get('slug', '')}': "
+                "'none' cannot be combined with another authentication method"
+            )
+
+    return errors
+
 def main():
     root = Path(".")
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_authenticationMethods)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []

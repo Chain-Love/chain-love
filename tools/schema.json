@@ -90,6 +90,30 @@
           "type": "string",
           "examples": ["EVM JSON-RPC", "The Graph"]
         },
+        "authenticationMethods": {
+          "description": "Credential or authentication methods supported or required for API access. Null means the method has not been verified; credentials and secrets must never be stored here.",
+          "type": ["array", "null"],
+          "items": {
+            "type": "string",
+            "enum": [
+              "none",
+              "api_key",
+              "bearer_token",
+              "jwt",
+              "basic_auth",
+              "oauth2",
+              "mtls",
+              "wallet_signature"
+            ]
+          },
+          "uniqueItems": true,
+          "not": {
+            "allOf": [
+              { "type": "array", "contains": { "const": "none" } },
+              { "type": "array", "minItems": 2 }
+            ]
+          }
+        },
         "additionalFeatures": {
           "type": ["array", "null"],
           "items": { "type": "string" }
