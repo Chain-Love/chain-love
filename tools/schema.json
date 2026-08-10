@@ -826,6 +826,16 @@
         "compliance": {
           "type": ["array", "null"],
           "items": { "type": "string" }
+        },
+        "supportedLanguages": {
+          "type": ["array", "null"],
+          "items": { "type": "string" },
+          "description": "Provider-documented source or smart-contract languages supported for analysis, testing, scanning, or audit work."
+        },
+        "supportedFrameworks": {
+          "type": ["array", "null"],
+          "items": { "type": "string" },
+          "description": "Provider-documented build, development, or testing frameworks supported through direct integration or project ingestion."
         }
       },
       "required": [
@@ -843,7 +853,9 @@
         "deliveryType",
         "executionEnvironment",
         "coverage",
-        "compliance"
+        "compliance",
+        "supportedLanguages",
+        "supportedFrameworks"
       ]
     },
     "agents": {

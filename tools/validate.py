@@ -77,6 +77,38 @@ def rule_action_buttons_is_list_of_links(data):
                 errors.append(f"Item {idx}: action_button[{item_idx}] must be a markdown link")
     return errors
 
+def rule_security_capability_arrays(data):
+    errors = []
+    fields = ("supportedLanguages", "supportedFrameworks")
+
+    for idx, item in enumerate(data):
+        for field in fields:
+            if field not in item:
+                continue
+
+            value = item.get(field)
+            if value is None:
+                continue
+            if type(value) is not list:
+                errors.append(f"Item {idx}: {field} must be an array or null")
+                continue
+            if not value:
+                errors.append(f"Item {idx}: {field} must not be an empty array")
+                continue
+
+            seen = set()
+            for item_idx, entry in enumerate(value):
+                if type(entry) is not str or not entry.strip():
+                    errors.append(f"Item {idx}: {field}[{item_idx}] must be a non-empty string")
+                    continue
+                if entry != entry.strip():
+                    errors.append(f"Item {idx}: {field}[{item_idx}] must not have leading or trailing whitespace")
+                if entry in seen:
+                    errors.append(f"Item {idx}: {field} contains duplicate value '{entry}'")
+                seen.add(entry)
+
+    return errors
+
 def rule_no_unclosed_markdown(data):
     errors = []
     for idx, item in enumerate(data):
@@ -288,6 +320,7 @@ def main():
     rules.add_rule(rule_slug_unique)
     rules.add_rule(rule_no_unclosed_markdown)
     rules.add_rule(rule_action_buttons_is_list_of_links)
+    rules.add_rule(rule_security_capability_arrays)
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
     rules.add_rule(rule_chain_is_lowercase)
