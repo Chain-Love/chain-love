@@ -84,11 +84,59 @@ def iter_csv_files(root: Path) -> Iterator[Path]:
             if name.lower().endswith(".csv"):
                 yield Path(dirpath) / name
 
+
+def rule_offer_provider_slug(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """Require canonical offer rows to reference one provider slug exactly."""
+    if path.parent.name != "offers" or path.parent.parent.name != "references":
+        return []
+
+    errors: List[str] = []
+    if not rows:
+        return errors
+
+    if "provider" in rows[0]:
+        errors.append(
+            f"{path}: canonical offer tables must use 'providerSlug', not 'provider'"
+        )
+    if "providerSlug" not in rows[0]:
+        errors.append(f"{path}: canonical offer table is missing 'providerSlug'")
+        return errors
+
+    providers_path = path.parent.parent / "providers" / "providers.csv"
+    if not providers_path.exists():
+        return [f"{path}: provider registry not found at {providers_path}"]
+
+    with providers_path.open(newline="", encoding="utf-8") as f:
+        provider_rows = list(csv.DictReader(f))
+
+    provider_slugs = set()
+    for provider_row_number, provider in enumerate(provider_rows, start=2):
+        slug = (provider.get("slug") or "").strip()
+        if not slug:
+            errors.append(f"{providers_path}: row {provider_row_number} has an empty slug")
+        elif slug in provider_slugs:
+            errors.append(
+                f"{providers_path}: row {provider_row_number} duplicates provider slug '{slug}'"
+            )
+        provider_slugs.add(slug)
+
+    for row_number, row in enumerate(rows, start=2):
+        slug = (row.get("providerSlug") or "").strip()
+        if not slug:
+            errors.append(f"{path}: row {row_number} has an empty providerSlug")
+        elif slug not in provider_slugs:
+            errors.append(
+                f"{path}: row {row_number} references unknown providerSlug '{slug}'"
+            )
+
+    return errors
+
 def main():
     root = Path(".")
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_offer_provider_slug)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []

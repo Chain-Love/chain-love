@@ -452,10 +452,10 @@ def resolve_offers(
                 # Base = offer row
                 merged = dict(offer_row)
 
-                # Listing overrides non-empty fields (except offer itself)
+                # Listing overrides non-empty fields (except canonical identity fields)
                 for k, v in item.items():
-                    if k == "offer":
-                        continue  # never override final offer value
+                    if k in ("offer", "provider", "providerSlug"):
+                        continue  # preserve the canonical offer identity
 
                     if v is None:
                         continue
@@ -532,6 +532,44 @@ def build_provider_index_by_name(providers: list[dict]) -> dict[str, dict]:
             raise ValueError(f"Duplicate provider name in providers.csv: '{name}'")
         idx[name] = p
     return idx
+
+
+def build_provider_index_by_slug(providers: list[dict]) -> dict[str, dict]:
+    idx = {}
+    for p in providers:
+        slug = p.get("slug")
+        if not isinstance(slug, str) or not slug.strip():
+            continue
+        if slug in idx:
+            raise ValueError(f"Duplicate provider slug in providers.csv: '{slug}'")
+        idx[slug] = p
+    return idx
+
+
+def resolve_offer_provider_slugs(
+    offers_by_category: dict[str, list[dict]],
+    provider_by_slug: dict[str, dict],
+) -> dict[str, list[dict]]:
+    """Resolve canonical offer provider slugs to display names for JSON output."""
+    for category, offers in offers_by_category.items():
+        for row_number, offer in enumerate(offers, start=2):
+            provider_slug = offer.get("providerSlug")
+            if not isinstance(provider_slug, str) or not provider_slug.strip():
+                raise ValueError(
+                    f"references/offers/{category}.csv row {row_number} has no providerSlug"
+                )
+
+            provider = provider_by_slug.get(provider_slug.strip())
+            if provider is None:
+                raise ValueError(
+                    f"references/offers/{category}.csv row {row_number} references "
+                    f"unknown providerSlug '{provider_slug}'"
+                )
+
+            offer["providerSlug"] = provider_slug.strip()
+            offer["provider"] = provider["name"]
+
+    return offers_by_category
 
 
 def collect_used_provider_names(data_by_category: dict[str, list[dict]]) -> set[str]:
@@ -648,9 +686,13 @@ def main():
     # References
     providers = load_providers("references/providers/providers.csv")
     provider_by_name = build_provider_index_by_name(providers)
+    provider_by_slug = build_provider_index_by_slug(providers)
     category_meta = load_json_file("meta/categories.json")
     column_meta = load_json_file("meta/columns.json")
-    offers_by_category = load_categories_from_folder("references/offers")
+    offers_by_category = resolve_offer_provider_slugs(
+        load_categories_from_folder("references/offers"),
+        provider_by_slug,
+    )
 
     # Global listings (apply to every network)
     global_listings = load_categories_from_folder(all_networks_dir)
@@ -722,6 +764,16 @@ def main():
             base_categories=list_categories(network_dir),
             extra_categories=global_listings_categories,
         )
+        for category, rows in result.items():
+            if category not in result["columns"]:
+                continue
+            if not any("providerSlug" in row for row in rows):
+                continue
+            columns = result["columns"][category]
+            if "providerSlug" in columns:
+                continue
+            insert_at = columns.index("provider") + 1 if "provider" in columns else 0
+            columns.insert(insert_at, "providerSlug")
         result["schemaVersion"] = schema_version
 
         provider_categories = collect_provider_categories(result)
