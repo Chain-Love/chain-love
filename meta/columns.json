@@ -901,6 +901,50 @@
     "cellType": null,
     "group": "serviceDetails"
   },
+  "paymentType": {
+    "key": "paymentType",
+    "label": "Payment Type",
+    "icon": "lucide:ShoppingCart",
+    "description": "Primary payment flow or settlement product type.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "serviceDetails"
+  },
+  "settlementAssets": {
+    "key": "settlementAssets",
+    "label": "Settlement Assets",
+    "icon": "lucide:Coins",
+    "description": "Assets used for payment settlement when documented.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "settlementChains": {
+    "key": "settlementChains",
+    "label": "Settlement Chains",
+    "icon": "lucide:Link",
+    "description": "Networks used for payment settlement when documented.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "developerInterface": {
+    "key": "developerInterface",
+    "label": "Developer Interface",
+    "icon": "lucide:CodeXml",
+    "description": "Integration surfaces such as APIs, SDKs, payment links, or MCP.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "technicalDetails"
+  },
   "paymentMethods": {
     "key": "paymentMethods",
     "label": "Payment Methods",
@@ -911,6 +955,28 @@
     "pinning": null,
     "cellType": "arrayPopover",
     "group": "pricing"
+  },
+  "onChainSettlement": {
+    "key": "onChainSettlement",
+    "label": "On-Chain Settlement",
+    "icon": "lucide:Blocks",
+    "description": "Whether payment settlement occurs on-chain.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null,
+    "group": "capabilities"
+  },
+  "nonCustodial": {
+    "key": "nonCustodial",
+    "label": "Non-Custodial",
+    "icon": "lucide:KeyRound",
+    "description": "Whether users retain control of the funds or signing wallet.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null,
+    "group": "security"
   },
   "serverType": {
     "key": "serverType",

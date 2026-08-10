@@ -95,6 +95,38 @@ def rule_chain_is_lowercase(data):
             errors.append(f"Item {idx}: chain must be lowercase: want '{item['chain'].lower()}', got '{item['chain']}'. Please check all categories for the current network.")
     return errors
 
+def rule_payments_fields(data):
+    """Validate shared shapes and invariants for the payments category."""
+    errors = []
+    array_fields = (
+        "settlementAssets",
+        "settlementChains",
+        "developerInterface",
+        "paymentMethods",
+        "regions",
+        "limitations",
+        "tag",
+    )
+
+    for idx, item in enumerate(data):
+        if "paymentType" not in item:
+            continue
+
+        for field in array_fields:
+            value = item.get(field)
+            if value is None:
+                continue
+            if type(value) is not list or any(type(entry) is not str or not entry.strip() for entry in value):
+                errors.append(f"Item {idx}: payments field '{field}' must be a list of non-empty strings or null")
+                continue
+            if len(set(value)) != len(value):
+                errors.append(f"Item {idx}: payments field '{field}' must not contain duplicate values")
+
+        if item.get("custodial") is True and item.get("nonCustodial") is True:
+            errors.append(f"Item {idx}: custodial and nonCustodial cannot both be true")
+
+    return errors
+
 def has_unclosed_markdown(s: str) -> bool:
     if type(s) != str:
         return False
@@ -291,6 +323,7 @@ def main():
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
     rules.add_rule(rule_chain_is_lowercase)
+    rules.add_rule(rule_payments_fields)
 
     # Validate networks
     validator = Draft202012Validator(schema)

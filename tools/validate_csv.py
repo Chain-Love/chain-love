@@ -3,6 +3,7 @@ from typing import Iterator, Callable, List, Dict
 import os
 import csv
 import re
+import json
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
 
@@ -78,6 +79,40 @@ def rule_links_must_be_quoted(path: Path, rows: List[Dict[str, str]]) -> List[st
 
     return errors
 
+def rule_payments_array_fields(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """Check JSON-array columns in payments CSV files before generation."""
+    if "paymentType" not in (rows[0].keys() if rows else []):
+        return []
+
+    array_fields = (
+        "settlementAssets",
+        "settlementChains",
+        "developerInterface",
+        "paymentMethods",
+        "regions",
+        "limitations",
+        "tag",
+    )
+    errors: List[str] = []
+
+    for row_idx, row in enumerate(rows, start=2):
+        for field in array_fields:
+            raw = (row.get(field) or "").strip()
+            if not raw:
+                continue
+            try:
+                value = json.loads(raw)
+            except json.JSONDecodeError as exc:
+                errors.append(f"{path}: row {row_idx}: payments field '{field}' is not valid JSON: {exc.msg}")
+                continue
+            if type(value) is not list or any(type(entry) is not str or not entry.strip() for entry in value):
+                errors.append(f"{path}: row {row_idx}: payments field '{field}' must be a JSON array of non-empty strings")
+                continue
+            if len(set(value)) != len(value):
+                errors.append(f"{path}: row {row_idx}: payments field '{field}' must not contain duplicate values")
+
+    return errors
+
 def iter_csv_files(root: Path) -> Iterator[Path]:
     for dirpath, _, filenames in os.walk(root):
         for name in sorted(filenames):
@@ -89,6 +124,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_payments_array_fields)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
