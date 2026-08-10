@@ -43,6 +43,16 @@ Before editing data, read the Style Guide:
 - Values in the listing row override hydrated values where provided.
 - Rows from `listings/all-networks` are appended to every network output.
 
+### Security capability metadata
+
+The `security` offer table keeps runtime context separate from source-language
+and workflow support. Use `executionEnvironment` for the runtime ecosystem,
+`supportedLanguages` for provider-documented analysis targets, and
+`supportedFrameworks` for provider-documented build, development, or testing
+integrations. Both new fields are optional JSON arrays; leave them blank when
+the provider does not document the support. Do not infer values from the runtime
+environment, and keep populated arrays non-empty and deduplicated.
+
 ## Link formatting convention
 
 - In `references/offers/*.csv` (for example `actionButtons`), keep Markdown link style (for example `[Website](https://example.com)`).
@@ -107,5 +117,4 @@ Use [GitHub Issues](https://github.com/Chain-Love/chain-love/issues).
 ## Grant program and rewards
 
 See the [Grant Program](../../discussions/41). Database contributions may be eligible for USDT/USDC rewards under certain conditions.
-
 
