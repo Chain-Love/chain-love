@@ -24,3 +24,17 @@ Link style difference:
 
 - `references/providers/providers.csv`: plain URLs in dedicated link columns.
 - `references/offers/*.csv`: Markdown links (commonly inside `actionButtons`).
+
+## API throughput and quota fields
+
+API offer tables and API listing tables may use these optional normalized fields:
+
+- `throughputLimit`: non-negative numeric maximum documented processing rate.
+- `throughputUnit`: unit for `throughputLimit`, such as `requests/second`, `compute units/second`, or `requests/10 seconds`.
+- `usageQuota`: non-negative numeric documented allowance.
+- `usageQuotaUnit`: unit for `usageQuota`, such as `requests`, `credits`, or `compute units`.
+- `quotaPeriod`: period for `usageQuota`, currently `day`, `month`, or `lifetime`.
+
+Keep the original provider wording in `limitations` and retain the provider's source links in `actionButtons`. Preserve provider-native units; do not convert compute units, credits, or other capacity units into requests unless the provider documents a deterministic conversion. Leave normalized fields blank when the source is custom, dynamic, a range or alternative set, burst/soft/hard limits, or otherwise cannot be represented by the single-value fields.
+
+When an offer is referenced from a listing, populate these fields in `references/offers/apis.csv`; the generated listing inherits them. Direct listing rows may populate the fields when their own `limitations` value is explicit and source-backed.
