@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Iterator, Callable, List, Dict
 import os
 import csv
+import math
 import re
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
@@ -78,6 +79,56 @@ def rule_links_must_be_quoted(path: Path, rows: List[Dict[str, str]]) -> List[st
 
     return errors
 
+
+def rule_api_limit_fields(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """Validate pairing and raw numeric syntax for the optional API limit fields."""
+    if path.name != "apis.csv" or not rows:
+        return []
+
+    fields = {"throughputLimit", "throughputUnit", "usageQuota", "usageQuotaUnit", "quotaPeriod"}
+    if not fields.intersection(rows[0].keys()):
+        return []
+
+    errors: List[str] = []
+
+    def present(value) -> bool:
+        return value is not None and str(value).strip() != ""
+
+    def numeric(value) -> bool:
+        if not present(value):
+            return True
+        try:
+            parsed = float(str(value).strip())
+        except ValueError:
+            return False
+        return math.isfinite(parsed) and parsed >= 0
+
+    for idx, row in enumerate(rows, start=2):
+        throughput = row.get("throughputLimit")
+        throughput_unit = row.get("throughputUnit")
+        quota = row.get("usageQuota")
+        quota_unit = row.get("usageQuotaUnit")
+        quota_period = row.get("quotaPeriod")
+
+        if not numeric(throughput):
+            errors.append(f"{path}: row {idx}: throughputLimit must be a non-negative number")
+        if not numeric(quota):
+            errors.append(f"{path}: row {idx}: usageQuota must be a non-negative number")
+
+        if present(throughput) != present(throughput_unit):
+            errors.append(f"{path}: row {idx}: throughputLimit and throughputUnit must be supplied together")
+
+        quota_present = present(quota)
+        quota_parts_present = present(quota_unit) and present(quota_period)
+        if quota_present != quota_parts_present:
+            errors.append(
+                f"{path}: row {idx}: usageQuota, usageQuotaUnit, and quotaPeriod must be supplied together"
+            )
+        if not quota_present and (present(quota_unit) or present(quota_period)):
+            errors.append(f"{path}: row {idx}: quota unit/period cannot be supplied without usageQuota")
+
+    return errors
+
 def iter_csv_files(root: Path) -> Iterator[Path]:
     for dirpath, _, filenames in os.walk(root):
         for name in sorted(filenames):
@@ -89,6 +140,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_api_limit_fields)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []

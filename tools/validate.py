@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import math
 from jsonschema import Draft202012Validator
 from jsonpointer import resolve_pointer
 import copy
@@ -93,6 +94,42 @@ def rule_chain_is_lowercase(data):
             continue
         if not item["chain"].islower():
             errors.append(f"Item {idx}: chain must be lowercase: want '{item['chain'].lower()}', got '{item['chain']}'. Please check all categories for the current network.")
+    return errors
+
+
+def rule_api_limits(data):
+    """Validate normalized API throughput/quota field relationships."""
+    if not data or not any(key in data[0] for key in (
+        "throughputLimit", "throughputUnit", "usageQuota", "usageQuotaUnit", "quotaPeriod"
+    )):
+        return []
+
+    errors = []
+
+    def present(value):
+        return value is not None and (not isinstance(value, str) or value.strip() != "")
+
+    def numeric(value):
+        return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value) and value >= 0
+
+    for idx, item in enumerate(data):
+        throughput = item.get("throughputLimit")
+        throughput_unit = item.get("throughputUnit")
+        quota = item.get("usageQuota")
+        quota_unit = item.get("usageQuotaUnit")
+        quota_period = item.get("quotaPeriod")
+
+        if present(throughput) and not numeric(throughput):
+            errors.append(f"Item {idx}: throughputLimit must be a non-negative number")
+        if present(quota) and not numeric(quota):
+            errors.append(f"Item {idx}: usageQuota must be a non-negative number")
+        if present(throughput) != present(throughput_unit):
+            errors.append(f"Item {idx}: throughputLimit and throughputUnit must be supplied together")
+        if present(quota) != (present(quota_unit) and present(quota_period)):
+            errors.append(f"Item {idx}: usageQuota, usageQuotaUnit, and quotaPeriod must be supplied together")
+        if not present(quota) and (present(quota_unit) or present(quota_period)):
+            errors.append(f"Item {idx}: quota unit/period cannot be supplied without usageQuota")
+
     return errors
 
 def has_unclosed_markdown(s: str) -> bool:
@@ -291,6 +328,7 @@ def main():
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
     rules.add_rule(rule_chain_is_lowercase)
+    rules.add_rule(rule_api_limits)
 
     # Validate networks
     validator = Draft202012Validator(schema)

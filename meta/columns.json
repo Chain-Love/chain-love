@@ -54,6 +54,61 @@
     "cellType": "arrayPopover",
     "group": "capabilities"
   },
+  "throughputLimit": {
+    "key": "throughputLimit",
+    "label": "Throughput Limit",
+    "icon": "lucide:Gauge",
+    "description": "Maximum documented processing throughput; paired with throughputUnit.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "numericRange",
+    "group": "pricingAndSlas"
+  },
+  "throughputUnit": {
+    "key": "throughputUnit",
+    "label": "Throughput Unit",
+    "icon": "lucide:Gauge",
+    "description": "Unit associated with throughputLimit, preserving provider-native capacity terminology.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "pricingAndSlas"
+  },
+  "usageQuota": {
+    "key": "usageQuota",
+    "label": "Usage Quota",
+    "icon": "lucide:DatabaseZap",
+    "description": "Documented usage allowance; paired with usageQuotaUnit and quotaPeriod.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "numericRange",
+    "group": "pricingAndSlas"
+  },
+  "usageQuotaUnit": {
+    "key": "usageQuotaUnit",
+    "label": "Usage Quota Unit",
+    "icon": "lucide:DatabaseZap",
+    "description": "Unit associated with usageQuota, preserving provider-native capacity terminology.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "pricingAndSlas"
+  },
+  "quotaPeriod": {
+    "key": "quotaPeriod",
+    "label": "Quota Period",
+    "icon": "lucide:CalendarClock",
+    "description": "Period over which usageQuota applies.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "pricingAndSlas"
+  },
   "offer": {
     "key": "offer",
     "label": "Offer",

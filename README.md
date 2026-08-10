@@ -6,6 +6,12 @@ This guide explains how to **add new categories and columns for the Chain.Love p
 - `meta/categories.json` – category metadata.
 - `meta/columns.json` – column metadata.
 
+### API throughput and usage-quota fields
+
+The `apis` schema includes five optional normalized fields: `throughputLimit`, `throughputUnit`, `usageQuota`, `usageQuotaUnit`, and `quotaPeriod`. The two value fields are numeric in generated JSON. A throughput value must have a unit; a quota must have both a unit and a period. Units preserve provider-native terminology, including compute units, credits, and other capacity units.
+
+The fields are intentionally nullable. Contributors should leave them empty for custom or dynamic limits, ranges or alternative values, burst/soft/hard limits that cannot fit a single scalar, and any value not supported by the provider source. The existing `limitations` text remains the source-facing explanation.
+
 Data files are not documented in detail in this guide. Their structure and contribution flow are described in the `main` branch README: [README.md](https://github.com/Chain-Love/chain-love/blob/main/README.md).  
 However, schema/meta changes in this branch must be mirrored in data tables on `main` (for example when adding/removing categories or columns).
 
@@ -565,4 +571,3 @@ When asked to **remove a column**, an agent should:
   - Edit `tools/schema.json`: remove the column from every `$defs.<category>` where it appears.
   - Remove its entry from `meta/columns.json`.
   - On `main`, remove the column from every affected category CSV (see **§5**).
-
