@@ -43,6 +43,12 @@ Before editing data, read the Style Guide:
 - Values in the listing row override hydrated values where provided.
 - Rows from `listings/all-networks` are appended to every network output.
 
+### API capacity and quota normalization
+
+API/RPC tables expose optional `throughputLimit`, `throughputUnit`, `usageQuota`, `usageQuotaUnit`, and `quotaPeriod` columns. These values are numeric where applicable and must be supported by the provider source linked in the row. Keep the provider-native unit in the normalized unit column and keep the original wording in `limitations`.
+
+Use a blank value for custom, dynamic, range-based, alternative, burst/soft/hard, or otherwise ambiguous limits. A single-value field must not collapse multiple provider limits into a misleading number. When a quota is present, its unit and period must also be present; when a throughput value is present, its unit must also be present.
+
 ## Link formatting convention
 
 - In `references/offers/*.csv` (for example `actionButtons`), keep Markdown link style (for example `[Website](https://example.com)`).
@@ -107,5 +113,4 @@ Use [GitHub Issues](https://github.com/Chain-Love/chain-love/issues).
 ## Grant program and rewards
 
 See the [Grant Program](../../discussions/41). Database contributions may be eligible for USDT/USDC rewards under certain conditions.
-
 
