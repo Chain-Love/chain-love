@@ -24,3 +24,12 @@ Link style difference:
 
 - `references/providers/providers.csv`: plain URLs in dedicated link columns.
 - `references/offers/*.csv`: Markdown links (commonly inside `actionButtons`).
+
+## Offer-to-provider references
+
+Every non-empty `providerSlug` value in `offers/*.csv` must match exactly one
+`slug` in `providers/providers.csv`. The slug is the stable, machine-readable
+relationship; `providers.csv:name` is presentation metadata and must not be
+used as the canonical join key. Generated JSON exposes the resolved display
+name as `provider` and retains `providerSlug` for consumers that need a stable
+join.

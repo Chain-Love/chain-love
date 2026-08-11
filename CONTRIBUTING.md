@@ -36,8 +36,9 @@ Before editing data, read the Style Guide:
 
 ## How references work
 
-- Category CSV files use separate columns: `provider` and `offer`.
-- In `references/offers/*.csv`, set `provider` to the provider name/slug and `offer` to the offer name.
+- Listing CSV files use `provider` for the display name and `offer` for the offer reference.
+- In `references/offers/*.csv`, use `providerSlug` for the exact value from `references/providers/providers.csv:slug`; do not use the mutable provider display name. Keep `offer` as the offer name.
+- `providerSlug` is the canonical source relationship. During JSON generation it is resolved to the provider display name in `provider`, while the stable `providerSlug` is retained for machine-readable joins.
 - In listings CSV files, reference canonical offers with `!offer:<slug>` in the `offer` column.
 - During JSON generation, referenced fields are hydrated from `references/offers/<category>.csv`.
 - Values in the listing row override hydrated values where provided.
@@ -107,5 +108,4 @@ Use [GitHub Issues](https://github.com/Chain-Love/chain-love/issues).
 ## Grant program and rewards
 
 See the [Grant Program](../../discussions/41). Database contributions may be eligible for USDT/USDC rewards under certain conditions.
-
 

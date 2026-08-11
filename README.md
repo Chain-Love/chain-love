@@ -11,7 +11,7 @@ Use this relationship graph:
 `provider -> offer -> listing`
 
 - **Provider**: identity metadata (name, logo, links, description).
-- **Offer**: a category-specific product/plan sold by a provider.
+- **Offer**: a category-specific product/plan sold by a provider. Canonical offer tables reference the provider by its stable `providerSlug`; the generated JSON keeps `provider` as the human-readable display name for compatibility.
 - **Listing**: where an offer is available (for one network or all networks).
 
 ## Repository structure
