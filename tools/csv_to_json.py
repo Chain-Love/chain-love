@@ -522,15 +522,32 @@ def load_json_file(path: str) -> dict:
         return json.load(f)
 
 
+def normalize_provider_identity(value: str) -> str:
+    normalized = unicodedata.normalize("NFKC", value).casefold()
+    return "".join(ch for ch in normalized if ch.isalnum())
+
+
 def build_provider_index_by_name(providers: list[dict]) -> dict[str, dict]:
     idx = {}
     for p in providers:
-        name = p.get("name")
-        if not isinstance(name, str) or not name.strip():
+        identity_values = [p.get("slug"), p.get("name"), *(p.get("aliases") or [])]
+        identities = set()
+        for value in identity_values:
+            if not isinstance(value, str) or not value.strip():
+                continue
+            identities.add(value.strip())
+            normalized = normalize_provider_identity(value)
+            if normalized:
+                identities.add(normalized)
+
+        if not identities:
             continue
-        if name in idx:
-            raise ValueError(f"Duplicate provider name in providers.csv: '{name}'")
-        idx[name] = p
+
+        for identity in identities:
+            previous = idx.get(identity)
+            if previous is not None and previous is not p:
+                raise ValueError(f"Duplicate provider identity in providers.csv: '{identity}'")
+            idx[identity] = p
     return idx
 
 
@@ -556,7 +573,7 @@ def build_provider_meta_from_names(
     meta = {}
 
     for name, categories in provider_categories.items():
-        p = provider_by_name.get(name)
+        p = provider_by_name.get(name) or provider_by_name.get(normalize_provider_identity(name))
 
         categories_list = sorted(categories)
 
@@ -571,7 +588,8 @@ def build_provider_meta_from_names(
 
             meta[slug] = {
                 "slug": slug,
-                "name": name,
+                "name": p.get("name") or name,
+                "aliases": p.get("aliases"),
                 "logoPath": p.get("logoPath"),
                 "description": p.get("description"),
                 "website": p.get("website"),

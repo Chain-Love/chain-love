@@ -1035,6 +1035,10 @@
       "properties": {
         "slug": { "type": "string" },
         "name": { "type": "string" },
+        "aliases": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
         "logoPath": { "type": ["string", "null"] },
         "description": { "type": ["string", "null"] },
         "website": { "type": ["string", "null"] },
