@@ -586,6 +586,15 @@ def build_provider_meta_from_names(
             if not isinstance(starred, bool):
                 starred = False
 
+            # Multiple listing values (for example the current provider name and
+            # one of its aliases) can resolve to the same canonical provider.
+            # Preserve every category instead of replacing the previous entry.
+            if slug in meta:
+                meta[slug]["categories"] = sorted(
+                    set(meta[slug]["categories"]) | set(categories)
+                )
+                continue
+
             meta[slug] = {
                 "slug": slug,
                 "name": p.get("name") or name,
