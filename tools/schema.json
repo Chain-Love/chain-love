@@ -23,6 +23,7 @@
     "sdks": { "type": "array", "items": { "$ref": "#/$defs/sdks" } },
     "ramps": { "type": "array", "items": { "$ref": "#/$defs/ramps" } },
     "platforms": { "type": "array", "items": { "$ref": "#/$defs/platforms" } },
+    "nfttools": { "type": "array", "items": { "$ref": "#/$defs/nfttools" } },
     "security": { "type": "array", "items": { "$ref": "#/$defs/security" } },
     "agents": { "type": "array", "items": { "$ref": "#/$defs/agents" } },
     "columns": { "$ref": "#/$defs/columns" },
@@ -787,6 +788,59 @@
         "executionEnvironment"
       ]
     },
+    "nfttools": {
+      "title": "NFT Tools",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "offer": { "type": ["string", "null"] },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "tag": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "description": { "type": ["string", "null"] },
+        "nftFunctions": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "deliveryTypes": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "tokenStandards": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "assetActions": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "custodyModel": { "type": ["string", "null"] },
+        "metadataSupport": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "offer",
+        "actionButtons",
+        "tag",
+        "description",
+        "nftFunctions",
+        "deliveryTypes",
+        "tokenStandards",
+        "assetActions",
+        "custodyModel",
+        "metadataSupport",
+        "starred"
+      ]
+    },
     "security": {
       "title": "Security",
       "type": "object",
@@ -970,6 +1024,7 @@
         "storages": { "type": "array", "items": { "type": "string" } },
         "sdks": { "type": "array", "items": { "type": "string" } },
         "platforms": { "type": "array", "items": { "type": "string" } },
+        "nfttools": { "type": "array", "items": { "type": "string" } },
         "security": { "type": "array", "items": { "type": "string" } },
         "agents": { "type": "array", "items": { "type": "string" } }
       }
@@ -1068,6 +1123,7 @@
               "sdks",
               "ramps",
               "platforms",
+              "nfttools",
               "security",
               "agents"
             ]

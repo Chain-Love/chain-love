@@ -1262,5 +1262,71 @@
     "sorting": "string",
     "pinning": null,
     "cellType": null
+  },
+  "nftFunctions": {
+    "key": "nftFunctions",
+    "label": "NFT Functions",
+    "icon": "lucide:Sparkles",
+    "description": "Documented NFT-oriented jobs supported by the offer, such as minting, discovery, trading, analytics, or token gating.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "deliveryTypes": {
+    "key": "deliveryTypes",
+    "label": "Delivery Types",
+    "icon": "lucide:PackageOpen",
+    "description": "Documented delivery mechanisms such as API, SDK, smart contracts, hosted app, or library.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "tokenStandards": {
+    "key": "tokenStandards",
+    "label": "Token Standards",
+    "icon": "lucide:Badge",
+    "description": "NFT token standards explicitly documented by the provider.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "technical"
+  },
+  "assetActions": {
+    "key": "assetActions",
+    "label": "Asset Actions",
+    "icon": "lucide:ArrowLeftRight",
+    "description": "Documented actions available for NFT assets, such as mint, read, transfer, list, buy, sell, bid, gate, or renew.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "custodyModel": {
+    "key": "custodyModel",
+    "label": "Custody Model",
+    "icon": "lucide:ShieldCheck",
+    "description": "Documented custody model for the NFT tooling: non-custodial, custodial, or mixed.",
+    "filter": "select",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "compliance"
+  },
+  "metadataSupport": {
+    "key": "metadataSupport",
+    "label": "Metadata Support",
+    "icon": "lucide:FileImage",
+    "description": "Whether the provider documents no, read, write, or read/write NFT metadata support.",
+    "filter": "select",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "capabilities"
   }
 }
