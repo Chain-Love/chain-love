@@ -11,3 +11,8 @@ Offer CSV files use both `provider` and `offer` columns:
 - `offer`: offer/product name
 
 Listings reference offers using `!offer:<slug>`.
+
+## NFT-tool offers
+
+`nfttools.csv` contains source-backed developer tooling for NFT creation,
+discovery, trading, analytics, and token-gated membership.
