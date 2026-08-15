@@ -806,23 +806,73 @@
         },
         "description": { "type": ["string", "null"] },
         "nftFunctions": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "examples": [
+              "minting",
+              "metadata",
+              "discovery",
+              "trading",
+              "marketplace_aggregation",
+              "analytics",
+              "token_gating",
+              "membership",
+              "royalties",
+              "portfolio"
+            ]
+          }
         },
         "deliveryTypes": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "examples": [
+              "api",
+              "sdk",
+              "smart_contracts",
+              "hosted_app",
+              "library",
+              "protocol"
+            ]
+          }
         },
         "tokenStandards": {
           "type": ["array", "null"],
-          "items": { "type": "string" }
+          "items": {
+            "type": "string",
+            "examples": ["ERC-721", "ERC-1155"]
+          }
         },
         "assetActions": {
           "type": ["array", "null"],
-          "items": { "type": "string" }
+          "items": {
+            "type": "string",
+            "examples": [
+              "create",
+              "mint",
+              "read",
+              "transfer",
+              "list",
+              "buy",
+              "sell",
+              "bid",
+              "burn",
+              "gate",
+              "renew"
+            ]
+          }
         },
-        "custodyModel": { "type": ["string", "null"] },
-        "metadataSupport": { "type": ["string", "null"] },
+        "custodyModel": {
+          "type": ["string", "null"],
+          "examples": ["non_custodial", "custodial", "mixed"]
+        },
+        "metadataSupport": {
+          "type": ["string", "null"],
+          "examples": ["none", "read", "write", "read_write"]
+        },
         "starred": { "type": "boolean" }
       },
       "required": [
