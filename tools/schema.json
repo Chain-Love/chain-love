@@ -23,6 +23,7 @@
     "sdks": { "type": "array", "items": { "$ref": "#/$defs/sdks" } },
     "ramps": { "type": "array", "items": { "$ref": "#/$defs/ramps" } },
     "platforms": { "type": "array", "items": { "$ref": "#/$defs/platforms" } },
+    "tradingplatforms": { "type": "array", "items": { "$ref": "#/$defs/tradingplatforms" } },
     "security": { "type": "array", "items": { "$ref": "#/$defs/security" } },
     "agents": { "type": "array", "items": { "$ref": "#/$defs/agents" } },
     "columns": { "$ref": "#/$defs/columns" },
@@ -787,6 +788,39 @@
         "executionEnvironment"
       ]
     },
+    "tradingplatforms": {
+      "title": "Trading Platforms",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "offer": { "type": ["string", "null"] },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "platformType": { "type": "string", "examples": ["DEX", "CEX", "Aggregator"] },
+        "tradingTypes": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "kycRequired": { "type": ["boolean", "null"] },
+        "feeStructure": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "offer",
+        "actionButtons",
+        "platformType",
+        "tradingTypes",
+        "kycRequired",
+        "feeStructure",
+        "starred"
+      ]
+    },
     "security": {
       "title": "Security",
       "type": "object",
@@ -970,6 +1004,7 @@
         "storages": { "type": "array", "items": { "type": "string" } },
         "sdks": { "type": "array", "items": { "type": "string" } },
         "platforms": { "type": "array", "items": { "type": "string" } },
+        "tradingplatforms": { "type": "array", "items": { "type": "string" } },
         "security": { "type": "array", "items": { "type": "string" } },
         "agents": { "type": "array", "items": { "type": "string" } }
       }
@@ -1068,6 +1103,7 @@
               "sdks",
               "ramps",
               "platforms",
+              "tradingplatforms",
               "security",
               "agents"
             ]
