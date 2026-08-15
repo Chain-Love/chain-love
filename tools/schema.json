@@ -613,7 +613,8 @@
         "planName": { "type": ["string", "null"] },
         "price": { "type": ["string", "null"] },
         "trial": { "type": "boolean" },
-        "starred": { "type": "boolean" }
+        "starred": { "type": "boolean" },
+        "license": { "type": ["string", "null"] }
       },
       "required": [
         "slug",
@@ -636,7 +637,8 @@
         "planType",
         "price",
         "trial",
-        "starred"
+        "starred",
+        "license"
       ]
     },
 
