@@ -15,6 +15,7 @@
     "oracles": { "type": "array", "items": { "$ref": "#/$defs/oracles" } },
     "bridges": { "type": "array", "items": { "$ref": "#/$defs/bridges" } },
     "services": { "type": "array", "items": { "$ref": "#/$defs/services" } },
+    "compute": { "type": "array", "items": { "$ref": "#/$defs/compute" } },
     "storages": { "type": "array", "items": { "$ref": "#/$defs/storages" } },
     "faucets": { "type": "array", "items": { "$ref": "#/$defs/faucets" } },
     "analytics": { "type": "array", "items": { "$ref": "#/$defs/analytics" } },
@@ -362,6 +363,32 @@
         "actionButtons",
         "planType"
       ]
+    },
+
+    "compute": {
+      "title": "Compute",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "offer": { "type": ["string", "null"] },
+        "actionButtons": { "type": ["array", "null"], "items": { "type": "string" } },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "price": { "type": ["string", "null"] },
+        "planType": { "type": "string" },
+        "planName": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "resourceTypes": { "type": "array", "items": { "type": "string", "enum": ["cpu", "gpu", "accelerator"] }, "minItems": 1, "uniqueItems": true },
+        "provisioningMode": { "type": "string", "enum": ["container", "vm", "bare_metal", "serverless", "marketplace", "mixed"] },
+        "workloadTypes": { "type": "array", "items": { "type": "string", "enum": ["general_compute", "ai_inference", "ai_training", "rendering", "batch", "scientific"] }, "minItems": 1, "uniqueItems": true },
+        "hardware": { "type": ["array", "null"], "items": { "type": "string" } },
+        "interfaces": { "type": "array", "items": { "type": "string", "enum": ["web", "api", "cli", "docker", "kubernetes", "sdk"] }, "minItems": 1, "uniqueItems": true },
+        "pricingUnit": { "type": "string", "enum": ["hour", "second", "job", "market-based"] },
+        "minimumCommitment": { "type": ["string", "null"] }
+      },
+      "required": ["slug", "provider", "actionButtons", "tag", "description", "price", "planType", "starred", "resourceTypes", "provisioningMode", "workloadTypes", "hardware", "interfaces", "pricingUnit", "minimumCommitment"]
     },
 
     "storages": {
@@ -966,6 +993,7 @@
         "wallets": { "type": "array", "items": { "type": "string" } },
         "mcpservers": { "type": "array", "items": { "type": "string" } },
         "services": { "type": "array", "items": { "type": "string" } },
+        "compute": { "type": "array", "items": { "type": "string" } },
         "ramps": { "type": "array", "items": { "type": "string" } },
         "storages": { "type": "array", "items": { "type": "string" } },
         "sdks": { "type": "array", "items": { "type": "string" } },
@@ -1060,6 +1088,7 @@
               "oracles",
               "bridges",
               "services",
+              "compute",
               "storages",
               "faucets",
               "analytics",
