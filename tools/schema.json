@@ -591,6 +591,13 @@
         "transportType": { "type": "string" },
         "mcpEndpoint": { "type": ["string", "null"] },
         "authType": { "type": "string" },
+        "authMethods": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "string",
+            "enum": ["OAuth", "Personal Access Token", "API Key", "Bearer Token", "Other"]
+          }
+        },
         "credentialKey": { "type": ["string", "null"] },
         "selfHostedCommand": { "type": ["string", "null"] },
         "selfHostedArgs": {
