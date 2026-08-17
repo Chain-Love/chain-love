@@ -582,6 +582,8 @@ def build_provider_meta_from_names(
                 "telegram": p.get("telegram"),
                 "linkedin": p.get("linkedin"),
                 "supportEmail": p.get("supportEmail"),
+                "providerStatus": p.get("providerStatus"),
+                "parentProvider": p.get("parentProvider"),
                 "starred": starred,
                 "tag": p.get("tag"),
                 "categories": categories_list,

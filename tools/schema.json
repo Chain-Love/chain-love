@@ -1045,6 +1045,11 @@
         "telegram": { "type": ["string", "null"] },
         "linkedin": { "type": ["string", "null"] },
         "supportEmail": { "type": ["string", "null"] },
+        "providerStatus": {
+          "type": ["string", "null"],
+          "enum": ["active", "acquired", "renamed", "sunset", "retired", "unknown", null]
+        },
+        "parentProvider": { "type": ["string", "null"] },
         "starred": { "type": "boolean" },
         "tag": {
           "type": ["array", "null"],
