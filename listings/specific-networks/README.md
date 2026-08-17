@@ -57,3 +57,19 @@ When a reference is used:
 
 Use a reference when the offer is mostly the same across networks.  
 Write full row values when particular offer is only available for a selected network.
+## `chain` value consistency (DBIP #1943)
+
+The `chain` column must match the network family implied by the listing slug:
+
+- Slug signals like `mainnet` / `sepolia` / `hoodi` / `calibnet` / `testnet` /
+  `devnet` / `coston2` / `amoy` are checked against the row's `chain` value.
+- `validate_csv.py` rejects rows where the slug declares one family
+  (mainnet vs testnet) and `chain` declares the other.
+- Product/brand-name slug parts (e.g. `one` in `blockexplorer-one`,
+  `nova` in `3xpl-one`) are not treated as chain signals.
+
+**Intentional cross-network rows**: if a row intentionally serves another
+network than its slug suggests, add it to `tools/chain_allowlist.csv`
+(columns: `path,slug,reason`) in the `json-tools` branch so the validator
+does not flag it.
+
