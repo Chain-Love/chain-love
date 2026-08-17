@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Iterator, Callable, List, Dict
 import os
 import csv
+import json
 import re
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
@@ -50,6 +51,46 @@ def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
 
     return errors
 
+def _json_value_key(value: object) -> str:
+    """Return a stable, type-preserving key for one JSON value."""
+    return json.dumps(
+        value,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+
+def rule_json_array_elements_unique(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """Reject exact duplicate top-level elements in parseable JSON arrays."""
+    errors: List[str] = []
+
+    for row_number, row in enumerate(rows, start=2):  # header = row 1
+        for column, cell in row.items():
+            if column is None or not cell or not cell.strip():
+                continue
+
+            try:
+                value = json.loads(cell)
+            except (TypeError, ValueError):
+                continue
+
+            if not isinstance(value, list):
+                continue
+
+            seen: set[str] = set()
+            reported: set[str] = set()
+            for element in value:
+                key = _json_value_key(element)
+                if key in seen and key not in reported:
+                    errors.append(
+                        f'{path}: row {row_number}: column {column}: '
+                        f'duplicate JSON-array element {key}'
+                    )
+                    reported.add(key)
+                seen.add(key)
+
+    return errors
+
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
@@ -89,6 +130,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_json_array_elements_unique)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
