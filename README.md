@@ -62,6 +62,7 @@ However, schema/meta changes in this branch must be mirrored in data tables on `
     - `$defs.providerMeta`: JSON Schema for one object under generated `meta.providers[<providerSlug>]` (provider profile shown in the UI). Field meanings and CSV formatting rules (for example `logoPath`, `website` vs social handles) are documented in the data repo: [references/README.md](https://github.com/Chain-Love/chain-love/blob/main/references/README.md).
       When you change provider data shape, update this schema accordingly:
       - `properties` **columns**: if you add/remove/rename columns in `references/providers/providers.csv`, reflect the same keys/types in `providerMeta.properties` and `providerMeta.required`, and keep generated `meta.providers` consistent.
+      - `aliases` is an optional array of documented former or alternate official names. Provider search and duplicate detection should match `slug`, `name`, and every alias using case- and punctuation-insensitive comparison.
       - `categories` is a non-empty, unique array of category keys. Allowed values are enforced by `categories.items.enum` in `tools/schema.json` (see `providerMeta.properties.categories`). Whenever you add or remove an infrastructure category, update that enum so provider `categories` stays aligned with the category set used elsewhere in the schema.
 
 - **`meta/categories.json`**
