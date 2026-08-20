@@ -461,6 +461,72 @@
     "cellType": "numericRange",
     "group": "pricing"
   },
+  "resourceTypes": {
+    "key": "resourceTypes",
+    "label": "Resource Types",
+    "icon": "lucide:Boxes",
+    "description": "Available compute resource types.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "provisioningMode": {
+    "key": "provisioningMode",
+    "label": "Provisioning Mode",
+    "icon": "lucide:Settings2",
+    "description": "Supported compute provisioning modes.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "serviceDetails"
+  },
+  "workloadTypes": {
+    "key": "workloadTypes",
+    "label": "Workload Types",
+    "icon": "lucide:Workflow",
+    "description": "Supported workload types.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "interfaces": {
+    "key": "interfaces",
+    "label": "Interfaces",
+    "icon": "lucide:Plug",
+    "description": "Available management and access interfaces.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "developerExperience"
+  },
+  "pricingUnit": {
+    "key": "pricingUnit",
+    "label": "Pricing Unit",
+    "icon": "lucide:ReceiptText",
+    "description": "Unit used to price the compute offering.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "pricing"
+  },
+  "minimumCommitment": {
+    "key": "minimumCommitment",
+    "label": "Minimum Commitment",
+    "icon": "lucide:CalendarClock",
+    "description": "Minimum purchase or reservation commitment.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "pricing"
+  },
   "assetTypes": {
     "key": "assetTypes",
     "label": "Asset Types",
