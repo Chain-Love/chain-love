@@ -1253,6 +1253,50 @@
     "cellType": null,
     "group": "identity"
   },
+  "platformType": {
+    "key": "platformType",
+    "label": "Platform Type",
+    "icon": "lucide:Layers3",
+    "description": "Trading venue type, such as DEX, CEX, or aggregator.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "capabilities"
+  },
+  "tradingTypes": {
+    "key": "tradingTypes",
+    "label": "Trading Types",
+    "icon": "lucide:ArrowLeftRight",
+    "description": "Trading mechanisms supported by the platform.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "kycRequired": {
+    "key": "kycRequired",
+    "label": "KYC Required",
+    "icon": "lucide:BadgeCheck",
+    "description": "Whether identity verification is mandatory for the documented trading access.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null,
+    "group": "compliance"
+  },
+  "feeStructure": {
+    "key": "feeStructure",
+    "label": "Fee Structure",
+    "icon": "lucide:ReceiptText",
+    "description": "Documented fee model for the trading platform.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "pricing"
+  },
   "registrationType": {
     "key": "registrationType",
     "label": "Registration Type",
