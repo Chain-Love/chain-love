@@ -68,7 +68,10 @@ jobs:
         run: |
           python3 - <<'PY'
           import csv
+          import io
+          import os
           import re
+          import subprocess
           from pathlib import Path
           
           url_re = re.compile(r'https?://[^\s,"\'>)]+')
@@ -112,25 +115,45 @@ jobs:
                       seen.add(item)
                       out.append(item)
               return out
-          
+
+          def links_from_csv(path: Path, content: str) -> list[str]:
+              links = url_re.findall(content)
+
+              if path.as_posix() == "references/providers/providers.csv":
+                  reader = csv.DictReader(io.StringIO(content))
+                  for row in reader:
+                      for col in ("x", "github", "discord", "telegram", "linkedin"):
+                          url = provider_handle_to_url(col, row.get(col, ""))
+                          if url:
+                              links.append(url)
+
+              return unique(links)
+
+          base = os.environ.get("GITHUB_BASE_REF")
+
           for path in Path(".").rglob("*.csv"):
               if not path.is_file() or ".git" in path.parts:
                   continue
-          
+
               content = path.read_text(encoding="utf-8", errors="ignore")
-              links = url_re.findall(content)
-          
-              if path.as_posix() == "references/providers/providers.csv":
-                  with path.open(newline="", encoding="utf-8", errors="ignore") as f:
-                      reader = csv.DictReader(f)
-                      for row in reader:
-                          for col in ("x", "github", "discord", "telegram", "linkedin"):
-                              url = provider_handle_to_url(col, row.get(col, ""))
-                              if url:
-                                  links.append(url)
-          
-              links = unique(links)
-          
+              links = links_from_csv(path, content)
+
+              # CSV changes rewrite an entire record even when a new field only
+              # adds an empty cell. Compare against the base file so this PR
+              # check verifies URLs introduced or changed by the pull request,
+              # rather than historical links that happen to be on touched rows.
+              base_links: list[str] = []
+              if base:
+                  result = subprocess.run(
+                      ["git", "show", f"origin/{base}:{path.as_posix()}"],
+                      text=True,
+                      capture_output=True,
+                  )
+                  if result.returncode == 0:
+                      base_links = links_from_csv(path, result.stdout)
+
+              links = [link for link in links if link not in set(base_links)]
+
               path.write_text(
                   ("\n".join(links) + "\n") if links else "",
                   encoding="utf-8"
