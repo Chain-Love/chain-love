@@ -23,6 +23,7 @@
     "sdks": { "type": "array", "items": { "$ref": "#/$defs/sdks" } },
     "ramps": { "type": "array", "items": { "$ref": "#/$defs/ramps" } },
     "platforms": { "type": "array", "items": { "$ref": "#/$defs/platforms" } },
+    "compute": { "type": "array", "items": { "$ref": "#/$defs/compute" } },
     "security": { "type": "array", "items": { "$ref": "#/$defs/security" } },
     "agents": { "type": "array", "items": { "$ref": "#/$defs/agents" } },
     "columns": { "$ref": "#/$defs/columns" },
@@ -785,6 +786,49 @@
         "trial",
         "availableApis",
         "executionEnvironment"
+      ]
+    },
+    "compute": {
+      "title": "Compute",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "offer": { "type": ["string", "null"] },
+        "actionButtons": { "type": ["array", "null"], "items": { "type": "string" } },
+        "resourceTypes": { "type": ["array", "null"], "items": { "type": "string" } },
+        "provisioningMode": { "type": ["array", "null"], "items": { "type": "string" } },
+        "workloadTypes": { "type": ["array", "null"], "items": { "type": "string" } },
+        "hardware": { "type": ["array", "null"], "items": { "type": "string" } },
+        "interfaces": { "type": ["array", "null"], "items": { "type": "string" } },
+        "pricingUnit": { "type": ["string", "null"] },
+        "minimumCommitment": { "type": ["string", "null"] },
+        "price": { "type": ["string", "null"] },
+        "planType": { "type": ["string", "null"] },
+        "planName": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "offer",
+        "actionButtons",
+        "resourceTypes",
+        "provisioningMode",
+        "workloadTypes",
+        "hardware",
+        "interfaces",
+        "pricingUnit",
+        "minimumCommitment",
+        "price",
+        "planType",
+        "planName",
+        "starred",
+        "tag",
+        "description"
       ]
     },
     "security": {
