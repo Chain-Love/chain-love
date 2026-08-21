@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Iterator, Callable, List, Dict
 import os
 import csv
+import json
 import re
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
@@ -83,6 +84,52 @@ def iter_csv_files(root: Path) -> Iterator[Path]:
         for name in sorted(filenames):
             if name.lower().endswith(".csv"):
                 yield Path(dirpath) / name
+
+
+PACKAGE_REGISTRY_ENUM = {
+    "npm", "pypi", "crates_io", "maven", "nuget", "go_module",
+    "packagist", "rubygems", "hex", "jsr",
+}
+
+
+def rule_packageIdentifiers(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """DBIP #2507: packageIdentifiers must be a JSON object of registry arrays.
+
+    Values are normalized install identifiers for the SDK itself. Each key
+    must be a supported registry/ecosystem; each value a non-empty array of
+    unique, non-empty identifier strings. Blank/null cells are allowed (no
+    verified identifier yet).
+    """
+    errors: List[str] = []
+    if not rows or "packageIdentifiers" not in rows[0]:
+        return errors
+    for idx, row in enumerate(rows, start=2):
+        raw = (row.get("packageIdentifiers") or "").strip()
+        if not raw:
+            continue
+        try:
+            value = json.loads(raw)
+        except json.JSONDecodeError:
+            errors.append(f"{path}: row {idx}: slug '{row.get('slug', '')}': packageIdentifiers is not valid JSON (got '{raw}')")
+            continue
+        if not isinstance(value, dict):
+            errors.append(f"{path}: row {idx}: slug '{row.get('slug', '')}': packageIdentifiers must be a JSON object (got '{raw}')")
+            continue
+        if not value:
+            errors.append(f"{path}: row {idx}: slug '{row.get('slug', '')}': packageIdentifiers must not be an empty object")
+            continue
+        for key, ids in value.items():
+            if key not in PACKAGE_REGISTRY_ENUM:
+                errors.append(f"{path}: row {idx}: slug '{row.get('slug', '')}': invalid registry key '{key}' (allowed: {sorted(PACKAGE_REGISTRY_ENUM)})")
+            if not isinstance(ids, list) or not ids:
+                errors.append(f"{path}: row {idx}: slug '{row.get('slug', '')}': '{key}' must be a non-empty array")
+                continue
+            if len(set(ids)) != len(ids):
+                errors.append(f"{path}: row {idx}: slug '{row.get('slug', '')}': '{key}' identifiers must be unique")
+            for ident in ids:
+                if not isinstance(ident, str) or not ident.strip():
+                    errors.append(f"{path}: row {idx}: slug '{row.get('slug', '')}': '{key}' identifier must be a non-empty string")
+    return errors
 
 def main():
     root = Path(".")

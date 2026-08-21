@@ -10,33 +10,126 @@
       "const": "2.0.0",
       "description": "Schema version of this document"
     },
-    "apis": { "type": "array", "items": { "$ref": "#/$defs/apis" } },
-    "explorers": { "type": "array", "items": { "$ref": "#/$defs/explorers" } },
-    "oracles": { "type": "array", "items": { "$ref": "#/$defs/oracles" } },
-    "bridges": { "type": "array", "items": { "$ref": "#/$defs/bridges" } },
-    "services": { "type": "array", "items": { "$ref": "#/$defs/services" } },
-    "storages": { "type": "array", "items": { "$ref": "#/$defs/storages" } },
-    "faucets": { "type": "array", "items": { "$ref": "#/$defs/faucets" } },
-    "analytics": { "type": "array", "items": { "$ref": "#/$defs/analytics" } },
-    "wallets": { "type": "array", "items": { "$ref": "#/$defs/wallets" } },
-    "mcpservers": { "type": "array", "items": { "$ref": "#/$defs/mcpservers" } },
-    "sdks": { "type": "array", "items": { "$ref": "#/$defs/sdks" } },
-    "ramps": { "type": "array", "items": { "$ref": "#/$defs/ramps" } },
-    "platforms": { "type": "array", "items": { "$ref": "#/$defs/platforms" } },
-    "security": { "type": "array", "items": { "$ref": "#/$defs/security" } },
-    "agents": { "type": "array", "items": { "$ref": "#/$defs/agents" } },
-    "columns": { "$ref": "#/$defs/columns" },
-    "meta": { "$ref": "#/$defs/meta" }
+    "apis": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/apis"
+      }
+    },
+    "explorers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/explorers"
+      }
+    },
+    "oracles": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/oracles"
+      }
+    },
+    "bridges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/bridges"
+      }
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/services"
+      }
+    },
+    "storages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/storages"
+      }
+    },
+    "faucets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/faucets"
+      }
+    },
+    "analytics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/analytics"
+      }
+    },
+    "wallets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/wallets"
+      }
+    },
+    "mcpservers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/mcpservers"
+      }
+    },
+    "sdks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sdks"
+      }
+    },
+    "ramps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ramps"
+      }
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/platforms"
+      }
+    },
+    "security": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/security"
+      }
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/agents"
+      }
+    },
+    "columns": {
+      "$ref": "#/$defs/columns"
+    },
+    "meta": {
+      "$ref": "#/$defs/meta"
+    }
   },
   "$defs": {
     "apis": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "planName": { "type": ["string", "null"] },
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "planType": {
           "type": "string",
           "examples": [
@@ -50,55 +143,166 @@
         },
         "apiType": {
           "type": "string",
-          "examples": ["RPC", "Indexed Data"]
+          "examples": [
+            "RPC",
+            "Indexed Data"
+          ]
         },
-        "chain": { "type": "string" },
-        "address": { "type": ["string", "null"] },
-        "accessPrice": { "type": ["string", "null"] },
-        "queryPrice": { "type": ["string", "null"] },
-        "uptimeSla": { "type": ["string", "null"] },
-        "bandwidthSla": { "type": ["string", "null"] },
-        "blocksBehindSla": { "type": ["string", "null"] },
-        "starred": { "type": "boolean" },
-        "trial": { "type": "boolean" },
+        "chain": {
+          "type": "string"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accessPrice": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "queryPrice": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uptimeSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bandwidthSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "blocksBehindSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "trial": {
+          "type": "boolean"
+        },
         "availableApis": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "limitations": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "securityImprovements": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "monitoringAndAnalytics": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "regions": { "type": ["array", "null"], "items": { "type": "string" } },
-        "verifiedUptime": { "type": ["string", "null"] },
-        "verifiedLatency": { "type": ["string", "null"] },
-        "verifiedBlocksBehindAvg": { "type": ["string", "null"] },
+        "regions": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "verifiedUptime": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verifiedLatency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verifiedBlocksBehindAvg": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "supportSla": { "type": ["string", "null"] },
+        "supportSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "technology": {
           "type": "string",
-          "examples": ["EVM JSON-RPC", "The Graph"]
+          "examples": [
+            "EVM JSON-RPC",
+            "The Graph"
+          ]
         },
         "additionalFeatures": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "historicalData": {
           "type": "string",
-          "examples": ["Pruned", "Archive"]
+          "examples": [
+            "Pruned",
+            "Archive"
+          ]
         },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "required": [
         "slug",
@@ -130,42 +334,106 @@
         "tag"
       ]
     },
-
     "explorers": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "chain": { "type": "string" },
-        "technology": { "type": "string" },
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "technology": {
+          "type": "string"
+        },
         "monitoringAndAnalytics": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "additionalFeatures": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "starred": { "type": "boolean" },
+        "starred": {
+          "type": "boolean"
+        },
         "availableApis": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
+        "sdk": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
         "searchCapabilities": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "smartContractsVerifications": { "type": "boolean" },
-        "fullHistory": { "type": "boolean" },
-        "pricing": { "type": ["string", "null"] },
+        "smartContractsVerifications": {
+          "type": "boolean"
+        },
+        "fullHistory": {
+          "type": "boolean"
+        },
+        "pricing": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "required": [
         "slug",
@@ -185,46 +453,118 @@
         "tag"
       ]
     },
-
     "oracles": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "chain": { "type": "string" },
-        "technology": { "type": "string" },
-        "starred": { "type": "boolean" },
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "technology": {
+          "type": "string"
+        },
+        "starred": {
+          "type": "boolean"
+        },
         "availableApis": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "monitoringAndAnalytics": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "additionalFeatures": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "dataTypes": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "decentralizationModel": { "type": ["string", "null"] },
-        "economicalSecurity": { "type": "boolean" },
-        "economicalSecurityNote": { "type": ["string", "null"] },
-        "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
+        "decentralizationModel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "economicalSecurity": {
+          "type": "boolean"
+        },
+        "economicalSecurityNote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sdk": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
         "auditsPerformed": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "required": [
         "slug",
@@ -245,55 +585,157 @@
         "tag"
       ]
     },
-
     "bridges": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "chain": { "type": "string" },
-        "technology": { "type": "string" },
-        "openSource": { "type": "boolean" },
-        "support": { "type": ["array", "null"], "items": { "type": "string" } },
-        "supportedChains": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+        "slug": {
+          "type": "string"
         },
-        "starred": { "type": "boolean" },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "technology": {
+          "type": "string"
+        },
+        "openSource": {
+          "type": "boolean"
+        },
+        "support": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "supportedChains": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "starred": {
+          "type": "boolean"
+        },
         "availableApis": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "monitoringAndAnalytics": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "additionalFeatures": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "assetTypes": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "txSpeedSla": { "type": ["string", "null"] },
-        "throughputSla": { "type": ["string", "null"] },
-        "price": { "type": ["string", "null"] },
-        "economicalSecurity": { "type": "boolean" },
-        "economicalSecurityNote": { "type": ["string", "null"] },
+        "txSpeedSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "throughputSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "economicalSecurity": {
+          "type": "boolean"
+        },
+        "economicalSecurityNote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "auditsPerformed": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "decentralizationModel": { "type": ["string", "null"] },
-        "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
+        "decentralizationModel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sdk": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
         "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "required": [
         "slug",
@@ -320,25 +762,65 @@
         "tag"
       ]
     },
-
     "services": {
       "title": "Services",
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "toolType": { "type": "string" },
-        "price": { "type": ["string", "null"] },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
-        "description": { "type": ["string", "null"] },
-        "starred": { "type": "boolean" },
-        "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+        "slug": {
+          "type": "string"
         },
-        "planName": { "type": ["string", "null"] },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "toolType": {
+          "type": "string"
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "planType": {
           "type": "string",
           "examples": [
@@ -363,25 +845,65 @@
         "planType"
       ]
     },
-
     "storages": {
       "title": "Storages",
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "toolType": { "type": "string" },
-        "price": { "type": ["string", "null"] },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
-        "description": { "type": ["string", "null"] },
-        "starred": { "type": "boolean" },
-        "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+        "slug": {
+          "type": "string"
         },
-        "planName": { "type": ["string", "null"] },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "toolType": {
+          "type": "string"
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "planType": {
           "type": "string",
           "examples": [
@@ -406,31 +928,85 @@
         "planType"
       ]
     },
-
     "faucets": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "chain": { "type": "string" },
-        "requiresLogin": { "type": "boolean" },
-        "hasCaptcha": { "type": "boolean" },
-        "requiredMainnetBalance": { "type": ["string", "null"] },
-        "price": { "type": ["string", "null"] },
-        "dripLimitAmount": { "type": ["string", "null"] },
-        "dripLimitPeriod": { "type": ["string", "null"] },
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "requiresLogin": {
+          "type": "boolean"
+        },
+        "hasCaptcha": {
+          "type": "boolean"
+        },
+        "requiredMainnetBalance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dripLimitAmount": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dripLimitPeriod": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "additionalNotes": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "starred": { "type": "boolean" },
+        "starred": {
+          "type": "boolean"
+        },
         "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "required": [
         "slug",
@@ -448,22 +1024,42 @@
         "tag"
       ]
     },
-
     "analytics": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "chain": { "type": "string" },
-        "dataSources": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+        "slug": {
+          "type": "string"
         },
-        "hasDashboard": { "type": "boolean" },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "dataSources": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "hasDashboard": {
+          "type": "boolean"
+        },
         "historicalData": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "examples": [
             "1 month",
             "3 years",
@@ -472,16 +1068,38 @@
           ]
         },
         "availableApis": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "price": { "type": ["string", "null"] },
-        "starred": { "type": "boolean" },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
         "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "planName": { "type": ["string", "null"] },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "planType": {
           "type": "string",
           "examples": [
@@ -493,7 +1111,15 @@
             "One-time payment"
           ]
         },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "required": [
         "slug",
@@ -510,45 +1136,124 @@
         "tag"
       ]
     },
-
     "wallets": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "openSource": { "type": "boolean" },
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "openSource": {
+          "type": "boolean"
+        },
         "supportedPlatforms": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "custodial": { "type": "boolean" },
-        "mfa": { "type": "boolean" },
-        "msig": { "type": "boolean" },
-        "hardware": { "type": "boolean" },
-        "keyExport": { "type": "boolean" },
-        "native": { "type": "boolean" },
-        "evm": { "type": "boolean" },
-        "tendermint": { "type": "boolean" },
+        "custodial": {
+          "type": "boolean"
+        },
+        "mfa": {
+          "type": "boolean"
+        },
+        "msig": {
+          "type": "boolean"
+        },
+        "hardware": {
+          "type": "boolean"
+        },
+        "keyExport": {
+          "type": "boolean"
+        },
+        "native": {
+          "type": "boolean"
+        },
+        "evm": {
+          "type": "boolean"
+        },
+        "tendermint": {
+          "type": "boolean"
+        },
         "tokensSupport": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "staking": { "type": "boolean" },
-        "price": { "type": ["string", "null"] },
-        "support": { "type": ["array", "null"], "items": { "type": "string" } },
-        "audit": { "type": ["array", "null"], "items": { "type": "string" } },
+        "staking": {
+          "type": "boolean"
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "support": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "audit": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
         "languages": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "starred": { "type": "boolean" },
+        "starred": {
+          "type": "boolean"
+        },
         "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "required": [
         "slug",
@@ -574,46 +1279,130 @@
         "tag"
       ]
     },
-
     "mcpservers": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+        "slug": {
+          "type": "string"
         },
-        "serverType": { "type": "string" },
-        "hostingType": { "type": "string" },
-        "transportType": { "type": "string" },
-        "mcpEndpoint": { "type": ["string", "null"] },
-        "authType": { "type": "string" },
-        "credentialKey": { "type": ["string", "null"] },
-        "selfHostedCommand": { "type": ["string", "null"] },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "serverType": {
+          "type": "string"
+        },
+        "hostingType": {
+          "type": "string"
+        },
+        "transportType": {
+          "type": "string"
+        },
+        "mcpEndpoint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "authType": {
+          "type": "string"
+        },
+        "credentialKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "selfHostedCommand": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "selfHostedArgs": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "selfHostedRequiredEnvVars": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "x402": { "type": "boolean" },
-        "onChainWrite": { "type": "boolean" },
+        "x402": {
+          "type": "boolean"
+        },
+        "onChainWrite": {
+          "type": "boolean"
+        },
         "agentSkills": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
-        "description": { "type": ["string", "null"] },
-        "planType": { "type": "string" },
-        "planName": { "type": ["string", "null"] },
-        "price": { "type": ["string", "null"] },
-        "trial": { "type": "boolean" },
-        "starred": { "type": "boolean" }
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planType": {
+          "type": "string"
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trial": {
+          "type": "boolean"
+        },
+        "starred": {
+          "type": "boolean"
+        }
       },
       "required": [
         "slug",
@@ -639,23 +1428,58 @@
         "starred"
       ]
     },
-
     "sdks": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+        "slug": {
+          "type": "string"
         },
-        "toolType": { "type": "string" },
-        "programmingLanguage": { "type": "string" },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
-        "description": { "type": ["string", "null"] },
-        "planName": { "type": ["string", "null"] },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "toolType": {
+          "type": "string"
+        },
+        "programmingLanguage": {
+          "type": "string"
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "planType": {
           "type": "string",
           "examples": [
@@ -667,17 +1491,81 @@
             "One-time payment"
           ]
         },
-        "price": { "type": ["string", "null"] },
-        "trial": { "type": "boolean" },
-        "starred": { "type": "boolean" },
-        "dependencies": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
         },
-        "latestKnownVersion": { "type": ["string", "null"] },
-        "latestKnownReleaseDate": { "type": ["string", "null"] },
-        "maintainer": { "type": ["string", "null"] },
-        "license": { "type": ["string", "null"] }
+        "trial": {
+          "type": "boolean"
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "dependencies": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "latestKnownVersion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "latestKnownReleaseDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "maintainer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "packageIdentifiers": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Authoritative package-registry identifiers for installing the SDK itself. Keys are supported registries/ecosystems; values are non-empty arrays of canonical identifiers. Blank/null means no verified identifier yet.",
+          "propertyNames": {
+            "enum": [
+              "npm",
+              "pypi",
+              "crates_io",
+              "maven",
+              "nuget",
+              "go_module",
+              "packagist",
+              "rubygems",
+              "hex",
+              "jsr"
+            ]
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        }
       },
       "required": [
         "slug",
@@ -703,26 +1591,73 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "kycLevel": { "type": "string" },
-        "paymentMethods": { "type": ["array"], "items": { "type": "string" } },
+        "kycLevel": {
+          "type": "string"
+        },
+        "paymentMethods": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
         "bannedCountries": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "aggregator": { "type": "boolean" },
+        "aggregator": {
+          "type": "boolean"
+        },
         "auditsPerformed": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
-        "deliveryType": { "type": ["string"] },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
+        "deliveryType": {
+          "type": [
+            "string"
+          ]
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "required": [
         "slug",
@@ -742,16 +1677,45 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+        "slug": {
+          "type": "string"
         },
-        "toolType": { "type": "string" },
-        "description": { "type": ["string", "null"] },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "toolType": {
+          "type": "string"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
         "planType": {
           "type": "string",
           "examples": [
@@ -763,14 +1727,37 @@
             "One-time payment"
           ]
         },
-        "planName": { "type": ["string", "null"] },
-        "price": { "type": ["string"] },
-        "trial": { "type": ["boolean"] },
-        "availableApis": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
         },
-        "executionEnvironment": { "type": ["string", "null"] }
+        "price": {
+          "type": [
+            "string"
+          ]
+        },
+        "trial": {
+          "type": [
+            "boolean"
+          ]
+        },
+        "availableApis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "executionEnvironment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       },
       "required": [
         "slug",
@@ -792,15 +1779,42 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "provider": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "actionButtons": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+        "slug": {
+          "type": "string"
         },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
-        "description": { "type": ["string", "null"] },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "planType": {
           "type": "string",
           "examples": [
@@ -812,20 +1826,57 @@
             "One-time payment"
           ]
         },
-        "planName": { "type": ["string", "null"] },
-        "price": { "type": ["string"] },
-        "trial": { "type": ["boolean"] },
-        "starred": { "type": "boolean" },
-        "toolType": { "type": ["string"] },
-        "deliveryType": { "type": ["string"] },
-        "executionEnvironment": { "type": ["string", "null"] },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "price": {
+          "type": [
+            "string"
+          ]
+        },
+        "trial": {
+          "type": [
+            "boolean"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "toolType": {
+          "type": [
+            "string"
+          ]
+        },
+        "deliveryType": {
+          "type": [
+            "string"
+          ]
+        },
+        "executionEnvironment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "coverage": {
-          "type": ["array"],
-          "items": { "type": "string" }
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "compliance": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         }
       },
       "required": [
@@ -850,64 +1901,198 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "slug": { "type": "string" },
-        "offer": { "type": ["string", "null"] },
-        "name": { "type": ["string", "null"] },
-        "description": { "type": ["string", "null"] },
-        "image": { "type": ["string", "null"] },
-        "active": { "type": ["boolean", "null"] },
-        "registrationType": { "type": ["string", "null"] },
-        "supportedTrust": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+        "slug": {
+          "type": "string"
         },
-        "agentId": { "type": "integer" },
-        "owner": { "type": "string" },
-        "creator": { "type": "string" },
-        "creatorTx": { "type": "string" },
-        "agentURI": { "type": ["string", "null"] },
-        "agentURIType": { "type": ["string", "null"] },
-        "agentWallet": { "type": ["string", "null"] },
-        "chain": { "type": "string" },
-        "identityRegistry": { "type": "string" },
-        "reputationRegistry": { "type": "string" },
-        "totalFeedbackCount": { "type": "integer" },
-        "activeFeedbackCount": { "type": "integer" },
-        "averageRating": { "type": "string" },
-        "rank": { "type": "integer" },
-        "registeredAt": { "type": "integer" },
-        "updatedAt": { "type": "integer" },
-        "starred": { "type": "boolean" },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "image": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "active": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "registrationType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supportedTrust": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "agentId": {
+          "type": "integer"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "string"
+        },
+        "creatorTx": {
+          "type": "string"
+        },
+        "agentURI": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agentURIType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agentWallet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "identityRegistry": {
+          "type": "string"
+        },
+        "reputationRegistry": {
+          "type": "string"
+        },
+        "totalFeedbackCount": {
+          "type": "integer"
+        },
+        "activeFeedbackCount": {
+          "type": "integer"
+        },
+        "averageRating": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "integer"
+        },
+        "registeredAt": {
+          "type": "integer"
+        },
+        "updatedAt": {
+          "type": "integer"
+        },
+        "starred": {
+          "type": "boolean"
+        },
         "feedbacks": {
           "type": "array",
           "items": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "id": { "type": "string" },
-              "isRevoked": { "type": "boolean" },
-              "clientAddress": { "type": "string" },
-              "feedbackIndex": { "type": ["string", "integer"] },
-              "value": { "type": "string" },
-              "valueDecimals": { "type": ["string", "integer"] },
-              "normalizedValue": { "type": "string" },
-              "tag1": { "type": "string" },
-              "tag2": { "type": "string" },
-              "endpoint": { "type": "string" },
-              "feedbackURI": { "type": "string" },
-              "createdAt": { "type": ["string", "integer"] },
-              "createdBlock": { "type": ["string", "integer"] },
+              "id": {
+                "type": "string"
+              },
+              "isRevoked": {
+                "type": "boolean"
+              },
+              "clientAddress": {
+                "type": "string"
+              },
+              "feedbackIndex": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              "value": {
+                "type": "string"
+              },
+              "valueDecimals": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              "normalizedValue": {
+                "type": "string"
+              },
+              "tag1": {
+                "type": "string"
+              },
+              "tag2": {
+                "type": "string"
+              },
+              "endpoint": {
+                "type": "string"
+              },
+              "feedbackURI": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              "createdBlock": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
               "responses": {
                 "type": "array",
                 "items": {
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "id": { "type": "string" },
-                    "responseURI": { "type": "string" },
-                    "responseHash": { "type": "string" },
-                    "createdAt": { "type": ["string", "integer"] },
-                    "createdBlock": { "type": ["string", "integer"] }
+                    "id": {
+                      "type": "string"
+                    },
+                    "responseURI": {
+                      "type": "string"
+                    },
+                    "responseHash": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": [
+                        "string",
+                        "integer"
+                      ]
+                    },
+                    "createdBlock": {
+                      "type": [
+                        "string",
+                        "integer"
+                      ]
+                    }
                   },
                   "required": [
                     "id",
@@ -957,27 +2142,105 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "apis": { "type": "array", "items": { "type": "string" } },
-        "oracles": { "type": "array", "items": { "type": "string" } },
-        "bridges": { "type": "array", "items": { "type": "string" } },
-        "explorers": { "type": "array", "items": { "type": "string" } },
-        "faucets": { "type": "array", "items": { "type": "string" } },
-        "analytics": { "type": "array", "items": { "type": "string" } },
-        "wallets": { "type": "array", "items": { "type": "string" } },
-        "mcpservers": { "type": "array", "items": { "type": "string" } },
-        "services": { "type": "array", "items": { "type": "string" } },
-        "ramps": { "type": "array", "items": { "type": "string" } },
-        "storages": { "type": "array", "items": { "type": "string" } },
-        "sdks": { "type": "array", "items": { "type": "string" } },
-        "platforms": { "type": "array", "items": { "type": "string" } },
-        "security": { "type": "array", "items": { "type": "string" } },
-        "agents": { "type": "array", "items": { "type": "string" } }
+        "apis": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "oracles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bridges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "explorers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "faucets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "analytics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "wallets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mcpservers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ramps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "storages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sdks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "security": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "agents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "meta": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["categories", "columns"],
+      "required": [
+        "categories",
+        "columns"
+      ],
       "properties": {
         "categories": {
           "type": "object",
@@ -1002,53 +2265,181 @@
     "categoryMeta": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["key", "label"],
+      "required": [
+        "key",
+        "label"
+      ],
       "properties": {
-        "key": { "type": "string" },
-        "label": { "type": "string" },
-        "icon": { "type": ["string", "null"] },
-        "description": { "type": ["string", "null"] },
-        "defaultSorting": { "type": ["string", "null"] }
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "icon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "defaultSorting": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "columnMeta": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["key", "label"],
+      "required": [
+        "key",
+        "label"
+      ],
       "properties": {
-        "key": { "type": "string" },
-        "label": { "type": "string" },
-        "icon": { "type": ["string", "null"] },
-        "description": { "type": ["string", "null"] },
-
-        "filter": { "type": ["string", "null"] },
-        "sorting": { "type": ["string", "null"] },
-        "pinning": { "type": ["string", "null"] },
-        "cellType": { "type": ["string", "null"] },
-        "group": { "type": ["string", "null"] }
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "icon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "filter": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sorting": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pinning": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cellType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "group": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "providerMeta": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["slug", "name", "starred"],
+      "required": [
+        "slug",
+        "name",
+        "starred"
+      ],
       "properties": {
-        "slug": { "type": "string" },
-        "name": { "type": "string" },
-        "logoPath": { "type": ["string", "null"] },
-        "description": { "type": ["string", "null"] },
-        "website": { "type": ["string", "null"] },
-        "docs": { "type": ["string", "null"] },
-        "x": { "type": ["string", "null"] },
-        "github": { "type": ["string", "null"] },
-        "discord": { "type": ["string", "null"] },
-        "telegram": { "type": ["string", "null"] },
-        "linkedin": { "type": ["string", "null"] },
-        "supportEmail": { "type": ["string", "null"] },
-        "starred": { "type": "boolean" },
+        "slug": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "logoPath": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "website": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "docs": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "x": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "github": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "discord": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "telegram": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "linkedin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supportEmail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
         "tag": {
-          "type": ["array", "null"],
-          "items": { "type": "string" }
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "categories": {
           "type": "array",
