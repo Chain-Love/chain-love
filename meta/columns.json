@@ -1262,5 +1262,71 @@
     "sorting": "string",
     "pinning": null,
     "cellType": null
+  },
+  "resourceTypes": {
+    "key": "resourceTypes",
+    "label": "Resource Types",
+    "icon": "lucide:Cpu",
+    "description": "Compute resource classes offered (CPU, GPU, accelerator).",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "provisioningMode": {
+    "key": "provisioningMode",
+    "label": "Provisioning Mode",
+    "icon": "lucide:CloudCog",
+    "description": "How compute capacity is provisioned (container, VM, bare metal, serverless, marketplace, or mixed).",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "technicalDetails"
+  },
+  "workloadTypes": {
+    "key": "workloadTypes",
+    "label": "Workload Types",
+    "icon": "lucide:BrainCircuit",
+    "description": "Primary workloads supported by the compute offer.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "interfaces": {
+    "key": "interfaces",
+    "label": "Interfaces",
+    "icon": "lucide:Terminal",
+    "description": "Interfaces available to provision or operate compute.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "developerExperience"
+  },
+  "pricingUnit": {
+    "key": "pricingUnit",
+    "label": "Pricing Unit",
+    "icon": "lucide:BadgeDollarSign",
+    "description": "Primary billing unit or market-based pricing model.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "pricing"
+  },
+  "minimumCommitment": {
+    "key": "minimumCommitment",
+    "label": "Minimum Commitment",
+    "icon": "lucide:Clock",
+    "description": "Documented minimum usage or commitment, when applicable.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "pricing"
   }
 }

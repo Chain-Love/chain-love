@@ -102,6 +102,10 @@ def has_unclosed_markdown(s: str) -> bool:
     if len(s) == 0:
         return False
 
+    # Technical snake_case identifiers such as bare_metal are not Markdown.
+    if re.fullmatch(r"[a-z0-9]+(?:_[a-z0-9]+)+", s):
+        return False
+
     # Pairs that must be closed: **, *, _, `, [ ]( )
     # Check bold/italic/code
     if s.count("**") % 2 != 0:

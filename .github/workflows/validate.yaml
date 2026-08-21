@@ -10,17 +10,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      
+
       - name: Install dependencies
+        working-directory: tools
         run: pip install --upgrade pip && pip install -r requirements.txt
 
       - name: Run CSV to JSON
+        working-directory: tools
         run: python3 csv_to_json.py
 
       - name: Run validation script
+        working-directory: tools
         run: python validate.py
