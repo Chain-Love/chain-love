@@ -269,12 +269,16 @@ def load_csv_folder(folder) -> dict:
 
 def make_providers_schema(network_schema) -> dict:
     providers_schema = copy.deepcopy(network_schema)
-    for definition in providers_schema['$defs'].keys():
-        if definition == "columns":
+    for definition, definition_schema in providers_schema['$defs'].items():
+        if definition == "columns" or "required" not in definition_schema:
             continue
-        if "chain" in providers_schema['$defs'][definition]['required']:
-            index = providers_schema['$defs'][definition]['required'].index("chain")
-            del providers_schema['$defs'][definition]['required'][index]
+        if "chain" in definition_schema['required']:
+            definition_schema['required'].remove("chain")
+        if "provider" in definition_schema.get("properties", {}):
+            if "provider" in definition_schema['required']:
+                definition_schema['required'].remove("provider")
+            if "providerSlug" not in definition_schema['required']:
+                definition_schema['required'].append("providerSlug")
     return providers_schema
 
 def main():
