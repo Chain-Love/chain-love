@@ -747,6 +747,28 @@
     "cellType": null,
     "group": "security"
   },
+  "recoveryMethods": {
+    "key": "recoveryMethods",
+    "label": "Recovery Methods",
+    "icon": "lucide:ShieldCheck",
+    "description": "Officially documented wallet access recovery mechanisms. unknown is for unreviewed migration rows; none is exclusive.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "security"
+  },
+  "recoveryDelay": {
+    "key": "recoveryDelay",
+    "label": "Recovery Delay",
+    "icon": "lucide:TimerReset",
+    "description": "Minimum documented product- or protocol-enforced waiting period before recovery can finalize.",
+    "filter": "select",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "security"
+  },
   "native": {
     "key": "native",
     "label": "Native",
