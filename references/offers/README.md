@@ -11,3 +11,9 @@ Offer CSV files use both `provider` and `offer` columns:
 - `offer`: offer/product name
 
 Listings reference offers using `!offer:<slug>`.
+
+## Trading-platform offers
+
+`tradingplatforms.csv` contains network-aware DEX, CEX, and aggregator offer
+templates. Its comparison fields cover `platformType`, `tradingTypes`,
+`kycRequired`, and `feeStructure`.
