@@ -9,6 +9,16 @@ This guide explains how to **add new categories and columns for the Chain.Love p
 Data files are not documented in detail in this guide. Their structure and contribution flow are described in the `main` branch README: [README.md](https://github.com/Chain-Love/chain-love/blob/main/README.md).  
 However, schema/meta changes in this branch must be mirrored in data tables on `main` (for example when adding/removing categories or columns).
 
+### Security capability columns
+
+The `security` schema exposes two nullable array fields: `supportedLanguages`
+contains provider-documented source or smart-contract languages, while
+`supportedFrameworks` contains provider-documented build, development, or
+testing integrations. These fields are intentionally separate from
+`executionEnvironment`, `deliveryType`, and `coverage`; blank values remain
+valid when support is not documented. The CSV and normalized-data validators
+require populated arrays to contain non-empty, trimmed, deduplicated strings.
+
 ---
 
 ## 1. Files and responsibilities
@@ -565,4 +575,3 @@ When asked to **remove a column**, an agent should:
   - Edit `tools/schema.json`: remove the column from every `$defs.<category>` where it appears.
   - Remove its entry from `meta/columns.json`.
   - On `main`, remove the column from every affected category CSV (see **§5**).
-

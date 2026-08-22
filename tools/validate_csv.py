@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Iterator, Callable, List, Dict
 import os
 import csv
+import json
 import re
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
@@ -50,6 +51,48 @@ def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
 
     return errors
 
+def rule_security_capability_arrays(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    if path.name != "security.csv":
+        return []
+
+    errors: List[str] = []
+    fields = ("supportedLanguages", "supportedFrameworks")
+
+    for idx, row in enumerate(rows, start=2):
+        for field in fields:
+            if field not in row:
+                continue
+
+            raw = row.get(field, "")
+            if raw is None or raw.strip() == "" or raw.strip().lower() == "null":
+                continue
+
+            try:
+                value = json.loads(raw)
+            except json.JSONDecodeError as exc:
+                errors.append(f"{path}: row {idx}: {field} must be a JSON array or NULL: {exc.msg}")
+                continue
+
+            if not isinstance(value, list):
+                errors.append(f"{path}: row {idx}: {field} must be a JSON array or NULL")
+                continue
+            if not value:
+                errors.append(f"{path}: row {idx}: {field} must not be an empty array")
+                continue
+
+            seen = set()
+            for item_idx, item in enumerate(value):
+                if not isinstance(item, str) or not item.strip():
+                    errors.append(f"{path}: row {idx}: {field}[{item_idx}] must be a non-empty string")
+                    continue
+                if item != item.strip():
+                    errors.append(f"{path}: row {idx}: {field}[{item_idx}] must not have leading or trailing whitespace")
+                if item in seen:
+                    errors.append(f"{path}: row {idx}: {field} contains duplicate value '{item}'")
+                seen.add(item)
+
+    return errors
+
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
@@ -89,6 +132,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_security_capability_arrays)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []

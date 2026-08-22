@@ -890,6 +890,28 @@
     "cellType": null,
     "group": "technicalDetails"
   },
+  "supportedLanguages": {
+    "key": "supportedLanguages",
+    "label": "Supported Languages",
+    "icon": "lucide:Code2",
+    "description": "Provider-documented source or smart-contract languages supported for security analysis, testing, scanning, or audits.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "technicalDetails"
+  },
+  "supportedFrameworks": {
+    "key": "supportedFrameworks",
+    "label": "Supported Frameworks",
+    "icon": "lucide:Workflow",
+    "description": "Provider-documented build, development, or testing framework integrations or project ingestion paths.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "technicalDetails"
+  },
   "kycLevel": {
     "key": "kycLevel",
     "label": "KYC Level",
