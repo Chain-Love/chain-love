@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Iterator, Callable, List, Dict
 import os
 import csv
+import json
 import re
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
@@ -83,6 +84,43 @@ def iter_csv_files(root: Path) -> Iterator[Path]:
         for name in sorted(filenames):
             if name.lower().endswith(".csv"):
                 yield Path(dirpath) / name
+
+
+STORAGETYPES_ENUM = {
+    "Object Storage", "File Storage", "Block Storage", "Database",
+    "IPFS Pinning", "Permanent Archive",
+}
+
+
+def rule_storageTypes_enum(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """DBIP #2504: storageTypes cells must be a JSON array of exact enum values.
+
+    The storages category previously pushed product type into free-form `tag`
+    arrays (e.g. "IPFS + Pinning service" vs "Pinning Service"), making
+    filtering unreliable. This rule enforces the normalized enum introduced in
+    the storages schema. Applies to any table that carries the column;
+    NULL/blank cells are allowed (coverage unverified).
+    """
+    errors: List[str] = []
+    if not rows or "storageTypes" not in rows[0]:
+        return errors
+    for idx, row in enumerate(rows, start=2):
+        raw = (row.get("storageTypes") or "").strip()
+        if not raw:
+            continue
+        value = json.loads(raw) if isinstance(raw, str) and raw.startswith("[") else raw
+        if isinstance(value, str):
+            value = [value]
+        if not isinstance(value, list):
+            errors.append(f"{path}: row {idx}: slug '{row.get('slug', '')}': storageTypes must be a JSON array (got '{raw}')")
+            continue
+        for item in value:
+            if item not in STORAGETYPES_ENUM:
+                errors.append(
+                    f"{path}: row {idx}: slug '{row.get('slug', '')}': invalid storageType '{item}' "
+                    f"(allowed: {sorted(STORAGETYPES_ENUM)})"
+                )
+    return errors
 
 def main():
     root = Path(".")
