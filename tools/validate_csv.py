@@ -3,6 +3,7 @@ from typing import Iterator, Callable, List, Dict
 import os
 import csv
 import re
+import json
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
 
@@ -78,6 +79,43 @@ def rule_links_must_be_quoted(path: Path, rows: List[Dict[str, str]]) -> List[st
 
     return errors
 
+def rule_source_urls(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    if not rows:
+        return []
+
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        su = (row.get("sourceUrls") or "").strip()
+        if su:
+            try:
+                parsed = json.loads(su)
+            except Exception:
+                errors.append(
+                    f"{path}: row {idx}: sourceUrls must be a JSON array of URL strings, got '{su[:60]}'"
+                )
+                continue
+            if not isinstance(parsed, list) or not parsed:
+                errors.append(
+                    f"{path}: row {idx}: sourceUrls must be a non-empty JSON array, got '{su[:60]}'"
+                )
+            elif len(parsed) > 3:
+                errors.append(
+                    f"{path}: row {idx}: sourceUrls limited to 1-3 URLs, got {len(parsed)}"
+                )
+            else:
+                for u in parsed:
+                    if not (isinstance(u, str) and (u.startswith("http://") or u.startswith("https://"))):
+                        errors.append(
+                            f"{path}: row {idx}: sourceUrls entry '{u}' is not an http(s) URL"
+                        )
+        lv = (row.get("lastVerifiedAt") or "").strip()
+        if lv:
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lv):
+                errors.append(
+                    f"{path}: row {idx}: lastVerifiedAt '{lv}' must be YYYY-MM-DD"
+                )
+    return errors
+
 def iter_csv_files(root: Path) -> Iterator[Path]:
     for dirpath, _, filenames in os.walk(root):
         for name in sorted(filenames):
@@ -89,6 +127,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_source_urls)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []

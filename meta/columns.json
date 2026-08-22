@@ -1262,5 +1262,27 @@
     "sorting": "string",
     "pinning": null,
     "cellType": null
+  },
+  "sourceUrls": {
+    "key": "sourceUrls",
+    "label": "Source URLs",
+    "icon": "lucide:Link2",
+    "description": "Canonical source URLs (1-3) used to verify this row: docs, pricing, or network-support pages.",
+    "filter": null,
+    "sorting": null,
+    "pinning": null,
+    "cellType": "tags",
+    "group": "verification"
+  },
+  "lastVerifiedAt": {
+    "key": "lastVerifiedAt",
+    "label": "Last Verified",
+    "icon": "lucide:CalendarCheck",
+    "description": "ISO date (YYYY-MM-DD) the row's key claims were last checked against source URLs.",
+    "filter": "date",
+    "sorting": "date",
+    "pinning": null,
+    "cellType": null,
+    "group": "verification"
   }
 }
