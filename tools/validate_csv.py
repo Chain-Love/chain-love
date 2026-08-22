@@ -84,11 +84,33 @@ def iter_csv_files(root: Path) -> Iterator[Path]:
             if name.lower().endswith(".csv"):
                 yield Path(dirpath) / name
 
+
+def rule_chain_logo_coverage(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """DBIP #1945: every unique chain value used in listings/specific-networks/<net>/*.csv
+    must have a <chain>.png in that network folder."""
+    errors: List[str] = []
+    if not rows or "chain" not in rows[0]:
+        return errors
+    chain_to_rows: Dict[str, List[int]] = {}
+    for idx, row in enumerate(rows, start=2):
+        c = (row.get("chain") or "").strip()
+        if c:
+            chain_to_rows.setdefault(c, []).append(idx)
+    for c, row_idxs in chain_to_rows.items():
+        net_dir = Path(str(path)).parent
+        if not (net_dir / f"{c}.png").exists():
+            errors.append(
+                f"{path}: chain '{c}' used in rows {row_idxs[:3]}{'...' if len(row_idxs) > 3 else ''} but {net_dir.name}/{c}.png is missing (one PNG per chain value)"
+            )
+    return errors
+
+
 def main():
     root = Path(".")
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_chain_logo_coverage)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
