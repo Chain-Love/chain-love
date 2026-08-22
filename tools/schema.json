@@ -23,6 +23,7 @@
     "sdks": { "type": "array", "items": { "$ref": "#/$defs/sdks" } },
     "ramps": { "type": "array", "items": { "$ref": "#/$defs/ramps" } },
     "platforms": { "type": "array", "items": { "$ref": "#/$defs/platforms" } },
+    "payments": { "type": "array", "items": { "$ref": "#/$defs/payments" } },
     "security": { "type": "array", "items": { "$ref": "#/$defs/security" } },
     "agents": { "type": "array", "items": { "$ref": "#/$defs/agents" } },
     "columns": { "$ref": "#/$defs/columns" },
@@ -787,6 +788,92 @@
         "executionEnvironment"
       ]
     },
+    "payments": {
+      "title": "Payments",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "offer": { "type": ["string", "null"] },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "paymentType": { "type": "string" },
+        "settlementAssets": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "settlementChains": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "custodial": { "type": ["boolean", "null"] },
+        "kycLevel": { "type": ["string", "null"] },
+        "developerInterface": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        },
+        "planName": { "type": ["string", "null"] },
+        "price": { "type": ["string", "null"] },
+        "trial": { "type": "boolean" },
+        "starred": { "type": "boolean" },
+        "x402": { "type": ["boolean", "null"] },
+        "onChainSettlement": { "type": ["boolean", "null"] },
+        "paymentMethods": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "nonCustodial": { "type": ["boolean", "null"] },
+        "regions": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "limitations": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "offer",
+        "actionButtons",
+        "paymentType",
+        "settlementAssets",
+        "settlementChains",
+        "custodial",
+        "kycLevel",
+        "developerInterface",
+        "planType",
+        "planName",
+        "price",
+        "trial",
+        "starred",
+        "x402",
+        "onChainSettlement",
+        "paymentMethods",
+        "nonCustodial",
+        "regions",
+        "limitations",
+        "tag",
+        "description"
+      ]
+    },
     "security": {
       "title": "Security",
       "type": "object",
@@ -970,6 +1057,7 @@
         "storages": { "type": "array", "items": { "type": "string" } },
         "sdks": { "type": "array", "items": { "type": "string" } },
         "platforms": { "type": "array", "items": { "type": "string" } },
+        "payments": { "type": "array", "items": { "type": "string" } },
         "security": { "type": "array", "items": { "type": "string" } },
         "agents": { "type": "array", "items": { "type": "string" } }
       }
@@ -1068,6 +1156,7 @@
               "sdks",
               "ramps",
               "platforms",
+              "payments",
               "security",
               "agents"
             ]
