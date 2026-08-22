@@ -195,6 +195,12 @@
         "offer": { "type": ["string", "null"] },
         "chain": { "type": "string" },
         "technology": { "type": "string" },
+        "updateModels": {
+          "type": ["array", "null"],
+          "items": { "type": "string", "enum": ["push", "pull", "request-response"] },
+          "uniqueItems": true,
+          "description": "Documented mechanisms by which the oracle makes fresh data available: push, pull, or request-response. Null means unverified."
+        },
         "starred": { "type": "boolean" },
         "availableApis": {
           "type": ["array", "null"],
