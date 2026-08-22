@@ -418,6 +418,23 @@
         "requiresLogin": { "type": "boolean" },
         "hasCaptcha": { "type": "boolean" },
         "requiredMainnetBalance": { "type": ["string", "null"] },
+        "claimRequirements": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "string",
+            "enum": [
+              "wallet_connection",
+              "social_post",
+              "api_key",
+              "transaction_history",
+              "proof_of_work",
+              "email_verification",
+              "community_membership",
+              "identity_verification"
+            ]
+          },
+          "uniqueItems": true
+        },
         "price": { "type": ["string", "null"] },
         "dripLimitAmount": { "type": ["string", "null"] },
         "dripLimitPeriod": { "type": ["string", "null"] },
