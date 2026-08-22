@@ -1,6 +1,8 @@
 import csv
 import json
+import math
 import os
+import re
 import string
 import unicodedata
 import warnings
@@ -13,6 +15,8 @@ SDK_TBD_FIELDS = (
     "maintainer",
     "license",
 )
+
+NUMERIC_FIELDS = frozenset({"throughputLimit", "usageQuota"})
 
 
 def col_letter(idx: int) -> str:
@@ -52,6 +56,25 @@ def is_trueish(value: str) -> bool:
     return isinstance(value, str) and value.strip().lower() == "true"
 
 
+def try_parse_number(value):
+    if isinstance(value, bool) or isinstance(value, (int, float)):
+        return value
+    if not isinstance(value, str):
+        return value
+
+    stripped = value.strip()
+    if stripped == "":
+        return value
+
+    if not re.fullmatch(r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?", stripped):
+        return value
+
+    parsed = float(stripped)
+    if not math.isfinite(parsed):
+        return value
+    return int(parsed) if parsed.is_integer() else parsed
+
+
 def normalize(data_by_category: dict):
     result = {}
     errors = []
@@ -63,6 +86,14 @@ def normalize(data_by_category: dict):
                 new_item[key] = value
                 if is_nullish(value):
                     new_item[key] = None
+                elif key in NUMERIC_FIELDS:
+                    parsed = try_parse_number(value)
+                    if isinstance(parsed, str):
+                        errors.append(
+                            f"Value '{value}' for key '{key}' in category '{category}' must be numeric"
+                        )
+                    else:
+                        new_item[key] = parsed
                 if is_boolish(value):
                     new_item[key] = is_trueish(value)
                 try:

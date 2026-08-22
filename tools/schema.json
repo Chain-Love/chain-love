@@ -69,6 +69,28 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
+        "throughputLimit": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "description": "Maximum documented processing throughput. Leave null when the source is ambiguous or dynamic."
+        },
+        "throughputUnit": {
+          "type": ["string", "null"],
+          "description": "Unit associated with throughputLimit, preserving the provider's native capacity unit."
+        },
+        "usageQuota": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "description": "Documented usage allowance or quota. Leave null when the source is ambiguous or dynamic."
+        },
+        "usageQuotaUnit": {
+          "type": ["string", "null"],
+          "description": "Unit associated with usageQuota, preserving the provider's native capacity unit."
+        },
+        "quotaPeriod": {
+          "type": ["string", "null"],
+          "description": "Period over which usageQuota applies."
+        },
         "securityImprovements": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -116,6 +138,11 @@
         "trial",
         "availableApis",
         "limitations",
+        "throughputLimit",
+        "throughputUnit",
+        "usageQuota",
+        "usageQuotaUnit",
+        "quotaPeriod",
         "securityImprovements",
         "monitoringAndAnalytics",
         "regions",
