@@ -721,7 +721,10 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
-        "deliveryType": { "type": ["string"] },
+        "deliveryType": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
