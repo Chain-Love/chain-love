@@ -145,7 +145,7 @@ jobs:
           args: >
             --extensions csv
             --method GET
-            --accept 200,202,204,400,401,403,405,406,429
+                        --accept 200,202,204,400,401,403,405,429
             --timeout 15
             --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
             --header "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,application/json,text/event-stream,*/*;q=0.8"
