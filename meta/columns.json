@@ -1094,7 +1094,7 @@
     "icon": "lucide:ExternalLink",
     "description": "Off-chain metadata link (IPFS/HTTPS).",
     "filter": null,
-    "sorting": "arrayLength",
+    "sorting": "string",
     "pinning": null,
     "cellType": "link",
     "group": "identity"
@@ -1105,7 +1105,7 @@
     "icon": null,
     "description": "Type of the Agent URI (ipfs, https, etc.).",
     "filter": "select",
-    "sorting": "arrayLength",
+    "sorting": "string",
     "pinning": null,
     "cellType": null,
     "group": "identity"
@@ -1116,7 +1116,7 @@
     "icon": "lucide:Wallet",
     "description": "Wallet address associated with the agent.",
     "filter": "searchableMultiSelect",
-    "sorting": "arrayLength",
+    "sorting": "string",
     "pinning": null,
     "cellType": "address",
     "group": "identity"
