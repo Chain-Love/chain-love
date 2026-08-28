@@ -376,6 +376,7 @@
         "price": { "type": ["string", "null"] },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } },
         "description": { "type": ["string", "null"] },
+        "trial": { "type": "boolean" },
         "starred": { "type": "boolean" },
         "actionButtons": {
           "type": ["array", "null"],
@@ -401,6 +402,7 @@
         "price",
         "tag",
         "description",
+        "trial",
         "starred",
         "actionButtons",
         "planType"
