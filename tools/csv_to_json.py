@@ -8,9 +8,6 @@ import warnings
 OFFER_REF_PREFIX = "!offer:"
 
 SDK_TBD_FIELDS = (
-    "latestKnownVersion",
-    "latestKnownReleaseDate",
-    "maintainer",
     "license",
 )
 
