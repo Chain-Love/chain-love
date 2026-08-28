@@ -521,7 +521,11 @@
         "openSource": { "type": "boolean" },
         "supportedPlatforms": {
           "type": ["array", "null"],
-          "items": { "type": "string" }
+          "description": "Distribution targets on which a user can directly run or access the wallet. Controlled vocabulary per DBIP #3243; values are deduplicated and stored in this order.",
+          "items": {
+            "type": "string",
+            "enum": ["Browser Extension", "Web App", "Desktop", "iOS", "Android", "Hardware Device"]
+          }
         },
         "custodial": { "type": "boolean" },
         "mfa": { "type": "boolean" },
