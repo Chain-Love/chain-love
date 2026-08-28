@@ -7,12 +7,7 @@ import warnings
 
 OFFER_REF_PREFIX = "!offer:"
 
-SDK_TBD_FIELDS = (
-    "latestKnownVersion",
-    "latestKnownReleaseDate",
-    "maintainer",
-    "license",
-)
+SDK_TBD_FIELDS = ("license",)
 
 
 def col_letter(idx: int) -> str:

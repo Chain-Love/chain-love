@@ -10,17 +10,6 @@
     "cellType": null,
     "group": "identity"
   },
-  "starred": {
-    "key": "starred",
-    "label": "Starred",
-    "icon": null,
-    "description": null,
-    "filter": null,
-    "sorting": null,
-    "pinning": null,
-    "cellType": null,
-    "group": "highlights"
-  },
   "provider": {
     "key": "provider",
     "label": "Provider",
@@ -30,6 +19,17 @@
     "sorting": "string",
     "pinning": "left",
     "cellType": "provider",
+    "group": "identity"
+  },
+  "offer": {
+    "key": "offer",
+    "label": "Offer",
+    "icon": "lucide:Unplug",
+    "description": "Optional custom offer name; leave blank to use auto-generated Chain.Love slug conventions.",
+    "filter": null,
+    "sorting": null,
+    "pinning": "left",
+    "cellType": null,
     "group": "identity"
   },
   "actionButtons": {
@@ -43,6 +43,127 @@
     "cellType": "actionButtons",
     "group": "links"
   },
+  "toolType": {
+    "key": "toolType",
+    "label": "Tool Type",
+    "icon": "lucide:Wrench",
+    "description": "Tool type.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "serviceDetails"
+  },
+  "programmingLanguage": {
+    "key": "programmingLanguage",
+    "label": "Programming Language",
+    "icon": "lucide:Code",
+    "description": "Primary programming language.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "serviceDetails"
+  },
+  "tag": {
+    "key": "tag",
+    "label": "Tags",
+    "icon": "lucide:Tags",
+    "description": "Tags list.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "tagsPopover",
+    "group": "capabilities"
+  },
+  "description": {
+    "key": "description",
+    "label": "Description",
+    "icon": "lucide:MessageSquareText",
+    "description": "Description text.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": "description",
+    "group": "serviceDetails"
+  },
+  "planName": {
+    "key": "planName",
+    "label": "Plan Name",
+    "icon": "plan.svg||lucide:BookMarked",
+    "description": "Plan name.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "serviceDetails"
+  },
+  "planType": {
+    "key": "planType",
+    "label": "Plan",
+    "icon": "plan.svg||lucide:ClipboardList",
+    "description": "Plan type.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": "planType",
+    "group": "serviceDetails"
+  },
+  "license": {
+    "key": "license",
+    "label": "License",
+    "icon": "lucide:FileText",
+    "description": "License.",
+    "filter": "select",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "technicalDetails"
+  },
+  "price": {
+    "key": "price",
+    "label": "Price",
+    "icon": "lucide:BadgeDollarSign",
+    "description": "Price/cost.",
+    "filter": "range",
+    "sorting": "number",
+    "pinning": null,
+    "cellType": "numericRange",
+    "group": "pricing"
+  },
+  "trial": {
+    "key": "trial",
+    "label": "Trial",
+    "icon": "trial.svg||lucide:Clock",
+    "description": "Trial availability.",
+    "filter": "select",
+    "sorting": "boolean",
+    "pinning": null,
+    "cellType": null,
+    "group": "highlights"
+  },
+  "starred": {
+    "key": "starred",
+    "label": "Starred",
+    "icon": null,
+    "description": null,
+    "filter": null,
+    "sorting": null,
+    "pinning": null,
+    "cellType": null,
+    "group": "highlights"
+  },
+  "dependencies": {
+    "key": "dependencies",
+    "label": "Dependencies",
+    "icon": "lucide:Package",
+    "description": "Dependencies list.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "tagsPopover",
+    "group": "technicalDetails"
+  },
   "limitations": {
     "key": "limitations",
     "label": "Limitations",
@@ -53,17 +174,6 @@
     "pinning": null,
     "cellType": "arrayPopover",
     "group": "capabilities"
-  },
-  "offer": {
-    "key": "offer",
-    "label": "Offer",
-    "icon": "lucide:Unplug",
-    "description": "Optional custom offer name; leave blank to use auto-generated Chain.Love slug conventions.",
-    "filter": null,
-    "sorting": null,
-    "pinning": "left",
-    "cellType": null,
-    "group": "identity"
   },
   "address": {
     "key": "address",
@@ -92,28 +202,6 @@
     "label": "API Type",
     "icon": "settings.svg||lucide:SlidersHorizontal",
     "description": "Type of API.",
-    "filter": "searchableMultiSelect",
-    "sorting": "string",
-    "pinning": null,
-    "cellType": null,
-    "group": "serviceDetails"
-  },
-  "planType": {
-    "key": "planType",
-    "label": "Plan",
-    "icon": "plan.svg||lucide:ClipboardList",
-    "description": "Plan type.",
-    "filter": "searchableMultiSelect",
-    "sorting": "string",
-    "pinning": null,
-    "cellType": "planType",
-    "group": "serviceDetails"
-  },
-  "planName": {
-    "key": "planName",
-    "label": "Plan Name",
-    "icon": "plan.svg||lucide:BookMarked",
-    "description": "Plan name.",
     "filter": "searchableMultiSelect",
     "sorting": "string",
     "pinning": null,
@@ -164,17 +252,6 @@
     "cellType": "numericRange",
     "group": "pricingAndSlas"
   },
-  "trial": {
-    "key": "trial",
-    "label": "Trial",
-    "icon": "trial.svg||lucide:Clock",
-    "description": "Trial availability.",
-    "filter": "select",
-    "sorting": "boolean",
-    "pinning": null,
-    "cellType": null,
-    "group": "highlights"
-  },
   "queryPrice": {
     "key": "queryPrice",
     "label": "Query Price",
@@ -208,17 +285,6 @@
     "cellType": "slaNumeric",
     "group": "pricingAndSlas"
   },
-  "verifiedUptime": {
-    "key": "verifiedUptime",
-    "label": "Verified Uptime",
-    "icon": "lucide:AlarmClockCheck",
-    "description": "Measured uptime.",
-    "filter": "range",
-    "sorting": "number",
-    "pinning": null,
-    "cellType": "verifiedUptime",
-    "group": "capabilities"
-  },
   "bandwidthSla": {
     "key": "bandwidthSla",
     "label": "Bandwidth SLA",
@@ -240,28 +306,6 @@
     "pinning": null,
     "cellType": "slaNumeric",
     "group": "pricingAndSlas"
-  },
-  "verifiedBlocksBehindAvg": {
-    "key": "verifiedBlocksBehindAvg",
-    "label": "Verified Blocks Behind Avg.",
-    "icon": "lucide:ChartBarBig",
-    "description": "Measured blocks behind average.",
-    "filter": "range",
-    "sorting": "number",
-    "pinning": null,
-    "cellType": "verifiedBlocksBehindAvg",
-    "group": "capabilities"
-  },
-  "verifiedLatency": {
-    "key": "verifiedLatency",
-    "label": "Verified Latency",
-    "icon": "lucide:Gauge",
-    "description": "Measured latency.",
-    "filter": "range",
-    "sorting": "number",
-    "pinning": null,
-    "cellType": "verifiedLatency",
-    "group": "capabilities"
   },
   "availableApis": {
     "key": "availableApis",
@@ -450,17 +494,6 @@
     "cellType": "arrayPopover",
     "group": "capabilities"
   },
-  "price": {
-    "key": "price",
-    "label": "Price",
-    "icon": "lucide:BadgeDollarSign",
-    "description": "Price/cost.",
-    "filter": "range",
-    "sorting": "number",
-    "pinning": null,
-    "cellType": "numericRange",
-    "group": "pricing"
-  },
   "assetTypes": {
     "key": "assetTypes",
     "label": "Asset Types",
@@ -493,105 +526,6 @@
     "pinning": null,
     "cellType": null,
     "group": "performance"
-  },
-  "tag": {
-    "key": "tag",
-    "label": "Tags",
-    "icon": "lucide:Tags",
-    "description": "Tags list.",
-    "filter": "searchableMultiSelect",
-    "sorting": "arrayLength",
-    "pinning": null,
-    "cellType": "tagsPopover",
-    "group": "capabilities"
-  },
-  "toolType": {
-    "key": "toolType",
-    "label": "Tool Type",
-    "icon": "lucide:Wrench",
-    "description": "Tool type.",
-    "filter": "searchableMultiSelect",
-    "sorting": "string",
-    "pinning": null,
-    "cellType": null,
-    "group": "serviceDetails"
-  },
-  "description": {
-    "key": "description",
-    "label": "Description",
-    "icon": "lucide:MessageSquareText",
-    "description": "Description text.",
-    "filter": null,
-    "sorting": "string",
-    "pinning": null,
-    "cellType": "description",
-    "group": "serviceDetails"
-  },
-  "programmingLanguage": {
-    "key": "programmingLanguage",
-    "label": "Programming Language",
-    "icon": "lucide:Code",
-    "description": "Primary programming language.",
-    "filter": "searchableMultiSelect",
-    "sorting": "string",
-    "pinning": null,
-    "cellType": null,
-    "group": "serviceDetails"
-  },
-  "dependencies": {
-    "key": "dependencies",
-    "label": "Dependencies",
-    "icon": "lucide:Package",
-    "description": "Dependencies list.",
-    "filter": "searchableMultiSelect",
-    "sorting": "arrayLength",
-    "pinning": null,
-    "cellType": "tagsPopover",
-    "group": "technicalDetails"
-  },
-  "latestKnownVersion": {
-    "key": "latestKnownVersion",
-    "label": "Latest Version",
-    "icon": "lucide:Tag",
-    "description": "Latest known version.",
-    "filter": "searchableMultiSelect",
-    "sorting": "string",
-    "pinning": null,
-    "cellType": null,
-    "group": "technicalDetails"
-  },
-  "latestKnownReleaseDate": {
-    "key": "latestKnownReleaseDate",
-    "label": "Release Date",
-    "icon": "lucide:Calendar",
-    "description": "Latest known release date.",
-    "filter": "searchableMultiSelect",
-    "sorting": "date",
-    "pinning": null,
-    "cellType": null,
-    "group": "technicalDetails"
-  },
-  "maintainer": {
-    "key": "maintainer",
-    "label": "Maintainer",
-    "icon": "lucide:User",
-    "description": "Maintainer info.",
-    "filter": "searchableMultiSelect",
-    "sorting": "string",
-    "pinning": null,
-    "cellType": null,
-    "group": "technicalDetails"
-  },
-  "license": {
-    "key": "license",
-    "label": "License",
-    "icon": "lucide:FileText",
-    "description": "License.",
-    "filter": "select",
-    "sorting": "string",
-    "pinning": null,
-    "cellType": null,
-    "group": "technicalDetails"
   },
   "requiresLogin": {
     "key": "requiresLogin",
