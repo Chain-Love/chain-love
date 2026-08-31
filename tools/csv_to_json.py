@@ -14,6 +14,11 @@ SDK_TBD_FIELDS = (
     "license",
 )
 
+# Optional columns may be introduced before existing columns without forcing a
+# rewrite of every legacy row. Only columns listed here may be absent from an
+# otherwise well-formed row.
+OPTIONAL_CSV_COLUMNS = {"authenticationMethods"}
+
 
 def col_letter(idx: int) -> str:
     """Convert 0-based index to Excel column letters."""
@@ -198,6 +203,24 @@ def scan_for_unexpected_unicode(file_path: str):
                 )
 
 
+def pad_missing_optional_columns(header: list[str], raw_row: list[str]) -> list[str] | None:
+    """Insert blank cells for optional columns omitted by legacy CSV rows."""
+    missing_count = len(header) - len(raw_row)
+    if missing_count <= 0:
+        return raw_row
+
+    optional_positions = [
+        index for index, column in enumerate(header)
+        if column in OPTIONAL_CSV_COLUMNS
+    ]
+    if len(optional_positions) != missing_count:
+        return None
+
+    for position in reversed(optional_positions):
+        raw_row.insert(position, "")
+    return raw_row
+
+
 def load_csv_to_dict_list(file_path: str) -> list[dict] | None:
     if file_path is None:
         return None
@@ -223,6 +246,11 @@ def load_csv_to_dict_list(file_path: str) -> list[dict] | None:
         row_number = 2  # header is row 1
 
         for raw_row in reader:
+            if len(raw_row) < expected_cols:
+                padded_row = pad_missing_optional_columns(header, raw_row)
+                if padded_row is not None:
+                    raw_row = padded_row
+
             if len(raw_row) != expected_cols:
                 errors.append(
                     f"{file_path}: Row {row_number} has {len(raw_row)} columns, expected {expected_cols}"
