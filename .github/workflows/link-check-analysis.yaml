@@ -1,0 +1,168 @@
+name: Link Check (analysis)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+
+jobs:
+  link-check:
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.pull_request.labels.*.name, 'check-links')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Materialize PR additions only
+        if: github.event_name == 'pull_request'
+        run: |
+          python3 - <<'PY'
+          import os, subprocess
+          from pathlib import Path
+          from collections import defaultdict
+
+          base = os.environ["GITHUB_BASE_REF"]
+          subprocess.run(["git","fetch","origin",base], check=True)
+
+          merge_base = subprocess.check_output(
+              ["git", "merge-base", f"origin/{base}", "HEAD"],
+              text=True
+          ).strip()
+
+          diff = subprocess.check_output(
+              ["git","diff","--unified=0",f"{merge_base}..HEAD"],
+              text=True
+          )
+
+          files, cur = defaultdict(list), None
+          for l in diff.splitlines():
+              if l.startswith("+++ b/"): cur = l[6:]
+              elif cur and l.startswith("+") and not l.startswith("+++"):
+                  files[cur].append(l[1:])
+
+          headers = {}
+          for f in files:
+              if Path(f).exists():
+                  with open(f) as fp:
+                      headers[f] = fp.readline().rstrip("\n")
+
+          for p in Path(".").iterdir():
+              if p.name != ".git":
+                  subprocess.run(["rm","-rf",str(p)])
+
+          for f, lines in files.items():
+              if lines:
+                  Path(f).parent.mkdir(parents=True, exist_ok=True)
+                  content = ([headers[f]] if f in headers else []) + lines
+                  Path(f).write_text("\n".join(content) + "\n")
+          PY
+
+      - name: Replace each CSV file with extracted links
+        run: |
+          python3 - <<'PY'
+          import csv
+          import re
+          from pathlib import Path
+
+          url_re = re.compile(r'https?://[^\s,"\'>)]+')
+
+          def clean(v: str) -> str:
+              v = (v or "").strip()
+              if v.startswith("@"):
+                  v = v[1:]
+              return v.strip()
+
+          def provider_handle_to_url(platform: str, value: str) -> str:
+              raw = (value or "").strip()
+              if not raw:
+                  return ""
+
+              if raw.startswith(("http://", "https://")):
+                  return raw
+
+              v = clean(raw)
+              if not v:
+                  return ""
+
+              if platform == "x":
+                  return f"https://x.com/{v}"
+              if platform == "github":
+                  return f"https://github.com/{v}"
+              if platform == "discord":
+                  return f"https://discord.gg/{v}"
+              if platform == "telegram":
+                  return f"https://t.me/{v}"
+              if platform == "linkedin":
+                  return f"https://www.linkedin.com/{v}"
+
+              return ""
+
+          def unique(seq: list[str]) -> list[str]:
+              seen: set[str] = set()
+              out: list[str] = []
+              for item in seq:
+                  if item and item not in seen:
+                      seen.add(item)
+                      out.append(item)
+              return out
+
+          for path in Path(".").rglob("*.csv"):
+              if not path.is_file() or ".git" in path.parts:
+                  continue
+
+              content = path.read_text(encoding="utf-8", errors="ignore")
+              links = url_re.findall(content)
+
+              if path.as_posix() == "references/providers/providers.csv":
+                  with path.open(newline="", encoding="utf-8", errors="ignore") as f:
+                      reader = csv.DictReader(f)
+                      for row in reader:
+                          for col in ("x", "github", "discord", "telegram", "linkedin"):
+                              url = provider_handle_to_url(col, row.get(col, ""))
+                              if url:
+                                  links.append(url)
+
+              links = unique(links)
+
+              path.write_text(
+                  ("\n".join(links) + "\n") if links else "",
+                  encoding="utf-8"
+              )
+          PY
+
+      - name: Run Lychee on CSV files
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: false
+          failIfEmpty: false
+          args: >
+            --extensions csv
+            --method GET
+            --accept 200,202,204,400,401,403,405,429
+            --timeout 15
+            --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+            --header "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+            --header "Accept-Language: en-US,en;q=0.9"
+            --no-progress
+            .
+
+      - name: Save PR metadata
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "${{ github.event.pull_request.number }}" > pr-number.txt
+
+      - name: Upload Lychee report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-output
+          path: |
+            ./lychee/out.md
+            pr-number.txt
