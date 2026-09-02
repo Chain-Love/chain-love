@@ -253,6 +253,54 @@ def get_ref_slug(string: str, prefix: str) -> str:
     return s[len(prefix) :]
 
 
+def validate_no_offer_reference_conflicts(
+    category: str,
+    network_name: str,
+    network_entities: list[dict],
+    all_network_entities: list[dict],
+) -> None:
+    network_entity_by_offer_and_chain = {}
+    for entity in network_entities:
+        offer_reference = entity.get("offer")
+        if not is_offer_ref(offer_reference):
+            continue
+
+        chain = entity.get("chain")
+        if isinstance(chain, str):
+            chain = chain.strip().lower()
+        key = (get_ref_slug(offer_reference, OFFER_REF_PREFIX), chain)
+        network_entity_by_offer_and_chain[key] = entity
+
+    conflicts = []
+    for entity in all_network_entities:
+        offer_reference = entity.get("offer")
+        if not is_offer_ref(offer_reference):
+            continue
+
+        chain = entity.get("chain")
+        if isinstance(chain, str):
+            chain = chain.strip().lower()
+        offer_slug = get_ref_slug(offer_reference, OFFER_REF_PREFIX)
+        network_entity = network_entity_by_offer_and_chain.get((offer_slug, chain))
+        if network_entity is None:
+            continue
+
+        conflicts.append(
+            f"  - offer '{offer_slug}', chain {chain!r}: "
+            f"network-specific slug '{network_entity.get('slug')}', "
+            f"all-networks slug '{entity.get('slug')}'"
+        )
+
+    if conflicts:
+        raise ValueError(
+            f"Conflicting offer references for network '{network_name}', "
+            f"category '{category}'. The same offer and chain cannot be listed in both "
+            f"listings/specific-networks/{network_name}/{category}.csv and "
+            f"listings/all-networks/{category}.csv:\n"
+            + "\n".join(conflicts)
+        )
+
+
 def load_categories_from_folder(folder: str) -> dict:
     """
     Loads all *.csv in a folder into {category_name: [rows...]} and normalizes them.
@@ -698,7 +746,14 @@ def main():
                     for entity in entities
                 ]
                 rows = chain_aware_entities
-            
+
+            validate_no_offer_reference_conflicts(
+                category,
+                network_name,
+                result.get(category, []),
+                rows,
+            )
+
             if category in result:
                 result[category].extend(rows)
             else:
