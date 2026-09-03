@@ -358,6 +358,23 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -518,6 +535,23 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -699,6 +733,23 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -941,6 +992,23 @@
             }
           },
           "description": "Verified support channels and their official contact endpoints. JSON array of objects."
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -1095,6 +1163,23 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -1277,6 +1362,23 @@
             "null"
           ],
           "description": "Whether the offer encrypts data at rest by default."
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -1418,6 +1520,23 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -1737,6 +1856,23 @@
             }
           },
           "description": "Verified support channels and their official contact endpoints. JSON array of objects."
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -1957,6 +2093,23 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -2145,6 +2298,23 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -2307,6 +2477,23 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -2468,6 +2655,23 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
@@ -2633,6 +2837,23 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "providerDocumented",
+              "networkDocumented",
+              "deploymentVerified",
+              "runtimeCompatible",
+              "communityMaintained"
+            ]
+          },
+          "description": "Evidence basis for associating an offer with the target network. JSON array of enum values."
         }
       },
       "required": [
