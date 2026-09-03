@@ -40,6 +40,8 @@ jobs:
           cp json-tools/tools/schema.json .
           cp json-tools/tools/validate_csv.py .
           cp -r json-tools/meta .
+          mkdir -p validation
+          cp json-tools/tools/validation/language_tags.json validation/language_tags.json
           ls -l
       
       - name: Run scripts inside network-disabled container
@@ -55,3 +57,6 @@ jobs:
               python3 csv_to_json.py && \
               python3 validate.py
             "
+
+      - name: Run language validation fixtures
+        run: python3 -m unittest discover -s json-tools/tools/tests -p 'test_*.py'
