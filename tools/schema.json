@@ -949,6 +949,24 @@
             "Tiered",
             "One-time payment"
           ]
+        },
+        "storageTypes": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "Object Storage",
+              "File Storage",
+              "Block Storage",
+              "Database",
+              "IPFS Pinning",
+              "Permanent Archive"
+            ]
+          },
+          "description": "User-facing storage product types exposed by this offer. JSON array of enum values."
         }
       },
       "required": [
