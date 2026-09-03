@@ -967,6 +967,10 @@
             ]
           },
           "description": "User-facing storage product types exposed by this offer. JSON array of enum values."
+        },
+        "trial": {
+          "type": "boolean",
+          "description": "Whether this specific storage offer is a time-bounded free trial rather than an ongoing free tier or paid plan."
         }
       },
       "required": [
