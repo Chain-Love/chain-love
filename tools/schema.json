@@ -310,6 +310,26 @@
             "null"
           ],
           "description": "Decimal EVM chain ID served by this endpoint. Blank for non-EVM or multi-network endpoints."
+        },
+        "authenticationMethods": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "none",
+              "api_key",
+              "bearer_token",
+              "jwt",
+              "basic_auth",
+              "oauth2",
+              "mtls",
+              "wallet_signature"
+            ]
+          },
+          "description": "Authentication methods supported or required for calling the API. JSON array, NULL if unverified."
         }
       },
       "required": [
