@@ -541,6 +541,7 @@
         "audit": { "type": ["array", "null"], "items": { "type": "string" } },
         "languages": {
           "type": ["array", "null"],
+          "description": "Unique canonical BCP 47 language tags; validated offline against the pinned IANA registry snapshot.",
           "items": { "type": "string" }
         },
         "starred": { "type": "boolean" },
