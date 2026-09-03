@@ -1843,6 +1843,30 @@
             "pattern": "^[A-Z]{3}$"
           },
           "description": "Fiat currencies supported. JSON array of ISO 4217 alpha-3 codes, sorted lexicographically."
+        },
+        "countryAvailabilityMode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "globalExceptExcluded",
+            "explicitAllowlist",
+            "providerDefined",
+            "unknown",
+            null
+          ]
+        },
+        "supportedCountries": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "description": "ISO 3166-1 alpha-2 country codes, uppercase, unique, sorted."
         }
       },
       "required": [
