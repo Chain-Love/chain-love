@@ -95,6 +95,65 @@ def rule_chain_is_lowercase(data):
             errors.append(f"Item {idx}: chain must be lowercase: want '{item['chain'].lower()}', got '{item['chain']}'. Please check all categories for the current network.")
     return errors
 
+def rule_supported_routes_valid(data):
+    errors = []
+    for idx, item in enumerate(data):
+        routes = item.get("supportedRoutes")
+        if routes is None or not isinstance(routes, list):
+            continue
+
+        supported_chains = item.get("supportedChains")
+        supported_set = set(supported_chains) if isinstance(supported_chains, list) else None
+        seen = set()
+        route_order = []
+
+        for route_idx, route in enumerate(routes):
+            if not isinstance(route, dict):
+                continue  # JSON Schema reports the shape error.
+
+            source = route.get("sourceChain")
+            destination = route.get("destinationChain")
+            if not isinstance(source, str) or not isinstance(destination, str):
+                continue  # JSON Schema reports missing/non-string endpoints.
+
+            location = f"Item {idx}: supportedRoutes[{route_idx}]"
+            source_normalized = source.strip()
+            destination_normalized = destination.strip()
+            if source != source_normalized or destination != destination_normalized:
+                errors.append(f"{location}: route endpoints must be trimmed")
+            if not source_normalized or not destination_normalized:
+                errors.append(f"{location}: route endpoints must not be blank")
+            if source_normalized == destination_normalized:
+                errors.append(f"{location}: sourceChain and destinationChain must differ")
+
+            if supported_set is not None:
+                if source not in supported_set:
+                    errors.append(f"{location}: sourceChain '{source}' is not in supportedChains")
+                if destination not in supported_set:
+                    errors.append(f"{location}: destinationChain '{destination}' is not in supportedChains")
+
+            assets = route.get("assetSymbols")
+            if isinstance(assets, list):
+                assets_are_strings = all(isinstance(asset, str) for asset in assets)
+                if not assets_are_strings or any(asset != asset.strip() for asset in assets):
+                    errors.append(f"{location}: assetSymbols must contain trimmed strings")
+                if assets_are_strings and assets != sorted(assets):
+                    errors.append(f"{location}: assetSymbols must be sorted alphabetically")
+                if assets_are_strings and len(assets) != len(set(assets)):
+                    errors.append(f"{location}: assetSymbols must not contain duplicates")
+
+            fingerprint = json.dumps(route, sort_keys=True, separators=(",", ":"))
+            if fingerprint in seen:
+                errors.append(f"{location}: duplicate route object")
+            seen.add(fingerprint)
+            route_order.append((source, destination))
+
+        if route_order != sorted(route_order):
+            errors.append(f"Item {idx}: supportedRoutes must be sorted by sourceChain, then destinationChain")
+
+    return errors
+
+
 def has_unclosed_markdown(s: str) -> bool:
     if type(s) != str:
         return False
@@ -291,6 +350,7 @@ def main():
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
     rules.add_rule(rule_chain_is_lowercase)
+    rules.add_rule(rule_supported_routes_valid)
 
     # Validate networks
     validator = Draft202012Validator(schema)

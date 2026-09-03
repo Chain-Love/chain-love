@@ -261,6 +261,25 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
+        "supportedRoutes": {
+          "type": ["array", "null"],
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["sourceChain", "destinationChain"],
+            "properties": {
+              "sourceChain": { "type": "string", "minLength": 1 },
+              "destinationChain": { "type": "string", "minLength": 1 },
+              "assetSymbols": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        },
         "starred": { "type": "boolean" },
         "availableApis": {
           "type": ["array", "null"],
