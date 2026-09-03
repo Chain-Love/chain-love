@@ -1722,6 +1722,17 @@
             "string",
             "null"
           ]
+        },
+        "supportedFiatCurrencies": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "description": "Fiat currencies supported. JSON array of ISO 4217 alpha-3 codes, sorted lexicographically."
         }
       },
       "required": [
