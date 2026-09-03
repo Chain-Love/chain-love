@@ -3402,6 +3402,210 @@
           "minItems": 1
         }
       }
+    },
+    "payments": {
+      "type": "object",
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "paymentType",
+        "settlementAssets",
+        "settlementChains"
+      ],
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "paymentType": {
+          "type": "string",
+          "enum": [
+            "Checkout",
+            "Payment links",
+            "Invoice",
+            "Payment API",
+            "x402",
+            "Paymaster",
+            "Subscription",
+            "Payout",
+            "Merchant gateway"
+          ]
+        },
+        "settlementAssets": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "settlementChains": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "custodial": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "kycLevel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "developerInterface": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "planType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trial": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "starred": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "x402": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "onChainSettlement": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "paymentMethods": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "nonCustodial": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "regions": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "networkSupportBasis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
     }
   }
 }
