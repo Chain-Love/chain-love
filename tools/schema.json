@@ -580,6 +580,21 @@
             "string",
             "null"
           ]
+        },
+        "updateModels": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "push",
+              "pull",
+              "request-response"
+            ]
+          },
+          "description": "Oracle update models: push, pull, or request-response. JSON array, NULL if unverified."
         }
       },
       "required": [
