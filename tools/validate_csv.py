@@ -91,6 +91,7 @@ def main():
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
     validator.add_rule(rule_action_buttons_max_2)
+    validator.add_rule(rule_json_array_no_duplicates)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
@@ -127,6 +128,35 @@ def rule_action_buttons_max_2(path: Path, rows: List[Dict[str, str]]) -> List[st
                 f"{path}: row {idx}: actionButtons has {len(buttons)} entries (max 2): slug='{row.get('slug','')}'"
             )
     return errors
+
+
+def rule_json_array_no_duplicates(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """Reject cells that parse as JSON arrays with exact duplicate elements."""
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        for col, val in row.items():
+            if not val or not val.strip():
+                continue
+            s = val.strip()
+            if not s.startswith("["):
+                continue
+            try:
+                arr = json.loads(s)
+            except (json.JSONDecodeError, ValueError):
+                continue
+            if not isinstance(arr, list):
+                continue
+            seen: set = set()
+            for item in arr:
+                key = repr(item)
+                if key in seen:
+                    errors.append(
+                        f"{path}: row {idx}: column {col}: duplicate JSON-array element {key!r}"
+                    )
+                    break
+                seen.add(key)
+    return errors
+
 
 if __name__ == "__main__":
     main()
