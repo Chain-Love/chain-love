@@ -900,6 +900,19 @@
             null
           ],
           "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
+        },
+        "walletConnection": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "none",
+            "optional",
+            "required",
+            "unknown",
+            null
+          ]
         }
       },
       "required": [
@@ -1527,6 +1540,19 @@
             ]
           },
           "description": "Standard MCP server primitives: tools, resources, prompts. JSON array, lowercase, ordered."
+        },
+        "walletConnection": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "none",
+            "optional",
+            "required",
+            "unknown",
+            null
+          ]
         }
       },
       "required": [
@@ -1914,6 +1940,22 @@
             null
           ],
           "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
+        },
+        "walletConnection": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "none",
+            "optional",
+            "required",
+            "unknown",
+            null
+          ]
+        },
+        "onChainWrite": {
+          "type": "boolean"
         }
       },
       "required": [
