@@ -303,6 +303,13 @@
           "items": {
             "type": "string"
           }
+        },
+        "chainId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Decimal EVM chain ID served by this endpoint. Blank for non-EVM or multi-network endpoints."
         }
       },
       "required": [
