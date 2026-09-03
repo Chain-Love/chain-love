@@ -9,6 +9,7 @@ jobs:
   link-check:
     if: |
       github.event_name == 'workflow_dispatch' ||
+      github.event.pull_request.base.ref == 'json-tools' ||
       contains(github.event.pull_request.labels.*.name, 'check-links')
     runs-on: ubuntu-latest
     permissions:
