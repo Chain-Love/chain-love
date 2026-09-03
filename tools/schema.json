@@ -1187,6 +1187,54 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "storageNetwork": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Underlying storage network: IPFS, Filecoin, Arweave, Crust, Swarm, BTFS, etc."
+        },
+        "accessInterface": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Access interface: S3-compatible, pinning service, gateway, CDN, native API, etc."
+        },
+        "retrievalClass": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "hot",
+            "warm",
+            "cold",
+            "permanent",
+            null
+          ],
+          "description": "Storage retrieval class: hot, warm, cold, permanent."
+        },
+        "egressPrice": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Egress/pricing detail extracted from price column: $0, included, or rate."
+        },
+        "encryption": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Whether the offer encrypts data at rest by default."
         }
       },
       "required": [
