@@ -1112,6 +1112,26 @@
           "items": {
             "type": "string"
           }
+        },
+        "claimRequirements": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "wallet_connection",
+              "social_post",
+              "api_key",
+              "transaction_history",
+              "proof_of_work",
+              "email_verification",
+              "community_membership",
+              "identity_verification"
+            ]
+          },
+          "description": "Extra claim requirements beyond login/captcha/mainnet balance. JSON array of enum values, NULL if unverified."
         }
       },
       "required": [
