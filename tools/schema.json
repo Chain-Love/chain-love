@@ -330,6 +330,34 @@
             ]
           },
           "description": "Authentication methods supported or required for calling the API. JSON array, NULL if unverified."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -462,6 +490,34 @@
         },
         "smartContractVerification": {
           "type": "boolean"
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -615,6 +671,34 @@
             ]
           },
           "description": "Oracle update models: push, pull, or request-response. JSON array, NULL if unverified."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -787,6 +871,34 @@
           "items": {
             "type": "string"
           }
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -913,6 +1025,34 @@
             "unknown",
             null
           ]
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -1019,6 +1159,34 @@
         "trial": {
           "type": "boolean",
           "description": "Whether this specific storage offer is a time-bounded free trial rather than an ongoing free tier or paid plan."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -1132,6 +1300,34 @@
             ]
           },
           "description": "Extra claim requirements beyond login/captcha/mainnet balance. JSON array of enum values, NULL if unverified."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -1381,6 +1577,34 @@
           "items": {
             "type": "string"
           }
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -1573,6 +1797,34 @@
             "unknown",
             null
           ]
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -1733,6 +1985,34 @@
             null
           ],
           "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -1867,6 +2147,34 @@
             "pattern": "^[A-Z]{2}$"
           },
           "description": "ISO 3166-1 alpha-2 country codes, uppercase, unique, sorted."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -2000,6 +2308,34 @@
         },
         "onChainWrite": {
           "type": "boolean"
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
@@ -2137,6 +2473,34 @@
             null
           ],
           "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
         }
       },
       "required": [
