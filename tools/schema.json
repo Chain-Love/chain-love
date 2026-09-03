@@ -899,6 +899,48 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "supportContacts": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "properties": {
+              "channel": {
+                "type": "string",
+                "enum": [
+                  "email",
+                  "live_chat",
+                  "in_app_chat",
+                  "contact_form",
+                  "help_center",
+                  "phone",
+                  "discord",
+                  "telegram",
+                  "x",
+                  "github",
+                  "forum",
+                  "community",
+                  "other"
+                ]
+              },
+              "contact": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "availability": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "description": "Verified support channels and their official contact endpoints. JSON array of objects."
         }
       },
       "required": [
@@ -1653,6 +1695,48 @@
             "null"
           ],
           "description": "Canonical successor slug or NULL"
+        },
+        "supportContacts": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "properties": {
+              "channel": {
+                "type": "string",
+                "enum": [
+                  "email",
+                  "live_chat",
+                  "in_app_chat",
+                  "contact_form",
+                  "help_center",
+                  "phone",
+                  "discord",
+                  "telegram",
+                  "x",
+                  "github",
+                  "forum",
+                  "community",
+                  "other"
+                ]
+              },
+              "contact": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "availability": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "description": "Verified support channels and their official contact endpoints. JSON array of objects."
         }
       },
       "required": [
