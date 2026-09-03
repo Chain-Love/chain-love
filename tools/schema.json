@@ -842,6 +842,22 @@
             "Tiered",
             "One-time payment"
           ]
+        },
+        "maturity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "production",
+            "beta",
+            "alpha",
+            "experimental",
+            "work-in-progress",
+            "deprecated",
+            null
+          ],
+          "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
         }
       },
       "required": [
@@ -1591,6 +1607,22 @@
             "type": "string"
           },
           "description": "Secondary languages, runtimes, or on-chain components beyond the primary programmingLanguage"
+        },
+        "maturity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "production",
+            "beta",
+            "alpha",
+            "experimental",
+            "work-in-progress",
+            "deprecated",
+            null
+          ],
+          "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
         }
       },
       "required": [
@@ -1791,6 +1823,22 @@
             "string",
             "null"
           ]
+        },
+        "maturity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "production",
+            "beta",
+            "alpha",
+            "experimental",
+            "work-in-progress",
+            "deprecated",
+            null
+          ],
+          "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
         }
       },
       "required": [
@@ -1912,6 +1960,22 @@
           "items": {
             "type": "string"
           }
+        },
+        "maturity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "production",
+            "beta",
+            "alpha",
+            "experimental",
+            "work-in-progress",
+            "deprecated",
+            null
+          ],
+          "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
         }
       },
       "required": [
