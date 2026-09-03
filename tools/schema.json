@@ -1,0 +1,3144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chain.love/schemas/infrastructure/2.0.0",
+  "title": "Toolbox Network Data",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "2.0.0",
+      "description": "Schema version of this document"
+    },
+    "apis": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/apis"
+      }
+    },
+    "explorers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/explorers"
+      }
+    },
+    "oracles": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/oracles"
+      }
+    },
+    "bridges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/bridges"
+      }
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/services"
+      }
+    },
+    "storages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/storages"
+      }
+    },
+    "faucets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/faucets"
+      }
+    },
+    "analytics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/analytics"
+      }
+    },
+    "wallets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/wallets"
+      }
+    },
+    "mcpservers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/mcpservers"
+      }
+    },
+    "sdks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sdks"
+      }
+    },
+    "ramps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ramps"
+      }
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/platforms"
+      }
+    },
+    "security": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/security"
+      }
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/agents"
+      }
+    },
+    "columns": {
+      "$ref": "#/$defs/columns"
+    },
+    "meta": {
+      "$ref": "#/$defs/meta"
+    }
+  },
+  "$defs": {
+    "apis": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        },
+        "apiType": {
+          "type": "string",
+          "examples": [
+            "RPC",
+            "Indexed Data"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accessPrice": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "queryPrice": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uptimeSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bandwidthSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "blocksBehindSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "trial": {
+          "type": "boolean"
+        },
+        "availableApis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "securityImprovements": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "monitoringAndAnalytics": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "regions": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "verifiedUptime": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verifiedLatency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verifiedBlocksBehindAvg": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "supportSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "technology": {
+          "type": "string",
+          "examples": [
+            "EVM JSON-RPC",
+            "The Graph"
+          ]
+        },
+        "additionalFeatures": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "historicalData": {
+          "type": "string",
+          "examples": [
+            "Pruned",
+            "Archive"
+          ]
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "chainId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Decimal EVM chain ID served by this endpoint. Blank for non-EVM or multi-network endpoints."
+        },
+        "authenticationMethods": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "none",
+              "api_key",
+              "bearer_token",
+              "jwt",
+              "basic_auth",
+              "oauth2",
+              "mtls",
+              "wallet_signature"
+            ]
+          },
+          "description": "Authentication methods supported or required for calling the API. JSON array, NULL if unverified."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "planType",
+        "apiType",
+        "chain",
+        "address",
+        "accessPrice",
+        "queryPrice",
+        "uptimeSla",
+        "bandwidthSla",
+        "blocksBehindSla",
+        "starred",
+        "trial",
+        "availableApis",
+        "limitations",
+        "securityImprovements",
+        "monitoringAndAnalytics",
+        "regions",
+        "verifiedUptime",
+        "verifiedLatency",
+        "verifiedBlocksBehindAvg",
+        "actionButtons",
+        "supportSla",
+        "technology",
+        "additionalFeatures",
+        "historicalData",
+        "tag"
+      ]
+    },
+    "explorers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "technology": {
+          "type": "string"
+        },
+        "monitoringAndAnalytics": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "additionalFeatures": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "availableApis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "sdk": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "searchCapabilities": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "fullHistory": {
+          "type": "boolean"
+        },
+        "pricing": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "smartContractVerification": {
+          "type": "boolean"
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "technology",
+        "monitoringAndAnalytics",
+        "additionalFeatures",
+        "starred",
+        "availableApis",
+        "sdk",
+        "searchCapabilities",
+        "smartContractsVerifications",
+        "fullHistory",
+        "pricing",
+        "actionButtons",
+        "tag"
+      ]
+    },
+    "oracles": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "technology": {
+          "type": "string"
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "availableApis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "monitoringAndAnalytics": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "additionalFeatures": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "dataTypes": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "decentralizationModel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "economicSecurity": {
+          "type": "boolean"
+        },
+        "economicSecurityNote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sdk": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "auditsPerformed": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "updateModels": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "push",
+              "pull",
+              "request-response"
+            ]
+          },
+          "description": "Oracle update models: push, pull, or request-response. JSON array, NULL if unverified."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "technology",
+        "starred",
+        "availableApis",
+        "monitoringAndAnalytics",
+        "additionalFeatures",
+        "dataTypes",
+        "decentralizationModel",
+        "economicSecurity",
+        "economicSecurityNote",
+        "sdk",
+        "auditsPerformed",
+        "actionButtons",
+        "tag"
+      ]
+    },
+    "bridges": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "technology": {
+          "type": "string"
+        },
+        "openSource": {
+          "type": "boolean"
+        },
+        "support": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "supportedChains": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "availableApis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "monitoringAndAnalytics": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "additionalFeatures": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "assetTypes": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "txSpeedSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "throughputSla": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "economicSecurity": {
+          "type": "boolean"
+        },
+        "economicSecurityNote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "auditsPerformed": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "decentralizationModel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sdk": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "technology",
+        "openSource",
+        "support",
+        "supportedChains",
+        "starred",
+        "availableApis",
+        "monitoringAndAnalytics",
+        "additionalFeatures",
+        "assetTypes",
+        "txSpeedSla",
+        "throughputSla",
+        "price",
+        "economicSecurity",
+        "economicSecurityNote",
+        "auditsPerformed",
+        "decentralizationModel",
+        "sdk",
+        "actionButtons",
+        "tag"
+      ]
+    },
+    "services": {
+      "title": "Services",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "toolType": {
+          "type": "string"
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        },
+        "maturity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "production",
+            "beta",
+            "alpha",
+            "experimental",
+            "work-in-progress",
+            "deprecated",
+            null
+          ],
+          "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
+        },
+        "walletConnection": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "none",
+            "optional",
+            "required",
+            "unknown",
+            null
+          ]
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "toolType",
+        "price",
+        "tag",
+        "description",
+        "starred",
+        "actionButtons",
+        "planType"
+      ]
+    },
+    "storages": {
+      "title": "Storages",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "toolType": {
+          "type": "string"
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        },
+        "storageTypes": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "Object Storage",
+              "File Storage",
+              "Block Storage",
+              "Database",
+              "IPFS Pinning",
+              "Permanent Archive"
+            ]
+          },
+          "description": "User-facing storage product types exposed by this offer. JSON array of enum values."
+        },
+        "trial": {
+          "type": "boolean",
+          "description": "Whether this specific storage offer is a time-bounded free trial rather than an ongoing free tier or paid plan."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        },
+        "storageNetwork": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Underlying storage network: IPFS, Filecoin, Arweave, Crust, Swarm, BTFS, etc."
+        },
+        "accessInterface": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Access interface: S3-compatible, pinning service, gateway, CDN, native API, etc."
+        },
+        "retrievalClass": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "hot",
+            "warm",
+            "cold",
+            "permanent",
+            null
+          ],
+          "description": "Storage retrieval class: hot, warm, cold, permanent."
+        },
+        "egressPrice": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Egress/pricing detail extracted from price column: $0, included, or rate."
+        },
+        "encryption": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Whether the offer encrypts data at rest by default."
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "toolType",
+        "price",
+        "tag",
+        "description",
+        "starred",
+        "actionButtons",
+        "planType"
+      ]
+    },
+    "faucets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "requiresLogin": {
+          "type": "boolean"
+        },
+        "hasCaptcha": {
+          "type": "boolean"
+        },
+        "requiredMainnetBalance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dripLimitAmount": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dripLimitPeriod": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "additionalNotes": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "claimRequirements": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "wallet_connection",
+              "social_post",
+              "api_key",
+              "transaction_history",
+              "proof_of_work",
+              "email_verification",
+              "community_membership",
+              "identity_verification"
+            ]
+          },
+          "description": "Extra claim requirements beyond login/captcha/mainnet balance. JSON array of enum values, NULL if unverified."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "requiresLogin",
+        "hasCaptcha",
+        "requiredMainnetBalance",
+        "price",
+        "dripLimitAmount",
+        "dripLimitPeriod",
+        "additionalNotes",
+        "starred",
+        "actionButtons",
+        "tag"
+      ]
+    },
+    "analytics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "dataSources": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "hasDashboard": {
+          "type": "boolean"
+        },
+        "historicalData": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "examples": [
+            "1 month",
+            "3 years",
+            "2 weeks",
+            "5 years"
+          ]
+        },
+        "availableApis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "dataSources",
+        "hasDashboard",
+        "historicalData",
+        "availableApis",
+        "price",
+        "starred",
+        "actionButtons",
+        "planType",
+        "tag"
+      ]
+    },
+    "wallets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "openSource": {
+          "type": "boolean"
+        },
+        "supportedPlatforms": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "custodial": {
+          "type": "boolean"
+        },
+        "mfa": {
+          "type": "boolean"
+        },
+        "msig": {
+          "type": "boolean"
+        },
+        "hardware": {
+          "type": "boolean"
+        },
+        "keyExport": {
+          "type": "boolean"
+        },
+        "native": {
+          "type": "boolean"
+        },
+        "evm": {
+          "type": "boolean"
+        },
+        "tendermint": {
+          "type": "boolean"
+        },
+        "tokensSupport": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "staking": {
+          "type": "boolean"
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "support": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "languages": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "auditsPerformed": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "openSource",
+        "supportedPlatforms",
+        "custodial",
+        "mfa",
+        "msig",
+        "hardware",
+        "keyExport",
+        "native",
+        "evm",
+        "tendermint",
+        "tokensSupport",
+        "staking",
+        "price",
+        "support",
+        "audit",
+        "languages",
+        "starred",
+        "actionButtons",
+        "tag"
+      ]
+    },
+    "mcpservers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "serverType": {
+          "type": "string"
+        },
+        "hostingType": {
+          "type": "string"
+        },
+        "transportType": {
+          "type": "string"
+        },
+        "mcpEndpoint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "authType": {
+          "type": "string"
+        },
+        "credentialKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "selfHostedCommand": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "selfHostedArgs": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "selfHostedRequiredEnvVars": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "x402": {
+          "type": "boolean"
+        },
+        "onChainWrite": {
+          "type": "boolean"
+        },
+        "agentSkills": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planType": {
+          "type": "string"
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trial": {
+          "type": "boolean"
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "registryName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Exact canonical server name from the official MCP Registry (e.g. io.github.example/example-mcp), or NULL when not yet verified."
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SPDX license identifier, Proprietary, or NULL"
+        },
+        "serverPrimitives": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "tools",
+              "resources",
+              "prompts"
+            ]
+          },
+          "description": "Standard MCP server primitives: tools, resources, prompts. JSON array, lowercase, ordered."
+        },
+        "walletConnection": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "none",
+            "optional",
+            "required",
+            "unknown",
+            null
+          ]
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "serverType",
+        "hostingType",
+        "transportType",
+        "mcpEndpoint",
+        "authType",
+        "credentialKey",
+        "selfHostedCommand",
+        "selfHostedArgs",
+        "selfHostedRequiredEnvVars",
+        "x402",
+        "onChainWrite",
+        "agentSkills",
+        "tag",
+        "description",
+        "planType",
+        "price",
+        "trial",
+        "starred"
+      ]
+    },
+    "sdks": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "toolType": {
+          "type": "string"
+        },
+        "programmingLanguage": {
+          "type": "string"
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trial": {
+          "type": "boolean"
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "dependencies": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "latestKnownVersion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "latestKnownReleaseDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "maintainer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "techStack": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Secondary languages, runtimes, or on-chain components beyond the primary programmingLanguage"
+        },
+        "maturity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "production",
+            "beta",
+            "alpha",
+            "experimental",
+            "work-in-progress",
+            "deprecated",
+            null
+          ],
+          "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "toolType",
+        "programmingLanguage",
+        "tag",
+        "description",
+        "planType",
+        "price",
+        "trial",
+        "starred",
+        "dependencies",
+        "latestKnownVersion",
+        "latestKnownReleaseDate",
+        "maintainer",
+        "license"
+      ]
+    },
+    "ramps": {
+      "title": "Ramps",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "kycLevel": {
+          "type": "string"
+        },
+        "paymentMethods": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "bannedCountries": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "aggregator": {
+          "type": "boolean"
+        },
+        "auditsPerformed": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "deliveryType": {
+          "type": [
+            "string"
+          ]
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supportedFiatCurrencies": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "description": "Fiat currencies supported. JSON array of ISO 4217 alpha-3 codes, sorted lexicographically."
+        },
+        "countryAvailabilityMode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "globalExceptExcluded",
+            "explicitAllowlist",
+            "providerDefined",
+            "unknown",
+            null
+          ]
+        },
+        "supportedCountries": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "description": "ISO 3166-1 alpha-2 country codes, uppercase, unique, sorted."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "kycLevel",
+        "paymentMethods",
+        "bannedCountries",
+        "aggregator",
+        "auditsPerformed",
+        "deliveryType",
+        "tag"
+      ]
+    },
+    "platforms": {
+      "title": "Platforms",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "toolType": {
+          "type": "string"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "price": {
+          "type": [
+            "string"
+          ]
+        },
+        "trial": {
+          "type": [
+            "boolean"
+          ]
+        },
+        "availableApis": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "executionEnvironment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "maturity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "production",
+            "beta",
+            "alpha",
+            "experimental",
+            "work-in-progress",
+            "deprecated",
+            null
+          ],
+          "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
+        },
+        "walletConnection": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "none",
+            "optional",
+            "required",
+            "unknown",
+            null
+          ]
+        },
+        "onChainWrite": {
+          "type": "boolean"
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "toolType",
+        "description",
+        "tag",
+        "planType",
+        "planName",
+        "price",
+        "trial",
+        "availableApis",
+        "executionEnvironment"
+      ]
+    },
+    "security": {
+      "title": "Security",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actionButtons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "planType": {
+          "type": "string",
+          "examples": [
+            "Free",
+            "Pay-as-you-go",
+            "Enterprise",
+            "Dedicated",
+            "Tiered",
+            "One-time payment"
+          ]
+        },
+        "planName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "price": {
+          "type": [
+            "string"
+          ]
+        },
+        "trial": {
+          "type": [
+            "boolean"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "toolType": {
+          "type": [
+            "string"
+          ]
+        },
+        "deliveryType": {
+          "type": [
+            "string"
+          ]
+        },
+        "executionEnvironment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "coverage": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "compliance": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "maturity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "production",
+            "beta",
+            "alpha",
+            "experimental",
+            "work-in-progress",
+            "deprecated",
+            null
+          ],
+          "description": "Maintainer-stated release maturity. NULL when not explicitly stated by official source."
+        },
+        "offerStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "deprecated",
+            "retired",
+            "unknown",
+            null
+          ]
+        },
+        "sunsetAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$",
+          "description": "ISO 8601 calendar date YYYY-MM-DD, NULL if not set"
+        },
+        "replacementOffer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Canonical successor slug or NULL"
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "tag",
+        "description",
+        "planType",
+        "planName",
+        "price",
+        "trial",
+        "starred",
+        "toolType",
+        "deliveryType",
+        "executionEnvironment",
+        "coverage",
+        "compliance"
+      ]
+    },
+    "agents": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "offer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "image": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "active": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "registrationType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supportedTrust": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "agentId": {
+          "type": "integer"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "string"
+        },
+        "creatorTx": {
+          "type": "string"
+        },
+        "agentURI": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agentURIType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agentWallet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "identityRegistry": {
+          "type": "string"
+        },
+        "reputationRegistry": {
+          "type": "string"
+        },
+        "totalFeedbackCount": {
+          "type": "integer"
+        },
+        "activeFeedbackCount": {
+          "type": "integer"
+        },
+        "averageRating": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "integer"
+        },
+        "registeredAt": {
+          "type": "integer"
+        },
+        "updatedAt": {
+          "type": "integer"
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "feedbacks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "isRevoked": {
+                "type": "boolean"
+              },
+              "clientAddress": {
+                "type": "string"
+              },
+              "feedbackIndex": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              "value": {
+                "type": "string"
+              },
+              "valueDecimals": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              "normalizedValue": {
+                "type": "string"
+              },
+              "tag1": {
+                "type": "string"
+              },
+              "tag2": {
+                "type": "string"
+              },
+              "endpoint": {
+                "type": "string"
+              },
+              "feedbackURI": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              "createdBlock": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              "responses": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "responseURI": {
+                      "type": "string"
+                    },
+                    "responseHash": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": [
+                        "string",
+                        "integer"
+                      ]
+                    },
+                    "createdBlock": {
+                      "type": [
+                        "string",
+                        "integer"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "responseURI",
+                    "responseHash",
+                    "createdAt",
+                    "createdBlock"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "isRevoked",
+              "clientAddress",
+              "feedbackIndex",
+              "value",
+              "valueDecimals",
+              "normalizedValue",
+              "tag1",
+              "tag2",
+              "endpoint",
+              "feedbackURI",
+              "createdAt",
+              "createdBlock"
+            ]
+          }
+        }
+      },
+      "required": [
+        "slug",
+        "offer",
+        "agentId",
+        "owner",
+        "chain",
+        "identityRegistry",
+        "reputationRegistry",
+        "totalFeedbackCount",
+        "activeFeedbackCount",
+        "averageRating",
+        "registeredAt",
+        "updatedAt",
+        "starred"
+      ]
+    },
+    "columns": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "apis": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "oracles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bridges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "explorers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "faucets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "analytics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "wallets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mcpservers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ramps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "storages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sdks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "security": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "agents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "categories",
+        "columns"
+      ],
+      "properties": {
+        "categories": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/categoryMeta"
+          }
+        },
+        "columns": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/columnMeta"
+          }
+        },
+        "providers": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/providerMeta"
+          }
+        }
+      }
+    },
+    "categoryMeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "label"
+      ],
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "icon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "defaultSorting": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "columnMeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "label"
+      ],
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "icon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "filter": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sorting": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pinning": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cellType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "group": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "providerMeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slug",
+        "name",
+        "starred"
+      ],
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "logoPath": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "website": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "docs": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "x": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "github": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "discord": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "telegram": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "linkedin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supportEmail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "starred": {
+          "type": "boolean"
+        },
+        "tag": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "apis",
+              "explorers",
+              "oracles",
+              "bridges",
+              "services",
+              "storages",
+              "faucets",
+              "analytics",
+              "wallets",
+              "mcpservers",
+              "sdks",
+              "ramps",
+              "platforms",
+              "security",
+              "agents"
+            ]
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      }
+    }
+  }
+}
