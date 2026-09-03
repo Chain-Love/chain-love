@@ -1432,6 +1432,21 @@
             "null"
           ],
           "description": "SPDX license identifier, Proprietary, or NULL"
+        },
+        "serverPrimitives": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "tools",
+              "resources",
+              "prompts"
+            ]
+          },
+          "description": "Standard MCP server primitives: tools, resources, prompts. JSON array, lowercase, ordered."
         }
       },
       "required": [
