@@ -106,9 +106,16 @@ def has_unclosed_markdown(s: str) -> bool:
     # Check bold/italic/code
     if s.count("**") % 2 != 0:
         return True
-    if s.count("*") % 2 != 0 and s.count("**") == 0:  # single * for italic
+    # Count non-bold asterisks: subtract the stars consumed by ** spans, so a
+    # stray single-* span is caught even when the cell also contains **bold**.
+    if (s.count("*") - 2 * s.count("**")) % 2 != 0:  # single * for italic
         return True
-    if s.count("_") % 2 != 0:
+    # Underscores are legal in URLs and snake_case identifiers, so only treat
+    # an unbalanced `_` as broken markdown when the cell already uses other
+    # markdown syntax (bold/italic/code/links) and is therefore presumed to
+    # be markdown-authored.
+    has_markdown_syntax = any(token in s for token in ("*", "`", "[", "]"))
+    if has_markdown_syntax and s.count("_") % 2 != 0:
         return True
     if s.count("`") % 2 != 0:
         return True
@@ -129,8 +136,11 @@ def is_markdown_link(s: str) -> bool:
     if len(s) == 0:
         return False
 
-    pattern = r"(?:\[(?P<text>.*?)\])\((?P<link>.*?)\)"
-    return re.match(pattern, s) is not None
+    # Full-string match, and the link target may contain one level of balanced
+    # parentheses (e.g. https://en.wikipedia.org/wiki/Chain_(blockchain)) so
+    # the non-greedy stop can no longer truncate the captured URL.
+    pattern = r"\[(?P<text>.*?)\]\((?P<link>(?:[^()]|\([^()]*\))*)\)"
+    return re.fullmatch(pattern, s) is not None
 
 def _data_categories(data):
     return {k for k in data.keys() if k not in ("columns", "meta", "schemaVersion")}
@@ -246,7 +256,11 @@ def check_rules_validation(rules_validator, data) -> bool:
     return not had_errors
 
 def check_validation(data, schema_validator, rules_validator) -> bool:
-    return check_schema_validation(schema_validator, data) and check_rules_validation(rules_validator, data)
+    # Run both phases unconditionally and aggregate, so schema failures no
+    # longer hide rule errors from the same CI run.
+    schema_ok = check_schema_validation(schema_validator, data)
+    rules_ok = check_rules_validation(rules_validator, data)
+    return schema_ok and rules_ok
 
 def load_csv_folder(folder) -> dict:
     from csv_to_json import load_csv_to_dict_list, normalize
