@@ -106,9 +106,15 @@ def has_unclosed_markdown(s: str) -> bool:
     # Check bold/italic/code
     if s.count("**") % 2 != 0:
         return True
-    if s.count("*") % 2 != 0 and s.count("**") == 0:  # single * for italic
+    # Bold markers contain two stars, so subtract their contribution before
+    # checking for an unmatched single-star marker.
+    if (s.count("*") - 2 * s.count("**")) % 2 != 0:
         return True
-    if s.count("_") % 2 != 0:
+    # Underscores are also valid in URLs and identifiers.  Only treat an
+    # underscore as emphasis when it appears as a markdown delimiter (rather
+    # than rejecting every odd underscore in ordinary text).
+    underscore_markers = re.findall(r"(?<![\w/])_(?!\s)|(?<!\s)_(?![\w/])", s)
+    if any(char.isspace() for char in s) and len(underscore_markers) % 2 != 0:
         return True
     if s.count("`") % 2 != 0:
         return True
@@ -129,8 +135,28 @@ def is_markdown_link(s: str) -> bool:
     if len(s) == 0:
         return False
 
-    pattern = r"(?:\[(?P<text>.*?)\])\((?P<link>.*?)\)"
-    return re.match(pattern, s) is not None
+    if not s.startswith("["):
+        return False
+    close_text = s.find("](")
+    if close_text < 1:
+        return False
+
+    # A destination may contain balanced parentheses.  The final character
+    # must close the link, not merely the first parenthesis in its URL.
+    destination = s[close_text + 2:]
+    if not destination or destination[-1] != ")":
+        return False
+    depth = 0
+    # The final character is the link's closing delimiter; only the prefix
+    # may contain balanced parentheses belonging to the URL.
+    for char in destination[:-1]:
+        if char == "(":
+            depth += 1
+        elif char == ")":
+            depth -= 1
+            if depth < 0:
+                return False
+    return depth == 0
 
 def _data_categories(data):
     return {k for k in data.keys() if k not in ("columns", "meta", "schemaVersion")}
@@ -246,7 +272,9 @@ def check_rules_validation(rules_validator, data) -> bool:
     return not had_errors
 
 def check_validation(data, schema_validator, rules_validator) -> bool:
-    return check_schema_validation(schema_validator, data) and check_rules_validation(rules_validator, data)
+    schema_valid = check_schema_validation(schema_validator, data)
+    rules_valid = check_rules_validation(rules_validator, data)
+    return schema_valid and rules_valid
 
 def load_csv_folder(folder) -> dict:
     from csv_to_json import load_csv_to_dict_list, normalize
@@ -268,13 +296,15 @@ def load_csv_folder(folder) -> dict:
     return data
 
 def make_providers_schema(network_schema) -> dict:
+    """Build the root schema for references/providers/providers.csv."""
     providers_schema = copy.deepcopy(network_schema)
-    for definition in providers_schema['$defs'].keys():
-        if definition == "columns":
-            continue
-        if "chain" in providers_schema['$defs'][definition]['required']:
-            index = providers_schema['$defs'][definition]['required'].index("chain")
-            del providers_schema['$defs'][definition]['required'][index]
+    providers_schema["properties"] = {
+        "providers": {
+            "type": "array",
+            "items": {"$ref": "#/$defs/providerMeta"},
+        }
+    }
+    providers_schema["required"] = ["providers"]
     return providers_schema
 
 def main():
@@ -303,7 +333,7 @@ def main():
             had_errors = True
 
     # Validate providers
-    providers_data = load_csv_folder("references/offers")
+    providers_data = load_csv_folder("references/providers")
     providers_schema = make_providers_schema(network_schema=schema)
     providers_validator = Draft202012Validator(providers_schema)
     if not check_validation(data=providers_data, schema_validator=providers_validator, rules_validator=rules):
