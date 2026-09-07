@@ -601,6 +601,21 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
+        "selfHostedEnvVarTypes": {
+          "type": ["object", "null"],
+          "propertyNames": { "type": "string", "minLength": 1 },
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "api-key",
+              "wallet-private-key",
+              "wallet-mnemonic",
+              "access-token",
+              "other-secret",
+              "non-secret"
+            ]
+          }
+        },
         "x402": { "type": "boolean" },
         "onChainWrite": { "type": "boolean" },
         "agentSkills": {
