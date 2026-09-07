@@ -80,7 +80,7 @@ jobs:
       - name: Compute checksum
         id: checksum
         run: |
-          sha=$(find release-assets -type f -exec sha256sum {} \; | sort | sha256sum | cut -d' ' -f1)
+          sha=$(find release-assets -type f -name '*.json' -exec sha256sum {} \; | sort | sha256sum | cut -d' ' -f1)
           echo "sha=$sha" >> $GITHUB_OUTPUT
           echo "$sha" > release-assets/checksum.txt
       
@@ -106,12 +106,14 @@ jobs:
           exit 0
       
       - name: Generate tag
+        if: steps.last.outputs.last != steps.checksum.outputs.sha
         id: tag
         run: |
           tag="json-$(date +%Y%m%d-%H%M%S)"
           echo "tag=$tag" >> $GITHUB_OUTPUT
 
       - name: Generate release index
+        if: steps.last.outputs.last != steps.checksum.outputs.sha
         env:
           RELEASE_TAG: ${{ steps.tag.outputs.tag }}
           GITHUB_REPOSITORY: ${{ github.repository }}
@@ -119,6 +121,7 @@ jobs:
           python generate_release_index.py
       
       - name: Create release
+        if: steps.last.outputs.last != steps.checksum.outputs.sha
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_TAG: ${{ steps.tag.outputs.tag }}
