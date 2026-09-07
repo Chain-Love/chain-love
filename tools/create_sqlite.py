@@ -100,7 +100,7 @@ def resolve_type(prop: JSONSchemaProperty) -> Tuple[str, bool]:
     if base == "number":
         return "REAL", nullable
     if base == "boolean":
-        return "INTEGER", False
+        return "INTEGER", nullable
     if base == "array":
         return "TEXT", True
 
