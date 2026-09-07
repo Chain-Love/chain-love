@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import io
+import os
 import shutil
 import subprocess
 import sys
@@ -217,7 +218,7 @@ def main() -> None:
             venv_dir = tmp_root / ".venv"
             run([python, "-m", "venv", str(venv_dir)])
 
-            venv_python = venv_dir / "bin" / "python"
+            venv_python = venv_dir / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
             python = str(venv_python)
 
             run([
