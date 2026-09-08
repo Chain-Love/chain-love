@@ -4,23 +4,42 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-      
-      - name: Install dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+          persist-credentials: false
 
-      - name: Run CSV to JSON
-        run: python3 csv_to_json.py
+      - name: Checkout data for tooling validation
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: main
+          path: validation-data
+          persist-credentials: false
 
-      - name: Run validation script
-        run: python validate.py
+      - name: Prepare candidate scripts and metadata
+        run: |
+          cp tools/csv_to_json.py tools/validate.py tools/schema.json tools/validate_csv.py validation-data/
+          mkdir -p validation-data/meta
+          cp -r meta/. validation-data/meta/
+
+      - name: Run validation without network access
+        run: |
+          docker run --rm \
+            --network=none \
+            -v "${{ github.workspace }}:/workspace" \
+            -w /workspace/validation-data \
+            python:3.12-slim \
+            /bin/bash -c "
+              pip install --no-index --find-links=/workspace/tools/wheels -r /workspace/tools/requirements.txt &&
+              python3 validate_csv.py &&
+              python3 csv_to_json.py &&
+              python3 validate.py
+            "
