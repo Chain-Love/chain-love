@@ -528,6 +528,14 @@
         "msig": { "type": "boolean" },
         "hardware": { "type": "boolean" },
         "keyExport": { "type": "boolean" },
+        "keyExportFormats": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "string",
+            "enum": ["encrypted-backup", "mnemonic", "raw-private-key"]
+          },
+          "uniqueItems": true
+        },
         "native": { "type": "boolean" },
         "evm": { "type": "boolean" },
         "tendermint": { "type": "boolean" },
