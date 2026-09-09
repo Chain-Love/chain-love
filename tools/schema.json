@@ -543,6 +543,14 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
+        "extensionBrowsers": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "string",
+            "enum": ["Brave", "Chrome", "Edge", "Firefox", "Opera", "Safari"]
+          },
+          "uniqueItems": true
+        },
         "starred": { "type": "boolean" },
         "actionButtons": {
           "type": ["array", "null"],
