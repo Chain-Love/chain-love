@@ -98,6 +98,21 @@
           "type": "string",
           "examples": ["Pruned", "Archive"]
         },
+        "requestLimits": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["method", "transport", "metric", "maximum", "sourceUrl"],
+            "properties": {
+              "method": { "type": "string", "minLength": 1 },
+              "transport": { "type": "string", "enum": ["http", "websocket"] },
+              "metric": { "type": "string", "enum": ["batchRequests", "blockSpan"] },
+              "maximum": { "type": "integer", "minimum": 1 },
+              "sourceUrl": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
         "tag": { "type": ["array", "null"], "items": { "type": "string" } }
       },
       "required": [
