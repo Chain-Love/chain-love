@@ -54,6 +54,17 @@
     "cellType": "arrayPopover",
     "group": "capabilities"
   },
+  "requestLimits": {
+    "key": "requestLimits",
+    "label": "Request limits",
+    "icon": "lucide:Gauge",
+    "description": "Documented per-request limits: batchRequests and blockSpan ceilings per method/transport, with a primary source per entry. Blank means not yet verified; plan-dependent limits stay blank until scoped.",
+    "filter": null,
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
   "offer": {
     "key": "offer",
     "label": "Offer",
