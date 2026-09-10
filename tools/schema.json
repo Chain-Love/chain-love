@@ -674,6 +674,32 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
+        "runtimeRequirements": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "properties": {
+            "python": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "constraint": { "type": "string", "minLength": 1 },
+                "syntax": { "type": "string", "enum": ["poetry", "pep440"] },
+                "source": { "type": "string", "minLength": 1 }
+              },
+              "required": ["constraint", "syntax", "source"]
+            },
+            "node": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "constraint": { "type": "string", "minLength": 1 },
+                "syntax": { "type": "string", "enum": ["node-semver"] },
+                "source": { "type": "string", "minLength": 1 }
+              },
+              "required": ["constraint", "syntax", "source"]
+            }
+          }
+        },
         "latestKnownVersion": { "type": ["string", "null"] },
         "latestKnownReleaseDate": { "type": ["string", "null"] },
         "maintainer": { "type": ["string", "null"] },

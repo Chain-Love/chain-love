@@ -549,6 +549,17 @@
     "cellType": "tagsPopover",
     "group": "technicalDetails"
   },
+  "runtimeRequirements": {
+    "key": "runtimeRequirements",
+    "label": "Runtime Requirements",
+    "icon": "lucide:ServerCog",
+    "description": "Declared interpreter/runtime version constraints for consuming the SDK release (e.g. python ^3.10, node >=22.0). Blank means unverified, not unrestricted. Excludes package dependencies and blockchain execution environments.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "developerExperience"
+  },
   "latestKnownVersion": {
     "key": "latestKnownVersion",
     "label": "Latest Version",
