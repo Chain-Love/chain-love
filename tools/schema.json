@@ -538,7 +538,7 @@
         "staking": { "type": "boolean" },
         "price": { "type": ["string", "null"] },
         "support": { "type": ["array", "null"], "items": { "type": "string" } },
-        "audit": { "type": ["array", "null"], "items": { "type": "string" } },
+        "audit": { "type": ["array", "null"], "items": { "type": "string" }, "description": "Source-backed list of identifiable security audits or audit reports for the specific wallet offer. A populated value must identify the auditor/report sufficiently for verification (prefer a direct audit/report URL). Blank (empty array) when no qualifying audit evidence is recorded; never use vague placeholders such as 'audit by third parties', 'not available', or 'Audited'." },
         "languages": {
           "type": ["array", "null"],
           "items": { "type": "string" }
