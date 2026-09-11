@@ -96,6 +96,9 @@ jobs:
               if platform == "github":
                   return f"https://github.com/{v}"
               if platform == "discord":
+                  if v.startswith("invite/"):
+                      invite_code = v[len("invite/"):]
+                      return f"https://discord.com/invite/{invite_code}"
                   return f"https://discord.gg/{v}"
               if platform == "telegram":
                   return f"https://t.me/{v}"
@@ -103,7 +106,14 @@ jobs:
                   return f"https://www.linkedin.com/{v}"
           
               return ""
-          
+
+          assert provider_handle_to_url("discord", "invite/1inch") == "https://discord.com/invite/1inch"
+          assert provider_handle_to_url("discord", "invite/Cun2VpsdjF") == "https://discord.com/invite/Cun2VpsdjF"
+          assert provider_handle_to_url("discord", "chainlove") == "https://discord.gg/chainlove"
+          assert provider_handle_to_url("discord", "@chainlove") == "https://discord.gg/chainlove"
+          assert provider_handle_to_url("discord", "https://discord.com/invite/chainlove") == "https://discord.com/invite/chainlove"
+          assert provider_handle_to_url("discord", "") == ""
+
           def unique(seq: list[str]) -> list[str]:
               seen: set[str] = set()
               out: list[str] = []
