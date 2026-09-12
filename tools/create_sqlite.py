@@ -151,6 +151,7 @@ def build_meta_tables() -> List[Table]:
                 Column("label", "TEXT", True),
                 Column("icon", "TEXT", True),
                 Column("description", "TEXT", True),
+                Column("defaultSorting", "TEXT", True),
                 Column("columns_order", "TEXT", True),
                 Column("position", "INTEGER", False),
             ],
