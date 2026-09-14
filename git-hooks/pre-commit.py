@@ -137,12 +137,13 @@ def iter_csv(repo_root: Path) -> Iterable[Path]:
             continue
         yield csv_file
 
-def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
+def check_csv_sorting(repo_root: Path, delimiter: str = ",") -> None:
     """
-    Sort CSV files by slug column without modifying quoting.
-    Uses the same naive delimiter parsing as rewrite_urls().
+    Check slug ordering in the exported index without modifying files.
+    Retains the existing delimiter-based ordering behavior.
     """
-    print("Sorting CSV files by slug")
+    print("Checking CSV files are sorted by slug")
+    unsorted = []
 
     for csv_file in iter_csv(repo_root):
         newline_style = detect_newline(csv_file)
@@ -179,13 +180,19 @@ def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
 
         rows_sorted = sorted(data_lines, key=slug_key)
 
-        with csv_file.open("w", newline="") as f:
-            f.write(header_line + newline_style)
-            for row in rows_sorted:
-                f.write(row.rstrip("\r\n") + newline_style)
+        sorted_content = header_line + newline_style + "".join(
+            row.rstrip("\r\n") + newline_style for row in rows_sorted
+        )
+        if sorted_content != "".join(lines):
+            unsorted.append(str(csv_file.relative_to(repo_root)))
 
-        subprocess.run(["git", "add", str(csv_file)], check=True)
-        print(f"  sorted: {csv_file}")
+    if unsorted:
+        die(
+            "Staged CSV files need slug sorting or newline normalization: "
+            + ", ".join(unsorted)
+            + ". Format these files and stage only the intended changes, then retry. "
+            + "The hook has not modified your working tree or index."
+        )
 
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
@@ -195,15 +202,12 @@ def main() -> None:
     ensure_tool_exists("git")
     ensure_tool_exists("tar")
 
-    # Sort CSV files
-    real_root = get_repo_root()
-    sort_csv_by_slug(real_root)
-
     with tempfile.TemporaryDirectory(prefix="precommit-root-") as tmp:
         tmp_root = Path(tmp)
 
         print("Creating workspace from post-commit state")
         checkout_index_tree(tmp_root)
+        check_csv_sorting(tmp_root)
 
         print(f"Overlaying tools from GitHub ({UPSTREAM_REPO}@{UPSTREAM_REF})")
         for path in COPY_FROM_UPSTREAM:
