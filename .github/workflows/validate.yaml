@@ -17,10 +17,21 @@ jobs:
           python-version: '3.x'
       
       - name: Install dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+        run: pip install --upgrade pip && pip install -r tools/requirements.txt
 
-      - name: Run CSV to JSON
-        run: python3 csv_to_json.py
+      - name: Check tools
+        run: |
+          python3 -m compileall -q tools
+          python3 -m json.tool tools/schema.json > /dev/null
+          python3 -m json.tool meta/columns.json > /dev/null
 
-      - name: Run validation script
-        run: python validate.py
+      - name: Validate generated JSON
+        run: |
+          git fetch --depth=1 origin main
+          mkdir -p validation-run
+          cp -R tools/. validation-run/
+          cp -R meta validation-run/
+          git archive origin/main listings references | tar -x -C validation-run
+          cd validation-run
+          python3 csv_to_json.py
+          python3 validate.py
