@@ -1,26 +1,38 @@
-name: "Validate JSON"
+name: "Validate json-tools"
 
 on:
   pull_request:
+    branches:
+      - json-tools
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-json-tools-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  validate:
+  validate-tools:
+    name: Validate tooling
     runs-on: ubuntu-latest
+    timeout-minutes: 2
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      
+
       - name: Install dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+        run: python -m pip install --upgrade pip && python -m pip install -r tools/requirements.txt
 
-      - name: Run CSV to JSON
-        run: python3 csv_to_json.py
+      - name: Run tooling tests
+        run: python -m unittest discover -s tools/tests -p 'test_*.py'
 
-      - name: Run validation script
-        run: python validate.py
+      - name: Compile tooling
+        run: python -m py_compile tools/*.py tools/tests/*.py
