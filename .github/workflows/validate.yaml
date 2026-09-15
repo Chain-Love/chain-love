@@ -7,20 +7,36 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      
+
       - name: Install dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+        run: python -m pip install --upgrade pip && python -m pip install -r tools/requirements.txt
 
-      - name: Run CSV to JSON
-        run: python3 csv_to_json.py
+      - name: Check Python tooling
+        run: python -m compileall -q tools
 
-      - name: Run validation script
-        run: python validate.py
+      - name: Check JSON schema
+        run: python -m json.tool tools/schema.json > /dev/null
+
+      - name: Run focused authentication metadata tests
+        run: python tools/test_authentication_methods.py
+
+      - name: Validate current data with proposed tools
+        run: |
+          git fetch --depth=1 origin main
+          mkdir -p validation-run
+          cp -R tools/. validation-run/
+          cp -R meta validation-run/
+          git archive origin/main references listings | tar -x -C validation-run
+          cd validation-run
+          python csv_to_json.py
+          python validate.py
