@@ -10,6 +10,9 @@ What each block pins down:
   cell also holds a `**bold**` span (issue #3656 finding 1), and must stop
   reporting legitimate underscore-bearing text such as URLs and social handles
   (finding 4).
+* A URL must not swallow the markup that follows it, and a standalone `_`
+  emphasis must be reported whether or not the cell contains any other markup
+  (review on #3657).
 * `is_markdown_link` must match the whole cell and must not truncate a link
   target that contains parentheses (finding 2).
 * `check_validation` must run the schema and rule phases unconditionally and
@@ -119,6 +122,99 @@ def test_underscore_heuristic():
     check(
         "an underscore-heavy URL is clean even next to markdown",
         has_unclosed_markdown("See " + SUBQUERY_DOCS_URL + " for **details**") is False,
+    )
+
+
+# --------------------------------------------------------------------------
+# review on #3657: markup standing next to a URL was swallowed by the URL
+# --------------------------------------------------------------------------
+def test_markup_adjacent_to_url():
+    print("has_unclosed_markdown: markup adjacent to a URL")
+
+    # The URL body used to accept the markdown delimiter characters, so a "**"
+    # that followed a URL was consumed together with the URL and the cell was
+    # reported clean. Asserting on URL_RE itself pins the mechanism, not just
+    # the verdict: the two can drift apart in a later rewrite.
+    check(
+        "URL_RE leaves the markup that follows a URL alone",
+        validate.URL_RE.sub("", "https://example.com/**unclosed") == "**unclosed",
+        "URL_RE consumed the markup: "
+        f"{validate.URL_RE.sub('', 'https://example.com/**unclosed')!r}",
+    )
+    check(
+        "'https://example.com/**unclosed' is caught",
+        has_unclosed_markdown("https://example.com/**unclosed") is True,
+        "the URL swallowed the ** that follows it",
+    )
+    check(
+        "'https://example.com/**' is caught",
+        has_unclosed_markdown("https://example.com/**") is True,
+    )
+    check(
+        "an underscore emphasis right after a URL is caught",
+        has_unclosed_markdown("Read https://example.com then _unclosed emphasis") is True,
+    )
+    # controls: a URL must not disable the checks around it
+    check(
+        "balanced markup adjacent to a URL stays clean",
+        has_unclosed_markdown("Docs at https://acme.example/**bold**") is False,
+    )
+    check(
+        "the URL body still ends at the closing bracket of a link",
+        has_unclosed_markdown("[Docs](https://en.wikipedia.org/wiki/Chain_(blockchain))") is False,
+    )
+    # The strip step itself, now that word-internal underscores are ignored even
+    # without it: a delimiter-shaped underscore inside a query string still has
+    # to disappear with the URL.
+    check(
+        "a URL whose query holds a boundary underscore is stripped whole",
+        has_unclosed_markdown(
+            "See https://acme.example/docs?utm_source=_acme_campaign for details"
+        )
+        is False,
+        "the URL was not stripped, so its query string was counted as markup",
+    )
+
+
+# --------------------------------------------------------------------------
+# review on #3657: standalone broken emphasis was missed unless the cell also
+# happened to contain unrelated markup
+# --------------------------------------------------------------------------
+def test_underscore_delimiters():
+    print("has_unclosed_markdown: underscore delimiters")
+
+    check(
+        "a bare '_unclosed' cell is caught",
+        has_unclosed_markdown("_unclosed") is True,
+        "returned False - the underscore branch is still gated on other markup",
+    )
+    check(
+        "'broken _italic' is caught",
+        has_unclosed_markdown("broken _italic") is True,
+    )
+    check(
+        "an opener with no closer after it is caught",
+        has_unclosed_markdown("_a_ and _b") is True,
+    )
+    # word-internal underscores stay data, with or without other markup around
+    check(
+        "a snake_case identifier next to real markdown is clean",
+        has_unclosed_markdown("subquery_network **bold**") is False,
+        "the identifier alone was enough to trip the old underscore count",
+    )
+    check(
+        "an identifier inside a code span is clean",
+        has_unclosed_markdown("see `subquery_network` here") is False,
+    )
+    check(
+        "closed emphasis is clean",
+        has_unclosed_markdown("_italic_ and _bold_") is False,
+    )
+    # An orphan closer is data rather than an unclosed span (a handle such as
+    # 0xppl_), which is why only openers are counted as shortcomings.
+    check(
+        "a trailing handle underscore is clean",
+        has_unclosed_markdown("**bold** " + PROVIDER_HANDLE) is False,
     )
 
 
@@ -249,6 +345,8 @@ def test_main_wiring():
 def main():
     test_single_star_span()
     test_underscore_heuristic()
+    test_markup_adjacent_to_url()
+    test_underscore_delimiters()
     test_markdown_link()
     test_error_aggregation()
     test_main_wiring()

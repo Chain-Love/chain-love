@@ -92,6 +92,11 @@ jobs:
           expect "$FIX/listings.services.negative-link-junk.csv" reject "must be a markdown link"
           expect "$FIX/listings.services.control-underscore-url.csv" accept ""
           expect "$FIX/listings.services.control-snake-case.csv" accept ""
+          # review on #3657: a standalone `_` emphasis, and markup glued to a URL
+          expect "$FIX/listings.services.negative-unclosed-underscore.csv" reject "Markdown unclosed in field 'description'"
+          expect "$FIX/listings.services.negative-markup-after-url.csv" reject "Markdown unclosed in field 'description'"
+          expect "$FIX/listings.services.control-markup-after-url.csv" accept ""
+          expect "$FIX/listings.services.control-url-query-underscore.csv" accept ""
           cp "$FIX/listings.services.csv" "$LISTING"
           rm -rf json
           "$PY" csv_to_json.py
@@ -122,12 +127,20 @@ jobs:
                   '    return re.match(r"(?:\\[(?P<text>.*?)\\])\\((?P<link>.*?)\\)", s) is not None\n',
               ),
               "underscore-scope": (
-                  '    if has_markdown_syntax and t.count("_") % 2 != 0:',
+                  '    if _unclosed_underscore_span(t):',
                   '    if t.count("_") % 2 != 0:',
               ),
               "url-strip": (
                   '    t = URL_RE.sub("", s)',
                   '    t = s',
+              ),
+              "url-delimiters": (
+                  'URL_BODY = r"[^\\s()*`\\[\\]]"',
+                  'URL_BODY = r"[^\\s()]"',
+              ),
+              "underscore-opener": (
+                  '    if _unclosed_underscore_span(t):',
+                  '    if any(token in t for token in ("*", "`", "[", "]")) and t.count("_") % 2 != 0:',
               ),
               "short-circuit": (
                   '    schema_ok = check_schema_validation(schema_validator, data)\n    rules_ok = check_rules_validation(rules_validator, data)',
@@ -182,14 +195,15 @@ jobs:
           restore
           echo "OK: the underscore scoping is exercised"
 
-          echo "==> mutation 4: stop stripping URLs -> an underscore-bearing URL next to markdown is reported again"
+          echo "==> mutation 4: stop stripping URLs -> a URL query string is counted as markup"
           mutate url-strip
           if "$PY" tools/tests/test_validate_markdown.py > /tmp/m4.log 2>&1; then
             echo "ERROR: the unit tests still pass without URL stripping"
             cat /tmp/m4.log
             exit 1
           fi
-          expect "$FIX/listings.services.control-underscore-url.csv" reject "Markdown unclosed in field 'description'"
+          grep -q "stripped whole" /tmp/m4.log
+          expect "$FIX/listings.services.control-url-query-underscore.csv" reject "Markdown unclosed in field 'description'"
           restore
           echo "OK: the URL stripping is exercised"
 
@@ -204,7 +218,34 @@ jobs:
           restore
           echo "OK: the error aggregation is exercised"
 
+          echo "==> mutation 6: let URL bodies swallow delimiters again -> markup glued to a URL disappears"
+          mutate url-delimiters
+          if "$PY" tools/tests/test_validate_markdown.py > /tmp/m6.log 2>&1; then
+            echo "ERROR: the unit tests still pass with the delimiter-swallowing URL body"
+            cat /tmp/m6.log
+            exit 1
+          fi
+          grep -q "markup adjacent to a URL" /tmp/m6.log
+          expect "$FIX/listings.services.negative-markup-after-url.csv" accept ""
+          restore
+          echo "OK: the URL delimiter fix is exercised"
+
+          echo "==> mutation 7: gate the underscore branch on unrelated markup again -> standalone emphasis is missed"
+          mutate underscore-opener
+          if "$PY" tools/tests/test_validate_markdown.py > /tmp/m7.log 2>&1; then
+            echo "ERROR: the unit tests still pass with the gated underscore branch"
+            cat /tmp/m7.log
+            exit 1
+          fi
+          grep -q "underscore delimiters" /tmp/m7.log
+          expect "$FIX/listings.services.negative-unclosed-underscore.csv" accept ""
+          restore
+          echo "OK: the standalone underscore emphasis fix is exercised"
+
           echo "==> final green run after restoring every mutation"
+          # The last expect() above leaves its own fixture in place; the final run must
+          # start from the baseline row again or it inherits that fixture's verdict.
+          cp "$FIX/listings.services.csv" "$LISTING"
           "$PY" tools/tests/test_validate_markdown.py
           rm -rf json
           "$PY" csv_to_json.py

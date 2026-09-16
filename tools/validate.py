@@ -95,12 +95,54 @@ def rule_chain_is_lowercase(data):
             errors.append(f"Item {idx}: chain must be lowercase: want '{item['chain'].lower()}', got '{item['chain']}'. Please check all categories for the current network.")
     return errors
 
-# A URL is data, not markup. Underscores (subquery_network), asterisks and
-# brackets inside one must not be counted as markdown (issue #3656 finding 4).
-# The target may carry one level of balanced parentheses, so
-# https://en.wikipedia.org/wiki/Chain_(blockchain) is consumed whole and does
-# not leave an unbalanced ")" behind.
-URL_RE = re.compile(r"https?://(?:[^\s()]+|\((?:[^\s()]+)?\))*")
+# A URL is data, not markup. Underscores (subquery_network) inside one must not
+# be counted as markdown (issue #3656 finding 4). The target may carry one level
+# of balanced parentheses, so https://en.wikipedia.org/wiki/Chain_(blockchain)
+# is consumed whole and does not leave an unbalanced ")" behind.
+#
+# A URL body also stops at the characters markdown uses as delimiters, so a
+# URL can no longer swallow the markup that follows it: the previous revision
+# consumed the "**" of "https://example.com/**unclosed" and the cell was
+# reported clean (review on #3657). Whitespace and parentheses stay excluded so
+# the balanced-paren alternative can do its job.
+URL_BODY = r"[^\s()*`\[\]]"
+URL_RE = re.compile(rf"https?://(?:{URL_BODY}+|\((?:{URL_BODY}*)?\))*")
+
+# Underscore runs as delimiters, in the only form this heuristic needs: a run
+# can close when a non-space precedes it and no word character follows, and can
+# open when no word character precedes it and a non-space follows. Mirrors
+# CommonMark's flanking rules without the punctuation subtleties.
+_UNDERSCORE = re.compile(r"_")
+
+
+def _word_char(ch: str) -> bool:
+    return ch.isascii() and ch.isalnum()
+
+
+def _unclosed_underscore_span(t: str) -> bool:
+    """True when a ``_`` opens emphasis that nothing later in ``t`` closes.
+
+    A run with a word character on both sides sits inside a word -- a snake_case
+    identifier such as ``latest_known_version``, or a handle such as ``0xppl_``
+    -- and cannot be a delimiter, so it is not counted at all.
+
+    A run that can close is only paired against a span already open. That
+    asymmetry is deliberate: an orphan closer (``0xppl_``, ``handle_``) is data,
+    while an opener with no closer after it (``_unclosed``, ``broken _italic``)
+    is the unclosed span this rule exists to report.
+    """
+    depth = 0
+    for match in _UNDERSCORE.finditer(t):
+        at = match.start()
+        before = t[at - 1] if at > 0 else ""
+        after = t[at + 1] if at + 1 < len(t) else ""
+        can_close = bool(before) and not before.isspace() and not (after and _word_char(after))
+        can_open = bool(after) and not after.isspace() and not (before and _word_char(before))
+        if can_close and depth:
+            depth -= 1
+        elif can_open:
+            depth += 1
+    return depth > 0
 
 
 def has_unclosed_markdown(s: str) -> bool:
@@ -121,12 +163,15 @@ def has_unclosed_markdown(s: str) -> bool:
     # stray single-* span is caught even when the cell also contains **bold**.
     if (t.count("*") - 2 * t.count("**")) % 2 != 0:  # single * for italic
         return True
-    # Underscores are legal in URLs and snake_case identifiers, so only treat
-    # an unbalanced `_` as broken markdown when the cell already uses other
-    # markdown syntax (bold/italic/code/links) and is therefore presumed to
-    # be markdown-authored.
-    has_markdown_syntax = any(token in t for token in ("*", "`", "[", "]"))
-    if has_markdown_syntax and t.count("_") % 2 != 0:
+    # Underscores inside a URL are already gone with the URL, and ones inside a
+    # word are data. Anywhere else an underscore is an emphasis delimiter, so
+    # report a cell that opens an `_` span nothing closes. Deciding this from
+    # the delimiter's position -- rather than counting underscores whenever the
+    # cell happens to contain unrelated markup -- is what keeps "_unclosed" and
+    # "broken _italic" flagged (review on #3657) while a trailing handle
+    # underscore stays clean, and stops a cell that mixes snake_case with real
+    # markdown from being flagged for the identifier.
+    if _unclosed_underscore_span(t):
         return True
     if t.count("`") % 2 != 0:
         return True
