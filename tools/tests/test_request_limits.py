@@ -1,0 +1,230 @@
+"""Unit tests for the DBIP #3724 requestLimits change (PR #3738).
+
+Run from the repository root:  python3 tools/tests/test_request_limits.py
+
+The three files this PR touches are checked both on their own and against each
+other, because a schema, a column description and a converter rule that drift
+apart is exactly the failure mode the CI is supposed to catch:
+
+  tools/schema.json    - the optional object array and its two enums
+  meta/columns.json    - the contributor-facing description of the column
+  tools/csv_to_json.py - validate_request_limits() and its wiring into main()
+"""
+from __future__ import annotations
+
+import json
+import pathlib
+import sys
+
+from jsonschema import Draft202012Validator
+
+HERE = pathlib.Path(__file__).resolve().parent
+REPO = HERE.parent.parent
+sys.path.insert(0, str(HERE.parent))
+
+import csv_to_json  # noqa: E402  (importable only after the path tweak)
+
+COLUMN = "requestLimits"
+METRICS = ("batchRequests", "blockSpan")
+TRANSPORTS = ("http", "websocket")
+KEYS = {"method", "transport", "metric", "maximum", "sourceUrl"}
+
+SOURCE = "https://www.alchemy.com/docs/reference/batch-requests"
+
+CHECKED = 0
+FAILURES: list[str] = []
+
+
+def check(label: str, condition: bool) -> None:
+    global CHECKED
+    CHECKED += 1
+    if condition:
+        print(f"  ok   {label}")
+    else:
+        print(f"  FAIL {label}")
+        FAILURES.append(label)
+
+
+def entry(**overrides):
+    base = {"method": "*", "transport": "http", "metric": "batchRequests",
+            "maximum": 1000, "sourceUrl": SOURCE}
+    base.update(overrides)
+    return base
+
+
+def row(value, slug="demo-rpc"):
+    """A row carrying every key $defs/apis marks as required, plus the column."""
+    full = {
+        "slug": slug,
+        "provider": "Acme",
+        "planType": "Tiered",
+        "apiType": "RPC",
+        "chain": "ethereum",
+        "address": None,
+        "accessPrice": "$29/mo",
+        "queryPrice": "$0",
+        "uptimeSla": "99.9%",
+        "bandwidthSla": None,
+        "blocksBehindSla": None,
+        "starred": False,
+        "trial": False,
+        "availableApis": ["eth"],
+        "limitations": ["100 req/s"],
+        "securityImprovements": ["Privacy Protected Relays"],
+        "monitoringAndAnalytics": ["Real-time monitoring"],
+        "regions": ["Global"],
+        "actionButtons": ["[Docs](https://example.com/docs)"],
+        "supportSla": None,
+        "technology": "EVM JSON-RPC",
+        "additionalFeatures": ["Premium Service"],
+        "historicalData": "Archive",
+        "tag": ["RPC"],
+    }
+    full[COLUMN] = value
+    return full
+
+
+def errors(value):
+    return csv_to_json.validate_request_limits([row(value)], context="unit")
+
+
+def has(value, needle):
+    return any(needle in e for e in errors(value))
+
+
+# ---------------------------------------------------------------------------
+print("schema.json: the column is declared on $defs/apis and nowhere else")
+schema = json.loads((REPO / "tools" / "schema.json").read_bytes().decode("utf-8"))
+apis = schema["$defs"]["apis"]
+check("requestLimits is an apis property", COLUMN in apis["properties"])
+prop = apis["properties"][COLUMN]
+check("type is [array, null]", prop["type"] == ["array", "null"])
+check("items are objects", prop["items"]["type"] == "object")
+check("items close additionalProperties", prop["items"]["additionalProperties"] is False)
+check("items require all five keys", set(prop["items"]["required"]) == KEYS)
+check("items declare all five keys", set(prop["items"]["properties"]) == KEYS)
+check("transport enum", prop["items"]["properties"]["transport"].get("enum") == list(TRANSPORTS))
+check("metric enum", prop["items"]["properties"]["metric"].get("enum") == list(METRICS))
+check("maximum is a positive integer",
+      prop["items"]["properties"]["maximum"] == {"type": "integer", "minimum": 1})
+check("method is a non-empty string",
+      prop["items"]["properties"]["method"] == {"type": "string", "minLength": 1})
+check("sourceUrl is a non-empty string",
+      prop["items"]["properties"]["sourceUrl"] == {"type": "string", "minLength": 1})
+other_defs = [n for n, d in schema["$defs"].items()
+              if n != "apis" and COLUMN in d.get("properties", {})]
+check("no other category declares the column", other_defs == [])
+check("apis still closes additionalProperties", apis.get("additionalProperties") is False)
+
+print("schema.json: a valid array and an invalid one behave as declared")
+validator = Draft202012Validator(schema).evolve(schema=apis)
+check("a well-formed entry validates", validator.is_valid(row([entry()])))
+check("an unknown transport is rejected",
+      not validator.is_valid(row([entry(transport="grpc")])))
+check("an unknown metric is rejected",
+      not validator.is_valid(row([entry(metric="rateLimitPerSecond")])))
+check("maximum 0 is rejected", not validator.is_valid(row([entry(maximum=0)])))
+check("a missing sourceUrl is rejected",
+      not validator.is_valid(row([{k: v for k, v in entry().items() if k != "sourceUrl"}])))
+check("an extra key is rejected",
+      not validator.is_valid(row([entry(note="paid plans only")])))
+check("blank stays valid", validator.is_valid(row(None)))
+
+# ---------------------------------------------------------------------------
+print("meta/columns.json: the column is described for contributors")
+columns = json.loads((REPO / "meta" / "columns.json").read_bytes().decode("utf-8"))
+check("requestLimits is described", COLUMN in columns)
+meta = columns[COLUMN]
+check("key matches the column name", meta["key"] == COLUMN)
+check("label is human readable", meta["label"] == "Request limits")
+check("description states that blank means unverified",
+      "Blank means not yet verified" in meta["description"])
+check("description mentions the source requirement", "source" in meta["description"].lower())
+check("description names both metrics",
+      all(m in meta["description"] for m in METRICS))
+check("cellType is arrayPopover", meta["cellType"] == "arrayPopover")
+check("group is capabilities", meta["group"] == "capabilities")
+check("sorting is arrayLength", meta["sorting"] == "arrayLength")
+check("every other column is untouched by this PR",
+      len(columns) > 20 and all("requestLimits" not in k for k in columns if k != COLUMN))
+
+# ---------------------------------------------------------------------------
+print("csv_to_json.py: the vocabulary is shared with the schema")
+check("REQUEST_LIMITS_COLUMN", csv_to_json.REQUEST_LIMITS_COLUMN == COLUMN)
+check("REQUEST_LIMIT_METRICS", csv_to_json.REQUEST_LIMIT_METRICS == METRICS)
+check("REQUEST_LIMIT_TRANSPORTS", csv_to_json.REQUEST_LIMIT_TRANSPORTS == TRANSPORTS)
+check("schema and converter agree on metrics",
+      list(csv_to_json.REQUEST_LIMIT_METRICS) == prop["items"]["properties"]["metric"].get("enum"))
+check("schema and converter agree on transports",
+      list(csv_to_json.REQUEST_LIMIT_TRANSPORTS)
+      == prop["items"]["properties"]["transport"].get("enum"))
+
+print("csv_to_json.py: validate_request_limits() accepts what it should")
+check("blank is accepted (unverified)", errors(None) == [])
+check("a blank CSV cell never reaches the validator as ''",
+      csv_to_json.normalize({"apis": [{"requestLimits": ""}]})
+      == ({"apis": [{"requestLimits": None}]}, []))
+check("an empty array is accepted", errors([]) == [])
+check("one well-formed entry is accepted", errors([entry()]) == [])
+check("two entries with different metrics are accepted",
+      errors([entry(), entry(metric="blockSpan", maximum=10000)]) == [])
+check("the same metric on two transports is accepted",
+      errors([entry(), entry(transport="websocket", maximum=20)]) == [])
+check("the same metric on two methods is accepted",
+      errors([entry(), entry(method="eth_getLogs", maximum=20)]) == [])
+check("a large maximum is accepted", errors([entry(maximum=2_000_000_000)]) == [])
+check("an https source is accepted", errors([entry(sourceUrl=SOURCE)]) == [])
+check("a row without the column is accepted",
+      csv_to_json.validate_request_limits([{"slug": "x"}], context="unit") == [])
+
+print("csv_to_json.py: each rule of DBIP #3724 rejects on its own")
+check("not an array", has(entry(), "must be a JSON array"))
+check("entry is not an object", has(["http"], "must be an object"))
+check("missing key", has([{k: v for k, v in entry().items() if k != "sourceUrl"}],
+                         "keys mismatch"))
+check("extra key", has([entry(note="x")], "keys mismatch"))
+check("empty method", has([entry(method="")], "method must be a non-empty string"))
+check("blank method", has([entry(method="   ")], "method must be a non-empty string"))
+check("non-string method", has([entry(method=7)], "method must be a non-empty string"))
+check("unknown transport", has([entry(transport="grpc")], "transport must be one of"))
+check("uppercase transport", has([entry(transport="HTTP")], "transport must be one of"))
+check("unknown metric", has([entry(metric="rateLimitPerSecond")], "metric must be one of"))
+check("uppercase metric", has([entry(metric="BatchRequests")], "metric must be one of"))
+check("maximum 0 (no sentinel)", has([entry(maximum=0)], "maximum must be a positive integer"))
+check("negative maximum", has([entry(maximum=-5)], "maximum must be a positive integer"))
+check("boolean maximum", has([entry(maximum=True)], "maximum must be a positive integer"))
+check("string maximum", has([entry(maximum="1000")], "maximum must be a positive integer"))
+check("float maximum", has([entry(maximum=1.5)], "maximum must be a positive integer"))
+check("source without a scheme",
+      has([entry(sourceUrl="www.example.com/docs")], "sourceUrl must be an http(s) URL"))
+check("non-http scheme", has([entry(sourceUrl="ftp://example.com")],
+                             "sourceUrl must be an http(s) URL"))
+check("empty source", has([entry(sourceUrl="")], "sourceUrl must be an http(s) URL"))
+check("non-string source", has([entry(sourceUrl=1234)], "sourceUrl must be an http(s) URL"))
+check("duplicate (method, transport, metric)",
+      has([entry(), entry(maximum=99)], "duplicates (method, transport, metric)"))
+check("the offending row is named", has([entry(transport="grpc")], "apis 'demo-rpc'"))
+check("the offending position is named", has([entry(transport="grpc")], "requestLimits[0]"))
+check("a later bad entry is still reported",
+      has([entry(), entry(metric="nope")], "requestLimits[1]"))
+check("http:// is allowed", errors([entry(sourceUrl="http://example.com/docs")]) == [])
+
+# ---------------------------------------------------------------------------
+print("csv_to_json.py: the validator is wired into both passes of main()")
+src = (REPO / "tools" / "csv_to_json.py").read_bytes().decode("utf-8")
+check("canonical offers are validated",
+      "canonical_request_limit_errors = validate_request_limits(" in src)
+check("network listings are validated",
+      "request_limit_errors = validate_request_limits(" in src)
+check("the canonical pass exits on error",
+      "if canonical_request_limit_errors:" in src)
+check("the network pass exits on error", "if request_limit_errors:" in src)
+
+# ---------------------------------------------------------------------------
+print()
+print(f"{CHECKED} checks, {len(FAILURES)} failures")
+if FAILURES:
+    for f in FAILURES:
+        print(f"  - {f}")
+    sys.exit(1)
+print("OK")
