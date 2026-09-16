@@ -4,23 +4,161 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-json-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Checkout code
+      - name: Checkout this PR
         uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-      
-      - name: Install dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+          fetch-depth: 1
+          persist-credentials: false
 
-      - name: Run CSV to JSON
-        run: python3 csv_to_json.py
+      # Assemble the workspace from THIS checkout only. Nothing is borrowed from
+      # the json-tools base branch: doing so previously meant this PR's own
+      # csv_to_json.py, schema.json and meta/columns.json were copied over and
+      # never executed, so a green run proved nothing about the change.
+      # meta/ already lives at the repo root on this branch, so it is used in
+      # place rather than copied.
+      - name: Assemble workspace from this PR files
+        run: |
+          set -euo pipefail
+          cp tools/csv_to_json.py tools/validate.py tools/validate_csv.py .
+          cp tools/schema.json .
+          mkdir -p listings/specific-networks/demo-network listings/all-networks \
+                   references/offers references/providers
+          cp tools/tests/fixtures/runtime-requirements/listings.sdks.csv \
+             listings/specific-networks/demo-network/sdks.csv
+          cp tools/tests/fixtures/runtime-requirements/offers.sdks.csv \
+             references/offers/sdks.csv
+          cp tools/tests/fixtures/runtime-requirements/providers.csv \
+             references/providers/providers.csv
+          ls -l
 
-      - name: Run validation script
-        run: python validate.py
+      # The whole check runs from a script file so that the shell quoting is
+      # readable and the stages are greppable in the job log.
+      - name: Validate with this PR tool, schema and metadata
+        run: |
+          cat > /tmp/check.sh <<'SCRIPT'
+          set -e
+          pip install --no-index --find-links=tools/wheels -r tools/requirements.txt
+
+          FIX=tools/tests/fixtures/runtime-requirements
+          OFFERS=references/offers/sdks.csv
+
+          echo "==> regression test: tools/tests/test_runtime_requirements.py"
+          python3 tools/tests/test_runtime_requirements.py
+
+          echo "==> structural CSV validation"
+          python3 validate_csv.py
+
+          echo "==> csv -> json (runs validate_runtime_requirements over the fixture rows)"
+          rm -rf json
+          python3 csv_to_json.py
+
+          echo "==> the fixture value must survive offer resolution"
+          python3 - <<'PY'
+          import json
+          data = json.load(open("json/demo-network.json"))
+          rows = [r for r in data["sdks"] if r["slug"] == "algokit-utils-py"]
+          assert len(rows) == 1, rows
+          value = rows[0].get("runtimeRequirements")
+          assert isinstance(value, dict) and set(value) == {"python", "node"}, value
+          print("runtimeRequirements arrived from references/offers:", sorted(value))
+          PY
+
+          echo "==> json vs this PR schema.json + meta/columns.json + meta/categories.json"
+          test -d json
+          python3 validate.py
+
+          echo "==> negative controls: each invalid value must be rejected"
+          check_rejected() {
+            fixture="$1"
+            expected="$2"
+            cp "$fixture" "$OFFERS"
+            rm -rf json
+            if python3 csv_to_json.py > /tmp/negative.log 2>&1; then
+              echo "ERROR: $(basename "$fixture") was accepted - the rule is not enforced"
+              cat /tmp/negative.log
+              exit 1
+            fi
+            grep -q "$expected" /tmp/negative.log
+            echo "OK: $(basename "$fixture") rejected [$expected]"
+          }
+          check_rejected "$FIX/offers.sdks.negative-empty-object.csv" "must not be an empty object"
+          check_rejected "$FIX/offers.sdks.negative-bad-syntax.csv" "syntax must be one of"
+          check_rejected "$FIX/offers.sdks.negative-unknown-key.csv" "unknown runtime key"
+          check_rejected "$FIX/offers.sdks.negative-missing-source.csv" "source must be a non-empty string"
+          cp "$FIX/offers.sdks.csv" "$OFFERS"
+
+          # The three mutations below are the point of this job: each removes one
+          # of the PR's substantive changes and asserts the check goes red (or
+          # flips outcome). A check that cannot fail does not cover the change.
+          echo "==> mutation 1: drop the declaration from schema.json -> validate.py must fail"
+          cp schema.json /tmp/schema.bak
+          python3 - <<'PY'
+          import json
+          schema = json.load(open("schema.json"))
+          del schema["$defs"]["sdks"]["properties"]["runtimeRequirements"]
+          json.dump(schema, open("schema.json", "w"), ensure_ascii=False)
+          PY
+          rm -rf json
+          python3 csv_to_json.py
+          if python3 validate.py > /tmp/m1.log 2>&1; then
+            echo "ERROR: validate.py passed without the runtimeRequirements declaration - the check does not read this PR schema.json"
+            exit 1
+          fi
+          grep -q "runtimeRequirements" /tmp/m1.log
+          cp /tmp/schema.bak schema.json
+          echo "OK: schema.json is exercised by this check"
+
+          echo "==> mutation 2: drop the entry from meta/columns.json -> validate.py must fail"
+          cp meta/columns.json /tmp/columns.bak
+          python3 - <<'PY'
+          import json
+          columns = json.load(open("meta/columns.json"))
+          del columns["runtimeRequirements"]
+          json.dump(columns, open("meta/columns.json", "w"), ensure_ascii=False)
+          PY
+          rm -rf json
+          python3 csv_to_json.py
+          if python3 validate.py > /tmp/m2.log 2>&1; then
+            echo "ERROR: validate.py passed without the meta/columns.json entry - the check does not read this PR meta/columns.json"
+            exit 1
+          fi
+          grep -q "missing in meta.columns" /tmp/m2.log
+          cp /tmp/columns.bak meta/columns.json
+          echo "OK: meta/columns.json is exercised by this check"
+
+          echo "==> mutation 3: disconnect the validator from main() -> the negative fixture must be accepted"
+          cp csv_to_json.py /tmp/csv_to_json.bak
+          sed -i 's/^        if runtime_req_errors:$/        if False and runtime_req_errors:/' csv_to_json.py
+          grep -q "if False and runtime_req_errors:" csv_to_json.py
+          cp "$FIX/offers.sdks.negative-empty-object.csv" "$OFFERS"
+          rm -rf json
+          if python3 csv_to_json.py > /tmp/m3.log 2>&1; then
+            echo "OK: with the call disconnected the empty object is accepted, so the negative controls are caused by this PR validator"
+          else
+            echo "ERROR: the empty object is still rejected with the validator disconnected - the negative controls are not testing this PR code"
+            cat /tmp/m3.log
+            exit 1
+          fi
+          cp /tmp/csv_to_json.bak csv_to_json.py
+          cp "$FIX/offers.sdks.csv" "$OFFERS"
+
+          echo
+          echo "All stages passed. Every check above was shown to fail when this PR implementation regresses."
+          SCRIPT
+          docker run --rm --network=none \
+            -v "${{ github.workspace }}:/workspace" \
+            -v /tmp/check.sh:/check.sh:ro \
+            -w /workspace \
+            python:3.12-slim /bin/bash /check.sh
