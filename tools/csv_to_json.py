@@ -14,6 +14,9 @@ SDK_TBD_FIELDS = (
     "license",
 )
 
+KEY_EXPORT_FORMATS_COLUMN = "keyExportFormats"
+KEY_EXPORT_FORMAT_NAMES = ("encrypted-backup", "mnemonic", "raw-private-key")
+
 
 def col_letter(idx: int) -> str:
     """Convert 0-based index to Excel column letters."""
@@ -50,6 +53,49 @@ def is_boolish(value: str) -> bool:
 
 def is_trueish(value: str) -> bool:
     return isinstance(value, str) and value.strip().lower() == "true"
+
+
+def validate_key_export_formats(items: list, context: str) -> list[str]:
+    """Validate keyExportFormats arrays for wallets rows (DBIP #3725).
+
+    Rules:
+      - blank/None is valid (not yet verified; listings inherit);
+      - [] is valid (explicit: none of the documented formats was found on review);
+      - entries must use the exact enum names (encrypted-backup, mnemonic, raw-private-key);
+      - entries must be unique;
+      - non-empty arrays must be in canonical alphabetical order;
+      - the existing keyExport boolean is never modified here.
+    """
+    errors = []
+    for idx, item in enumerate(items):
+        if not isinstance(item, dict):
+            continue
+        value = item.get(KEY_EXPORT_FORMATS_COLUMN)
+        if value is None:
+            continue
+        slug = item.get("slug") or f"row {idx + 2}"
+        label = f"{context}: wallets '{slug}': {KEY_EXPORT_FORMATS_COLUMN}"
+        if not isinstance(value, list):
+            errors.append(
+                f"{label} must be a JSON array or null, got {type(value).__name__}"
+            )
+            continue
+        names_valid = True
+        seen = set()
+        for pos, name in enumerate(value):
+            where = f"{label}[{pos}]"
+            if not isinstance(name, str) or name not in KEY_EXPORT_FORMAT_NAMES:
+                errors.append(
+                    f"{where} must be one of {list(KEY_EXPORT_FORMAT_NAMES)}, got {name!r}"
+                )
+                names_valid = False
+                continue
+            if name in seen:
+                errors.append(f"{where} duplicates format {name!r}")
+            seen.add(name)
+        if names_valid and value and list(value) != sorted(value):
+            errors.append(f"{label} must be sorted alphabetically, got {value!r}")
+    return errors
 
 
 def normalize(data_by_category: dict):
@@ -772,6 +818,15 @@ def main():
             exit(1)
 
         ensure_sdks_tbd_fields(result)
+
+        key_export_format_errors = validate_key_export_formats(
+            result.get("wallets", []), context=f"network '{network_name}'"
+        )
+        if key_export_format_errors:
+            print(f"Validation errors for {KEY_EXPORT_FORMATS_COLUMN} in network '{network_name}':")
+            for e in key_export_format_errors:
+                print(e)
+            exit(1)
 
         result["columns"] = get_column_order(
             base_categories=list_categories(network_dir),
