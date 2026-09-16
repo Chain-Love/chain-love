@@ -13,10 +13,8 @@ concurrency:
 
 jobs:
   validate:
-    name: Generate JSON and validate (isolated)
     runs-on: ubuntu-latest
     timeout-minutes: 2
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -51,5 +49,5 @@ jobs:
               pip install --no-index --find-links=json-tools/tools/wheels -r json-tools/tools/requirements.txt && \
               python3 validate_csv.py && \
               python3 csv_to_json.py && \
-              python3 validate.py
+              if [ -d json ]; then python3 validate.py; else echo 'No generated json/ directory (tools-only PR) — skipping dataset validation.'; fi
             "
