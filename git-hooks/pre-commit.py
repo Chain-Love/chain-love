@@ -46,10 +46,16 @@ def run(cmd: Iterable[str], *, cwd: Path | None = None) -> None:
     print("-", " ".join(cmd))
     subprocess.run(cmd, cwd=cwd, check=True)
 
-def checkout_index_tree(dest: Path) -> None:
+def checkout_index_tree(dest: Path, *, cwd: Path) -> None:
     """
     Populate dest with the complete Git index tree
     (exactly what the repo will look like after commit).
+
+    This export is the only view of the repository the hook is allowed to
+    read. The real working tree and the real index are never written to, so a
+    contributor's deliberately staged content is never replaced with later
+    unstaged edits, and untracked files are never pulled into the commit
+    (issue #3823).
     """
     print("Checking out full index tree")
 
@@ -59,8 +65,9 @@ def checkout_index_tree(dest: Path) -> None:
             "checkout-index",
             "-a",        # all files
             "-f",        # overwrite
-            f"--prefix={dest}/",
-        ]
+            f"--prefix={dest.as_posix()}/",
+        ],
+        cwd=cwd,
     )
 
 def ensure_tool_exists(name: str) -> None:
@@ -117,13 +124,6 @@ def download_and_extract(url: str, dest: Path, subpath: str) -> None:
                 with tar.extractfile(m) as src, open(target_path, "wb") as out:
                     shutil.copyfileobj(src, out)
 
-def detect_newline(path):
-    with open(path, "rb") as f:
-        chunk = f.read(8192)
-    if b"\r\n" in chunk:
-        return "\r\n"
-    return "\n"
-
 def get_repo_root() -> Path:
     out = subprocess.check_output(
         ["git", "rev-parse", "--show-toplevel"],
@@ -131,61 +131,81 @@ def get_repo_root() -> Path:
     ).strip()
     return Path(out)
 
-def iter_csv(repo_root: Path) -> Iterable[Path]:
-    for csv_file in repo_root.rglob("*.csv"):
+def iter_csv(root: Path) -> Iterable[Path]:
+    """
+    Yield every CSV under `root`.
+
+    `root` must be an isolated index export, never the real working tree:
+    walking the working tree would also pick up untracked CSVs, which is how
+    unrelated files used to end up in the commit (issue #3823).
+    """
+    for csv_file in root.rglob("*.csv"):
         if ".git" in csv_file.parts:
             continue
         yield csv_file
 
-def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
+def read_slug_column(csv_file: Path, delimiter: str = ",") -> list[str] | None:
     """
-    Sort CSV files by slug column without modifying quoting.
-    Uses the same naive delimiter parsing as rewrite_urls().
+    Return the slug column of `csv_file` in file order, or None when the file
+    has no slug column or no data rows (nothing to order).
     """
-    print("Sorting CSV files by slug")
+    with csv_file.open("r", newline="") as f:
+        lines = f.readlines()
 
-    for csv_file in iter_csv(repo_root):
-        newline_style = detect_newline(csv_file)
+    if len(lines) <= 1:
+        return None
 
-        with csv_file.open("r", newline="") as f:
-            lines = f.readlines()
+    header_parts = [h.strip().strip('"') for h in lines[0].rstrip("\r\n").split(delimiter)]
 
-        if len(lines) <= 1:
+    if "slug" not in header_parts:
+        return None
+
+    slug_idx = header_parts.index("slug")
+    slugs: list[str] = []
+
+    for raw_line in lines[1:]:
+        if not raw_line.strip():
             continue
 
-        header_line = lines[0].rstrip("\r\n")
-        header_parts = [h.strip().strip('"') for h in header_line.split(delimiter)]
+        parts = raw_line.rstrip("\r\n").split(delimiter)
 
-        if "slug" not in header_parts:
+        cell = "" if slug_idx >= len(parts) else parts[slug_idx].strip()
+
+        # normalize quoted slug for comparison
+        if len(cell) >= 2 and cell.startswith('"') and cell.endswith('"'):
+            cell = cell[1:-1]
+
+        slugs.append(cell)
+
+    return slugs
+
+def find_unsorted_csvs(
+    root: Path,
+    delimiter: str = ",",
+) -> list[tuple[Path, tuple[str, str]]]:
+    """
+    Report CSVs whose slug column is not in ascending order.
+
+    Returns [(path, (earlier_slug, later_slug))] for the first out-of-order
+    pair of each file. This is a check only: nothing is written and nothing is
+    staged, so a failure leaves the real index and working tree untouched
+    (issue #3823).
+    """
+    print("Checking CSV slug ordering")
+
+    findings: list[tuple[Path, tuple[str, str]]] = []
+
+    for csv_file in sorted(iter_csv(root)):
+        slugs = read_slug_column(csv_file, delimiter)
+        if not slugs:
             continue
 
-        slug_idx = header_parts.index("slug")
+        for earlier, later in zip(slugs, slugs[1:]):
+            if earlier > later:
+                findings.append((csv_file, (earlier, later)))
+                break
 
-        data_lines = lines[1:]
-
-        def slug_key(raw_line: str) -> str:
-            parts = raw_line.rstrip("\r\n").split(delimiter)
-
-            if slug_idx >= len(parts):
-                return ""
-
-            cell = parts[slug_idx].strip()
-
-            # normalize quoted slug for sorting only
-            if cell.startswith('"') and cell.endswith('"'):
-                cell = cell[1:-1]
-
-            return cell
-
-        rows_sorted = sorted(data_lines, key=slug_key)
-
-        with csv_file.open("w", newline="") as f:
-            f.write(header_line + newline_style)
-            for row in rows_sorted:
-                f.write(row.rstrip("\r\n") + newline_style)
-
-        subprocess.run(["git", "add", str(csv_file)], check=True)
-        print(f"  sorted: {csv_file}")
+    return findings
 
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
@@ -195,15 +215,33 @@ def main() -> None:
     ensure_tool_exists("git")
     ensure_tool_exists("tar")
 
-    # Sort CSV files
+    # The real repository is used only to locate the root and to export the
+    # index. Nothing here writes to the working tree or to the real index.
     real_root = get_repo_root()
-    sort_csv_by_slug(real_root)
 
     with tempfile.TemporaryDirectory(prefix="precommit-root-") as tmp:
         tmp_root = Path(tmp)
 
         print("Creating workspace from post-commit state")
-        checkout_index_tree(tmp_root)
+        checkout_index_tree(tmp_root, cwd=real_root)
+
+        # Ordering is checked on the isolated index export, so an unsorted CSV
+        # is reported instead of being silently re-sorted and restaged: doing
+        # that would also stage any unstaged edits in the same file.
+        unsorted = find_unsorted_csvs(tmp_root)
+        if unsorted:
+            lines = [f"{len(unsorted)} staged CSV file(s) are not sorted by slug:"]
+            for csv_file, (earlier, later) in unsorted:
+                rel = csv_file.relative_to(tmp_root).as_posix()
+                lines.append(f"  - {rel}: {earlier!r} appears before {later!r}")
+            lines.append("")
+            lines.append("The hook no longer sorts these for you: rewriting and staging")
+            lines.append("them here would also stage any unstaged edits in the same file.")
+            lines.append("Sort each file by its slug column, keeping the header first,")
+            lines.append("then stage the result deliberately:")
+            lines.append("")
+            lines.append("    git add <file>")
+            die("\n".join(lines))
 
         print(f"Overlaying tools from GitHub ({UPSTREAM_REPO}@{UPSTREAM_REF})")
         for path in COPY_FROM_UPSTREAM:

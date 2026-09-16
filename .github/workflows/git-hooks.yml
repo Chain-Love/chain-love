@@ -1,0 +1,30 @@
+name: git-hooks
+
+on:
+  pull_request:
+    paths:
+      - "git-hooks/**"
+      - ".github/workflows/git-hooks.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "git-hooks/**"
+      - ".github/workflows/git-hooks.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  staging-regression:
+    name: pre-commit staging regression (issue #3823)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run staging regression tests
+        run: python3 git-hooks/tests/test_precommit_staging.py
