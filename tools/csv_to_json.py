@@ -580,7 +580,30 @@ AUDIT_PLACEHOLDER_PHRASES = {
     "security support by protofire",
     "audit internally",
     "third parties",
+    # unambiguously vague standalone answers
+    "yes",
+    "no",
+    "n/a",
+    "na",
+    "none",
+    "multiple",
+    "various",
+    "several",
 }
+
+
+def _normalize_audit_entry(entry: str) -> str:
+    """Lowercase, strip surrounding quotes and trailing sentence punctuation.
+
+    This lets the exact-match placeholder set also catch common variants such
+    as `"audited"`, `Audited.`, or `audit by third parties,` without broadening
+    the match to real positive claims (e.g. `Audited by CertiK` stays allowed,
+    because only the whole normalized string is compared).
+    """
+    s = entry.strip().lower()
+    s = s.strip("\"'`")
+    s = s.rstrip(".,;:!?").strip()
+    return s
 
 
 def validate_wallet_audit_evidence(result: dict):
@@ -606,7 +629,7 @@ def validate_wallet_audit_evidence(result: dict):
         for entry in audit:
             if not isinstance(entry, str):
                 continue
-            normalized = entry.strip().lower()
+            normalized = _normalize_audit_entry(entry)
             if normalized in AUDIT_PLACEHOLDER_PHRASES:
                 raise ValueError(
                     f"Wallet '{item.get('slug')}' audit contains a non-evidence "
