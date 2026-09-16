@@ -95,6 +95,14 @@ def rule_chain_is_lowercase(data):
             errors.append(f"Item {idx}: chain must be lowercase: want '{item['chain'].lower()}', got '{item['chain']}'. Please check all categories for the current network.")
     return errors
 
+# A URL is data, not markup. Underscores (subquery_network), asterisks and
+# brackets inside one must not be counted as markdown (issue #3656 finding 4).
+# The target may carry one level of balanced parentheses, so
+# https://en.wikipedia.org/wiki/Chain_(blockchain) is consumed whole and does
+# not leave an unbalanced ")" behind.
+URL_RE = re.compile(r"https?://(?:[^\s()]+|\((?:[^\s()]+)?\))*")
+
+
 def has_unclosed_markdown(s: str) -> bool:
     if type(s) != str:
         return False
@@ -102,32 +110,44 @@ def has_unclosed_markdown(s: str) -> bool:
     if len(s) == 0:
         return False
 
+    # Everything below is counted on the cell with its URLs removed.
+    t = URL_RE.sub("", s)
+
     # Pairs that must be closed: **, *, _, `, [ ]( )
     # Check bold/italic/code
-    if s.count("**") % 2 != 0:
+    if t.count("**") % 2 != 0:
         return True
     # Count non-bold asterisks: subtract the stars consumed by ** spans, so a
     # stray single-* span is caught even when the cell also contains **bold**.
-    if (s.count("*") - 2 * s.count("**")) % 2 != 0:  # single * for italic
+    if (t.count("*") - 2 * t.count("**")) % 2 != 0:  # single * for italic
         return True
     # Underscores are legal in URLs and snake_case identifiers, so only treat
     # an unbalanced `_` as broken markdown when the cell already uses other
     # markdown syntax (bold/italic/code/links) and is therefore presumed to
     # be markdown-authored.
-    has_markdown_syntax = any(token in s for token in ("*", "`", "[", "]"))
-    if has_markdown_syntax and s.count("_") % 2 != 0:
+    has_markdown_syntax = any(token in t for token in ("*", "`", "[", "]"))
+    if has_markdown_syntax and t.count("_") % 2 != 0:
         return True
-    if s.count("`") % 2 != 0:
+    if t.count("`") % 2 != 0:
         return True
 
     # Check link brackets [text](url)
     # Must have same count of [ and ] and ( and )
-    if s.count("[") != s.count("]"):
+    if t.count("[") != t.count("]"):
         return True
-    if s.count("(") != s.count(")"):
+    if t.count("(") != t.count(")"):
         return True
 
     return False
+
+# A markdown link must be the whole cell (`fullmatch`, so trailing junk is no
+# longer swallowed) and its target may carry one level of balanced parentheses,
+# e.g. https://en.wikipedia.org/wiki/Chain_(blockchain). The previous
+# non-greedy `(?P<link>.*?)\)` stopped at the first `)`, so that URL was
+# captured - and validated - as ".../Chain_(blockchain".
+# Kept at module scope so tests can assert the captured target is intact.
+MARKDOWN_LINK_RE = re.compile(r"\[(?P<text>.*?)\]\((?P<link>(?:[^()]|\([^()]*\))*)\)")
+
 
 def is_markdown_link(s: str) -> bool:
     if type(s) != str:
@@ -136,11 +156,7 @@ def is_markdown_link(s: str) -> bool:
     if len(s) == 0:
         return False
 
-    # Full-string match, and the link target may contain one level of balanced
-    # parentheses (e.g. https://en.wikipedia.org/wiki/Chain_(blockchain)) so
-    # the non-greedy stop can no longer truncate the captured URL.
-    pattern = r"\[(?P<text>.*?)\]\((?P<link>(?:[^()]|\([^()]*\))*)\)"
-    return re.fullmatch(pattern, s) is not None
+    return MARKDOWN_LINK_RE.fullmatch(s) is not None
 
 def _data_categories(data):
     return {k for k in data.keys() if k not in ("columns", "meta", "schemaVersion")}
