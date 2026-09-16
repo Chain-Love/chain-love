@@ -14,6 +14,13 @@ SDK_TBD_FIELDS = (
     "license",
 )
 
+RUNTIME_REQUIREMENTS_COLUMN = "runtimeRequirements"
+# Allowed runtime keys and the syntax enums valid for each (DBIP #3751).
+RUNTIME_KEY_SYNTAX = {
+    "python": ("poetry", "pep440"),
+    "node": ("node-semver",),
+}
+
 
 def col_letter(idx: int) -> str:
     """Convert 0-based index to Excel column letters."""
@@ -50,6 +57,69 @@ def is_boolish(value: str) -> bool:
 
 def is_trueish(value: str) -> bool:
     return isinstance(value, str) and value.strip().lower() == "true"
+
+
+def validate_runtime_requirements(items: list, context: str) -> list[str]:
+    """Validate runtimeRequirements objects for sdks rows (DBIP #3751).
+
+    Rules:
+      - blank/None is valid (unverified; listings inherit from canonical offers);
+      - an empty object is invalid (must not be used as a placeholder for "unrestricted");
+      - only the runtime keys ``python`` and ``node`` are allowed;
+      - ``python`` uses syntax ``poetry`` or ``pep440``; ``node`` uses ``node-semver``;
+      - each present runtime entry must carry non-empty ``constraint``, ``syntax`` and ``source``;
+      - ``source`` must be a release-specific official declaration URL (non-empty string).
+    Empty strings and empty objects are rejected so that "blank" stays distinct from
+    "verified compatible with everything".
+    """
+    errors = []
+    for idx, item in enumerate(items):
+        if not isinstance(item, dict):
+            continue
+        value = item.get(RUNTIME_REQUIREMENTS_COLUMN)
+        if value is None:
+            continue
+        slug = item.get("slug") or f"row {idx + 2}"
+        label = f"{context}: sdks '{slug}': {RUNTIME_REQUIREMENTS_COLUMN}"
+        if not isinstance(value, dict):
+            errors.append(
+                f"{label} must be a JSON object or null, got {type(value).__name__}"
+            )
+            continue
+        if not value:
+            errors.append(
+                f"{label} must not be an empty object; use a blank cell for unverified"
+            )
+            continue
+        for key, allowed in RUNTIME_KEY_SYNTAX.items():
+            entry = value.get(key)
+            if entry is None:
+                continue
+            if not isinstance(entry, dict):
+                errors.append(f"{label}.{key} must be an object")
+                continue
+            constraint = entry.get("constraint")
+            syntax = entry.get("syntax")
+            source = entry.get("source")
+            if not isinstance(constraint, str) or constraint.strip() == "":
+                errors.append(
+                    f"{label}.{key}.constraint must be a non-empty string"
+                )
+            if syntax not in allowed:
+                errors.append(
+                    f"{label}.{key}.syntax must be one of {list(allowed)}, got {syntax!r}"
+                )
+            if not isinstance(source, str) or source.strip() == "":
+                errors.append(
+                    f"{label}.{key}.source must be a non-empty string"
+                )
+        for key in value:
+            if key not in RUNTIME_KEY_SYNTAX:
+                errors.append(
+                    f"{label} has unknown runtime key {key!r}; "
+                    f"only {list(RUNTIME_KEY_SYNTAX)} are supported"
+                )
+    return errors
 
 
 def normalize(data_by_category: dict):
@@ -772,6 +842,17 @@ def main():
             exit(1)
 
         ensure_sdks_tbd_fields(result)
+
+        runtime_req_errors = validate_runtime_requirements(
+            result.get("sdks", []), context=f"network '{network_name}'"
+        )
+        if runtime_req_errors:
+            print(
+                f"Validation errors for {RUNTIME_REQUIREMENTS_COLUMN} in network '{network_name}':"
+            )
+            for e in runtime_req_errors:
+                print(e)
+            exit(1)
 
         result["columns"] = get_column_order(
             base_categories=list_categories(network_dir),
