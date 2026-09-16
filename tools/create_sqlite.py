@@ -100,9 +100,9 @@ def resolve_type(prop: JSONSchemaProperty) -> Tuple[str, bool]:
     if base == "number":
         return "REAL", nullable
     if base == "boolean":
-        return "INTEGER", False
+        return "INTEGER", nullable
     if base == "array":
-        return "TEXT", True
+        return "TEXT", nullable
 
     return "TEXT", True
 
@@ -131,9 +131,11 @@ def build_tables(schema: JSONSchemaRoot) -> List[Table]:
             continue
 
         cols: List[Column] = [Column("network", "TEXT", False)]
+        required = set(def_schema.get("required", []))
 
         for col_name, col_schema in def_schema.get("properties", {}).items():
-            col_type, nullable = resolve_type(col_schema)
+            col_type, accepts_null = resolve_type(col_schema)
+            nullable = accepts_null or col_name not in required
             cols.append(Column(col_name, col_type, nullable))
 
         tables.append(Table(ref, cols))
