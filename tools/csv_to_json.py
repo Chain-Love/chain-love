@@ -563,6 +563,82 @@ def ensure_sdks_tbd_fields(result: dict):
                 item[k] = "TBD"
 
 
+AUDIT_PLACEHOLDER_PHRASES = {
+    "audit by third parties",
+    "third-party audits",
+    "audited",
+    "not available",
+    "not availale",
+    "unknown",
+    "tbd",
+    "open to anyone",
+    "annual audit",
+    "audit by public",
+    "regular audits",
+    "regular audits by third parties",
+    "regular internal security audit",
+    "security support by protofire",
+    "audit internally",
+    "third parties",
+    # unambiguously vague standalone answers
+    "yes",
+    "no",
+    "n/a",
+    "na",
+    "none",
+    "multiple",
+    "various",
+    "several",
+}
+
+
+def _normalize_audit_entry(entry: str) -> str:
+    """Lowercase, strip surrounding quotes and trailing sentence punctuation.
+
+    This lets the exact-match placeholder set also catch common variants such
+    as `"audited"`, `Audited.`, or `audit by third parties,` without broadening
+    the match to real positive claims (e.g. `Audited by CertiK` stays allowed,
+    because only the whole normalized string is compared).
+    """
+    s = entry.strip().lower()
+    s = s.strip("\"'`")
+    s = s.rstrip(".,;:!?").strip()
+    return s
+
+
+def validate_wallet_audit_evidence(result: dict):
+    """Reject vague / missing-value placeholder phrases in wallet `audit` values.
+
+    DBIP #3775: wallet audit values must be source-backed evidence (an audit
+    report URL or a verified auditor name). Generic assertions and
+    missing-value placeholders (e.g. "audit by third parties", "not available",
+    "Audited") are not acceptable and must be represented by a blank cell.
+
+    This validator only rejects a documented set of known placeholders; it does
+    not attempt to verify the semantic truth of positive audit claims.
+    """
+    wallets = result.get("wallets")
+    if not isinstance(wallets, list):
+        return
+    for item in wallets:
+        if not isinstance(item, dict):
+            continue
+        audit = item.get("audit")
+        if not isinstance(audit, list):
+            continue
+        for entry in audit:
+            if not isinstance(entry, str):
+                continue
+            normalized = _normalize_audit_entry(entry)
+            if normalized in AUDIT_PLACEHOLDER_PHRASES:
+                raise ValueError(
+                    f"Wallet '{item.get('slug')}' audit contains a non-evidence "
+                    f"placeholder phrase '{entry}'. Audit values must be source-backed "
+                    f"(e.g. an audit report URL or a verified auditor name). Represent "
+                    f"unknown/missing audit evidence with a blank cell, not prose."
+                )
+
+
 def load_json_file(path: str) -> dict:
     if not os.path.exists(path):
         raise FileNotFoundError(f"Meta file not found: {path}")
@@ -772,6 +848,7 @@ def main():
             exit(1)
 
         ensure_sdks_tbd_fields(result)
+        validate_wallet_audit_evidence(result)
 
         result["columns"] = get_column_order(
             base_categories=list_categories(network_dir),

@@ -4,23 +4,77 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-json-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - name: Checkout code
+      - name: Checkout this PR
         uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-      
-      - name: Install dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+          fetch-depth: 1
+          persist-credentials: false
 
-      - name: Run CSV to JSON
-        run: python3 csv_to_json.py
+      # Assemble the workspace from THIS checkout's tool, schema and metadata.
+      # It is deliberate that nothing is borrowed from the json-tools base
+      # branch: doing so previously meant the PR's own csv_to_json.py,
+      # schema.json and meta/columns.json were overwritten and never run.
+      # meta/ already lives at the repo root on this branch, so it is used
+      # in place rather than copied.
+      - name: Assemble workspace from this PR's files
+        run: |
+          set -euo pipefail
+          cp tools/csv_to_json.py tools/validate.py tools/validate_csv.py .
+          cp tools/schema.json .
+          mkdir -p listings/specific-networks/demo-network listings/all-networks \
+                   references/offers references/providers
+          cp tools/tests/fixtures/wallets.audit-ok.csv \
+             listings/specific-networks/demo-network/wallets.csv
+          cp tools/tests/fixtures/providers.csv \
+             references/providers/providers.csv
+          ls -l
 
-      - name: Run validation script
-        run: python validate.py
+      - name: Validate with this PR's tool, schema and metadata
+        run: |
+          docker run --rm \
+            --network=none \
+            -v ${{ github.workspace }}:/workspace \
+            -w /workspace \
+            python:3.12-slim \
+            /bin/bash -c '
+              set -e
+              pip install --no-index --find-links=tools/wheels -r tools/requirements.txt
+
+              echo "==> regression test: tools/tests/test_audit_evidence.py"
+              python3 tools/tests/test_audit_evidence.py
+
+              echo "==> structural CSV validation"
+              python3 validate_csv.py
+
+              echo "==> csv -> json (wires validate_wallet_audit_evidence over real rows)"
+              rm -rf json
+              python3 csv_to_json.py
+
+              echo "==> json vs this PR schema.json + meta/columns.json + meta/categories.json"
+              test -d json
+              python3 validate.py
+
+              echo "==> negative control: a placeholder audit value must be rejected"
+              cp tools/tests/fixtures/wallets.audit-placeholder.csv \
+                 listings/specific-networks/demo-network/wallets.csv
+              rm -rf json
+              if python3 csv_to_json.py > /tmp/negative.log 2>&1; then
+                echo "ERROR: placeholder audit value was accepted - audit rule not enforced"
+                cat /tmp/negative.log
+                exit 1
+              fi
+              grep -q "placeholder phrase" /tmp/negative.log
+              echo "OK: placeholder audit value rejected as expected"
+            '
