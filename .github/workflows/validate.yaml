@@ -4,23 +4,258 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-json-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Checkout code
+      - name: Checkout this PR
         uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-      
-      - name: Install dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+          fetch-depth: 1
+          persist-credentials: false
 
-      - name: Run CSV to JSON
-        run: python3 csv_to_json.py
+      # The whole check runs from a script file so that the shell quoting is
+      # readable and the stages are greppable in the job log.
+      - name: Validate with this PR validator, schema and fixtures
+        run: |
+          cat > /tmp/check.sh <<'SCRIPT'
+          set -e
+          # The whole check runs from a script file so that the shell quoting stays
+          # readable and every stage is greppable in the job log.
+          PY="${PY:-python3}"
+          FIX=tools/tests/fixtures/markdown-heuristics
+          LISTING=listings/specific-networks/demo-network/services.csv
 
-      - name: Run validation script
-        run: python validate.py
+          echo "==> install dependencies from the vendored wheels (offline)"
+          "$PY" -m pip install --no-index --find-links=tools/wheels -r tools/requirements.txt
+
+          echo "==> regression tests: tools/tests/test_validate_markdown.py"
+          "$PY" tools/tests/test_validate_markdown.py
+
+          echo "==> assemble the workspace from this PR files only"
+          # Nothing is borrowed from the json-tools base branch: the workflow that used
+          # to live there ran `pip install -r requirements.txt` and `python3
+          # csv_to_json.py` from the repository root, where neither file exists, so the
+          # job never reached this validator at all.
+          cp tools/csv_to_json.py tools/validate.py tools/validate_csv.py .
+          cp tools/schema.json .
+          mkdir -p listings/specific-networks/demo-network listings/all-networks \
+                   references/offers references/providers
+          cp "$FIX/listings.services.csv" "$LISTING"
+          cp "$FIX/offers.services.csv" references/offers/services.csv
+          cp "$FIX/providers.csv" references/providers/providers.csv
+
+          echo "==> structural CSV validation"
+          "$PY" validate_csv.py
+
+          echo "==> csv -> json"
+          rm -rf json
+          "$PY" csv_to_json.py
+
+          echo "==> validate.py over the generated network json"
+          test -d json
+          "$PY" validate.py
+
+          # A fixture is either expected to be rejected by validate.py with a specific
+          # message, or accepted. Both directions are pinned: the rejections are the
+          # false negatives this PR closes, the acceptance is the false positive it
+          # removes.
+          expect() {
+            fixture="$1"
+            want="$2"
+            message="$3"
+            cp "$fixture" "$LISTING"
+            rm -rf json
+            "$PY" csv_to_json.py > /tmp/case.log 2>&1 || { echo "ERROR: csv_to_json failed"; cat /tmp/case.log; exit 1; }
+            if "$PY" validate.py >> /tmp/case.log 2>&1; then got=accept; else got=reject; fi
+            if [ "$got" != "$want" ]; then
+              echo "ERROR: $(basename "$fixture") was $got, expected $want"
+              cat /tmp/case.log
+              exit 1
+            fi
+            if [ -n "$message" ]; then
+              grep -q "$message" /tmp/case.log || { echo "ERROR: missing message [$message]"; cat /tmp/case.log; exit 1; }
+            fi
+            echo "OK: $(basename "$fixture") -> $want${message:+ [$message]}"
+          }
+
+          echo "==> pipeline controls"
+          expect "$FIX/listings.services.negative-unclosed-italic.csv" reject "Markdown unclosed in field 'description'"
+          expect "$FIX/listings.services.negative-link-junk.csv" reject "must be a markdown link"
+          expect "$FIX/listings.services.control-underscore-url.csv" accept ""
+          expect "$FIX/listings.services.control-snake-case.csv" accept ""
+          # review on #3657: a standalone `_` emphasis, and markup glued to a URL
+          expect "$FIX/listings.services.negative-unclosed-underscore.csv" reject "Markdown unclosed in field 'description'"
+          expect "$FIX/listings.services.negative-markup-after-url.csv" reject "Markdown unclosed in field 'description'"
+          expect "$FIX/listings.services.control-markup-after-url.csv" accept ""
+          expect "$FIX/listings.services.control-url-query-underscore.csv" accept ""
+          cp "$FIX/listings.services.csv" "$LISTING"
+          rm -rf json
+          "$PY" csv_to_json.py
+          "$PY" validate.py
+
+          # ---------------------------------------------------------------------------
+          # Mutations. Each one puts a single behaviour of this PR back the way it was
+          # and asserts that the checks above notice. A check that cannot fail does not
+          # cover the change.
+          # ---------------------------------------------------------------------------
+          mutate() {
+            cp tools/validate.py /tmp/validate.bak
+            MUTATION_NAME="$1" "$PY" - <<'PY'
+          import os
+          import pathlib
+
+          name = os.environ["MUTATION_NAME"]
+          path = pathlib.Path("tools/validate.py")
+          src = path.read_text(encoding="utf-8")
+
+          MUTATIONS = {
+              "single-star": (
+                  '    if (t.count("*") - 2 * t.count("**")) % 2 != 0:  # single * for italic\n        return True',
+                  '    if t.count("*") % 2 != 0 and t.count("**") == 0:\n        return True',
+              ),
+              "link-match": (
+                  '    return MARKDOWN_LINK_RE.fullmatch(s) is not None\n',
+                  '    return re.match(r"(?:\\[(?P<text>.*?)\\])\\((?P<link>.*?)\\)", s) is not None\n',
+              ),
+              "underscore-scope": (
+                  '    if _unclosed_underscore_span(t):',
+                  '    if t.count("_") % 2 != 0:',
+              ),
+              "url-strip": (
+                  '    t = URL_RE.sub("", s)',
+                  '    t = s',
+              ),
+              "url-delimiters": (
+                  'URL_BODY = r"[^\\s()*`\\[\\]]"',
+                  'URL_BODY = r"[^\\s()]"',
+              ),
+              "underscore-opener": (
+                  '    if _unclosed_underscore_span(t):',
+                  '    if any(token in t for token in ("*", "`", "[", "]")) and t.count("_") % 2 != 0:',
+              ),
+              "short-circuit": (
+                  '    schema_ok = check_schema_validation(schema_validator, data)\n    rules_ok = check_rules_validation(rules_validator, data)',
+                  '    if not check_schema_validation(schema_validator, data):\n        return False\n    rules_ok = check_rules_validation(rules_validator, data)',
+              ),
+          }
+
+          old, new = MUTATIONS[name]
+          if old not in src:
+              raise SystemExit(f"mutation anchor not found for {name}: {old!r}")
+          path.write_text(src.replace(old, new, 1), encoding="utf-8", newline="\n")
+          PY
+            cp tools/validate.py .
+          }
+
+          restore() {
+            cp /tmp/validate.bak tools/validate.py
+            cp tools/validate.py .
+          }
+
+          echo "==> mutation 1: restore the single-* short circuit -> the unclosed italic cell must be accepted"
+          mutate single-star
+          if "$PY" tools/tests/test_validate_markdown.py > /tmp/m1.log 2>&1; then
+            echo "ERROR: the unit tests still pass with the old single-star branch"
+            cat /tmp/m1.log
+            exit 1
+          fi
+          grep -q "single-\* spans" /tmp/m1.log
+          expect "$FIX/listings.services.negative-unclosed-italic.csv" accept ""
+          restore
+          echo "OK: the single-* fix is exercised"
+
+          echo "==> mutation 2: restore re.match for markdown links -> trailing junk must be accepted"
+          mutate link-match
+          if "$PY" tools/tests/test_validate_markdown.py > /tmp/m2.log 2>&1; then
+            echo "ERROR: the unit tests still pass with the old link pattern"
+            cat /tmp/m2.log
+            exit 1
+          fi
+          expect "$FIX/listings.services.negative-link-junk.csv" accept ""
+          restore
+          echo "OK: the markdown link fix is exercised"
+
+          echo "==> mutation 3: unscope the underscore heuristic -> a plain snake_case cell must be rejected again"
+          mutate underscore-scope
+          if "$PY" tools/tests/test_validate_markdown.py > /tmp/m3.log 2>&1; then
+            echo "ERROR: the unit tests still pass with the unscoped underscore heuristic"
+            cat /tmp/m3.log
+            exit 1
+          fi
+          expect "$FIX/listings.services.control-snake-case.csv" reject "Markdown unclosed in field 'description'"
+          restore
+          echo "OK: the underscore scoping is exercised"
+
+          echo "==> mutation 4: stop stripping URLs -> a URL query string is counted as markup"
+          mutate url-strip
+          if "$PY" tools/tests/test_validate_markdown.py > /tmp/m4.log 2>&1; then
+            echo "ERROR: the unit tests still pass without URL stripping"
+            cat /tmp/m4.log
+            exit 1
+          fi
+          grep -q "stripped whole" /tmp/m4.log
+          expect "$FIX/listings.services.control-url-query-underscore.csv" reject "Markdown unclosed in field 'description'"
+          restore
+          echo "OK: the URL stripping is exercised"
+
+          echo "==> mutation 5: short circuit the phases -> rule errors disappear behind a schema failure"
+          mutate short-circuit
+          if "$PY" tools/tests/test_validate_markdown.py > /tmp/m5.log 2>&1; then
+            echo "ERROR: the unit tests still pass with the phases short circuited"
+            cat /tmp/m5.log
+            exit 1
+          fi
+          grep -q "rule error is reported in the same run" /tmp/m5.log
+          restore
+          echo "OK: the error aggregation is exercised"
+
+          echo "==> mutation 6: let URL bodies swallow delimiters again -> markup glued to a URL disappears"
+          mutate url-delimiters
+          if "$PY" tools/tests/test_validate_markdown.py > /tmp/m6.log 2>&1; then
+            echo "ERROR: the unit tests still pass with the delimiter-swallowing URL body"
+            cat /tmp/m6.log
+            exit 1
+          fi
+          grep -q "markup adjacent to a URL" /tmp/m6.log
+          expect "$FIX/listings.services.negative-markup-after-url.csv" accept ""
+          restore
+          echo "OK: the URL delimiter fix is exercised"
+
+          echo "==> mutation 7: gate the underscore branch on unrelated markup again -> standalone emphasis is missed"
+          mutate underscore-opener
+          if "$PY" tools/tests/test_validate_markdown.py > /tmp/m7.log 2>&1; then
+            echo "ERROR: the unit tests still pass with the gated underscore branch"
+            cat /tmp/m7.log
+            exit 1
+          fi
+          grep -q "underscore delimiters" /tmp/m7.log
+          expect "$FIX/listings.services.negative-unclosed-underscore.csv" accept ""
+          restore
+          echo "OK: the standalone underscore emphasis fix is exercised"
+
+          echo "==> final green run after restoring every mutation"
+          # The last expect() above leaves its own fixture in place; the final run must
+          # start from the baseline row again or it inherits that fixture's verdict.
+          cp "$FIX/listings.services.csv" "$LISTING"
+          "$PY" tools/tests/test_validate_markdown.py
+          rm -rf json
+          "$PY" csv_to_json.py
+          "$PY" validate.py
+
+          echo
+          echo "All stages passed. Every check above was shown to fail when one of this PR's changes is reverted."
+          SCRIPT
+          docker run --rm --network=none \
+            -v "${{ github.workspace }}:/workspace" \
+            -v /tmp/check.sh:/check.sh:ro \
+            -w /workspace \
+            python:3.12-slim /bin/bash /check.sh
