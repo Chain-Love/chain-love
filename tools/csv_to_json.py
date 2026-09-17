@@ -746,6 +746,26 @@ def main():
     column_meta = load_json_file("meta/columns.json")
     offers_by_category = load_categories_from_folder("references/offers")
 
+    # Validate the canonical offers themselves, not only the rows that survive offer
+    # resolution. An offer that no listing references is never merged into a network
+    # result, so the per-network check below would never see it, and neither would
+    # validate.py's json pass. JSON Schema already covers the names, the duplicates and
+    # the entry type here -- validate.py validates references/offers through
+    # make_providers_schema -- but it cannot express the array order, and that rule lives
+    # only in validate_key_export_formats. Both call sites are needed: this one reaches
+    # the canonical rows, the network one reaches the values a listing overrides them with.
+    offer_key_export_format_errors = validate_key_export_formats(
+        offers_by_category.get("wallets", []), context="references/offers"
+    )
+    if offer_key_export_format_errors:
+        print(
+            f"Validation errors for {KEY_EXPORT_FORMATS_COLUMN} in "
+            f"references/offers/wallets.csv:"
+        )
+        for e in offer_key_export_format_errors:
+            print(e)
+        exit(1)
+
     # Global listings (apply to every network)
     global_listings = load_categories_from_folder(all_networks_dir)
     global_listings_categories = list_categories(folder=all_networks_dir)
