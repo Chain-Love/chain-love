@@ -190,6 +190,16 @@ jobs:
           }
           echo "OK: listings.wallets.negative-unsorted-override.csv -> rejected [must be sorted alphabetically]"
 
+          echo "==> canonical offers are checked even when no listing references them"
+          # Every fixture above carries its bad value on a slug that a listing references,
+          # so the network pass would catch it no matter what. This fixture puts the bad
+          # value on a slug no listing references. The network pass never sees that row,
+          # and JSON Schema cannot express the order, so validate.py accepts it. The only
+          # thing that can reject it is validate_extension_browsers() running on the
+          # canonical offers themselves -- which is what this stage pins down.
+          expect_converter_reject "$FIX/offers.wallets.negative-unreferenced-unsorted.csv" \
+            "references/offers: wallets 'zzz-unreferenced-wallet'"
+
           echo "==> positive controls"
           cp "$FIX/listings.wallets.csv" "$LISTING"
           expect_pipeline "$FIX/offers.wallets.csv" accept ""
@@ -253,10 +263,17 @@ jobs:
           import pathlib
           path = pathlib.Path("tools/csv_to_json.py")
           src = path.read_text(encoding="utf-8")
-          old = "        if extension_browser_errors:"
-          new = "        if False and extension_browser_errors:"
-          assert old in src, old
-          src = src.replace(old, new)
+          # Both call sites, because this mutation means "validate_extension_browsers
+          # never runs". Leaving the canonical-offers call wired would keep the
+          # fixture below red for the wrong reason and hide a broken mutation.
+          for old, new in (
+              ("    if offer_extension_browser_errors:",
+               "    if False and offer_extension_browser_errors:"),
+              ("        if extension_browser_errors:",
+               "        if False and extension_browser_errors:"),
+          ):
+              assert old in src, old
+              src = src.replace(old, new)
           path.write_text(src, encoding="utf-8", newline="\n")
           PY
           cp tools/csv_to_json.py .
@@ -283,6 +300,31 @@ jobs:
           cp /tmp/csv_to_json.bak tools/csv_to_json.py
           cp tools/csv_to_json.py .
           echo "OK: the wiring into main() is exercised"
+
+          echo "==> mutation 5: unwire only the canonical-offers check -> the unreferenced case must go green"
+          "$PY" - <<'PY'
+          import pathlib
+          path = pathlib.Path("tools/csv_to_json.py")
+          src = path.read_text(encoding="utf-8")
+          old = "    if offer_extension_browser_errors:"
+          new = "    if False and offer_extension_browser_errors:"
+          assert old in src, old
+          src = src.replace(old, new)
+          path.write_text(src, encoding="utf-8", newline="\n")
+          PY
+          cp tools/csv_to_json.py .
+          cp "$FIX/listings.wallets.csv" "$LISTING"
+          # The unreferenced fixture is caught *only* by the canonical-offers call, so it
+          # has to flip to accept. Asserting the referenced fixture is still rejected is
+          # what keeps this from passing on a validator that does nothing at all.
+          expect_pipeline "$FIX/offers.wallets.negative-unreferenced-unsorted.csv" accept ""
+          # The referenced fixture is still rejected, now by the network pass alone. That
+          # is what shows this mutation disabled the canonical call and not the validator
+          # as a whole -- otherwise "accept" above would prove nothing.
+          expect_converter_reject "$FIX/offers.wallets.negative-unsorted.csv" "must be sorted alphabetically"
+          cp /tmp/csv_to_json.bak tools/csv_to_json.py
+          cp tools/csv_to_json.py .
+          echo "OK: the canonical-offers call is exercised"
 
           echo "==> final green run after restoring every mutation"
           cp "$FIX/offers.wallets.csv" "$OFFERS"

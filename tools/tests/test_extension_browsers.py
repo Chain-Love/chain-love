@@ -8,7 +8,9 @@ apart is exactly the failure mode the CI is supposed to catch:
 
   tools/schema.json    - the optional string array and its browser vocabulary
   meta/columns.json    - the contributor-facing description of the column
-  tools/csv_to_json.py - validate_extension_browsers() and its wiring into main()
+  tools/csv_to_json.py - validate_extension_browsers() and both of its call sites
+                         in main(): the canonical offers table and the resolved
+                         wallets of every network
 """
 from __future__ import annotations
 
@@ -207,6 +209,24 @@ check("the network pass names the network", "context=f\"network '{network_name}'
 check("the network pass exits on error", "if extension_browser_errors:" in src)
 check("the failure names the column",
       'Validation errors for {EXTENSION_BROWSERS_COLUMN} in network' in src)
+
+print("csv_to_json.py: the validator is also wired into the canonical offers pass")
+# Without this call site an offer that no listing references is merged into nothing,
+# so it never reaches the network pass and never reaches validate.py's json pass.
+# JSON Schema covers its names and duplicates (validate.py validates references/offers
+# through make_providers_schema) but cannot express the order, and the order rule
+# lives only in validate_extension_browsers.
+check("the canonical offers are validated",
+      "offer_extension_browser_errors = validate_extension_browsers(" in src)
+check("the canonical check reads the wallets category of references/offers",
+      'offers_by_category.get("wallets", [])' in src)
+check("the canonical check names its source", 'context="references/offers"' in src)
+check("the canonical check exits on error", "if offer_extension_browser_errors:" in src)
+check("the failure names the canonical file", "references/offers/wallets.csv:" in src)
+_loaded = src.find('offers_by_category = load_categories_from_folder("references/offers")')
+_checked = src.find("offer_extension_browser_errors =")
+check("the canonical check runs on the loaded offers, not on a re-read",
+      _loaded != -1 and _checked > _loaded)
 
 # ---------------------------------------------------------------------------
 print()
