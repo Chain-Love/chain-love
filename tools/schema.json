@@ -106,7 +106,11 @@
               "transport": { "type": "string", "enum": ["http", "websocket"] },
               "metric": { "type": "string", "enum": ["batchRequests", "blockSpan"] },
               "maximum": { "type": "integer", "minimum": 1 },
-              "sourceUrl": { "type": "string", "minLength": 1 }
+              "sourceUrl": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[Hh][Tt][Tt][Pp][Ss]?://[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?(?::[0-9]+)?(?:[/?#]\\S*)?$"
+              }
             }
           }
         },

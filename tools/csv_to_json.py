@@ -1,6 +1,7 @@
 import csv
 import json
 import os
+import re
 import string
 import unicodedata
 import warnings
@@ -534,6 +535,20 @@ def resolve_offers(
     return resolved
 
 
+# DBIP #3724: `sourceUrl` has to point at the page that documents the limit, so it must be
+# an absolute http(s) URL that carries a host. `minLength` alone cannot express that, so the
+# same invariant is declared as a `pattern` on the sourceUrl property in tools/schema.json,
+# and tools/tests/test_request_limits.py replays one verdict table against both layers. Only a
+# missing host is rejected here: reachability, and whether the page really documents the limit,
+# stay review concerns.
+SOURCE_URL_PATTERN = r"^[Hh][Tt][Tt][Pp][Ss]?://[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?(?::[0-9]+)?(?:[/?#]\S*)?$"
+
+
+def is_source_url(value) -> bool:
+    """True for an absolute http(s) URL with a host (see SOURCE_URL_PATTERN)."""
+    return isinstance(value, str) and re.search(SOURCE_URL_PATTERN, value) is not None
+
+
 def validate_request_limits(items: list, context: str) -> list[str]:
     """Validate resolved requestLimits arrays for apis rows (DBIP #3724).
 
@@ -543,7 +558,8 @@ def validate_request_limits(items: list, context: str) -> list[str]:
         method, transport, metric, maximum, sourceUrl;
       - transport must be http|websocket and metric batchRequests|blockSpan;
       - maximum must be a positive integer (no 0 sentinel, no "unlimited");
-      - method and sourceUrl must be non-empty strings, sourceUrl http(s);
+      - method must be a non-empty string, and sourceUrl an absolute http(s) URL
+        with a host (a bare scheme such as 'https://' is not a URL);
       - (method, transport, metric) must be unique within one row.
     """
     errors = []
@@ -585,13 +601,16 @@ def validate_request_limits(items: list, context: str) -> list[str]:
             maximum = entry["maximum"]
             if not isinstance(maximum, int) or isinstance(maximum, bool) or maximum < 1:
                 errors.append(f"{where}.maximum must be a positive integer, got {maximum!r}")
+            # Two rules, two messages: a blank cell is a missing value, a non-URL is a
+            # malformed one, and the workflow asserts each message separately so a
+            # mutation cannot hide behind the other rule's rejection.
             source = entry["sourceUrl"]
-            if (
-                not isinstance(source, str)
-                or not source.strip()
-                or not source.lower().startswith(("http://", "https://"))
-            ):
-                errors.append(f"{where}.sourceUrl must be an http(s) URL")
+            if not isinstance(source, str) or not source.strip():
+                errors.append(f"{where}.sourceUrl must be a non-empty string")
+            elif not is_source_url(source):
+                errors.append(
+                    f"{where}.sourceUrl must be an absolute http(s) URL with a host"
+                )
             key = (method, transport, metric)
             if key in seen:
                 errors.append(f"{where} duplicates (method, transport, metric) = {key}")

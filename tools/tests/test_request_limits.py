@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 import pathlib
+import re
 import sys
 
 from jsonschema import Draft202012Validator
@@ -30,6 +31,8 @@ TRANSPORTS = ("http", "websocket")
 KEYS = {"method", "transport", "metric", "maximum", "sourceUrl"}
 
 SOURCE = "https://www.alchemy.com/docs/reference/batch-requests"
+NOT_EMPTY = "sourceUrl must be a non-empty string"
+ABSOLUTE = "sourceUrl must be an absolute http(s) URL with a host"
 
 CHECKED = 0
 FAILURES: list[str] = []
@@ -109,8 +112,10 @@ check("maximum is a positive integer",
       prop["items"]["properties"]["maximum"] == {"type": "integer", "minimum": 1})
 check("method is a non-empty string",
       prop["items"]["properties"]["method"] == {"type": "string", "minLength": 1})
-check("sourceUrl is a non-empty string",
-      prop["items"]["properties"]["sourceUrl"] == {"type": "string", "minLength": 1})
+check("sourceUrl is a non-empty string carrying the URL pattern",
+      prop["items"]["properties"]["sourceUrl"]["type"] == "string"
+      and prop["items"]["properties"]["sourceUrl"]["minLength"] == 1
+      and isinstance(prop["items"]["properties"]["sourceUrl"].get("pattern"), str))
 other_defs = [n for n, d in schema["$defs"].items()
               if n != "apis" and COLUMN in d.get("properties", {})]
 check("no other category declares the column", other_defs == [])
@@ -196,11 +201,21 @@ check("boolean maximum", has([entry(maximum=True)], "maximum must be a positive 
 check("string maximum", has([entry(maximum="1000")], "maximum must be a positive integer"))
 check("float maximum", has([entry(maximum=1.5)], "maximum must be a positive integer"))
 check("source without a scheme",
-      has([entry(sourceUrl="www.example.com/docs")], "sourceUrl must be an http(s) URL"))
-check("non-http scheme", has([entry(sourceUrl="ftp://example.com")],
-                             "sourceUrl must be an http(s) URL"))
-check("empty source", has([entry(sourceUrl="")], "sourceUrl must be an http(s) URL"))
-check("non-string source", has([entry(sourceUrl=1234)], "sourceUrl must be an http(s) URL"))
+      has([entry(sourceUrl="www.example.com/docs")], ABSOLUTE))
+check("non-http scheme", has([entry(sourceUrl="ftp://example.com")], ABSOLUTE))
+check("a bare scheme is not a URL", has([entry(sourceUrl="https://")], ABSOLUTE))
+check("a scheme with no host is not a URL",
+      has([entry(sourceUrl="https:///batch-requests")], ABSOLUTE))
+check("a malformed host is not a URL",
+      has([entry(sourceUrl="https://-bad.example/limits")], ABSOLUTE))
+check("empty source is the blankness rule, not the URL rule",
+      has([entry(sourceUrl="")], NOT_EMPTY))
+check("blank source is the blankness rule",
+      has([entry(sourceUrl="   ")], NOT_EMPTY))
+check("non-string source is the blankness rule, not the URL rule",
+      has([entry(sourceUrl=1234)], NOT_EMPTY))
+check("the two source messages are distinct, so a mutation cannot hide",
+      ABSOLUTE not in NOT_EMPTY and NOT_EMPTY not in ABSOLUTE)
 check("duplicate (method, transport, metric)",
       has([entry(), entry(maximum=99)], "duplicates (method, transport, metric)"))
 check("the offending row is named", has([entry(transport="grpc")], "apis 'demo-rpc'"))
@@ -219,6 +234,93 @@ check("network listings are validated",
 check("the canonical pass exits on error",
       "if canonical_request_limit_errors:" in src)
 check("the network pass exits on error", "if request_limit_errors:" in src)
+
+
+# ---------------------------------------------------------------------------
+print("sourceUrl: one verdict table, replayed against both layers")
+# The regex is declared twice on purpose -- once in csv_to_json.py and once as the
+# `pattern` of the sourceUrl property in tools/schema.json -- because either layer can be
+# the one that sees a value first. A table is therefore only trustworthy if BOTH layers
+# agree on it, so every verdict below is replayed against the python rule and against
+# `re.search(schema pattern, value)`.
+SOURCE_URL_TABLE = [
+    ("ok", "https://www.alchemy.com/docs/reference/batch-requests"),
+    ("ok", "http://example.com/docs"),
+    ("ok", "HTTPS://EXAMPLE.COM/docs"),
+    ("ok", "https://example.com"),
+    ("ok", "https://example.com:8443/x?a=b#c"),
+    ("ok", "https://192.168.1.1/x"),
+    ("ok", "https://a.b-c.d/x"),
+    ("url", "https://"),
+    ("url", "https:///batch-requests"),
+    ("url", "https://-bad.example/limits"),
+    ("url", "https://exa mple.com/limits"),
+    ("url", "https:// .example.com/limits"),
+    ("url", "http:/example.com/x"),
+    ("url", "https://#frag"),
+    ("url", "https://?q=1"),
+    ("url", "//example.com/x"),
+    ("url", "www.example.com/docs"),
+    ("url", "ftp://example.com/x"),
+    ("url", "not-a-url"),
+    ("empty", ""),
+]
+
+pattern = prop["items"]["properties"]["sourceUrl"]["pattern"]
+check("both layers carry the same regex string",
+      pattern == csv_to_json.SOURCE_URL_PATTERN)
+check("the blankness rule runs first for the empty value",
+      has([entry(sourceUrl="")], NOT_EMPTY))
+for expected, value in SOURCE_URL_TABLE:
+    in_python = csv_to_json.is_source_url(value)
+    in_schema = bool(re.search(pattern, value))
+    if expected == "ok":
+        check(f"accepted by both layers: {value[:44]!r}", in_python and in_schema)
+    elif expected == "url":
+        check(f"rejected as a URL by both layers: {value[:44]!r}",
+              not in_python and not in_schema)
+    else:
+        check(f"empty is refused by the URL rule: {value!r}", not in_python and not in_schema)
+
+mismatched = [(e, v) for e, v in SOURCE_URL_TABLE
+              if bool(re.search(pattern, v)) != csv_to_json.is_source_url(v)]
+check("the two layers agree on every value in the table", mismatched == [])
+
+print("fixtures: each canonical negative really violates the sourceUrl rule")
+import csv as _csv  # noqa: E402
+import io as _io  # noqa: E402
+
+FIXDIR = HERE / "fixtures" / "request-limits"
+
+
+def fixture_source(name, slug="filecoin-logs-rpc"):
+    """The sourceUrl the named fixture carries on `slug` -- the one cell it changed."""
+    raw = (FIXDIR / name).read_bytes().decode("utf-8")
+    rows = [r for r in _csv.DictReader(_io.StringIO(raw)) if r["slug"] == slug]
+    assert len(rows) == 1, f"{name}: {len(rows)} rows named {slug}"
+    cell = (rows[0]["requestLimits"] or "").strip()
+    assert cell, f"{name}: {slug} has no requestLimits cell"
+    return json.loads(cell)[0]["sourceUrl"]
+
+
+for name, value in (
+    ("offers.apis.negative-source-bare-scheme.csv", "https://"),
+    ("offers.apis.negative-source-no-host.csv", "https:///batch-requests"),
+    ("offers.apis.negative-source-bad-host.csv", "https://-bad.example/limits"),
+    ("offers.apis.negative-bad-source-url.csv", "www.example.com/docs"),
+):
+    got = fixture_source(name)
+    check(f"{name} carries the rejected value", got == value)
+    check(f"{name} is rejected by both layers",
+          not csv_to_json.is_source_url(got) and not re.search(pattern, got))
+
+positive = (FIXDIR / "offers.apis.csv").read_bytes().decode("utf-8")
+positive_values = [e["sourceUrl"]
+                   for r in _csv.DictReader(_io.StringIO(positive))
+                   for e in (json.loads(r["requestLimits"]) if (r["requestLimits"] or "").strip() else [])]
+check("every value in the positive fixture still passes",
+      positive_values and all(csv_to_json.is_source_url(v) for v in positive_values))
+check("the positive fixture has more than one distinct source", len(set(positive_values)) > 1)
 
 # ---------------------------------------------------------------------------
 print()
