@@ -1,11 +1,16 @@
 import csv
 import json
 import os
+import re
 import string
 import unicodedata
 import warnings
 
 OFFER_REF_PREFIX = "!offer:"
+
+REQUEST_LIMITS_COLUMN = "requestLimits"
+REQUEST_LIMIT_METRICS = ("batchRequests", "blockSpan")
+REQUEST_LIMIT_TRANSPORTS = ("http", "websocket")
 
 SDK_TBD_FIELDS = (
     "latestKnownVersion",
@@ -530,6 +535,89 @@ def resolve_offers(
     return resolved
 
 
+# DBIP #3724: `sourceUrl` has to point at the page that documents the limit, so it must be
+# an absolute http(s) URL that carries a host. `minLength` alone cannot express that, so the
+# same invariant is declared as a `pattern` on the sourceUrl property in tools/schema.json,
+# and tools/tests/test_request_limits.py replays one verdict table against both layers. Only a
+# missing host is rejected here: reachability, and whether the page really documents the limit,
+# stay review concerns.
+SOURCE_URL_PATTERN = r"^[Hh][Tt][Tt][Pp][Ss]?://[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?(?::[0-9]+)?(?:[/?#]\S*)?$"
+
+
+def is_source_url(value) -> bool:
+    """True for an absolute http(s) URL with a host (see SOURCE_URL_PATTERN)."""
+    return isinstance(value, str) and re.search(SOURCE_URL_PATTERN, value) is not None
+
+
+def validate_request_limits(items: list, context: str) -> list[str]:
+    """Validate resolved requestLimits arrays for apis rows (DBIP #3724).
+
+    Rules:
+      - blank/None is valid (unverified);
+      - each entry must be an object with exactly the keys
+        method, transport, metric, maximum, sourceUrl;
+      - transport must be http|websocket and metric batchRequests|blockSpan;
+      - maximum must be a positive integer (no 0 sentinel, no "unlimited");
+      - method must be a non-empty string, and sourceUrl an absolute http(s) URL
+        with a host (a bare scheme such as 'https://' is not a URL);
+      - (method, transport, metric) must be unique within one row.
+    """
+    errors = []
+    for idx, item in enumerate(items):
+        if not isinstance(item, dict):
+            continue
+        value = item.get(REQUEST_LIMITS_COLUMN)
+        if value is None:
+            continue
+        slug = item.get("slug") or f"row {idx + 2}"
+        label = f"{context}: apis '{slug}': {REQUEST_LIMITS_COLUMN}"
+        if not isinstance(value, list):
+            errors.append(f"{label} must be a JSON array, got {type(value).__name__}")
+            continue
+        seen = set()
+        for pos, entry in enumerate(value):
+            where = f"{label}[{pos}]"
+            if not isinstance(entry, dict):
+                errors.append(f"{where} must be an object, got {type(entry).__name__}")
+                continue
+            expected_keys = {"method", "transport", "metric", "maximum", "sourceUrl"}
+            keys = set(entry.keys())
+            if keys != expected_keys:
+                missing = sorted(expected_keys - keys)
+                extra = sorted(keys - expected_keys)
+                errors.append(
+                    f"{where} keys mismatch (missing: {missing or 'none'}, unexpected: {extra or 'none'})"
+                )
+                continue
+            method = entry["method"]
+            if not isinstance(method, str) or not method.strip():
+                errors.append(f"{where}.method must be a non-empty string")
+            transport = entry["transport"]
+            if transport not in REQUEST_LIMIT_TRANSPORTS:
+                errors.append(f"{where}.transport must be one of {list(REQUEST_LIMIT_TRANSPORTS)}, got {transport!r}")
+            metric = entry["metric"]
+            if metric not in REQUEST_LIMIT_METRICS:
+                errors.append(f"{where}.metric must be one of {list(REQUEST_LIMIT_METRICS)}, got {metric!r}")
+            maximum = entry["maximum"]
+            if not isinstance(maximum, int) or isinstance(maximum, bool) or maximum < 1:
+                errors.append(f"{where}.maximum must be a positive integer, got {maximum!r}")
+            # Two rules, two messages: a blank cell is a missing value, a non-URL is a
+            # malformed one, and the workflow asserts each message separately so a
+            # mutation cannot hide behind the other rule's rejection.
+            source = entry["sourceUrl"]
+            if not isinstance(source, str) or not source.strip():
+                errors.append(f"{where}.sourceUrl must be a non-empty string")
+            elif not is_source_url(source):
+                errors.append(
+                    f"{where}.sourceUrl must be an absolute http(s) URL with a host"
+                )
+            key = (method, transport, metric)
+            if key in seen:
+                errors.append(f"{where} duplicates (method, transport, metric) = {key}")
+            seen.add(key)
+    return errors
+
+
 def get_schema_version(
     schema_path: str = "schema.json", fallback: str = "1.0.0"
 ) -> str:
@@ -700,6 +788,15 @@ def main():
     column_meta = load_json_file("meta/columns.json")
     offers_by_category = load_categories_from_folder("references/offers")
 
+    canonical_request_limit_errors = validate_request_limits(
+        offers_by_category.get("apis", []), context="canonical offers"
+    )
+    if canonical_request_limit_errors:
+        print(f"Validation errors for {REQUEST_LIMITS_COLUMN} in canonical offers:")
+        for e in canonical_request_limit_errors:
+            print(e)
+        exit(1)
+
     # Global listings (apply to every network)
     global_listings = load_categories_from_folder(all_networks_dir)
     global_listings_categories = list_categories(folder=all_networks_dir)
@@ -772,6 +869,15 @@ def main():
             exit(1)
 
         ensure_sdks_tbd_fields(result)
+
+        request_limit_errors = validate_request_limits(
+            result.get("apis", []), context=f"network '{network_name}'"
+        )
+        if request_limit_errors:
+            print(f"Validation errors for {REQUEST_LIMITS_COLUMN} in network '{network_name}':")
+            for e in request_limit_errors:
+                print(e)
+            exit(1)
 
         result["columns"] = get_column_order(
             base_categories=list_categories(network_dir),

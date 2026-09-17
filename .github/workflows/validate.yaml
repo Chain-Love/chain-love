@@ -4,23 +4,368 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-json-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Checkout code
+      - name: Checkout this PR
         uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-      
-      - name: Install dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+          fetch-depth: 1
+          persist-credentials: false
 
-      - name: Run CSV to JSON
-        run: python3 csv_to_json.py
+      # The whole check runs from a script file so that the shell quoting is
+      # readable and the stages are greppable in the job log.
+      - name: Validate with this PR validator, schema and fixtures
+        run: |
+          cat > /tmp/check.sh <<'SCRIPT'
+          set -e
+          # The whole check runs from a script file so that the shell quoting stays
+          # readable and every stage is greppable in the job log.
 
-      - name: Run validation script
-        run: python validate.py
+          PY="${PY:-python3}"
+
+          FIX=tools/tests/fixtures/request-limits
+          LISTING=listings/specific-networks/demo-network/apis.csv
+          OFFERS=references/offers/apis.csv
+
+          echo "==> install dependencies from the vendored wheels (offline)"
+          pip install --no-index --find-links=tools/wheels -r tools/requirements.txt
+
+          echo "==> regression tests: tools/tests/test_request_limits.py"
+          "$PY" tools/tests/test_request_limits.py
+
+          echo "==> assemble the workspace from this PR files only"
+          # Nothing is borrowed from the json-tools base branch: the workflow that lives
+          # there runs `pip install -r requirements.txt` and `python3 csv_to_json.py`
+          # from the repository root, where neither file exists, so the job never
+          # reaches this change at all. meta/ is at the repo root on this branch and is
+          # used in place. references/ and listings/ exist on main only, so the fixture
+          # supplies them - including references/providers/providers.csv, which
+          # csv_to_json.py hard-requires.
+          cp tools/csv_to_json.py tools/validate.py tools/validate_csv.py .
+          cp tools/schema.json .
+          mkdir -p listings/specific-networks/demo-network listings/all-networks \
+                   references/offers references/providers
+          cp "$FIX/listings.apis.csv" "$LISTING"
+          cp "$FIX/offers.apis.csv" "$OFFERS"
+          cp "$FIX/providers.csv" references/providers/providers.csv
+
+          echo "==> structural CSV validation"
+          "$PY" validate_csv.py
+
+          echo "==> csv -> json"
+          rm -rf json
+          "$PY" csv_to_json.py
+
+          echo "==> the documented limits and the inheritance rules survive offer resolution"
+          "$PY" - <<'PY'
+          import json
+
+          data = json.load(open("json/demo-network.json"))
+          rows = {r["slug"]: r for r in data["apis"]}
+          column = "requestLimits"
+
+          ALCHEMY = "https://www.alchemy.com/docs/reference/batch-requests"
+          QUICKNODE = ("https://support.quicknode.com/articles/3261121056-"
+                       "understanding-the-10-000-block-range-limit-for-querying-logs-and-events")
+
+          def eq(slug, want):
+              got = rows[slug].get(column)
+              assert got == want, f"{slug}: got {got!r}, want {want!r}"
+              print(f"  {slug}: {json.dumps(got, ensure_ascii=False)}")
+
+          # the documented Alchemy HTTP batch limit written on the offer reaches the listing
+          eq("alchemy-batch-rpc", [{"method": "*", "transport": "http",
+                                    "metric": "batchRequests", "maximum": 1000,
+                                    "sourceUrl": ALCHEMY}])
+          # a blank cell stays blank: unverified, never a guessed value
+          eq("atlas-free-rpc", None)
+          # a listing override replaces the whole array, it is not merged entry by entry
+          eq("beacon-archive-rpc", [{"method": "eth_getLogs", "transport": "http",
+                                     "metric": "blockSpan", "maximum": 500,
+                                     "sourceUrl": QUICKNODE}])
+          # inherited block-span limit
+          eq("filecoin-logs-rpc", [{"method": "eth_getLogs", "transport": "http",
+                                    "metric": "blockSpan", "maximum": 10000,
+                                    "sourceUrl": QUICKNODE}])
+          # an explicit empty array is not the same as inheriting two entries
+          eq("nova-indexer-api", [])
+          # three entries across two transports survive
+          assert len(rows["zebra-multitransport-rpc"].get(column)) == 3
+          print("  zebra-multitransport-rpc: 3 entries")
+
+          # the new column is exposed in the generated column metadata
+          names = data["columns"]["apis"]
+          assert column in names, f"{column} missing from generated columns"
+          assert names[-1] == column, f"expected {column} last, got {names[-4:]}"
+          print("  generated columns end with", column)
+          PY
+
+          echo "==> json vs this PR schema.json + meta/columns.json + meta/categories.json"
+          test -d json
+          "$PY" validate.py
+
+          # A fixture either has to be rejected by the converter with a specific message,
+          # or accepted by the whole pipeline. Both directions are pinned: the rejections
+          # are the failure modes DBIP #3724 lists, the acceptances are the semantics it
+          # requires (optionality, inheritance, whole-array override, empty arrays).
+          expect_converter_reject() {
+            fixture="$1"
+            message="$2"
+            cp "$fixture" "$OFFERS"
+            rm -rf json
+            if "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+              echo "ERROR: $(basename "$fixture") was accepted by csv_to_json.py"
+              cat /tmp/case.log
+              exit 1
+            fi
+            grep -q "$message" /tmp/case.log || {
+              echo "ERROR: $(basename "$fixture") rejected without the expected message [$message]"
+              cat /tmp/case.log
+              exit 1
+            }
+            echo "OK: $(basename "$fixture") -> rejected [$message]"
+          }
+
+          expect_pipeline() {
+            fixture="$1"
+            want="$2"
+            message="$3"
+            cp "$fixture" "$OFFERS"
+            rm -rf json
+            if ! "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+              echo "ERROR: csv_to_json.py failed for $(basename "$fixture")"
+              cat /tmp/case.log
+              exit 1
+            fi
+            if "$PY" validate.py >> /tmp/case.log 2>&1; then got=accept; else got=reject; fi
+            if [ "$got" != "$want" ]; then
+              echo "ERROR: $(basename "$fixture") was $got, expected $want"
+              cat /tmp/case.log
+              exit 1
+            fi
+            if [ -n "$message" ]; then
+              grep -q "$message" /tmp/case.log || {
+                echo "ERROR: missing message [$message]"
+                cat /tmp/case.log
+                exit 1
+              }
+            fi
+            echo "OK: $(basename "$fixture") -> $want${message:+ [$message]}"
+          }
+
+          echo "==> negative controls: the rules of DBIP #3724"
+          expect_converter_reject "$FIX/offers.apis.negative-bad-transport.csv" "transport must be one of"
+          expect_converter_reject "$FIX/offers.apis.negative-bad-metric.csv" "metric must be one of"
+          expect_converter_reject "$FIX/offers.apis.negative-zero-maximum.csv" "maximum must be a positive integer"
+          expect_converter_reject "$FIX/offers.apis.negative-negative-maximum.csv" "maximum must be a positive integer"
+          expect_converter_reject "$FIX/offers.apis.negative-bool-maximum.csv" "maximum must be a positive integer"
+          expect_converter_reject "$FIX/offers.apis.negative-string-maximum.csv" "maximum must be a positive integer"
+          expect_converter_reject "$FIX/offers.apis.negative-empty-method.csv" "method must be a non-empty string"
+          expect_converter_reject "$FIX/offers.apis.negative-bad-source-url.csv" "sourceUrl must be an absolute http(s) URL with a host"
+          expect_converter_reject "$FIX/offers.apis.negative-nonstring-source.csv" "sourceUrl must be a non-empty string"
+          # The three below share the URL message on purpose: each pins a different half of
+          # "absolute http(s) URL with a host". A bare scheme and a scheme with an empty
+          # authority both pass a `startswith("https://")` test; the third has an authority
+          # that is not a host. An implementation that only checked the prefix would accept
+          # all three, so they are separate files rather than one.
+          expect_converter_reject "$FIX/offers.apis.negative-source-bare-scheme.csv" "sourceUrl must be an absolute http(s) URL with a host"
+          expect_converter_reject "$FIX/offers.apis.negative-source-no-host.csv" "sourceUrl must be an absolute http(s) URL with a host"
+          expect_converter_reject "$FIX/offers.apis.negative-source-bad-host.csv" "sourceUrl must be an absolute http(s) URL with a host"
+          expect_converter_reject "$FIX/offers.apis.negative-missing-key.csv" "keys mismatch"
+          expect_converter_reject "$FIX/offers.apis.negative-extra-key.csv" "keys mismatch"
+          expect_converter_reject "$FIX/offers.apis.negative-duplicate-triple.csv" "duplicates (method, transport, metric)"
+          expect_converter_reject "$FIX/offers.apis.negative-entry-not-object.csv" "must be an object"
+          expect_converter_reject "$FIX/offers.apis.negative-not-an-array.csv" "must be a JSON array"
+          expect_converter_reject "$FIX/offers.apis.negative-malformed-json.csv" "must be a JSON array"
+
+          echo "==> the same rules are enforced after !offer: resolution"
+          cp "$FIX/offers.apis.csv" "$OFFERS"
+          cp "$FIX/listings.apis.negative-bad-override.csv" "$LISTING"
+          rm -rf json
+          if "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+            echo "ERROR: a listing overriding with an unknown transport was accepted"
+            cat /tmp/case.log
+            exit 1
+          fi
+          grep -q "network 'demo-network'" /tmp/case.log || {
+            echo "ERROR: the rejection does not name the network"
+            cat /tmp/case.log
+            exit 1
+          }
+          echo "OK: listings.apis.negative-bad-override.csv -> rejected [network 'demo-network']"
+
+          echo "==> positive controls"
+          cp "$FIX/listings.apis.csv" "$LISTING"
+          expect_pipeline "$FIX/offers.apis.csv" accept ""
+          expect_pipeline "$FIX/offers.apis.legacy.csv" accept ""
+
+          # ---------------------------------------------------------------------------
+          # Mutations. Each one puts a single behaviour of this PR back the way it was
+          # and asserts that the checks above notice. A check that cannot fail does not
+          # cover the change.
+          # ---------------------------------------------------------------------------
+          cp tools/schema.json /tmp/schema.bak
+          cp meta/columns.json /tmp/columns.bak
+          cp tools/csv_to_json.py /tmp/csv_to_json.bak
+
+          echo "==> mutation 1: drop the metric enum -> the unit tests must notice"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("tools/schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          del schema["$defs"]["apis"]["properties"]["requestLimits"]["items"]["properties"]["metric"]["enum"]
+          path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          if "$PY" tools/tests/test_request_limits.py > /tmp/m1.log 2>&1; then
+            echo "ERROR: the unit tests still pass without the metric enum"
+            cat /tmp/m1.log
+            exit 1
+          fi
+          grep -q "schema and converter agree on metrics" /tmp/m1.log
+          cp /tmp/schema.bak tools/schema.json
+          cp tools/schema.json .
+          echo "OK: the metric enum is exercised"
+
+          echo "==> mutation 2: drop the schema property -> every populated row must fail"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("tools/schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          del schema["$defs"]["apis"]["properties"]["requestLimits"]
+          path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          cp tools/schema.json .
+          expect_pipeline "$FIX/offers.apis.csv" reject "Additional properties are not allowed"
+          cp /tmp/schema.bak tools/schema.json
+          cp tools/schema.json .
+          echo "OK: the schema declaration is exercised"
+
+          echo "==> mutation 3: drop the column metadata -> validate.py must notice"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("meta/columns.json")
+          columns = json.loads(path.read_text(encoding="utf-8"))
+          del columns["requestLimits"]
+          path.write_text(json.dumps(columns, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          expect_pipeline "$FIX/offers.apis.csv" reject "missing in meta.columns"
+          cp /tmp/columns.bak meta/columns.json
+          echo "OK: meta/columns.json is exercised"
+
+          echo "==> mutation 4: unwire the validator from main() -> the rejections must stop"
+          "$PY" - <<'PY'
+          import pathlib
+          path = pathlib.Path("tools/csv_to_json.py")
+          src = path.read_text(encoding="utf-8")
+          for old, new in (
+              ("    if canonical_request_limit_errors:", "    if False and canonical_request_limit_errors:"),
+              ("        if request_limit_errors:", "        if False and request_limit_errors:"),
+          ):
+              assert old in src, old
+              src = src.replace(old, new)
+          path.write_text(src, encoding="utf-8", newline="\n")
+          PY
+          cp tools/csv_to_json.py .
+          # Uniqueness of (method, transport, metric) is the one rule JSON Schema cannot
+          # express, so these two fixtures are rejected *only* by validate_request_limits.
+          # Everything else here is also caught by schema.json, which would keep the
+          # mutation below red for the wrong reason.
+          expect_pipeline "$FIX/offers.apis.negative-duplicate-triple.csv" accept ""
+          cp "$FIX/offers.apis.csv" "$OFFERS"
+          cp "$FIX/listings.apis.negative-duplicate-override.csv" "$LISTING"
+          rm -rf json
+          if ! "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+            echo "ERROR: the duplicate listing override was still rejected with the rules disabled"
+            cat /tmp/case.log
+            exit 1
+          fi
+          if ! "$PY" validate.py >> /tmp/case.log 2>&1; then
+            echo "ERROR: validate.py still rejects the duplicate override with the rules disabled"
+            cat /tmp/case.log
+            exit 1
+          fi
+          echo "OK: duplicate-override.csv -> accepted once the validator is unwired"
+          cp "$FIX/listings.apis.csv" "$LISTING"
+          cp /tmp/csv_to_json.bak tools/csv_to_json.py
+          cp tools/csv_to_json.py .
+          echo "OK: the wiring into main() is exercised"
+
+          # The sourceUrl pattern in schema.json is redundant while csv_to_json.py runs first:
+          # every fixture above is refused by the python rule before validate.py sees it, so no
+          # fixture can show whether the pattern is live. Drive validate.py alone on a mutated
+          # generated json instead -- with the pattern the value must be refused, and the second
+          # half, where the same value passes because the pattern is gone, is what proves the
+          # pattern is responsible rather than some other rule.
+          echo "==> mutation 5: drop the sourceUrl pattern from schema.json -> validate.py must stop refusing a bare scheme"
+          cp schema.json /tmp/schema.bak
+          rm -rf json
+          "$PY" csv_to_json.py
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("json/demo-network.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+          hits = 0
+          for row in data["apis"]:
+              if row["slug"] != "filecoin-logs-rpc":
+                  continue
+              for entry in row.get("requestLimits") or []:
+                  if entry.get("sourceUrl"):
+                      entry["sourceUrl"] = "https://"
+                      hits += 1
+          assert hits == 1, f"expected to rewrite 1 sourceUrl, rewrote {hits}"
+          path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          print(f"rewrote {hits} sourceUrl in the generated json to a bare scheme")
+          PY
+          if "$PY" validate.py > /tmp/m5a.log 2>&1; then
+            echo "ERROR: validate.py accepted a bare scheme - the schema pattern is doing nothing"
+            exit 1
+          fi
+          grep -q "does not match" /tmp/m5a.log
+          grep -q "requestLimits/0/sourceUrl" /tmp/m5a.log
+          echo "OK: validate.py refused the bare scheme at requestLimits/0/sourceUrl"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          prop = schema["$defs"]["apis"]["properties"]["requestLimits"]["items"]["properties"]["sourceUrl"]
+          del prop["pattern"]
+          path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          print("removed the sourceUrl pattern:", sorted(prop))
+          PY
+          if "$PY" validate.py > /tmp/m5b.log 2>&1; then
+            echo "OK: with the pattern removed the same bare scheme passes, so the pattern is what refused it"
+          else
+            echo "ERROR: validate.py still refused the bare scheme without the pattern - some other rule is responsible"
+            tail -8 /tmp/m5b.log
+            exit 1
+          fi
+          cp /tmp/schema.bak schema.json
+          rm -rf json
+          echo "OK: the schema pattern is exercised"
+
+          echo "==> final green run after restoring every mutation"
+          cp "$FIX/offers.apis.csv" "$OFFERS"
+          cp "$FIX/listings.apis.csv" "$LISTING"
+          "$PY" tools/tests/test_request_limits.py
+          rm -rf json
+          "$PY" csv_to_json.py
+          "$PY" validate.py
+
+          echo
+          echo "All stages passed. Every check above was shown to fail when one of this PR's changes is reverted."
+          SCRIPT
+          docker run --rm --network=none \
+            -v "${{ github.workspace }}:/workspace" \
+            -v /tmp/check.sh:/check.sh:ro \
+            -w /workspace \
+            python:3.12-slim /bin/bash /check.sh
