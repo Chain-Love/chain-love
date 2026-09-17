@@ -79,7 +79,7 @@ jobs:
           test -d json
           python3 validate.py
 
-          echo "==> negative controls: each invalid value must be rejected"
+          echo "==> negative controls: each invalid value must be rejected, for its own rule"
           check_rejected() {
             fixture="$1"
             expected="$2"
@@ -90,18 +90,47 @@ jobs:
               cat /tmp/negative.log
               exit 1
             fi
-            grep -q "$expected" /tmp/negative.log
+            hits=$(grep -c "$expected" /tmp/negative.log || true)
+            if [ "$hits" = "0" ]; then
+              echo "ERROR: $(basename "$fixture") was rejected, but not by this rule (no '$expected' in the log)"
+              cat /tmp/negative.log
+              exit 1
+            fi
             echo "OK: $(basename "$fixture") rejected [$expected]"
           }
           check_rejected "$FIX/offers.sdks.negative-empty-object.csv" "must not be an empty object"
           check_rejected "$FIX/offers.sdks.negative-bad-syntax.csv" "syntax must be one of"
           check_rejected "$FIX/offers.sdks.negative-unknown-key.csv" "unknown runtime key"
           check_rejected "$FIX/offers.sdks.negative-missing-source.csv" "source must be a non-empty string"
+          check_rejected "$FIX/offers.sdks.negative-bad-source.csv" "must be an absolute http(s) URL with a host"
+          # The next one carries the scheme but no host: an implementation that only checks
+          # the prefix would accept "https:///pyproject.toml", so these two pin different halves.
+          check_rejected "$FIX/offers.sdks.negative-source-no-host.csv" "must be an absolute http(s) URL with a host"
+          # This row is referenced by no listing, so only the canonical-offers call site can
+          # see it. Before that call site existed this file was accepted outright.
+          check_rejected "$FIX/offers.sdks.negative-unreferenced-empty.csv" "must not be an empty object"
           cp "$FIX/offers.sdks.csv" "$OFFERS"
 
-          # The three mutations below are the point of this job: each removes one
-          # of the PR's substantive changes and asserts the check goes red (or
-          # flips outcome). A check that cannot fail does not cover the change.
+          # The mutations below are the point of this job: each removes exactly one of this
+          # PR substantive changes and asserts the check goes red, or flips outcome. A check
+          # that cannot fail does not cover the change it claims to cover.
+          #
+          # unwire <variable> <expected-count> rewrites an "if <var>:" guard as
+          # "if False and <var>:" and fails when the hit count is not the expected one, so a
+          # renamed variable cannot quietly turn a mutation into a no-op.
+          cat > /tmp/unwire.py <<'PY'
+          import re
+          import sys
+
+          var, expected = sys.argv[1], int(sys.argv[2])
+          src = open("csv_to_json.py", encoding="utf-8").read()
+          src, n = re.subn(r"^(\s*)if %s:$" % re.escape(var), r"\1if False and %s:" % var, src, flags=re.M)
+          if n != expected:
+              sys.exit(f"FATAL: unwire {var} matched {n} time(s), expected {expected}")
+          open("csv_to_json.py", "w", encoding="utf-8").write(src)
+          print(f"unwired {var} at {n} call site(s)")
+          PY
+
           echo "==> mutation 1: drop the declaration from schema.json -> validate.py must fail"
           cp schema.json /tmp/schema.bak
           python3 - <<'PY'
@@ -138,14 +167,14 @@ jobs:
           cp /tmp/columns.bak meta/columns.json
           echo "OK: meta/columns.json is exercised by this check"
 
-          echo "==> mutation 3: disconnect the validator from main() -> the negative fixture must be accepted"
+          echo "==> mutation 3: disconnect every validate_runtime_requirements call site -> the negative fixture must be accepted"
           cp csv_to_json.py /tmp/csv_to_json.bak
-          sed -i 's/^        if runtime_req_errors:$/        if False and runtime_req_errors:/' csv_to_json.py
-          grep -q "if False and runtime_req_errors:" csv_to_json.py
+          python3 /tmp/unwire.py runtime_req_errors 1
+          python3 /tmp/unwire.py offer_runtime_req_errors 1
           cp "$FIX/offers.sdks.negative-empty-object.csv" "$OFFERS"
           rm -rf json
           if python3 csv_to_json.py > /tmp/m3.log 2>&1; then
-            echo "OK: with the call disconnected the empty object is accepted, so the negative controls are caused by this PR validator"
+            echo "OK: with both call sites disconnected the empty object is accepted, so the negative controls come from this PR validator"
           else
             echo "ERROR: the empty object is still rejected with the validator disconnected - the negative controls are not testing this PR code"
             cat /tmp/m3.log
@@ -153,6 +182,78 @@ jobs:
           fi
           cp /tmp/csv_to_json.bak csv_to_json.py
           cp "$FIX/offers.sdks.csv" "$OFFERS"
+
+          # Mutation 3 can no longer tell the two call sites apart, because it removes both.
+          # This one removes only the canonical-offers call site and asserts both halves: the
+          # unreferenced row (which no network pass can see) flips to accepted, while the
+          # referenced row keeps being rejected by the network call site. Without that second
+          # assertion an "everything is off" regression would look identical.
+          echo "==> mutation 4: disconnect only the canonical-offers call site"
+          cp csv_to_json.py /tmp/csv_to_json.bak
+          python3 /tmp/unwire.py offer_runtime_req_errors 1
+          cp "$FIX/offers.sdks.negative-unreferenced-empty.csv" "$OFFERS"
+          rm -rf json
+          if python3 csv_to_json.py > /tmp/m4a.log 2>&1; then
+            echo "OK: offers.sdks.negative-unreferenced-empty.csv -> accepted (no network pass ever sees this row)"
+          else
+            echo "ERROR: the unreferenced row is still rejected with the canonical call site disconnected - something else reaches it"
+            cat /tmp/m4a.log
+            exit 1
+          fi
+          cp "$FIX/offers.sdks.negative-empty-object.csv" "$OFFERS"
+          rm -rf json
+          if python3 csv_to_json.py > /tmp/m4b.log 2>&1; then
+            echo "ERROR: the referenced row was accepted too - the mutation disabled more than the canonical call site"
+            exit 1
+          fi
+          grep -q "must not be an empty object" /tmp/m4b.log
+          echo "OK: offers.sdks.negative-empty-object.csv -> still rejected by the network call site"
+          cp /tmp/csv_to_json.bak csv_to_json.py
+          cp "$FIX/offers.sdks.csv" "$OFFERS"
+
+          # The schema pattern is redundant while csv_to_json.py runs first, so no fixture can
+          # show whether it is live. Drive validate.py directly on a mutated generated json:
+          # with the pattern the value must be rejected, without it the same value must pass.
+          # That is what proves the pattern -- and not some other rule -- does the work.
+          echo "==> mutation 5: drop the source pattern from schema.json -> validate.py must stop rejecting a non-URL source"
+          cp schema.json /tmp/schema.bak
+          rm -rf json
+          python3 csv_to_json.py
+          python3 - <<'PY'
+          import json
+          path = "json/demo-network.json"
+          data = json.load(open(path))
+          hits = 0
+          for row in data["sdks"]:
+              value = row.get("runtimeRequirements")
+              if isinstance(value, dict) and "python" in value:
+                  value["python"]["source"] = "not-a-url"
+                  hits += 1
+          assert hits == 1, f"expected 1 row to rewrite, found {hits}"
+          json.dump(data, open(path, "w"), ensure_ascii=False)
+          print(f"rewrote {hits} source value in the generated json")
+          PY
+          if python3 validate.py > /tmp/m5a.log 2>&1; then
+            echo "ERROR: validate.py accepted a non-URL source - the schema pattern does not do anything"
+            exit 1
+          fi
+          grep -q "does not match" /tmp/m5a.log
+          python3 - <<'PY'
+          import json
+          schema = json.load(open("schema.json"))
+          for rt in ("python", "node"):
+              del schema["$defs"]["sdks"]["properties"]["runtimeRequirements"]["properties"][rt]["properties"]["source"]["pattern"]
+          json.dump(schema, open("schema.json", "w"), ensure_ascii=False)
+          PY
+          if python3 validate.py > /tmp/m5b.log 2>&1; then
+            echo "OK: with the pattern removed the same non-URL source passes, so the pattern is what rejected it"
+          else
+            echo "ERROR: validate.py still rejected the non-URL source without the pattern - some other rule is responsible"
+            tail -8 /tmp/m5b.log
+            exit 1
+          fi
+          cp /tmp/schema.bak schema.json
+          rm -rf json
 
           echo
           echo "All stages passed. Every check above was shown to fail when this PR implementation regresses."
