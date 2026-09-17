@@ -171,8 +171,16 @@ jobs:
           expect_converter_reject "$FIX/offers.apis.negative-bool-maximum.csv" "maximum must be a positive integer"
           expect_converter_reject "$FIX/offers.apis.negative-string-maximum.csv" "maximum must be a positive integer"
           expect_converter_reject "$FIX/offers.apis.negative-empty-method.csv" "method must be a non-empty string"
-          expect_converter_reject "$FIX/offers.apis.negative-bad-source-url.csv" "sourceUrl must be an http(s) URL"
-          expect_converter_reject "$FIX/offers.apis.negative-nonstring-source.csv" "sourceUrl must be an http(s) URL"
+          expect_converter_reject "$FIX/offers.apis.negative-bad-source-url.csv" "sourceUrl must be an absolute http(s) URL with a host"
+          expect_converter_reject "$FIX/offers.apis.negative-nonstring-source.csv" "sourceUrl must be a non-empty string"
+          # The three below share the URL message on purpose: each pins a different half of
+          # "absolute http(s) URL with a host". A bare scheme and a scheme with an empty
+          # authority both pass a `startswith("https://")` test; the third has an authority
+          # that is not a host. An implementation that only checked the prefix would accept
+          # all three, so they are separate files rather than one.
+          expect_converter_reject "$FIX/offers.apis.negative-source-bare-scheme.csv" "sourceUrl must be an absolute http(s) URL with a host"
+          expect_converter_reject "$FIX/offers.apis.negative-source-no-host.csv" "sourceUrl must be an absolute http(s) URL with a host"
+          expect_converter_reject "$FIX/offers.apis.negative-source-bad-host.csv" "sourceUrl must be an absolute http(s) URL with a host"
           expect_converter_reject "$FIX/offers.apis.negative-missing-key.csv" "keys mismatch"
           expect_converter_reject "$FIX/offers.apis.negative-extra-key.csv" "keys mismatch"
           expect_converter_reject "$FIX/offers.apis.negative-duplicate-triple.csv" "duplicates (method, transport, metric)"
@@ -291,6 +299,59 @@ jobs:
           cp /tmp/csv_to_json.bak tools/csv_to_json.py
           cp tools/csv_to_json.py .
           echo "OK: the wiring into main() is exercised"
+
+          # The sourceUrl pattern in schema.json is redundant while csv_to_json.py runs first:
+          # every fixture above is refused by the python rule before validate.py sees it, so no
+          # fixture can show whether the pattern is live. Drive validate.py alone on a mutated
+          # generated json instead -- with the pattern the value must be refused, and the second
+          # half, where the same value passes because the pattern is gone, is what proves the
+          # pattern is responsible rather than some other rule.
+          echo "==> mutation 5: drop the sourceUrl pattern from schema.json -> validate.py must stop refusing a bare scheme"
+          cp schema.json /tmp/schema.bak
+          rm -rf json
+          "$PY" csv_to_json.py
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("json/demo-network.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+          hits = 0
+          for row in data["apis"]:
+              if row["slug"] != "filecoin-logs-rpc":
+                  continue
+              for entry in row.get("requestLimits") or []:
+                  if entry.get("sourceUrl"):
+                      entry["sourceUrl"] = "https://"
+                      hits += 1
+          assert hits == 1, f"expected to rewrite 1 sourceUrl, rewrote {hits}"
+          path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          print(f"rewrote {hits} sourceUrl in the generated json to a bare scheme")
+          PY
+          if "$PY" validate.py > /tmp/m5a.log 2>&1; then
+            echo "ERROR: validate.py accepted a bare scheme - the schema pattern is doing nothing"
+            exit 1
+          fi
+          grep -q "does not match" /tmp/m5a.log
+          grep -q "requestLimits/0/sourceUrl" /tmp/m5a.log
+          echo "OK: validate.py refused the bare scheme at requestLimits/0/sourceUrl"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          prop = schema["$defs"]["apis"]["properties"]["requestLimits"]["items"]["properties"]["sourceUrl"]
+          del prop["pattern"]
+          path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          print("removed the sourceUrl pattern:", sorted(prop))
+          PY
+          if "$PY" validate.py > /tmp/m5b.log 2>&1; then
+            echo "OK: with the pattern removed the same bare scheme passes, so the pattern is what refused it"
+          else
+            echo "ERROR: validate.py still refused the bare scheme without the pattern - some other rule is responsible"
+            tail -8 /tmp/m5b.log
+            exit 1
+          fi
+          cp /tmp/schema.bak schema.json
+          rm -rf json
+          echo "OK: the schema pattern is exercised"
 
           echo "==> final green run after restoring every mutation"
           cp "$FIX/offers.apis.csv" "$OFFERS"
