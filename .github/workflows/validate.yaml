@@ -59,6 +59,7 @@ jobs:
 
           FIX=tools/tests/fixtures/key-export-formats
           LISTING=listings/specific-networks/demo-network/wallets.csv
+          OFFERS=references/offers/wallets.csv
 
           echo "==> regression test: tools/tests/test_key_export_formats.py"
           python3 tools/tests/test_key_export_formats.py
@@ -89,27 +90,47 @@ jobs:
           test -d json
           python3 validate.py
 
-          echo "==> negative controls: each invalid value must be rejected"
+          echo "==> negative controls: each invalid value must be rejected, for its own rule"
           check_rejected() {
             fixture="$1"
-            expected="$2"
-            cp "$fixture" "$LISTING"
+            target="$2"
+            expected="$3"
+            # Reset both inputs first. Each control must be rejected because of its own
+            # fixture, never because the previous control left a bad row behind -- with the
+            # listing still holding the not-an-array fixture, this one would "pass" on a
+            # message produced by the wrong file.
+            cp "$FIX/listings.wallets.csv" "$LISTING"
+            cp "$FIX/offers.wallets.csv" "$OFFERS"
+            cp "$fixture" "$target"
             rm -rf json
             if python3 csv_to_json.py > /tmp/negative.log 2>&1; then
               echo "ERROR: $(basename "$fixture") was accepted - the rule is not enforced"
               cat /tmp/negative.log
               exit 1
             fi
-            grep -q "$expected" /tmp/negative.log
+            # grep -c in an explicit test, not `grep -q`: a rejection by the wrong rule must be a
+            # failure here, and under `set -e` a bare grep cannot tell that apart from a pass.
+            hits=$(grep -c "$expected" /tmp/negative.log || true)
+            if [ "$hits" = "0" ]; then
+              echo "ERROR: $(basename "$fixture") was rejected, but not by this rule (no '$expected' in the log)"
+              cat /tmp/negative.log
+              exit 1
+            fi
             echo "OK: $(basename "$fixture") rejected [$expected]"
           }
-          check_rejected "$FIX/wallets.negative-unsorted.csv" "must be sorted alphabetically"
-          check_rejected "$FIX/wallets.negative-unknown-name.csv" "must be one of"
-          check_rejected "$FIX/wallets.negative-duplicate.csv" "duplicates format"
-          check_rejected "$FIX/wallets.negative-not-array.csv" "must be a JSON array or null"
+          check_rejected "$FIX/wallets.negative-unsorted.csv" "$LISTING" "must be sorted alphabetically"
+          check_rejected "$FIX/wallets.negative-unknown-name.csv" "$LISTING" "must be one of"
+          check_rejected "$FIX/wallets.negative-duplicate.csv" "$LISTING" "duplicates format"
+          check_rejected "$FIX/wallets.negative-not-array.csv" "$LISTING" "must be a JSON array or null"
+          # This file puts the unsorted array on a canonical row that NO listing references. It is
+          # never resolved into a network result, so only the canonical-offers call site can see it;
+          # before that call site existed the whole file was accepted. The value is in vocabulary,
+          # duplicate-free and well-typed, so the order rule is the only thing that can reject it.
+          check_rejected "$FIX/offers.wallets.negative-unreferenced-unsorted.csv" "$OFFERS" "must be sorted alphabetically"
           cp "$FIX/listings.wallets.csv" "$LISTING"
+          cp "$FIX/offers.wallets.csv" "$OFFERS"
 
-          # The three mutations below are the point of this job: each removes one
+          # The four mutations below are the point of this job: each removes one
           # of the PR's substantive changes and asserts the check goes red (or
           # flips outcome). A check that cannot fail does not cover the change.
           echo "==> mutation 1: drop the declaration from schema.json -> validate.py must fail"
@@ -150,14 +171,33 @@ jobs:
           cp /tmp/columns.bak meta/columns.json
           echo "OK: meta/columns.json is exercised by this check"
 
-          echo "==> mutation 3: disconnect the validator from main() -> the negative fixture must be accepted"
+          # unwire <variable> <expected-count> rewrites `if <var>:` as `if False and <var>:` and
+          # fails when the number of hits is not the expected one, so a renamed variable cannot
+          # quietly turn a mutation into a no-op. Done with re.subn, not `sed`: a `$`-anchored sed
+          # silently no-matches and `set -e` then kills the step with no diagnostic.
+          cat > /tmp/unwire.py <<'PY'
+          import re
+          import sys
+
+          var, expected = sys.argv[1], int(sys.argv[2])
+          src = open("csv_to_json.py", encoding="utf-8").read()
+          src, n = re.subn(r"^(\s*)if %s:$" % re.escape(var), r"\1if False and %s:" % var, src, flags=re.M)
+          if n != expected:
+              sys.exit(f"FATAL: unwire {var} matched {n} time(s), expected {expected}")
+          open("csv_to_json.py", "w", encoding="utf-8").write(src)
+          print(f"unwired {var} at {n} call site(s)")
+          PY
+
+          # Both call sites go: this mutation means "validate_key_export_formats never runs", which
+          # is what it meant before the canonical call site was added. Its assertions are unchanged.
+          echo "==> mutation 3: disconnect every validate_key_export_formats call site -> the negative fixture must be accepted"
           cp csv_to_json.py /tmp/csv_to_json.bak
-          sed -i 's/^        if key_export_format_errors:$/        if False and key_export_format_errors:/' csv_to_json.py
-          grep -q "if False and key_export_format_errors:" csv_to_json.py
+          python3 /tmp/unwire.py key_export_format_errors 1
+          python3 /tmp/unwire.py offer_key_export_format_errors 1
           cp "$FIX/wallets.negative-unsorted.csv" "$LISTING"
           rm -rf json
           if python3 csv_to_json.py > /tmp/m3.log 2>&1; then
-            echo "OK: with the call disconnected the unsorted array is accepted, so the negative controls are caused by this PR validator"
+            echo "OK: with both calls disconnected the unsorted array is accepted, so the negative controls are caused by this PR validator"
           else
             echo "ERROR: the unsorted array is still rejected with the validator disconnected - the negative controls are not testing this PR code"
             cat /tmp/m3.log
@@ -165,6 +205,40 @@ jobs:
           fi
           cp /tmp/csv_to_json.bak csv_to_json.py
           cp "$FIX/listings.wallets.csv" "$LISTING"
+
+          # Mutation 3 can no longer tell the two call sites apart, because both are gone. This one
+          # removes only the canonical-offers call site and asserts both halves: the unreferenced row
+          # (which no network pass can see) flips to accepted, while the referenced row keeps being
+          # rejected by the network call site. Without the second assertion an "everything is off"
+          # regression would look identical.
+          echo "==> mutation 4: disconnect only the canonical-offers call site"
+          cp csv_to_json.py /tmp/csv_to_json.bak
+          python3 /tmp/unwire.py offer_key_export_format_errors 1
+          cp "$FIX/offers.wallets.negative-unreferenced-unsorted.csv" "$OFFERS"
+          rm -rf json
+          if python3 csv_to_json.py > /tmp/m4a.log 2>&1; then
+            echo "OK: offers.wallets.negative-unreferenced-unsorted.csv -> accepted (no network pass ever sees this row)"
+          else
+            echo "ERROR: the unreferenced row is still rejected with the canonical call site disconnected - something else reaches it"
+            cat /tmp/m4a.log
+            exit 1
+          fi
+          cp "$FIX/wallets.negative-unsorted.csv" "$LISTING"
+          rm -rf json
+          if python3 csv_to_json.py > /tmp/m4b.log 2>&1; then
+            echo "ERROR: the referenced row was accepted too - the mutation disabled more than the canonical call site"
+            exit 1
+          fi
+          hits=$(grep -c "must be sorted alphabetically" /tmp/m4b.log || true)
+          if [ "$hits" = "0" ]; then
+            echo "ERROR: the referenced row was rejected, but not by the order rule"
+            cat /tmp/m4b.log
+            exit 1
+          fi
+          echo "OK: wallets.negative-unsorted.csv (referenced) -> still rejected by the network call site"
+          cp /tmp/csv_to_json.bak csv_to_json.py
+          cp "$FIX/listings.wallets.csv" "$LISTING"
+          cp "$FIX/offers.wallets.csv" "$OFFERS"
 
           echo
           echo "All stages passed. Every check above was shown to fail when this PR implementation regresses."
