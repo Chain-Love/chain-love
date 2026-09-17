@@ -4,23 +4,261 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-json-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Checkout code
+      - name: Checkout this PR
         uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-      
-      - name: Install dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+          fetch-depth: 1
+          persist-credentials: false
 
-      - name: Run CSV to JSON
-        run: python3 csv_to_json.py
+      # The whole check runs from a script file so that the shell quoting is
+      # readable and the stages are greppable in the job log.
+      - name: Validate with this PR validator, schema and fixtures
+        run: |
+          cat > /tmp/check.sh <<'SCRIPT'
+          set -e
+          # The whole check runs from a script file so that the shell quoting stays
+          # readable and every stage is greppable in the job log.
 
-      - name: Run validation script
-        run: python validate.py
+          PY="${PY:-python3}"
+
+          FIX=tools/tests/fixtures/wallet-platforms
+          LISTING=listings/specific-networks/demo-network/wallets.csv
+          OFFERS=references/offers/wallets.csv
+
+          echo "==> install dependencies from the vendored wheels (offline)"
+          pip install --no-index --find-links=tools/wheels -r tools/requirements.txt
+
+          echo "==> regression tests: tools/tests/test_wallet_platforms_vocabulary.py"
+          "$PY" tools/tests/test_wallet_platforms_vocabulary.py
+
+          echo "==> assemble the workspace from this PR files only"
+          # Nothing is borrowed from the json-tools base branch: the workflow that lives
+          # there runs `pip install -r requirements.txt` and `python3 csv_to_json.py`
+          # from the repository root, where neither file exists, so the job never
+          # reaches this schema at all. meta/ is at the repo root on this branch and is
+          # used in place.
+          cp tools/csv_to_json.py tools/validate.py tools/validate_csv.py .
+          cp tools/schema.json .
+          mkdir -p listings/specific-networks/demo-network listings/all-networks \
+                   references/offers references/providers
+          cp "$FIX/listings.wallets.csv" "$LISTING"
+          cp "$FIX/offers.wallets.csv" "$OFFERS"
+          cp "$FIX/providers.csv" references/providers/providers.csv
+
+          echo "==> structural CSV validation"
+          "$PY" validate_csv.py
+
+          echo "==> csv -> json"
+          rm -rf json
+          "$PY" csv_to_json.py
+
+          echo "==> the fixture value must survive offer resolution"
+          "$PY" - <<'PY'
+          import json
+
+          data = json.load(open("json/demo-network.json"))
+          rows = [r for r in data["wallets"] if r["slug"] == "acme-wallet"]
+          assert len(rows) == 1, rows
+          value = rows[0].get("supportedPlatforms")
+          assert value == [
+              "Browser Extension", "Web App", "Desktop", "iOS", "Android", "Hardware Device"
+          ], value
+          print("supportedPlatforms arrived through !offer: resolution:", value)
+          PY
+
+          echo "==> json vs this PR schema.json + meta/columns.json + meta/categories.json"
+          test -d json
+          "$PY" validate.py
+
+          # A fixture is either expected to be rejected by validate.py with a specific
+          # message, or accepted. Both directions are pinned: the rejections are the
+          # aliases this PR retires, the acceptances are the values it must keep legal.
+          expect() {
+            fixture="$1"
+            want="$2"
+            message="$3"
+            cp "$fixture" "$OFFERS"
+            rm -rf json
+            "$PY" csv_to_json.py > /tmp/case.log 2>&1 || { echo "ERROR: csv_to_json failed"; cat /tmp/case.log; exit 1; }
+            if "$PY" validate.py >> /tmp/case.log 2>&1; then got=accept; else got=reject; fi
+            if [ "$got" != "$want" ]; then
+              echo "ERROR: $(basename "$fixture") was $got, expected $want"
+              cat /tmp/case.log
+              exit 1
+            fi
+            if [ -n "$message" ]; then
+              grep -q "$message" /tmp/case.log || { echo "ERROR: missing message [$message]"; cat /tmp/case.log; exit 1; }
+            fi
+            echo "OK: $(basename "$fixture") -> $want${message:+ [$message]}"
+          }
+
+          echo "==> negative controls: every retired alias must now be rejected"
+          expect "$FIX/offers.wallets.negative-extension.csv" reject "is not one of"
+          expect "$FIX/offers.wallets.negative-web.csv" reject "is not one of"
+          expect "$FIX/offers.wallets.negative-webapp.csv" reject "is not one of"
+          expect "$FIX/offers.wallets.negative-hardware.csv" reject "is not one of"
+          expect "$FIX/offers.wallets.negative-browser-name.csv" reject "is not one of"
+          expect "$FIX/offers.wallets.negative-browser.csv" reject "is not one of"
+          expect "$FIX/offers.wallets.negative-lowercase.csv" reject "is not one of"
+          expect "$FIX/offers.wallets.negative-trailing-space.csv" reject "is not one of"
+          expect "$FIX/offers.wallets.negative-duplicate.csv" reject "non-unique"
+          expect "$FIX/offers.wallets.negative-not-array.csv" reject "is not of type"
+          expect "$FIX/offers.wallets.negative-main-tree.csv" reject "is not one of"
+
+          echo "==> ordering: the sequence DBIP #3243 requires is not expressible in JSON Schema"
+          # Both fixtures below are otherwise valid - the vocabulary and the uniqueness
+          # checks pass on them - so the ordering rule is the only thing that can reject
+          # them. The second one keeps index 0 canonical, which is what makes it a test of
+          # the whole sequence rather than of the first element.
+          expect "$FIX/offers.wallets.negative-out-of-order.csv" reject "canonical order"
+          expect "$FIX/offers.wallets.negative-out-of-order-middle.csv" reject "canonical order"
+
+          echo "==> positive controls: what the migration produces must stay legal"
+          expect "$FIX/offers.wallets.csv" accept ""
+          expect "$FIX/offers.wallets.control-empty.csv" accept ""
+          expect "$FIX/offers.wallets.control-migrated.csv" accept ""
+
+          # ---------------------------------------------------------------------------
+          # Mutations. Each one puts a single behaviour of this PR back the way it was
+          # and asserts that the checks above notice. A check that cannot fail does not
+          # cover the change.
+          # ---------------------------------------------------------------------------
+          echo "==> mutation 1: drop the enum -> the retired aliases must be accepted again"
+          cp tools/schema.json /tmp/schema.bak
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("tools/schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          field = schema["$defs"]["wallets"]["properties"]["supportedPlatforms"]
+          del field["items"]["enum"]
+          path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          cp tools/schema.json .
+          if "$PY" tools/tests/test_wallet_platforms_vocabulary.py > /tmp/m1.log 2>&1; then
+            echo "ERROR: the unit tests still pass without the enum"
+            cat /tmp/m1.log
+            exit 1
+          fi
+          grep -q "the enum is exactly the DBIP-3243 vocabulary" /tmp/m1.log
+          expect "$FIX/offers.wallets.negative-extension.csv" accept ""
+          # negative-main-tree.csv is rejected by two independent mechanisms: it holds
+          # both retired aliases and arrays that are out of canonical order. Dropping the
+          # enum removes the first reason only, so the fixture stays rejected - now with
+          # the ordering message. The alias-only fixture above is what isolates the enum,
+          # and this line records that the ordering defect in main survives on its own.
+          expect "$FIX/offers.wallets.negative-main-tree.csv" reject "canonical order"
+          cp /tmp/schema.bak tools/schema.json
+          cp tools/schema.json .
+          echo "OK: the enum is exercised"
+
+          echo "==> mutation 2: drop uniqueItems -> duplicate entries must be accepted again"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("tools/schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          del schema["$defs"]["wallets"]["properties"]["supportedPlatforms"]["uniqueItems"]
+          path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          cp tools/schema.json .
+          if "$PY" tools/tests/test_wallet_platforms_vocabulary.py > /tmp/m2.log 2>&1; then
+            echo "ERROR: the unit tests still pass without uniqueItems"
+            cat /tmp/m2.log
+            exit 1
+          fi
+          grep -q "uniqueItems is true" /tmp/m2.log
+          expect "$FIX/offers.wallets.negative-duplicate.csv" accept ""
+          cp /tmp/schema.bak tools/schema.json
+          cp tools/schema.json .
+          echo "OK: uniqueItems is exercised"
+
+          echo "==> mutation 3: restore the old column description -> the UI text must be noticed"
+          cp meta/columns.json /tmp/columns.bak
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("meta/columns.json")
+          columns = json.loads(path.read_text(encoding="utf-8"))
+          columns["supportedPlatforms"]["description"] = "Supported platforms."
+          path.write_text(json.dumps(columns, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          if "$PY" tools/tests/test_wallet_platforms_vocabulary.py > /tmp/m3.log 2>&1; then
+            echo "ERROR: the unit tests still pass with the old column description"
+            cat /tmp/m3.log
+            exit 1
+          fi
+          grep -q "the description enumerates the allowed values" /tmp/m3.log
+          cp /tmp/columns.bak meta/columns.json
+          echo "OK: meta/columns.json is exercised"
+
+          echo "==> mutation 4: point validate.py at the base schema -> nothing is rejected"
+          # The strongest form of the same check: with the json-tools schema as it is
+          # without this PR, every negative control is accepted.
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          schema["$defs"]["wallets"]["properties"]["supportedPlatforms"] = {
+              "type": ["array", "null"],
+              "items": {"type": "string"},
+          }
+          path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          expect "$FIX/offers.wallets.negative-extension.csv" accept ""
+          expect "$FIX/offers.wallets.negative-duplicate.csv" accept ""
+          cp tools/schema.json .
+          echo "OK: the rejections come from this PR schema, not from something else"
+
+          echo "==> mutation 5: unregister the ordering rule -> out-of-order arrays must be accepted"
+          # Order cannot be expressed in JSON Schema, so the rule is the only thing that can
+          # reject an out-of-order array; the out-of-order fixture is accepted by the schema
+          # (asserted in the unit tests). Dropping the registration must therefore flip both
+          # fixtures to accept, otherwise they are not covering the rule at all.
+          cp tools/validate.py /tmp/validate.bak
+          "$PY" - <<'PY'
+          import pathlib
+          path = pathlib.Path("tools/validate.py")
+          source = path.read_text(encoding="utf-8")
+          needle = "    rules.add_rule(rule_supported_platforms_canonical_order)\n"
+          assert needle in source, "the rule is not registered"
+          path.write_text(source.replace(needle, ""), encoding="utf-8", newline="\n")
+          PY
+          cp tools/validate.py .
+          if "$PY" tools/tests/test_wallet_platforms_vocabulary.py > /tmp/m5.log 2>&1; then
+            echo "ERROR: the unit tests still pass without the ordering rule"
+            cat /tmp/m5.log
+            exit 1
+          fi
+          grep -q "the rule is registered in main()" /tmp/m5.log
+          expect "$FIX/offers.wallets.negative-out-of-order.csv" accept ""
+          expect "$FIX/offers.wallets.negative-out-of-order-middle.csv" accept ""
+          cp /tmp/validate.bak tools/validate.py
+          cp tools/validate.py .
+          echo "OK: the ordering rule is exercised"
+
+          echo "==> final green run after restoring every mutation"
+          # The mutation stages left a negative fixture in place: put the baseline back.
+          cp "$FIX/offers.wallets.csv" "$OFFERS"
+          "$PY" tools/tests/test_wallet_platforms_vocabulary.py
+          rm -rf json
+          "$PY" csv_to_json.py
+          "$PY" validate.py
+
+          echo
+          echo "All stages passed. Every check above was shown to fail when one of this PR's changes is reverted."
+          SCRIPT
+          docker run --rm --network=none \
+            -v "${{ github.workspace }}:/workspace" \
+            -v /tmp/check.sh:/check.sh:ro \
+            -w /workspace \
+            python:3.12-slim /bin/bash /check.sh
