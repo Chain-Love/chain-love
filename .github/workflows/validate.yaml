@@ -117,6 +117,14 @@ jobs:
           expect "$FIX/offers.wallets.negative-not-array.csv" reject "is not of type"
           expect "$FIX/offers.wallets.negative-main-tree.csv" reject "is not one of"
 
+          echo "==> ordering: the sequence DBIP #3243 requires is not expressible in JSON Schema"
+          # Both fixtures below are otherwise valid - the vocabulary and the uniqueness
+          # checks pass on them - so the ordering rule is the only thing that can reject
+          # them. The second one keeps index 0 canonical, which is what makes it a test of
+          # the whole sequence rather than of the first element.
+          expect "$FIX/offers.wallets.negative-out-of-order.csv" reject "canonical order"
+          expect "$FIX/offers.wallets.negative-out-of-order-middle.csv" reject "canonical order"
+
           echo "==> positive controls: what the migration produces must stay legal"
           expect "$FIX/offers.wallets.csv" accept ""
           expect "$FIX/offers.wallets.control-empty.csv" accept ""
@@ -145,7 +153,12 @@ jobs:
           fi
           grep -q "the enum is exactly the DBIP-3243 vocabulary" /tmp/m1.log
           expect "$FIX/offers.wallets.negative-extension.csv" accept ""
-          expect "$FIX/offers.wallets.negative-main-tree.csv" accept ""
+          # negative-main-tree.csv is rejected by two independent mechanisms: it holds
+          # both retired aliases and arrays that are out of canonical order. Dropping the
+          # enum removes the first reason only, so the fixture stays rejected - now with
+          # the ordering message. The alias-only fixture above is what isolates the enum,
+          # and this line records that the ordering defect in main survives on its own.
+          expect "$FIX/offers.wallets.negative-main-tree.csv" reject "canonical order"
           cp /tmp/schema.bak tools/schema.json
           cp tools/schema.json .
           echo "OK: the enum is exercised"
@@ -205,6 +218,33 @@ jobs:
           expect "$FIX/offers.wallets.negative-duplicate.csv" accept ""
           cp tools/schema.json .
           echo "OK: the rejections come from this PR schema, not from something else"
+
+          echo "==> mutation 5: unregister the ordering rule -> out-of-order arrays must be accepted"
+          # Order cannot be expressed in JSON Schema, so the rule is the only thing that can
+          # reject an out-of-order array; the out-of-order fixture is accepted by the schema
+          # (asserted in the unit tests). Dropping the registration must therefore flip both
+          # fixtures to accept, otherwise they are not covering the rule at all.
+          cp tools/validate.py /tmp/validate.bak
+          "$PY" - <<'PY'
+          import pathlib
+          path = pathlib.Path("tools/validate.py")
+          source = path.read_text(encoding="utf-8")
+          needle = "    rules.add_rule(rule_supported_platforms_canonical_order)\n"
+          assert needle in source, "the rule is not registered"
+          path.write_text(source.replace(needle, ""), encoding="utf-8", newline="\n")
+          PY
+          cp tools/validate.py .
+          if "$PY" tools/tests/test_wallet_platforms_vocabulary.py > /tmp/m5.log 2>&1; then
+            echo "ERROR: the unit tests still pass without the ordering rule"
+            cat /tmp/m5.log
+            exit 1
+          fi
+          grep -q "the rule is registered in main()" /tmp/m5.log
+          expect "$FIX/offers.wallets.negative-out-of-order.csv" accept ""
+          expect "$FIX/offers.wallets.negative-out-of-order-middle.csv" accept ""
+          cp /tmp/validate.bak tools/validate.py
+          cp tools/validate.py .
+          echo "OK: the ordering rule is exercised"
 
           echo "==> final green run after restoring every mutation"
           # The mutation stages left a negative fixture in place: put the baseline back.
