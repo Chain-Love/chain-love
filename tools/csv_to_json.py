@@ -1,6 +1,7 @@
 import csv
 import json
 import os
+import re
 import string
 import unicodedata
 import warnings
@@ -20,6 +21,18 @@ RUNTIME_KEY_SYNTAX = {
     "python": ("poetry", "pep440"),
     "node": ("node-semver",),
 }
+# DBIP #3751: `source` links to the release-specific official declaration, so it must be
+# an absolute http(s) URL that carries a host. minLength alone cannot express that, so
+# the same invariant is declared as a `pattern` on both `source` properties in
+# tools/schema.json, and tools/tests/test_runtime_requirements.py asserts the two layers
+# agree value by value. Only the absence of a host is rejected here: reachability, and
+# whether the URL actually names the right release, remain review concerns.
+SOURCE_URL_PATTERN = r"^[Hh][Tt][Tt][Pp][Ss]?://[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?(?::[0-9]+)?(?:[/?#]\S*)?$"
+
+
+def is_source_url(value) -> bool:
+    """True for an absolute http(s) URL with a host (see SOURCE_URL_PATTERN)."""
+    return isinstance(value, str) and re.search(SOURCE_URL_PATTERN, value) is not None
 
 
 def col_letter(idx: int) -> str:
@@ -68,7 +81,8 @@ def validate_runtime_requirements(items: list, context: str) -> list[str]:
       - only the runtime keys ``python`` and ``node`` are allowed;
       - ``python`` uses syntax ``poetry`` or ``pep440``; ``node`` uses ``node-semver``;
       - each present runtime entry must carry non-empty ``constraint``, ``syntax`` and ``source``;
-      - ``source`` must be a release-specific official declaration URL (non-empty string).
+      - ``source`` must be an absolute http(s) URL with a host, pointing at the
+        release-specific official declaration.
     Empty strings and empty objects are rejected so that "blank" stays distinct from
     "verified compatible with everything".
     """
@@ -112,6 +126,11 @@ def validate_runtime_requirements(items: list, context: str) -> list[str]:
             if not isinstance(source, str) or source.strip() == "":
                 errors.append(
                     f"{label}.{key}.source must be a non-empty string"
+                )
+            elif not is_source_url(source):
+                errors.append(
+                    f"{label}.{key}.source must be an absolute http(s) URL with a "
+                    f"host to the release-specific declaration, got {source!r}"
                 )
         for key in value:
             if key not in RUNTIME_KEY_SYNTAX:
@@ -769,6 +788,27 @@ def main():
     category_meta = load_json_file("meta/categories.json")
     column_meta = load_json_file("meta/columns.json")
     offers_by_category = load_categories_from_folder("references/offers")
+
+    # Validate the canonical offers themselves, not only the rows that survive offer
+    # resolution. An offer that no listing references is never merged into a network
+    # result, so the per-network check below would never see it. validate.py does
+    # validate references/offers through make_providers_schema, and that pass already
+    # covers every rule JSON Schema can express -- the key vocabulary, the entry type,
+    # the syntax enum -- which is exactly why those cases are not this hole; the
+    # empty-object rule cannot be expressed there and lives only in
+    # validate_runtime_requirements. Both call sites are needed: this one reaches the
+    # canonical rows, the network one reaches the values a listing overrides them with.
+    offer_runtime_req_errors = validate_runtime_requirements(
+        offers_by_category.get("sdks", []), context="references/offers"
+    )
+    if offer_runtime_req_errors:
+        print(
+            "Validation errors for "
+            f"{RUNTIME_REQUIREMENTS_COLUMN} in references/offers/sdks.csv:"
+        )
+        for e in offer_runtime_req_errors:
+            print(e)
+        exit(1)
 
     # Global listings (apply to every network)
     global_listings = load_categories_from_folder(all_networks_dir)
