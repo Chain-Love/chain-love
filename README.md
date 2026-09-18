@@ -40,6 +40,7 @@ Go to [Releases](https://github.com/Chain-Love/chain-love/releases) to fetch lat
 
 ## How to Contribute
 We recommend using our [Contribution Wizard](https://app.chain.love/contributor/web3-data). For manual contributions, please, see [CONTRIBUTING](CONTRIBUTING.md).
+
 ⭐ Star this repository before submitting a contribution.
 
 ### Star History
