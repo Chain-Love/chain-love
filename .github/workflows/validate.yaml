@@ -1,26 +1,59 @@
-name: "Validate JSON"
+name: "Generate JSON and validate (isolated)"
 
 on:
   pull_request:
+    branches:
+      - json-tools
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-json-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  validate:
+  generate-and-validate:
+    name: Generate JSON and validate (isolated)   # MUST match the required status check on json-tools
     runs-on: ubuntu-latest
+    timeout-minutes: 2
+
     steps:
-      - name: Checkout code
+      - name: Checkout tools (PR head = json-tools, carries the new scripts/schema)
         uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-      
-      - name: Install dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+          fetch-depth: 1
+          persist-credentials: false
+          path: tools-src
 
-      - name: Run CSV to JSON
-        run: python3 csv_to_json.py
+      - name: Checkout main data (references/, listings/, the CSVs the scripts read)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: false
+          path: data-src
 
-      - name: Run validation script
-        run: python validate.py
+      - name: Assemble workspace
+        run: |
+          cp -r tools-src/tools .
+          cp -r tools-src/meta .
+          cp tools-src/tools/schema.json schema.json
+          cp -r data-src/references .
+          cp -r data-src/listings .
+          ls -l
+
+      - name: Run scripts inside network-disabled container
+        run: |
+          docker run --rm \
+            --network=none \
+            -v ${{ github.workspace }}:/workspace \
+            -w /workspace \
+            python:3.12-slim \
+            /bin/bash -c "
+              pip install --no-index --find-links=tools/wheels -r tools/requirements.txt && \
+              python3 tools/validate_csv.py && \
+              python3 tools/csv_to_json.py && \
+              python3 tools/validate.py
+            "
