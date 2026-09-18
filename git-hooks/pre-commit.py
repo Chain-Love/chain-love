@@ -140,7 +140,7 @@ def iter_csv(repo_root: Path) -> Iterable[Path]:
 def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
     """
     Sort CSV files by slug column without modifying quoting.
-    Uses the same naive delimiter parsing as rewrite_urls().
+    Keep quoted multiline fields together by sorting complete CSV records.
     """
     print("Sorting CSV files by slug")
 
@@ -153,31 +153,26 @@ def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
         if len(lines) <= 1:
             continue
 
-        header_line = lines[0].rstrip("\r\n")
-        header_parts = [h.strip().strip('"') for h in header_line.split(delimiter)]
+        reader = csv.reader(lines, delimiter=delimiter)
+        header_parts = [h.strip() for h in next(reader)]
+        header_line = "".join(lines[:reader.line_num]).rstrip("\r\n")
 
         if "slug" not in header_parts:
             continue
 
         slug_idx = header_parts.index("slug")
 
-        data_lines = lines[1:]
+        # line_num is the end of each logical record in the physical lines.
+        # Preserve the original text so CSV quoting is not rewritten.
+        records = []
+        previous_end = reader.line_num
+        for fields in reader:
+            raw_record = "".join(lines[previous_end:reader.line_num])
+            slug = fields[slug_idx].strip() if slug_idx < len(fields) else ""
+            records.append((slug, raw_record))
+            previous_end = reader.line_num
 
-        def slug_key(raw_line: str) -> str:
-            parts = raw_line.rstrip("\r\n").split(delimiter)
-
-            if slug_idx >= len(parts):
-                return ""
-
-            cell = parts[slug_idx].strip()
-
-            # normalize quoted slug for sorting only
-            if cell.startswith('"') and cell.endswith('"'):
-                cell = cell[1:-1]
-
-            return cell
-
-        rows_sorted = sorted(data_lines, key=slug_key)
+        rows_sorted = [raw for _, raw in sorted(records, key=lambda record: record[0])]
 
         with csv_file.open("w", newline="") as f:
             f.write(header_line + newline_style)
