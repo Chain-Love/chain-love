@@ -4,6 +4,7 @@ import os
 import json
 import tarfile
 import io
+import tempfile
 from typing import Dict, List, Union, cast
 
 # --- JSON types ---
@@ -140,19 +141,37 @@ def write_tar(network: str, raw: RawRoot) -> None:
     columns: ColumnsMap = extract_columns(raw)
     meta: MetaMap = extract_meta(raw)
 
-    with tarfile.open(tar_path, "w:gz", compresslevel=9) as tar:
+    fd, temp_path = tempfile.mkstemp(
+        prefix=f".{network}-", suffix=".tar.gz", dir=JSON_DIR
+    )
 
-        # --- DATA ---
-        for category, items in data.items():
-            write_ndjson_file(tar, f"{category}.ndjson", items)
+    try:
+        os.close(fd)
 
-        # --- COLUMNS ---
-        for category, cols in columns.items():
-            write_json_file(tar, f"columns/{category}.json", cols)
+        with tarfile.open(temp_path, "w:gz", compresslevel=9) as tar:
 
-        # --- META ---
-        for meta_key, rows in meta.items():
-            write_ndjson_file(tar, f"meta/{meta_key}.ndjson", rows)
+            # --- DATA ---
+            for category, items in data.items():
+                write_ndjson_file(tar, f"{category}.ndjson", items)
+
+            # --- COLUMNS ---
+            for category, cols in columns.items():
+                write_json_file(tar, f"columns/{category}.json", cols)
+
+            # --- META ---
+            for meta_key, rows in meta.items():
+                write_ndjson_file(tar, f"meta/{meta_key}.ndjson", rows)
+
+        # Replace only after the archive has been completely written and closed.
+        # Readers therefore see either the previous archive or the new one, never
+        # a partially written file.
+        os.replace(temp_path, tar_path)
+    except BaseException:
+        try:
+            os.unlink(temp_path)
+        except FileNotFoundError:
+            pass
+        raise
 
     print(f"Created {tar_path}")
 
