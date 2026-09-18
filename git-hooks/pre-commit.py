@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import io
+import os
 import shutil
 import subprocess
 import sys
@@ -187,6 +188,18 @@ def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
         subprocess.run(["git", "add", str(csv_file)], check=True)
         print(f"  sorted: {csv_file}")
 
+def venv_python_path(venv_dir: Path) -> Path:
+    """
+    Interpreter path inside a virtualenv.
+
+    Windows venvs put the interpreter in `Scripts/python.exe`, POSIX ones in
+    `bin/python`, so the layout has to be chosen at runtime.
+    """
+    if os.name == "nt":
+        return venv_dir / "Scripts" / "python.exe"
+    return venv_dir / "bin" / "python"
+
+
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
@@ -217,7 +230,9 @@ def main() -> None:
             venv_dir = tmp_root / ".venv"
             run([python, "-m", "venv", str(venv_dir)])
 
-            venv_python = venv_dir / "bin" / "python"
+            venv_python = venv_python_path(venv_dir)
+            if not venv_python.exists():
+                die(f"Virtualenv interpreter not found: {venv_python}")
             python = str(venv_python)
 
             run([
