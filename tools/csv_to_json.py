@@ -259,29 +259,55 @@ def validate_no_offer_reference_conflicts(
     network_entities: list[dict],
     all_network_entities: list[dict],
 ) -> None:
-    network_entity_by_offer_and_chain = {}
-    for entity in network_entities:
+    def offer_chain_key(entity: dict) -> tuple[str, object] | None:
         offer_reference = entity.get("offer")
         if not is_offer_ref(offer_reference):
-            continue
+            return None
 
         chain = entity.get("chain")
         if isinstance(chain, str):
             chain = chain.strip().lower()
-        key = (get_ref_slug(offer_reference, OFFER_REF_PREFIX), chain)
-        network_entity_by_offer_and_chain[key] = entity
+        return (get_ref_slug(offer_reference, OFFER_REF_PREFIX), chain)
+
+    same_scope_conflicts = []
+    for scope_name, entities, scope_path in (
+        (
+            "network-specific",
+            network_entities,
+            f"listings/specific-networks/{network_name}/{category}.csv",
+        ),
+        ("all-networks", all_network_entities, f"listings/all-networks/{category}.csv"),
+    ):
+        first_by_offer_and_chain = {}
+        for entity in entities:
+            key = offer_chain_key(entity)
+            if key is None:
+                continue
+            first = first_by_offer_and_chain.get(key)
+            if first is not None:
+                offer_slug, chain = key
+                same_scope_conflicts.append(
+                    f"  - {scope_name} '{scope_path}': offer '{offer_slug}', "
+                    f"chain {chain!r} is referenced by both "
+                    f"listing slugs '{first.get('slug')}' and '{entity.get('slug')}'"
+                )
+            else:
+                first_by_offer_and_chain[key] = entity
+
+    network_entity_by_offer_and_chain = {}
+    for entity in network_entities:
+        key = offer_chain_key(entity)
+        if key is not None:
+            network_entity_by_offer_and_chain[key] = entity
 
     conflicts = []
     for entity in all_network_entities:
-        offer_reference = entity.get("offer")
-        if not is_offer_ref(offer_reference):
+        key = offer_chain_key(entity)
+        if key is None:
             continue
 
-        chain = entity.get("chain")
-        if isinstance(chain, str):
-            chain = chain.strip().lower()
-        offer_slug = get_ref_slug(offer_reference, OFFER_REF_PREFIX)
-        network_entity = network_entity_by_offer_and_chain.get((offer_slug, chain))
+        offer_slug, chain = key
+        network_entity = network_entity_by_offer_and_chain.get(key)
         if network_entity is None:
             continue
 
@@ -291,13 +317,21 @@ def validate_no_offer_reference_conflicts(
             f"all-networks slug '{entity.get('slug')}'"
         )
 
-    if conflicts:
+    if same_scope_conflicts or conflicts:
+        sections = []
+        if same_scope_conflicts:
+            sections.append(
+                "Duplicate canonical listings within one listing scope:\n"
+                + "\n".join(same_scope_conflicts)
+            )
+        if conflicts:
+            sections.append(
+                "Conflicting offer references across listing scopes:\n"
+                + "\n".join(conflicts)
+            )
         raise ValueError(
-            f"Conflicting offer references for network '{network_name}', "
-            f"category '{category}'. The same offer and chain cannot be listed in both "
-            f"listings/specific-networks/{network_name}/{category}.csv and "
-            f"listings/all-networks/{category}.csv:\n"
-            + "\n".join(conflicts)
+            f"Offer reference validation failed for network '{network_name}', "
+            f"category '{category}':\n" + "\n".join(sections)
         )
 
 
