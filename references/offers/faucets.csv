@@ -1,6 +1,6 @@
 slug,provider,offer,actionButtons,requiresLogin,hasCaptcha,requiredMainnetBalance,price,starred,additionalNotes,dripLimitAmount,dripLimitPeriod,tag
 alchemy-faucet,Alchemy,,"[""[Faucet](https://www.alchemy.com/faucets)""]",FALSE,TRUE,0.001 ETH,$0,FALSE,"[""Requires mainnet activity"",""Requires to have a low enough existing balance since wallets with a significant amount of testnet tokens are not eligible for additional claims""]",0.1 ETH,24h,
-algorand-dispenser-algo,Algorand,,"[""[Faucet](https://lora.algokit.io/testnet/fund)"",""[Docs](https://dev.algorand.co/concepts/accounts/funding/#testnet-faucet)""]",TRUE,TRUE,,$0,FALSE,,,,
+algorand-dispenser-algo,Algorand,,"[""[Faucet](https://lora.algokit.io/testnet/fund)"",""[Docs](https://dev.algorand.co/concepts/accounts/funding/#testnet-faucet)""]",TRUE,TRUE,,$0,FALSE,"[""Web faucet requires Google sign-in and reCAPTCHA; programmatic Dispenser API access uses an access token""]",,24h,
 astar-faucet,Astar,,"[""[Faucet](https://portal.astar.network/astar/assets)"",""[Docs](https://docs.astar.network/docs/build/environment/faucet/)""]",TRUE,TRUE,,$0,FALSE,,,,
 automata-faucet,Automata,,"[""[Faucet](https://l2faucet.com/automata)"",""[Docs](https://docs.ata.network)""]",TRUE,FALSE,,$0,FALSE,,,,
 chain-platform-faucet,Chain Platform,Chain Platform Faucet,"[""[Faucet](https://faucet.chainplatform.co/)""]",FALSE,TRUE,,$0,FALSE,"[""Accepts wallet addresses or Ethereum Mainnet ENS names"",""24-hour network cooldown and 3-hour global cooldown""]",0.1 ETH,24h,
@@ -24,7 +24,7 @@ plume-faucet,Plume,,"[""[Faucet](https://faucet.plume.org)""]",FALSE,TRUE,,$0,FA
 quicknode-faucet,QuickNode,,"[""[Faucet](https://faucet.quicknode.com/drip)""]",FALSE,FALSE,,$0,FALSE,"[""Mainnet balance requirement varies by ecosystem"",""Wallet connection is required; sharing or signing in can provide bonus rewards""]",,12h,
 rockx-faucet,RockX,,"[""[Faucet](https://access.rockx.com/faucet-hoodi)""]",TRUE,FALSE,,$0,FALSE,,,,
 ronin-faucet,Ronin,Ronin Faucet,"[""[Faucet](https://faucet.roninchain.com)"",""[Docs](https://docs.roninchain.com/developers/tools/faucet)""]",FALSE,FALSE,,$0,FALSE,"[""Daily limit: up to 5 requests""]",,24h,
-somnia-faucet,Somnia,,"[""[Faucet](https://testnet.somnia.network/)"",""[Docs](https://docs.somnia.network/developer/network-info)""]",FALSE,TRUE,,$0,FALSE,"[""Dispenses STT for Somnia Shannon Testnet; Discord and email requests are documented alternatives""]",,,
+somnia-faucet,Somnia,,"[""[Faucet](https://testnet.somnia.network/)"",""[Docs](https://docs.somnia.network/developer/network-info)""]",FALSE,TRUE,,$0,FALSE,"[""Dispenses STT for Somnia Shannon Testnet; Discord and email requests are documented alternatives""]",1 STT,24h,
 stakely-faucet,Stakely,,"[""[Faucet](https://stakely.io/faucet)""]",FALSE,TRUE,,$0,FALSE,"[""Requires sharing the request on X""]",,,
 starknet-foundation-faucet,Starknet Foundation,Starknet Sepolia Faucet,"[""[Faucet](https://faucet.starknet.io/)"",""[Docs](https://docs.starknet.io/learn/cheatsheets/integrations)""]",FALSE,TRUE,,$0,FALSE,"[""Official Starknet Sepolia faucet listed in Starknet developer integrations.""]",,,
 tatum-faucet,Tatum,,"[""[Faucet](https://tatum.io/faucets)"",""[Docs](https://docs.tatum.io/docs/testnet-faucets)""]",TRUE,FALSE,0.001 native mainnet token,$0,FALSE,"[""Requires a Tatum Dashboard account""]",0.002 ETH,24h,
