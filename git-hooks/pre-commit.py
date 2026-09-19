@@ -138,51 +138,49 @@ def iter_csv(repo_root: Path) -> Iterable[Path]:
         yield csv_file
 
 def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
-    """
-    Sort CSV files by slug column without modifying quoting.
-    Uses the same naive delimiter parsing as rewrite_urls().
-    """
+    """Sort CSV files by their parsed slug field without rewriting records."""
     print("Sorting CSV files by slug")
 
     for csv_file in iter_csv(repo_root):
         newline_style = detect_newline(csv_file)
-
         with csv_file.open("r", newline="") as f:
-            lines = f.readlines()
+            text = f.read()
+        physical_lines = text.splitlines(keepends=True)
 
-        if len(lines) <= 1:
+        if not physical_lines:
             continue
 
-        header_line = lines[0].rstrip("\r\n")
-        header_parts = [h.strip().strip('"') for h in header_line.split(delimiter)]
+        records = []
+        reader = csv.reader(io.StringIO(text, newline=""), delimiter=delimiter)
+        start_line = 0
+        for fields in reader:
+            end_line = reader.line_num
+            raw_record = "".join(physical_lines[start_line:end_line])
+            records.append((fields, raw_record))
+            start_line = end_line
 
+        if len(records) <= 1:
+            continue
+
+        header_fields, header_record = records[0]
+        header_parts = [field.strip().strip('"') for field in header_fields]
         if "slug" not in header_parts:
             continue
 
         slug_idx = header_parts.index("slug")
 
-        data_lines = lines[1:]
-
-        def slug_key(raw_line: str) -> str:
-            parts = raw_line.rstrip("\r\n").split(delimiter)
-
-            if slug_idx >= len(parts):
+        def slug_key(record: tuple[list[str], str]) -> str:
+            fields = record[0]
+            if slug_idx >= len(fields):
                 return ""
+            return fields[slug_idx].strip().strip('"')
 
-            cell = parts[slug_idx].strip()
-
-            # normalize quoted slug for sorting only
-            if cell.startswith('"') and cell.endswith('"'):
-                cell = cell[1:-1]
-
-            return cell
-
-        rows_sorted = sorted(data_lines, key=slug_key)
+        rows_sorted = sorted(records[1:], key=slug_key)
 
         with csv_file.open("w", newline="") as f:
-            f.write(header_line + newline_style)
-            for row in rows_sorted:
-                f.write(row.rstrip("\r\n") + newline_style)
+            f.write(header_record.rstrip("\r\n") + newline_style)
+            for _, raw_record in rows_sorted:
+                f.write(raw_record.rstrip("\r\n") + newline_style)
 
         subprocess.run(["git", "add", str(csv_file)], check=True)
         print(f"  sorted: {csv_file}")
