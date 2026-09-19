@@ -822,6 +822,12 @@ def main():
     column_meta = load_json_file("meta/columns.json")
     offers_by_category = load_categories_from_folder("references/offers")
 
+    # DBIP #3792: validate pagination on the *canonical offer* source datasets
+    # (references/offers/apis.csv, analytics.csv, ...) BEFORE offer resolution.
+    # This catches malformed offers that are never referenced by any listing and
+    # therefore never appear in a per-network result.
+    validate_pagination(offers_by_category)
+
     # Global listings (apply to every network)
     global_listings = load_categories_from_folder(all_networks_dir)
     global_listings_categories = list_categories(folder=all_networks_dir)
@@ -882,6 +888,11 @@ def main():
                 result[category] = rows
 
 
+        # DBIP #3792: validate pagination on the *listing* source datasets
+        # (incl. listing overrides) BEFORE offer resolution, so malformed
+        # pagination supplied directly by a listing row is caught at the source.
+        validate_pagination(result)
+
         # 3) Resolve !offer:<slug> (category-scoped)
         result = resolve_offers(result, offers_by_category, network_name=network_name)
 
@@ -895,8 +906,11 @@ def main():
 
         ensure_sdks_tbd_fields(result)
 
-        # DBIP #3792: validate pagination metadata on the final merged data.
-        validate_pagination(result)
+        # DBIP #3792: pagination is now validated at the source (canonical offers
+        # + listings, incl. overrides) BEFORE offer resolution (see above), which
+        # also covers offers that never resolve into a per-network result. The
+        # resolved result inherits only those already-validated values, so no
+        # second post-resolution pass is required here.
 
         result["columns"] = get_column_order(
             base_categories=list_categories(network_dir),
