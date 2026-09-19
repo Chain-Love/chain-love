@@ -144,6 +144,10 @@ def build_tables(schema: JSONSchemaRoot) -> List[Table]:
 def build_meta_tables() -> List[Table]:
     return [
         Table(
+            "__meta_documents",
+            [Column("network", "TEXT", False), Column("schemaVersion", "TEXT", False)],
+        ),
+        Table(
             "__meta_categories",
             [
                 Column("network", "TEXT", False),
@@ -310,6 +314,7 @@ def main():
 
                 # --- process meta/*.ndjson ---
                 meta_tables = {
+                    "document": table_map["__meta_documents"],
                     "categories": table_map["__meta_categories"],
                     "columns": table_map["__meta_columns"],
                     "providers": table_map["__meta_providers"],

@@ -142,6 +142,10 @@ def write_tar(network: str, raw: RawRoot) -> None:
 
     with tarfile.open(tar_path, "w:gz", compresslevel=9) as tar:
 
+        version = raw.get("schemaVersion")
+        if isinstance(version, str):
+            write_ndjson_file(tar, "meta/document.ndjson", [{"schemaVersion": version}])
+
         # --- DATA ---
         for category, items in data.items():
             write_ndjson_file(tar, f"{category}.ndjson", items)
