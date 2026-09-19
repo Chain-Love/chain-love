@@ -241,6 +241,17 @@
     "cellType": "arrayPopover",
     "group": "capabilities"
   },
+    "pagination": {
+    "key": "pagination",
+    "label": "Pagination",
+    "icon": "lucide:ArrowRightLeft",
+    "description": "Endpoint-specific pagination metadata: per documented HTTP endpoint, the mode (cursor or page), the query parameter carrying the cursor token or page number, an optional page-size parameter, and the official documentation URL. Blank means unverified, not unpaginated.",
+    "filter": null,
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
   "securityImprovements": {
     "key": "securityImprovements",
     "label": "Security Improvements",

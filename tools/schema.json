@@ -69,6 +69,21 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
+                "pagination": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["endpoint", "mode", "positionParameter", "sourceUrl"],
+            "properties": {
+              "endpoint": { "type": "string", "description": "HTTP method plus versioned path, e.g. GET /api/v3/coins/markets" },
+              "mode": { "type": "string", "enum": ["cursor", "page"] },
+              "positionParameter": { "type": "string", "description": "Query parameter carrying the cursor token or page number" },
+              "pageSizeParameter": { "type": ["string", "null"], "description": "Query parameter controlling page size, if documented" },
+              "sourceUrl": { "type": "string", "description": "Official documentation supporting this endpoint entry" }
+            }
+          }
+        },
         "securityImprovements": {
           "type": ["array", "null"],
           "items": { "type": "string" }
@@ -487,7 +502,22 @@
             "One-time payment"
           ]
         },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "pagination": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["endpoint", "mode", "positionParameter", "sourceUrl"],
+            "properties": {
+              "endpoint": { "type": "string", "description": "HTTP method plus versioned path, e.g. GET /api/v3/coins/markets" },
+              "mode": { "type": "string", "enum": ["cursor", "page"] },
+              "positionParameter": { "type": "string", "description": "Query parameter carrying the cursor token or page number" },
+              "pageSizeParameter": { "type": ["string", "null"], "description": "Query parameter controlling page size, if documented" },
+              "sourceUrl": { "type": "string", "description": "Official documentation supporting this endpoint entry" }
+            }
+          }
+        }
       },
       "required": [
         "slug",
