@@ -695,6 +695,8 @@ def main():
 
     # References
     providers = load_providers("references/providers/providers.csv")
+    # Validate unique provider slugs before building name index (fixes #3628)
+    build_index_by_slug(providers, label="providers.csv")
     provider_by_name = build_provider_index_by_name(providers)
     category_meta = load_json_file("meta/categories.json")
     column_meta = load_json_file("meta/columns.json")
