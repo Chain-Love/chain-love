@@ -1,0 +1,82 @@
+name: Link Check (report)
+
+on:
+  workflow_run:
+    workflows: ["Link Check (analysis)"]
+    types: [completed]
+
+jobs:
+  comment:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Download Lychee artifact (reliable)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const { owner, repo } = context.repo;
+            const runId = context.payload.workflow_run.id;
+
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner,
+              repo,
+              run_id: runId,
+            });
+
+            const artifact = artifacts.data.artifacts.find(
+              a => a.name === 'lychee-output'
+            );
+
+            if (!artifact) {
+              core.setFailed('Artifact lychee-output not found');
+              return;
+            }
+
+            const download = await github.rest.actions.downloadArtifact({
+              owner,
+              repo,
+              artifact_id: artifact.id,
+              archive_format: 'zip',
+            });
+
+            const outDir = `${process.env.RUNNER_TEMP}/lychee-output`;
+            fs.mkdirSync(outDir, { recursive: true });
+            fs.writeFileSync(
+              path.join(outDir, 'artifact.zip'),
+              Buffer.from(download.data)
+            );
+      
+      - name: Unzip artifact
+        run: |
+          unzip "${{ runner.temp }}/lychee-output/artifact.zip" \
+            -d "${{ runner.temp }}/lychee-output"
+      
+      - name: Read PR number (if present)
+        id: pr
+        run: |
+          if [ -f "${{ runner.temp }}/lychee-output/pr-number.txt" ]; then
+            echo "number=$(cat ${{ runner.temp }}/lychee-output/pr-number.txt)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Comment on PR
+        if: steps.pr.outputs.number != ''
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ steps.pr.outputs.number }}
+          body-path: ${{ runner.temp }}/lychee-output/lychee/out.md
+
+      - name: Create Issue
+        if: steps.pr.outputs.number == ''
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Link Checker Report
+          content-filepath: ${{ runner.temp }}/lychee-output/lychee/out.md
+          labels: report, automated issue

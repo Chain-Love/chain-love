@@ -301,6 +301,128 @@ def validate_no_offer_reference_conflicts(
         )
 
 
+# ---------------------------------------------------------------------------
+# Pagination metadata validation (DBIP #3792)
+# ---------------------------------------------------------------------------
+_PAGINATION_ALLOWED_KEYS = {
+    "endpoint",
+    "mode",
+    "positionParameter",
+    "pageSizeParameter",
+    "sourceUrl",
+}
+_PAGINATION_REQUIRED_KEYS = {
+    "endpoint",
+    "mode",
+    "positionParameter",
+    "sourceUrl",
+}
+_PAGINATION_MODES = {"cursor", "page"}
+
+
+def validate_pagination_field(category: str, slug: str, value) -> list[str]:
+    """
+    Validates a single normalized 'pagination' cell value.
+
+    Returns a list of error strings (empty when valid). A blank/unknown value
+    (None) is valid per DBIP #3792 constraint 1: blank means unverified, not
+    unpaginated.
+    """
+    if value is None:
+        return []
+
+    if not isinstance(value, list):
+        return [
+            f"  - {category} '{slug}': 'pagination' must be a JSON array or blank, "
+            f"got {type(value).__name__}"
+        ]
+
+    errors: list[str] = []
+    seen_endpoints: set[str] = set()
+
+    for i, entry in enumerate(value):
+        where = f"{category} '{slug}' pagination[{i}]"
+
+        if not isinstance(entry, dict):
+            errors.append(
+                f"  - {where}: each entry must be an object, got {type(entry).__name__}"
+            )
+            continue
+
+        # Object shape: only the allowed keys (constraint 4).
+        extra = set(entry.keys()) - _PAGINATION_ALLOWED_KEYS
+        if extra:
+            errors.append(
+                f"  - {where}: unexpected keys {sorted(extra)}; "
+                f"allowed: {sorted(_PAGINATION_ALLOWED_KEYS)}"
+            )
+
+        # Required nonempty strings (constraint 4).
+        for key in _PAGINATION_REQUIRED_KEYS:
+            v = entry.get(key)
+            if not isinstance(v, str) or v.strip() == "":
+                errors.append(
+                    f"  - {where}: '{key}' is required and must be a nonempty string"
+                )
+
+        # mode enum (constraint 4).
+        mode = entry.get("mode")
+        if isinstance(mode, str) and mode not in _PAGINATION_MODES:
+            errors.append(
+                f"  - {where}: 'mode' must be one of {sorted(_PAGINATION_MODES)}, "
+                f"got {mode!r}"
+            )
+
+        # pageSizeParameter is optional but must be a nonempty string when present.
+        psp = entry.get("pageSizeParameter")
+        if psp is not None and (not isinstance(psp, str) or psp.strip() == ""):
+            errors.append(
+                f"  - {where}: 'pageSizeParameter' must be a nonempty string when present"
+            )
+
+        # sourceUrl must be an http(s) URL (constraint 4).
+        src = entry.get("sourceUrl")
+        if isinstance(src, str) and not (
+            src.startswith("http://") or src.startswith("https://")
+        ):
+            errors.append(
+                f"  - {where}: 'sourceUrl' must be an http(s) URL, got {src!r}"
+            )
+
+        # Unique endpoints within the same array (constraint 4).
+        ep = entry.get("endpoint")
+        if isinstance(ep, str) and ep.strip() != "":
+            if ep in seen_endpoints:
+                errors.append(
+                    f"  - {where}: duplicate endpoint {ep!r} within the same pagination array"
+                )
+            else:
+                seen_endpoints.add(ep)
+
+    return errors
+
+
+def validate_pagination(result: dict[str, list[dict]]) -> None:
+    """
+    Validates the 'pagination' field across all apis/analytics rows in the
+    final merged result. Blank values remain valid (constraint 1).
+    """
+    errors: list[str] = []
+    for category in ("apis", "analytics"):
+        rows = result.get(category)
+        if not rows:
+            continue
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            slug = row.get("slug") or "<unknown-slug>"
+            errors.extend(
+                validate_pagination_field(category, slug, row.get("pagination"))
+            )
+    if errors:
+        raise ValueError("Pagination metadata validation failed:\n" + "\n".join(errors))
+
+
 def load_categories_from_folder(folder: str) -> dict:
     """
     Loads all *.csv in a folder into {category_name: [rows...]} and normalizes them.
@@ -700,6 +822,12 @@ def main():
     column_meta = load_json_file("meta/columns.json")
     offers_by_category = load_categories_from_folder("references/offers")
 
+    # DBIP #3792: validate pagination on the *canonical offer* source datasets
+    # (references/offers/apis.csv, analytics.csv, ...) BEFORE offer resolution.
+    # This catches malformed offers that are never referenced by any listing and
+    # therefore never appear in a per-network result.
+    validate_pagination(offers_by_category)
+
     # Global listings (apply to every network)
     global_listings = load_categories_from_folder(all_networks_dir)
     global_listings_categories = list_categories(folder=all_networks_dir)
@@ -760,6 +888,11 @@ def main():
                 result[category] = rows
 
 
+        # DBIP #3792: validate pagination on the *listing* source datasets
+        # (incl. listing overrides) BEFORE offer resolution, so malformed
+        # pagination supplied directly by a listing row is caught at the source.
+        validate_pagination(result)
+
         # 3) Resolve !offer:<slug> (category-scoped)
         result = resolve_offers(result, offers_by_category, network_name=network_name)
 
@@ -772,6 +905,12 @@ def main():
             exit(1)
 
         ensure_sdks_tbd_fields(result)
+
+        # DBIP #3792: pagination is now validated at the source (canonical offers
+        # + listings, incl. overrides) BEFORE offer resolution (see above), which
+        # also covers offers that never resolve into a per-network result. The
+        # resolved result inherits only those already-validated values, so no
+        # second post-resolution pass is required here.
 
         result["columns"] = get_column_order(
             base_categories=list_categories(network_dir),
