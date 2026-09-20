@@ -187,6 +187,18 @@ jobs:
           expect_converter_reject "$FIX/offers.apis.negative-entry-not-object.csv" "must be an object"
           expect_converter_reject "$FIX/offers.apis.negative-not-an-array.csv" "must be a JSON array"
           expect_converter_reject "$FIX/offers.apis.negative-malformed-json.csv" "must be a JSON array"
+          # A nested array or object in one of the five fields is a malformed cell, not a
+          # converter crash: the field's own rule must report the value, and the value must
+          # never reach the (method, transport, metric) uniqueness set, which would abort
+          # csv_to_json.py with `TypeError: unhashable type: 'list'` before printing it.
+          # Six fixtures, one per key x container. `expect_converter_reject` greps for the
+          # field's message, so a traceback fails the check rather than passing it.
+          expect_converter_reject "$FIX/offers.apis.negative-method-array.csv" "method must be a non-empty string"
+          expect_converter_reject "$FIX/offers.apis.negative-method-object.csv" "method must be a non-empty string"
+          expect_converter_reject "$FIX/offers.apis.negative-transport-array.csv" "transport must be one of"
+          expect_converter_reject "$FIX/offers.apis.negative-transport-object.csv" "transport must be one of"
+          expect_converter_reject "$FIX/offers.apis.negative-metric-array.csv" "metric must be one of"
+          expect_converter_reject "$FIX/offers.apis.negative-metric-object.csv" "metric must be one of"
 
           echo "==> the same rules are enforced after !offer: resolution"
           cp "$FIX/offers.apis.csv" "$OFFERS"
@@ -352,6 +364,54 @@ jobs:
           cp /tmp/schema.bak schema.json
           rm -rf json
           echo "OK: the schema pattern is exercised"
+
+          echo "==> mutation 6: hash the triple unconditionally -> the nested-container fixtures must abort the converter"
+          "$PY" - <<'PY'
+          import pathlib
+          path = pathlib.Path("tools/csv_to_json.py")
+          src = path.read_text(encoding="utf-8")
+          old = "            if all(isinstance(part, str) for part in (method, transport, metric)):"
+          new = "            if True:  # mutation: hash every triple, hashable or not"
+          assert old in src, old
+          path.write_text(src.replace(old, new), encoding="utf-8", newline="\n")
+          print("reverted the hashability guard on the (method, transport, metric) key")
+          PY
+          cp tools/csv_to_json.py .
+          # Each fixture must now die *inside* the key rather than report its field, so
+          # both halves are asserted: the traceback has to appear, and the field message
+          # the earlier stage greps for has to disappear. Without the second half a
+          # fixture that still printed its message would look like it were exercising
+          # the guard when it was not.
+          for pair in "method:method must be a non-empty string" \
+                      "transport:transport must be one of" \
+                      "metric:metric must be one of"; do
+            field="${pair%%:*}"
+            message="${pair#*:}"
+            for kind in array object; do
+              fixture="$FIX/offers.apis.negative-$field-$kind.csv"
+              cp "$fixture" "$OFFERS"
+              rm -rf json
+              if "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+                echo "ERROR: $(basename "$fixture") was accepted with the guard reverted"
+                exit 1
+              fi
+              grep -q "TypeError: unhashable type" /tmp/case.log || {
+                echo "ERROR: $(basename "$fixture") did not reach the unhashable key with the guard reverted"
+                tail -6 /tmp/case.log
+                exit 1
+              }
+              if grep -q "$message" /tmp/case.log; then
+                echo "ERROR: $(basename "$fixture") still printed [$message] with the guard reverted"
+                exit 1
+              fi
+              echo "OK: $(basename "$fixture") -> traceback and no field message, with the guard reverted"
+            done
+          done
+          cp /tmp/csv_to_json.bak tools/csv_to_json.py
+          cp tools/csv_to_json.py .
+          cp "$FIX/offers.apis.csv" "$OFFERS"
+          rm -rf json
+          echo "OK: the hashability guard is exercised"
 
           echo "==> final green run after restoring every mutation"
           cp "$FIX/offers.apis.csv" "$OFFERS"

@@ -224,6 +224,37 @@ check("a later bad entry is still reported",
       has([entry(), entry(metric="nope")], "requestLimits[1]"))
 check("http:// is allowed", errors([entry(sourceUrl="http://example.com/docs")]) == [])
 
+# Nested containers are not scalars, and they used to be the one input that turned a
+# validation error into a converter crash: the field's own rule reported the value and
+# then the same value was handed to the (method, transport, metric) uniqueness set,
+# which raised `TypeError: unhashable type: 'list'` before the message was printed.
+# csv_to_json.py runs before validate.py, so the schema layer cannot rescue that order.
+# Each case below therefore asserts the field's own message *and* that the entry
+# produced exactly one error -- a crash cannot satisfy either, and a stray extra error
+# would mean the entry was also fed to some other rule.
+print("csv_to_json.py: a nested array or object is a validation error, not a crash")
+CONTAINER_FIELDS = (
+    ("method", "method must be a non-empty string"),
+    ("transport", "transport must be one of"),
+    ("metric", "metric must be one of"),
+    ("maximum", "maximum must be a positive integer"),
+    ("sourceUrl", NOT_EMPTY),
+)
+for kind, bad in (("array", []), ("object", {})):
+    for field, message in CONTAINER_FIELDS:
+        got = errors([entry(**{field: bad})])
+        check(f"{field} as a nested {kind} takes its own rule",
+              any(message in e for e in got))
+        check(f"{field} as a nested {kind} yields one error and no traceback",
+              len(got) == 1)
+check("a malformed entry does not stop a later duplicate being reported",
+      has([entry(transport=[]), entry(), entry(maximum=99)],
+          "duplicates (method, transport, metric)"))
+check("two entries carrying the same nested container are each reported, never keyed",
+      len(errors([entry(metric=[]), entry(metric=[])])) == 2)
+check("the uniqueness rule still fires on a well-formed triple",
+      has([entry(), entry(maximum=99)], "duplicates (method, transport, metric)"))
+
 # ---------------------------------------------------------------------------
 print("csv_to_json.py: the validator is wired into both passes of main()")
 src = (REPO / "tools" / "csv_to_json.py").read_bytes().decode("utf-8")

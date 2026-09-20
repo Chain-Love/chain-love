@@ -560,7 +560,10 @@ def validate_request_limits(items: list, context: str) -> list[str]:
       - maximum must be a positive integer (no 0 sentinel, no "unlimited");
       - method must be a non-empty string, and sourceUrl an absolute http(s) URL
         with a host (a bare scheme such as 'https://' is not a URL);
-      - (method, transport, metric) must be unique within one row.
+      - (method, transport, metric) must be unique within one row, compared among
+        entries whose three key fields are strings. An entry that fails any rule
+        above is reported by that rule and is never part of the comparison, so a
+        malformed cell is a validation error rather than a crash.
     """
     errors = []
     for idx, item in enumerate(items):
@@ -611,10 +614,18 @@ def validate_request_limits(items: list, context: str) -> list[str]:
                 errors.append(
                     f"{where}.sourceUrl must be an absolute http(s) URL with a host"
                 )
-            key = (method, transport, metric)
-            if key in seen:
-                errors.append(f"{where} duplicates (method, transport, metric) = {key}")
-            seen.add(key)
+            # (method, transport, metric) is a key only once all three are the scalar
+            # strings the rules above require. A nested array or object in one of those
+            # cells (e.g. method: []) has already been reported by its own rule, and
+            # hashing it here would abort the converter with
+            # `TypeError: unhashable type: 'list'` before any of those messages were
+            # printed -- a crash the schema layer cannot catch, because csv_to_json.py
+            # runs first.
+            if all(isinstance(part, str) for part in (method, transport, metric)):
+                key = (method, transport, metric)
+                if key in seen:
+                    errors.append(f"{where} duplicates (method, transport, metric) = {key}")
+                seen.add(key)
     return errors
 
 
