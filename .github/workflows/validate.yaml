@@ -1,0 +1,291 @@
+name: "Validate JSON"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-json-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout this PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      # The whole check runs from a script file so that the shell quoting is
+      # readable and the stages are greppable in the job log.
+      - name: Validate with this PR validator, schema and fixtures
+        run: |
+          cat > /tmp/check.sh <<'SCRIPT'
+          set -e
+          # The whole check runs from a script file so that the shell quoting stays
+          # readable and every stage is greppable in the job log.
+
+          PY="${PY:-python3}"
+
+          FIX=tools/tests/fixtures/env-var-types
+          LISTING=listings/specific-networks/demo-network/mcpservers.csv
+          OFFERS=references/offers/mcpservers.csv
+
+          echo "==> install dependencies from the vendored wheels (offline)"
+          pip install --no-index --find-links=tools/wheels -r tools/requirements.txt
+
+          echo "==> regression tests: tools/tests/test_selfhosted_env_var_types.py"
+          "$PY" tools/tests/test_selfhosted_env_var_types.py
+
+          echo "==> assemble the workspace from this PR files only"
+          # Nothing is borrowed from the json-tools base branch: the workflow that lives
+          # there runs `pip install -r requirements.txt` and `python3 csv_to_json.py`
+          # from the repository root, where neither file exists, so the job never
+          # reaches this change at all. meta/ is at the repo root on this branch and is
+          # used in place.
+          cp tools/csv_to_json.py tools/validate.py tools/validate_csv.py .
+          cp tools/schema.json .
+          mkdir -p listings/specific-networks/demo-network listings/all-networks \
+                   references/offers references/providers
+          cp "$FIX/listings.mcpservers.csv" "$LISTING"
+          cp "$FIX/offers.mcpservers.csv" "$OFFERS"
+          cp "$FIX/providers.csv" references/providers/providers.csv
+
+          echo "==> structural CSV validation"
+          "$PY" validate_csv.py
+
+          echo "==> csv -> json"
+          rm -rf json
+          "$PY" csv_to_json.py
+
+          echo "==> the DBIP pilot value and the inheritance rules survive offer resolution"
+          "$PY" - <<'PY'
+          import json
+
+          data = json.load(open("json/demo-network.json"))
+          rows = {r["slug"]: r for r in data["mcpservers"]}
+          column = "selfHostedEnvVarTypes"
+
+          def eq(slug, want):
+              got = rows[slug].get(column)
+              assert got == want, f"{slug}: got {got!r}, want {want!r}"
+              print(f"  {slug}: {json.dumps(got, ensure_ascii=False)}")
+
+          # the classification written on the offer reaches the listing untouched
+          eq("filecoin-onchain-cloud-mcp", {"PRIVATE_KEY": "wallet-private-key"})
+          # a blank cell inherits, and so does an explicit null
+          eq("nova-selfhosted-mcp", {"PRIVATE_KEY": "api-key"})
+          # an explicit {} clears the inherited map
+          eq("kite-selfhosted-mcp", {})
+          # an override replaces the whole map, it is not merged key by key
+          eq("zebra-selfhosted-mcp", {"API_TOKEN": "access-token"})
+          # rows without a classification stay unclassified (never "no secrets")
+          assert rows["atlas-selfhosted-mcp"].get(column) is None
+          assert rows["acme-hosted-mcp"].get(column) is None
+          print("  atlas-selfhosted-mcp / acme-hosted-mcp: unclassified (null)")
+          PY
+
+          echo "==> json vs this PR schema.json + meta/columns.json + meta/categories.json"
+          test -d json
+          "$PY" validate.py
+
+          # A fixture either has to be rejected by the converter with a specific message,
+          # or accepted by the whole pipeline. Both directions are pinned: the rejections
+          # are the four failure modes the DBIP lists, the acceptances are the semantics
+          # it requires (optionality, inheritance, whole-map override, partial maps).
+          expect_converter_reject() {
+            fixture="$1"
+            message="$2"
+            cp "$fixture" "$OFFERS"
+            rm -rf json
+            if "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+              echo "ERROR: $(basename "$fixture") was accepted by csv_to_json.py"
+              cat /tmp/case.log
+              exit 1
+            fi
+            grep -q "$message" /tmp/case.log || {
+              echo "ERROR: $(basename "$fixture") rejected without the expected message [$message]"
+              cat /tmp/case.log
+              exit 1
+            }
+            echo "OK: $(basename "$fixture") -> rejected [$message]"
+          }
+
+          expect_pipeline() {
+            fixture="$1"
+            want="$2"
+            message="$3"
+            cp "$fixture" "$OFFERS"
+            rm -rf json
+            if ! "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+              echo "ERROR: csv_to_json.py failed for $(basename "$fixture")"
+              cat /tmp/case.log
+              exit 1
+            fi
+            if "$PY" validate.py >> /tmp/case.log 2>&1; then got=accept; else got=reject; fi
+            if [ "$got" != "$want" ]; then
+              echo "ERROR: $(basename "$fixture") was $got, expected $want"
+              cat /tmp/case.log
+              exit 1
+            fi
+            if [ -n "$message" ]; then
+              grep -q "$message" /tmp/case.log || {
+                echo "ERROR: missing message [$message]"
+                cat /tmp/case.log
+                exit 1
+              }
+            fi
+            echo "OK: $(basename "$fixture") -> $want${message:+ [$message]}"
+          }
+
+          echo "==> negative controls: the four rejection rules of DBIP #3683"
+          expect_converter_reject "$FIX/offers.mcpservers.negative-duplicate-member.csv" "duplicate object member"
+          expect_converter_reject "$FIX/offers.mcpservers.negative-undeclared-var.csv" "is not declared in the resolved"
+          expect_converter_reject "$FIX/offers.mcpservers.negative-case-mismatch.csv" "is not declared in the resolved"
+          expect_converter_reject "$FIX/offers.mcpservers.negative-unsupported-label.csv" "has unsupported label"
+          expect_converter_reject "$FIX/offers.mcpservers.negative-label-case.csv" "has unsupported label"
+          expect_converter_reject "$FIX/offers.mcpservers.negative-hosted-row.csv" "only valid when hostingType is 'Self-hosted'"
+          expect_converter_reject "$FIX/offers.mcpservers.negative-not-an-object.csv" "must be a JSON object"
+          expect_converter_reject "$FIX/offers.mcpservers.negative-empty-key.csv" "is not declared in the resolved"
+          expect_converter_reject "$FIX/offers.mcpservers.negative-malformed-json.csv" "Invalid value"
+
+          echo "==> the same rules are enforced after !offer: resolution"
+          cp "$FIX/offers.mcpservers.csv" "$OFFERS"
+          cp "$FIX/listings.mcpservers.negative-undeclared-override.csv" "$LISTING"
+          rm -rf json
+          if "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+            echo "ERROR: a listing overriding with an undeclared name was accepted"
+            cat /tmp/case.log
+            exit 1
+          fi
+          grep -q "network 'demo-network'" /tmp/case.log || {
+            echo "ERROR: the rejection does not name the network"
+            cat /tmp/case.log
+            exit 1
+          }
+          echo "OK: listings.mcpservers.negative-undeclared-override.csv -> rejected [network 'demo-network']"
+
+          echo "==> positive controls"
+          cp "$FIX/listings.mcpservers.csv" "$LISTING"
+          expect_pipeline "$FIX/offers.mcpservers.csv" accept ""
+          expect_pipeline "$FIX/offers.mcpservers.legacy.csv" accept ""
+
+          # ---------------------------------------------------------------------------
+          # Mutations. Each one puts a single behaviour of this PR back the way it was
+          # and asserts that the checks above notice. A check that cannot fail does not
+          # cover the change.
+          # ---------------------------------------------------------------------------
+          cp tools/schema.json /tmp/schema.bak
+          cp meta/columns.json /tmp/columns.bak
+          cp tools/csv_to_json.py /tmp/csv_to_json.bak
+
+          echo "==> mutation 1: drop the label enum -> the unit tests must notice"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("tools/schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          del schema["$defs"]["mcpservers"]["properties"]["selfHostedEnvVarTypes"]["additionalProperties"]["enum"]
+          path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          if "$PY" tools/tests/test_selfhosted_env_var_types.py > /tmp/m1.log 2>&1; then
+            echo "ERROR: the unit tests still pass without the label enum"
+            cat /tmp/m1.log
+            exit 1
+          fi
+          grep -q "member values are restricted to the DBIP-3683 vocabulary" /tmp/m1.log
+          cp /tmp/schema.bak tools/schema.json
+          cp tools/schema.json .
+          echo "OK: the label enum is exercised"
+
+          echo "==> mutation 2: drop the schema property -> every classified row must fail"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("tools/schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          del schema["$defs"]["mcpservers"]["properties"]["selfHostedEnvVarTypes"]
+          path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          cp tools/schema.json .
+          expect_pipeline "$FIX/offers.mcpservers.csv" reject "Additional properties are not allowed"
+          cp /tmp/schema.bak tools/schema.json
+          cp tools/schema.json .
+          echo "OK: the schema declaration is exercised"
+
+          echo "==> mutation 3: drop the column metadata -> validate.py must notice"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("meta/columns.json")
+          columns = json.loads(path.read_text(encoding="utf-8"))
+          del columns["selfHostedEnvVarTypes"]
+          path.write_text(json.dumps(columns, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          expect_pipeline "$FIX/offers.mcpservers.csv" reject "missing in meta.columns"
+          cp /tmp/columns.bak meta/columns.json
+          echo "OK: meta/columns.json is exercised"
+
+          echo "==> mutation 4: stop rejecting duplicate members -> that fixture must pass"
+          "$PY" - <<'PY'
+          import pathlib
+          path = pathlib.Path("tools/csv_to_json.py")
+          src = path.read_text(encoding="utf-8")
+          old = "    return json.loads(value, object_pairs_hook=no_duplicate_pairs)"
+          assert old in src
+          path.write_text(src.replace(old, "    return json.loads(value)"), encoding="utf-8", newline="\n")
+          PY
+          cp tools/csv_to_json.py .
+          expect_pipeline "$FIX/offers.mcpservers.negative-duplicate-member.csv" accept ""
+          cp /tmp/csv_to_json.bak tools/csv_to_json.py
+          cp tools/csv_to_json.py .
+          echo "OK: the duplicate-member check is exercised"
+
+          echo "==> mutation 5: skip the resolved-row rules -> the rejections must stop"
+          "$PY" - <<'PY'
+          import pathlib
+          path = pathlib.Path("tools/csv_to_json.py")
+          src = path.read_text(encoding="utf-8")
+          for old, new in (
+              ("    if offer_env_errors:", "    if False and offer_env_errors:"),
+              ("        if env_var_errors:", "        if False and env_var_errors:"),
+          ):
+              assert old in src, old
+              src = src.replace(old, new)
+          path.write_text(src, encoding="utf-8", newline="\n")
+          PY
+          cp tools/csv_to_json.py .
+          expect_pipeline "$FIX/offers.mcpservers.negative-undeclared-var.csv" accept ""
+          expect_pipeline "$FIX/offers.mcpservers.negative-hosted-row.csv" accept ""
+          cp "$FIX/offers.mcpservers.csv" "$OFFERS"
+          cp "$FIX/listings.mcpservers.negative-undeclared-override.csv" "$LISTING"
+          rm -rf json
+          if ! "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+            echo "ERROR: the listing override was still rejected with the rules disabled"
+            cat /tmp/case.log
+            exit 1
+          fi
+          cp "$FIX/listings.mcpservers.csv" "$LISTING"
+          cp /tmp/csv_to_json.bak tools/csv_to_json.py
+          cp tools/csv_to_json.py .
+          echo "OK: the resolved-row rules are exercised"
+
+          echo "==> final green run after restoring every mutation"
+          cp "$FIX/offers.mcpservers.csv" "$OFFERS"
+          cp "$FIX/listings.mcpservers.csv" "$LISTING"
+          "$PY" tools/tests/test_selfhosted_env_var_types.py
+          rm -rf json
+          "$PY" csv_to_json.py
+          "$PY" validate.py
+
+          echo
+          echo "All stages passed. Every check above was shown to fail when one of this PR's changes is reverted."
+          SCRIPT
+          docker run --rm --network=none \
+            -v "${{ github.workspace }}:/workspace" \
+            -v /tmp/check.sh:/check.sh:ro \
+            -w /workspace \
+            python:3.12-slim /bin/bash /check.sh
