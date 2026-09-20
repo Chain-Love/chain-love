@@ -1,0 +1,344 @@
+name: "Validate JSON"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-json-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout this PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      # The whole check runs from a script file so that the shell quoting is
+      # readable and the stages are greppable in the job log.
+      - name: Validate with this PR validator, schema and fixtures
+        run: |
+          cat > /tmp/check.sh <<'SCRIPT'
+          set -e
+          # The whole check runs from a script file so that the shell quoting stays
+          # readable and every stage is greppable in the job log.
+
+          PY="${PY:-python3}"
+
+          FIX=tools/tests/fixtures/extension-browsers
+          LISTING=listings/specific-networks/demo-network/wallets.csv
+          OFFERS=references/offers/wallets.csv
+
+          echo "==> install dependencies from the vendored wheels (offline)"
+          pip install --no-index --find-links=tools/wheels -r tools/requirements.txt
+
+          echo "==> regression tests: tools/tests/test_extension_browsers.py"
+          "$PY" tools/tests/test_extension_browsers.py
+
+          echo "==> assemble the workspace from this PR files only"
+          # Nothing is borrowed from the json-tools base branch: the workflow that lives
+          # there runs `pip install -r requirements.txt` and `python3 csv_to_json.py`
+          # from the repository root, where neither file exists, so the job never
+          # reaches this change at all. meta/ is at the repo root on this branch and is
+          # used in place. references/ and listings/ exist on main only, so the fixture
+          # supplies them - including references/providers/providers.csv, which
+          # csv_to_json.py hard-requires.
+          cp tools/csv_to_json.py tools/validate.py tools/validate_csv.py .
+          cp tools/schema.json .
+          mkdir -p listings/specific-networks/demo-network listings/all-networks \
+                   references/offers references/providers
+          cp "$FIX/listings.wallets.csv" "$LISTING"
+          cp "$FIX/offers.wallets.csv" "$OFFERS"
+          cp "$FIX/providers.csv" references/providers/providers.csv
+
+          echo "==> structural CSV validation"
+          "$PY" validate_csv.py
+
+          echo "==> csv -> json"
+          rm -rf json
+          "$PY" csv_to_json.py
+
+          echo "==> the documented browsers and the inheritance rules survive offer resolution"
+          "$PY" - <<'PY'
+          import json
+
+          data = json.load(open("json/demo-network.json"))
+          rows = {r["slug"]: r for r in data["wallets"]}
+          column = "extensionBrowsers"
+
+          def eq(slug, want):
+              got = rows[slug].get(column)
+              assert got == want, f"{slug}: got {got!r}, want {want!r}"
+              print(f"  {slug}: {json.dumps(got, ensure_ascii=False)}")
+
+          # the documented MetaMask browsers written on the canonical offer reach the listing
+          eq("metamask", ["Brave", "Chrome", "Edge", "Firefox", "Opera"])
+          # the Phantom example: engine compatibility is not support, so Chrome alone
+          eq("phantom", ["Chrome"])
+          # a blank cell stays blank: unknown is not the same as "no extension"
+          eq("bloom-unknown-wallet", None)
+          # an explicit empty array is an explicit value, not an inheritance request
+          eq("vault-no-extension", [])
+          # a listing override replaces the whole array, it is not merged entry by entry
+          eq("zeta-override-wallet", ["Chrome", "Firefox"])
+
+          # the new column is exposed in the generated column metadata
+          names = data["columns"]["wallets"]
+          assert column in names, f"{column} missing from generated columns"
+          assert names[-1] == column, f"expected {column} last, got {names[-4:]}"
+          print("  generated columns end with", column)
+          PY
+
+          echo "==> json vs this PR schema.json + meta/columns.json + meta/categories.json"
+          test -d json
+          "$PY" validate.py
+
+          # A fixture either has to be rejected by the converter with a specific message,
+          # or accepted by the whole pipeline. Both directions are pinned: the rejections
+          # are the failure modes DBIP #3713 lists, the acceptances are the semantics it
+          # requires (optionality, inheritance, whole-array override, empty arrays).
+          expect_converter_reject() {
+            fixture="$1"
+            message="$2"
+            cp "$fixture" "$OFFERS"
+            rm -rf json
+            if "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+              echo "ERROR: $(basename "$fixture") was accepted by csv_to_json.py"
+              cat /tmp/case.log
+              exit 1
+            fi
+            grep -q "$message" /tmp/case.log || {
+              echo "ERROR: $(basename "$fixture") rejected without the expected message [$message]"
+              cat /tmp/case.log
+              exit 1
+            }
+            echo "OK: $(basename "$fixture") -> rejected [$message]"
+          }
+
+          expect_pipeline() {
+            fixture="$1"
+            want="$2"
+            message="$3"
+            cp "$fixture" "$OFFERS"
+            rm -rf json
+            if ! "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+              echo "ERROR: csv_to_json.py failed for $(basename "$fixture")"
+              cat /tmp/case.log
+              exit 1
+            fi
+            if "$PY" validate.py >> /tmp/case.log 2>&1; then got=accept; else got=reject; fi
+            if [ "$got" != "$want" ]; then
+              echo "ERROR: $(basename "$fixture") was $got, expected $want"
+              cat /tmp/case.log
+              exit 1
+            fi
+            if [ -n "$message" ]; then
+              grep -q "$message" /tmp/case.log || {
+                echo "ERROR: missing message [$message]"
+                cat /tmp/case.log
+                exit 1
+              }
+            fi
+            echo "OK: $(basename "$fixture") -> $want${message:+ [$message]}"
+          }
+
+          echo "==> negative controls: the rules of DBIP #3713"
+          expect_converter_reject "$FIX/offers.wallets.negative-unknown-browser.csv" "must be one of"
+          expect_converter_reject "$FIX/offers.wallets.negative-lowercase-alias.csv" "must be one of"
+          expect_converter_reject "$FIX/offers.wallets.negative-duplicate.csv" "duplicates browser"
+          expect_converter_reject "$FIX/offers.wallets.negative-unsorted.csv" "must be sorted alphabetically"
+          expect_converter_reject "$FIX/offers.wallets.negative-not-an-array.csv" "must be a JSON array or null, got dict"
+          expect_converter_reject "$FIX/offers.wallets.negative-nonstring-entry.csv" "must be one of"
+          expect_converter_reject "$FIX/offers.wallets.negative-broken-array-string.csv" "must be a JSON array or null, got str"
+          expect_converter_reject "$FIX/offers.wallets.negative-malformed-json.csv" "as JSON"
+
+          echo "==> the same rules are enforced after !offer: resolution"
+          cp "$FIX/offers.wallets.csv" "$OFFERS"
+          cp "$FIX/listings.wallets.negative-bad-override.csv" "$LISTING"
+          rm -rf json
+          if "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+            echo "ERROR: a listing overriding with an unknown browser was accepted"
+            cat /tmp/case.log
+            exit 1
+          fi
+          grep -q "network 'demo-network'" /tmp/case.log || {
+            echo "ERROR: the rejection does not name the network"
+            cat /tmp/case.log
+            exit 1
+          }
+          echo "OK: listings.wallets.negative-bad-override.csv -> rejected [network 'demo-network']"
+
+          cp "$FIX/listings.wallets.negative-unsorted-override.csv" "$LISTING"
+          rm -rf json
+          if "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+            echo "ERROR: a listing overriding with an unsorted array was accepted"
+            cat /tmp/case.log
+            exit 1
+          fi
+          grep -q "must be sorted alphabetically" /tmp/case.log || {
+            echo "ERROR: the unsorted override was rejected without the ordering message"
+            cat /tmp/case.log
+            exit 1
+          }
+          echo "OK: listings.wallets.negative-unsorted-override.csv -> rejected [must be sorted alphabetically]"
+
+          echo "==> canonical offers are checked even when no listing references them"
+          # Every fixture above carries its bad value on a slug that a listing references,
+          # so the network pass would catch it no matter what. This fixture puts the bad
+          # value on a slug no listing references. The network pass never sees that row,
+          # and JSON Schema cannot express the order, so validate.py accepts it. The only
+          # thing that can reject it is validate_extension_browsers() running on the
+          # canonical offers themselves -- which is what this stage pins down.
+          expect_converter_reject "$FIX/offers.wallets.negative-unreferenced-unsorted.csv" \
+            "references/offers: wallets 'zzz-unreferenced-wallet'"
+
+          echo "==> positive controls"
+          cp "$FIX/listings.wallets.csv" "$LISTING"
+          expect_pipeline "$FIX/offers.wallets.csv" accept ""
+          expect_pipeline "$FIX/offers.wallets.legacy.csv" accept ""
+
+          # ---------------------------------------------------------------------------
+          # Mutations. Each one puts a single behaviour of this PR back the way it was
+          # and asserts that the checks above notice. A check that cannot fail does not
+          # cover the change.
+          # ---------------------------------------------------------------------------
+          cp tools/schema.json /tmp/schema.bak
+          cp meta/columns.json /tmp/columns.bak
+          cp tools/csv_to_json.py /tmp/csv_to_json.bak
+
+          echo "==> mutation 1: drop the browser enum -> the unit tests must notice"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("tools/schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          del schema["$defs"]["wallets"]["properties"]["extensionBrowsers"]["items"]["enum"]
+          path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          if "$PY" tools/tests/test_extension_browsers.py > /tmp/m1.log 2>&1; then
+            echo "ERROR: the unit tests still pass without the browser enum"
+            cat /tmp/m1.log
+            exit 1
+          fi
+          grep -q "items are restricted to the browser vocabulary" /tmp/m1.log
+          cp /tmp/schema.bak tools/schema.json
+          cp tools/schema.json .
+          echo "OK: the browser vocabulary is exercised"
+
+          echo "==> mutation 2: drop the schema property -> every populated row must fail"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("tools/schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          del schema["$defs"]["wallets"]["properties"]["extensionBrowsers"]
+          path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          cp tools/schema.json .
+          expect_pipeline "$FIX/offers.wallets.csv" reject "Additional properties are not allowed"
+          cp /tmp/schema.bak tools/schema.json
+          cp tools/schema.json .
+          echo "OK: the schema declaration is exercised"
+
+          echo "==> mutation 3: drop the column metadata -> validate.py must notice"
+          "$PY" - <<'PY'
+          import json, pathlib
+          path = pathlib.Path("meta/columns.json")
+          columns = json.loads(path.read_text(encoding="utf-8"))
+          del columns["extensionBrowsers"]
+          path.write_text(json.dumps(columns, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+          expect_pipeline "$FIX/offers.wallets.csv" reject "missing in meta.columns"
+          cp /tmp/columns.bak meta/columns.json
+          echo "OK: meta/columns.json is exercised"
+
+          echo "==> mutation 4: unwire the validator from main() -> the rejections must stop"
+          "$PY" - <<'PY'
+          import pathlib
+          path = pathlib.Path("tools/csv_to_json.py")
+          src = path.read_text(encoding="utf-8")
+          # Both call sites, because this mutation means "validate_extension_browsers
+          # never runs". Leaving the canonical-offers call wired would keep the
+          # fixture below red for the wrong reason and hide a broken mutation.
+          for old, new in (
+              ("    if offer_extension_browser_errors:",
+               "    if False and offer_extension_browser_errors:"),
+              ("        if extension_browser_errors:",
+               "        if False and extension_browser_errors:"),
+          ):
+              assert old in src, old
+              src = src.replace(old, new)
+          path.write_text(src, encoding="utf-8", newline="\n")
+          PY
+          cp tools/csv_to_json.py .
+          # Alphabetical ordering is the one rule JSON Schema cannot express, so these two
+          # fixtures are rejected *only* by validate_extension_browsers. Every other
+          # negative here is also caught by schema.json's enum/uniqueItems, which would
+          # keep the mutation below red for the wrong reason.
+          expect_pipeline "$FIX/offers.wallets.negative-unsorted.csv" accept ""
+          cp "$FIX/offers.wallets.csv" "$OFFERS"
+          cp "$FIX/listings.wallets.negative-unsorted-override.csv" "$LISTING"
+          rm -rf json
+          if ! "$PY" csv_to_json.py > /tmp/case.log 2>&1; then
+            echo "ERROR: the unsorted listing override was still rejected with the rules disabled"
+            cat /tmp/case.log
+            exit 1
+          fi
+          if ! "$PY" validate.py >> /tmp/case.log 2>&1; then
+            echo "ERROR: validate.py still rejects the unsorted override with the rules disabled"
+            cat /tmp/case.log
+            exit 1
+          fi
+          echo "OK: unsorted-override.csv -> accepted once the validator is unwired"
+          cp "$FIX/listings.wallets.csv" "$LISTING"
+          cp /tmp/csv_to_json.bak tools/csv_to_json.py
+          cp tools/csv_to_json.py .
+          echo "OK: the wiring into main() is exercised"
+
+          echo "==> mutation 5: unwire only the canonical-offers check -> the unreferenced case must go green"
+          "$PY" - <<'PY'
+          import pathlib
+          path = pathlib.Path("tools/csv_to_json.py")
+          src = path.read_text(encoding="utf-8")
+          old = "    if offer_extension_browser_errors:"
+          new = "    if False and offer_extension_browser_errors:"
+          assert old in src, old
+          src = src.replace(old, new)
+          path.write_text(src, encoding="utf-8", newline="\n")
+          PY
+          cp tools/csv_to_json.py .
+          cp "$FIX/listings.wallets.csv" "$LISTING"
+          # The unreferenced fixture is caught *only* by the canonical-offers call, so it
+          # has to flip to accept. Asserting the referenced fixture is still rejected is
+          # what keeps this from passing on a validator that does nothing at all.
+          expect_pipeline "$FIX/offers.wallets.negative-unreferenced-unsorted.csv" accept ""
+          # The referenced fixture is still rejected, now by the network pass alone. That
+          # is what shows this mutation disabled the canonical call and not the validator
+          # as a whole -- otherwise "accept" above would prove nothing.
+          expect_converter_reject "$FIX/offers.wallets.negative-unsorted.csv" "must be sorted alphabetically"
+          cp /tmp/csv_to_json.bak tools/csv_to_json.py
+          cp tools/csv_to_json.py .
+          echo "OK: the canonical-offers call is exercised"
+
+          echo "==> final green run after restoring every mutation"
+          cp "$FIX/offers.wallets.csv" "$OFFERS"
+          cp "$FIX/listings.wallets.csv" "$LISTING"
+          "$PY" tools/tests/test_extension_browsers.py
+          rm -rf json
+          "$PY" csv_to_json.py
+          "$PY" validate.py
+
+          echo
+          echo "All stages passed. Every check above was shown to fail when one of this PR's changes is reverted."
+          SCRIPT
+          docker run --rm --network=none \
+            -v "${{ github.workspace }}:/workspace" \
+            -v /tmp/check.sh:/check.sh:ro \
+            -w /workspace \
+            python:3.12-slim /bin/bash /check.sh
