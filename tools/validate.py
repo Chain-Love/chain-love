@@ -95,6 +95,58 @@ def rule_chain_is_lowercase(data):
             errors.append(f"Item {idx}: chain must be lowercase: want '{item['chain'].lower()}', got '{item['chain']}'. Please check all categories for the current network.")
     return errors
 
+# DBIP #3243 normalizes wallet supportedPlatforms to this controlled vocabulary and
+# requires the values to be stored in exactly this order (migration rule 6).
+SUPPORTED_PLATFORMS_CANONICAL_ORDER = (
+    "Browser Extension",
+    "Web App",
+    "Desktop",
+    "iOS",
+    "Android",
+    "Hardware Device",
+)
+
+def rule_supported_platforms_canonical_order(data):
+    """Enforce the DBIP-3243 canonical order of wallet supportedPlatforms.
+
+    JSON Schema cannot express array order: an enum plus uniqueItems accepts every
+    permutation of the vocabulary, so ["Android","Browser Extension"] validates even
+    though the proposal requires ["Browser Extension","Android"]. The order is
+    therefore enforced here, where the rules already run over both the generated
+    network JSON and references/offers.
+
+    A value outside the controlled vocabulary is left to the schema enum, and
+    duplicates are left to uniqueItems: this rule reports ordering only, so each
+    defect is reported by exactly one check.
+    """
+    errors = []
+    rank = {value: index for index, value in enumerate(SUPPORTED_PLATFORMS_CANONICAL_ORDER)}
+
+    for idx, item in enumerate(data):
+        value = item.get("supportedPlatforms")
+        if value is None or not isinstance(value, list):
+            # blank cell, or a type error the schema already reports
+            continue
+
+        positions = []
+        for entry in value:
+            if not isinstance(entry, str) or entry not in rank:
+                positions = None
+                break
+            positions.append(rank[entry])
+        if positions is None:
+            continue
+
+        if positions != sorted(positions):
+            canonical = [entry for _, entry in sorted(zip(positions, value))]
+            errors.append(
+                f"Item {idx}: supportedPlatforms must be stored in the DBIP-3243 canonical order "
+                f"({' > '.join(SUPPORTED_PLATFORMS_CANONICAL_ORDER)}), "
+                f"got {value}, expected {canonical}"
+            )
+
+    return errors
+
 def has_unclosed_markdown(s: str) -> bool:
     if type(s) != str:
         return False
@@ -291,6 +343,7 @@ def main():
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
     rules.add_rule(rule_chain_is_lowercase)
+    rules.add_rule(rule_supported_platforms_canonical_order)
 
     # Validate networks
     validator = Draft202012Validator(schema)
