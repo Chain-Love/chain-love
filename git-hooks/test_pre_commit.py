@@ -17,6 +17,21 @@ spec.loader.exec_module(hook)
 
 
 class VirtualEnvironmentInterpreterTest(unittest.TestCase):
+    def test_venv_python_path_covers_windows_and_posix(self):
+        venv_dir = Path("workspace") / ".venv"
+
+        with patch.object(hook.os, "name", "nt"):
+            self.assertEqual(
+                hook.venv_python_path(venv_dir),
+                venv_dir / "Scripts" / "python.exe",
+            )
+
+        with patch.object(hook.os, "name", "posix"):
+            self.assertEqual(
+                hook.venv_python_path(venv_dir),
+                venv_dir / "bin" / "python",
+            )
+
     def test_main_runs_pip_and_validators_with_created_interpreter(self):
         commands = []
 
@@ -48,7 +63,9 @@ class VirtualEnvironmentInterpreterTest(unittest.TestCase):
                 hook.main()
 
         self.assertEqual(len(commands), 2 + len(hook.SCRIPTS))
-        expected = Path("Scripts/python.exe") if os.name == "nt" else Path("bin/python")
+        expected = (
+            Path("Scripts/python.exe") if os.name == "nt" else Path("bin/python")
+        )
         interpreter = Path(commands[1][0])
         self.assertEqual(Path(*interpreter.parts[-2:]), expected)
         self.assertTrue(all(command[0] == str(interpreter) for command in commands[1:]))
