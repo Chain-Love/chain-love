@@ -571,6 +571,8 @@ def load_json_file(path: str) -> dict:
 
 
 def build_provider_index_by_name(providers: list[dict]) -> dict[str, dict]:
+    # Provider metadata is keyed by slug later; reject collisions before data is lost.
+    build_index_by_slug(providers, label="providers.csv")
     idx = {}
     for p in providers:
         name = p.get("name")
