@@ -13,6 +13,7 @@ concurrency:
 
 jobs:
   validate:
+    name: "Generate JSON and validate (isolated)"
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -259,3 +260,4 @@ jobs:
             -v /tmp/check.sh:/check.sh:ro \
             -w /workspace \
             python:3.12-slim /bin/bash /check.sh
+
