@@ -10,6 +10,8 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,9 +21,14 @@ jobs:
       - name: Checkout source data
         uses: actions/checkout@v4
         with:
+          repository: ${{ github.repository }}
           ref: main
           path: source-data
           persist-credentials: false
+          sparse-checkout: |
+            listings
+            references
+          sparse-checkout-cone-mode: true
       
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,14 +38,14 @@ jobs:
       - name: Install dependencies
         run: pip install --upgrade pip && pip install -r tools/requirements.txt
 
-      - name: Prepare source data
+      - name: Link source data and schema
         run: |
           ln -s "$GITHUB_WORKSPACE/source-data/listings" listings
           ln -s "$GITHUB_WORKSPACE/source-data/references" references
-          ln -s tools/schema.json schema.json
+          cp tools/schema.json schema.json
 
       - name: Run CSV to JSON
-        run: python3 tools/csv_to_json.py
+        run: python tools/csv_to_json.py
 
       - name: Run validation script
         run: python tools/validate.py
