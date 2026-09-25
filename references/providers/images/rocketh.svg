@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="rocketh">
+  <title>rocketh</title>
+  <!--
+    Geometry is authored upright at origin. The single matrix below folds three
+    steps, in this order:
+      1. rotate(30, 128, 128)            pose
+      2. scale(1.06311) + translate      fit: bbox centred in the 256 viewBox, 12px margin
+      3. translate(-10.249, 1.058)       optical nudge left, see note
+    The nudge exists because bbox centring reads right-heavy here: the flame is a
+    thin taper that stretches the bounding box leftward while carrying almost no
+    visual weight, so ~68% of the ink mass sits right of centre. The shift is 35%
+    of the measured centroid drift (+29.3u). Correcting the full drift crowds the
+    flame tip against the left edge, which trades one imbalance for another.
+    To re-derive after editing geometry: /tmp/logo-variants/build.py + optical.py
+  -->
+  <g transform="matrix(0.920680 0.531555 -0.531555 0.920680 103.1870 -66.2910)">
+    <!-- fins: two facets each, lit from upper-left to match the ETH mark -->
+    <path d="M78 106 L112 176 L73 193 Z" fill="#4e5563"/>
+    <path d="M78 106 L73 193 L34 210 Z" fill="#98a0b0"/>
+    <path d="M178 106 L144 176 L183 193 Z" fill="#7a818e"/>
+    <path d="M178 106 L183 193 L222 210 Z" fill="#3b414d"/>
+    <!-- exhaust: three heat layers, outer to core -->
+    <path d="M98 162 L128 254 L158 162 L128 198 Z" fill="#ff4d1c"/>
+    <path d="M110 166 L128 234 L146 166 L128 194 Z" fill="#ffab00"/>
+    <path d="M119 172 L128 214 L137 172 L128 190 Z" fill="#ffe8a3"/>
+    <!-- ETH mark. Darkest facet lifted to #2c313a so it survives on #1b1b1f -->
+    <g transform="translate(79,14) scale(0.3597)">
+      <path fill="#4a505c" d="m127.961 0-2.795 9.5v275.668l2.795 2.79 127.962-75.638z"/>
+      <path fill="#b3b9c5" d="M127.962 0 0 212.32l127.962 75.639V154.158z"/>
+      <path fill="#565c68" d="m127.961 312.187-1.575 1.92v98.199l1.575 4.6L256 236.587z"/>
+      <path fill="#b3b9c5" d="M127.962 416.905V312.185L0 236.585z"/>
+      <path fill="#2c313a" d="m127.961 287.958 127.96-75.637-127.96-58.162z"/>
+      <path fill="#7a818e" d="M0 212.32l127.96 75.638v-133.8z"/>
+    </g>
+  </g>
+</svg>
