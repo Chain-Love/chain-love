@@ -95,6 +95,27 @@ def rule_chain_is_lowercase(data):
             errors.append(f"Item {idx}: chain must be lowercase: want '{item['chain'].lower()}', got '{item['chain']}'. Please check all categories for the current network.")
     return errors
 
+def rule_mcp_auth_methods(data):
+    """Validate the normalized authentication-method list for MCP rows."""
+    allowed = ["OAuth", "Personal Access Token", "API Key", "Bearer Token", "Other"]
+    order = {method: index for index, method in enumerate(allowed)}
+    errors = []
+    for idx, item in enumerate(data):
+        methods = item.get("authMethods")
+        if methods is None:
+            continue
+        if type(methods) is not list:
+            errors.append(f"Item {idx}: authMethods must be a list or null")
+            continue
+        if len(methods) != len(set(methods)):
+            errors.append(f"Item {idx}: authMethods must not contain duplicates")
+        unknown = [method for method in methods if method not in order]
+        if unknown:
+            errors.append(f"Item {idx}: unsupported authMethods value(s): {unknown}")
+        if not unknown and methods != sorted(methods, key=order.get):
+            errors.append(f"Item {idx}: authMethods must use the canonical order {allowed}")
+    return errors
+
 def has_unclosed_markdown(s: str) -> bool:
     if type(s) != str:
         return False
@@ -291,6 +312,7 @@ def main():
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
     rules.add_rule(rule_chain_is_lowercase)
+    rules.add_rule(rule_mcp_auth_methods)
 
     # Validate networks
     validator = Draft202012Validator(schema)
