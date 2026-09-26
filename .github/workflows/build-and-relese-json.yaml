@@ -96,22 +96,34 @@ jobs:
             exit 0
           fi
 
-          last=$(curl -s -H "Authorization: token $GH_TOKEN" "$url" | tr -d '\n')
+          last=$(curl --fail --silent --show-error --location \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/octet-stream" \
+            "$url" | tr -d '\r\n')
           echo "last=$last" >> $GITHUB_OUTPUT
       
-      - name: Skip if no changes
-        if: steps.last.outputs.last == steps.checksum.outputs.sha
+      - name: Decide whether to publish
+        id: publish
+        env:
+          LAST_CHECKSUM: ${{ steps.last.outputs.last }}
+          NEW_CHECKSUM: ${{ steps.checksum.outputs.sha }}
         run: |
-          echo "No changes detected"
-          exit 0
+          if [ "$LAST_CHECKSUM" = "$NEW_CHECKSUM" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes detected"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
       
       - name: Generate tag
         id: tag
+        if: steps.publish.outputs.changed == 'true'
         run: |
           tag="json-$(date +%Y%m%d-%H%M%S)"
           echo "tag=$tag" >> $GITHUB_OUTPUT
 
       - name: Generate release index
+        if: steps.publish.outputs.changed == 'true'
         env:
           RELEASE_TAG: ${{ steps.tag.outputs.tag }}
           GITHUB_REPOSITORY: ${{ github.repository }}
@@ -119,6 +131,7 @@ jobs:
           python generate_release_index.py
       
       - name: Create release
+        if: steps.publish.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_TAG: ${{ steps.tag.outputs.tag }}
