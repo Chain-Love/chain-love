@@ -633,6 +633,17 @@
         "starred"
       ]
     },
+    "credentialTransport": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "description": "Wire-level placement of one documented static credential at the hosted endpoint",
+      "properties": {
+        "in": {"type": "string", "enum": ["header", "query"]},
+        "name": {"type": "string"},
+        "format": {"type": "string", "enum": ["raw"]}
+      },
+      "required": ["in", "name", "format"]
+    },
 
     "sdks": {
       "type": "object",
