@@ -12,7 +12,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  validate:
+  generate-and-validate:
+    name: Generate JSON and validate (isolated)
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
