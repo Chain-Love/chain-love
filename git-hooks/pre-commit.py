@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import io
+import os
 import shutil
 import subprocess
 import sys
@@ -186,6 +187,13 @@ def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
         print(f"  sorted: {csv_file}")
 
 
+def venv_python_path(venv_dir: Path) -> Path:
+    """Return the interpreter path created by ``venv`` on this platform."""
+    if os.name == "nt":
+        return venv_dir / "Scripts" / "python.exe"
+    return venv_dir / "bin" / "python"
+
+
 def main() -> None:
     ensure_tool_exists("git")
     ensure_tool_exists("tar")
@@ -212,7 +220,7 @@ def main() -> None:
             venv_dir = tmp_root / ".venv"
             run([python, "-m", "venv", str(venv_dir)])
 
-            venv_python = venv_dir / "bin" / "python"
+            venv_python = venv_python_path(venv_dir)
             python = str(venv_python)
 
             run([

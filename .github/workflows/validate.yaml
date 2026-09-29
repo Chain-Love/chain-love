@@ -55,3 +55,18 @@ jobs:
               python3 csv_to_json.py && \
               python3 validate.py
             "
+
+  test-pre-commit-hook:
+    name: Test pre-commit hook
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Run interpreter-path regression test
+        run: python3 git-hooks/test_pre_commit.py
