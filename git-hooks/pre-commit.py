@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import io
+import os
 import shutil
 import subprocess
 import sys
@@ -16,7 +17,7 @@ from typing import Iterable
 # ──────────────────────────────────────
 
 UPSTREAM_REPO = "Chain-Love/chain-love"
-UPSTREAM_REF = "json-tools"
+UPSTREAM_REF = "830d5f05ae15954c43ef23f4085c83d4548d5431"
 UPSTREAM_URL = f"https://github.com/{UPSTREAM_REPO}/archive/{UPSTREAM_REF}.tar.gz"
 
 # Paths copied from upstream repo into project root
@@ -138,27 +139,48 @@ def iter_csv(repo_root: Path) -> Iterable[Path]:
 
 def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
     """
-    Sort CSV files by slug column without modifying quoting.
+    Sort only the staged CSV contents by slug.
+
+    Updating the index directly avoids staging unrelated working-tree edits.
     """
-    print("Sorting CSV files by slug")
+    print("Sorting staged CSV files by slug")
 
-    for csv_file in iter_csv(repo_root):
-        newline_style = detect_newline(csv_file)
+    staged = subprocess.check_output(
+        [
+            "git",
+            "diff",
+            "--cached",
+            "--name-only",
+            "--diff-filter=ACMR",
+        ],
+        text=True,
+        cwd=repo_root,
+    ).splitlines()
 
-        with csv_file.open("r", newline="") as f:
-            lines = f.readlines()
+    for relative_name in staged:
+        if not relative_name.lower().endswith(".csv"):
+            continue
 
+        try:
+            raw = subprocess.check_output(
+                ["git", "show", f":{relative_name}"],
+                cwd=repo_root,
+            )
+        except subprocess.CalledProcessError:
+            continue
+
+        text = raw.decode("utf-8")
+        lines = text.splitlines()
         if len(lines) <= 1:
             continue
 
-        header_line = lines[0].rstrip("\r\n")
+        header_line = lines[0]
         header_parts = [h.strip().strip('"') for h in header_line.split(delimiter)]
 
         if "slug" not in header_parts:
             continue
 
         slug_idx = header_parts.index("slug")
-
         data_lines = lines[1:]
 
         def slug_key(raw_line: str) -> str:
@@ -169,21 +191,40 @@ def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
 
             cell = parts[slug_idx].strip()
 
-            # normalize quoted slug for sorting only
             if cell.startswith('"') and cell.endswith('"'):
                 cell = cell[1:-1]
 
             return cell
 
         rows_sorted = sorted(data_lines, key=slug_key)
+        newline_style = "\r\n" if "\r\n" in text[:8192] else "\n"
+        trailing_newline = text.endswith(("\n", "\r"))
+        sorted_text = newline_style.join(
+            [header_line] + [row.rstrip("\r\n") for row in rows_sorted]
+        )
+        if trailing_newline:
+            sorted_text += newline_style
 
-        with csv_file.open("w", newline="") as f:
-            f.write(header_line + newline_style)
-            for row in rows_sorted:
-                f.write(row.rstrip("\r\n") + newline_style)
+        if sorted_text.encode("utf-8") == raw:
+            continue
 
-        subprocess.run(["git", "add", str(csv_file)], check=True)
-        print(f"  sorted: {csv_file}")
+        blob = subprocess.check_output(
+            ["git", "hash-object", "-w", "--stdin"],
+            input=sorted_text.encode("utf-8"),
+            cwd=repo_root,
+        ).decode("ascii").strip()
+        subprocess.run(
+            [
+                "git",
+                "update-index",
+                "--add",
+                "--cacheinfo",
+                f"100644,{blob},{relative_name}",
+            ],
+            cwd=repo_root,
+            check=True,
+        )
+        print(f"  sorted staged content: {relative_name}")
 
 
 def main() -> None:
@@ -212,7 +253,11 @@ def main() -> None:
             venv_dir = tmp_root / ".venv"
             run([python, "-m", "venv", str(venv_dir)])
 
-            venv_python = venv_dir / "bin" / "python"
+            venv_python = (
+                venv_dir / "Scripts" / "python.exe"
+                if os.name == "nt"
+                else venv_dir / "bin" / "python"
+            )
             python = str(venv_python)
 
             run([
