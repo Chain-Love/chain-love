@@ -65,12 +65,15 @@ Requirements:
 - See [`listings/specific-networks/README.md`](listings/specific-networks/README.md) for
   the full spec and logo source suggestions.
 
+**Required:** Contributors must star the Chain.Love repository before opening a pull request.
+
 ## Contribution workflow
 
-1. Fork this repository and create a descriptive branch (example: `add-ankr-offer`).
-2. Edit the correct CSV based on the table above.
-3. Validate locally (optional) or rely on CI checks.
-4. Open a PR with a clear description and links to sources for changed data.
+1. Star and fork this repository before submitting a contribution.
+2. Create a descriptive branch (example: `add-ankr-offer`).
+3. Edit the correct CSV based on the table above.
+4. Validate locally (optional) or rely on CI checks.
+5. Open a PR with a clear description and links to sources for changed data.
 
 ## Local validation (optional)
 
