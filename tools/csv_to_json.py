@@ -695,6 +695,7 @@ def main():
 
     # References
     providers = load_providers("references/providers/providers.csv")
+    build_index_by_slug(providers, label="providers/providers.csv")
     provider_by_name = build_provider_index_by_name(providers)
     category_meta = load_json_file("meta/categories.json")
     column_meta = load_json_file("meta/columns.json")
