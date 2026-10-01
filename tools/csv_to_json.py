@@ -624,6 +624,8 @@ def build_provider_meta_from_names(
                 "description": p.get("description"),
                 "website": p.get("website"),
                 "docs": p.get("docs"),
+                "privacyPolicyUrl": p.get("privacyPolicyUrl"),
+                "termsOfServiceUrl": p.get("termsOfServiceUrl"),
                 "x": p.get("x"),
                 "github": p.get("github"),
                 "discord": p.get("discord"),
