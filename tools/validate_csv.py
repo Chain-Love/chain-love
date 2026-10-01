@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Iterator, Callable, List, Dict
 import os
 import csv
+import json
 import re
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
@@ -53,6 +54,48 @@ def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
+BRIDGE_SUPPORTED_CHAIN_ALIASES = {
+    "arbitrum one": "arbitrum",
+    "bnb chain": "bsc",
+    "bnb smart chain": "bsc",
+    "ethereum mainnet": "ethereum",
+    "klaytn": "kaia",
+    "manta pacific": "manta",
+    "manta pacific mainnet": "manta",
+    "plume mainnet": "plume",
+    "rari network": "rari",
+    "saga evm": "saga-evm",
+    "sui mainnet": "sui",
+    "world chain": "world-chain",
+    "x layer": "x-layer",
+    "xrpl evm": "xrpl-evm",
+    "zksync era": "zksync",
+}
+
+def rule_bridge_supported_chains(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    if path.name != "bridges.csv" or not rows or "supportedChains" not in rows[0]:
+        return []
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        raw = (row.get("supportedChains") or "").strip()
+        if not raw or raw.startswith("!offer:"):
+            continue
+        try:
+            values = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            errors.append(f"{path}: row {idx}: supportedChains is not valid JSON: {exc.msg}")
+            continue
+        if not isinstance(values, list) or not all(isinstance(value, str) for value in values):
+            errors.append(f"{path}: row {idx}: supportedChains must be a JSON array of strings")
+            continue
+        for value in values:
+            canonical = BRIDGE_SUPPORTED_CHAIN_ALIASES.get(value)
+            if canonical:
+                errors.append(f"{path}: row {idx}: supportedChains uses alias {value!r}; use repository network id {canonical!r}")
+        if len(values) != len(set(values)):
+            errors.append(f"{path}: row {idx}: supportedChains contains duplicate network ids")
+    return errors
+
 def rule_links_must_be_quoted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
     errors: List[str] = []
     delimiter: str = ","
@@ -89,6 +132,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_bridge_supported_chains)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
