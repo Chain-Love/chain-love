@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Iterator, Callable, List, Dict
 import os
 import csv
+import json
 import re
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
@@ -50,6 +51,72 @@ def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
 
     return errors
 
+CLAIM_RATE_LIMITS_FIELDS = (
+    "identityScope",
+    "networkScope",
+    "assetScope",
+    "maxRequests",
+    "periodSeconds",
+    "windowKind",
+)
+CLAIM_RATE_LIMITS_ENUMS = {
+    "identityScope": ("walletAddress", "ipAddress", "providerAccount", "unspecified"),
+    "networkScope": ("perNetwork", "allNetworks", "unspecified"),
+    "assetScope": ("perAsset", "allAssets", "unspecified"),
+    "windowKind": ("cooldown", "fixedWindow", "rollingWindow", "unspecified"),
+}
+
+def rule_faucet_claim_rate_limits(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    if not rows or "claimRateLimits" not in rows[0]:
+        return []
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        raw = (row.get("claimRateLimits") or "").strip()
+        if not raw:
+            continue
+        try:
+            value = json.loads(raw)
+        except Exception:
+            errors.append(f"{path}: row {idx}: claimRateLimits is not valid JSON: '{raw[:80]}'")
+            continue
+        if not isinstance(value, list):
+            errors.append(f"{path}: row {idx}: claimRateLimits must be a JSON array")
+            continue
+        seen = set()
+        for item in value:
+            if not isinstance(item, dict):
+                errors.append(f"{path}: row {idx}: claimRateLimits entries must be objects")
+                continue
+            extra = set(item) - set(CLAIM_RATE_LIMITS_FIELDS)
+            missing = set(CLAIM_RATE_LIMITS_FIELDS) - set(item)
+            if extra:
+                errors.append(f"{path}: row {idx}: claimRateLimits entry has unknown fields: {sorted(extra)}")
+            if missing:
+                errors.append(f"{path}: row {idx}: claimRateLimits entry missing fields: {sorted(missing)}")
+            for field in CLAIM_RATE_LIMITS_ENUMS:
+                if field in item and item[field] not in CLAIM_RATE_LIMITS_ENUMS[field]:
+                    errors.append(
+                        f"{path}: row {idx}: claimRateLimits {field} must be one of "
+                        f"{list(CLAIM_RATE_LIMITS_ENUMS[field])}, got '{item[field]}'"
+                    )
+            for field in ("maxRequests", "periodSeconds"):
+                if field in item:
+                    v_ = item[field]
+                    if isinstance(v_, bool) or not isinstance(v_, int) or v_ < 1:
+                        errors.append(
+                            f"{path}: row {idx}: claimRateLimits {field} must be a positive integer, got {v_!r}"
+                        )
+            if item.get("windowKind") == "cooldown" and item.get("maxRequests") != 1:
+                errors.append(
+                    f"{path}: row {idx}: claimRateLimits cooldown window requires maxRequests=1, "
+                    f"got {item.get('maxRequests')!r}"
+                )
+            key = json.dumps(item, sort_keys=True)
+            if key in seen:
+                errors.append(f"{path}: row {idx}: duplicate claimRateLimits entry: {key}")
+            seen.add(key)
+    return errors
+
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
@@ -89,6 +156,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_faucet_claim_rate_limits)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
