@@ -631,6 +631,37 @@
         "price",
         "trial",
         "starred"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "hostingType": { "const": "Hosted" },
+              "transportType": { "enum": ["http", "sse"] }
+            },
+            "required": ["hostingType", "transportType"]
+          },
+          "then": {
+            "properties": {
+              "mcpEndpoint": { "type": "string", "minLength": 1, "pattern": "^https?://" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "hostingType": { "const": "Self-hosted" } },
+            "required": ["hostingType"]
+          },
+          "then": {
+            "properties": {
+              "selfHostedCommand": { "type": "string", "minLength": 1 },
+              "selfHostedArgs": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        }
       ]
     },
 

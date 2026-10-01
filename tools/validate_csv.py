@@ -3,6 +3,7 @@ from typing import Iterator, Callable, List, Dict
 import os
 import csv
 import re
+import json
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
 
@@ -53,6 +54,37 @@ def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
+def rule_mcp_connection_contract(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    if path.name != "mcpservers.csv" or not rows or "hostingType" not in rows[0]:
+        return []
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        # Offer references are validated after inheritance by schema validation.
+        if (row.get("offer") or "").startswith("!offer:"):
+            continue
+        hosting = (row.get("hostingType") or "").strip()
+        transport = (row.get("transportType") or "").strip()
+        endpoint = (row.get("mcpEndpoint") or "").strip()
+        command = (row.get("selfHostedCommand") or "").strip()
+        raw_args = (row.get("selfHostedArgs") or "").strip()
+        if hosting == "Hosted" and transport in {"http", "sse"}:
+            if not looks_like_url(endpoint):
+                errors.append(f"{path}: row {idx}: Hosted {transport} MCP server requires an http(s) mcpEndpoint")
+        if hosting == "Self-hosted":
+            if not command:
+                errors.append(f"{path}: row {idx}: Self-hosted MCP server requires selfHostedCommand")
+            if not raw_args:
+                errors.append(f"{path}: row {idx}: Self-hosted MCP server requires selfHostedArgs (use [] for a bare command)")
+            else:
+                try:
+                    args = json.loads(raw_args)
+                except json.JSONDecodeError as exc:
+                    errors.append(f"{path}: row {idx}: selfHostedArgs is not valid JSON: {exc.msg}")
+                else:
+                    if not isinstance(args, list) or not all(isinstance(arg, str) for arg in args):
+                        errors.append(f"{path}: row {idx}: selfHostedArgs must be a JSON array of strings")
+    return errors
+
 def rule_links_must_be_quoted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
     errors: List[str] = []
     delimiter: str = ","
@@ -89,6 +121,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_mcp_connection_contract)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
