@@ -3,6 +3,8 @@ from typing import Iterator, Callable, List, Dict
 import os
 import csv
 import re
+import json
+import unicodedata
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
 
@@ -50,6 +52,38 @@ def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
 
     return errors
 
+def canonical_asset_type(value: str) -> str:
+    value = unicodedata.normalize("NFKC", value).strip().casefold()
+    value = "".join("-" if unicodedata.category(ch) == "Pd" else ch for ch in value)
+    value = re.sub(r"[:\s]+", "-", value)
+    return re.sub(r"-+", "-", value)
+
+def rule_bridge_asset_types(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    if path.name != "bridges.csv" or not rows or "assetTypes" not in rows[0]:
+        return []
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        raw = (row.get("assetTypes") or "").strip()
+        if not raw or raw.startswith("!offer:"):
+            continue
+        try:
+            values = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            errors.append(f"{path}: row {idx}: assetTypes is not valid JSON: {exc.msg}")
+            continue
+        if not isinstance(values, list) or not all(isinstance(v, str) for v in values):
+            errors.append(f"{path}: row {idx}: assetTypes must be an array of strings")
+            continue
+        canonical = [canonical_asset_type(value) for value in values]
+        if values != canonical:
+            errors.append(f"{path}: row {idx}: assetTypes must use canonical lowercase ASCII-hyphen tokens; expected {canonical}")
+            continue
+        if len(values) != len(set(values)):
+            errors.append(f"{path}: row {idx}: assetTypes contains duplicate tokens")
+        if values != sorted(values):
+            errors.append(f"{path}: row {idx}: assetTypes must be sorted canonically")
+    return errors
+
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
@@ -89,6 +123,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_bridge_asset_types)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
