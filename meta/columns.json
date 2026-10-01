@@ -1229,5 +1229,16 @@
     "sorting": "string",
     "pinning": null,
     "cellType": null
+  },
+  "claimRateLimits": {
+    "key": "claimRateLimits",
+    "label": "Claim Rate Limits",
+    "icon": null,
+    "description": "Published concurrent request-count restrictions as a JSON array of scoped quota objects (identity/network/asset scope, maxRequests, periodSeconds, windowKind).",
+    "filter": null,
+    "sorting": null,
+    "pinning": null,
+    "cellType": null,
+    "group": "accessAndLimits"
   }
 }

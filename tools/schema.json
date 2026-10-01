@@ -424,7 +424,51 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
-        "tag": { "type": ["array", "null"], "items": { "type": "string" } }
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "claimRateLimits": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "identityScope",
+              "networkScope",
+              "assetScope",
+              "maxRequests",
+              "periodSeconds",
+              "windowKind"
+            ],
+            "properties": {
+              "identityScope": {
+                "type": "string",
+                "enum": ["walletAddress", "ipAddress", "providerAccount", "unspecified"]
+              },
+              "networkScope": {
+                "type": "string",
+                "enum": ["perNetwork", "allNetworks", "unspecified"]
+              },
+              "assetScope": {
+                "type": "string",
+                "enum": ["perAsset", "allAssets", "unspecified"]
+              },
+              "maxRequests": { "type": "integer", "minimum": 1 },
+              "periodSeconds": { "type": "integer", "minimum": 1 },
+              "windowKind": {
+                "type": "string",
+                "enum": ["cooldown", "fixedWindow", "rollingWindow", "unspecified"]
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": { "windowKind": { "const": "cooldown" } },
+                  "required": ["windowKind"]
+                },
+                "then": { "properties": { "maxRequests": { "const": 1 } } }
+              }
+            ]
+          }
+        }
       },
       "required": [
         "slug",
