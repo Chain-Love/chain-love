@@ -50,6 +50,24 @@ def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
 
     return errors
 
+def rule_provider_legal_urls_https(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    if path.name != "providers.csv" or not rows:
+        return []
+    target_cols = ("privacyPolicyUrl", "termsOfServiceUrl")
+    if not any(col in rows[0] for col in target_cols):
+        return []
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        for col in target_cols:
+            value = (row.get(col) or "").strip()
+            if not value:
+                continue
+            if not re.fullmatch(r"https://\S+", value):
+                errors.append(
+                    f"{path}: row {idx}: {col} must be an absolute HTTPS URL, got '{value}'"
+                )
+    return errors
+
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
@@ -89,6 +107,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_provider_legal_urls_https)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
