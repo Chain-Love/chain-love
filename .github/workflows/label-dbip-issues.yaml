@@ -1,0 +1,59 @@
+name: Label DBIP Issues
+
+on:
+  schedule:
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: label-dbip-issues
+  cancel-in-progress: false
+
+jobs:
+  label-dbip-issues:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Add missing DBIP labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          page=1
+
+          while :; do
+            response="$(gh api --method GET "repos/${GH_REPO}/issues" \
+              -f state=open \
+              -f per_page=100 \
+              -f page="$page")"
+            count="$(jq 'length' <<<"$response")"
+
+            if [ "$count" -eq 0 ]; then
+              break
+            fi
+
+            jq -r '
+              .[]
+              | select(.pull_request | not)
+              | select(.title | startswith("[DBIP]"))
+              | select([.labels[].name] | index("DBIP") | not)
+              | .number
+            ' <<<"$response" | while read -r issue_number; do
+              if [ -z "$issue_number" ]; then
+                continue
+              fi
+
+              gh api --method POST "repos/${GH_REPO}/issues/${issue_number}/labels" \
+                -f labels[]=DBIP >/dev/null
+              echo "Added DBIP label to #${issue_number}"
+            done
+
+            page=$((page + 1))
+          done
