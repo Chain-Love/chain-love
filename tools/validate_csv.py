@@ -2,9 +2,11 @@ from pathlib import Path
 from typing import Iterator, Callable, List, Dict
 import os
 import csv
+import json
 import re
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
+LANGUAGE_TAGS_PATH = Path(__file__).parent / "validation" / "language_tags.json"
 
 Rule = Callable[[Path, List[Dict[str, str]]], List[str]]
 
@@ -84,11 +86,77 @@ def iter_csv_files(root: Path) -> Iterator[Path]:
             if name.lower().endswith(".csv"):
                 yield Path(dirpath) / name
 
+def load_language_registry() -> Dict[str, set[str]]:
+    """Load the pinned IANA subtag snapshot used by the offline validator."""
+    with LANGUAGE_TAGS_PATH.open(encoding="utf-8-sig") as f:
+        registry = json.load(f)
+    return {
+        "languages": set(registry["languages"]),
+        "scripts": set(registry["scripts"]),
+        "regions": set(registry["regions"]),
+        "variants": set(registry["variants"]),
+    }
+
+def is_canonical_language_tag(tag: str, registry: Dict[str, set[str]]) -> bool:
+    """Validate the language/script/region/variant forms used by wallet data."""
+    parts = tag.split("-")
+    if not parts or not re.fullmatch(r"[a-z]{2,8}", parts[0]):
+        return False
+    if parts[0] not in registry["languages"]:
+        return False
+
+    index = 1
+    if index < len(parts) and re.fullmatch(r"[A-Za-z]{4}", parts[index]):
+        script = parts[index]
+        if script not in registry["scripts"] or script != script[:1].upper() + script[1:].lower():
+            return False
+        index += 1
+    if index < len(parts) and re.fullmatch(r"[A-Za-z]{2}|[0-9]{3}", parts[index]):
+        region = parts[index]
+        if region not in registry["regions"] or region != region.upper():
+            return False
+        index += 1
+    for variant in parts[index:]:
+        if variant not in registry["variants"]:
+            return False
+    return index == len(parts) or all(re.fullmatch(r"[a-z0-9]{5,8}|[0-9][a-z0-9]{3}", p) for p in parts[index:])
+
+def rule_wallet_languages(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """Require explicit wallet language cells to use unique canonical BCP 47 tags."""
+    if path.name.lower() != "wallets.csv":
+        return []
+
+    registry = load_language_registry()
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        raw = row.get("languages", "").strip()
+        if not raw:  # Blank listing overrides inherit the canonical offer.
+            continue
+        try:
+            languages = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            errors.append(f"{path}: row {idx}: languages must be a JSON array: {exc.msg}")
+            continue
+        if not isinstance(languages, list) or not all(isinstance(tag, str) and tag for tag in languages):
+            errors.append(f"{path}: row {idx}: languages must be a JSON array of non-empty strings")
+            continue
+
+        seen: set[str] = set()
+        for tag in languages:
+            folded = tag.casefold()
+            if folded in seen:
+                errors.append(f"{path}: row {idx}: duplicate language tag '{tag}'")
+            seen.add(folded)
+            if not is_canonical_language_tag(tag, registry):
+                errors.append(f"{path}: row {idx}: invalid or non-canonical BCP 47 language tag '{tag}'")
+    return errors
+
 def main():
     root = Path(".")
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_wallet_languages)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
