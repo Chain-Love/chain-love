@@ -1,0 +1,190 @@
+name: Link Check (analysis-only)
+
+on:
+  pull_request:
+    types: [labeled]
+
+permissions:
+  contents: read
+
+jobs:
+  link-analysis:
+    if: >-
+      github.event.pull_request.base.ref == 'json-tools' &&
+      github.event.label.name == 'check-links'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Extract changed CSV links without running PR code
+        id: links
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          RUN_ID: ${{ github.run_id }}
+          LABEL_ACTOR: ${{ github.event.sender.login }}
+        run: |
+          python3 - <<'PY'
+          import csv
+          import io
+          import json
+          import os
+          import re
+          import subprocess
+          from pathlib import Path, PurePosixPath
+          from urllib.parse import urlsplit
+
+          base = os.environ["BASE_SHA"]
+          head = os.environ["HEAD_SHA"]
+          number = os.environ["PR_NUMBER"]
+          if not all(re.fullmatch(r"[0-9a-f]{40}", sha) for sha in (base, head)):
+              raise ValueError("Invalid commit SHA")
+          if not re.fullmatch(r"[1-9][0-9]*", number):
+              raise ValueError("Invalid PR number")
+
+          def git(*args):
+              return subprocess.check_output(["git", *args]).decode("utf-8")
+
+          exists = subprocess.run(["git", "cat-file", "-e", head + "^{commit}"],
+                                  capture_output=True)
+          if exists.returncode:
+              subprocess.run(["git", "fetch", "--no-tags", "origin", head], check=True)
+          merge_base = git("merge-base", base, head).strip()
+          changed = git("diff", "--name-only", "-z", "--no-renames", "--diff-filter=AMT",
+                        f"{merge_base}..{head}").split("\0")
+          url_re = re.compile(r'https?://[^\s,"\'>)]+')
+          social_urls = {
+              "x": "https://x.com/",
+              "github": "https://github.com/",
+              "discord": "https://discord.gg/",
+              "telegram": "https://t.me/",
+              "linkedin": "https://www.linkedin.com/",
+          }
+
+          total_bytes = 0
+
+          def content_at(sha, path):
+              global total_bytes
+              entry = git("ls-tree", "--format=%(objectmode)", sha, "--", path).strip()
+              if not entry:
+                  return ""
+              if entry not in ("100644", "100755"):
+                  raise ValueError("CSV inputs must be regular Git blobs")
+              size = int(git("cat-file", "-s", f"{sha}:{path}"))
+              if size > 8 * 1024 * 1024:
+                  raise ValueError("CSV input exceeds the 8 MiB analysis limit")
+              total_bytes += size
+              if total_bytes > 64 * 1024 * 1024:
+                  raise ValueError("Analysis exceeds the 64 MiB total input limit")
+              return git("show", f"{sha}:{path}")
+
+          def extract(path, text):
+              links = set(url_re.findall(text))
+              if path == "references/providers/providers.csv":
+                  for row in csv.DictReader(io.StringIO(text)):
+                      for column, prefix in social_urls.items():
+                          raw = (row.get(column) or "").strip()
+                          if raw:
+                              links.add(raw if raw.startswith(("http://", "https://"))
+                                        else prefix + raw.lstrip("@"))
+              return links
+
+          paths, urls = [], set()
+          for path in changed:
+              parts = PurePosixPath(path).parts
+              if not parts or parts[0] not in ("listings", "references"):
+                  continue
+              if PurePosixPath(path).suffix != ".csv":
+                  continue
+              if ".." in parts or PurePosixPath(path).is_absolute():
+                  raise ValueError("Invalid CSV path")
+              paths.append(path)
+              if len(paths) > 1000:
+                  raise ValueError("Analysis exceeds the 1000 CSV input limit")
+              urls.update(extract(path, content_at(head, path))
+                          - extract(path, content_at(merge_base, path)))
+
+          if len(urls) > 10000:
+              raise ValueError("Analysis exceeds the 10000 URL limit")
+          for url in urls:
+              parsed = urlsplit(url)
+              if any(character in url for character in "\r\n\0") or not parsed.hostname:
+                  raise ValueError("Malformed URL input")
+              if parsed.username is not None or parsed.password is not None:
+                  raise ValueError("Credential-bearing URLs are not checked")
+
+          inputs = Path(os.environ["RUNNER_TEMP"]) / "chain-love-link-input"
+          inputs.mkdir(parents=True, exist_ok=True)
+          (inputs / "links.txt").write_text("".join(url + "\n" for url in sorted(urls)),
+                                          encoding="utf-8")
+          Path("link-scope.json").write_text(json.dumps({
+              "pr_number": int(number), "head_sha": head, "base_sha": base,
+              "merge_base": merge_base, "changed_csv_files": paths,
+              "run_id": os.environ["RUN_ID"], "label_actor": os.environ["LABEL_ACTOR"],
+              "new_or_changed_url_count": len(urls),
+              "scope_result": "REQUIRES_TRUSTED_NETWORK_CHECK" if urls else (
+                  "N/A_NO_NEW_URLS" if paths else "N/A_NO_CSV"),
+          }, indent=2) + "\n", encoding="utf-8")
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"count={len(urls)}\n")
+          Path("link-analysis").mkdir(exist_ok=True)
+          if urls:
+              Path("link-analysis/report.md").write_text(
+                  "## Link-check scope: network verification required\n\n"
+                  "New or changed URLs need a maintainer-approved, network-isolated checker.\n"
+                  "This analysis does not request these URLs and must not be treated as verified.\n",
+                  encoding="utf-8")
+          else:
+              Path("link-analysis/report.md").write_text(
+                  "## Link-check scope: not applicable\n\n"
+                  "No new or changed URLs in the PR's listings/references CSVs.\n"
+                  "No requests to extracted URLs were made; this is not proof that all repository links work.\n",
+                  encoding="utf-8")
+          PY
+
+      - name: Require trusted network checking when URLs are present
+        if: steps.links.outputs.count != '0'
+        run: |
+          echo "::error::New URLs require a maintainer-approved, network-isolated checker. No URLs were requested."
+          exit 1
+
+      - name: Record exact-head scope in report and job summary
+        if: always() && steps.links.outcome == 'success'
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          scope = json.loads(Path("link-scope.json").read_text(encoding="utf-8"))
+          report = Path("link-analysis/report.md")
+          if not report.is_file():
+              raise RuntimeError("Link checker did not produce a report")
+          note = (f"\n\nPR #{scope['pr_number']}; head `{scope['head_sha']}`; "
+                  f"merge base `{scope['merge_base']}`.\n"
+                  f"Changed CSV files: {len(scope['changed_csv_files'])}; "
+                  f"new or changed URLs: {scope['new_or_changed_url_count']}.\n"
+                  f"Scope result: `{scope['scope_result']}`.\n"
+                  "Only CSV URL scope was examined; no URL requests or privileged PR reporting "
+                  "were performed. A not-applicable result remains subject to reviewer acceptance.\n")
+          with report.open("a", encoding="utf-8") as output:
+              output.write(note)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
+              summary.write(report.read_text(encoding="utf-8"))
+          PY
+
+      - name: Upload link-scope report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-analysis-only
+          if-no-files-found: error
+          path: |
+            link-analysis/report.md
+            link-scope.json
