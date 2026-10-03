@@ -145,7 +145,7 @@ jobs:
               Path("link-analysis/report.md").write_text(
                   "## Link-check scope: not applicable\n\n"
                   "No new or changed URLs in the PR's listings/references CSVs.\n"
-                  "No network requests were made; this is not proof that all repository links work.\n",
+                  "No requests to extracted URLs were made; this is not proof that all repository links work.\n",
                   encoding="utf-8")
           PY
 
