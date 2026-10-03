@@ -51,6 +51,15 @@ Before editing data, read the Style Guide:
 - For platform columns with known domains (`x`, `github`, `discord`, `telegram`, `linkedin`), store only the part after the domain.
   - Example: `https://github.com/Chain-Love/chain-love` -> `Chain-Love/chain-love`
 
+### Provider aliases
+
+The optional `aliases` column in `references/providers/providers.csv` stores a JSON
+array of documented former or alternate official names for the same provider
+entity. Keep the current display name in `name` and the canonical identifier in
+`slug`. Leave the cell empty when no verified aliases exist. Do not use product
+names, slogans, or unrelated subsidiaries as aliases; downstream matching treats
+case-only and punctuation-only differences as the same identity.
+
 ## Chain logo images
 
 Each `listings/specific-networks/<network>/` folder contains PNG logo files named after
