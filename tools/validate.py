@@ -238,6 +238,10 @@ def check_rules_validation(rules_validator, data) -> bool:
         meta_errors.extend(rule_meta_categories_consistent(data))
         meta_errors.extend(rule_meta_columns_consistent(data))
 
+    if "sdks" in data:
+        from csv_to_json import validate_sdk_peer_sources
+        meta_errors.extend(validate_sdk_peer_sources(data["sdks"]))
+
     for err in meta_errors:
         had_errors = True
         print(err)

@@ -4,6 +4,7 @@ import os
 import string
 import unicodedata
 import warnings
+from urllib.parse import quote
 
 OFFER_REF_PREFIX = "!offer:"
 
@@ -36,6 +37,46 @@ def try_parse_json(value):
     return json.loads(value)
 
 
+def parse_sdk_peer_requirements(value):
+    """Reject duplicate members before a peer declaration can lose evidence."""
+    if not isinstance(value, str) or not value.strip().startswith("{"):
+        return try_parse_json(value)
+
+    def unique_members(pairs):
+        result = {}
+        for key, member in pairs:
+            if key in result:
+                raise ValueError(f"Duplicate peerRequirements member '{key}'")
+            result[key] = member
+        return result
+
+    return json.loads(value, object_pairs_hook=unique_members)
+
+
+def validate_sdk_peer_sources(rows):
+    """Check artifact/source identity; JSON Schema checks the object shape."""
+    errors = []
+    for index, row in enumerate(rows):
+        value = row.get("peerRequirements")
+        if not isinstance(value, dict):
+            continue
+        package, version, source = (
+            value.get(k) for k in ("package", "version", "source")
+        )
+        if not all(isinstance(v, str) for v in (package, version, source)):
+            continue  # Missing or non-string fields are rejected by the schema.
+        expected = (
+            "https://registry.npmjs.org/"
+            + quote(package, safe="") + "/" + quote(version, safe="")
+        )
+        if source != expected:
+            errors.append(
+                f"SDK '{row.get('slug', index)}': peerRequirements.source must match "
+                f"the declared package/version: expected '{expected}', got '{source}'"
+            )
+    return errors
+
+
 def is_nullish(value: str) -> bool:
     return isinstance(value, str) and (
         value.strip().lower() == "null" or value.strip() == ""
@@ -66,12 +107,17 @@ def normalize(data_by_category: dict):
                 if is_boolish(value):
                     new_item[key] = is_trueish(value)
                 try:
-                    new_item[key] = try_parse_json(new_item[key])
+                    if category == "sdks" and key == "peerRequirements":
+                        new_item[key] = parse_sdk_peer_requirements(new_item[key])
+                    else:
+                        new_item[key] = try_parse_json(new_item[key])
                 except Exception as e:
                     errors.append(
                         f"Failed to parse value '{value}' for key '{key}' in category '{category}' as JSON: {e}"
                     )
             result[category].append(new_item)
+        if category == "sdks":
+            errors.extend(validate_sdk_peer_sources(result[category]))
     return result, errors
 
 

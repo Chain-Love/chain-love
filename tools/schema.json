@@ -668,6 +668,41 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
+        "peerRequirements": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["package", "version", "source", "requirements"],
+          "properties": {
+            "package": {
+              "type": "string",
+              "pattern": "^(?:@[a-z0-9][a-z0-9._-]*/)?[a-z0-9][a-z0-9._-]*$"
+            },
+            "version": {
+              "type": "string",
+              "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+            },
+            "source": {
+              "type": "string",
+              "pattern": "^https://registry\\.npmjs\\.org/[^?#]+/[^/?#]+$"
+            },
+            "requirements": {
+              "type": "object",
+              "minProperties": 1,
+              "propertyNames": {
+                "pattern": "^(?:@[a-z0-9][a-z0-9._-]*/)?[a-z0-9][a-z0-9._-]*$"
+              },
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["constraint", "optional"],
+                "properties": {
+                  "constraint": { "type": "string", "pattern": "\\S" },
+                  "optional": { "type": "boolean" }
+                }
+              }
+            }
+          }
+        },
         "latestKnownVersion": { "type": ["string", "null"] },
         "latestKnownReleaseDate": { "type": ["string", "null"] },
         "maintainer": { "type": ["string", "null"] },
