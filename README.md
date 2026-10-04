@@ -9,6 +9,15 @@ This guide explains how to **add new categories and columns for the Chain.Love p
 Data files are not documented in detail in this guide. Their structure and contribution flow are described in the `main` branch README: [README.md](https://github.com/Chain-Love/chain-love/blob/main/README.md).  
 However, schema/meta changes in this branch must be mirrored in data tables on `main` (for example when adding/removing categories or columns).
 
+### Optional API authentication metadata
+
+`apis.authenticationMethods` is an optional JSON array containing only verified
+credential methods: `none`, `api_key`, `bearer_token`, `jwt`, `basic_auth`,
+`oauth2`, `mtls`, or `wallet_signature`. An empty cell means the method has not
+been verified; `none` cannot be combined with another value, and duplicate
+values are invalid. Existing CSV rows may omit this optional column while a
+table is being backfilled; the loader treats the omitted value as blank.
+
 ---
 
 ## 1. Files and responsibilities
@@ -565,4 +574,3 @@ When asked to **remove a column**, an agent should:
   - Edit `tools/schema.json`: remove the column from every `$defs.<category>` where it appears.
   - Remove its entry from `meta/columns.json`.
   - On `main`, remove the column from every affected category CSV (see **§5**).
-
