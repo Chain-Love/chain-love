@@ -67,11 +67,8 @@ def base_api_item():
         "address": None,
         "tag": None,
         "uptimeSla": None,
-        "verifiedUptime": None,
         "blocksBehindSla": None,
-        "verifiedBlocksBehindAvg": None,
         "bandwidthSla": None,
-        "verifiedLatency": None,
         "supportSla": None,
     }
 
@@ -137,11 +134,8 @@ def test_loader_pads_legacy_rows_that_omit_optional_authentication_methods():
         "address",
         "tag",
         "uptimeSla",
-        "verifiedUptime",
         "blocksBehindSla",
-        "verifiedBlocksBehindAvg",
         "bandwidthSla",
-        "verifiedLatency",
         "supportSla",
     ]
     legacy_row = [
@@ -157,23 +151,7 @@ def test_loader_pads_legacy_rows_that_omit_optional_authentication_methods():
         "$0",
         "$0",
         "FALSE",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-    ]
+    ] + [""] * 13
 
     with tempfile.NamedTemporaryFile("w", newline="", delete=False) as f:
         writer = csv.writer(f)
