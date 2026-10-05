@@ -59,7 +59,7 @@ jobs:
           merge_base = git("merge-base", base, head).strip()
           changed = git("diff", "--name-only", "-z", "--no-renames", "--diff-filter=AMT",
                         f"{merge_base}..{head}").split("\0")
-          url_re = re.compile(r'https?://[^\s,"\'>)]+')
+          url_re = re.compile(r'https?://[^\s,"\'>)]*', re.IGNORECASE)
           social_urls = {
               "x": "https://x.com/",
               "github": "https://github.com/",
@@ -92,7 +92,7 @@ jobs:
                       for column, prefix in social_urls.items():
                           raw = (row.get(column) or "").strip()
                           if raw:
-                              links.add(raw if raw.startswith(("http://", "https://"))
+                              links.add(raw if raw.lower().startswith(("http://", "https://"))
                                         else prefix + raw.lstrip("@"))
               return links
 
@@ -115,7 +115,9 @@ jobs:
               raise ValueError("Analysis exceeds the 10000 URL limit")
           for url in urls:
               parsed = urlsplit(url)
-              if any(character in url for character in "\r\n\0") or not parsed.hostname:
+              # Accessing port also rejects non-numeric and out-of-range authorities.
+              port = parsed.port
+              if any(character in url for character in "\r\n\0\\") or not parsed.hostname:
                   raise ValueError("Malformed URL input")
               if parsed.username is not None or parsed.password is not None:
                   raise ValueError("Credential-bearing URLs are not checked")
