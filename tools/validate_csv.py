@@ -5,6 +5,7 @@ import csv
 import re
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
+PROVIDER_STATUSES = {"active", "acquired", "renamed", "sunset", "retired", "unknown"}
 
 Rule = Callable[[Path, List[Dict[str, str]]], List[str]]
 
@@ -50,6 +51,53 @@ def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
 
     return errors
 
+def rule_provider_lifecycle(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    """Validate provider lifecycle values when the optional columns are present."""
+    if not rows or "providerStatus" not in rows[0]:
+        return []
+
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        status = (row.get("providerStatus") or "").strip()
+        parent = (row.get("parentProvider") or "").strip()
+
+        if status and status not in PROVIDER_STATUSES:
+            allowed = ", ".join(sorted(PROVIDER_STATUSES))
+            errors.append(
+                f"{path}: row {idx}: providerStatus '{status}' is invalid; expected one of {allowed}"
+            )
+
+        if parent and status not in {"acquired", "renamed"}:
+            errors.append(
+                f"{path}: row {idx}: parentProvider requires providerStatus=acquired or renamed"
+            )
+
+        if status in {"acquired", "renamed"} and not parent:
+            errors.append(
+                f"{path}: row {idx}: providerStatus={status} requires parentProvider"
+            )
+
+    return errors
+
+def provider_parent_reference_errors(root: Path) -> List[str]:
+    """Check parentProvider references against provider slugs when the data tree is present."""
+    path = root / "references" / "providers" / "providers.csv"
+    if not path.exists():
+        return []
+
+    with path.open(newline="", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+
+    slugs = {row.get("slug", "").strip() for row in rows if row.get("slug", "").strip()}
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        parent = (row.get("parentProvider") or "").strip()
+        if parent and parent not in slugs:
+            errors.append(
+                f"{path}: row {idx}: parentProvider '{parent}' does not match a provider slug"
+            )
+    return errors
+
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
@@ -89,6 +137,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_provider_lifecycle)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
@@ -96,6 +145,8 @@ def main():
     for csv_file in iter_csv_files(root):
         errors = validator.validate_file(csv_file)
         all_errors.extend(errors)
+
+    all_errors.extend(provider_parent_reference_errors(root))
 
     if all_errors:
         print("Validation errors:")
