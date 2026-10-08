@@ -122,13 +122,13 @@ def choose_npm_package(urls: List[str]) -> Optional[str]:
 def is_stable_npm_version(v: str) -> bool:
     if not v:
         return False
-    s = v.strip()
+    # Build metadata after '+' does not make a version a prerelease.
+    s = v.strip().split("+", 1)[0]
     if PRERELEASE_KEYWORDS_RE.search(s):
         return False
     if "-" in s:
         return False
     s = s[1:] if s.startswith("v") else s
-    s = s.split("+", 1)[0]
     parts = s.split(".")
     if len(parts) < 2 or len(parts) > 4:
         return False
