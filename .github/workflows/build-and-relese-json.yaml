@@ -1,11 +1,8 @@
 name: Build & Release JSON
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "12 12 * * MON"
   workflow_dispatch:
 
 permissions:
