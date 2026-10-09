@@ -586,6 +586,33 @@
         "mcpEndpoint": { "type": ["string", "null"] },
         "authType": { "type": "string" },
         "credentialKey": { "type": ["string", "null"] },
+        "credentialTransport": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "anyOf": [
+            { "maxProperties": 0 },
+            { "required": ["in", "name", "format"] }
+          ],
+          "properties": {
+            "in": { "type": "string", "enum": ["header", "query"] },
+            "name": { "type": "string", "minLength": 1 },
+            "format": { "type": "string", "enum": ["raw", "bearer"] }
+          },
+          "allOf": [
+            {
+              "if": { "required": ["in"], "properties": { "in": { "const": "header" } } },
+              "then": { "properties": { "name": { "pattern": "^[!#$%&'*+.^_`|~0-9A-Za-z-]+$" } } }
+            },
+            {
+              "if": { "required": ["in"], "properties": { "in": { "const": "query" } } },
+              "then": { "properties": { "name": { "pattern": "^[0-9A-Za-z_.~-]+$" } } }
+            },
+            {
+              "if": { "required": ["format"], "properties": { "format": { "const": "bearer" } } },
+              "then": { "properties": { "in": { "const": "header" }, "name": { "pattern": "^[Aa][Uu][Tt][Hh][Oo][Rr][Ii][Zz][Aa][Tt][Ii][Oo][Nn]$" } } }
+            }
+          ]
+        },
         "selfHostedCommand": { "type": ["string", "null"] },
         "selfHostedArgs": {
           "type": ["array", "null"],
@@ -631,6 +658,21 @@
         "price",
         "trial",
         "starred"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "required": ["credentialTransport"],
+            "properties": { "credentialTransport": { "type": "object", "minProperties": 1 } }
+          },
+          "then": {
+            "properties": {
+              "hostingType": { "const": "Hosted" },
+              "transportType": { "enum": ["http", "sse"] },
+              "authType": { "not": { "const": "None" } }
+            }
+          }
+        }
       ]
     },
 
