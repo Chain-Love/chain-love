@@ -206,7 +206,7 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
-        "decentralizationModel": { "type": ["string", "null"] },
+        "decentralizationModel": { "type": ["string", "null"], "enum": ["Decentralized", "Hybrid", "Centralized", null] },
         "economicalSecurity": { "type": "boolean" },
         "economicalSecurityNote": { "type": ["string", "null"] },
         "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
