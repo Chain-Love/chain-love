@@ -277,12 +277,15 @@ def make_providers_schema(network_schema) -> dict:
             del providers_schema['$defs'][definition]['required'][index]
     return providers_schema
 
+def load_json(path: str):
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
 def main():
     had_errors = False
 
-    schema = None
-    with open("schema.json", "r") as f:
-        schema = json.load(f)
+    schema = load_json("schema.json")
 
     rules = Validator()
     rules.add_rule(rule_slug_unique)
@@ -296,9 +299,7 @@ def main():
     validator = Draft202012Validator(schema)
     for network_spec in os.listdir("json"):
         print(f"Validating {network_spec}...")
-        data = None
-        with open(f"json/{network_spec}", "r") as f:
-            data = json.load(f)
+        data = load_json(f"json/{network_spec}")
         if not check_validation(data=data, schema_validator=validator, rules_validator=rules):
             had_errors = True
 
