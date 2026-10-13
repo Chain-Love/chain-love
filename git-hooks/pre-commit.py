@@ -10,7 +10,6 @@ import tempfile
 import urllib.request
 from pathlib import Path
 from typing import Iterable
-import csv
 
 # ──────────────────────────────────────
 # Configuration
@@ -140,7 +139,6 @@ def iter_csv(repo_root: Path) -> Iterable[Path]:
 def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
     """
     Sort CSV files by slug column without modifying quoting.
-    Uses the same naive delimiter parsing as rewrite_urls().
     """
     print("Sorting CSV files by slug")
 
@@ -187,9 +185,6 @@ def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
         subprocess.run(["git", "add", str(csv_file)], check=True)
         print(f"  sorted: {csv_file}")
 
-def looks_like_url(v: str) -> bool:
-    return v.startswith("http://") or v.startswith("https://")
-
 
 def main() -> None:
     ensure_tool_exists("git")
@@ -217,7 +212,10 @@ def main() -> None:
             venv_dir = tmp_root / ".venv"
             run([python, "-m", "venv", str(venv_dir)])
 
-            venv_python = venv_dir / "bin" / "python"
+            if sys.platform == "win32":
+                venv_python = venv_dir / "Scripts" / "python.exe"
+            else:
+                venv_python = venv_dir / "bin" / "python"
             python = str(venv_python)
 
             run([
