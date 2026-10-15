@@ -596,12 +596,80 @@ def collect_used_provider_names(data_by_category: dict[str, list[dict]]) -> set[
     return names
 
 
+def parse_provider_aliases(value, slug: str) -> list[str]:
+    """Normalize the providers.csv ``aliases`` cell to a list of names.
+
+    Accepts a JSON list (``["Matic Network"]``), an empty cell (``[]``) or a
+    single bare name (``Matic Network``). Anything else is a data error.
+    """
+    if value is None:
+        return []
+    if isinstance(value, list):
+        items = value
+    elif isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return []
+        if text.startswith("["):
+            try:
+                parsed = json.loads(text)
+            except Exception as e:
+                raise ValueError(
+                    f"Provider '{slug}' has an aliases cell that is not valid JSON: {e}"
+                )
+            if not isinstance(parsed, list):
+                raise ValueError(
+                    f"Provider '{slug}' aliases must be a JSON list of names"
+                )
+            items = parsed
+        else:
+            items = [text]
+    else:
+        raise ValueError(
+            f"Provider '{slug}' aliases must be a JSON list of names"
+        )
+    aliases = []
+    for item in items:
+        if not isinstance(item, str) or not item.strip():
+            raise ValueError(
+                f"Provider '{slug}' has an empty aliases entry"
+            )
+        aliases.append(item.strip())
+    if len(set(aliases)) != len(aliases):
+        raise ValueError(f"Provider '{slug}' lists a duplicate alias")
+    return aliases
+
+
+def check_provider_alias_collisions(provider_by_name: dict[str, dict]) -> None:
+    """Fail when an alias collides with another provider's name/slug/alias.
+
+    Matching is case-insensitive: ``Matic`` must not resolve to two different
+    canonical providers.
+    """
+    seen: dict[str, str] = {}
+    for name, p in provider_by_name.items():
+        owner = p.get("slug") or name
+        for key in (name, p.get("slug") or ""):
+            if isinstance(key, str) and key.strip():
+                seen.setdefault(key.strip().casefold(), owner)
+    for name, p in provider_by_name.items():
+        slug = p.get("slug") or name
+        for alias in parse_provider_aliases(p.get("aliases"), slug):
+            folded = alias.casefold()
+            if folded in seen and seen[folded] != slug:
+                raise ValueError(
+                    f"Provider '{slug}' alias '{alias}' collides with '{seen[folded]}'"
+                )
+            seen.setdefault(folded, slug)
+
+
 def build_provider_meta_from_names(
     provider_by_name: dict[str, dict],
     provider_categories: dict[str, set[str]],
     network: str,
 ) -> dict[str, dict]:
     meta = {}
+    check_provider_alias_collisions(provider_by_name)
 
     for name, categories in provider_categories.items():
         p = provider_by_name.get(name)
@@ -632,6 +700,7 @@ def build_provider_meta_from_names(
                 "supportEmail": p.get("supportEmail"),
                 "starred": starred,
                 "tag": p.get("tag"),
+                "aliases": parse_provider_aliases(p.get("aliases"), slug),
                 "categories": categories_list,
             }
 
