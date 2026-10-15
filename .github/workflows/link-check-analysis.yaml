@@ -60,7 +60,14 @@ jobs:
           for f, lines in files.items():
               if lines:
                   Path(f).parent.mkdir(parents=True, exist_ok=True)
-                  content = ([headers[f]] if f in headers else []) + lines
+                  header = headers.get(f)
+                  if header:
+                      # A PR that changes the header row itself (e.g. a new
+                      # column) re-adds the header line in the diff. Drop it so
+                      # column names are not parsed as a data row (their
+                      # handles would leak in as URLs that match nothing).
+                      lines = [l for l in lines if l != header]
+                  content = ([header] if header else []) + lines
                   Path(f).write_text("\n".join(content) + "\n")
           PY
       
