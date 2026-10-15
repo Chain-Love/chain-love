@@ -13,6 +13,7 @@ Use references for data you want to define once and reuse across many listings.
 
 - `slug`: unique provider identifier.
 - `name`: provider display name.
+- `aliases`: optional JSON array of documented former or alternate official names for the same provider entity.
 - `logoPath`: logo filename only (for example `alchemy.png`).
 - `description`: short provider summary.
 - link fields:
@@ -24,3 +25,11 @@ Link style difference:
 
 - `references/providers/providers.csv`: plain URLs in dedicated link columns.
 - `references/offers/*.csv`: Markdown links (commonly inside `actionButtons`).
+
+Provider aliases:
+
+- Keep `name` as the current display name and `slug` as the canonical identifier.
+- Use `aliases` only for documented former names or alternate official names of the same entity.
+- Do not add product names, slogans, or unrelated subsidiaries as aliases.
+- Store an empty cell when a provider has no verified aliases; the generated JSON uses `null`.
+- Downstream provider search and duplicate detection should compare aliases case- and punctuation-insensitively.
