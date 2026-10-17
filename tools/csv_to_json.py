@@ -1,9 +1,11 @@
 import csv
 import json
 import os
+import re
 import string
 import unicodedata
 import warnings
+from datetime import date
 
 OFFER_REF_PREFIX = "!offer:"
 
@@ -50,6 +52,230 @@ def is_boolish(value: str) -> bool:
 
 def is_trueish(value: str) -> bool:
     return isinstance(value, str) and value.strip().lower() == "true"
+
+
+# ── DBIP #4514: documented asset identities ──────────────────────────────────
+DOCUMENTED_ASSET_IDENTITIES_COLUMN = "documentedAssetIdentities"
+ASSET_REPRESENTATIONS = ("issuer_native", "bridged", "wrapped")
+ASSET_USAGES = ("origin", "destination", "both")
+EIP155_NAMESPACE = "eip155"
+ERC20_ASSET_NAMESPACE = "erc20"
+EVM_ADDRESS_RE = re.compile(r"^0x[0-9a-fA-F]{40}$")
+CHECKED_AT_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def parse_caip19_asset_id(asset_id):
+    """Split a CAIP-19 asset id into its four components, or None when malformed.
+
+    The structural check is namespace-agnostic:
+    <chain namespace>:<chain reference>/<asset namespace>:<asset reference>.
+    Namespace-specific profiles (today eip155 ERC-20) are enforced by their own
+    parsers, so this helper stays usable for other namespaces without pretending
+    to know their reference formats.
+    """
+    if not isinstance(asset_id, str):
+        return None
+    parts = asset_id.split("/")
+    if len(parts) != 2:
+        return None
+    chain_part, asset_part = parts
+    if chain_part.count(":") != 1 or asset_part.count(":") != 1:
+        return None
+    namespace, reference = chain_part.split(":")
+    asset_namespace, asset_reference = asset_part.split(":")
+    if not namespace or not reference or not asset_namespace or not asset_reference:
+        return None
+    return namespace, reference, asset_namespace, asset_reference
+
+
+def parse_eip155_erc20_asset_id(asset_id):
+    """Parse 'eip155:<numericChainId>/erc20:0x<40hex>' into (chain_id, address).
+
+    Returns None when the value is not an exact EVM ERC-20 CAIP-19 asset type,
+    which includes bare tickers such as 'USDC'.
+    """
+    if not isinstance(asset_id, str):
+        return None
+    parts = asset_id.split("/")
+    if len(parts) != 2:
+        return None
+    chain_part, asset_part = parts
+    if not chain_part.startswith(EIP155_NAMESPACE + ":"):
+        return None
+    chain_id = chain_part[len(EIP155_NAMESPACE) + 1:]
+    # isdigit() alone also accepts unicode digits such as a superscript; int() would then fail.
+    if not (chain_id.isascii() and chain_id.isdigit()):
+        return None
+    if not asset_part.startswith(ERC20_ASSET_NAMESPACE + ":"):
+        return None
+    address = asset_part[len(ERC20_ASSET_NAMESPACE) + 1:]
+    if not EVM_ADDRESS_RE.match(address):
+        return None
+    return chain_id, address
+
+
+def normalized_asset_id_key(parsed):
+    """Case-insensitive identity used when testing duplicates.
+
+    Addresses and namespaces compare case-insensitively; numeric eip155 chain
+    references compare by value so '08453' and '8453' are the same chain. The
+    spelling a contributor supplied is what callers report -- only the
+    comparison is normalized.
+    """
+    namespace, reference, asset_namespace, asset_reference = parsed
+    if namespace == EIP155_NAMESPACE and reference.isascii() and reference.isdigit():
+        reference_key = str(int(reference))
+    else:
+        reference_key = reference.lower()
+    return (
+        namespace.lower(),
+        reference_key,
+        asset_namespace.lower(),
+        asset_reference.lower(),
+    )
+
+
+def validate_documented_asset_identities(
+    rows: list,
+    network_name: str,
+    category: str,
+    network_chain_ids: dict | None = None,
+) -> list[str]:
+    """DBIP #4514: validate the optional documentedAssetIdentities column.
+
+    Each record is a bridge-provider-documented asset the offer handles on this
+    exact network. The checks implement the issue's acceptance criteria:
+
+      1. eip155 ERC-20 values must parse exactly as
+         eip155:<numericChainId>/erc20:0x<40hex>; bare tickers such as 'USDC'
+         are rejected. Duplicate detection compares addresses case-insensitively
+         while the supplied spelling is what gets reported.
+      2. When the caller supplies a network_chain_ids registry
+         (network -> {chain environment: chainId}), the asset chainId must match
+         the row's network and chain environment. The repository carries no such
+         registry today, so csv_to_json passes None and this criterion stays
+         dormant until one exists -- inventing chain IDs here would be worse
+         than not checking them.
+      3. Every record needs an https sourceUrl. Whether that URL is the bridge
+         provider's official support page cannot be decided from the data, so
+         the check is structural (scheme + presence) and the editorial burden
+         stays with the contributor.
+      4. Duplicate normalized assetIds in one listing are rejected;
+         representation/usage enums are validated only when present.
+      5. Missing, blank or NULL values are skipped, so existing listings without
+         the column produce byte-identical JSON.
+
+    Returns a list of human-readable error strings (empty when valid).
+    """
+    errors = []
+    for row_index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            continue
+        value = row.get(DOCUMENTED_ASSET_IDENTITIES_COLUMN)
+        if value is None:
+            continue  # criterion 5: absent, blank or NULL
+        slug = row.get("slug") or f"row {row_index}"
+        where = f"{network_name}/{category}/{slug}"
+        if not isinstance(value, list):
+            errors.append(
+                f"{where}: documentedAssetIdentities must be a JSON array, "
+                f"got {type(value).__name__}"
+            )
+            continue
+        seen = {}
+        for record_index, record in enumerate(value):
+            label = f"{where}: documentedAssetIdentities[{record_index}]"
+            if not isinstance(record, dict):
+                errors.append(
+                    f"{label} must be a JSON object, got {type(record).__name__}"
+                )
+                continue
+
+            # assetId (required) -- criterion 1
+            asset_id = record.get("assetId")
+            if not isinstance(asset_id, str) or not asset_id.strip():
+                errors.append(f"{label} is missing the required assetId")
+                continue
+            asset_id = asset_id.strip()
+            parsed = parse_caip19_asset_id(asset_id)
+            if parsed is None:
+                errors.append(
+                    f"{label}: assetId '{asset_id}' is not a CAIP-19 asset id "
+                    f"(expected <namespace>:<reference>/<asset_namespace>:<asset_reference>); "
+                    f"a ticker such as 'USDC' alone is not an asset identity"
+                )
+                continue
+            namespace, reference = parsed[0], parsed[1]
+            if namespace == EIP155_NAMESPACE:
+                if not (reference.isascii() and reference.isdigit()):
+                    errors.append(
+                        f"{label}: eip155 chain reference '{reference}' must be numeric"
+                    )
+                    continue
+                if parse_eip155_erc20_asset_id(asset_id) is None:
+                    errors.append(
+                        f"{label}: '{asset_id}' is not an exact eip155 ERC-20 asset id "
+                        f"(expected eip155:<numericChainId>/erc20:0x<40 hex>)"
+                    )
+                    continue
+                # criterion 2, only when a network -> chainId registry is supplied
+                if network_chain_ids is not None:
+                    environment = (row.get("chain") or "").strip().lower()
+                    expected = network_chain_ids.get(network_name, {}).get(environment)
+                    if expected is not None and str(expected) != reference:
+                        errors.append(
+                            f"{label}: chainId {reference} does not match network "
+                            f"'{network_name}' ({environment or 'mainnet'} expects {expected})"
+                        )
+
+            # representation / usage enums, validated only when present
+            for field, allowed in (
+                ("representation", ASSET_REPRESENTATIONS),
+                ("usage", ASSET_USAGES),
+            ):
+                if field not in record or record[field] is None:
+                    continue
+                field_value = record[field]
+                if field_value not in allowed:
+                    errors.append(
+                        f"{label}: {field} '{field_value}' is not one of {list(allowed)}"
+                    )
+
+            # sourceUrl (required, https) -- criterion 3
+            source_url = record.get("sourceUrl")
+            if not isinstance(source_url, str) or not source_url.strip():
+                errors.append(f"{label} is missing the required sourceUrl")
+            elif not source_url.strip().lower().startswith("https://"):
+                errors.append(
+                    f"{label}: sourceUrl '{source_url}' must be an https link to the "
+                    f"bridge provider's official token/route support documentation"
+                )
+
+            # checkedAt, optional YYYY-MM-DD date
+            if record.get("checkedAt") is not None:
+                checked_at = record["checkedAt"]
+                if not isinstance(checked_at, str) or not CHECKED_AT_RE.match(checked_at):
+                    errors.append(
+                        f"{label}: checkedAt '{checked_at}' must be a YYYY-MM-DD date"
+                    )
+                else:
+                    try:
+                        date.fromisoformat(checked_at)
+                    except ValueError:
+                        errors.append(
+                            f"{label}: checkedAt '{checked_at}' is not a real calendar date"
+                        )
+
+            # criterion 4: duplicate normalized assetIds in one listing
+            key = normalized_asset_id_key(parsed)
+            if key in seen:
+                errors.append(
+                    f"{label}: assetId '{asset_id}' duplicates '{seen[key]}' in the same "
+                    f"listing (compared case-insensitively)"
+                )
+            else:
+                seen[key] = asset_id
+    return errors
 
 
 def normalize(data_by_category: dict):
@@ -524,6 +750,21 @@ def resolve_offers(
                 new_item = dict(item)
                 new_item.setdefault("offer", None)
                 out_items.append(new_item)
+
+        # DBIP #4514: documented asset identities are evidence-gated, so a
+        # malformed record fails the build instead of reaching the JSON. The
+        # check runs on the merged rows (offer values included) with the
+        # network and category context the error messages need.
+        identity_errors = validate_documented_asset_identities(
+            out_items,
+            network_name=network_name,
+            category=category,
+        )
+        if identity_errors:
+            raise ValueError(
+                f"Invalid documentedAssetIdentities for network '{network_name}', "
+                f"category '{category}':\n" + "\n".join(identity_errors)
+            )
 
         resolved[category] = out_items
 
