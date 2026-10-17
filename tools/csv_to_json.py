@@ -52,6 +52,136 @@ def is_trueish(value: str) -> bool:
     return isinstance(value, str) and value.strip().lower() == "true"
 
 
+# ── DBIP #4412: bridge recovery options ──────────────────────────────────────
+RECOVERY_OPTIONS_COLUMN = "recoveryOptions"
+FAILURE_CASES = (
+    "unfilled-expired",
+    "destination-execution-failed",
+    "execution-expired",
+    "other-documented",
+)
+RECOVERY_MECHANISMS = (
+    "protocol-refund",
+    "permissionless-retry",
+    "user-initiated-claim",
+)
+SCOPE_NOTE_MIN_LENGTH = 20
+
+
+def recovery_option_fingerprint(option):
+    """Canonical comparable form of one recovery option.
+
+    uniqueItems in the schema compares whole objects, so two entries that
+    differ in any field -- even a longer scopeNote -- are distinct options.
+    The fingerprint keeps that deep-equality semantics while giving the
+    duplicate error a stable, sortable key.
+    """
+    return json.dumps(option, sort_keys=True, ensure_ascii=False)
+
+
+def validate_recovery_options(
+    rows: list,
+    network_name: str,
+    category: str,
+) -> list[str]:
+    """DBIP #4412: validate the optional recoveryOptions column.
+
+    Each entry is a source-backed conditional recovery mechanism scoped to a
+    documented bridge failure case -- never a guarantee of reimbursement. The
+    checks below implement the issue's acceptance criteria that a converter
+    can decide mechanically:
+
+      - structure: a JSON array (never empty) of objects, each carrying the
+        four required properties (criterion 3);
+      - exact enum tokens for failureCase and mechanism, so a misspelling
+        cannot silently widen a filter;
+      - a scopeNote that actually says something: non-blank, at least 20
+        characters, containing a non-whitespace character;
+      - exact duplicates rejected, matching the schema's uniqueItems;
+      - NULL/absent values are skipped: not documented is not unsupported.
+
+    Deliberately NOT checked here, because they cannot be decided from the
+    data: whether the sourceUrl is the provider's own live documentation
+    supporting the asserted failure state (the URL's *shape* lives in
+    schema.json, its liveness is a review step), and whether an
+    "other-documented" failureCase is genuinely explained by its scopeNote.
+
+    Returns a list of human-readable error strings (empty when valid).
+    """
+    errors = []
+    for row_index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            continue
+        value = row.get(RECOVERY_OPTIONS_COLUMN)
+        if value is None:
+            continue  # absent, blank or NULL: unknown, not unsupported
+        slug = row.get("slug") or f"row {row_index}"
+        where = f"{network_name}/{category}/{slug}"
+        if not isinstance(value, list):
+            errors.append(
+                f"{where}: recoveryOptions must be a JSON array, "
+                f"got {type(value).__name__}"
+            )
+            continue
+        if not value:
+            errors.append(
+                f"{where}: recoveryOptions is an empty array; leave the column "
+                f"blank when no recovery mechanism is documented"
+            )
+            continue
+        seen = {}
+        for option_index, option in enumerate(value):
+            label = f"{where}: recoveryOptions[{option_index}]"
+            if not isinstance(option, dict):
+                errors.append(
+                    f"{label} must be a JSON object, got {type(option).__name__}"
+                )
+                continue
+
+            missing = [
+                field
+                for field in ("failureCase", "mechanism", "scopeNote", "sourceUrl")
+                if field not in option or option[field] is None
+            ]
+            if missing:
+                for field in missing:
+                    errors.append(f"{label} is missing the required '{field}'")
+                continue  # further checks would cascade on absent fields
+
+            failure_case = option["failureCase"]
+            if failure_case not in FAILURE_CASES:
+                errors.append(
+                    f"{label}: failureCase '{failure_case}' is not one of {list(FAILURE_CASES)}"
+                )
+            mechanism = option["mechanism"]
+            if mechanism not in RECOVERY_MECHANISMS:
+                errors.append(
+                    f"{label}: mechanism '{mechanism}' is not one of {list(RECOVERY_MECHANISMS)}"
+                )
+
+            scope_note = option["scopeNote"]
+            if not isinstance(scope_note, str):
+                errors.append(f"{label}: scopeNote must be a string")
+            elif len(scope_note) < SCOPE_NOTE_MIN_LENGTH:
+                errors.append(
+                    f"{label}: scopeNote is {len(scope_note)} characters; it must "
+                    f"state preconditions, direction/route restrictions, time "
+                    f"windows and exclusions (at least {SCOPE_NOTE_MIN_LENGTH})"
+                )
+            elif not scope_note.strip():
+                errors.append(f"{label}: scopeNote is whitespace only")
+
+            fingerprint = recovery_option_fingerprint(option)
+            if fingerprint in seen:
+                errors.append(
+                    f"{label} duplicates {seen[fingerprint]} exactly; each entry "
+                    f"must describe a distinct failure case and mechanism"
+                )
+            else:
+                seen[fingerprint] = label
+    return errors
+
+
 def normalize(data_by_category: dict):
     result = {}
     errors = []
@@ -524,6 +654,21 @@ def resolve_offers(
                 new_item = dict(item)
                 new_item.setdefault("offer", None)
                 out_items.append(new_item)
+
+        # DBIP #4412: recovery options are evidence-backed claims about what
+        # happens after a failed transfer, so a malformed entry fails the
+        # build instead of reaching the JSON. The check runs on the merged
+        # rows (offer values included) with the context the errors need.
+        recovery_errors = validate_recovery_options(
+            out_items,
+            network_name=network_name,
+            category=category,
+        )
+        if recovery_errors:
+            raise ValueError(
+                f"Invalid recoveryOptions for network '{network_name}', "
+                f"category '{category}':\n" + "\n".join(recovery_errors)
+            )
 
         resolved[category] = out_items
 

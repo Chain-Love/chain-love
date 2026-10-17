@@ -272,6 +272,32 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
+        "recoveryOptions": {
+          "type": ["array", "null"],
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["failureCase", "mechanism", "scopeNote", "sourceUrl"],
+            "properties": {
+              "failureCase": {
+                "type": "string",
+                "enum": ["unfilled-expired", "destination-execution-failed", "execution-expired", "other-documented"]
+              },
+              "mechanism": {
+                "type": "string",
+                "enum": ["protocol-refund", "permissionless-retry", "user-initiated-claim"]
+              },
+              "scopeNote": { "type": "string", "minLength": 20, "pattern": "\\S" },
+              "sourceUrl": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\\.)+[A-Za-z]{2,63}(?:[/?#]|$)"
+              }
+            }
+          }
+        },
         "txSpeedSla": { "type": ["string", "null"] },
         "throughputSla": { "type": ["string", "null"] },
         "price": { "type": ["string", "null"] },
