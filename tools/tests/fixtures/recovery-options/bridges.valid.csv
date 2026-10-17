@@ -1,0 +1,4 @@
+slug,name,recoveryOptions
+demo-bridge-1,Demo Bridge A,"[{""failureCase"": ""unfilled-expired"", ""mechanism"": ""protocol-refund"", ""scopeNote"": ""Protocol refunds the sender automatically if the HTLC is not filled within the 24h timeout; the user only pays gas to claim."", ""sourceUrl"": ""https://docs.example.bridge/refunds""}]"
+demo-bridge-2,Demo Bridge B,
+demo-bridge-3,Demo Bridge C,"[{""failureCase"": ""unfilled-expired"", ""mechanism"": ""permissionless-retry"", ""scopeNote"": ""Anyone may re-submit the fill after a transient RPC failure; no trusted intermediary is required to restart the route."", ""sourceUrl"": ""https://docs.example.bridge/retry""}, {""failureCase"": ""destination-execution-failed"", ""mechanism"": ""user-initiated-claim"", ""scopeNote"": ""User claims locked funds via the claim contract within 7 days; proof of failed destination execution is required."", ""sourceUrl"": ""https://docs.example.bridge/claims""}]"

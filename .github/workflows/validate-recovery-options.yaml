@@ -1,0 +1,37 @@
+name: "Validate recoveryOptions (DBIP #4412)"
+
+on:
+  push:
+    branches:
+      - "dbip-4412-recovery-options"
+    paths:
+      - "tools/csv_to_json.py"
+      - "tools/schema.json"
+      - "meta/columns.json"
+      - "tools/tests/test_recovery_options.py"
+      - "tools/tests/fixtures/recovery-options/**"
+  pull_request:
+    paths:
+      - "tools/csv_to_json.py"
+      - "tools/schema.json"
+      - "meta/columns.json"
+      - "tools/tests/test_recovery_options.py"
+      - "tools/tests/fixtures/recovery-options/**"
+
+jobs:
+  recovery-options:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python3 -m pip install --quiet jsonschema
+
+      - name: Run recoveryOptions regression tests
+        run: python3 tools/tests/test_recovery_options.py
