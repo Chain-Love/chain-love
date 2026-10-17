@@ -280,10 +280,11 @@ def main() -> int:
         tmp = pathlib.Path(tempfile.mkdtemp(prefix="kef-e2e-"))
         shutil.copytree(e2e_root, tmp, dirs_exist_ok=True)
         (tmp / "listings" / "all-networks").mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(
-            FIXTURES / network_listing,
-            tmp / "listings" / "specific-networks" / "demo" / "wallets.csv",
-        )
+        # git does not track empty directories, so the network's own directory is
+        # created here rather than expected to survive the checkout in CI.
+        network_dir = tmp / "listings" / "specific-networks" / "demo"
+        network_dir.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(FIXTURES / network_listing, network_dir / "wallets.csv")
         return tmp
 
     def run_tool(cwd: pathlib.Path):
