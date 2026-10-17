@@ -1,0 +1,61 @@
+name: "Validate documentedAssetIdentities column"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-documented-asset-identities-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  asset-identities:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # The json-tools branch carries no CI of its own and no listings data, so
+      # this workflow assembles a workspace from two checkouts: the converter,
+      # schema and meta from THIS pull request, and the listing data from main
+      # (the same split main's own validate.yaml performs in reverse). The
+      # backward-compatibility benchmark and the schema-conformance checks can
+      # only run against real listing rows.
+      - name: Checkout this PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Checkout main listing data
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: false
+          path: upstream-main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Assemble workspace
+        run: |
+          set -euo pipefail
+          # The PR tree already carries tools/ and meta/ (json-tools layout);
+          # only the schema copy and main's listing data are missing.
+          cp tools/schema.json .
+          cp -r upstream-main/listings .
+          cp -r upstream-main/references .
+          ls -l
+
+      # csv_to_json.py itself runs on the standard library; the declared
+      # dependencies are needed for the schema-conformance section, which
+      # validates generated rows against tools/schema.json.
+      - name: Install dependencies
+        run: pip install -r tools/requirements.txt
+
+      - name: Regression test
+        run: python3 tools/tests/test_documented_asset_identities.py

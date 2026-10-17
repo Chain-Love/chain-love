@@ -272,6 +272,27 @@
           "type": ["array", "null"],
           "items": { "type": "string" }
         },
+        "documentedAssetIdentities": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["assetId", "sourceUrl"],
+            "properties": {
+              "assetId": { "type": "string" },
+              "representation": {
+                "type": "string",
+                "enum": ["issuer_native", "bridged", "wrapped"]
+              },
+              "usage": {
+                "type": "string",
+                "enum": ["origin", "destination", "both"]
+              },
+              "sourceUrl": { "type": "string" },
+              "checkedAt": { "type": "string" }
+            }
+          }
+        },
         "txSpeedSla": { "type": ["string", "null"] },
         "throughputSla": { "type": ["string", "null"] },
         "price": { "type": ["string", "null"] },
