@@ -13,7 +13,10 @@ import inspect as _inspect
 import io
 import json
 import pathlib
+import shutil
+import subprocess
 import sys
+import tempfile
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
@@ -268,6 +271,88 @@ def main() -> int:
         "the canonical call site is labelled references/offers",
         'context="references/offers"' in body,
     )
+
+    print("\n[end-to-end: main() fails a run whose network listing is unsorted]")
+    e2e_root = FIXTURES / "e2e-network-negative"
+
+    def stage_e2e(network_listing: str) -> pathlib.Path:
+        """Materialise the fixture tree in a temp dir; the tool writes json/ into cwd."""
+        tmp = pathlib.Path(tempfile.mkdtemp(prefix="kef-e2e-"))
+        shutil.copytree(e2e_root, tmp, dirs_exist_ok=True)
+        (tmp / "listings" / "all-networks").mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(
+            FIXTURES / network_listing,
+            tmp / "listings" / "specific-networks" / "demo" / "wallets.csv",
+        )
+        return tmp
+
+    def run_tool(cwd: pathlib.Path):
+        return subprocess.run(
+            [sys.executable, str(REPO / "tools" / "csv_to_json.py")],
+            cwd=str(cwd),
+            capture_output=True,
+            text=True,
+            timeout=180,
+        )
+
+    tmp = stage_e2e("wallets.negative-unsorted.csv")
+    try:
+        proc = run_tool(tmp)
+        check("the run exits non-zero", proc.returncode == 1, f"rc={proc.returncode}")
+        check(
+            "the network call site reports the column",
+            "Validation errors for keyExportFormats in network 'demo':" in proc.stdout,
+            proc.stdout[-400:],
+        )
+        check(
+            "the error names the row and the order rule",
+            "network 'demo': wallets 'demo-inline': keyExportFormats"
+            " must be sorted alphabetically" in proc.stdout,
+            proc.stdout[-400:],
+        )
+        check(
+            "the canonical call site accepted the offers file first",
+            "references/offers/wallets.csv:" not in proc.stdout,
+            proc.stdout[-400:],
+        )
+        check(
+            "the run aborts before writing json/demo.json",
+            not (tmp / "json" / "demo.json").exists(),
+        )
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+    print("\n[end-to-end: the same tree passes once the listing is sorted]")
+    tmp = stage_e2e("listings.wallets.csv")
+    try:
+        proc = run_tool(tmp)
+        check(
+            "the run exits zero",
+            proc.returncode == 0,
+            f"rc={proc.returncode}\n{proc.stdout[-400:]}\n{proc.stderr[-400:]}",
+        )
+        written = tmp / "json" / "demo.json"
+        check("json/demo.json is written", written.exists())
+        if written.exists():
+            data = json.loads(written.read_text(encoding="utf-8"))
+            by_slug = {w.get("slug"): w.get("keyExportFormats") for w in data.get("wallets", [])}
+            check(
+                "the inline row keeps its sorted array",
+                by_slug.get("demo-inline") == ["encrypted-backup", "mnemonic"],
+                str(by_slug),
+            )
+            check(
+                "the offer row inherits the canonical value",
+                by_slug.get("demo-offer") == ["mnemonic"],
+                str(by_slug),
+            )
+            check(
+                "the empty row stays an explicit empty array",
+                by_slug.get("demo-empty") == [],
+                str(by_slug),
+            )
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
 
     print(f"\n{CHECKS - len(FAILURES)}/{CHECKS} checks passed")
     if FAILURES:
