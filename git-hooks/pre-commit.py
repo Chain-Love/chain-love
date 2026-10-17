@@ -16,7 +16,8 @@ from typing import Iterable
 # ──────────────────────────────────────
 
 UPSTREAM_REPO = "Chain-Love/chain-love"
-UPSTREAM_REF = "json-tools"
+UPSTREAM_REF = "830d5f05ae15954c43ef23f4085c83d4548d5431"  # json-tools branch, pinned by SHA: this hook exec-runs code from this ref,
+# so it must not be mutable. Bump the pin deliberately in a reviewed PR.
 UPSTREAM_URL = f"https://github.com/{UPSTREAM_REPO}/archive/{UPSTREAM_REF}.tar.gz"
 
 # Paths copied from upstream repo into project root
