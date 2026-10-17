@@ -1,0 +1,52 @@
+name: "Validate actionButtons Docs-shadow advisory"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-actionbuttons-docs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  advisory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # The json-tools branch carries no CI of its own and no listings data, so
+      # this workflow assembles a workspace from two checkouts: the converter,
+      # schema and meta from THIS pull request, and the listing data from main
+      # (the same split main's own validate.yaml performs in reverse). The
+      # advisory is a property of the resolution, so it can only be exercised
+      # against real listing rows.
+      - name: Checkout this PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Checkout main listing data
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: false
+          path: upstream-main
+
+      - name: Assemble workspace
+        run: |
+          set -euo pipefail
+          # The PR tree already carries tools/ and meta/ (json-tools layout);
+          # only the schema copy and main's listing data are missing.
+          cp tools/schema.json .
+          cp -r upstream-main/listings .
+          cp -r upstream-main/references .
+          ls -l
+
+      # No dependency install: csv_to_json.py runs on the standard library, and
+      # the regression suite drives it as a subprocess.
+      - name: Regression test
+        run: python3 tools/tests/test_action_buttons_docs_shadow.py

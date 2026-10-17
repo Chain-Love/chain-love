@@ -52,6 +52,77 @@ def is_trueish(value: str) -> bool:
     return isinstance(value, str) and value.strip().lower() == "true"
 
 
+ACTION_BUTTONS_COLUMN = "actionButtons"
+DOCS_BUTTON_LABEL = "Docs"
+
+
+def action_button_label(button):
+    """Return the [Label] text of a markdown-link action button, or None."""
+    if not isinstance(button, str) or not button.startswith("["):
+        return None
+    end = button.find("]")
+    if end < 1:
+        return None
+    return button[1:end]
+
+
+def parse_action_buttons(value):
+    """Parse an actionButtons cell into a list of buttons, or None when it is not a JSON array.
+
+    Rows reaching resolve_offers are already normalized, so the value is usually a
+    list; the string branch keeps the helper usable on raw CSV cells.
+    """
+    if isinstance(value, list):
+        return value
+    if not isinstance(value, str):
+        return None
+    text = value.strip()
+    if not (text.startswith("[") and text.endswith("]")):
+        return None
+    try:
+        parsed = json.loads(text)
+    except Exception:
+        return None
+    return parsed if isinstance(parsed, list) else None
+
+
+def find_action_buttons_docs_shadow(listing_row: dict, offer_row: dict):
+    """DBIP #4512: detect a one-button listing override that drops the canonical Docs button.
+
+    actionButtons is a JSON array and the merge in resolve_offers replaces it
+    wholesale, so a network-specific [Explore] override silently drops the offer's
+    verified [Docs] link. That is an advisory, not an error: an intentional override
+    is legitimate, it just has to be a decision rather than an accident.
+
+    All of the following must hold:
+      - the listing override is a JSON array with exactly one button;
+      - the canonical offer's array contains a button labelled exactly "Docs";
+      - the override contains no "Docs" button;
+      - the caller only invokes this for !offer:<slug> rows.
+
+    Returns the advisory detail lines, or None when the pair is not a candidate.
+    """
+    listing_buttons = parse_action_buttons(listing_row.get(ACTION_BUTTONS_COLUMN))
+    offer_buttons = parse_action_buttons(offer_row.get(ACTION_BUTTONS_COLUMN))
+    if not listing_buttons or not offer_buttons:
+        return None
+    if len(listing_buttons) != 1:
+        return None
+    offer_labels = [action_button_label(b) for b in offer_buttons]
+    if DOCS_BUTTON_LABEL not in offer_labels:
+        return None
+    listing_labels = [action_button_label(b) for b in listing_buttons]
+    if DOCS_BUTTON_LABEL in listing_labels:
+        return None
+    docs_button = offer_buttons[offer_labels.index(DOCS_BUTTON_LABEL)]
+    override_button = listing_buttons[0]
+    return (
+        f"  referenced offer has {docs_button}\n"
+        f"  listing has one non-Docs actionButton {override_button}, replacing the entire list\n"
+        f"  review if both actions are appropriate (maximum two buttons), or document intentional override"
+    )
+
+
 def normalize(data_by_category: dict):
     result = {}
     errors = []
@@ -514,6 +585,16 @@ def resolve_offers(
 
                 # Final offer value comes from offers CSV (NOT slug)
                 merged["offer"] = offer_row.get("offer")
+
+                # DBIP #4512: a one-button override replaces the whole canonical
+                # actionButtons array, which can silently drop the verified Docs
+                # link. Advisory only -- the generated JSON is left untouched.
+                shadow = find_action_buttons_docs_shadow(item, offer_row)
+                if shadow is not None:
+                    print(
+                        f"WARNING: actionButtons_docs_shadowed: "
+                        f"{network_name}/{category}/{item.get('slug')}\n{shadow}"
+                    )
 
                 out_items.append(merged)
 
