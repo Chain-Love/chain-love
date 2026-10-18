@@ -269,6 +269,11 @@ def load_csv_folder(folder) -> dict:
 
 def make_providers_schema(network_schema) -> dict:
     providers_schema = copy.deepcopy(network_schema)
+    # Canonical offers contain category rows, not the generated network envelope.
+    providers_schema['required'] = [
+        key for key in providers_schema.get('required', [])
+        if key not in ('schemaVersion', 'columns', 'meta')
+    ]
     for definition in providers_schema['$defs'].keys():
         if definition == "columns":
             continue
