@@ -6,7 +6,9 @@ import requests
 import argparse, tempfile
 
 parser=argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--data-repo',type=Path,required=True,help='Public Chain.Love main checkout')
+data_input=parser.add_mutually_exclusive_group(required=True)
+data_input.add_argument('--data-repo',type=Path,help='Public Chain.Love main checkout')
+data_input.add_argument('--data-archive',type=Path,help='Git archive ZIP of references/ and listings/ for offline CI')
 parser.add_argument('--data-ref',default='HEAD',help='Data snapshot to validate; does not modify it')
 parser.add_argument('--output',type=Path,help='Directory for disposable snapshots and logs')
 parser.add_argument('--verify-sources',action='store_true',help='Fetch fixed npm manifests to check fixtures')
@@ -14,10 +16,10 @@ args=parser.parse_args()
 work=args.output or Path(tempfile.mkdtemp(prefix='sdk-peer-check-'))
 work.mkdir(parents=True,exist_ok=True)
 code=Path(__file__).resolve().parents[2]
-data=args.data_repo.resolve()
 env=dict(os.environ,PYTHONUTF8='1')
 base=args.data_ref
-archive=subprocess.check_output(['git','archive','--format=zip',base,'references','listings'],cwd=data)
+archive=(args.data_archive.read_bytes() if args.data_archive else
+         subprocess.check_output(['git','archive','--format=zip',base,'references','listings'],cwd=args.data_repo.resolve()))
 fixtures=json.loads((code/'tools/tests/fixtures/sdk-peer-requirements.json').read_text(encoding='utf-8'))
 for slug,fixture in (fixtures.items() if args.verify_sources else []):
     manifest=requests.get(fixture['source'],timeout=30)
