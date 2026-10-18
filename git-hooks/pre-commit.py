@@ -32,6 +32,12 @@ SCRIPTS = [
     "validate.py",
 ]
 
+# Locally-authored guards run BEFORE the upstream scripts (they have no
+# dependencies beyond the stdlib, so they run in the host interpreter).
+LOCAL_SCRIPTS = [
+    "tools/guard_plus_prefix.py",
+]
+
 # ──────────────────────────────────────
 # Helpers
 # ──────────────────────────────────────
@@ -228,6 +234,13 @@ def main() -> None:
                 "-r",
                 str(requirements),
             ])
+
+        print("Running local guards")
+        for script in LOCAL_SCRIPTS:
+            script_path = tmp_root / script
+            if not script_path.exists():
+                die(f"Script not found: {script}")
+            run([python, str(script_path)], cwd=tmp_root)
 
         print("Running scripts in project root context")
         for script in SCRIPTS:
