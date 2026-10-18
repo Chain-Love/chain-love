@@ -1,0 +1,46 @@
+name: Validate SDK peer requirements
+
+on:
+  pull_request:
+    branches: [json-tools]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sdk-peer-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate-and-validate:
+    name: Generate JSON and validate (isolated)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout proposed tools
+        uses: actions/checkout@v4
+        with:
+          path: proposed-tools
+          persist-credentials: false
+      - name: Checkout reproducible main data snapshot
+        uses: actions/checkout@v4
+        with:
+          repository: Chain-Love/chain-love
+          ref: 54dce3638c23b8a4c83b1e24c7944fc5890473e5
+          path: data
+          persist-credentials: false
+      - name: Archive data before entering offline container
+        run: git -C data archive --format=zip --output="$GITHUB_WORKSPACE/data.zip" HEAD references listings
+      - name: Validate proposed tools and SDK peer inheritance offline
+        run: |
+          docker run --rm \
+            --network=none \
+            -v "$GITHUB_WORKSPACE:/workspace" \
+            -w /workspace/proposed-tools \
+            python:3.12-slim \
+            /bin/bash -c '
+              pip install --no-index --find-links=tools/wheels -r tools/requirements.txt &&
+              python -m unittest discover -s tools/tests -p test_sdk_peer_requirements.py &&
+              python tools/tests/check_sdk_peer_pipeline.py --data-archive /workspace/data.zip --output /workspace/validation-report
+            '
