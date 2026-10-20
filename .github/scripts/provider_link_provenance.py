@@ -52,10 +52,10 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
 from html.parser import HTMLParser
 from pathlib import Path
-from typing import Iterable, Sequence
 
 PROVIDERS_PATH = "references/providers/providers.csv"
 CHECKED_FIELDS = ("website", "docs")
@@ -85,7 +85,7 @@ class Provider:
     github: str
 
     @classmethod
-    def from_mapping(cls, data: dict) -> "Provider":
+    def from_mapping(cls, data: dict) -> Provider:
         return cls(
             slug=str(data.get("slug") or "").strip(),
             name=str(data.get("name") or "").strip(),
@@ -167,9 +167,7 @@ def normalize_url(url: str, *, keep_fragment: bool = True) -> str:
 
 def _normalize_host(host: str | None) -> str:
     value = (host or "").strip().lower().rstrip(".")
-    if value.startswith("www."):
-        value = value[4:]
-    return value
+    return value.removeprefix("www.")
 
 
 def _is_http_url(url: str) -> bool:
@@ -255,7 +253,7 @@ def _parse_page(html: str) -> _PageParser:
     try:
         parser.feed(html or "")
         parser.close()
-    except Exception:
+    except (AssertionError, ValueError):
         # Malformed HTML must not abort the report; return what was parsed.
         pass
     return parser
@@ -270,9 +268,7 @@ def extract_title(html: str) -> str:
     return title[:160]
 
 
-_MARKDOWN_LINK_RE = re.compile(
-    r"\]\(\s*<?([^)\s>]+)>?(?:\s+[\"'][^\"']*[\"'])?\s*\)"
-)
+_MARKDOWN_LINK_RE = re.compile(r"\]\(\s*<?([^)\s>]+)>?(?:\s+[\"'][^\"']*[\"'])?\s*\)")
 _MARKDOWN_AUTOLINK_RE = re.compile(r"<(https?://[^>\s]+)>")
 _MARKDOWN_REFERENCE_RE = re.compile(
     r"^\s{0,3}\[[^\]]+\]:\s*<?(https?://[^>\s]+)>?", re.MULTILINE
@@ -321,7 +317,7 @@ def _normalize_token(value: str) -> str:
 
 
 def _strip_git_suffix(value: str) -> str:
-    return value[:-4] if value.endswith(".git") else value
+    return value.removesuffix(".git")
 
 
 def _github_identity(provider: Provider) -> tuple[str, str | None] | None:
@@ -372,7 +368,10 @@ def classify_evidence(
         repo = _strip_git_suffix(segments[1].lower())
         canonical_names = {
             token
-            for token in (_normalize_token(provider.slug), _normalize_token(provider.name))
+            for token in (
+                _normalize_token(provider.slug),
+                _normalize_token(provider.name),
+            )
             if token
         }
         is_canonical = repo in canonical_names or (
@@ -387,7 +386,9 @@ def classify_evidence(
     website_host = ""
     if provider.website:
         try:
-            website_host = _normalize_host(urllib.parse.urlsplit(provider.website).hostname)
+            website_host = _normalize_host(
+                urllib.parse.urlsplit(provider.website).hostname
+            )
         except ValueError:
             website_host = ""
     if website_host and host == website_host and "website" not in set(changed_fields):
@@ -447,7 +448,11 @@ def _format_reachability(reachability: Reachability) -> str:
             text += f" — {reachability.detail}"
         return text
     if status == "blocked_or_unknown":
-        code = f"HTTP {reachability.http_status}" if reachability.http_status else "no status"
+        code = (
+            f"HTTP {reachability.http_status}"
+            if reachability.http_status
+            else "no status"
+        )
         return f"unknown ({code}: access control or anti-bot; not treated as hijack)"
     if status == "unreachable":
         return f"unreachable ({reachability.detail or 'request failed'})"
@@ -523,10 +528,12 @@ def evaluate_change(
             continue
 
         linked = _linked_urls(item)
-        exact_match = candidate_key in linked
-        base_match = candidate_document in {
+        normalized_links = {normalize_url(url) for url in linked}
+        normalized_documents = {
             normalize_url(url, keep_fragment=False) for url in linked
         }
+        exact_match = candidate_key in normalized_links
+        base_match = candidate_document in normalized_documents
         if exact_match or base_match:
             matches.append((item, scope, exact_match))
 
@@ -620,6 +627,7 @@ def probe_url(url: str, timeout: float = 10.0) -> Reachability:
                 detail=detail,
             )
     except urllib.error.HTTPError as exc:
+        exc.close()
         if exc.code in BLOCKED_HTTP_STATUSES:
             return Reachability(
                 "blocked_or_unknown",
@@ -731,9 +739,7 @@ def gather_evidence(
             "github": provider_data.get("github", ""),
         }
     )
-    changed_fields = tuple(
-        change.get("changed_fields") or (change.get("field") or "",)
-    )
+    changed_fields = tuple(change.get("changed_fields") or (change.get("field") or "",))
 
     evidence: list[Evidence] = list((explicit or {}).get(provider.slug, []))
     if fetch_github:
@@ -819,6 +825,7 @@ def _git_ref_exists(ref: str, cwd: str | None = None) -> bool:
         cwd=cwd,
         capture_output=True,
         text=True,
+        check=False,
     )
     return completed.returncode == 0
 
@@ -832,6 +839,7 @@ def _git_show(ref: str, path: str, cwd: str | None = None) -> str:
         cwd=cwd,
         capture_output=True,
         text=False,
+        check=False,
     )
     if completed.returncode != 0:
         # The file may not exist at this ref (for example, before the CSV was
@@ -890,9 +898,11 @@ def render_report(results: Sequence[dict], *, base: str = "", head: str = "") ->
     lines = [
         title,
         "",
-        "> **HTTP success ≠ first-party identity verified.** Reachability and "
-        "provenance are reported separately. `needs_manual_identity_review` is "
-        "a request for a human decision, not an accusation of domain hijacking.",
+        (
+            "> **HTTP success ≠ first-party identity verified.** Reachability and "
+            "provenance are reported separately. `needs_manual_identity_review` is "
+            "a request for a human decision, not an accusation of domain hijacking."
+        ),
         "",
     ]
     if base or head:
@@ -926,30 +936,38 @@ def render_report(results: Sequence[dict], *, base: str = "", head: str = "") ->
             + " |"
         )
 
-    evidenced = sum(1 for item in results if item["provenance"] == FIRST_PARTY_EVIDENCED)
-    review = sum(1 for item in results if item["provenance"] == NEEDS_REVIEW)
-    not_applicable = sum(
-        1 for item in results if item["provenance"] == NOT_APPLICABLE
+    evidenced = sum(
+        1 for item in results if item["provenance"] == FIRST_PARTY_EVIDENCED
     )
+    review = sum(1 for item in results if item["provenance"] == NEEDS_REVIEW)
+    not_applicable = sum(1 for item in results if item["provenance"] == NOT_APPLICABLE)
     lines.extend(
         [
             "",
-            f"**Summary:** {len(results)} changed field(s) — "
-            f"{evidenced} first-party evidenced, {review} need manual identity "
-            f"review, {not_applicable} not applicable.",
+            (
+                f"**Summary:** {len(results)} changed field(s) — "
+                f"{evidenced} first-party evidenced, {review} need manual identity "
+                f"review, {not_applicable} not applicable."
+            ),
             "",
             "<details><summary>What the provenance statuses mean</summary>",
             "",
-            f"- `{FIRST_PARTY_EVIDENCED}` — an independent provider-controlled "
-            "page links to the candidate URL.",
-            f"- `{NEEDS_REVIEW}` — no independent crosslink was found, the "
-            "evidence is product-scoped, or the page is blocked/unknown. A "
-            "reviewer must confirm identity.",
+            (
+                f"- `{FIRST_PARTY_EVIDENCED}` — an independent provider-controlled "
+                "page links to the candidate URL."
+            ),
+            (
+                f"- `{NEEDS_REVIEW}` — no independent crosslink was found, the "
+                "evidence is product-scoped, or the page is blocked/unknown. A "
+                "reviewer must confirm identity."
+            ),
             f"- `{NOT_APPLICABLE}` — the field was cleared or is empty.",
             "",
-            "HTTP `401`/`403`/`429`, anti-bot pages, redirects, and "
-            "discontinued domains remain in manual review. They are neither "
-            "automatically approved nor automatically condemned.",
+            (
+                "HTTP `401`/`403`/`429`, anti-bot pages, redirects, and "
+                "discontinued domains remain in manual review. They are neither "
+                "automatically approved nor automatically condemned."
+            ),
             "",
             "</details>",
             "",
@@ -966,7 +984,7 @@ def load_evidence_file(path: str) -> dict[str, list[Evidence]]:
 
     data = json.loads(Path(path).read_text(encoding="utf-8"))
     if not isinstance(data, dict):
-        raise ValueError("evidence file must be a JSON object keyed by provider slug")
+        raise TypeError("evidence file must be a JSON object keyed by provider slug")
 
     evidence: dict[str, list[Evidence]] = {}
     for slug, items in data.items():
@@ -1038,7 +1056,7 @@ def _cmd_report(args: argparse.Namespace) -> int:
                 timeout=args.timeout,
             )
             results.append(evaluate_change(change, reachability, evidence))
-        except Exception as exc:  # Keep the report available even on a bug.
+        except Exception as exc:  # noqa: BLE001 - one bad row must not drop the report.
             results.append(
                 {
                     "slug": change.get("slug", "?"),
@@ -1055,7 +1073,9 @@ def _cmd_report(args: argparse.Namespace) -> int:
                 }
             )
 
-    report = render_report(results, base=payload.get("base", ""), head=payload.get("head", ""))
+    report = render_report(
+        results, base=payload.get("base", ""), head=payload.get("head", "")
+    )
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(report, encoding="utf-8")

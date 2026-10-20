@@ -17,7 +17,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-import provider_link_provenance as plp  # noqa: E402
+import provider_link_provenance as plp
 
 HEADER = (
     "slug,name,logoPath,description,website,docs,x,github,discord,"
@@ -134,6 +134,33 @@ class PositiveEvidenceTests(unittest.TestCase):
         self.assertIn("section fragment was not separately verified", result["reason"])
 
 
+    def test_exact_fragment_match_is_not_flagged_as_unverified(self):
+        change = make_change(
+            slug="huff",
+            name="Huff",
+            website="https://github.com/huff-language",
+            docs="https://github.com/huff-language/huff2#differences-vs-huff-rs",
+            github="huff-language",
+            changed_fields=["docs"],
+        )
+        evidence = [
+            plp.Evidence(
+                url="https://github.com/huff-language",
+                content=(
+                    '<a href="https://github.com/huff-language/huff2'
+                    '#differences-vs-huff-rs">Differences</a>'
+                ),
+            )
+        ]
+
+        result = plp.evaluate_change(
+            change, plp.Reachability("reachable", 200), evidence
+        )
+
+        self.assertEqual(result["provenance"], plp.FIRST_PARTY_EVIDENCED)
+        self.assertNotIn("section fragment was not separately verified", result["reason"])
+
+
 class NegativeEvidenceTests(unittest.TestCase):
     def test_http_200_gambling_page_without_crosslink_needs_review(self):
         change = make_change(
@@ -154,7 +181,9 @@ class NegativeEvidenceTests(unittest.TestCase):
         self.assertEqual(result["reachable"], "reachable")
         self.assertEqual(result["page_title"], "Situs Slot Gacor Terpercaya")
         self.assertIn("No independent first-party crosslink", result["reason"])
-        self.assertIn("HTTP reachability does not prove product identity", result["reason"])
+        self.assertIn(
+            "HTTP reachability does not prove product identity", result["reason"]
+        )
 
     def test_product_scoped_repo_cannot_evidence_provider_wide_docs(self):
         change = make_change(
@@ -277,9 +306,7 @@ class UnknownStateTests(unittest.TestCase):
     def test_cleared_field_is_not_applicable(self):
         change = make_change(field="docs", new="", old="https://docs.acme.dev/")
 
-        result = plp.evaluate_change(
-            change, plp.Reachability("not_applicable"), []
-        )
+        result = plp.evaluate_change(change, plp.Reachability("not_applicable"), [])
 
         self.assertEqual(result["provenance"], plp.NOT_APPLICABLE)
         self.assertEqual(result["reachable"], "not_applicable")
@@ -424,16 +451,12 @@ class UrlAndExtractionTests(unittest.TestCase):
             "Use the [current docs](https://docs.acme.dev).\n"
         )
 
-        self.assertEqual(
-            plp.extract_markdown_links(text), ["https://docs.acme.dev"]
-        )
+        self.assertEqual(plp.extract_markdown_links(text), ["https://docs.acme.dev"])
 
     def test_markdown_reference_links_are_crosslinks(self):
         text = "See [the docs][1].\n\n[1]: https://docs.acme.dev\n"
 
-        self.assertEqual(
-            plp.extract_markdown_links(text), ["https://docs.acme.dev"]
-        )
+        self.assertEqual(plp.extract_markdown_links(text), ["https://docs.acme.dev"])
 
     def test_safe_fetch_rejects_private_and_non_http_urls(self):
         self.assertTrue(plp.is_safe_fetch_url("https://docs.acme.dev/"))
@@ -446,9 +469,7 @@ class UrlAndExtractionTests(unittest.TestCase):
 class ReportTests(unittest.TestCase):
     def test_report_exposes_reachable_and_provenance_separately(self):
         change = make_change()
-        result = plp.evaluate_change(
-            change, plp.Reachability("reachable", 200), []
-        )
+        result = plp.evaluate_change(change, plp.Reachability("reachable", 200), [])
 
         report = plp.render_report([result], base="origin/main", head="HEAD")
 
