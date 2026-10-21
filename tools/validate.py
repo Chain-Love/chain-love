@@ -156,7 +156,7 @@ def rule_meta_categories_consistent(data):
 
     return errors
 
-def rule_meta_columns_consistent(data):
+def rule_meta_columns_consistent(data, schema=None):
     errors = []
 
     meta_columns = data.get("meta", {}).get("columns", {})
@@ -169,10 +169,29 @@ def rule_meta_columns_consistent(data):
                     f"Meta error: column '{col}' used in columns.{category} but missing in meta.columns"
                 )
 
+    array_cols = set()
+    if schema and "$defs" in schema:
+        for cat, d in schema["$defs"].items():
+            if cat in ("columns", "meta", "categoryMeta", "columnMeta", "providerMeta"):
+                continue
+            for col_name, prop in d.get("properties", {}).items():
+                t = prop.get("type")
+                base_types = t if isinstance(t, list) else [t]
+                if "array" in base_types:
+                    array_cols.add(col_name)
+
     for key, meta in meta_columns.items():
         if meta.get("key") != key:
             errors.append(
                 f"Meta error: meta.columns['{key}'].key = '{meta.get('key')}', expected '{key}'"
+            )
+        if not meta.get("group"):
+            errors.append(
+                f"Meta error: meta.columns['{key}'].group must be a non-empty string"
+            )
+        if key in array_cols and meta.get("sorting") in ("string", "number", "boolean", "date"):
+            errors.append(
+                f"Meta error: array column '{key}' in meta.columns uses scalar sorting '{meta.get('sorting')}'"
             )
 
     return errors
@@ -211,7 +230,7 @@ def check_schema_validation(schema_validator, data) -> bool:
 
     return len(errors) == 0
 
-def check_rules_validation(rules_validator, data) -> bool:
+def check_rules_validation(rules_validator, data, schema=None) -> bool:
     """
     Validate a given set of data against a set of rules.
 
@@ -236,7 +255,7 @@ def check_rules_validation(rules_validator, data) -> bool:
     meta_errors = []
     if "meta" in data:
         meta_errors.extend(rule_meta_categories_consistent(data))
-        meta_errors.extend(rule_meta_columns_consistent(data))
+        meta_errors.extend(rule_meta_columns_consistent(data, schema=schema))
 
     for err in meta_errors:
         had_errors = True
@@ -246,7 +265,9 @@ def check_rules_validation(rules_validator, data) -> bool:
     return not had_errors
 
 def check_validation(data, schema_validator, rules_validator) -> bool:
-    return check_schema_validation(schema_validator, data) and check_rules_validation(rules_validator, data)
+    return check_schema_validation(schema_validator, data) and check_rules_validation(
+        rules_validator, data, schema=getattr(schema_validator, "schema", None)
+    )
 
 def load_csv_folder(folder) -> dict:
     from csv_to_json import load_csv_to_dict_list, normalize
