@@ -156,6 +156,21 @@ def rule_meta_categories_consistent(data):
 
     return errors
 
+def _get_validation_schema():
+    candidates = [
+        "schema.json",
+        os.path.join(os.path.dirname(__file__), "schema.json"),
+        os.path.join(os.path.dirname(__file__), "..", "tools", "schema.json")
+    ]
+    for p in candidates:
+        if os.path.exists(p):
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+    return None
+
 def rule_meta_columns_consistent(data):
     errors = []
 
@@ -174,6 +189,27 @@ def rule_meta_columns_consistent(data):
             errors.append(
                 f"Meta error: meta.columns['{key}'].key = '{meta.get('key')}', expected '{key}'"
             )
+
+    # Validate column sorting mode against schema property types
+    schema = _get_validation_schema()
+    if schema and "$defs" in schema:
+        array_columns = set()
+        for cat_name, cat_def in schema["$defs"].items():
+            if cat_name in ("columns", "meta", "categoryMeta", "columnMeta", "providerMeta"):
+                continue
+            props = cat_def.get("properties", {})
+            for prop_name, prop_def in props.items():
+                p_type = prop_def.get("type")
+                types = [p_type] if isinstance(p_type, str) else (p_type or [])
+                if "array" in types:
+                    array_columns.add(prop_name)
+
+        for key, meta in meta_columns.items():
+            sorting = meta.get("sorting")
+            if sorting and key in array_columns and sorting in ("string", "number", "boolean", "date"):
+                errors.append(
+                    f"Meta error: column '{key}' has schema type array but scalar sorting '{sorting}' (expected 'arrayLength')"
+                )
 
     return errors
 
@@ -280,9 +316,9 @@ def make_providers_schema(network_schema) -> dict:
 def main():
     had_errors = False
 
-    schema = None
-    with open("schema.json", "r") as f:
-        schema = json.load(f)
+    schema = _get_validation_schema()
+    if schema is None:
+        raise FileNotFoundError("Could not find schema.json")
 
     rules = Validator()
     rules.add_rule(rule_slug_unique)

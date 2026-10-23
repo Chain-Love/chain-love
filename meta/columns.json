@@ -621,9 +621,9 @@
     "icon": "lucide:Lightbulb",
     "description": "Notes.",
     "filter": null,
-    "sorting": "string",
+    "sorting": "arrayLength",
     "pinning": null,
-    "cellType": null,
+    "cellType": "arrayPopover",
     "group": "accessAndLimits"
   },
   "hasDashboard": {
@@ -962,9 +962,9 @@
     "icon": "lucide:ListOrdered",
     "description": "Recommended command arguments for the canonical self-hosted launch path.",
     "filter": null,
-    "sorting": "string",
+    "sorting": "arrayLength",
     "pinning": null,
-    "cellType": null,
+    "cellType": "arrayPopover",
     "group": "technicalDetails"
   },
   "selfHostedRequiredEnvVars": {
@@ -973,9 +973,9 @@
     "icon": "lucide:ShieldCheck",
     "description": "Environment variables that must be provided when launching the self-hosted MCP locally.",
     "filter": null,
-    "sorting": "string",
+    "sorting": "arrayLength",
     "pinning": null,
-    "cellType": null,
+    "cellType": "arrayPopover",
     "group": "security"
   },
   "x402": {
@@ -1228,6 +1228,7 @@
     "filter": null,
     "sorting": "string",
     "pinning": null,
-    "cellType": null
+    "cellType": null,
+    "group": "identity"
   }
 }
