@@ -19,6 +19,17 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+
+      - name: Extract changed provider website/docs fields
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          cp .github/scripts/provider_link_provenance.py "$RUNNER_TEMP/provider_link_provenance.py"
+          python3 "$RUNNER_TEMP/provider_link_provenance.py" collect \
+            --base "origin/$GITHUB_BASE_REF" \
+            --head HEAD \
+            --output "$RUNNER_TEMP/provider-link-changes.json"
       
       - name: Materialize PR additions only
         if: github.event_name == 'pull_request'
@@ -157,6 +168,33 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           echo "${{ github.event.pull_request.number }}" > pr-number.txt
+
+      - name: Report provider link provenance
+        if: always()
+        continue-on-error: true
+        env:
+          PR_BODY: ${{ github.event_name == 'pull_request' && github.event.pull_request.body || '' }}
+        run: |
+          set -euo pipefail
+          report="$RUNNER_TEMP/provider-link-provenance.md"
+          script="$RUNNER_TEMP/provider_link_provenance.py"
+
+          if [ -f "$RUNNER_TEMP/provider-link-changes.json" ] && [ -f "$script" ]; then
+            printf '%s' "$PR_BODY" > "$RUNNER_TEMP/pr-body.md"
+            python3 "$script" report \
+              --changes "$RUNNER_TEMP/provider-link-changes.json" \
+              --pr-body "$RUNNER_TEMP/pr-body.md" \
+              --probe \
+              --fetch-evidence \
+              --output "$report" || true
+          else
+            printf '### Provider link identity check\n\nNo provider `website`/`docs` change set was collected for this event.\n' > "$report"
+          fi
+
+          mkdir -p lychee
+          touch lychee/out.md
+          printf '\n\n' >> lychee/out.md
+          cat "$report" >> lychee/out.md
 
       - name: Upload Lychee report
         if: always()
