@@ -6,10 +6,43 @@ on:
     types: [opened, synchronize, reopened, labeled]
 
 jobs:
+  detect-link-scope:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      should_run: ${{ steps.scope.outputs.should_run }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - id: scope
+        name: Detect changed link-bearing data
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+        run: |
+          set -euo pipefail
+          git fetch origin "$BASE_REF"
+          merge_base="$(git merge-base "origin/$BASE_REF" HEAD)"
+
+          if git diff --name-only "$merge_base..HEAD" | grep -Eq '^(listings|references)/.*\.csv$|^\.github/workflows/link-check-analysis\.yaml$'; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          fi
+
   link-check:
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      contains(github.event.pull_request.labels.*.name, 'check-links')
+    needs: detect-link-scope
+    if: >-
+      always() && (
+        github.event_name == 'workflow_dispatch' ||
+        needs.detect-link-scope.outputs.should_run == 'true' ||
+        contains(github.event.pull_request.labels.*.name, 'check-links')
+      )
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -68,7 +101,10 @@ jobs:
         run: |
           python3 - <<'PY'
           import csv
+          import io
+          import os
           import re
+          import subprocess
           from pathlib import Path
           
           url_re = re.compile(r'https?://[^\s,"\'>)]+')
@@ -112,24 +148,40 @@ jobs:
                       seen.add(item)
                       out.append(item)
               return out
-          
+
+          def links_from_csv(path: Path, content: str) -> list[str]:
+              links = url_re.findall(content)
+
+              if path.as_posix() == "references/providers/providers.csv":
+                  reader = csv.DictReader(io.StringIO(content))
+                  for row in reader:
+                      for col in ("x", "github", "discord", "telegram", "linkedin"):
+                          url = provider_handle_to_url(col, row.get(col, ""))
+                          if url:
+                              links.append(url)
+
+              return unique(links)
+
+          base = os.environ.get("GITHUB_BASE_REF")
+
           for path in Path(".").rglob("*.csv"):
               if not path.is_file() or ".git" in path.parts:
                   continue
           
               content = path.read_text(encoding="utf-8", errors="ignore")
-              links = url_re.findall(content)
-          
-              if path.as_posix() == "references/providers/providers.csv":
-                  with path.open(newline="", encoding="utf-8", errors="ignore") as f:
-                      reader = csv.DictReader(f)
-                      for row in reader:
-                          for col in ("x", "github", "discord", "telegram", "linkedin"):
-                              url = provider_handle_to_url(col, row.get(col, ""))
-                              if url:
-                                  links.append(url)
-          
-              links = unique(links)
+              links = links_from_csv(path, content)
+
+              base_links: list[str] = []
+              if base:
+                  result = subprocess.run(
+                      ["git", "show", f"origin/{base}:{path.as_posix()}"],
+                      text=True,
+                      capture_output=True,
+                  )
+                  if result.returncode == 0:
+                      base_links = links_from_csv(path, result.stdout)
+
+              links = [link for link in links if link not in set(base_links)]
           
               path.write_text(
                   ("\n".join(links) + "\n") if links else "",
