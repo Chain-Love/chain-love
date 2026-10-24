@@ -97,7 +97,7 @@ pre-commit --version
 Platform-specific install links:
 
 - Python: <https://www.python.org/downloads/>
-- pipx: <https://pipx.pypa.io/stable/installation/>
+- pipx: <https://pipx.pypa.io/stable/how-to/install-pipx.html>
 
 ## Reporting issues
 
