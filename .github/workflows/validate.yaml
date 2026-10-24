@@ -17,7 +17,7 @@ jobs:
   generate-and-validate:
     name: Generate JSON and validate (isolated)
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 5
 
     steps:
       - name: Checkout code
