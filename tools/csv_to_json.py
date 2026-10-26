@@ -14,6 +14,51 @@ SDK_TBD_FIELDS = (
     "license",
 )
 
+POSSESSION_PROOF_MECHANISMS_COLUMN = "possessionProofMechanisms"
+POSSESSION_PROOF_MECHANISM_NAMES = ("PDP", "PoRep", "PoSt")
+
+
+def validate_possession_proof_mechanisms(items: list, context: str) -> list[str]:
+    """Validate possessionProofMechanisms arrays for storages rows (DBIP #4724).
+
+    Rules:
+      - blank/None is valid (not yet verified; listings inherit);
+      - [] is valid (explicit: none of the documented mechanisms was found on review);
+      - entries must use the exact enum names (PDP, PoRep, PoSt);
+      - entries must be unique;
+      - non-empty arrays must be in canonical alphabetical order;
+    """
+    errors = []
+    for idx, item in enumerate(items):
+        if not isinstance(item, dict):
+            continue
+        value = item.get(POSSESSION_PROOF_MECHANISMS_COLUMN)
+        if value is None:
+            continue
+        slug = item.get("slug") or f"row {idx + 2}"
+        label = f"{context}: storages '{slug}': {POSSESSION_PROOF_MECHANISMS_COLUMN}"
+        if not isinstance(value, list):
+            errors.append(
+                f"{label} must be a JSON array or null, got {type(value).__name__}"
+            )
+            continue
+        names_valid = True
+        seen = set()
+        for pos, name in enumerate(value):
+            where = f"{label}[{pos}]"
+            if not isinstance(name, str) or name not in POSSESSION_PROOF_MECHANISM_NAMES:
+                errors.append(
+                    f"{where} must be one of {list(POSSESSION_PROOF_MECHANISM_NAMES)}, got {name!r}"
+                )
+                names_valid = False
+                continue
+            if name in seen:
+                errors.append(f"{where} duplicates mechanism {name!r}")
+            seen.add(name)
+        if names_valid and value and list(value) != sorted(value):
+            errors.append(f"{label} must be sorted alphabetically, got {value!r}")
+    return errors
+
 
 def col_letter(idx: int) -> str:
     """Convert 0-based index to Excel column letters."""
@@ -699,6 +744,17 @@ def main():
     category_meta = load_json_file("meta/categories.json")
     column_meta = load_json_file("meta/columns.json")
     offers_by_category = load_categories_from_folder("references/offers")
+    offer_possession_proof_errors = validate_possession_proof_mechanisms(
+        offers_by_category.get("storages", []), context="references/offers"
+    )
+    if offer_possession_proof_errors:
+        print(
+            f"Validation errors for {POSSESSION_PROOF_MECHANISMS_COLUMN} in "
+            f"references/offers/storages.csv:"
+        )
+        for e in offer_possession_proof_errors:
+            print(e)
+        exit(1)
 
     # Global listings (apply to every network)
     global_listings = load_categories_from_folder(all_networks_dir)
@@ -772,6 +828,14 @@ def main():
             exit(1)
 
         ensure_sdks_tbd_fields(result)
+        possession_proof_errors = validate_possession_proof_mechanisms(
+            result.get("storages", []), context=f"network {network_name}"
+        )
+        if possession_proof_errors:
+            print(f"Validation errors for {POSSESSION_PROOF_MECHANISMS_COLUMN} in network {network_name}:")
+            for e in possession_proof_errors:
+                print(e)
+            exit(1)
 
         result["columns"] = get_column_order(
             base_categories=list_categories(network_dir),
