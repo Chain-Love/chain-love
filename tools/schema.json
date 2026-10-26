@@ -386,6 +386,14 @@
             "Tiered",
             "One-time payment"
           ]
+        },
+        "possessionProofMechanisms": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "string",
+            "enum": ["PDP", "PoRep", "PoSt"]
+          },
+          "uniqueItems": true
         }
       },
       "required": [
