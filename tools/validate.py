@@ -4,6 +4,11 @@ import json
 from jsonschema import Draft202012Validator
 from jsonpointer import resolve_pointer
 import copy
+import argparse
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), 'json-tools', 'tools'))
+from schema_versions import VERSIONS, network_slugs, project_data, schema_for_version
 
 class Validator:
     def __init__(self):
@@ -278,11 +283,15 @@ def make_providers_schema(network_schema) -> dict:
     return providers_schema
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--schema-version', choices=VERSIONS, default='2.0.0')
+    args = parser.parse_args()
     had_errors = False
 
     schema = None
     with open("schema.json", "r") as f:
         schema = json.load(f)
+    schema = schema_for_version(schema, args.schema_version)
 
     rules = Validator()
     rules.add_rule(rule_slug_unique)
@@ -299,11 +308,14 @@ def main():
         data = None
         with open(f"json/{network_spec}", "r") as f:
             data = json.load(f)
+        # Validate raw fields before any legacy projection could omit them.
+        project_data(data, args.schema_version, networks=network_slugs())
         if not check_validation(data=data, schema_validator=validator, rules_validator=rules):
             had_errors = True
 
     # Validate providers
     providers_data = load_csv_folder("references/offers")
+    providers_data = project_data(providers_data, args.schema_version, networks=network_slugs())
     providers_schema = make_providers_schema(network_schema=schema)
     providers_validator = Draft202012Validator(providers_schema)
     if not check_validation(data=providers_data, schema_validator=providers_validator, rules_validator=rules):
