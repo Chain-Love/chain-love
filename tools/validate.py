@@ -13,11 +13,11 @@ class Validator:
         """Add a new validation rule function."""
         self.rules.append(rule_func)
 
-    def validate(self, data):
-        """Run all registered validation rules."""
+    def validate(self, data, network_name=None):
         errors = []
         for rule in self.rules:
-            errors.extend(rule(data))
+            try: errors.extend(rule(data, network_name=network_name))
+            except TypeError: errors.extend(rule(data))
         return errors
 
 def rule_slug_unique(data):
@@ -93,6 +93,30 @@ def rule_chain_is_lowercase(data):
             continue
         if not item["chain"].islower():
             errors.append(f"Item {idx}: chain must be lowercase: want '{item['chain'].lower()}', got '{item['chain']}'. Please check all categories for the current network.")
+    return errors
+
+def get_repository_networks():
+    nets = set()
+    for b in [".", ".."]:
+        d1, d2 = os.path.join(b, "listings", "specific-networks"), os.path.join(b, "json")
+        if os.path.isdir(d1): nets.update(d for d in os.listdir(d1) if os.path.isdir(os.path.join(d1, d)))
+        if os.path.isdir(d2): nets.update(f[:-5] for f in os.listdir(d2) if f.endswith(".json"))
+    return nets
+
+def rule_http_response_compression(data, network_name=None, repository_networks=None):
+    errors, repo_nets = [], repository_networks if repository_networks is not None else get_repository_networks()
+    for idx, item in enumerate(data):
+        if not isinstance(item, dict) or not isinstance(item.get("httpResponseCompression"), list): continue
+        seen = set()
+        for obj in item["httpResponseCompression"]:
+            if not isinstance(obj, dict): continue
+            enc, nets, meths = obj.get("encoding"), obj.get("networks") or [], obj.get("methods") or []
+            for net in nets:
+                if repo_nets and net not in repo_nets: errors.append(f"Item {idx}: httpResponseCompression network '{net}' is not a valid repository network")
+                if network_name and net != network_name: errors.append(f"Item {idx}: httpResponseCompression network '{net}' does not match listing network '{network_name}'")
+                for meth in meths:
+                    if (enc, net, meth) in seen: errors.append(f"Item {idx}: Duplicate httpResponseCompression capability for (encoding='{enc}', network='{net}', method='{meth}')")
+                    seen.add((enc, net, meth))
     return errors
 
 def has_unclosed_markdown(s: str) -> bool:
@@ -211,7 +235,7 @@ def check_schema_validation(schema_validator, data) -> bool:
 
     return len(errors) == 0
 
-def check_rules_validation(rules_validator, data) -> bool:
+def check_rules_validation(rules_validator, data, network_name=None) -> bool:
     """
     Validate a given set of data against a set of rules.
 
@@ -226,7 +250,7 @@ def check_rules_validation(rules_validator, data) -> bool:
     for category in data.keys():
         if category in ("columns", "schemaVersion", "meta"):
             continue
-        errors = rules_validator.validate(data[category])
+        errors = rules_validator.validate(data[category], network_name=network_name)
         for err in errors:
             had_errors = True
             print(f"Error validating {category}: {err}")
@@ -245,8 +269,8 @@ def check_rules_validation(rules_validator, data) -> bool:
 
     return not had_errors
 
-def check_validation(data, schema_validator, rules_validator) -> bool:
-    return check_schema_validation(schema_validator, data) and check_rules_validation(rules_validator, data)
+def check_validation(data, schema_validator, rules_validator, network_name=None) -> bool:
+    return check_schema_validation(schema_validator, data) and check_rules_validation(rules_validator, data, network_name=network_name)
 
 def load_csv_folder(folder) -> dict:
     from csv_to_json import load_csv_to_dict_list, normalize
@@ -291,15 +315,17 @@ def main():
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
     rules.add_rule(rule_chain_is_lowercase)
+    rules.add_rule(rule_http_response_compression)
 
     # Validate networks
     validator = Draft202012Validator(schema)
     for network_spec in os.listdir("json"):
         print(f"Validating {network_spec}...")
+        net_name = network_spec[:-5] if network_spec.endswith(".json") else network_spec
         data = None
         with open(f"json/{network_spec}", "r") as f:
             data = json.load(f)
-        if not check_validation(data=data, schema_validator=validator, rules_validator=rules):
+        if not check_validation(data=data, schema_validator=validator, rules_validator=rules, network_name=net_name):
             had_errors = True
 
     # Validate providers
