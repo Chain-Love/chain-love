@@ -95,6 +95,34 @@ def rule_chain_is_lowercase(data):
             errors.append(f"Item {idx}: chain must be lowercase: want '{item['chain'].lower()}', got '{item['chain']}'. Please check all categories for the current network.")
     return errors
 
+def rule_x402_payment_routes(data):
+    errors = []
+    for idx, item in enumerate(data):
+        routes = item.get("x402PaymentRoutes") if isinstance(item, dict) else None
+        if routes is None:
+            continue
+        if not isinstance(routes, list):
+            errors.append(f"Item {idx}: x402PaymentRoutes must be a list or null")
+            continue
+        if routes and item.get("x402") is not True:
+            errors.append(f"Item {idx}: x402PaymentRoutes requires x402=true")
+        seen = set()
+        for r_idx, r in enumerate(routes):
+            if not isinstance(r, dict):
+                errors.append(f"Item {idx}: x402PaymentRoutes[{r_idx}] must be an object")
+                continue
+            for k in ("network", "asset", "scheme", "sourceUrl"):
+                if not isinstance(r.get(k), str) or not r[k].strip():
+                    errors.append(f"Item {idx}: x402PaymentRoutes[{r_idx}] missing '{k}'")
+            net = r.get("network", "")
+            if isinstance(net, str) and ((net.startswith("eip155:") and not net[7:].isdigit()) or net in ("algorand:mainnet", "algorand:testnet")):
+                errors.append(f"Item {idx}: x402PaymentRoutes[{r_idx}] invalid CAIP-2 network '{net}'")
+            key = (r.get("endpoint"), r.get("network"), r.get("asset"), r.get("scheme"))
+            if key in seen:
+                errors.append(f"Item {idx}: Duplicate x402PaymentRoutes entry for {key}")
+            seen.add(key)
+    return errors
+
 def has_unclosed_markdown(s: str) -> bool:
     if type(s) != str:
         return False
@@ -291,6 +319,7 @@ def main():
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
     rules.add_rule(rule_chain_is_lowercase)
+    rules.add_rule(rule_x402_payment_routes)
 
     # Validate networks
     validator = Draft202012Validator(schema)
