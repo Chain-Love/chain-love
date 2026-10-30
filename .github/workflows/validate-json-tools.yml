@@ -1,0 +1,32 @@
+# json-tools is a separate branch without the main data CSV tree.
+# Validate tool-specific NDJSON encoding behavior instead of running the
+# main-branch CSV inventory validation against missing datasets.
+name: Validate JSON tools
+
+on:
+  pull_request:
+    branches: [json-tools]
+    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - fix/ndjson-explicit-utf8-issue4020-20261024
+
+permissions:
+  contents: read
+
+jobs:
+  generate-and-validate:
+    name: Generate JSON and validate (isolated)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout PR merge commit
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run JSON-to-NDJSON UTF-8 regression suite (simulated Windows cp1252)
+        run: python -m unittest tools.test_create_ndjson_utf8 -v
