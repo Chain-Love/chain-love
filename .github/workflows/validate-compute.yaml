@@ -1,0 +1,58 @@
+name: Validate compute schema
+
+on:
+  pull_request:
+    branches: [json-tools]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-compute-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate-and-validate:
+    name: Generate JSON and validate (isolated)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout proposed tools and tests
+        uses: actions/checkout@v4
+        with:
+          path: json-tools
+          persist-credentials: false
+
+      - name: Checkout current source data
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: main
+          path: data
+          persist-credentials: false
+
+      - name: Prepare source data with the proposed tools and metadata
+        run: |
+          cp json-tools/tools/validate_csv.py data/
+          cp json-tools/tools/csv_to_json.py data/
+          cp json-tools/tools/validate.py data/
+          cp json-tools/tools/schema.json data/
+          mkdir -p data/meta
+          cp -r json-tools/meta/. data/meta/
+
+      - name: Run regression tests and full validation without network access
+        run: |
+          docker run --rm \
+            --network=none \
+            -v "${{ github.workspace }}:/workspace" \
+            -w /workspace \
+            python:3.12-slim \
+            /bin/bash -euc '
+              pip install --no-index --find-links=json-tools/tools/wheels -r json-tools/tools/requirements.txt
+              python3 -m unittest discover -s json-tools/tools -p test_compute_category.py -v
+              cd data
+              python3 validate_csv.py
+              python3 csv_to_json.py
+              python3 validate.py
+            '

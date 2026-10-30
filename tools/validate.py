@@ -108,7 +108,10 @@ def has_unclosed_markdown(s: str) -> bool:
         return True
     if s.count("*") % 2 != 0 and s.count("**") == 0:  # single * for italic
         return True
-    if s.count("_") % 2 != 0:
+    # CommonMark does not treat intraword underscores (e.g. bare_metal) as
+    # emphasis delimiters. Keep checking actual opening/closing underscores.
+    emphasis = re.sub(r"(?<=\w)_(?=\w)", "", s)
+    if emphasis.count("_") % 2 != 0:
         return True
     if s.count("`") % 2 != 0:
         return True
