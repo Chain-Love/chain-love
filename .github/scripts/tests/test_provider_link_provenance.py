@@ -525,5 +525,167 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(loaded["acme"][0].url, "https://github.com/acme/acme")
 
 
+class UserGeneratedGithubContentTests(unittest.TestCase):
+    """Temuan reviewer: halaman buatan pengguna tidak boleh jadi bukti first-party."""
+
+    def setUp(self):
+        self.provider = plp.Provider(
+            slug="acme",
+            name="Acme",
+            website="https://acme.example/",
+            docs="https://docs.acme.example/",
+            github="acme",
+        )
+
+    def scope(self, url):
+        return plp.classify_evidence(url, self.provider, ["docs"])
+
+    def test_issue_page_is_not_first_party_evidence(self):
+        # Siapa pun bisa membuat issue yang memuat URL kandidat.
+        for path in ("issues/1", "pull/2", "discussions/3", "commit/abc123",
+                     "releases/tag/v1", "wiki/Home", "compare/a...b"):
+            with self.subTest(path=path):
+                self.assertIsNone(
+                    self.scope(f"https://github.com/acme/acme/{path}"),
+                    f"{path} seharusnya bukan bukti first-party",
+                )
+
+    def test_maintainer_document_in_canonical_repo_is_evidence(self):
+        scope = self.scope("https://github.com/acme/acme/blob/main/README.md")
+        self.assertIsNotNone(scope)
+        self.assertTrue(scope.canonical)
+        self.assertEqual(scope.kind, "github_repo")
+
+    def test_non_document_file_in_repo_is_not_evidence(self):
+        self.assertIsNone(
+            self.scope("https://github.com/acme/acme/blob/main/src/index.ts")
+        )
+
+    def test_repo_root_and_org_page_still_work(self):
+        self.assertIsNotNone(self.scope("https://github.com/acme/acme"))
+        self.assertIsNotNone(self.scope("https://github.com/acme"))
+
+
+class RedirectAndDnsBoundaryTests(unittest.TestCase):
+    """Temuan reviewer: nama DNS tidak di-resolve dan redirect tidak divalidasi."""
+
+    def test_public_literal_ips_pass_both_checks(self):
+        self.assertTrue(plp.is_safe_fetch_url_resolved("https://8.8.8.8/"))
+        self.assertFalse(plp.is_safe_fetch_url_resolved("http://127.0.0.1/"))
+        self.assertFalse(plp.is_safe_fetch_url_resolved("http://169.254.169.254/"))
+
+    def test_nip_io_names_resolving_to_private_are_rejected(self):
+        # Kasus yang dilaporkan reviewer: lolos pemeriksaan statis.
+        self.assertTrue(plp.is_safe_fetch_url("http://127.0.0.1.nip.io/"))
+        self.assertTrue(plp.is_safe_fetch_url("http://169.254.169.254.nip.io/"))
+
+        def fake_resolver(host, _port, *_a, **_kw):
+            table = {
+                "127.0.0.1.nip.io": "127.0.0.1",
+                "169.254.169.254.nip.io": "169.254.169.254",
+                "docs.acme.example": "8.8.8.8",
+            }
+            ip = table.get(host)
+            if ip is None:
+                raise plp.socket.gaierror("unknown host")
+            return [(plp.socket.AF_INET, plp.socket.SOCK_STREAM, 6, "", (ip, 0))]
+
+        for host in ("127.0.0.1.nip.io", "169.254.169.254.nip.io"):
+            with self.subTest(host=host):
+                self.assertFalse(
+                    plp.is_safe_fetch_url_resolved(f"http://{host}/",
+                                                   resolver=fake_resolver)
+                )
+        self.assertTrue(
+            plp.is_safe_fetch_url_resolved("https://docs.acme.example/",
+                                           resolver=fake_resolver)
+        )
+
+    def test_unresolvable_host_is_rejected_not_assumed_safe(self):
+        def failing_resolver(*_a, **_kw):
+            raise plp.socket.gaierror("nxdomain")
+
+        self.assertFalse(
+            plp.is_safe_fetch_url_resolved("https://nope.invalid/",
+                                           resolver=failing_resolver)
+        )
+
+    def test_redirect_handler_rejects_private_target(self):
+        handler = plp._SafeRedirectHandler()
+        import email.message
+        import urllib.request as ur
+
+        req = ur.Request("https://docs.acme.example/")
+        with self.assertRaises(ur.HTTPError) as caught:
+            handler.redirect_request(
+                req, None, 302, "Found", email.message.Message(),
+                "http://169.254.169.254/latest/meta-data/",
+            )
+        caught.exception.close()
+
+
+class MergeBaseDeltaTests(unittest.TestCase):
+    """Temuan reviewer: `origin/main` bergerak sehingga delta PR salah."""
+
+    @staticmethod
+    def _commit(repo: Path, message: str) -> None:
+        subprocess.run(["git", "add", "-A"], cwd=repo, check=True)
+        subprocess.run(
+            ["git", "-c", "user.name=Test", "-c", "user.email=test@example.com",
+             "commit", "--allow-empty", "-qm", message],
+            cwd=repo, check=True,
+        )
+
+    @staticmethod
+    def _head(repo: Path, ref: str = "HEAD") -> str:
+        return subprocess.check_output(["git", "rev-parse", ref], cwd=repo,
+                                       text=True).strip()
+
+    def test_clean_pr_reports_no_provider_changes_when_main_advanced(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            repo = Path(temporary)
+            subprocess.run(["git", "init", "-q", "-b", "main"], cwd=repo, check=True)
+            csv_path = repo / plp.PROVIDERS_PATH
+            csv_path.parent.mkdir(parents=True)
+            csv_path.write_text(
+                HEADER + provider_row("acme", "Acme", github="acme/acme"),
+                encoding="utf-8",
+            )
+            self._commit(repo, "initial providers")
+            base = self._head(repo)
+
+            # PR kita: hanya menyentuh file non-CSV.
+            readme = repo / "README.md"
+            readme.write_text("# Acme\n", encoding="utf-8")
+            self._commit(repo, "pr: docs only")
+            pr_head = self._head(repo)
+
+            # main maju sendirian: mengubah field docs provider yang sama.
+            subprocess.run(["git", "checkout", "-q", "-b", "mainline", base], cwd=repo,
+                           check=True)
+            csv_path.write_text(
+                HEADER
+                + provider_row("acme", "Acme", docs="https://docs.acme.dev/",
+                               github="acme/acme"),
+                encoding="utf-8",
+            )
+            self._commit(repo, "main: set acme docs")
+            main_tip = self._head(repo)
+
+            merge_base = subprocess.check_output(
+                ["git", "merge-base", main_tip, pr_head], cwd=repo, text=True
+            ).strip()
+            self.assertEqual(merge_base, base)
+
+            stale = plp.collect_changes(main_tip, pr_head, cwd=str(repo))
+            correct = plp.collect_changes(merge_base, pr_head, cwd=str(repo))
+
+        # Perilaku lama yang dilaporkan reviewer: PR bersih menghasilkan noise
+        # dari perubahan yang sebenarnya milik main.
+        slugs = {c["slug"] for c in stale}
+        self.assertIn("acme", slugs, "syarat uji: origin/main harus menghasilkan noise")
+        self.assertEqual(correct, [], "merge-base harus menghasilkan nol perubahan")
+
+
 if __name__ == "__main__":
     unittest.main()

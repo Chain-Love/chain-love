@@ -49,6 +49,7 @@ import json
 import re
 import subprocess
 import sys
+import socket
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -208,8 +209,14 @@ def is_safe_fetch_url(url: str) -> bool:
     try:
         address = ipaddress.ip_address(host)
     except ValueError:
-        return True  # A public DNS name; resolution happens in urlopen.
-    return not (
+        # Nama DNS: kelayakan alamatnya diputuskan oleh varian *_resolved di
+        # bawah, setelah resolve. Di sini cukup lolos pemeriksaan statis.
+        return True
+    return not _is_blocked_address(address)
+
+
+def _is_blocked_address(address: ipaddress.IPv4Address | ipaddress.IPv6Address) -> bool:
+    return bool(
         address.is_private
         or address.is_loopback
         or address.is_link_local
@@ -217,6 +224,62 @@ def is_safe_fetch_url(url: str) -> bool:
         or address.is_multicast
         or address.is_unspecified
     )
+
+
+def is_safe_fetch_url_resolved(url: str, resolver=None) -> bool:
+    """Seperti `is_safe_fetch_url`, tetapi juga me-resolve nama DNS.
+
+    Tanpa langkah ini `127.0.0.1.nip.io` lolos pemeriksaan statis lalu
+    mengarah ke loopback saat benar-benar di-fetch. `resolver` dapat diganti
+    pada test supaya tetap offline dan deterministik.
+    """
+
+    if not is_safe_fetch_url(url):
+        return False
+
+    try:
+        host = urllib.parse.urlsplit(url).hostname or ""
+    except ValueError:
+        return False
+    host = host.lower().rstrip(".")
+
+    try:
+        ipaddress.ip_address(host)
+        return True  # literal IP sudah divalidasi pemeriksaan statis
+    except ValueError:
+        pass
+
+    resolve = resolver or socket.getaddrinfo
+    try:
+        infos = resolve(host, None)
+    except (socket.gaierror, UnicodeError, OSError):
+        return False
+    if not infos:
+        return False
+
+    for info in infos:
+        try:
+            address = ipaddress.ip_address(info[4][0])
+        except (ValueError, IndexError, TypeError):
+            return False
+        if _is_blocked_address(address):
+            return False
+    return True
+
+
+class _SafeRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Validasi ulang setiap hop redirect; tolak kalau mengarah ke alamat privat."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if not is_safe_fetch_url_resolved(newurl):
+            raise urllib.error.HTTPError(
+                newurl, code, "unsafe redirect target", headers, fp
+            )
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def _safe_opener() -> urllib.request.OpenerDirector:
+    return urllib.request.build_opener(_SafeRedirectHandler)
 
 
 # ---------------------------------------------------------------------------
@@ -335,6 +398,20 @@ def _github_identity(provider: Provider) -> tuple[str, str | None] | None:
     return org, repo
 
 
+# Path GitHub yang isinya dapat dibuat pengguna mana pun: issue, PR, diskusi,
+# release, komentar, wiki. Semua ini TIDAK boleh dianggap bukti first-party.
+USER_GENERATED_SEGMENTS = frozenset({
+    "issues", "issue", "pull", "pulls", "discussions", "discussion",
+    "releases", "release", "commit", "commits", "compare", "wiki", "labels",
+    "milestones", "network", "graphs", "pulse", "events", "stargazers",
+    "forks", "blame", "tags", "branches", "actions", "security", "projects",
+    "sponsors", "settings", "comments", "review", "checks", "deployments",
+})
+
+# Ekstensi yang masuk akal sebagai dokumen maintainer.
+DOCUMENT_SUFFIXES = (".md", ".mdx", ".markdown", ".rst", ".txt", ".html", ".htm")
+
+
 def classify_evidence(
     evidence_url: str,
     provider: Provider,
@@ -364,6 +441,21 @@ def classify_evidence(
             return None
         if len(segments) == 1:
             return EvidenceScope("github_org", f"github.com/{segments[0]}")
+
+        # Halaman yang isinya dibuat pengguna mana pun tidak membuktikan apa pun.
+        # Tanpa ini, `github.com/<org>/<repo>/issues/1` buatan siapa saja yang
+        # memuat URL kandidat akan dinilai first-party.
+        if len(segments) >= 3 and segments[2].lower() in USER_GENERATED_SEGMENTS:
+            return None
+        # Halaman di dalam repo hanya dihitung kalau itu dokumen milik maintainer.
+        if len(segments) >= 3:
+            kind = segments[2].lower()
+            if kind not in ("blob", "raw"):
+                return None
+            if len(segments) < 4:
+                return None
+            if not segments[-1].lower().endswith(DOCUMENT_SUFFIXES):
+                return None
 
         repo = _strip_git_suffix(segments[1].lower())
         canonical_names = {
@@ -591,7 +683,7 @@ def evaluate_change(
 def probe_url(url: str, timeout: float = 10.0) -> Reachability:
     """Check reachability without making any identity claim."""
 
-    if not is_safe_fetch_url(url):
+    if not is_safe_fetch_url_resolved(url):
         return Reachability(
             "not_checked", detail="URL is not a public http(s) endpoint"
         )
@@ -607,7 +699,7 @@ def probe_url(url: str, timeout: float = 10.0) -> Reachability:
     )
 
     try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
+        with _safe_opener().open(request, timeout=timeout) as response:
             status = getattr(response, "status", None) or response.getcode()
             final_url = response.geturl()
             content_type = response.headers.get_content_type()
@@ -642,7 +734,7 @@ def probe_url(url: str, timeout: float = 10.0) -> Reachability:
 
 
 def _fetch_text(url: str, timeout: float = 8.0) -> str:
-    if not is_safe_fetch_url(url):
+    if not is_safe_fetch_url_resolved(url):
         return ""
     request = urllib.request.Request(
         url,
@@ -652,7 +744,7 @@ def _fetch_text(url: str, timeout: float = 8.0) -> str:
         },
     )
     try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
+        with _safe_opener().open(request, timeout=timeout) as response:
             return response.read(MAX_RESPONSE_BYTES).decode("utf-8", "replace")
     except (urllib.error.URLError, TimeoutError, OSError, ValueError):
         return ""
