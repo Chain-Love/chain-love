@@ -1,8 +1,3 @@
-"""Regression coverage for Chain.Love issue #4020.
-
-Run from json-tools branch root:
-    python -m unittest tools.test_create_ndjson_utf8 -v
-"""
 from __future__ import annotations
 
 import builtins
@@ -77,6 +72,3 @@ class JsonInputEncodingTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "expected object"):
                 self._read_with_legacy_default(source)
 
-
-if __name__ == "__main__":
-    unittest.main()
