@@ -65,12 +65,15 @@ Requirements:
 - See [`listings/specific-networks/README.md`](listings/specific-networks/README.md) for
   the full spec and logo source suggestions.
 
+**Required:** Contributors must star the Chain.Love repository before opening a pull request.
+
 ## Contribution workflow
 
-1. Fork this repository and create a descriptive branch (example: `add-ankr-offer`).
-2. Edit the correct CSV based on the table above.
-3. Validate locally (optional) or rely on CI checks.
-4. Open a PR with a clear description and links to sources for changed data.
+1. Star and fork this repository before submitting a contribution.
+2. Create a descriptive branch (example: `add-ankr-offer`).
+3. Edit the correct CSV based on the table above.
+4. Validate locally (optional) or rely on CI checks.
+5. Open a PR with a clear description and links to sources for changed data.
 
 ## Local validation (optional)
 
@@ -107,5 +110,13 @@ Use [GitHub Issues](https://github.com/Chain-Love/chain-love/issues).
 ## Grant program and rewards
 
 See the [Grant Program](../../discussions/41). Database contributions may be eligible for USDT/USDC rewards under certain conditions.
+
+### Ecosystem outreach bounty
+
+Chain.Love also runs an [Ecosystem Discovery Bounty Program](../../discussions/3731) for contributors who find relevant opportunities to add Chain.Love to external ecosystem documentation, developer catalogs, resource directories, and similar developer resources.
+
+For this program, contributors prepare the proposed patch but **must not contact the destination project or open an external PR, issue, or discussion themselves**. Each prepared proposal should be submitted as a separate Discussion in the [Outreach program submissions](https://github.com/Chain-Love/chain-love/discussions/categories/outreach-program-submissions) category for review by an authorized Chain.Love outreacher.
+
+Read the [full program rules](../../discussions/3731) before preparing a submission.
 
 
