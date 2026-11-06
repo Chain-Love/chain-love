@@ -74,7 +74,7 @@ Chain.Love also runs an Ecosystem Discovery Bounty Program:
 
 When preparing work for this program:
 
-- Research a relevant external destination and prepare the proposed change in a fork, branch, or diff.
+- Research a relevant external destination, fork the destination repository, and prepare the proposed change in your own branch.
 - Do not open an external pull request, issue, discussion, or contact destination maintainers on behalf of the contributor.
 - Check `outreach/registry.csv` for existing outreach to the same destination organization before preparing a new proposal.
 - Submit each prepared proposal as a separate Discussion in:
