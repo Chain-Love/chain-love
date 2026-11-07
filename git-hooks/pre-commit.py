@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import csv
 import io
 import shutil
 import subprocess
@@ -116,12 +117,12 @@ def download_and_extract(url: str, dest: Path, subpath: str) -> None:
                 with tar.extractfile(m) as src, open(target_path, "wb") as out:
                     shutil.copyfileobj(src, out)
 
-def detect_newline(path):
-    with open(path, "rb") as f:
-        chunk = f.read(8192)
-    if b"\r\n" in chunk:
-        return "\r\n"
-    return "\n"
+def split_record_ending(record: str) -> tuple[str, str]:
+    """Separate a CSV record's terminator, leaving embedded newlines intact."""
+    for ending in ("\r\n", "\n", "\r"):
+        if record.endswith(ending):
+            return record[:-len(ending)], ending
+    return record, ""
 
 def get_repo_root() -> Path:
     out = subprocess.check_output(
@@ -138,49 +139,59 @@ def iter_csv(repo_root: Path) -> Iterable[Path]:
 
 def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
     """
-    Sort CSV files by slug column without modifying quoting.
+    Sort complete CSV records by slug without rewriting their fields.
     """
     print("Sorting CSV files by slug")
 
     for csv_file in iter_csv(repo_root):
-        newline_style = detect_newline(csv_file)
-
         with csv_file.open("r", newline="") as f:
             lines = f.readlines()
 
         if len(lines) <= 1:
             continue
 
-        header_line = lines[0].rstrip("\r\n")
-        header_parts = [h.strip().strip('"') for h in header_line.split(delimiter)]
+        reader = csv.reader(lines, delimiter=delimiter, strict=True)
+        header_parts = [cell.strip() for cell in next(reader)]
 
         if "slug" not in header_parts:
             continue
 
         slug_idx = header_parts.index("slug")
+        header = "".join(lines[:reader.line_num])
+        _, newline_style = split_record_ending(header)
+        start = reader.line_num
+        records = []
+        for row in reader:
+            # line_num counts physical lines consumed by each logical record.
+            # Retain those source lines so quoting and field data stay exact.
+            raw_record = "".join(lines[start:reader.line_num])
+            start = reader.line_num
+            body, ending = split_record_ending(raw_record)
+            slug = row[slug_idx].strip() if slug_idx < len(row) else ""
+            records.append((slug, body, ending))
 
-        data_lines = lines[1:]
+        if not records:
+            continue
 
-        def slug_key(raw_line: str) -> str:
-            parts = raw_line.rstrip("\r\n").split(delimiter)
-
-            if slug_idx >= len(parts):
-                return ""
-
-            cell = parts[slug_idx].strip()
-
-            # normalize quoted slug for sorting only
-            if cell.startswith('"') and cell.endswith('"'):
-                cell = cell[1:-1]
-
-            return cell
-
-        rows_sorted = sorted(data_lines, key=slug_key)
+        trailing_newline = bool(records[-1][2])
+        rows_sorted = sorted(records, key=lambda record: record[0])
 
         with csv_file.open("w", newline="") as f:
-            f.write(header_line + newline_style)
-            for row in rows_sorted:
-                f.write(row.rstrip("\r\n") + newline_style)
+            f.write(header)
+            previous_ended_with_cr = header.endswith("\r")
+            for index, (_, body, ending) in enumerate(rows_sorted):
+                if index < len(rows_sorted) - 1 or trailing_newline:
+                    # A formerly final record may need a separator after moving.
+                    ending = ending or newline_style
+                else:
+                    ending = ""
+                record = body + ending
+                if previous_ended_with_cr and record.startswith("\n"):
+                    # Keep a CR record boundary and a following empty LF record
+                    # separate: otherwise they would merge into a single CRLF.
+                    f.write("\n")
+                f.write(record)
+                previous_ended_with_cr = record.endswith("\r")
 
         subprocess.run(["git", "add", str(csv_file)], check=True)
         print(f"  sorted: {csv_file}")
