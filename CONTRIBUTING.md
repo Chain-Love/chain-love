@@ -73,7 +73,23 @@ Requirements:
 2. Create a descriptive branch (example: `add-ankr-offer`).
 3. Edit the correct CSV based on the table above.
 4. Validate locally (optional) or rely on CI checks.
-5. Open a PR with a clear description and links to sources for changed data.
+5. Go through [Before you submit](#before-you-submit) below.
+6. Open a PR with a clear description and links to sources for changed data.
+
+## Before you submit
+
+These checks catch common, avoidable reasons for change requests in review. The wiki remains the authoritative source for every definition; follow the links for details.
+
+1. **Fill each column as its wiki page defines it.** Pick `planType` from the values listed in [Common Columns](https://github.com/Chain-Love/chain-love/wiki/Common-Columns#plantype) (`Public` = no payment or registration; `Free` = no payment, but registration is needed). In SDKs, do not fill `latestKnownVersion`, `latestKnownReleaseDate`, `maintainer` or `license` by hand: they are reserved for automation and [can't be modified manually](https://github.com/Chain-Love/chain-love/wiki/SDKs#latestknownversion-latestknownreleasedate-maintainer-and-license).
+2. **Search open PRs for the same provider, offer or listing before opening yours.** If two open PRs overlap, a maintainer confirms which one lands. An overlapping PR should not receive final approval until one of these happens: the overlap is removed, the competing PR is closed or changed, or the maintainer's choice is recorded.
+3. **Keep CSVs sorted, booleans uppercase and provider logos in place.** Keep each CSV A-Z sorted by `slug` ([General rules](https://github.com/Chain-Love/chain-love/wiki/Style-Guide#general-rules)) and write booleans as uppercase `TRUE`/`FALSE` ([Booleans](https://github.com/Chain-Love/chain-love/wiki/Style-Guide#booleans)). A new provider also needs `logoPath` set to the filename only (for example `alchemy.png`, see [Link formatting](https://github.com/Chain-Love/chain-love/wiki/Style-Guide#link-formatting)) and the official logo under that name in `references/providers/images/` ([#4250](https://github.com/Chain-Love/chain-love/pull/4250#pullrequestreview-5441047866)).
+4. **`actionButtons`: max 2 buttons.** `Public` endpoints get a `Send Requests` button with a direct link; `Enterprise` plans get a `Contact Sales` button with a contact form link ([Common Columns](https://github.com/Chain-Love/chain-love/wiki/Common-Columns#actionbuttons)). In SDKs, at least one of the two must lead to an official download source such as GitHub or the npm registry ([SDKs](https://github.com/Chain-Love/chain-love/wiki/SDKs#actionbuttons)).
+5. **Resolve merge conflicts.** If GitHub reports a conflict with `main`, before or after you open the PR, resolve it, for example by rebasing your branch on `main` ([#4391](https://github.com/Chain-Love/chain-love/pull/4391#pullrequestreview-5539637158)).
+6. **Override only what is specific to that network.** A non-blank listing cell replaces the canonical value instead of merging with it, so an `actionButtons` override must contain the full final set of buttons ([Merge behavior](https://github.com/Chain-Love/chain-love/wiki/References-Syntax#merge-behavior)).
+7. **Open every link you add and confirm that the provider supports that network** before submitting ([General rules](https://github.com/Chain-Love/chain-love/wiki/Style-Guide#general-rules)).
+8. **Choose the category from [Categories definitions](https://github.com/Chain-Love/chain-love/wiki/Categories-definitions#classification-sequence).** If you are unsure, ask in [Discussions Q&A](https://github.com/Chain-Love/chain-love/discussions/categories/q-a) first: a PR "may be closed simply because the category was poorly chosen". A completely network-agnostic offer belongs in `listings/all-networks/` ([Database structure](https://github.com/Chain-Love/chain-love/wiki/Style-Guide#database-structure)).
+9. **Make sure the PR changes the generated data.** A PR that makes no change to the final hydrated data (for example, a listing override equal to the inherited canonical value) should be closed without merging.
+10. **Keep the title and description in line with the diff.** Do not use a closing keyword (`Closes #N`, `Fixes #N`, `Resolves #N`) unless the PR implements all of that issue.
 
 ## Local validation (optional)
 
