@@ -67,6 +67,22 @@ Good logo sources (transparent-background assets):
 - Before making any data contribution, read the project Style Guide in the GitHub Wiki:
   `https://github.com/Chain-Love/chain-love/wiki/Style-Guide`.
 
+## Ecosystem outreach bounty
+
+Chain.Love also runs an Ecosystem Discovery Bounty Program:
+`https://github.com/Chain-Love/chain-love/discussions/3731`
+
+When preparing work for this program:
+
+- Research a relevant external destination, fork the destination repository, and prepare the proposed change in your own branch.
+- Do not open an external pull request, issue, discussion, or contact destination maintainers on behalf of the contributor.
+- Check `outreach/registry.csv` for existing outreach to the same destination organization before preparing a new proposal.
+- Submit each prepared proposal as a separate Discussion in:
+  `https://github.com/Chain-Love/chain-love/discussions/categories/outreach-program-submissions`
+- Treat Discussion #3731 as the source of truth for eligibility, rewards, review, and external outreach rules.
+
+Only authorized Chain.Love outreachers may perform the external outreach described by the program.
+
 ## First files to read for context
 
 1. `README.md`
