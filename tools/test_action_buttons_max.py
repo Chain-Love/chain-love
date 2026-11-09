@@ -65,7 +65,7 @@ class TestActionButtonsMaxCountWithOverrides(unittest.TestCase):
         ]}
         listings = {"apis": [
             {"slug": "canon-eth", "offer": "!offer:canon",
-             "actionButtons": json.dumps(listing_buttons) if listing_buttons else ""},
+             "actionButtons": json.dumps(listing_buttons) if listing_buttons is not None else ""},
         ]}
         data, errors = normalize(resolve_offers(listings, offers, "ethereum"))
         self.assertEqual(errors, [])
@@ -77,6 +77,11 @@ class TestActionButtonsMaxCountWithOverrides(unittest.TestCase):
 
     def test_override_replaces_whole_list(self):
         rows = self.hydrate([DOCS, WEBSITE, BUY], [DOCS])
+        self.assertEqual(rule_action_buttons_max_count(rows), [])
+
+    def test_empty_override_clears_canonical_buttons(self):
+        rows = self.hydrate([DOCS, WEBSITE, BUY], [])
+        self.assertEqual(rows[0]["actionButtons"], [])
         self.assertEqual(rule_action_buttons_max_count(rows), [])
 
     def test_override_with_too_many_fails(self):
