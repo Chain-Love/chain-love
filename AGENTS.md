@@ -30,7 +30,7 @@ Repository paths:
 
 - Category CSVs use separate `provider` and `offer` columns.
 - Listings should place canonical references in the `offer` column using `!offer:<slug>`.
-- `references/providers/providers.csv` uses `logoPath` as filename only (example: `alchemy.png`).
+- `references/providers/providers.csv` uses `logoPath` as PNG filename only (example: `alchemy.png`). Provider logos must be PNG files in `references/providers/images/`; do not use SVG or other formats.
 - Consumers should prepend the static prefix `references/providers/images/` during visualization.
 - `references/providers/providers.csv` keeps link fields without Markdown wrappers.
 - In `references/providers/providers.csv`, `website` and `docs` use full URLs, while `x`, `github`, `discord`, `telegram`, and `linkedin` store only the value after domain.
@@ -66,6 +66,20 @@ Good logo sources (transparent-background assets):
 - If confidence is below 100% for any value, do not invent data; leave it unchanged and request clarification or a source.
 - Before making any data contribution, read the project Style Guide in the GitHub Wiki:
   `https://github.com/Chain-Love/chain-love/wiki/Style-Guide`.
+
+## Checks before opening a PR
+
+Go through the [Before you submit](CONTRIBUTING.md#before-you-submit) checklist in `CONTRIBUTING.md`; it links each rule to its wiki definition where the wiki has one. Then check your own diff:
+
+- Every value you set matches its column definition in `https://github.com/Chain-Love/chain-love/wiki/Common-Columns` and the category's wiki page; `planType` is one of the listed values.
+- In `sdks.csv`, `latestKnownVersion`, `latestKnownReleaseDate`, `maintainer` and `license` are not filled by hand.
+- You searched open PRs for the same provider, offer or listing; if one overlaps, see check 2 of Before you submit.
+- Each edited CSV is still A-Z sorted by `slug`, and booleans are uppercase `TRUE`/`FALSE`.
+- `actionButtons` is a valid JSON list with at most 2 Markdown links; for SDKs, at least one button leads to an official download source such as GitHub or the npm registry.
+- For a new provider, `logoPath` names a PNG file that exists in `references/providers/images/` (not SVG or another format).
+- A completely network-agnostic offer keeps its canonical row in `references/offers/` and places its listing in `listings/all-networks/`.
+- For data contributions, confirm that the CSV changes affect the final hydrated output; remove redundant overrides (a listing cell equal to the canonical value it overrides changes nothing).
+- The PR title and description do not claim more than the diff does (no `Closes #N`, `Fixes #N` or `Resolves #N` for an issue the PR does not fully implement).
 
 ## Ecosystem outreach bounty
 
