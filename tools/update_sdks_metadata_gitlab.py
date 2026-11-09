@@ -163,7 +163,7 @@ class GitLab:
     def _get(self, url: str):
         st, js, hdrs = self.http.get_json(url, self.headers)
         self._warn_if_limited(st, hdrs)
-        return js
+        return js if st == 200 else None
 
     def project(self, path: str):
         enc = urllib.parse.quote(path, safe="")
@@ -171,11 +171,13 @@ class GitLab:
 
     def releases(self, path: str):
         enc = urllib.parse.quote(path, safe="")
-        return self._get(f"https://gitlab.com/api/v4/projects/{enc}/releases?per_page=100") or []
+        data = self._get(f"https://gitlab.com/api/v4/projects/{enc}/releases?per_page=100")
+        return [item for item in data if isinstance(item, dict)] if isinstance(data, list) else []
 
     def tags(self, path: str):
         enc = urllib.parse.quote(path, safe="")
-        return self._get(f"https://gitlab.com/api/v4/projects/{enc}/repository/tags?per_page=100") or []
+        data = self._get(f"https://gitlab.com/api/v4/projects/{enc}/repository/tags?per_page=100")
+        return [item for item in data if isinstance(item, dict)] if isinstance(data, list) else []
 
 
 # ---- Cache ----
