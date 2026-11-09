@@ -253,13 +253,15 @@ def init_db(conn: sqlite3.Connection, tables: List[Table]):
 
 def compress_db(db_path: Path, output_dir: Path):
     archive_path = (output_dir / f"{db_path.name}.tar.gz").resolve()
-    archive_path.unlink(missing_ok=True)
-
-    subprocess.run(
-        ["tar", "-czf", str(archive_path), db_path.name],
-        cwd=db_path.parent,
-        check=True,
-    )
+    # Keep the previous archive until tar completes; a sibling allows atomic replacement.
+    with tempfile.TemporaryDirectory(dir=archive_path.parent) as tmp_dir:
+        temporary_archive = Path(tmp_dir) / archive_path.name
+        subprocess.run(
+            ["tar", "-czf", str(temporary_archive), db_path.name],
+            cwd=db_path.parent,
+            check=True,
+        )
+        temporary_archive.replace(archive_path)
 
 # =========================
 # MAIN
