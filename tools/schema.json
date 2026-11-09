@@ -150,7 +150,11 @@
         "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
         "searchCapabilities": {
           "type": ["array", "null"],
-          "items": { "type": "string" }
+          "items": {
+            "type": "string",
+            "enum": ["accounts", "address", "advanced-filters", "alias", "application", "asset", "block", "block-hash", "chain-state", "claim-id", "client-address", "collators", "contract", "custom-queries", "deal-id", "democracy-proposals", "domain", "domain-name", "entity", "epoch", "erc20-tokens", "event", "evm-accounts", "extrinsic", "filter", "fns", "government", "hash", "height", "label", "label-cloud", "ledger", "logs", "message-cid", "message-id", "miner-id", "nfd", "nft", "object", "package", "piece-cid", "program", "provider", "provider-address", "rpc-calls", "runtime-calls", "search", "token", "transaction-hash", "transfers", "userop-hash", "vaa", "validator", "xcm"]
+          },
+          "uniqueItems": true
         },
         "smartContractsVerifications": { "type": "boolean" },
         "fullHistory": { "type": "boolean" },

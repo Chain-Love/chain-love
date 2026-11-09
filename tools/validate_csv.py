@@ -3,6 +3,7 @@ from typing import Iterator, Callable, List, Dict
 import os
 import csv
 import re
+import json
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
 
@@ -50,6 +51,43 @@ def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
 
     return errors
 
+EXPLORER_SEARCH_CAPABILITY_ALIASES = {
+    "tx": "transaction-hash",
+    "transaction": "transaction-hash",
+    "transaction hash": "transaction-hash",
+    "contracts": "contract",
+    "blocks": "block",
+}
+
+def rule_explorer_search_capabilities(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    if path.name != "explorers.csv" or not rows or "searchCapabilities" not in rows[0]:
+        return []
+    errors: List[str] = []
+    for idx, row in enumerate(rows, start=2):
+        raw = (row.get("searchCapabilities") or "").strip()
+        if not raw or raw.startswith("!offer:"):
+            continue
+        try:
+            values = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            errors.append(f"{path}: row {idx}: searchCapabilities is not valid JSON: {exc.msg}")
+            continue
+        if not isinstance(values, list) or not all(isinstance(v, str) for v in values):
+            errors.append(f"{path}: row {idx}: searchCapabilities must be an array of strings")
+            continue
+        canonical = []
+        for value in values:
+            key = value.strip().casefold()
+            canonical.append(EXPLORER_SEARCH_CAPABILITY_ALIASES.get(key, key.replace(" ", "-")))
+        if values != canonical:
+            errors.append(f"{path}: row {idx}: searchCapabilities must use canonical tokens; expected {canonical}")
+            continue
+        if len(values) != len(set(values)):
+            errors.append(f"{path}: row {idx}: searchCapabilities contains duplicate tokens")
+        if values != sorted(values):
+            errors.append(f"{path}: row {idx}: searchCapabilities must be sorted canonically")
+    return errors
+
 def looks_like_url(v: str) -> bool:
     return v.startswith("http://") or v.startswith("https://")
 
@@ -89,6 +127,7 @@ def main():
 
     validator = CSVValidator()
     validator.add_rule(rule_slug_sorted)
+    validator.add_rule(rule_explorer_search_capabilities)
     #validator.add_rule(rule_links_must_be_quoted)
 
     all_errors: List[str] = []
