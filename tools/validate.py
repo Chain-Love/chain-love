@@ -77,6 +77,20 @@ def rule_action_buttons_is_list_of_links(data):
                 errors.append(f"Item {idx}: action_button[{item_idx}] must be a markdown link")
     return errors
 
+MAX_ACTION_BUTTONS = 2
+
+def rule_action_buttons_max_count(data):
+    # Wiki Common Columns, actionButtons: "Max 2 buttons."
+    # Hydrated rows already carry the listing override, which replaces the whole list.
+    errors = []
+    for idx, item in enumerate(data):
+        action_buttons = item.get("actionButtons")
+        if type(action_buttons) != list:
+            continue
+        if len(action_buttons) > MAX_ACTION_BUTTONS:
+            errors.append(f"Item {idx}: slug '{item.get('slug')}' has {len(action_buttons)} actionButtons, maximum is {MAX_ACTION_BUTTONS}")
+    return errors
+
 def rule_no_unclosed_markdown(data):
     errors = []
     for idx, item in enumerate(data):
@@ -288,6 +302,7 @@ def main():
     rules.add_rule(rule_slug_unique)
     rules.add_rule(rule_no_unclosed_markdown)
     rules.add_rule(rule_action_buttons_is_list_of_links)
+    rules.add_rule(rule_action_buttons_max_count)
     rules.add_rule(rule_provider_casing_consistent)
     rules.add_rule(rule_slug_kebab_case)
     rules.add_rule(rule_chain_is_lowercase)
