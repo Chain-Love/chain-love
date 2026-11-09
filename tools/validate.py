@@ -285,7 +285,9 @@ def load_json(path: str):
 def main():
     had_errors = False
 
-    schema = load_json("schema.json")
+    schema = None
+    with open("schema.json", "r") as f:
+        schema = json.load(f)
 
     rules = Validator()
     rules.add_rule(rule_slug_unique)
