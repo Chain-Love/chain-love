@@ -39,5 +39,16 @@ Go to https://chain.love and select the network you would like to explore. Take 
 Go to [Releases](https://github.com/Chain-Love/chain-love/releases) to fetch latest JSONs we produce.
 
 ## How to Contribute
-
 We recommend using our [Contribution Wizard](https://app.chain.love/contributor/web3-data). For manual contributions, please, see [CONTRIBUTING](CONTRIBUTING.md).
+
+⭐ Star this repository before submitting a contribution.
+
+### Star History
+
+<a href="https://www.star-history.com/?repos=chain-love%2Fchain-love&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=chain-love/chain-love&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=chain-love/chain-love&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=chain-love/chain-love&type=date&legend=top-left" />
+ </picture>
+</a>
