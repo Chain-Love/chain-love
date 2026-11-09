@@ -14,6 +14,8 @@ However, schema/meta changes in this branch must be mirrored in data tables on `
 ## 1. Files and responsibilities
 
 - **`tools/schema.json`**
+  - Generated network documents require top-level `schemaVersion`, `columns`, and `meta`.
+    Canonical offer templates are validated separately without that network envelope.
   - Defines the top-level properties for each category:
     - `apis`, `explorers`, `oracles`, etc.
     - For each category, defines a JSON Schema object in `$defs`:
