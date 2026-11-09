@@ -6,6 +6,7 @@ import shutil
 import tarfile
 import tempfile
 import io
+from contextlib import contextmanager
 from typing import Dict, List, Union, cast
 
 # --- JSON types ---
@@ -135,6 +136,18 @@ def write_json_file(
     tar.addfile(tarinfo, io.BytesIO(data))
 
 
+@contextmanager
+def _replace_when_complete(path: str):
+    # "w:gz" truncates its path immediately, so write beside the archive.
+    directory = tempfile.mkdtemp(prefix=".ndjson-", dir=os.path.dirname(path) or ".")
+    temporary = os.path.join(directory, os.path.basename(path))
+    try:
+        yield temporary
+        os.replace(temporary, path)
+    finally:
+        shutil.rmtree(directory, ignore_errors=True)
+
+
 def write_tar(network: str, raw: RawRoot) -> None:
     tar_path: str = os.path.join(JSON_DIR, f"{network}-ndjson.tar.gz")
 
@@ -142,31 +155,21 @@ def write_tar(network: str, raw: RawRoot) -> None:
     columns: ColumnsMap = extract_columns(raw)
     meta: MetaMap = extract_meta(raw)
 
-    # Open the gzip only on a sibling temp file. "w:gz" truncates its path
-    # immediately, so a mid-write error must not touch the previous archive.
-    temporary_dir: str = tempfile.mkdtemp(
-        prefix=f".{network}-ndjson-",
-        dir=os.path.dirname(tar_path) or ".",
-    )
-    temporary_path: str = os.path.join(temporary_dir, os.path.basename(tar_path))
-    try:
-        with tarfile.open(temporary_path, "w:gz", compresslevel=9) as tar:
+    with _replace_when_complete(tar_path) as temporary, tarfile.open(
+        temporary, "w:gz", compresslevel=9
+    ) as tar:
 
-            # --- DATA ---
-            for category, items in data.items():
-                write_ndjson_file(tar, f"{category}.ndjson", items)
+        # --- DATA ---
+        for category, items in data.items():
+            write_ndjson_file(tar, f"{category}.ndjson", items)
 
-            # --- COLUMNS ---
-            for category, cols in columns.items():
-                write_json_file(tar, f"columns/{category}.json", cols)
+        # --- COLUMNS ---
+        for category, cols in columns.items():
+            write_json_file(tar, f"columns/{category}.json", cols)
 
-            # --- META ---
-            for meta_key, rows in meta.items():
-                write_ndjson_file(tar, f"meta/{meta_key}.ndjson", rows)
-
-        os.replace(temporary_path, tar_path)
-    finally:
-        shutil.rmtree(temporary_dir, ignore_errors=True)
+        # --- META ---
+        for meta_key, rows in meta.items():
+            write_ndjson_file(tar, f"meta/{meta_key}.ndjson", rows)
 
     print(f"Created {tar_path}")
 
