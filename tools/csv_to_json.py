@@ -403,6 +403,10 @@ def get_column_order(base_categories: list[Category], extra_categories: list[Cat
     for category in base_categories + unique_extras:
         headers = get_csv_headers(category.path)
         category_columns[category.name] = headers
+    for f in (os.listdir("references/offers") if os.path.isdir("references/offers") else []):
+        if f.endswith(".csv") and f[:-4] in category_columns:
+            for h in get_csv_headers(os.path.join("references/offers", f)):
+                if h not in category_columns[f[:-4]]: category_columns[f[:-4]].append(h)
     
     # Hardcode columns order for automatically generated agents category
     category_columns["agents"] = [
