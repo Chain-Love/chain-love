@@ -16,6 +16,7 @@
     "bridges": { "type": "array", "items": { "$ref": "#/$defs/bridges" } },
     "services": { "type": "array", "items": { "$ref": "#/$defs/services" } },
     "storages": { "type": "array", "items": { "$ref": "#/$defs/storages" } },
+    "compute": { "type": "array", "items": { "$ref": "#/$defs/compute" } },
     "faucets": { "type": "array", "items": { "$ref": "#/$defs/faucets" } },
     "analytics": { "type": "array", "items": { "$ref": "#/$defs/analytics" } },
     "wallets": { "type": "array", "items": { "$ref": "#/$defs/wallets" } },
@@ -398,6 +399,51 @@
         "starred",
         "actionButtons",
         "planType"
+      ]
+    },
+
+    "compute": {
+      "title": "Compute",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "offer": { "type": ["string", "null"] },
+        "actionButtons": { "type": ["array", "null"], "items": { "type": "string" } },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "price": { "type": ["string", "null"] },
+        "planType": { "type": "string", "examples": ["Free", "Pay-as-you-go", "Enterprise", "Dedicated", "Tiered", "One-time payment"] },
+        "planName": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "resourceTypes": {
+          "type": ["array", "null"],
+          "items": { "type": "string", "enum": ["cpu", "gpu", "accelerator"] },
+          "uniqueItems": true
+        },
+        "provisioningMode": {
+          "type": ["string", "null"],
+          "enum": ["container", "vm", "bare_metal", "serverless", "marketplace", "mixed", null]
+        },
+        "workloadTypes": {
+          "type": ["array", "null"],
+          "items": { "type": "string", "enum": ["general_compute", "ai_inference", "ai_training", "rendering", "batch", "scientific"] },
+          "uniqueItems": true
+        },
+        "hardwareModels": { "type": ["array", "null"], "items": { "type": "string" } },
+        "interfaces": {
+          "type": ["array", "null"],
+          "items": { "type": "string", "enum": ["web", "api", "cli", "docker", "kubernetes", "sdk"] },
+          "uniqueItems": true
+        },
+        "pricingUnit": { "type": ["string", "null"], "enum": ["hour", "second", "job", "market-based", null] },
+        "minimumCommitment": { "type": ["string", "null"] }
+      },
+      "required": [
+        "slug", "provider", "offer", "actionButtons", "tag", "description", "price",
+        "planType", "planName", "starred", "resourceTypes", "provisioningMode",
+        "workloadTypes", "hardwareModels", "interfaces", "pricingUnit", "minimumCommitment"
       ]
     },
 
@@ -962,6 +1008,7 @@
         "services": { "type": "array", "items": { "type": "string" } },
         "ramps": { "type": "array", "items": { "type": "string" } },
         "storages": { "type": "array", "items": { "type": "string" } },
+        "compute": { "type": "array", "items": { "type": "string" } },
         "sdks": { "type": "array", "items": { "type": "string" } },
         "platforms": { "type": "array", "items": { "type": "string" } },
         "security": { "type": "array", "items": { "type": "string" } },
@@ -1055,6 +1102,7 @@
               "bridges",
               "services",
               "storages",
+              "compute",
               "faucets",
               "analytics",
               "wallets",

@@ -1229,5 +1229,82 @@
     "sorting": "string",
     "pinning": null,
     "cellType": null
+  },
+  "resourceTypes": {
+    "key": "resourceTypes",
+    "label": "Resource Types",
+    "icon": "lucide:Cpu",
+    "description": "Compute resources available: cpu, gpu or accelerator.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "provisioningMode": {
+    "key": "provisioningMode",
+    "label": "Provisioning Mode",
+    "icon": "lucide:Server",
+    "description": "How compute capacity is provisioned: container, vm, bare_metal, serverless, marketplace or mixed.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "serviceDetails"
+  },
+  "workloadTypes": {
+    "key": "workloadTypes",
+    "label": "Workload Types",
+    "icon": "lucide:Workflow",
+    "description": "Supported workloads: general_compute, ai_inference, ai_training, rendering, batch or scientific.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "hardwareModels": {
+    "key": "hardwareModels",
+    "label": "Hardware Models",
+    "icon": "lucide:Microchip",
+    "description": "Documented CPU, GPU or accelerator models. Leave empty when not documented.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "interfaces": {
+    "key": "interfaces",
+    "label": "Interfaces",
+    "icon": "lucide:Terminal",
+    "description": "Ways to access compute capacity: web, api, cli, docker, kubernetes or sdk.",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
+  },
+  "pricingUnit": {
+    "key": "pricingUnit",
+    "label": "Pricing Unit",
+    "icon": "lucide:Clock",
+    "description": "Documented billing unit: hour, second, job or market-based.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "pricingAndSlas"
+  },
+  "minimumCommitment": {
+    "key": "minimumCommitment",
+    "label": "Minimum Commitment",
+    "icon": "lucide:Timer",
+    "description": "Documented minimum rental duration or commitment. Leave empty when unknown.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "pricingAndSlas"
   }
 }
