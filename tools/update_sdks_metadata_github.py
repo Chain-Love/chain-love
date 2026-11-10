@@ -45,9 +45,11 @@ def is_stable_release_tag(tag: str) -> bool:
     if not tag:
         return False
     t = tag.strip()
-    if PRERELEASE_KEYWORDS_RE.search(t):
+    # Build metadata after '+' does not make a version a prerelease.
+    version = t.split("+", 1)[0]
+    if PRERELEASE_KEYWORDS_RE.search(version):
         return False
-    if "-" in t:
+    if "-" in version:
         return False
     return bool(STABLE_TAG_RE.match(t))
 
