@@ -73,6 +73,7 @@ Go through the [Before you submit](CONTRIBUTING.md#before-you-submit) checklist 
 
 - Every value you set matches its column definition in `https://github.com/Chain-Love/chain-love/wiki/Common-Columns` and the category's wiki page; `planType` is one of the listed values.
 - In `sdks.csv`, `latestKnownVersion`, `latestKnownReleaseDate`, `maintainer` and `license` are not filled by hand.
+- In `sdks.csv`, new or changed `dependencies` cells follow [SDK dependencies](https://github.com/Chain-Love/chain-love/wiki/SDKs#dependencies): unique package/module identifiers without versions, ranges, tags or URLs, only for direct required prerequisites users must install or supply separately. Exclude automatically installed internal runtime dependencies, transitive/dev/test/build dependencies and optional integrations outside the row's documented use. Verify official installation docs or required peer declarations; do not copy a full manifest or infer a minimum version. Canonical blank = unverified, `[]` = verified none; listing blank = inherit, non-blank list = replace. Do not require unrelated edits to refresh legacy lists.
 - You searched open PRs for the same provider, offer or listing; if one overlaps, see check 2 of Before you submit.
 - Each edited CSV is still A-Z sorted by `slug`, and booleans are uppercase `TRUE`/`FALSE`.
 - `actionButtons` is a valid JSON list with at most 2 Markdown links; for SDKs, at least one button leads to an official download source such as GitHub or the npm registry.
