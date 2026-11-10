@@ -4,6 +4,12 @@ import os
 import string
 import unicodedata
 import warnings
+import argparse
+import sys
+
+# Existing workflows copy this entrypoint but retain the tools checkout here.
+sys.path.append(os.path.join(os.path.dirname(__file__), 'json-tools', 'tools'))
+from schema_versions import VERSIONS, canonicalize_fields, network_slugs, project_data
 
 OFFER_REF_PREFIX = "!offer:"
 
@@ -453,6 +459,9 @@ def resolve_offers(
             → ensure row["offer"] = None
     """
 
+    data_by_category = canonicalize_fields(data_by_category)
+    offers_by_category = canonicalize_fields(offers_by_category)
+
     # Build offer indexes per category: {category: {offer_slug: offer_row}}
     offer_idx_by_category: dict[str, dict[str, dict]] = {}
     for cat, offers in offers_by_category.items():
@@ -683,6 +692,9 @@ def collect_provider_categories(
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--schema-version', choices=VERSIONS, default='2.0.0')
+    args = parser.parse_args()
     base_dir = "listings"
     all_networks_dir = os.path.join(base_dir, "all-networks")
     specific_networks_dir = os.path.join(base_dir, "specific-networks")
@@ -691,7 +703,7 @@ def main():
         print("No 'listings/specific-networks' directory found")
         return
 
-    schema_version = get_schema_version("schema.json", fallback="1.0.0")
+    schema_version = args.schema_version
 
     # References
     providers = load_providers("references/providers/providers.csv")
@@ -792,6 +804,9 @@ def main():
             "columns": column_meta,
             "providers": provider_meta,
         }
+
+        result = project_data(result, schema_version, legacy_metadata=column_meta,
+                              networks=network_slugs(specific_networks_dir))
 
         os.makedirs("json", exist_ok=True)
         with open(f"json/{network_name}.json", "w+", encoding="utf-8") as f:
