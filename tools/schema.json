@@ -84,7 +84,7 @@
         },
         "supportSla": { "type": ["string", "null"] },
         "technology": {
-          "type": "string",
+          "type": ["string", "null"],
           "examples": ["EVM JSON-RPC", "The Graph"]
         },
         "additionalFeatures": {
