@@ -71,6 +71,9 @@ def normalize(data_by_category: dict):
                     errors.append(
                         f"Failed to parse value '{value}' for key '{key}' in category '{category}' as JSON: {e}"
                     )
+                else:
+                    if key == "x402PaymentRoutes" and new_item[key] is not None and not isinstance(new_item[key], list):
+                        errors.append(f"Field 'x402PaymentRoutes' in '{category}' must be a JSON array or null, got '{value}'")
             result[category].append(new_item)
     return result, errors
 
@@ -403,6 +406,10 @@ def get_column_order(base_categories: list[Category], extra_categories: list[Cat
     for category in base_categories + unique_extras:
         headers = get_csv_headers(category.path)
         category_columns[category.name] = headers
+    if os.path.isdir("references/offers"):
+        for cat in list_categories("references/offers"):
+            if cat.name in category_columns:
+                category_columns[cat.name].extend(h for h in get_csv_headers(cat.path) if h not in category_columns[cat.name])
     
     # Hardcode columns order for automatically generated agents category
     category_columns["agents"] = [
