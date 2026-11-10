@@ -1229,5 +1229,16 @@
     "sorting": "string",
     "pinning": null,
     "cellType": null
+  },
+  "possessionProofMechanisms": {
+    "key": "possessionProofMechanisms",
+    "label": "Possession Proof Mechanisms",
+    "icon": "lucide:ShieldCheck",
+    "description": "Cryptographic storage possession-proof mechanisms explicitly supported by the storage offer (PDP, PoRep, PoSt).",
+    "filter": "searchableMultiSelect",
+    "sorting": "arrayLength",
+    "pinning": null,
+    "cellType": "arrayPopover",
+    "group": "capabilities"
   }
 }

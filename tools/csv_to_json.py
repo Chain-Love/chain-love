@@ -14,6 +14,28 @@ SDK_TBD_FIELDS = (
     "license",
 )
 
+POSSESSION_PROOF_MECHANISMS_COLUMN = "possessionProofMechanisms"
+POSSESSION_PROOF_MECHANISM_NAMES = ("PDP", "PoRep", "PoSt")
+
+
+def validate_possession_proof_mechanisms(items: list, context: str) -> list[str]:
+    errors = []
+    for idx, it in enumerate(items):
+        if not isinstance(it, dict) or (val := it.get(POSSESSION_PROOF_MECHANISMS_COLUMN)) is None:
+            continue
+        lbl = f"{context}: storages '{it.get('slug') or f'row {idx + 2}'}': {POSSESSION_PROOF_MECHANISMS_COLUMN}"
+        if not isinstance(val, list):
+            errors.append(f"{lbl} must be a JSON array or null, got {type(val).__name__}")
+            continue
+        for pos, name in enumerate(val):
+            if not isinstance(name, str) or name not in POSSESSION_PROOF_MECHANISM_NAMES:
+                errors.append(f"{lbl}[{pos}] must be one of {list(POSSESSION_PROOF_MECHANISM_NAMES)}, got {name!r}")
+        if len(val) != len(set(val)):
+            errors.append(f"{lbl} duplicates mechanism {val!r}")
+        if val and list(val) != sorted(val):
+            errors.append(f"{lbl} must be sorted alphabetically, got {val!r}")
+    return errors
+
 
 def col_letter(idx: int) -> str:
     """Convert 0-based index to Excel column letters."""
@@ -699,6 +721,8 @@ def main():
     category_meta = load_json_file("meta/categories.json")
     column_meta = load_json_file("meta/columns.json")
     offers_by_category = load_categories_from_folder("references/offers")
+    if errs := validate_possession_proof_mechanisms(offers_by_category.get("storages", []), "references/offers"):
+        print(f"Validation errors for {POSSESSION_PROOF_MECHANISMS_COLUMN} in references/offers/storages.csv:", *errs, sep=chr(10)); exit(1)
 
     # Global listings (apply to every network)
     global_listings = load_categories_from_folder(all_networks_dir)
@@ -772,6 +796,8 @@ def main():
             exit(1)
 
         ensure_sdks_tbd_fields(result)
+        if errs := validate_possession_proof_mechanisms(result.get("storages", []), f"network {network_name}"):
+            print(f"Validation errors for {POSSESSION_PROOF_MECHANISMS_COLUMN} in network {network_name}:", *errs, sep=chr(10)); exit(1)
 
         result["columns"] = get_column_order(
             base_categories=list_categories(network_dir),
