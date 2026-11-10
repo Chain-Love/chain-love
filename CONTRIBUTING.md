@@ -65,12 +65,31 @@ Requirements:
 - See [`listings/specific-networks/README.md`](listings/specific-networks/README.md) for
   the full spec and logo source suggestions.
 
+**Required:** Contributors must star the Chain.Love repository before opening a pull request.
+
 ## Contribution workflow
 
-1. Fork this repository and create a descriptive branch (example: `add-ankr-offer`).
-2. Edit the correct CSV based on the table above.
-3. Validate locally (optional) or rely on CI checks.
-4. Open a PR with a clear description and links to sources for changed data.
+1. Star and fork this repository before submitting a contribution.
+2. Create a descriptive branch (example: `add-ankr-offer`).
+3. Edit the correct CSV based on the table above.
+4. Validate locally (optional) or rely on CI checks.
+5. Go through [Before you submit](#before-you-submit) below.
+6. Open a PR with a clear description and links to sources for changed data.
+
+## Before you submit
+
+These checks catch common, avoidable reasons for change requests in review. The wiki remains the authoritative source for every definition; follow the links for details.
+
+1. **Fill each column as its wiki page defines it.** Pick `planType` from the values listed in [Common Columns](https://github.com/Chain-Love/chain-love/wiki/Common-Columns#plantype) (`Public` = no payment or registration; `Free` = no payment, but registration is needed). In SDKs, do not fill `latestKnownVersion`, `latestKnownReleaseDate`, `maintainer` or `license` by hand: they are reserved for automation and [can't be modified manually](https://github.com/Chain-Love/chain-love/wiki/SDKs#latestknownversion-latestknownreleasedate-maintainer-and-license). For new or changed `dependencies`, include only verified required peer dependencies and direct package/module prerequisites that users must provide separately, with identifiers only and no versions ([SDK dependencies](https://github.com/Chain-Love/chain-love/wiki/SDKs#dependencies)). Required peer dependencies remain eligible even if installed automatically.
+2. **Search open PRs for the same provider, offer or listing before opening yours.** If two open PRs overlap, a maintainer confirms which one lands. An overlapping PR should not receive final approval until one of these happens: the overlap is removed, the competing PR is closed or changed, or the maintainer's choice is recorded.
+3. **Keep CSVs sorted, booleans uppercase and provider logos in place.** Keep each CSV A-Z sorted by `slug` ([General rules](https://github.com/Chain-Love/chain-love/wiki/Style-Guide#general-rules)) and write booleans as uppercase `TRUE`/`FALSE` ([Booleans](https://github.com/Chain-Love/chain-love/wiki/Style-Guide#booleans)). A new provider also needs `logoPath` set to the PNG filename only (for example `alchemy.png`, see [Link formatting](https://github.com/Chain-Love/chain-love/wiki/Style-Guide#link-formatting)) and the official PNG logo under that name in `references/providers/images/`. Do not use SVG or other formats for provider logos.
+4. **`actionButtons`: max 2 buttons.** `Public` endpoints get a `Send Requests` button with a direct link; `Enterprise` plans get a `Contact Sales` button with a contact form link ([Common Columns](https://github.com/Chain-Love/chain-love/wiki/Common-Columns#actionbuttons)). In SDKs, at least one button must lead to an official download source such as GitHub or the npm registry ([SDKs](https://github.com/Chain-Love/chain-love/wiki/SDKs#actionbuttons)).
+5. **Resolve merge conflicts.** If GitHub reports a conflict with `main`, before or after you open the PR, resolve it, for example by rebasing your branch on `main`.
+6. **Override only what is specific to that network.** A non-blank listing cell replaces the canonical value instead of merging with it, so an `actionButtons` override must contain the full final set of buttons ([Merge behavior](https://github.com/Chain-Love/chain-love/wiki/References-Syntax#merge-behavior)).
+7. **Open every link you add and confirm that the provider supports that network** before submitting ([General rules](https://github.com/Chain-Love/chain-love/wiki/Style-Guide#general-rules)).
+8. **Choose the category from [Categories definitions](https://github.com/Chain-Love/chain-love/wiki/Categories-definitions#classification-sequence).** If you are unsure, ask in [Discussions Q&A](https://github.com/Chain-Love/chain-love/discussions/categories/q-a) first: a PR "may be closed simply because the category was poorly chosen". A completely network-agnostic offer should have its listing in `listings/all-networks/`; its canonical offer remains in `references/offers/` ([Database structure](https://github.com/Chain-Love/chain-love/wiki/Style-Guide#database-structure)).
+9. **For data contributions, confirm that the CSV changes affect the final hydrated output.** Redundant overrides should be removed. A PR that makes no change to the final hydrated data (for example, a listing override equal to the inherited canonical value) should be closed without merging.
+10. **Keep the title and description in line with the diff.** Do not use a closing keyword (`Closes #N`, `Fixes #N`, `Resolves #N`) unless the PR implements all of that issue.
 
 ## Local validation (optional)
 
@@ -107,5 +126,13 @@ Use [GitHub Issues](https://github.com/Chain-Love/chain-love/issues).
 ## Grant program and rewards
 
 See the [Grant Program](../../discussions/41). Database contributions may be eligible for USDT/USDC rewards under certain conditions.
+
+### Ecosystem outreach bounty
+
+Chain.Love also runs an [Ecosystem Discovery Bounty Program](../../discussions/3731) for contributors who find relevant opportunities to add Chain.Love to external ecosystem documentation, developer catalogs, resource directories, and similar developer resources.
+
+For this program, contributors prepare the proposed patch but **must not contact the destination project or open an external PR, issue, or discussion themselves**. Each prepared proposal should be submitted as a separate Discussion in the [Outreach program submissions](https://github.com/Chain-Love/chain-love/discussions/categories/outreach-program-submissions) category for review by an authorized Chain.Love outreacher.
+
+Read the [full program rules](../../discussions/3731) before preparing a submission.
 
 
