@@ -945,6 +945,17 @@
     "cellType": null,
     "group": "security"
   },
+  "authPermissionRequirements": {
+    "key": "authPermissionRequirements",
+    "label": "Auth Permission Requirements",
+    "icon": "lucide:ShieldCheck",
+    "description": "Operation-specific permission/scope requirements per documented credential mode - informational metadata only, never an authorization or execution policy. Blank = not documented. JSON array of {authMethod, operation, permissions, sourceUrl}.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "security"
+  },
   "selfHostedCommand": {
     "key": "selfHostedCommand",
     "label": "Self-Hosted Command",
