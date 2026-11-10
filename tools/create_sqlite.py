@@ -79,7 +79,7 @@ class Table:
 # =========================
 
 def load_schema() -> JSONSchemaRoot:
-    with open(SCHEMA_FILE, "r") as f:
+    with open(SCHEMA_FILE, "r", encoding="utf-8") as f:
         return cast(JSONSchemaRoot, json.load(f))
 
 
