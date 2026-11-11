@@ -8,7 +8,7 @@ import tempfile
 import textwrap
 import unittest
 
-WORKFLOW = Path(__file__).resolve().parents[1] / ".github/workflows/link-check-analysis.yaml"
+WORKFLOW = Path(__file__).resolve().parents[2] / ".github/workflows/link-check-analysis.yaml"
 HEADER = "slug,github,linkedin\n"
 ROW = "acme,acme,company/acme\n"
 LINKS = {"https://github.com/acme", "https://www.linkedin.com/company/acme"}

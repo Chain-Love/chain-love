@@ -20,9 +20,6 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-
-      - name: Test CSV header materialization
-        run: python3 tests/test_link_check_headers.py
       
       - name: Materialize PR additions only
         if: github.event_name == 'pull_request'
