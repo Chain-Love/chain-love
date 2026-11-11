@@ -20,6 +20,9 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+
+      - name: Test CSV header materialization
+        run: python3 tests/test_link_check_headers.py
       
       - name: Materialize PR additions only
         if: github.event_name == 'pull_request'
@@ -45,8 +48,12 @@ jobs:
           files, cur = defaultdict(list), None
           for l in diff.splitlines():
               if l.startswith("+++ b/"): cur = l[6:]
+              elif cur and l.startswith("@@ "):
+                  new_line = int(l.split()[2][1:].split(",")[0])
               elif cur and l.startswith("+") and not l.startswith("+++"):
-                  files[cur].append(l[1:])
+                  if not (cur.endswith(".csv") and new_line == 1):
+                      files[cur].append(l[1:])
+                  new_line += 1
           
           headers = {}
           for f in files:
