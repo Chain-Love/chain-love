@@ -1,0 +1,83 @@
+name: Contributor snapshot
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Checkout Contributor tooling
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: Chain-Love/chain-love
+          ref: json-tools
+          path: json-tools
+          persist-credentials: false
+      - name: Verify tooling files
+        run: |
+          test -f json-tools/tools/contributor_snapshot.py
+          test -f json-tools/tools/test_contributor_snapshot.py
+          test -f json-tools/tools/publish_contributor_snapshot.sh
+          git -C json-tools rev-parse HEAD
+          bash -n json-tools/tools/publish_contributor_snapshot.sh
+      - name: Test and build snapshot
+        run: |
+          python3 -B -m unittest discover -s json-tools/tools -p 'test_contributor_snapshot.py' -v
+          python3 json-tools/tools/contributor_snapshot.py build \
+            --source-sha "$GITHUB_SHA" --output "$RUNNER_TEMP/contributor-snapshot"
+
+  release:
+    if: github.repository == 'Chain-Love/chain-love' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    concurrency:
+      group: contributor-snapshot-${{ github.sha }}
+      cancel-in-progress: false
+    env:
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Checkout Contributor tooling
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: Chain-Love/chain-love
+          ref: json-tools
+          path: json-tools
+          persist-credentials: false
+      - name: Verify tooling files
+        run: |
+          test -f json-tools/tools/contributor_snapshot.py
+          test -f json-tools/tools/test_contributor_snapshot.py
+          test -f json-tools/tools/publish_contributor_snapshot.sh
+          git -C json-tools rev-parse HEAD
+          bash -n json-tools/tools/publish_contributor_snapshot.sh
+      - name: Test and build snapshot
+        run: |
+          python3 -B -m unittest discover -s json-tools/tools -p 'test_contributor_snapshot.py' -v
+          python3 json-tools/tools/contributor_snapshot.py build \
+            --source-sha "$GITHUB_SHA" --output "$RUNNER_TEMP/contributor-snapshot"
+      - name: Publish verified release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          bash json-tools/tools/publish_contributor_snapshot.sh \
+            "$GITHUB_SHA" "$RUNNER_TEMP/contributor-snapshot"
