@@ -194,6 +194,7 @@ def rule_meta_columns_consistent(data):
     schema = _get_validation_schema()
     if schema and "$defs" in schema:
         array_columns = set()
+        scalar_columns = set()
         for cat_name, cat_def in schema["$defs"].items():
             if cat_name in ("columns", "meta", "categoryMeta", "columnMeta", "providerMeta"):
                 continue
@@ -203,12 +204,18 @@ def rule_meta_columns_consistent(data):
                 types = [p_type] if isinstance(p_type, str) else (p_type or [])
                 if "array" in types:
                     array_columns.add(prop_name)
+                elif any(t in ("string", "number", "integer", "boolean") for t in types):
+                    scalar_columns.add(prop_name)
 
         for key, meta in meta_columns.items():
             sorting = meta.get("sorting")
             if sorting and key in array_columns and sorting in ("string", "number", "boolean", "date"):
                 errors.append(
                     f"Meta error: column '{key}' has schema type array but scalar sorting '{sorting}' (expected 'arrayLength')"
+                )
+            elif sorting == "arrayLength" and key in scalar_columns:
+                errors.append(
+                    f"Meta error: column '{key}' has scalar schema type but arrayLength sorting (expected scalar sorting or null)"
                 )
 
     return errors
