@@ -42,7 +42,8 @@ The generator, publisher, tests, and this contract live in `tools/` on the
 `json-tools` branch. The Actions workflow lives on `main` and must check out
 both the source data and the tooling. Run the scripts with the data Git
 repository as the working directory; `--source-sha` always identifies a data
-commit, not the tooling commit. Pin the tooling checkout to a reviewed commit.
+commit, not the tooling commit. The workflow uses `ref: json-tools` to load
+the tooling version available on that branch at checkout time.
 
 To build and verify locally from this repository root with Python 3.11 or
 later, use the fetched data commit even when the current branch is tooling:
