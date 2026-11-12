@@ -1008,18 +1008,32 @@
     "columnMeta": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["key", "label"],
+      "required": [
+        "key",
+        "label",
+        "filter",
+        "sorting",
+        "pinning",
+        "cellType",
+        "group"
+      ],
       "properties": {
         "key": { "type": "string" },
         "label": { "type": "string" },
         "icon": { "type": ["string", "null"] },
         "description": { "type": ["string", "null"] },
 
-        "filter": { "type": ["string", "null"] },
-        "sorting": { "type": ["string", "null"] },
+        "filter": {
+          "type": ["string", "null"],
+          "enum": ["searchableMultiSelect", "select", "range", "dateRange", null]
+        },
+        "sorting": {
+          "type": ["string", "null"],
+          "enum": ["string", "number", "boolean", "date", "arrayLength", null]
+        },
         "pinning": { "type": ["string", "null"] },
         "cellType": { "type": ["string", "null"] },
-        "group": { "type": ["string", "null"] }
+        "group": { "type": "string" }
       }
     },
     "providerMeta": {
