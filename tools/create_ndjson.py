@@ -22,7 +22,7 @@ JSON_DIR: str = "./json"
 
 
 def load_raw_json(path: str) -> RawRoot:
-    with open(path, "r") as f:
+    with open(path, "r", encoding="utf-8") as f:
         raw: JSONValue = json.load(f)
 
     if not isinstance(raw, dict):
