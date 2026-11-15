@@ -177,12 +177,22 @@ class GitHub:
 # ---- GitHub metadata cache ----
 _repo_meta_cache: Dict[str, Dict[str, str]] = {}
 
-def pick_latest_stable_release(releases: List[dict]) -> Optional[dict]:
+def pick_latest_stable_release(releases: List[dict], repo_name: Optional[str] = None) -> Optional[dict]:
+    """Accept plain semver tags and releases explicitly tagged for this repository.
+
+    Monorepos can publish package-qualified tags such as viem@2.57.20.
+    Ignore tags naming other packages in the same repository.
+    """
+    prefix = f"{repo_name}@" if repo_name else None
     for r in releases:
         if r.get("draft") or r.get("prerelease"):
             continue
         tag = (r.get("tag_name") or "").strip()
-        if is_stable_release_tag(tag):
+        if is_stable_release_tag(tag) or (
+            prefix is not None
+            and tag.startswith(prefix)
+            and is_stable_release_tag(tag[len(prefix):])
+        ):
             return r
     return None
 
@@ -211,7 +221,7 @@ def compute_from_github(gh: GitHub, full: str) -> Dict[str, str]:
         elif name:
             out["license"] = name
 
-    rel = pick_latest_stable_release(gh.releases(full))
+    rel = pick_latest_stable_release(gh.releases(full), repo_name=full.rsplit("/", 1)[-1])
     if not rel:
         _repo_meta_cache[full] = out
         return out
