@@ -1,9 +1,6 @@
 name: "Validate JSON"
 
 on:
-  push:
-    branches:
-      - fix/release-schema-validation-gate-20261116
   pull_request:
     branches:
       - main
@@ -32,7 +29,7 @@ jobs:
       - name: Checkout json-tools branch with scripts
         uses: actions/checkout@v4
         with:
-          repository: Chain-Love/chain-love
+          repository: ${{ github.repository }}
           ref: json-tools
           path: json-tools
       
