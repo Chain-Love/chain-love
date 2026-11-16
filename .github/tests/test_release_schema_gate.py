@@ -37,6 +37,12 @@ class ReleaseSchemaGateTests(unittest.TestCase):
         self.assertEqual(positions, sorted(positions))
 
     def test_invalid_boolean_is_rejected_by_actual_release_validator(self):
+        # The separate link-check job checks out only the main repository;
+        # json-tools and generated JSON are available in the JSON-validation job.
+        if not all((ROOT / p).is_file() for p in (
+            "csv_to_json.py", "validate.py", "schema.json", "json/ethereum.json"
+        )):
+            self.skipTest("json-tools and generated exports are not present in this CI job")
         from csv_to_json import normalize
 
         result, errors = normalize({"apis": [{"starred": "MAYBE"}]})
