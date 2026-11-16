@@ -1,6 +1,9 @@
 name: "Validate JSON"
 
 on:
+  push:
+    branches:
+      - fix/release-schema-validation-gate-20261116
   pull_request:
     branches:
       - main
@@ -29,7 +32,7 @@ jobs:
       - name: Checkout json-tools branch with scripts
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.repository }}
+          repository: Chain-Love/chain-love
           ref: json-tools
           path: json-tools
       
@@ -53,5 +56,6 @@ jobs:
               pip install --no-index --find-links=json-tools/tools/wheels -r json-tools/tools/requirements.txt && \
               python3 validate_csv.py && \
               python3 csv_to_json.py && \
-              python3 validate.py
+              python3 validate.py && \
+              python3 -m unittest discover -s .github/tests -p 'test_release_schema_gate.py' -v
             "
