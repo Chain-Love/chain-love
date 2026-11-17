@@ -9,7 +9,7 @@ from validate_csv import rule_provider_link_format
 SCRIPT = Path(__file__).resolve().parent / "validate_csv.py"
 PROVIDERS = Path("references/providers/providers.csv")
 GOOD = {
-    "website": "https://example.com/", "docs": "HTTP://docs.example.com", "x": "example",
+    "website": "https://example.com/", "docs": "http://docs.example.com", "x": "example",
     "github": "Chain-Love/chain-love", "discord": "invite/example", "telegram": "example",
     "linkedin": "company/example",
 }
@@ -27,12 +27,20 @@ class TestProviderLinkFormat(unittest.TestCase):
 
     def test_website_and_docs_need_a_full_url(self):
         self.assertEqual(check(website="example.com", docs="https://example.com/a b"), [
-            f"{PROVIDERS}: row 2: column 'website': 'example.com' must be a full URL (http:// or https://, no spaces)",
-            f"{PROVIDERS}: row 2: column 'docs': 'https://example.com/a b' must be a full URL (http:// or https://, no spaces)",
+            f"{PROVIDERS}: row 2: column 'website': 'example.com' must be a full URL (lowercase http:// or https://, no spaces)",
+            f"{PROVIDERS}: row 2: column 'docs': 'https://example.com/a b' must be a full URL (lowercase http:// or https://, no spaces)",
         ])
         for value in ("https:///missing-host", "https://?q=x", "https://:443", "https://[::1"):
             with self.subTest(value=value):
                 self.assertEqual(len(check(website=value, docs=value)), 2)
+
+    def test_website_and_docs_require_lowercase_schemes(self):
+        for scheme in ("HTTP", "HTTPS", "HtTp", "hTtPs"):
+            with self.subTest(scheme=scheme):
+                url = f"{scheme}://docs.example.com"
+                self.assertEqual(len(check(website=url, docs=url)), 2)
+        self.assertEqual(check(website="http://Example.com/SomePath?key=Value",
+                               docs="https://docs.example.com/Install"), [])
 
     def test_platform_columns_reject_urls_domains_and_emails(self):
         errors = check(x="https://x.com/example", github="GitHub.com/a/b", discord="discord.gg/abc",
