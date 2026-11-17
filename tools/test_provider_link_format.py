@@ -50,6 +50,18 @@ class TestProviderLinkFormat(unittest.TestCase):
         self.assertEqual(len(check(x="twitter.com/example", github="customercare@transfi.com",
                                    discord="//discord.gg/abc", telegram="http:/t.me/a", linkedin="example")), 5)
 
+    def test_platform_columns_reject_whitespace_and_empty_handles(self):
+        for column in ("x", "github", "discord", "telegram", "linkedin"):
+            for value in ("two words/example", "example/with\tspace", "@"):
+                with self.subTest(column=column, value=value):
+                    self.assertEqual(len(check(**{column: value})), 1)
+
+    def test_linkedin_requires_a_page_identifier(self):
+        for value in ("company/", "company//example", "company/?trk=profile", "in/#profile"):
+            with self.subTest(value=value):
+                self.assertEqual(len(check(linkedin=value)), 1)
+        self.assertEqual(check(x="@example", github="d13co/algo.surf", linkedin="company/example/"), [])
+
     def test_markdown_links_fail_in_every_link_column(self):
         errors = check(**{column: "[Site](https://example.com)" for column in GOOD})
         self.assertEqual(len(errors), 7)

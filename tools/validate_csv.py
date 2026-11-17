@@ -93,11 +93,14 @@ def provider_link_problem(column: str, value: str) -> str:
         except ValueError:
             pass
         return "must be a full URL (lowercase http:// or https://, no spaces)"
-    first = value.split("/", 1)[0]  # handles, owners, invite codes and in/, company/ have no dot
+    if re.search(r"\s", value):
+        return "must not contain whitespace"
+    value = value.removeprefix("@")  # the link checker strips an optional leading @
+    first, _, identifier = value.partition("/")
     if ":" in value or "." in first or not first:
         return "must store only the part after the domain"
-    if column == "linkedin" and "/" not in value:
-        return "must start with the page type, such as company/ or in/"
+    if column == "linkedin" and not re.match(r"[^/?#]", identifier):
+        return "must include a page type and identifier, such as company/example or in/example"
     return ""
 
 def rule_provider_link_format(path: Path, rows: List[Dict[str, str]]) -> List[str]:
