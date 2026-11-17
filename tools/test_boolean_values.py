@@ -39,6 +39,14 @@ class TestBooleanValues(unittest.TestCase):
         self.assertEqual(len(rule_boolean_values(Path("references/providers/providers.csv"), rows)), 1)
         self.assertEqual(rule_boolean_values(Path("outreach/registry.csv"), rows), [])
 
+    def test_script_ignores_category_named_fixture(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "json-tools" / "tools" / "fixtures" / "wallets.csv"
+            path.parent.mkdir(parents=True)
+            path.write_text("slug,evm\na-wallet,true\n", encoding="utf-8")
+            result = subprocess.run([sys.executable, str(SCRIPT)], cwd=tmp, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_script_reports_lowercase_values(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "references" / "offers" / "faucets.csv"

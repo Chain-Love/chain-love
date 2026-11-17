@@ -52,6 +52,14 @@ def boolean_columns() -> Dict[str, List[str]]:
     return columns
 
 def rule_boolean_values(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    parts = path.parts
+    is_category_csv = (
+        parts[:-1] in (("references", "offers"), ("listings", "all-networks"))
+        or (len(parts) == 4 and parts[:2] == ("listings", "specific-networks"))
+    )
+    if path != Path("references/providers/providers.csv") and not is_category_csv:
+        return []
+
     columns = boolean_columns().get(path.stem, [])
     errors: List[str] = []
 
