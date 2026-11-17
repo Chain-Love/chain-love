@@ -1,5 +1,6 @@
 from pathlib import Path
 from typing import Iterator, Callable, List, Dict
+from urllib.parse import urlsplit
 import os
 import csv
 import re
@@ -85,8 +86,13 @@ def provider_link_problem(column: str, value: str) -> str:
     if "](" in value:
         return "must be a plain value, not a Markdown link"
     if column in PROVIDER_URL_COLUMNS:
-        full_url = re.match(r"https?://\S+$", value, re.IGNORECASE)
-        return "" if full_url else "must be a full URL (http:// or https://, no spaces)"
+        try:
+            url = urlsplit(value)
+            if url.scheme in ("http", "https") and url.hostname and not re.search(r"\s", value):
+                return ""
+        except ValueError:
+            pass
+        return "must be a full URL (http:// or https://, no spaces)"
     first = value.split("/", 1)[0]  # handles, owners, invite codes and in/, company/ have no dot
     if ":" in value or "." in first or not first:
         return "must store only the part after the domain"

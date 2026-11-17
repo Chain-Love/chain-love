@@ -30,6 +30,9 @@ class TestProviderLinkFormat(unittest.TestCase):
             f"{PROVIDERS}: row 2: column 'website': 'example.com' must be a full URL (http:// or https://, no spaces)",
             f"{PROVIDERS}: row 2: column 'docs': 'https://example.com/a b' must be a full URL (http:// or https://, no spaces)",
         ])
+        for value in ("https:///missing-host", "https://?q=x", "https://:443", "https://[::1"):
+            with self.subTest(value=value):
+                self.assertEqual(len(check(website=value, docs=value)), 2)
 
     def test_platform_columns_reject_urls_domains_and_emails(self):
         errors = check(x="https://x.com/example", github="GitHub.com/a/b", discord="discord.gg/abc",
