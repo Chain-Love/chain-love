@@ -9,8 +9,19 @@ from urllib.parse import urlsplit
 
 MAX_ZIP = 10 * 1024 * 1024
 MAX_JSON = 5 * 1024 * 1024
-COUNTERS = ('total', 'unique', 'successful', 'unknown', 'unsupported', 'timeouts',
-            'redirects', 'remaps', 'excludes', 'errors', 'cached')
+COUNTERS = {
+    'total': '🔍 Total',
+    'unique': '🔗 Unique',
+    'successful': '✅ Successful',
+    'unknown': '❓ Unknown',
+    'unsupported': '⛔ Unsupported',
+    'timeouts': '⏳ Timeouts',
+    'redirects': '🔀 Redirects',
+    'remaps': '🔁 Remaps',
+    'excludes': '👻 Excludes',
+    'errors': '🚫 Errors',
+    'cached': '💾 Cached',
+}
 
 
 def unique_object(pairs):
@@ -29,7 +40,7 @@ def render(data):
         if type(data.get(key)) is not int or not 0 <= data[key] <= 2**53 - 1:
             raise ValueError('Invalid report counter')
     lines = ['## Link check report', '', '| Status | Count |', '| --- | ---: |']
-    lines.extend(f'| {key.capitalize()} | {data[key]} |' for key in COUNTERS)
+    lines.extend(f'| {label} | {data[key]} |' for key, label in COUNTERS.items())
     failures = []
     for field, label in [('error_map', 'Error'), ('timeout_map', 'Timeout')]:
         mapping = data.get(field)

@@ -34,7 +34,7 @@ class ArtifactTests(unittest.TestCase):
     def test_upstream_fixture(self):
         report = self.read()
         self.assertEqual(report['number'], 4813)
-        self.assertIn('| Errors | 1 |', report['body'])
+        self.assertIn('| 🚫 Errors | 1 |', report['body'])
         self.assertIn('HTTP 404', report['body'])
         self.assertIn('Timeout:', report['body'])
         self.assertNotIn('Request timed out', report['body'])
@@ -42,7 +42,7 @@ class ArtifactTests(unittest.TestCase):
 
     def test_zero_links(self):
         data = dict(FIXTURE, **{key: 0 for key in artifact.COUNTERS}, error_map={}, timeout_map={})
-        self.assertIn('| Total | 0 |', self.read(data=data)['body'])
+        self.assertIn('| 🔍 Total | 0 |', self.read(data=data)['body'])
 
     def test_manual_without_number(self):
         result = self.read([('lychee/out.json', json.dumps(FIXTURE))], 'workflow_dispatch')

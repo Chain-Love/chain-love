@@ -17,7 +17,7 @@ jobs:
     permissions:
       actions: read
       contents: read
-      pull-requests: read
+      pull-requests: write
       issues: write
     steps:
       # Only load scripts from the report workflow's trusted default-branch commit.
