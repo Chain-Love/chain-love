@@ -516,6 +516,17 @@
     "cellType": "tagsPopover",
     "group": "technicalDetails"
   },
+  "peerRequirements": {
+    "key": "peerRequirements",
+    "label": "Peer Requirements",
+    "icon": "lucide:PackageOpen",
+    "description": "npm peer compatibility declarations (peerDependencies + peerDependenciesMeta) for one identified published artifact - evidence metadata only, never an install or compatibility guarantee. Blank = unverified/not recorded (not 'no peers'). JSON object {package, version, source, requirements} where requirements maps a package name to {constraint, optional}.",
+    "filter": null,
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "technicalDetails"
+  },
   "latestKnownVersion": {
     "key": "latestKnownVersion",
     "label": "Latest Version",
