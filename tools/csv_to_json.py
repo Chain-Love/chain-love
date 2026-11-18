@@ -7,6 +7,16 @@ import warnings
 
 OFFER_REF_PREFIX = "!offer:"
 
+ENV_VAR_TYPES_COLUMN = "selfHostedEnvVarTypes"
+ENV_VAR_TYPE_LABELS = (
+    "api-key",
+    "wallet-private-key",
+    "wallet-mnemonic",
+    "access-token",
+    "other-secret",
+    "non-secret",
+)
+
 SDK_TBD_FIELDS = (
     "latestKnownVersion",
     "latestKnownReleaseDate",
@@ -34,6 +44,25 @@ def try_parse_json(value):
     ):
         return value
     return json.loads(value)
+
+
+def parse_json_object_no_duplicates(value: str):
+    """Parse a JSON object string, rejecting duplicate object members.
+
+    Ordinary json.loads silently keeps the last occurrence of a duplicated
+    member; this parser fails fast instead so malformed maps are rejected
+    before that information is lost.
+    """
+
+    def no_duplicate_pairs(pairs):
+        seen = set()
+        for key, _ in pairs:
+            if key in seen:
+                raise ValueError(f"duplicate object member '{key}'")
+            seen.add(key)
+        return dict(pairs)
+
+    return json.loads(value, object_pairs_hook=no_duplicate_pairs)
 
 
 def is_nullish(value: str) -> bool:
@@ -65,6 +94,17 @@ def normalize(data_by_category: dict):
                     new_item[key] = None
                 if is_boolish(value):
                     new_item[key] = is_trueish(value)
+                if (
+                    key == ENV_VAR_TYPES_COLUMN
+                    and isinstance(new_item[key], str)
+                    and new_item[key].strip().startswith("{")
+                ):
+                    try:
+                        parse_json_object_no_duplicates(new_item[key])
+                    except Exception as e:
+                        errors.append(
+                            f"Invalid value '{value}' for key '{key}' in category '{category}': {e}"
+                        )
                 try:
                     new_item[key] = try_parse_json(new_item[key])
                 except Exception as e:
@@ -436,6 +476,52 @@ def get_column_order(base_categories: list[Category], extra_categories: list[Cat
     return category_columns
 
 
+def validate_selfhosted_env_var_types(
+    items: list, context: str
+) -> list[str]:
+    """Validate resolved selfHostedEnvVarTypes maps for mcpservers rows.
+
+    Rules (DBIP: per-variable types for required self-hosted MCP config):
+      - only objects (or null) are allowed; an explicit empty map clears
+        inherited classifications and is always valid;
+      - a non-empty map is only valid for hostingType=Self-hosted;
+      - every key must exactly match a name in the resolved
+        selfHostedRequiredEnvVars list (case-sensitive);
+      - every label must be one of ENV_VAR_TYPE_LABELS.
+    """
+    errors = []
+    for idx, item in enumerate(items):
+        if not isinstance(item, dict):
+            continue
+        value = item.get(ENV_VAR_TYPES_COLUMN)
+        if value is None or value == {}:
+            continue
+        slug = item.get("slug") or f"row {idx + 2}"
+        if not isinstance(value, dict):
+            errors.append(
+                f"{context}: mcpservers '{slug}': {ENV_VAR_TYPES_COLUMN} must be a JSON object, got {type(value).__name__}"
+            )
+            continue
+        hosting = item.get("hostingType")
+        if hosting != "Self-hosted":
+            errors.append(
+                f"{context}: mcpservers '{slug}': {ENV_VAR_TYPES_COLUMN} is only valid when hostingType is 'Self-hosted', got {hosting!r}"
+            )
+        required = item.get("selfHostedRequiredEnvVars")
+        if not isinstance(required, list):
+            required = []
+        for var_name, label in value.items():
+            if var_name not in required:
+                errors.append(
+                    f"{context}: mcpservers '{slug}': {ENV_VAR_TYPES_COLUMN} key '{var_name}' is not declared in the resolved selfHostedRequiredEnvVars list"
+                )
+            if label not in ENV_VAR_TYPE_LABELS:
+                errors.append(
+                    f"{context}: mcpservers '{slug}': {ENV_VAR_TYPES_COLUMN}['{var_name}'] has unsupported label '{label}'"
+                )
+    return errors
+
+
 def resolve_offers(
     data_by_category: dict[str, list[dict]],
     offers_by_category: dict[str, list[dict]],
@@ -700,6 +786,22 @@ def main():
     column_meta = load_json_file("meta/columns.json")
     offers_by_category = load_categories_from_folder("references/offers")
 
+    normalized_offers, offer_normalize_errors = normalize(offers_by_category)
+    if offer_normalize_errors:
+        print("Errors while normalizing offers CSV:")
+        for e in offer_normalize_errors:
+            print(e)
+        exit(1)
+    offer_env_errors = validate_selfhosted_env_var_types(
+        normalized_offers.get("mcpservers", []),
+        context="references/offers",
+    )
+    if offer_env_errors:
+        print("Validation errors for references/offers/mcpservers.csv:")
+        for e in offer_env_errors:
+            print(e)
+        exit(1)
+
     # Global listings (apply to every network)
     global_listings = load_categories_from_folder(all_networks_dir)
     global_listings_categories = list_categories(folder=all_networks_dir)
@@ -768,6 +870,16 @@ def main():
         if errors:
             print(f"Errors while normalizing {network_name} JSON:")
             for e in errors:
+                print(e)
+            exit(1)
+
+        env_var_errors = validate_selfhosted_env_var_types(
+            result.get("mcpservers", []),
+            context=f"network '{network_name}'",
+        )
+        if env_var_errors:
+            print(f"Validation errors for {ENV_VAR_TYPES_COLUMN} in network '{network_name}':")
+            for e in env_var_errors:
                 print(e)
             exit(1)
 
