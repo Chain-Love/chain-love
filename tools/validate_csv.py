@@ -1,7 +1,9 @@
+from functools import cache
 from pathlib import Path
 from typing import Iterator, Callable, List, Dict
 import os
 import csv
+import json
 import re
 
 URL_PATTERN = re.compile(r'https?://', re.IGNORECASE)
@@ -29,6 +31,47 @@ class CSVValidator:
             errors.extend(rule(path, rows))
 
         return errors
+
+SCHEMA_PATH = Path(__file__).resolve().parent / "schema.json"
+
+@cache
+def boolean_columns() -> Dict[str, List[str]]:
+    """Maps a CSV file name (wallets, faucets, ...) to its boolean columns in schema.json."""
+    with SCHEMA_PATH.open(encoding="utf-8") as f:
+        defs = json.load(f)["$defs"]
+
+    columns: Dict[str, List[str]] = {}
+    for name, definition in defs.items():
+        columns[name] = []
+        for column, spec in definition.get("properties", {}).items():
+            types = spec.get("type")
+            if "boolean" in (types if isinstance(types, list) else [types]):
+                columns[name].append(column)
+
+    columns["providers"] = columns.get("providerMeta", [])  # rows of providers.csv
+    return columns
+
+def rule_boolean_values(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    parts = path.parts
+    is_category_csv = (
+        parts[:-1] in (("references", "offers"), ("listings", "all-networks"))
+        or (len(parts) == 4 and parts[:2] == ("listings", "specific-networks"))
+    )
+    if path != Path("references/providers/providers.csv") and not is_category_csv:
+        return []
+
+    columns = boolean_columns().get(path.stem, [])
+    errors: List[str] = []
+
+    for idx, row in enumerate(rows, start=2):  # header = row 1
+        for column in columns:
+            value = row.get(column)
+            if value and value not in ("TRUE", "FALSE"):  # a blank listing cell inherits from the offer
+                errors.append(
+                    f"{path}: row {idx}: column '{column}': boolean value must be TRUE or FALSE (uppercase), got '{value}'"
+                )
+
+    return errors
 
 def rule_slug_sorted(path: Path, rows: List[Dict[str, str]]) -> List[str]:
     if not rows:
@@ -88,6 +131,7 @@ def main():
     root = Path(".")
 
     validator = CSVValidator()
+    validator.add_rule(rule_boolean_values)
     validator.add_rule(rule_slug_sorted)
     #validator.add_rule(rule_links_must_be_quoted)
 
