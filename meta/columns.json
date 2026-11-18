@@ -32,6 +32,28 @@
     "cellType": "provider",
     "group": "identity"
   },
+  "providerStatus": {
+    "key": "providerStatus",
+    "label": "Provider Status",
+    "icon": "lucide:Activity",
+    "description": "Current operational status of the provider: active, acquired, renamed, sunset, retired, or unknown.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": null,
+    "group": "identity"
+  },
+  "parentProvider": {
+    "key": "parentProvider",
+    "label": "Parent Provider",
+    "icon": "lucide:GitBranch",
+    "description": "Canonical provider slug that owns or operates an acquired or renamed provider.",
+    "filter": "searchableMultiSelect",
+    "sorting": "string",
+    "pinning": null,
+    "cellType": "provider",
+    "group": "identity"
+  },
   "actionButtons": {
     "key": "actionButtons",
     "label": "Actions",
