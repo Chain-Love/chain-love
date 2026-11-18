@@ -586,6 +586,25 @@
         "mcpEndpoint": { "type": ["string", "null"] },
         "authType": { "type": "string" },
         "credentialKey": { "type": ["string", "null"] },
+        "authPermissionRequirements": {
+          "type": ["array", "null"],
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["authMethod", "operation", "permissions", "sourceUrl"],
+            "properties": {
+              "authMethod": { "type": "string", "minLength": 1 },
+              "operation": { "type": "string", "minLength": 1 },
+              "permissions": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "type": "string", "minLength": 1, "maxLength": 128 }
+              },
+              "sourceUrl": { "type": "string", "pattern": "^https://\\S+$" }
+            }
+          }
+        },
         "selfHostedCommand": { "type": ["string", "null"] },
         "selfHostedArgs": {
           "type": ["array", "null"],
