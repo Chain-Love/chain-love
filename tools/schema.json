@@ -3,6 +3,7 @@
   "$id": "https://chain.love/schemas/infrastructure/2.0.0",
   "title": "Toolbox Network Data",
   "type": "object",
+  "required": ["schemaVersion", "columns", "meta"],
   "additionalProperties": false,
   "properties": {
     "schemaVersion": {
