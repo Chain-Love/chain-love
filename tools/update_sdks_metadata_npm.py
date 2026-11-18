@@ -100,8 +100,14 @@ def normalize_npm_package(url: str) -> Optional[str]:
         return None
 
     if p.netloc == "registry.npmjs.org":
-        path = p.path.lstrip("/")
-        return urllib.parse.unquote(path) if path else None
+        # Registry URLs may target a version, e.g. /@scope/package/latest.
+        # The metadata API needs the package endpoint, not a version manifest.
+        parts = [part for part in urllib.parse.unquote(p.path).split("/") if part]
+        if not parts:
+            return None
+        if parts[0].startswith("@"):
+            return "/".join(parts[:2]) if len(parts) >= 2 else None
+        return parts[0]
 
     parts = [x for x in p.path.split("/") if x]
     if len(parts) < 2 or parts[0] != "package":
@@ -317,12 +323,23 @@ def main() -> int:
             scanned += 1
 
             urls = collect_urls(sdk)
-            if has_github_repo(urls):
-                skipped_gh += 1
-                continue
-
+            github_linked = has_github_repo(urls)
             pkg = choose_npm_package(urls)
             if not pkg:
+                if github_linked:
+                    skipped_gh += 1
+                continue
+
+            # GitHub releases can be missing or unrelated to a package in
+            # a monorepo. Use npm to fill missing metadata, not to overwrite
+            # already-resolved GitHub fields.
+            metadata_fields = (
+                "latestKnownVersion", "latestKnownReleaseDate", "maintainer", "license",
+            )
+            if github_linked and all(
+                sdk.get(key) not in (None, "", "TBD") for key in metadata_fields
+            ):
+                skipped_gh += 1
                 continue
             matched += 1
 
@@ -334,7 +351,9 @@ def main() -> int:
 
             changed = False
             for k, v in meta.items():
-                if v and sdk.get(k) != v:
+                if v and sdk.get(k) != v and (
+                    not github_linked or sdk.get(k) in (None, "", "TBD")
+                ):
                     sdk[k] = v
                     changed = True
             if changed:
