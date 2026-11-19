@@ -1,9 +1,12 @@
+import copy
+import json
 import os
 import re
-import json
-from jsonschema import Draft202012Validator
+from collections import OrderedDict
+
 from jsonpointer import resolve_pointer
-import copy
+from jsonschema import Draft202012Validator
+from jsonschema.validators import extend
 
 class Validator:
     def __init__(self):
@@ -291,6 +294,80 @@ def make_providers_schema(network_schema) -> dict:
             del providers_schema['$defs'][definition]['required'][index]
     return providers_schema
 
+LOCAL_DEFINITION = re.compile(r"#/\$defs/[A-Za-z_][A-Za-z0-9_]*")
+SCOPE_KEYWORDS = {
+    "$dynamicRef", "$dynamicAnchor", "$recursiveRef", "$recursiveAnchor", "$anchor",
+    "unevaluatedItems", "unevaluatedProperties",
+}
+
+
+def has_only_local_refs(schema):
+    """Allow reuse only when each reference resolves to the same root definition everywhere."""
+    if not isinstance(schema, dict) or schema.get("$schema") != Draft202012Validator.META_SCHEMA["$id"]:
+        return False
+
+    pending = [schema]
+    while pending:
+        node = pending.pop()
+        if isinstance(node, list):
+            pending.extend(node)
+        elif isinstance(node, dict):
+            if SCOPE_KEYWORDS.intersection(node):
+                return False
+            if node is not schema and ("$id" in node or "$schema" in node):
+                return False
+            if "$ref" in node:
+                ref = node["$ref"]
+                if not isinstance(ref, str) or not LOCAL_DEFINITION.fullmatch(ref):
+                    return False
+            pending.extend(node.values())
+    return True
+
+
+def make_network_validator(schema, *, max_entries=4096, max_key_bytes=32_768):
+    """Reuse successful local definition checks across networks validated with this schema."""
+    if not has_only_local_refs(schema):
+        return Draft202012Validator(schema)
+
+    validated = OrderedDict()
+    validate_ref = Draft202012Validator.VALIDATORS["$ref"]
+
+    def check_ref(validator, ref, instance, subschema):
+        # Skip metadata collections and scalar values. Repeated listing objects are the win.
+        if not isinstance(instance, dict) or ref in {"#/$defs/meta", "#/$defs/columns"}:
+            yield from validate_ref(validator, ref, instance, subschema)
+            return
+        try:
+            payload = json.dumps(
+                instance, sort_keys=True, ensure_ascii=False, allow_nan=False, separators=(",", ":")
+            ).encode("utf-8")
+        except (ValueError, TypeError, OverflowError, RecursionError):
+            # E.g. non-finite numbers or lone surrogates accepted by Python's JSON reader.
+            yield from validate_ref(validator, ref, instance, subschema)
+            return
+        if len(payload) > max_key_bytes:
+            yield from validate_ref(validator, ref, instance, subschema)
+            return
+
+        key = (ref, payload)
+        if key in validated:
+            validated.move_to_end(key)
+            return
+
+        # Errors belong to the current position. Let jsonschema build each one at its call site.
+        valid = True
+        for error in validate_ref(validator, ref, instance, subschema):
+            valid = False
+            yield error
+        if valid:
+            validated[key] = None
+            if len(validated) > max_entries:
+                validated.popitem(last=False)
+
+    network_validator = extend(Draft202012Validator, validators={"$ref": check_ref})
+    return network_validator(schema)
+
+
 def main():
     had_errors = False
 
@@ -308,7 +385,7 @@ def main():
     rules.add_rule(rule_chain_is_lowercase)
 
     # Validate networks
-    validator = Draft202012Validator(schema)
+    validator = make_network_validator(schema)
     for network_spec in os.listdir("json"):
         print(f"Validating {network_spec}...")
         data = None
