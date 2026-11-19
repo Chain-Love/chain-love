@@ -17,3 +17,22 @@ A complete new network contribution includes:
    the CSVs (e.g. `mainnet.png`, `testnet.png`). Transparent background required.
 
 See [`specific-networks/README.md`](specific-networks/README.md) for the full image spec.
+
+## Limiting global listings on a network's chains
+
+When a newly listed chain is not known to support the chain-aware offers in
+`listings/all-networks/`, add an optional
+`listings/specific-networks/<network>/global-chain-scope.json` file:
+
+```json
+{
+  "chains": ["mainnet", "testnet"]
+}
+```
+
+The JSON generator on the `json-tools` branch expands chain-aware global listings
+only for those explicitly allowed chain IDs. The default for networks without this
+file remains unchanged (all discovered chains). Network-specific listings,
+including a newly introduced BetaNet faucet, are never filtered by this policy.
+This prevents new chain IDs from accidentally inheriting global EVM RPC and
+analytics claims that have not been verified for them.
