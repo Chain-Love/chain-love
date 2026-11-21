@@ -107,9 +107,14 @@ def download_and_extract(url: str, dest: Path, subpath: str) -> None:
             if not relative_name:
                 continue
 
-            target_path = dest / relative_name
-            target_path.parent.mkdir(parents=True, exist_ok=True)
+            target_path = (dest / relative_name).resolve()
+            if not target_path.is_relative_to(dest.resolve()):
+                die(f"Unsafe archive path: {m.name}")
 
+            if not (m.isdir() or m.isfile()):
+                die(f"Unsupported archive member type: {m.name}")
+
+            target_path.parent.mkdir(parents=True, exist_ok=True)
             if m.isdir():
                 target_path.mkdir(parents=True, exist_ok=True)
             else:
