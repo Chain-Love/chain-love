@@ -27,6 +27,7 @@
   - Style Guide: https://github.com/Chain-Love/chain-love/wiki/Style-Guide
   - Column Definitions: https://github.com/Chain-Love/chain-love/wiki
 - [ ] **I personally opened and verified every new link I'm adding. I can confirm, that all the links I'm adding are valid.**
+- [ ] **For every new or changed provider `website`/`docs` value, I included an independent first-party ownership trail (canonical GitHub org/repo README → URL, or unchanged official website → docs URL), not just the URL in the same row.**
 - [ ] **If I added new entries - I personally confirmed that the provider I'm adding (modifying) currently supports the adjusted network(s). I've also verified that value in every cell I'm changing is correct according to my best understanding**
 
 ## Optional

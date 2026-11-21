@@ -51,6 +51,41 @@ Before editing data, read the Style Guide:
 - For platform columns with known domains (`x`, `github`, `discord`, `telegram`, `linkedin`), store only the part after the domain.
   - Example: `https://github.com/Chain-Love/chain-love` -> `Chain-Love/chain-love`
 
+## Provider website and docs provenance
+
+A `200 OK` response proves only that a URL is **reachable**. It does not prove
+that the page belongs to the provider named in the row. Domains can be parked,
+repurposed, taken over, or redirect to unrelated content, and a genuine live
+page can document one product while being proposed as provider-wide docs.
+
+For every **new or changed** `website` or `docs` value in
+`references/providers/providers.csv`, include one independent first-party
+ownership trail in the pull request description:
+
+- a link from the provider's canonical GitHub organization or repository
+  README to the exact URL, or
+- a link from the provider's official website (an unchanged `website` value)
+  to the exact `docs` URL.
+
+A URL in the same provider row is not independent evidence. Product-scoped
+documentation (for example, one product's docs for a multi-product collective)
+needs explicit scope confirmation; it is not provider-wide documentation by
+default.
+
+The link check reports reachability and provenance separately:
+
+| Provenance status | Meaning |
+|---|---|
+| `first_party_evidenced` | An independent provider-controlled page links to the candidate URL. |
+| `needs_manual_identity_review` | No independent crosslink was found, the evidence is product-scoped, or the page is blocked/unknown. A reviewer must confirm identity. |
+| `not_applicable` | The field was cleared or is empty. |
+
+`needs_manual_identity_review` is **not** an accusation that a domain was
+hijacked. HTTP `401`/`403`/`429`, anti-bot pages, redirects, and discontinued
+domains stay in manual review until a maintainer-provided crosslink resolves
+them. Never approve a link because the page "looks similar", and never condemn
+one because it is blocked.
+
 ## Chain logo images
 
 Each `listings/specific-networks/<network>/` folder contains PNG logo files named after
