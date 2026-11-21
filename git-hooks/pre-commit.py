@@ -145,7 +145,7 @@ def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
     for csv_file in iter_csv(repo_root):
         newline_style = detect_newline(csv_file)
 
-        with csv_file.open("r", newline="") as f:
+        with csv_file.open("r", encoding="utf-8", newline="") as f:
             lines = f.readlines()
 
         if len(lines) <= 1:
@@ -177,7 +177,7 @@ def sort_csv_by_slug(repo_root: Path, delimiter: str = ",") -> None:
 
         rows_sorted = sorted(data_lines, key=slug_key)
 
-        with csv_file.open("w", newline="") as f:
+        with csv_file.open("w", encoding="utf-8", newline="") as f:
             f.write(header_line + newline_style)
             for row in rows_sorted:
                 f.write(row.rstrip("\r\n") + newline_style)
