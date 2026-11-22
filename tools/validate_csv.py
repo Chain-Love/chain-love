@@ -162,6 +162,37 @@ def rule_provider_link_format(path: Path, rows: List[Dict[str, str]]) -> List[st
 
     return errors
 
+PROVIDER_IDENTITY_COLUMNS = ("website", "x", "linkedin")
+
+def provider_identity_key(column: str, value: str) -> str:
+    key = value.strip().lower().split("#", 1)[0].split("?", 1)[0]
+    key = re.sub(r"^https?://(www\.)?", "", key) if column == "website" else key.removeprefix("@")
+    return key.rstrip("/")
+
+def rule_provider_identity_unique(path: Path, rows: List[Dict[str, str]]) -> List[str]:
+    # Style Guide: the provider is who provides the service, so one row per provider.
+    # github is not compared: one GitHub owner can host the code of several providers.
+    if path.as_posix() != "references/providers/providers.csv":
+        return []
+
+    errors: List[str] = []
+    first_row: Dict[tuple, tuple] = {}
+
+    for idx, row in enumerate(rows, start=2):  # header = row 1
+        for column in PROVIDER_IDENTITY_COLUMNS:
+            value = (row.get(column) or "").strip()
+            key = provider_identity_key(column, value)
+            if not key:
+                continue
+            first_idx, first_slug = first_row.setdefault((column, key), (idx, row.get("slug") or ""))
+            if first_idx != idx:
+                errors.append(
+                    f"{path}: row {idx}: column '{column}': '{value}' is already used by provider "
+                    f"'{first_slug}' (row {first_idx}); one row per provider"
+                )
+
+    return errors
+
 def iter_csv_files(root: Path) -> Iterator[Path]:
     for dirpath, _, filenames in os.walk(root):
         for name in sorted(filenames):
@@ -176,6 +207,7 @@ def main():
     validator.add_rule(rule_slug_sorted)
     #validator.add_rule(rule_links_must_be_quoted)
     validator.add_rule(rule_provider_link_format)
+    validator.add_rule(rule_provider_identity_unique)
 
     all_errors: List[str] = []
 
