@@ -22,7 +22,7 @@ Conceptual structure used in contribution docs:
 references/
   providers/
     providers.csv    # provider identities
-    images/          # local provider logos in jpg/png
+    images/          # provider logos (PNG)
     csv/logoPath
   offers/            # offers of the providers
 listings/
