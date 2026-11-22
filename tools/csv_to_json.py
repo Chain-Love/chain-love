@@ -2,6 +2,7 @@ import csv
 import json
 import os
 import string
+import sys
 import unicodedata
 import warnings
 
@@ -563,6 +564,48 @@ def ensure_sdks_tbd_fields(result: dict):
                 item[k] = "TBD"
 
 
+NON_EVM_NETWORKS_FILE = "meta/non-evm-networks.json"
+
+
+def load_non_evm_networks(path: str = NON_EVM_NETWORKS_FILE) -> set[str]:
+    """
+    Returns the network folder names (as in listings/specific-networks) that do not serve EVM JSON-RPC.
+    If the file is missing, prints a warning and returns an empty set, so nothing is filtered.
+    """
+    if not os.path.exists(path):
+        print(
+            f"WARNING: {path} not found. 'all-networks' EVM API rows will be applied to every network.",
+            file=sys.stderr,
+        )
+        return set()
+    with open(path, "r", encoding="utf-8") as f:
+        names = json.load(f)
+    if not isinstance(names, list):
+        raise ValueError(f"{path} must be a JSON array of network folder names")
+    return {str(name).strip().lower() for name in names}
+
+
+def all_networks_row_applies(
+    category: str,
+    entity: dict,
+    network_name: str,
+    api_offer_idx: dict[str, dict],
+    non_evm_networks: set[str],
+) -> bool:
+    """
+    False for an 'all-networks' API row whose technology mentions EVM when the network is non-EVM.
+    The technology is the listing's own value or, if that is blank, the value of its !offer: canonical offer.
+    """
+    if category != "apis" or network_name.lower() not in non_evm_networks:
+        return True
+    technology = entity.get("technology")
+    offer = entity.get("offer")
+    if not str(technology or "").strip() and is_offer_ref(offer):
+        offer_row = api_offer_idx.get(get_ref_slug(offer, OFFER_REF_PREFIX), {})
+        technology = offer_row.get("technology")
+    return "evm" not in str(technology or "").lower()
+
+
 def load_json_file(path: str) -> dict:
     if not os.path.exists(path):
         raise FileNotFoundError(f"Meta file not found: {path}")
@@ -704,6 +747,17 @@ def main():
     global_listings = load_categories_from_folder(all_networks_dir)
     global_listings_categories = list_categories(folder=all_networks_dir)
 
+    # 'all-networks' API rows with an EVM technology are not applied to non-EVM networks
+    non_evm_networks = load_non_evm_networks()
+    unknown_networks = sorted(non_evm_networks - set(os.listdir(specific_networks_dir)))
+    if unknown_networks:
+        print(
+            f"WARNING: {NON_EVM_NETWORKS_FILE} lists networks with no folder in "
+            f"{specific_networks_dir}: {', '.join(unknown_networks)}",
+            file=sys.stderr,
+        )
+    api_offer_idx = build_index_by_slug(offers_by_category.get("apis", []), label="offers/apis.csv")
+
     for network_name in os.listdir(specific_networks_dir):
         network_dir = os.path.join(specific_networks_dir, network_name)
         if not os.path.isdir(network_dir):
@@ -726,6 +780,14 @@ def main():
         chains = sorted(chains)
 
         for category, entities in global_listings.items():
+            applicable = [
+                entity for entity in entities
+                if all_networks_row_applies(category, entity, network_name, api_offer_idx, non_evm_networks)
+            ]
+            if entities and not applicable:
+                # Every 'all-networks' row was skipped for this network: nothing to apply
+                continue
+            entities = applicable
             rows = list(entities)
             if len(entities) > 0 and "chain" in entities[0]:
                 if len(chains) == 0:
