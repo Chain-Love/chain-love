@@ -33,7 +33,6 @@ jobs:
       - name: Copy scripts
         run: |
           cp json-tools/tools/csv_to_json.py .
-          cp json-tools/tools/fetch_agents.py .
           cp json-tools/tools/validate.py .
           cp json-tools/tools/schema.json .
           cp json-tools/tools/create_ndjson.py .
@@ -55,12 +54,9 @@ jobs:
       
       - name: Run full pipeline
         env:
-          ERC8004_API_KEY: ${{ secrets.ERC8004_API_KEY }}
-          ERC8004_SUBGRAPH_IDS: ${{ vars.ERC8004_SUBGRAPH_IDS }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python csv_to_json.py
-          python3 fetch_agents.py
           python3 update_sdks_metadata_github.py --jsonfile all
           python3 update_sdks_metadata_npm.py --jsonfile all
           python3 update_sdks_metadata_gitlab.py --jsonfile all --fallback-to-tags
