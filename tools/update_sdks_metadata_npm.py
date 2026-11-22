@@ -251,11 +251,10 @@ def compute_from_npm(npm: Npm, pkg: str) -> Dict[str, str]:
     if isinstance(maintainers, list) and maintainers:
         m = maintainers[0] or {}
         if isinstance(m, dict):
+            # npm username only, like owner.login in the GitHub updater.
+            # The registry also returns the maintainer's email; it is never published.
             name = m.get("name")
-            email = m.get("email")
-            if isinstance(name, str) and isinstance(email, str):
-                out["maintainer"] = f"{name} <{email}>"
-            elif isinstance(name, str):
+            if isinstance(name, str) and name.strip():
                 out["maintainer"] = name
 
     lic = normalize_npm_license(js.get("license"))
