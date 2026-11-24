@@ -39,3 +39,7 @@ If you only have a logo with a background, use one of these tools to remove it b
 - [remove.bg](https://www.remove.bg) — works well for most logos
 - [Adobe Express Background Remover](https://www.adobe.com/express/feature/image/remove-background) — free, no account needed
 - [Erase.bg](https://www.erase.bg) — good for logos with flat colors
+
+## Attribution
+
+- [Algonaut logo](algonaut.png) by the Algonaut project, based on the [Font Awesome rocket icon](https://fontawesome.com/v5/icons/rocket). [Original PNG](https://github.com/manuelmauro/algonaut/blob/65c365bfc61c2c732baadc815f4578893c932833/assets/rocket-solid.png), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
