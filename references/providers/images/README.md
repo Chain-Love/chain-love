@@ -32,6 +32,8 @@ Store provider logo files in this folder.
 - Check the provider's official **media kit** first — most projects publish one on their website or GitHub.
 - Common locations: `/brand`, `/press`, `/media` pages, or the project's GitHub org.
 
+The [SwiftNodes logo](swiftnodes.png) is the [official SwiftNodes icon](https://swiftnodes.io/apple-touch-icon.png). This third-party mark identifies the provider and is excluded from the dataset license.
+
 ## Removing backgrounds
 
 If you only have a logo with a background, use one of these tools to remove it before submitting:
