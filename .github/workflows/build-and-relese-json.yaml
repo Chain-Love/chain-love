@@ -60,6 +60,7 @@ jobs:
           python3 update_sdks_metadata_github.py --jsonfile all
           python3 update_sdks_metadata_npm.py --jsonfile all
           python3 update_sdks_metadata_gitlab.py --jsonfile all --fallback-to-tags
+          python3 validate.py
           python3 create_ndjson.py
           python3 create_sqlite.py
       
