@@ -23,7 +23,7 @@
 <!-- Please ensure you understand everything and agrees with what is written below. Violations may result in reward slashes of database grant population program -->
 
 - [ ] **I have starred the Chain.Love repository.**
-- [ ] **I followed the Style Guide and Column Definitions. I'm aware of what is `!provider` syntax, and that entities in `/networks` sub-folders inherits records from `/providers` folder**
+- [ ] **I followed the Style Guide and Column Definitions and went through [Before you submit](https://github.com/Chain-Love/chain-love/blob/main/CONTRIBUTING.md#before-you-submit). I know that listings reference canonical offers with `!offer:<slug>` and that a non-blank listing cell replaces the inherited value.**
   - Style Guide: https://github.com/Chain-Love/chain-love/wiki/Style-Guide
   - Column Definitions: https://github.com/Chain-Love/chain-love/wiki
 - [ ] **I personally opened and verified every new link I'm adding. I can confirm, that all the links I'm adding are valid.**

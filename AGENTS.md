@@ -77,9 +77,11 @@ Go through the [Before you submit](CONTRIBUTING.md#before-you-submit) checklist 
 - You searched open PRs for the same provider, offer or listing; if one overlaps, see check 2 of Before you submit.
 - Each edited CSV is still A-Z sorted by `slug`, and booleans are uppercase `TRUE`/`FALSE`.
 - `actionButtons` is a valid JSON list with at most 2 Markdown links; for SDKs, at least one button leads to an official download source such as GitHub or the npm registry.
-- For a new provider, `logoPath` names a PNG file that exists in `references/providers/images/` (not SVG or another format).
-- A completely network-agnostic offer keeps its canonical row in `references/offers/` and places its listing in `listings/all-networks/`.
+- For a new provider, `logoPath` names a PNG file that exists in `references/providers/images/` (not SVG or another format), and the logo follows [`references/providers/images/README.md`](references/providers/images/README.md): square (1:1), transparent background, 160x160 to 500x500 pixels recommended.
+- A completely network-agnostic offer keeps its canonical row in `references/offers/` and places its listing in `listings/all-networks/`. An offer that supports many networks, but not all, gets a listing in each network where its support is confirmed.
 - For data contributions, confirm that the CSV changes affect the final hydrated output; remove redundant overrides (a listing cell equal to the canonical value it overrides changes nothing).
+- If you changed a row in `references/offers/`, the new values are true on every network whose listings reference it with `!offer:<slug>` and leave that cell blank; values that hold only on some networks go in those listings as overrides. Every listing you add or edit inherits only values that are true on its network, or overrides them.
+- A new canonical offer is a different product/plan from every canonical offer in `main` and in your PR; another network, endpoint or environment of the same product/plan is a listing of the existing offer, with overrides.
 - The PR title and description do not claim more than the diff does (no `Closes #N`, `Fixes #N` or `Resolves #N` for an issue the PR does not fully implement).
 
 ## Ecosystem outreach bounty
